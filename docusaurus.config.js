@@ -36,8 +36,8 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Getting Started',
-              to: 'docs/getting_started',
+              label: 'FAQ',
+              to: 'docs/faq',
             },
             {
               label: 'Progress',
