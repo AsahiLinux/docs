@@ -1,0 +1,52 @@
+{
+  "name": "asahi-linux-docs",
+  "description": "Documentation for AsahiLinux",
+  "version": "0.0.1",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear"
+  },
+  "keywords": [
+    "documentation",
+    "linux",
+    "apple",
+    "m1"
+  ],
+  "author": "Hector Martin <marcan@marcan.st>",
+  "homepage": "",
+  "contributors": [
+		"ndom91 <yo@ndo.dev>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asahilinux/docs"
+  },
+  "bugs": {
+    "url": "https://github.com/asahilinux/docs/issues"
+  },
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-alpha.70",
+    "@docusaurus/preset-classic": "2.0.0-alpha.70",
+    "@mdx-js/react": "^1.6.21",
+    "clsx": "^1.1.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
