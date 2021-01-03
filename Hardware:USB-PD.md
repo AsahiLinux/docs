@@ -65,7 +65,7 @@ Action  Info reply
 
 ### 0x12: Perform Action
 
-```5ac8011,<actionid>[,args]```
+```5ac8012,<actionid>[,args]```
 
 Performs or maps a given action to a set of pins.
 
