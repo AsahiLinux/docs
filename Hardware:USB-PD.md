@@ -6,7 +6,7 @@ Thanks to the t8012dev folks for providing info. See https://blog.t8012.dev/ace-
 
 You should reference the [USB-PD spec](https://www.usb.org/document-library/usb-power-delivery) for background information.
 
-Apple uses unstructured VDM messages with their USB ID (0x5AC), but they require messages to use the SOP'DEBUG packet start token (which is unused in the standard, and some controllers may not be able to do). The VDM header is of the form 0x5ac8000 | (command).
+Apple uses vendor-specific structured VDM messages with their USB ID (0x5AC), but they require messages to use the SOP'DEBUG or SOP''DEBUG packet start token (which is unused in the standard, and some controllers may not be able to do). The VDM header is of the form 0x5ac8000 | (command).
 
 The following commands are in hex-encoded comma-separated format for easy pasting into [vdmtool](https://github.com/AsahiLinux/vdmtool)'s serial console. The protocol makes heavy use of 16-bit data units, packed high to low in the 32-bit VDM words, and zero terminated.
 
@@ -16,9 +16,17 @@ Command replies use the request command ID | 0x40. The reply to command 0x10 is 
 
 Each port on a Mac may have different VDM support. Debug stuff is usually only supported on one port
 
-### 2020 Mac Mini (M1)
+### 2020 Mac Mini (M1) - SOP'DEBUG
 
 The leftmost port (closest to the power input) has all the debug stuff.
+
+### 2017 MacBook Pro (MacBookPro14,2 - Alpine Ridge) - SOP''DEBUG
+
+The rear left port reports 4 actions.  The front left and front right ports each report 3 actions.  The rear right port reports 2 actions.
+
+### 2019 MacBook Pro (MacBookPro15,2 - Titan Ridge) - SOP''DEBUG
+
+The front left port reports 8 actions.  The rear left port reports 5 actions.  The rear right port reports 4 actions.  The front right port reports 3 actions.
 
 ## Commands
 
