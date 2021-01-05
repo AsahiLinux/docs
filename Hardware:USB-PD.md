@@ -20,13 +20,17 @@ Each port on a Mac may have different VDM support. Debug stuff is usually only s
 
 The leftmost port (closest to the power input) has all the debug stuff.
 
-### 2017 MacBook Pro (MacBookPro14,2 - Alpine Ridge) - SOP''DEBUG
+### 2019 16" MacBook Pro (MacBookPro16,1 - Titan Ridge) - SOP''DEBUG
 
-The rear left port reports 4 actions.  The front left and front right ports each report 3 actions.  The rear right port reports 2 actions.
+The front and rear left ports each report 7 actions.  The rear right port reports 4 actions.  The front right port reports 3 actions.
 
-### 2019 MacBook Pro (MacBookPro15,2 - Titan Ridge) - SOP''DEBUG
+### 2019 13" MacBook Pro (MacBookPro15,2 - Titan Ridge) - SOP''DEBUG
 
 The front left port reports 8 actions.  The rear left port reports 5 actions.  The rear right port reports 4 actions.  The front right port reports 3 actions.
+
+### 2017 13" MacBook Pro (MacBookPro14,2 - Alpine Ridge) - SOP''DEBUG
+
+The rear left port reports 4 actions.  The front left and front right ports each report 3 actions.  The rear right port reports 2 actions.
 
 ## Commands
 
@@ -47,6 +51,12 @@ Sample response from M1 Mac Mini (2020) left side port:
 ```
 
 This indicates support for actions 0x4606, 0x606, 0x206, 0x301, 0x306, 0x106, 0x105, 0x303, 0x803, 0x809, 0x103.
+
+The MacBookPro16,1 supports actions 0x602, 0x606, 0x601, 0x403, 0x302, 0x501 and 0x301 on the front left port, actions 0x205, 0x206, 0x103, 0x602, 0x302, 0x501 and 0x301 on the rear left port, actions 0xE04, 0x501, 0x301 and 0x302 on the rear right port and actions 0x302, 0x501 and 0x301 on the front right port.
+
+The MacBookPro15,2 supports actions 0x207, 0x205, 0x602, 0x606, 0x501, 0x601, 0x301 and 0x302 on the front left port, actions 0x403, 0x602, 0x302, 0x501 and 0x301 on the rear left port, actions 0x501, 0x103, 0x301 and 0x302 on the rear right port and actions 0x302, 0x501 and 0x301 on the front right port.
+
+The MacBookPro14,2 supports actions 0x403, 0x602, 0x301 and 0x302 on the rear left port, actions 0x302, 0x205 and 0x301 on the front left port, actions 0x302, 0x802 and 0x301 on the front right port and actions 0x301 and 0x302 on the rear right port.
 
 ### 0x11 Get action Info
 
