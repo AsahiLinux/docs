@@ -12,6 +12,11 @@ The following commands are in hex-encoded comma-separated format for easy pastin
 
 Command replies use the request command ID | 0x40. The reply to command 0x10 is command 0x50, etc.
 
+## Chips
+
+* CD3215C00 "ACE1" - this seems to be a TPS65983 with different ROM/OTP code.
+* CD3217B12 "ACE2" - this is probably actual new silicon with some differences, though this is uncertain. Might be equivalent to another TI part. The initial M1 devices all use this part. Firmware organization is somewhat different.
+
 ## Ports
 
 Each port on a Mac may have different VDM support. Debug stuff is usually only supported on one port
