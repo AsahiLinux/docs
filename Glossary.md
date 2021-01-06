@@ -21,7 +21,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **EEPROM**: Electrically Erasable Programmable Read Only Memory. A type of re-writable memory, commonly available in sizes of a few kilobytes at most, more robust than NOR Flash. Often used for settings and very early boot code.
 
 ### G
-* **GPT**: GUID Partition Table.
+* **GPT**: GUID Partition Table: A partition table format created for EFI/UEFI and now used on most modern systems.
 
 ### H
 * **HFS+**: Hierarchical Filesystem+: Apple's previous filesystem, used for external storage. Not used for internal storage on M1 Macs.
