@@ -36,3 +36,5 @@ Apple likes to use many different names for the same devices.
 | -------------- | ------ | ------- | --- |
 | Apple Watch 2 | Watch2,4 | N74AP, N75AP | T8002
 | Mac mini "M1" 8-Core 3.2 (2020) | Macmini9,1 | J274AP | T8103
+| MacBook Pro (M1, 2020) | MacBookPro17,1 | J293AP | T8103
+| MacBook Air (M1, 2020) | MacBookAir10,1 | J313AP | T8103
