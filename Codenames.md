@@ -6,7 +6,6 @@ Apple likes to use many different names for the same devices.
 | --------- | -------- | -------- | --- | ------ | ------ |
 | S1 | | | S7002
 | S1P, S2 | | | T8002
-|  | G1 ||  | Cortex-A5
 | S3? | M7 || T8004? | Cortex-A7
 |  | H2 ||| Cortex-A8
 | A4 | H3 ||| Cortex-A8
