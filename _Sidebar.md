@@ -4,6 +4,7 @@ Project related:
 
 Places to start:
 * [[Glossary]]
+* [[Codenames]]
 * [[SW:Getting Started]]
 * [[Project:References]]
 
