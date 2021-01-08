@@ -12,12 +12,12 @@ Apple likes to use many different names for the same devices.
 | A5 | H4 ||| Cortex-A9
 | A6 | H5 ||| Swift
 | A6X | H5G? ||| Swift
-| A7 | H6 ||| Cyclone
-| A8 | H7P || T7000 | Typhoon
+| A7 | H6 | Alcatraz|| Cyclone
+| A8 | H7P | Fiji | T7000 | Typhoon
 | A8X | H7G | Capri | T7001 | Typhoon
-| A9 | H8P | Maui | S8000? | Twister
+| A9 | H8P (Samsung) | Maui | S8000 | Twister
+| A9 | H8P (TSMC)| Malta | S8003 | Twister
 | A9X | H8G | Elba | S8001 | Twister
-| T1? | H8M | Malta || Twister
 | A10 | H9P | Cayman | T8010 | Hurricane | Zephyr (CLS)
 | A10X | H9G | Myst | T8011 | Hurricane | Zephyr (CLS)
 | T2 | H9M | Gibraltar | T8012 | Hurricane | Zephyr (CLS)
