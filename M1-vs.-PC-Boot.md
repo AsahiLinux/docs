@@ -8,11 +8,23 @@ The SSD uses GPT, just like disks under most UEFI systems. The first partition i
 
 iBoot can only understand APFS, and all three partitions on the GPT disk are APFS containers themselves containing multiple APFS volumes.
 
+# NOR Flash
+
+There is also a separate flash chip, called a NOR flash. This is the same kind of chip that contains the UEFI firmware on PCs. It only contains product information and the first stage of iBoot.
+
+# SecureROM
+
+This is a ROM embedded in the M1 and is truly the first code that runs. Its job is to load the first stage of iBoot from NOR and run it.
+
+Intel/AMD PCs also have various ROMs and a complicated boot process, but we never hear about those parts because they are proprietary. The idea that modern Intel PCs directly start executing code from the firmware in Flash without any initialization is an illusion, but we like to pretend that that's still how it works.
+
 # iBoot
 
 iBoot is the main bootloader on M1 machines. It is small. It cannot understand external storage. It does not support USB. It does not have a UI. All it can do is boot from internal flash, and show an Apple logo, a progress bar, and error messages.
 
 iBoot is like the lower level components of UEFI firmware on a PC. Enough to boot from internal NVMe, but without any USB drivers.
+
+There are two stages to iBoot. One of them lives in NOR Flash, and its job is to understand APFS and load the second stage from the SSD. The second stage is effectively a macOS bootloader, and boots the macOS kernel.
 
 # Recovery Mode
 
@@ -30,8 +42,10 @@ Since there are special requirements on how the first boot stage that replaces m
 
 # DFU
 
-DFU is a recovery mode built in to the BootROM of the M1 that allows flashing the device from scratch, if iBoot and/or recovery mode are gone.
+DFU is a recovery mode built in to the SecureROM of the M1 that allows flashing the device from scratch, if iBoot and/or recovery mode are gone. DFU works even if the data in the NOR Flash is gone.
 
 DFU does not exist on most PCs. If the UEFI flash is corrupted, the PC is bricked. DFU mode is a unique feature of Apple Silicon devices.
 
 Some PC motherboards implement a similar feature as part of a separate chip, which can flash the UEFI firmware from a USB stick without actually turning on the motherboard normally, but this is only common in higher-end stand alone motherboards.
+
+Thanks to DFU mode, it is just about impossible to brick an Apple Silicon machine in such a way that it cannot be recovered externally by Apple. It is only slightly less impossible to brick an Apple Silicon machine in a way that cannot be recovered externally by an end user. The worst case scenario is that the product information (serial number, calibration, etc) in NOR is erased. If that happens, the machine needs to be repaired by Apple, because end users do not have the hardware/software/tools to re-create this information properly. This happening by accident is vanishingly unlikely.
