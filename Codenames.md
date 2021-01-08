@@ -27,7 +27,7 @@ Apple likes to use many different names for the same devices.
 | A12X, A12Z | H11G | Aruba | T8027 | Vortex | Tempest
 |  |  |  | T8028 | Vortex | Tempest
 | A13 | H12 | Cebu | T8030 | Lightning | Thunder
-|  |  | Turks | T8301 |  | Thunder
+|  S6 |  | Turks | T8301 | - | Thunder
 | A14 | H13P |  | T8101 | Firestorm | Icestorm
 | M1  | H13G |  | T8103 | Firestorm | Icestorm
 
