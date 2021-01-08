@@ -8,11 +8,11 @@ Apple likes to use many different names for the same devices.
 | S1P, S2 | | | T8002 | Cortex-A7
 | S3 | M7 || T8004 | Cortex-A7
 |  | H2 ||| Cortex-A8
-| A4 | H3 ||| Cortex-A8
-| A5 | H4 ||| Cortex-A9
-| A6 | H5 | Bali || Swift
-| A6X | H5G? ||| Swift
-| A7 | H6 | Alcatraz|| Cyclone
+| A4 | H3 || S5L8930 | Cortex-A8
+| A5 | H4 || S5L8940 | Cortex-A9
+| A6 | H5 | Bali | S5L8950 | Swift
+| A6X | H5G? || S5L8955 | Swift
+| A7 | H6 | Alcatraz| S5L8960 | Cyclone
 | A8 | H7P | Fiji | T7000 | Typhoon
 | A8X | H7G | Capri | T7001 | Typhoon
 | A9 | H8P (Samsung) | Maui | S8000 | Twister
