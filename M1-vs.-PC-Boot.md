@@ -2,7 +2,7 @@ The M1 machines use a boot process that on the surface looks very different from
 
 # SSD
 
-The SSD on M1 machines contains both boot components and the OS that is installed on the machine. This is different from UEFI machines. Think of the SSD on Apple Silicon as being *both* the UEFI firmware flash memory, *and* the main OS NVMe device you boot from, combined. If you're familiar with Android devices, those use a similar model.
+The SSD on M1 machines contains both boot components and the OS that is installed on the machine. This is different from UEFI machines. Think of the SSD on Apple Silicon as being *both* the latter portion of UEFI firmware flash memory, *and* the main OS NVMe device you boot from, combined. If you're familiar with Android devices, those use a similar model.
 
 The SSD uses GPT, just like disks under most UEFI systems. The first partition is used for boot-related stuff, kind of like the EFI system partition, but also contains iBoot itself and other components.
 
@@ -10,7 +10,7 @@ iBoot can only understand APFS, and all three partitions on the GPT disk are APF
 
 # NOR Flash
 
-There is also a separate flash chip, called a NOR flash. This is the same kind of chip that contains the UEFI firmware on PCs. It only contains product information and the first stage of iBoot.
+There is also a separate flash chip, called a NOR flash. This is the same kind of chip that contains the UEFI firmware on PCs. It only contains product information and the first stage of iBoot. You can think of it as the earliest portion of the UEFI firmware.
 
 # SecureROM
 
