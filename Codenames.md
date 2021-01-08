@@ -20,12 +20,12 @@ Apple likes to use many different names for the same devices.
 | T1? | H8M | Malta || Twister
 | A10 | H9P | Cayman | T8010 | Hurricane | Zephyr (CLS)
 | A10X | H9G | Myst | T8011 | Hurricane | Zephyr (CLS)
-| T2 | H9M || T8012 | Hurricane | Zephyr (CLS)
+| T2 | H9M | Gibraltar | T8012 | Hurricane | Zephyr (CLS)
 | A11 | H10 | Skye | T8015 | Monsoon | Mistral
 | A12 | H11P | Cyprus | T8020 | Vortex | Tempest |
 | S4, S5 | M9 || T8006 | - | Tempest
 | A12X, A12Z | H11G | Aruba | T8027 | Vortex | Tempest
-|  |  |  | T8028 | Vortex | Tempest
+|  |  | Tinos | T8028 | Vortex | Tempest
 | A13 | H12 | Cebu | T8030 | Lightning | Thunder
 |  S6 | M10 | Turks | T8301 | - | Thunder
 | A14 | H13P |  | T8101 | Firestorm | Icestorm
