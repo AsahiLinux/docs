@@ -4,9 +4,9 @@ Apple likes to use many different names for the same devices.
 
 | Marketing | Internal | Codename | SoC | P-Core | E-Core |
 | --------- | -------- | -------- | --- | ------ | ------ |
-| S1 | | | S7002
-| S1P, S2 | | | T8002
-| S3? | M7 || T8004? | Cortex-A7
+| S1 | | | S7002 | Cortex-A7
+| S1P, S2 | | | T8002 | Cortex-A7
+| S3 | M7 || T8004 | Cortex-A7
 |  | H2 ||| Cortex-A8
 | A4 | H3 ||| Cortex-A8
 | A5 | H4 ||| Cortex-A9
