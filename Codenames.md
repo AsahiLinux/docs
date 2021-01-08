@@ -10,7 +10,7 @@ Apple likes to use many different names for the same devices.
 |  | H2 ||| Cortex-A8
 | A4 | H3 ||| Cortex-A8
 | A5 | H4 ||| Cortex-A9
-| A6 | H5 ||| Swift
+| A6 | H5 | Bali || Swift
 | A6X | H5G? ||| Swift
 | A7 | H6 | Alcatraz|| Cyclone
 | A8 | H7P | Fiji | T7000 | Typhoon
