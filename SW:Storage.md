@@ -22,9 +22,9 @@ These correspond to /dev/disk0s1, /dev/disk0s2, /dev/disk0s3 on macOS.
 
 Each of the 3 partitions is an APFS container, containing several subvolumes. The type GUIDs are as follows:
 
-* 69646961-6700-11AA-AA11-00306543ECAC: iBoot System Container (ASCII reads: "idiag")
-* 7C3457EF-0000-11AA-AA11-00306543ECAC: macOS (standard type for Apple APFS)
-* 52637672-7900-11AA-AA11-00306543ECAC: Recovery OS (ASCII reads: "Rcvry")
+* 69646961-6700-11AA-AA11-00306543ECAC: iBoot System Container (ASCII: "idiag", diskutil: `Apple_APFS_ISC`)
+* 7C3457EF-0000-11AA-AA11-00306543ECAC: APFS (diskutil: `Apple_APFS`)
+* 52637672-7900-11AA-AA11-00306543ECAC: Recovery OS (ASCII reads: "Rcvry", diskutil: `Apple_APFS_Recovery`)
 
 Note that most the unique (not type) GUIDs shown on this page will be unique for each user.
 
