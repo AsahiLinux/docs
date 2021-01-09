@@ -1031,5 +1031,6 @@ When 1TR is loaded, this partition apparently gets copied wholesale to a tmpfs, 
    Sealed:                    No
    Locked:                    No
 ```
+</details>
 
 This contains temporary system firmware update data and logs.
