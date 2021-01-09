@@ -18,6 +18,9 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### B
 * **BootROM**: A read-only memory embedded in a chip such as the M1, which is the first code executed upon boot.
 
+### D
+* **DFU**: Device Firmware Update. A USB mode that allows flashing a device's firmware over USB. Apple devices support this in the SecureROM, to allow the user to restore devices which have otherwise been bricked.
+
 ### E
 * **EEPROM**: Electrically Erasable Programmable Read Only Memory. A type of re-writable memory, commonly available in sizes of a few kilobytes at most, more robust than NOR Flash. Often used for settings and very early boot code.
 
@@ -44,6 +47,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### S
 * **SBU**: Sideband Use. Two pins on Type C connectors free to be used for random stuff, not defined by the Type C standard itself.
+* **SecureROM**: The BootROM of the M1. This is in charge of reading SFR from NOR and passing control to it, or falling back to DFU mode.
 * **SEP**: Secure Enclave Processor. The M1's built-in HSM/TPM/etc device. Handles Touch ID and most crypto, as well as boot policy decisions. Harmless to Linux, but we can use its features if we want to.
 * **SFR**: System Firmware, the portion of firmware stored in NOR flash. This includes the first stage of iBoot, which will boot the second stage from the OS partition.
 * **SIP**: System Integrity Protection. Also called "rootless", where the macOS kernel stops even root from doing some things.
