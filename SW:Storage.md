@@ -163,3 +163,30 @@ This is the main APFS volume containing the OS image. It uses snapshots to allow
 The snapshot is normally /dev/disk3s1s1, and this is mounted read-only on /. The name looks like `com.apple.os.update-<long string of hex>`.
 
 ## Recovery OS
+
+This is the main recovery volume containing 1TF.
+
+```
+# diskutil apfs list /dev/disk5
+|
++-- Container disk5 160EFEBB-B539-42EE-800D-2FE4723FB25F
+    ====================================================
+    APFS Container Reference:     disk5
+    Size (Capacity Ceiling):      5368664064 B (5.4 GB)
+    Capacity In Use By Volumes:   1919692800 B (1.9 GB) (35.8% used)
+    Capacity Not Allocated:       3448971264 B (3.4 GB) (64.2% free)
+    |
+    +-< Physical Store disk4 (No UUID)
+    |   ------------------------------
+    |   APFS Physical Store Disk:   disk4
+    |   Size:                       5368664064 B (5.4 GB)
+    |
+    +-> Volume disk5s1 DDD6CA1C-2FAC-4990-B20E-89F5323DAABB
+        ---------------------------------------------------
+        APFS Volume Disk (Role):   disk5s1 (Recovery)
+        Name:                      Recovery (Case-insensitive)
+        Mount Point:               Not Mounted
+        Capacity Consumed:         1899917312 B (1.9 GB)
+        Sealed:                    No
+        FileVault:                 No
+```
