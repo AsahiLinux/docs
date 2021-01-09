@@ -113,7 +113,7 @@ Sample response:
                              vdm hdr connection/line state 
 ```
 
-* Conection/line state: A 16-bit header short (`(ConnectionState << 14) | (LineState[i] << (2 * i))` for i between 0 and 7, exclusive) followed by 7 shorts indicating which action is muxed out of each pin set. ConnectionState can be 0 for disconnected, 1 or 2 for a standard connected device depending on the orientation and 3 for audio and debug connections. LineState is a 2 bit value, which significance is not well known at the moment.
+* Connection/line state: A 16-bit header short (`(ConnectionState << 14) | (LineState[i] << (2 * i))` for i between 0 and 7, exclusive) followed by 7 shorts indicating which action is muxed out of each pin set. ConnectionState can be 0 for disconnected, 1 or 2 for a standard connected device depending on the orientation and 3 for audio and debug connections. LineState is a 2 bit value, which significance is not well known at the moment.
 * Pin states: one action ID per pin pair, in 16-bit shorts.
 
 In this case action 306 is mapped to pin set 2 (the third pin set).
