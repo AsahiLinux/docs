@@ -180,8 +180,8 @@ Files:
     * apticket.der - AP ticket (?)
     * RestoreVersion.plist
     * SystemVersion.plist
-    * sep-firmware.img4 - SEP firmware, not always present (did they run out of space in NOR and stash it here?)
-* SFR/fallback/ - info for the current version of SFR (same as above)
+    * sep-firmware.img4 - SEP firmware, not always present
+* SFR/fallback/ - info for the previous version of SFR (same structure as above)
 
 ### disk1s2 (xART)
 
