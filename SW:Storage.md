@@ -617,8 +617,9 @@ Files look like:
     * var/db/ - user list and authentication related information, for preboot UI
     * Library/Preferences/ - network interface info, other misc preferences for preboot UI
     * System/Library/
-        * CoreServices/boot.efi - this would be the booter on EFI macs. A whole 0 bytes here.
-        * Caches/com.apple.corestorage - FileVault stuff?
+        * CoreServices/
+            * boot.efi - this would be the booter on EFI macs. A whole 0 bytes here.
+        * Caches/com.apple.corestorage/ - FileVault stuff?
     * restore/ - system firmware update bundle?
 
 ### disk3s3 (Recovery)
