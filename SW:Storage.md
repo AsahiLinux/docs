@@ -684,7 +684,7 @@ OS recovery partition. Roughly the same layout/contents as 1TR below.
 ### disk3s4 (Update)
 
 <details>
-  <summary>diskutil info/summary>
+  <summary>diskutil info/summary
 
 ```
 # diskutil info /dev/disk3s4
