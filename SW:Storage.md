@@ -28,7 +28,7 @@ Each of the 3 partitions is an APFS container, containing several subvolumes. Th
 
 Note that most the unique (not type) GUIDs shown on this page will be unique for each user.
 
-## disk0s1: iBoot System Container
+## disk0s1 / disk1: iBoot System Container
 
 This is the first partition on a standard layout. It is hidden from `diskutil` by default, output below is from a dumped image.
 
@@ -162,7 +162,7 @@ This is the main APFS volume containing the OS image. It uses snapshots to allow
 
 The snapshot is normally /dev/disk3s1s1, and this is mounted read-only on /. The name looks like `com.apple.os.update-<long string of hex>`.
 
-## Recovery OS
+## disk0s3: Recovery OS
 
 This is the main recovery volume containing 1TF.
 
