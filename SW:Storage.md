@@ -86,7 +86,7 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
 
 ## disk0s2 / disk3: macOS Container
 
-This is the main macOS container.
+This is the main macOS partition.
 
 (note: this output is after the root volume seal has been broken)
 
@@ -164,7 +164,7 @@ The snapshot is normally /dev/disk3s1s1, and this is mounted read-only on /. The
 
 ## disk0s3: Recovery OS
 
-This is the main recovery volume containing 1TF.
+This is the main recovery partition, containing 1TR.
 
 ```
 # diskutil apfs list /dev/disk5
