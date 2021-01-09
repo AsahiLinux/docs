@@ -35,6 +35,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### I
 * **I²C**: Inter-Integrated Circuit. A 2-wire standard for communicating at low speed between chips on a board.
+* **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [[SW:Storage]])
 
 ### J
 * **JTAG**: Joint Test Action Group. Actually refers to a debugging interface released by that group, a 4/5-wire interface to debug chips and CPUs at the hardware level.
