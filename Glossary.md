@@ -45,6 +45,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### S
 * **SBU**: Sideband Use. Two pins on Type C connectors free to be used for random stuff, not defined by the Type C standard itself.
 * **SEP**: Secure Enclave Processor. The M1's built-in HSM/TPM/etc device. Handles Touch ID and most crypto, as well as boot policy decisions. Harmless to Linux, but we can use its features if we want to.
+* **SFR**: System Firmware, the portion of firmware stored in NOR flash. This includes the first stage of iBoot, which will boot the second stage from the OS partition.
 * **SIP**: System Integrity Protection. Also called "rootless", where the macOS kernel stops even root from doing some things.
 * **SOP**: Start Of Packet. Used to differentiate packet types in USB-PD. SOP for normal comms, SOP' and SOP" to talk to built-in chips in a cable, SOP'DEBUG and SOP"DEBUG for custom vendor specific things like Apple VDMs.
 * **SPI**: Serial Peripheral Interface. A 4-wire standard for communicating at low speed between chips on a board.
