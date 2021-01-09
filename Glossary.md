@@ -24,6 +24,9 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### E
 * **EEPROM**: Electrically Erasable Programmable Read Only Memory. A type of re-writable memory, commonly available in sizes of a few kilobytes at most, more robust than NOR Flash. Often used for settings and very early boot code.
 
+### F
+* **fuOS**: Custom OS, speculated to mean "fully untrusted OS".
+
 ### G
 * **GPT**: GUID Partition Table: A partition table format created for EFI/UEFI and now used on most modern systems.
 
@@ -36,6 +39,10 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### J
 * **JTAG**: Joint Test Action Group. Actually refers to a debugging interface released by that group, a 4/5-wire interface to debug chips and CPUs at the hardware level.
 
+### K
+* **kcOS**: OS with a custom kernel cache.
+* **Kernel cache**: A bundle of the kernel and its extensions, optionally encrypted.
+
 ### M
 * **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such a switching one set of pins between USB, UART, and SWD modes.
 * **Mini** - Custom bootloader for internal investigation. May or may not support booting from SSD
@@ -44,6 +51,10 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **NAND**: Not-AND. A type of logic gate, but normally refers to a type of Flash memory, which is the one used on all modern high-capacity Flash-based storage such as SD cards and SSDs, but also comes in bare chips.
 * **NOR**: Not-OR. A type of logic gate, but normally refers to a type of Flash memory, which is only used for low-capacity applications (up to a few megabytes at most). More robust than NAND. Usually comes in bare 8-pin chips these days.
 * **NVRAM**: Non-Volatile RAM. The name is obsolete, it just means a list of key=value parameters stored in a Mac for boot configuration. Akin to UEFI variables.
+
+### R
+* **RecoveryOS:** The recovery environment, either the 1TR located on the internal disk, or a recovery environment associated with any particular macOS install, located inside an APFS subvolume.
+* **RestoreOS:** The restore environment, speculated to be used when "reviving" a device through DFU mode.
 
 ### S
 * **SBU**: Sideband Use. Two pins on Type C connectors free to be used for random stuff, not defined by the Type C standard itself.
