@@ -959,6 +959,7 @@ There is a hidden *Update* volume (disk2s2).
    Sealed:                    No
    Locked:                    No
 ```
+</details>
 
 This contains one or more versions of One True Recovery.
 
