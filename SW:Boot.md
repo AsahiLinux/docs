@@ -36,8 +36,14 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `auxk`: kcOS manifest
   - `fuos`: fuOS manifest
 
-* The boot directory is now located at the target partition Preboot subvolume, at path `/<volume-uuid>/boot/<local-policy.metadata.nsih>`;
-* It then somehow decrypts and executes `<boot-dir>/usr/standalone/firmware/iBoot.img4` with the device tree and other firmware files in the same directory. No evidence towards other metadata descriptors yet.
+* If loading the next stage:
+
+  - The boot directory is located at the target partition Preboot subvolume, at path `/<volume-uuid>/boot/<local-policy.metadata.nsih>`;
+  - Decrypt, verify and execute `<boot-dir>/usr/standalone/firmware/iBoot.img4` with the device tree and other firmware files in the same directory. No evidence towards other metadata descriptors yet.
+
+* If loading a custom stage (kcOS/fuOS):
+
+  - ...
 
 # Stage 2 (iBoot2)
 
