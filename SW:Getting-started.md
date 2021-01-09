@@ -14,3 +14,12 @@ Open the Terminal and run:
 
 Note: `bputil` will *re-enable* some SIP features, so you need to run `csrutil` *after* you run `bputil`.
 
+## boot-args
+
+If you break the system with boot-args, you cannot edit them from recovery mode, but you can clear them (`nvram boot-args=`).
+
+```
+debug=0x14e
+amfi_get_out_of_my_way=1
+serial=3
+```
