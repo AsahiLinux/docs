@@ -4,6 +4,7 @@ The raw disk contains a GPT partition table with a standard protective MBR and t
 
 <details>
   <summary>gdisk dump</summary>
+
 ```
 Disk /dev/disk0: 61279344 sectors, 233.8 GiB
 Sector size (logical): 4096 bytes
@@ -37,6 +38,7 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
 
 <details>
   <summary>APFS info</summary>
+
 ```
 # diskutil apfs list /dev/disk1
 |
@@ -94,6 +96,7 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
 
 <details>
   <summary>APFS info</summary>
+
 ```
 # diskutil info /dev/disk1s1
    Device Identifier:         disk1s1
@@ -152,6 +155,7 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
 
 <details>
   <summary>APFS info</summary>
+
 ```
 # diskutil info /dev/disk1s2
    Device Identifier:         disk1s2
@@ -210,6 +214,7 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
 
 <details>
   <summary>APFS info</summary>
+
 ```
 # diskutil info /dev/disk1s3
    Device Identifier:         disk1s3
@@ -268,6 +273,7 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
 
 <details>
   <summary>APFS info</summary>
+
 ```
 # diskutil info /dev/disk1s4
    Device Identifier:         disk1s4
@@ -328,6 +334,7 @@ This is the main macOS partition.
 
 <details>
   <summary>APFS dump</summary>
+
 ```
 # diskutil apfs list /dev/disk3
 |
@@ -407,6 +414,7 @@ This is the main recovery partition, containing 1TR.
 
 <details>
   <summary>APFS dump</summary>
+
 ```
 # diskutil apfs list /dev/disk5
 |
