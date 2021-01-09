@@ -1,7 +1,9 @@
 # Partitioning
 
-The raw disk contains a GPT partition table with a standard protective MBR. It looks like this by default (gdisk output):
+The raw disk contains a GPT partition table with a standard protective MBR and three partitions.
 
+<details>
+  <summary>gdisk dump</summary>
 ```
 Disk /dev/disk0: 61279344 sectors, 233.8 GiB
 Sector size (logical): 4096 bytes
@@ -17,6 +19,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
    2          128006        59968629   228.3 GiB   AF0A  Container
    3        59968630        61279338   5.0 GiB     FFFF  RecoveryOSContainer
 ```
+</details>
 
 These correspond to /dev/disk0s1, /dev/disk0s2, /dev/disk0s3 on macOS.
 
@@ -32,24 +35,26 @@ Note that most the unique (not type) GUIDs shown on this page will be unique for
 
 This is the first partition on a standard layout. It is hidden from `diskutil` by default, output below is from a dumped image.
 
+<details>
+  <summary>APFS info</summary>
 ```
-# diskutil apfs list /dev/disk5
+# diskutil apfs list /dev/disk1
 |
 +-- Container disk5 E0718E49-1903-4793-B427-FCFEC4A3E72C
     ====================================================
-    APFS Container Reference:     disk5
+    APFS Container Reference:     disk1
     Size (Capacity Ceiling):      524288000 B (524.3 MB)
     Capacity In Use By Volumes:   18010112 B (18.0 MB) (3.4% used)
     Capacity Not Allocated:       506277888 B (506.3 MB) (96.6% free)
     |
     +-< Physical Store disk4 (No UUID)
     |   ------------------------------
-    |   APFS Physical Store Disk:   disk4
+    |   APFS Physical Store Disk:   disk0s1
     |   Size:                       524288000 B (524.3 MB)
     |
     +-> Volume disk5s1 B33E8594-382A-41EA-A9FE-6D2362B31141
     |   ---------------------------------------------------
-    |   APFS Volume Disk (Role):   disk5s1 (Preboot)
+    |   APFS Volume Disk (Role):   disk1s1 (Preboot)
     |   Name:                      iSCPreboot (Case-insensitive)
     |   Mount Point:               Not Mounted
     |   Capacity Consumed:         6213632 B (6.2 MB)
@@ -58,7 +63,7 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
     |
     +-> Volume disk5s2 CA25E52A-3425-4232-926F-F840D359A9E2
     |   ---------------------------------------------------
-    |   APFS Volume Disk (Role):   disk5s2 (xART)
+    |   APFS Volume Disk (Role):   disk1s2 (xART)
     |   Name:                      xART (Case-insensitive)
     |   Mount Point:               Not Mounted
     |   Capacity Consumed:         6311936 B (6.3 MB)
@@ -67,7 +72,7 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
     |
     +-> Volume disk5s3 0566ABD3-9EA7-46CA-90C7-CDF4DD0E94B4
     |   ---------------------------------------------------
-    |   APFS Volume Disk (Role):   disk5s3 (Hardware)
+    |   APFS Volume Disk (Role):   disk1s3 (Hardware)
     |   Name:                      Hardware (Case-insensitive)
     |   Mount Point:               Not Mounted
     |   Capacity Consumed:         507904 B (507.9 KB)
@@ -76,13 +81,244 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
     |
     +-> Volume disk5s4 F4E0743D-D91F-410B-9569-4196540E4B8D
         ---------------------------------------------------
-        APFS Volume Disk (Role):   disk5s4 (Recovery)
+        APFS Volume Disk (Role):   disk1s4 (Recovery)
         Name:                      Recovery (Case-insensitive)
         Mount Point:               Not Mounted
         Capacity Consumed:         20480 B (20.5 KB)
         Sealed:                    No
         FileVault:                 No
 ```
+</details>
+
+### disk1s1 (Preboot)
+
+<details>
+  <summary>APFS info</summary>
+```
+# diskutil info /dev/disk1s1
+   Device Identifier:         disk1s1
+   Device Node:               /dev/disk1s1
+   Whole:                     No
+   Part of Whole:             disk1
+
+   Volume Name:               iSCPreboot
+   Mounted:                   Yes
+   Mount Point:               /System/Volumes/iSCPreboot
+
+   Partition Type:            41504653-0000-11AA-AA11-00306543ECAC
+   File System Personality:   APFS
+   Type (Bundle):             apfs
+   Name (User Visible):       APFS
+   Owners:                    Enabled
+
+   OS Can Be Installed:       No
+   Booter Disk:               disk1s1
+   Recovery Disk:             disk1s4
+   Media Type:                Generic
+   Protocol:                  Apple Fabric
+   SMART Status:              Verified
+   Volume UUID:               19D7B85B-D5EC-41E9-8441-EEAE52D964F1
+   Disk / Partition UUID:     19D7B85B-D5EC-41E9-8441-EEAE52D964F1
+
+   Disk Size:                 524.3 MB (524288000 Bytes) (exactly 1024000 512-Byte-Units)
+   Device Block Size:         4096 Bytes
+
+   Container Total Space:     524.3 MB (524288000 Bytes) (exactly 1024000 512-Byte-Units)
+   Container Free Space:      506.3 MB (506347520 Bytes) (exactly 988960 512-Byte-Units)
+   Allocation Block Size:     4096 Bytes
+
+   Media OS Use Only:         Yes
+   Media Read-Only:           No
+   Volume Read-Only:          No
+
+   Device Location:           Internal
+   Removable Media:           Fixed
+
+   Solid State:               Yes
+   Hardware AES Support:      Yes
+
+   This disk is an APFS Volume.  APFS Information:
+   APFS Container:            disk1
+   APFS Physical Store:       disk0s1
+   Fusion Drive:              No
+   Encrypted:                 No
+   FileVault:                 No
+   Sealed:                    No
+   Locked:                    No
+```
+</details>
+
+### disk1s2 (xART)
+
+<details>
+  <summary>APFS info</summary>
+```
+# diskutil info /dev/disk1s2
+   Device Identifier:         disk1s2
+   Device Node:               /dev/disk1s2
+   Whole:                     No
+   Part of Whole:             disk1
+
+   Volume Name:               xART
+   Mounted:                   Yes
+   Mount Point:               /System/Volumes/xarts
+
+   Partition Type:            41504653-0000-11AA-AA11-00306543ECAC
+   File System Personality:   APFS
+   Type (Bundle):             apfs
+   Name (User Visible):       APFS
+   Owners:                    Enabled
+
+   OS Can Be Installed:       No
+   Booter Disk:               disk1s1
+   Recovery Disk:             disk1s4
+   Media Type:                Generic
+   Protocol:                  Apple Fabric
+   SMART Status:              Verified
+   Volume UUID:               E9FD7E0B-391D-42DD-997A-15B5FE0CE73C
+   Disk / Partition UUID:     E9FD7E0B-391D-42DD-997A-15B5FE0CE73C
+
+   Disk Size:                 524.3 MB (524288000 Bytes) (exactly 1024000 512-Byte-Units)
+   Device Block Size:         4096 Bytes
+
+   Container Total Space:     524.3 MB (524288000 Bytes) (exactly 1024000 512-Byte-Units)
+   Container Free Space:      506.3 MB (506347520 Bytes) (exactly 988960 512-Byte-Units)
+   Allocation Block Size:     4096 Bytes
+
+   Media OS Use Only:         Yes
+   Media Read-Only:           No
+   Volume Read-Only:          No
+
+   Device Location:           Internal
+   Removable Media:           Fixed
+
+   Solid State:               Yes
+   Hardware AES Support:      Yes
+
+   This disk is an APFS Volume.  APFS Information:
+   APFS Container:            disk1
+   APFS Physical Store:       disk0s1
+   Fusion Drive:              No
+   Encrypted:                 No
+   FileVault:                 No
+   Sealed:                    No
+   Locked:                    No
+```
+</details>
+
+### disk1s3 (Hardware)
+
+<details>
+  <summary>APFS info</summary>
+```
+# diskutil info /dev/disk1s3
+   Device Identifier:         disk1s3
+   Device Node:               /dev/disk1s3
+   Whole:                     No
+   Part of Whole:             disk1
+
+   Volume Name:               Hardware
+   Mounted:                   Yes
+   Mount Point:               /System/Volumes/Hardware
+
+   Partition Type:            41504653-0000-11AA-AA11-00306543ECAC
+   File System Personality:   APFS
+   Type (Bundle):             apfs
+   Name (User Visible):       APFS
+   Owners:                    Enabled
+
+   OS Can Be Installed:       No
+   Booter Disk:               disk1s1
+   Recovery Disk:             disk1s4
+   Media Type:                Generic
+   Protocol:                  Apple Fabric
+   SMART Status:              Verified
+   Volume UUID:               6ED3C985-5971-4874-ABCA-841BB76CC6E5
+   Disk / Partition UUID:     6ED3C985-5971-4874-ABCA-841BB76CC6E5
+
+   Disk Size:                 524.3 MB (524288000 Bytes) (exactly 1024000 512-Byte-Units)
+   Device Block Size:         4096 Bytes
+
+   Container Total Space:     524.3 MB (524288000 Bytes) (exactly 1024000 512-Byte-Units)
+   Container Free Space:      506.3 MB (506347520 Bytes) (exactly 988960 512-Byte-Units)
+   Allocation Block Size:     4096 Bytes
+
+   Media OS Use Only:         Yes
+   Media Read-Only:           No
+   Volume Read-Only:          No
+
+   Device Location:           Internal
+   Removable Media:           Fixed
+
+   Solid State:               Yes
+   Hardware AES Support:      Yes
+
+   This disk is an APFS Volume.  APFS Information:
+   APFS Container:            disk1
+   APFS Physical Store:       disk0s1
+   Fusion Drive:              No
+   Encrypted:                 No
+   FileVault:                 No
+   Sealed:                    No
+   Locked:                    No
+```
+</details>
+
+### disk1s4 (Recovery)
+
+<details>
+  <summary>APFS info</summary>
+```
+# diskutil info /dev/disk1s4
+   Device Identifier:         disk1s4
+   Device Node:               /dev/disk1s4
+   Whole:                     No
+   Part of Whole:             disk1
+
+   Volume Name:               Recovery
+   Mounted:                   No
+
+   Partition Type:            41504653-0000-11AA-AA11-00306543ECAC
+   File System Personality:   APFS
+   Type (Bundle):             apfs
+   Name (User Visible):       APFS
+   Owners:                    Disabled
+
+   OS Can Be Installed:       No
+   Booter Disk:               disk1s1
+   Recovery Disk:             disk1s4
+   Media Type:                Generic
+   Protocol:                  Apple Fabric
+   SMART Status:              Verified
+   Volume UUID:               6A900409-C5A5-47CC-84AA-F0FE24E0D629
+   Disk / Partition UUID:     6A900409-C5A5-47CC-84AA-F0FE24E0D629
+
+   Disk Size:                 524.3 MB (524288000 Bytes) (exactly 1024000 512-Byte-Units)
+   Device Block Size:         4096 Bytes
+
+   Container Total Space:     524.3 MB (524288000 Bytes) (exactly 1024000 512-Byte-Units)
+   Container Free Space:      506.3 MB (506347520 Bytes) (exactly 988960 512-Byte-Units)
+
+   Media OS Use Only:         Yes
+   Media Read-Only:           No
+   Volume Read-Only:          Not applicable (not mounted)
+
+   Device Location:           Internal
+   Removable Media:           Fixed
+
+   Solid State:               Yes
+   Hardware AES Support:      Yes
+
+   This disk is an APFS Volume.  APFS Information:
+   APFS Container:            disk1
+   APFS Physical Store:       disk0s1
+   Fusion Drive:              No
+   Encrypted:                 No
+   FileVault:                 No
+   Sealed:                    No
+   Locked:                    No
+```
+</details>
 
 ## disk0s2 / disk3: macOS Container
 
@@ -90,6 +326,8 @@ This is the main macOS partition.
 
 (note: this output is after the root volume seal has been broken)
 
+<details>
+  <summary>APFS dump</summary>
 ```
 # diskutil apfs list /dev/disk3
 |
@@ -155,6 +393,7 @@ This is the main macOS partition.
         Sealed:                    No
         FileVault:                 No
 ```
+</details>
 
 ### Macintosh HD
 
@@ -166,6 +405,8 @@ The snapshot is normally /dev/disk3s1s1, and this is mounted read-only on /. The
 
 This is the main recovery partition, containing 1TR.
 
+<details>
+  <summary>APFS dump</summary>
 ```
 # diskutil apfs list /dev/disk5
 |
@@ -190,3 +431,6 @@ This is the main recovery partition, containing 1TR.
         Sealed:                    No
         FileVault:                 No
 ```
+</details>
+
+There may be a second volume 
