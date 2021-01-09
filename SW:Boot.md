@@ -32,6 +32,10 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `auxr`: SHA384: Kernel extension recept hash
   - `coih`: SHA384: "CustomKC or fuOS" IMG4 hash - possibly related to running own kernels
 
+  And optionally the following linked manifests, each located at `/<volume-uuid>/LocalPolicy/<policy-hash>.<id>.im4m`
+  - `auxk`: CustomKC/kcOS manifest
+  - `fuos`: CustomOS/fuOS manifest
+
 * The boot directory is now located at the target partition Preboot subvolume, at path `/<volume-uuid>/boot/<local-policy.metadata.nsih>`;
 * It then somehow decrypts and executes `<boot-dir>/usr/standalone/firmware/iBoot.img4` with the device tree and other firmware files in the same directory. No evidence towards other metadata descriptors yet.
 
