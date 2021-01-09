@@ -168,7 +168,20 @@ This is the first partition on a standard layout. It is hidden from `diskutil` b
 
 Mountpoint: `/System/Volumes/iSCPreboot`
 
+This contains files used directly by the system firmware iBoot.
 
+Files:
+
+* /(uuid)/ - one each for OS installation, and each version of 1TR
+    * LocalPolicy/ - Boot policies
+        * (long hash).img4 - Local boot policy for an OS install
+        * (long hash).recovery.img4 - Local boot policy for a 1TR
+* SFR/current/ - info for the current version of SFR
+    * apticket.der - AP ticket (?)
+    * RestoreVersion.plist
+    * SystemVersion.plist
+    * sep-firmware.img4 - SEP firmware, not always present (did they run out of space in NOR and stash it here?)
+* SFR/fallback/ - info for the current version of SFR (same as above)
 
 ### disk1s2 (xART)
 
@@ -229,6 +242,10 @@ Mountpoint: `/System/Volumes/iSCPreboot`
 ```
 </details>
 
+Mountpoint: `/System/Volumes/xarts`
+
+This contains a single file (uuid).gl - SEP storage. `xartutil` can be used to manage this.
+
 ### disk1s3 (Hardware)
 
 <details>
@@ -288,6 +305,15 @@ Mountpoint: `/System/Volumes/iSCPreboot`
 ```
 </details>
 
+Mountpoint: `/System/Volumes/Hardware`
+
+Hardware related information and logs
+
+* /recoverylogd/ - recovery logs
+* FactoryData/ - AP ticket, device personalization information
+* srvo/ - sensor related stuff?
+* MobileActivation/ - activation related data
+
 ### disk1s4 (Recovery)
 
 <details>
@@ -345,9 +371,9 @@ Mountpoint: `/System/Volumes/iSCPreboot`
 ```
 </details>
 
-## disk0s2 / disk3: macOS Container
+Empty.
 
-This is the main macOS partition.
+## disk0s2 / disk3: macOS Container
 
 (note: this output is after the root volume seal has been broken)
 
@@ -416,6 +442,8 @@ This is the main macOS partition.
 ```
 </details>
 
+This is the main macOS container for an OS install. 
+
 There is a hidden *Update* volume (disk3s4)
 
 ### disk3s1 (Macintosh HD)
@@ -478,6 +506,8 @@ There is a hidden *Update* volume (disk3s4)
    Locked:                    No
 ```
 </details>
+
+
 
 This is the main APFS volume containing the OS root. It uses snapshots to allow for atomic updates and sealing (analogous to dm-verity) to guarantee OS integrity. This can be disabled, but currently it is not possible to mount the root filesystem as read-write. Modifications can be made by mounting the main partition, making changes, creating a new snapshot and blessing it.
 
@@ -565,6 +595,8 @@ This is part of an APFS volume group with the Data volume. At runtime, they are 
 ```
 </details>
 
+Mountpoint: /System/Volumes/Preboot
+
 This partition contains boot-related data, including the kernel. The only directory at the root is named after the APFS `Data` volume UUID / volume group UUID.
 
 Files look like:
@@ -576,10 +608,8 @@ Files look like:
         * active - file containing the long hash below
         * (long hash)/
             * usr/standalone/firmware
-                * arm64eBaseSystem.dmg - rootfs ramdisk image
                 * iBoot.img4 - iBoot2 (OS loader)
                 * base_system_root_hash.img4, root_hash.img4 - related to sealing
-                * sep-firmware.img4 - SEP firmware
                 * FUD/ - firmwares loaded by iBoot
                 * devicetree.img4 - devicetree
             * System/Library/Caches/com.apple.kernelcaches/
@@ -655,6 +685,7 @@ OS recovery partition. Roughly the same layout/contents as 1TR below.
 
 <details>
   <summary>diskutil info/summary>
+
 ```
 # diskutil info /dev/disk3s4
    Device Identifier:         disk3s4
@@ -772,7 +803,9 @@ This contains temporary files for the OS updater, and logs.
 ```
 </details>
 
-The main user data partition, mounted as the root filesystem. This is merged with the OS image via firmlinks.
+Mountpoint: /System/Volumes/Data
+
+The main user data partition, which is overlaid on top of the OS root with firmlinks.
 
 
 ### disk3s6 (VM)
@@ -932,7 +965,7 @@ Files look like:
 
 * /(unknown UUID)/boot/(long hash)/
     * usr/standalone/firmware
-        * arm64eBaseSystem.dmg - rootfs ramdisk image
+        * arm64eBaseSystem.dmg - rootfs ramdisk image (GPT disk image with a single APFS container with a single volume)
         * iBoot.img4 - iBoot2 (OS loader)
         * base_system_root_hash.img4, root_hash.img4 - related to sealing
         * sep-firmware.img4 - SEP firmware
@@ -941,6 +974,8 @@ Files look like:
     * System/Library/Caches/com.apple.kernelcaches/
         * kernelcache - Darwin kernelcache
 
+When 1TR is loaded, this partition apparently gets copied wholesale to a tmpfs, and then the arm64eBaseSystem.dmg is attached
+        
 ## disk2s2: Update
 
 <details>
