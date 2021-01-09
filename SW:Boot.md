@@ -25,7 +25,7 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `smb4`: bool?: MDM device enrollment program disabled
   - `sip0`: u16: SIP customized
   - `sip1`: bool: Signed system volume (`csrutil authenticated-boot`) disabled
-  - `sip2`: bool: CTRR ([coprocessor text region read-only?](https://googleprojectzero.blogspot.com/2020/07/one-byte-to-rule-them-all.html)) disabled
+  - `sip2`: bool: CTRR ([configurable text region read-only](https://keith.github.io/xcode-man-pages/bputil.1.html)) disabled
   - `sip3`: bool: `boot-args` filtering disabled
   - `auxp`: SHA384: User-authorized kernel extensions hash
   - `auxi`: SHA384: User-authorized kernel cache IMG4 hash
