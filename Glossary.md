@@ -10,6 +10,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### A
 * **AGX**: The internal name for Apple's GPU series.
 * **AIC**: Apple Interrupt Controller. Apple's custom ARM interrupt controller, because the standard GIC was too standard for Apple.
+* **AP**: Application Processor. The main CPU running most of the OS. Contrast to SEP.
 * **APFS**: Apple File System. Apple's new container and volume oriented "modern" filesystem, think ZFS and btrfs.
 * **APFS Container**: a physical partition on a disk that can itself contain multiple filesystems (volumes), all dynamically sharing space.
 * **APFS Snapshot**: a read-only copy-on-write snapshot of an APFS volume.
@@ -60,7 +61,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### S
 * **SBU**: Sideband Use. Two pins on Type C connectors free to be used for random stuff, not defined by the Type C standard itself.
 * **SecureROM**: The BootROM of the M1. This is in charge of reading SFR from NOR and passing control to it, or falling back to DFU mode.
-* **SEP**: Secure Enclave Processor. The M1's built-in HSM/TPM/etc device. Handles Touch ID and most crypto, as well as boot policy decisions. Harmless to Linux, but we can use its features if we want to.
+* **SEP**: Secure Enclave Processor. The M1's built-in HSM/TPM/etc device. Handles Touch ID and most crypto, as well as boot policy decisions. Harmless to Linux, but we can use its features if we want to. Contrast to AP.
 * **SFR**: System Firmware, the portion of firmware stored in NOR flash. This includes the first stage of iBoot, which will boot the second stage from the OS partition.
 * **SIP**: System Integrity Protection. Also called "rootless", where the macOS kernel stops even root from doing some things.
 * **SOP**: Start Of Packet. Used to differentiate packet types in USB-PD. SOP for normal comms, SOP' and SOP" to talk to built-in chips in a cable, SOP'DEBUG and SOP"DEBUG for custom vendor specific things like Apple VDMs.
