@@ -16,6 +16,10 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `lpnh`: SHA384: Local policy nonce hash
   - `rpnh`: SHA384: Remote policy nonce hash
   - `nsih`: SHA384: Next-stage IMG4 hash
+  - `coih`: SHA384: kcOS (custom kernelcache) or fuOS (custom OS) IMG4 hash
+  - `auxp`: SHA384: Auxiliary user-authorized kernel extensions hash
+  - `auxi`: SHA384: Auxiliary kernel cache IMG4 hash
+  - `auxr`: SHA384: Auxiliary kernel extension recept hash
   - `prot`: SHA384
   - `lobo`: bool
   - `smb0`: bool: Permissive security enabled, bit 0
@@ -27,10 +31,6 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `sip1`: bool: Signed system volume (`csrutil authenticated-boot`) disabled
   - `sip2`: bool: CTRR ([configurable text region read-only](https://keith.github.io/xcode-man-pages/bputil.1.html)) disabled
   - `sip3`: bool: `boot-args` filtering disabled
-  - `auxp`: SHA384: User-authorized kernel extensions hash
-  - `auxi`: SHA384: User-authorized kernel cache IMG4 hash
-  - `auxr`: SHA384: Kernel extension recept hash
-  - `coih`: SHA384: kcOS (custom kernelcache) or fuOS (custom OS) IMG4 hash
 
   And optionally the following linked manifests, each located at `/<volume-uuid>/LocalPolicy/<policy-hash>.<id>.im4m`
   - `auxk`: kcOS manifest
