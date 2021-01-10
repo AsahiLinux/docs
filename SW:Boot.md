@@ -6,7 +6,7 @@ This stage is located in the BootROM. Among others, it loads and executes stage 
 
 This stage is the primary early loader, located in the on-board NOR. This boot stage very roughly goes as follows, given a target partition to boot from:
 
-* Get the volume group UUID, so far seen as the UUID of the target partition Data subvolume;
+* Get the volume group UUID (`diskutil apfs listVolumeGroups diskX`)
 * Get the local policy hash:
   - First try the local proposed hash (SEP command 11);
   - If that is not available, get the local blessed hash (SEP command 14)
