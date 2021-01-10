@@ -5,6 +5,10 @@ These are just some references for people to build some background knowledge int
 
 [The T2 Development Blog](https://blog.t8012.dev/ace-part-1/)
 
+[Apple Silicon DFU Restore guide](https://support.apple.com/no-no/guide/apple-configurator-2/apdd5f3c75ad/mac)
+
+[arm Architecture Reference Manual (Armv8-A v8.6)](https://documentation-service.arm.com/static/5fa3bd1eb209f547eebd4141?token=) & [Errata](https://documentation-service.arm.com/static/5fc8ec531c8c5d708d2a336e?token=)
+
 [Rod Smiths Blog](https://www.rodsbooks.com/refind/) (More about the former UEFI mode used on Intel Macs but added for some historical context)
 
 
