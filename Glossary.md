@@ -55,7 +55,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### R
 * **RecoveryOS:** The recovery environment, either the 1TR located on the internal disk, or a recovery environment associated with any particular macOS install, located inside an APFS subvolume.
-* **RestoreOS:** The restore environment, speculated to be used when "reviving" a device through DFU mode.
+* **RestoreOS:** The restore environment, loaded onto the device when "reviving" it through DFU mode by Apple Configurator. [[more info]](https://www.theiphonewiki.com/wiki/Restore_Ramdisk)
 
 ### S
 * **SBU**: Sideband Use. Two pins on Type C connectors free to be used for random stuff, not defined by the Type C standard itself.
