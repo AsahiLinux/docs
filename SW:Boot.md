@@ -48,3 +48,18 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
 # Stage 2 (iBoot2)
 
 This stage is the OS-level loader, located inside the OS partition and shipped as part of macOS. It loads the rest of the system.
+
+# Modes
+
+Once booted, the AP can be in one of several boot modes, as confirmed by the SEP:
+
+|  ID | Name                                      |
+|----:|-------------------------------------------|
+|   0 | macOS                                     |
+|   1 | 1TR ("system/one true" recoveryOS)        |
+|   2 | recoveryOS ("paired/ordinary" recoveryOS) |
+|   3 | kcOS                                      |
+|   4 | restoreOS                                 |
+| 255 | unknown                                   |
+
+The SEP only allows execution of certain commands (such as editing the boot policy) in 1TR, or it will fail with error 11, "AP boot mode".
