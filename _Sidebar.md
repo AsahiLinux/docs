@@ -10,3 +10,5 @@ Places to start:
 
 Documentation:
 * [[HW:USB-PD]]
+* [[SW:Boot]]
+* [[SW:Storage]]
