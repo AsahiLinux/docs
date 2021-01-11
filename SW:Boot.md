@@ -1,6 +1,6 @@
-# Stage 0
+# Stage 0 (SecureROM)
 
-This stage is located in the BootROM. Among others, it loads and executes stage 1 from NOR.
+This stage is located in the boot ROM. Among others, it verifies, loads and executes stage 1 from NOR.
 
 # Stage 1 (LLB)
 
