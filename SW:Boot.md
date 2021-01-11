@@ -2,9 +2,9 @@ Apple Silicon devices seem to follow a boot flow very similar to modern iOS devi
 
 # Stage 0 (SecureROM)
 
-This stage is located in the boot ROM. Among others, it verifies, loads and executes normal stage 1 from NOR. If this fails, it falls back to DFU mode.
+This stage is located in the boot ROM. Among others, it verifies, loads and executes normal stage 1 from NOR. If this fails, it falls back to DFU and wait for an iBSS loader to be sent, before continuing with the DFU flow at stage 1.
 
-# Normal boot
+# Normal flow
 
 ## Stage 1 (LLB)
 
@@ -49,11 +49,13 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
 
   - ...
 
+If it fails at any point during this, it will either error out or fall back to DFU, waiting for an iBEC loader to be sent, before continuing with the DFU flow at stage 2.
+
 ## Stage 2 (iBoot)
 
 This stage is the OS-level loader, located inside the OS partition and shipped as part of macOS. It loads the rest of the system.
 
-# DFU  boot
+# DFU flow
 
 ## Stage 1 (iBSS)
 
