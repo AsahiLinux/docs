@@ -36,6 +36,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### I
 * **I²C**: Inter-Integrated Circuit. A 2-wire standard for communicating at low speed between chips on a board.
+* **iBoot**: Apple's bootloader. Located in NOR as LLB, and on the OS Preboot partition.
 * **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [[SW:Storage]])
 
 ### J
@@ -44,6 +45,9 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### K
 * **kcOS**: OS with a custom kernel cache.
 * **Kernel cache**: A bundle of the kernel and its extensions, optionally encrypted.
+
+### L
+* LLB: Low Level Bootloader. The first-stage iBoot located in NOR, loaded by the SecureROM. It chainloads the second-stage iBoot on the OS Preboot partition.
 
 ### M
 * **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such a switching one set of pins between USB, UART, and SWD modes.
