@@ -2,7 +2,7 @@
 
 This stage is located in the BootROM. Among others, it loads and executes stage 1 from NOR.
 
-# Stage 1 (iBoot1)
+# Stage 1 (LLB)
 
 This stage is the primary early loader, located in the on-board NOR. This boot stage very roughly goes as follows, given a target partition to boot from:
 
@@ -45,7 +45,7 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
 
   - ...
 
-# Stage 2 (iBoot2)
+# Stage 2 (iBoot)
 
 This stage is the OS-level loader, located inside the OS partition and shipped as part of macOS. It loads the rest of the system.
 
