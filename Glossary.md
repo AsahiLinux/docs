@@ -36,7 +36,9 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### I
 * **I²C**: Inter-Integrated Circuit. A 2-wire standard for communicating at low speed between chips on a board.
-* **iBoot**: Apple's bootloader. Located in NOR as LLB, and on the OS Preboot partition.
+* **iBoot**: Apple's bootloader. Can refer to the specific second-stage loader on the OS Preboot partition, or to the LLB, iBSS or iBEC.
+* **iBSS**: iBoot Single Stage. Replacement for the first-stage iBoot (LLB), loaded in the DFU boot flow when the NOR is corrupted.
+* **iBEC**: iBoot Epoch Change. Replacement for the second-stage iBoot, loaded in the DFU boot flow.
 * **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [[SW:Storage]])
 
 ### J
