@@ -183,6 +183,8 @@ Files:
     * sep-firmware.img4 - SEP firmware, not always present
 * SFR/fallback/ - info for the previous version of SFR (same structure as above)
 
+When an OS from external media is booted via 1TR, its boot files (everything under <Preboot>/(uuid)/boot) are copied from the Preboot volume to this partition under the same path. This is how Apple Silicon macs can "boot" from external media, even though iBoot itself cannot.
+
 ### disk1s2 (xART)
 
 <details>
