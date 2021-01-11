@@ -59,6 +59,8 @@ This stage is the OS-level loader, located inside the OS partition and shipped a
 
 ## Stage 1 (iBSS)
 
+This stage is sent to the device by the "reviving" host. It bootstraps, verifies and runs the second stage, iBEC.
+
 ## Stage 2 (iBEC)
 
 # Modes
