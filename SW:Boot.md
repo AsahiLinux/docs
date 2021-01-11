@@ -1,8 +1,12 @@
+Apple Silicon devices seem to follow a boot flow very similar to modern iOS devices.
+
 # Stage 0 (SecureROM)
 
-This stage is located in the boot ROM. Among others, it verifies, loads and executes stage 1 from NOR.
+This stage is located in the boot ROM. Among others, it verifies, loads and executes normal stage 1 from NOR. If this fails, it falls back to DFU mode.
 
-# Stage 1 (LLB)
+# Normal boot
+
+## Stage 1 (LLB)
 
 This stage is the primary early loader, located in the on-board NOR. This boot stage very roughly goes as follows, given a target partition to boot from:
 
@@ -45,9 +49,15 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
 
   - ...
 
-# Stage 2 (iBoot)
+## Stage 2 (iBoot)
 
 This stage is the OS-level loader, located inside the OS partition and shipped as part of macOS. It loads the rest of the system.
+
+# DFU  boot
+
+## Stage 1 (iBSS)
+
+## Stage 2 (iBEC)
 
 # Modes
 
