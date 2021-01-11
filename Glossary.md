@@ -47,7 +47,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **Kernel cache**: A bundle of the kernel and its extensions, optionally encrypted.
 
 ### L
-* LLB: Low Level Bootloader. The first-stage iBoot located in NOR, loaded by the SecureROM. It chainloads the second-stage iBoot on the OS Preboot partition.
+* **LLB**: Low Level Bootloader. The first-stage iBoot located in NOR, loaded by the SecureROM. It chainloads the second-stage iBoot on the OS Preboot partition.
 
 ### M
 * **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such a switching one set of pins between USB, UART, and SWD modes.
