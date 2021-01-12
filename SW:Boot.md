@@ -8,13 +8,13 @@ This stage is located in the boot ROM. Among others, it verifies, loads and exec
 
 ## Stage 1 (LLB)
 
-This stage is the primary early loader, located in the on-board NOR. This boot stage very roughly goes as follows, given a target partition to boot from:
+This stage is the primary early loader, located in the on-board NOR. This boot stage very roughly goes as follows:
 
-* Get the volume group UUID (`diskutil apfs listVolumeGroups diskX`)
+* Read the `boot-volume` variable from NVRAM: its format is `<gpt-partition-type-uuid>:<gpt-partition-uuid>:<volume-group-uuid>`. Other related variables seem to be `update-volume` and `upgrade-boot-volume`, possibly selected by metadata inside the `boot-info-payload` variable;
 * Get the local policy hash:
   - First try the local proposed hash (SEP command 11);
   - If that is not available, get the local blessed hash (SEP command 14)
-* Read the local boot policy, located on the iSCPreboot partition at `/<volume-uuid>/LocalPolicy/<policy-hash>.img4`. This boot policy has the following specific metadata keys:
+* Read the local boot policy, located on the iSCPreboot partition at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.img4`. This boot policy has the following specific metadata keys:
   - `vuid`: UUID: Volume group UUID - same as above
   - `kuid`: UUID: KEK group UUID
   - `lpnh`: SHA384: Local policy nonce hash
@@ -36,7 +36,7 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `sip2`: bool: CTRR ([configurable text region read-only](https://keith.github.io/xcode-man-pages/bputil.1.html)) disabled
   - `sip3`: bool: `boot-args` filtering disabled
 
-  And optionally the following linked manifests, each located at `/<volume-uuid>/LocalPolicy/<policy-hash>.<id>.im4m`
+  And optionally the following linked manifests, each located at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.<id>.im4m`
   - `auxk`: kcOS manifest
   - `fuos`: fuOS manifest
 
