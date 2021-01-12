@@ -6,7 +6,8 @@ RE notes trying to send it random stuff:
 
 ```
 First 3 bytes are ignored? Fourth byte matters.
-First 4 bytes are echoed at the beginning of replies
+First 5 bytes are echoed at the beginning of replies
+Replies seem to follow a uniform format
 
 > 00000000 000c8000 00000000 00000000
              OOLL
