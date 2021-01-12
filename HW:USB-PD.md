@@ -175,6 +175,8 @@ This needs a 0x8001 argument (taken from the get action info reply). It only wor
 
 This mode is special. On the Mac Mini, a hard shutdown normally disables PD communications and UFP mode (Rd open). However, a hard shutdown from this mode (e.g. holding down the power button) will power down the machine while PD communications remain active. The machine can also be rebooted via 105 into normal mode, and again PD is not reset and existing modes remain active. This can be used to maintain debug connectivity through a machine reset.
 
+FIXME: or maybe it's just the persist bit in the header. Needs more tests.
+
 ### 306: Debug UART
 
 Pin order: TX, RX
