@@ -124,10 +124,12 @@ In this case action 306 is mapped to pin set 2 (the third pin set).
 
 From 2020 Mac Mini (M1):
 
-* 0: Top-side D+/D- (USB2 data pair)
-* 1: Bottom-side D+/D- (USB2 data pair). These are not bridged host-side and can bring out different signals, which is a feature unique to debug ports. Cables only have one pair!
+* 0: Secondary D+/D- (USB2 data pair on VCONN side of connector)
+* 1: Primary D+/D- (USB2 data pair on CC side of connector). These are not bridged host-side and can bring out different signals, which is a feature unique to debug ports. Cables only have one pair on the CC side!
 * 2: SBU1/SBU2
 * 3-6: unknown (SSTX/SSRX pairs?)
+
+The pins are automatically adjusted for connector orientation at the Mac side, so the pins will always be the same from the cable side. The device on the other end is responsible for adjusting for orientation on that end.
 
 ## Actions
 
@@ -175,7 +177,7 @@ This mode is special. On the Mac Mini, a hard shutdown normally disables PD comm
 
 ### 306: Debug UART
 
-This can be mapped to pin sets 0-2 (D+/D- top, bottom, or SBU1/2). The UART uses 1.2V voltage levels.
+This can be mapped to pin sets 0-2 (D+/D- B, D+/D- A, or SBU1/2). The UART uses 1.2V voltage levels.
 
 ```
 5AC8012,840306
@@ -185,3 +187,20 @@ This can be mapped to pin sets 0-2 (D+/D- top, bottom, or SBU1/2). The UART uses
 ```
 
 SBU1 is TX and SBU2 is RX, orientation-aware (for CC=CC2 they are flipped). In other words, the SBU pin on the same side of the connector (A or B) as your CC pin is TX.
+
+### 606: DFU USB
+
+This is automatically mapped to pin set 1 (D+/D- primary) in DFU mode, but can be moved.
+
+To move DFU to the other D+/D- set:
+```
+5AC8012,2020606
+>VDM(D) 5AC8012 2020606
+<VDM RX SOP"DEBUG (5) [5E4F] 5AC8052 44400000 0 0 0
+5AC8012,810606
+>VDM(D) 5AC8012 810606
+<VDM RX SOP"DEBUG (5) [504F] 5AC8052 44430606 0 0 0
+(DFU is now on secondary D+/D- pair (pin set 0))
+```
+
+### 
