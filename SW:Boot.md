@@ -24,10 +24,10 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `auxp`: SHA384: Auxiliary user-authorized kernel extensions hash
   - `auxi`: SHA384: Auxiliary kernel cache IMG4 hash
   - `auxr`: SHA384: Auxiliary kernel extension recept hash
-  - `prot`: SHA384
-  - `lobo`: bool
-  - `smb0`: bool: Permissive security enabled, bit 0
-  - `smb1`: bool: Permissive security enabled, bit 1
+  - `prot`: SHA384: Paired Recovery manifest hash
+  - `lobo`: bool: Local boot policy
+  - `smb0`: bool: Reduced security enabled
+  - `smb1`: bool: Permissive security enabled
   - `smb2`: bool: Third-party kernel extensions enabled
   - `smb3`: bool: Manual mobile device management (MDM) enrollment
   - `smb4`: bool?: MDM device enrollment program disabled
@@ -37,7 +37,7 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `sip3`: bool: `boot-args` filtering disabled
 
   And optionally the following linked manifests, each located at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.<id>.im4m`
-  - `auxk`: kcOS manifest
+  - `auxk`: auxK manifest
   - `fuos`: fuOS manifest
 
 * If loading the next stage:
