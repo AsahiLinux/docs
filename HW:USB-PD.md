@@ -173,7 +173,7 @@ This needs a 0x8001 argument (taken from the get action info reply). It only wor
 (device reboots in DFU mode, no PD renegotiation occurs)
 ```
 
-This mode is special. On the Mac Mini, a hard shutdown normally disables PD communications and UFP mode (Rd open). However, a hard shutdown from this mode (e.g. holding down the power button) will power down the machine while PD communications remain active.
+This mode is special. On the Mac Mini, a hard shutdown normally disables PD communications and UFP mode (Rd open). However, a hard shutdown from this mode (e.g. holding down the power button) will power down the machine while PD communications remain active. The machine can also be rebooted via 105 into normal mode, and again PD is not reset and existing modes remain active. This can be used to maintain debug connectivity through a machine reset.
 
 ### 306: Debug UART
 
@@ -202,5 +202,12 @@ To move DFU to the other D+/D- set:
 <VDM RX SOP"DEBUG (5) [504F] 5AC8052 44430606 0 0 0
 (DFU is now on secondary D+/D- pair (pin set 0))
 ```
+
+### 4606: Some GPIOs?
+
+Exposes a pair of 3.3V I/Os. One of the pins is high, the other low. When powering down from DFU mode, or when re-powering back into DFU mode (via 106), the high pin momentarily goes low. The pins are weak (can sink/source ~3mA max, 1kΩ equivalent resistance) but do not seem to respond to being driven externally. Holding these pins against their idle state during normal boot seems to have no effect.
+
+
+
 
 ### 
