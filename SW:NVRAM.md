@@ -2,7 +2,7 @@
 
 * `string`: A standard string.
 * `bin-string`: A URL-encoded string containing binary data.
-* `bool`: A string with value of either `true` or `false`.
+* `boolean`: A string with value of either `true` or `false`.
 * `int`: A decimal integer.
 * `bin-int(n)`: A `bin-string`-encoded integer, little-endian, `n` bytes.
 * `hex-int`: A hexadecimal integer.
@@ -13,7 +13,7 @@
 
 ## Boot
 
-* `auto-boot`: `{true,false}`: Whether to automatically boot. Setting this to `false` on at least the Mac M1 mini causes a boot failure;
+* `auto-boot`: `boolean`: Whether to automatically boot. Setting this to `false` on at least the Mac M1 mini causes a boot failure;
 * `boot-args`: `string`: Boot arguments to pass to the kernel. Possibly filtered by the boot policy.
 * `boot-info-payload`: `bin-string`: Some kind of opaque, high-entropy payload.
 * `boot-note`: `bin-string`: Unknown. Example: `%00%00%00%00%00%00%00%bb%0ez%e5%00%00%00%00%a0q%d4%07%08%00%00%00`
