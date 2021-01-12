@@ -29,6 +29,7 @@
 * [ ] Thunderbolt
 * [ ] Camera
 * [ ] Wi-Fi
+* [ ] Bluetooth
 * [ ] Sound
   * [ ] 3.5mm jack
   * [ ] Built-in speaker(s)
