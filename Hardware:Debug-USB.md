@@ -10,7 +10,7 @@ First 5 bytes are echoed at the beginning of replies
 Replies seem to follow a uniform format
 
 > 00000000 000c8000 00000000 00000000
-             OOLL
+             OOLLLL
 
 Reads LL bytes (rounded to dword) starting from dword register OO.
 
