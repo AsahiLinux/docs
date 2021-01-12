@@ -21,19 +21,19 @@ Command replies use the request command ID | 0x40. The reply to command 0x10 is 
 
 Each port on a Mac may have different VDM support. Debug stuff is usually only supported on one port
 
-### 2020 Mac Mini (M1) - SOP'DEBUG
+### 2020 Mac Mini (M1)
 
 The leftmost port (closest to the power input) has all the debug stuff.
 
-### 2019 16" MacBook Pro (MacBookPro16,1 - Titan Ridge) - SOP''DEBUG
+### 2019 16" MacBook Pro (MacBookPro16,1 - Titan Ridge)
 
 The front and rear left ports each report 7 actions.  The rear right port reports 4 actions.  The front right port reports 3 actions.
 
-### 2019 13" MacBook Pro (MacBookPro15,2 - Titan Ridge) - SOP''DEBUG
+### 2019 13" MacBook Pro (MacBookPro15,2 - Titan Ridge)
 
 The front left port reports 8 actions.  The rear left port reports 5 actions.  The rear right port reports 4 actions.  The front right port reports 3 actions.
 
-### 2017 13" MacBook Pro (MacBookPro14,2 - Alpine Ridge) - SOP''DEBUG
+### 2017 13" MacBook Pro (MacBookPro14,2 - Alpine Ridge)
 
 The rear left port reports 4 actions.  The front left and front right ports each report 3 actions.  The rear right port reports 2 actions.
 
