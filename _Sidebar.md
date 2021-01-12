@@ -11,4 +11,5 @@ Places to start:
 Documentation:
 * [[HW:USB-PD]]
 * [[SW:Boot]]
+* [[SW:NVRAM]]
 * [[SW:Storage]]
