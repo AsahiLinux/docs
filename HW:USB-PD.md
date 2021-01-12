@@ -158,7 +158,7 @@ IRQ: VBUSOK (VBUS=OFF)
 (device reboots and PD renegotiates)
 ```
 
-### 106: DFU mode
+### 106: DFU / hold mode
 
 This needs a 0x8001 argument (taken from the get action info reply). It only works properly in DFP mode (Mac acting as UFP).
 
@@ -168,6 +168,8 @@ This needs a 0x8001 argument (taken from the get action info reply). It only wor
 <VDM RX SOP"DEBUG (5) [544F] 5AC8052 44740000 306 0 0
 (device reboots in DFU mode, no PD renegotiation occurs)
 ```
+
+This mode is special. On the Mac Mini, a hard shutdown normally disables PD communications and UFP mode (Rd open). However, a hard shutdown from this mode (e.g. holding down the power button) will power down the machine while PD communications remain active.
 
 ### 306: Debug UART
 
