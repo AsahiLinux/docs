@@ -37,8 +37,8 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `sip3`: bool: `boot-args` filtering disabled
 
   And optionally the following linked manifests, each located at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.<id>.im4m`
-  - `auxk`: auxK manifest
-  - `fuos`: fuOS manifest
+  - `auxk`: AuxKC (third party kext) manifest
+  - `fuos`: fuOS (custom kernekcache) manifest
 
 * If loading the next stage:
 
