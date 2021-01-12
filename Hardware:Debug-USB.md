@@ -12,7 +12,7 @@ Replies seem to follow a uniform format
 > 00000000 000c8000 00000000 00000000
              OOLLLL
 
-Reads LL bytes (rounded to dword) starting from dword register OO.
+Reads LLLL bytes (rounded to dword) starting from dword register OO.
 
 Returns:
 00000000 00000000 <u32:payload len> <data words>* <u32:data size> <u32:status=4?>
