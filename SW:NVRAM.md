@@ -17,7 +17,6 @@
 * `boot-info-payload`: `bin-string`: Some kind of opaque, high-entropy payload.
 * `boot-note`: `bin-string`: Unknown. Example: `%00%00%00%00%00%00%00%bb%0ez%e5%00%00%00%00%a0q%d4%07%08%00%00%00`
 * `boot-volume`: `volume`: Default boot volume.
-* `update-volume`: `volume`
 * `upgrade-boot-volume`: `volume`
 
 ## Updates
@@ -27,7 +26,8 @@
 * `ota-controllerVersion`: `string`: Over-the-air update controller identifier. Examples: `SUMacController-1.10` (Mac Mini M1), `SUS-1.0` (iPhone, iPad).
 * `ota-updateType`: `string`: Type of over-the-air updates to apply. Example: `incremental`.
 * `usbcfwflasherResult`: `string`: Example: `No errors`.
-　　　　　　　　　　　
+* `update-volume`: `volume`
+　　　　　　　　　
 ## Settings
 
 * `backlight-nits`: `hex-int`: Presumably the screen backlight strength. Mac Mini M1 example: `0x008c0000`.
