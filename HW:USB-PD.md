@@ -129,17 +129,44 @@ From 2020 Mac Mini (M1):
 
 ## Actions
 
+### 103: PD reset
+
+This needs a 0x8000 argument (taken from the get action info reply).
+
+```
+5AC8012,0103,80000000
+>VDM(D) 5AC8012 103 80000000
+Disconnect: cc1=0 cc2=0
+VBUS OFF
+Disconnected
+(PD renegotiation occurs)
+```
+
 ### 105: Reboot
 
 This needs a 0x8000 argument (taken from the get action info reply).
 
 ```
 5AC8012,0105,80000000
->VDM 5AC8012 105 80000000
-<VDM RX SOP'DEBUG (5) [524F] 5AC8052 44740000 306 0 0
+>VDM(D) 5AC8012 105 80000000
+<VDM RX SOP"DEBUG (5) [524F] 5AC8052 44740000 306 0 0
+Disconnect: cc1=0 cc2=0
+VBUS OFF
+Disconnected
+S: DISCONNECTED
 IRQ: VBUSOK (VBUS=OFF)
-State: DISCONNECTED
-(device reboots)
+(device reboots and PD renegotiates)
+```
+
+### 106: DFU mode
+
+This needs a 0x8001 argument (taken from the get action info reply). It only works properly in DFP mode (Mac acting as UFP).
+
+```
+5AC8012,0106,80010000
+>VDM(D) 5AC8012 106 80010000
+<VDM RX SOP"DEBUG (5) [544F] 5AC8052 44740000 306 0 0
+(device reboots in DFU mode, no PD renegotiation occurs)
 ```
 
 ### 306: Debug UART
