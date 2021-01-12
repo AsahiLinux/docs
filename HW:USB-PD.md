@@ -209,7 +209,7 @@ To move DFU to the other D+/D- set:
 
 ### 4606: Debug USB
 
-Interesting.
+Interesting. This is not main-CPU-driven, it enumerates even when the system is off (in persistent mode). It re-enumerates on power transitions.
 
 ```
 [277048.498917] usb 1-4.4.3: New USB device found, idVendor=05ac, idProduct=1881, bcdDevice= 1.20
