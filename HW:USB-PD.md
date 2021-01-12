@@ -6,7 +6,7 @@ Thanks to the t8012dev folks for providing info. See https://blog.t8012.dev/ace-
 
 You should reference the [USB-PD spec](https://www.usb.org/document-library/usb-power-delivery) for background information.
 
-Apple uses vendor-specific structured VDM messages with their USB ID (0x5AC), but they require messages to use the SOP'DEBUG or SOP''DEBUG packet start token (which is unused in the standard, and some controllers may not be able to do). The VDM header is of the form 0x5ac8000 | (command).
+Apple uses vendor-specific structured VDM messages with their USB ID (0x5AC), but they require messages to use the SOP'DEBUG (if originating from the UFP) or SOP''DEBUG (if originating from the DFP) packet start token (which is unused in the standard, and some controllers may not be able to do). The VDM header is of the form 0x5ac8000 | (command).
 
 The following commands are in hex-encoded comma-separated format for easy pasting into [vdmtool](https://github.com/AsahiLinux/vdmtool)'s serial console. The protocol makes heavy use of 16-bit data units, packed high to low in the 32-bit VDM words, and zero terminated.
 
