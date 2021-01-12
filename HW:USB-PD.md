@@ -124,9 +124,9 @@ In this case action 306 is mapped to pin set 2 (the third pin set).
 
 From 2020 Mac Mini (M1):
 
-* 0: Secondary D+/D- (USB2 data pair on VCONN side of connector)
-* 1: Primary D+/D- (USB2 data pair on CC side of connector). These are not bridged host-side and can bring out different signals, which is a feature unique to debug ports. Cables only have one pair on the CC side!
-* 2: SBU1/SBU2
+* 0: Secondary D+,D- (USB2 data pair on VCONN side of connector)
+* 1: Primary D+,D- (USB2 data pair on CC side of connector). These are not bridged host-side and can bring out different signals, which is a feature unique to debug ports. Cables only have one pair on the CC side!
+* 2: SBU1,SBU2
 * 3-6: unknown (SSTX/SSRX pairs?)
 
 The pins are automatically adjusted for connector orientation at the Mac side, so the pins will always be the same from the cable side. The device on the other end is responsible for adjusting for orientation on that end.
@@ -177,6 +177,8 @@ This mode is special. On the Mac Mini, a hard shutdown normally disables PD comm
 
 ### 306: Debug UART
 
+Pin order: TX, RX
+
 This can be mapped to pin sets 0-2 (D+/D- B, D+/D- A, or SBU1/2). The UART uses 1.2V voltage levels.
 
 ```
@@ -186,9 +188,11 @@ This can be mapped to pin sets 0-2 (D+/D- B, D+/D- A, or SBU1/2). The UART uses 
 (UART is now mapped to SBU1/2)
 ```
 
-SBU1 is TX and SBU2 is RX, orientation-aware (for CC=CC2 they are flipped). In other words, the SBU pin on the same side of the connector (A or B) as your CC pin is TX.
+pin 1 is TX and pin 2 is RX, orientation-aware (for CC=CC2 they are flipped). In other words, the SBU pin on the same side of the connector (A or B) as your CC pin is TX.
 
 ### 606: DFU USB
+
+Pin order: D+, D- (of course)
 
 This is automatically mapped to pin set 1 (D+/D- primary) in DFU mode, but can be moved.
 
@@ -203,11 +207,120 @@ To move DFU to the other D+/D- set:
 (DFU is now on secondary D+/D- pair (pin set 0))
 ```
 
-### 4606: Some GPIOs?
+### 4606: Debug USB
 
-Exposes a pair of 3.3V I/Os. One of the pins is high, the other low. When powering down from DFU mode, or when re-powering back into DFU mode (via 106), the high pin momentarily goes low. The pins are weak (can sink/source ~3mA max, 1kΩ equivalent resistance) but do not seem to respond to being driven externally. Holding these pins against their idle state during normal boot seems to have no effect.
+Interesting.
 
+```
+[277048.498917] usb 1-4.4.3: New USB device found, idVendor=05ac, idProduct=1881, bcdDevice= 1.20
+[277048.498920] usb 1-4.4.3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[277048.498921] usb 1-4.4.3: Product: Debug USB
+[277048.498921] usb 1-4.4.3: Manufacturer: Apple Inc.
+```
 
+<details>
+<summary>lsusb</summary>
 
+```
+Bus 001 Device 097: ID 05ac:1881 Apple, Inc. Debug USB
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass          255 Vendor Specific Class
+  bDeviceSubClass       255 Vendor Specific Subclass
+  bDeviceProtocol       255 Vendor Specific Protocol
+  bMaxPacketSize0        64
+  idVendor           0x05ac Apple, Inc.
+  idProduct          0x1881 
+  bcdDevice            1.20
+  iManufacturer           1 Apple Inc.
+  iProduct                2 Debug USB
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0027
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xc0
+      Self Powered
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           3
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass    255 Vendor Specific Subclass
+      bInterfaceProtocol    255 Vendor Specific Protocol
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x01  EP 1 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               4
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               4
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x82  EP 2 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               4
+Device Qualifier (for other device speed):
+  bLength                10
+  bDescriptorType         6
+  bcdUSB               2.00
+  bDeviceClass          255 Vendor Specific Class
+  bDeviceSubClass       255 Vendor Specific Subclass
+  bDeviceProtocol       255 Vendor Specific Protocol
+  bMaxPacketSize0        64
+  bNumConfigurations      1
+can't get debug descriptor: Resource temporarily unavailable
+Device Status:     0x0001
+  Self Powered
+```
+</details>
 
-### 
+### 0803: An I²C bus (3.3V)
+
+Pin order: SCL, SDA
+
+Device addresses seen (unshifted): 0x38, 0x3f
+
+It doesn't do anything interesting during normal boot, but does in macOS.
+
+Also, sometimes it just sends START 00 STOP (no ACK cycle) at slower speed (?)
+
+### 0809: Another I²C bus (3.3V)
+
+Pin order: SCL, SDA
+
+Device addresses seen (unshifted): 0x6b, 0x38, 0x3f, 
+
+### TBD
+
+* 0206    weak (30kΩ) pull to 1.2V, no reaction to gnd, no transitions
+* 0301    1.2V, one pin drives high, the other no drive. Another UART? high-z in DFU mode, no activity except high pin tracking power/boots.
+* 0303    Only maps to pinsets 1-2? Seems to be GND? No transitions seen. Unused UART mode?
