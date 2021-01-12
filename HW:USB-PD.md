@@ -321,6 +321,6 @@ Device addresses seen (unshifted): 0x6b, 0x38, 0x3f,
 
 ### TBD
 
-* 0206    weak (30kΩ) pull to 1.2V, no reaction to gnd, no transitions
+* 0206    weak (30kΩ) pull to 1.2V, no reaction to gnd, no transitions. Good chance this is SWD.
 * 0301    1.2V, one pin drives high, the other no drive. Another UART? high-z in DFU mode, no activity except high pin tracking power/boots.
 * 0303    Only maps to pinsets 1-2? Seems to be GND? No transitions seen. Unused UART mode?
