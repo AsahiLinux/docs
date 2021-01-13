@@ -20,7 +20,7 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - `lpnh`: SHA384: Local policy nonce hash
   - `rpnh`: SHA384: Remote policy nonce hash
   - `nsih`: SHA384: Next-stage IMG4 hash
-  - `coih`: SHA384: kcOS (custom kernelcache) or fuOS (custom OS) IMG4 hash
+  - `coih`: SHA384: fuOS (custom kernelcache) IMG4 hash
   - `auxp`: SHA384: Auxiliary user-authorized kernel extensions hash
   - `auxi`: SHA384: Auxiliary kernel cache IMG4 hash
   - `auxr`: SHA384: Auxiliary kernel extension recept hash
@@ -38,14 +38,14 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
 
   And optionally the following linked manifests, each located at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.<id>.im4m`
   - `auxk`: AuxKC (third party kext) manifest
-  - `fuos`: fuOS (custom kernekcache) manifest
+  - `fuos`: fuOS (custom kernelcache) manifest
 
 * If loading the next stage:
 
   - The boot directory is located at the target partition Preboot subvolume, at path `/<volume-uuid>/boot/<local-policy.metadata.nsih>`;
   - Decrypt, verify and execute `<boot-dir>/usr/standalone/firmware/iBoot.img4` with the device tree and other firmware files in the same directory. No evidence towards other metadata descriptors yet.
 
-* If loading a custom stage (kcOS/fuOS):
+* If loading a custom stage (fuOS):
 
   - ...
 
