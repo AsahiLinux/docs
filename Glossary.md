@@ -53,7 +53,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### M
 * **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such a switching one set of pins between USB, UART, and SWD modes.
-* **Mini** - Custom bootloader for internal investigation. May or may not support booting from SSD
+* **Mini** - Custom bootloader for internal investigation. May or may not support booting from SSD. This project uses a fork that's referred to as M1N1.
 
 ### N
 * **NAND**: Not-AND. A type of logic gate, but normally refers to a type of Flash memory, which is the one used on all modern high-capacity Flash-based storage such as SD cards and SSDs, but also comes in bare chips.
