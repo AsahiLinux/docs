@@ -39,6 +39,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **iBoot**: Apple's bootloader. Can refer to the specific second-stage loader on the OS Preboot partition, or to the LLB, iBSS or iBEC.
 * **iBSS**: iBoot Single Stage. Replacement for the first-stage iBoot (LLB), loaded in the DFU boot flow when the NOR is corrupted.
 * **iBEC**: iBoot Epoch Change. Replacement for the second-stage iBoot, loaded in the DFU boot flow.
+* **IPI**: Inter-processor interupt. An interrupt used by one processor to interrupt another.
 * **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [[SW:Storage]])
 
 ### J
