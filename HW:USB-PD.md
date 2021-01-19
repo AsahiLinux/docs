@@ -23,6 +23,10 @@ Command replies use the request command ID | 0x40. The reply to command 0x10 is 
 
 Each port on a Mac may have different VDM support. Debug stuff is usually only supported on one port
 
+### 2020 MacBook Air (M1)
+
+The port closest to the edge has all debug stuff.
+
 ### 2020 Mac Mini (M1)
 
 The leftmost port (closest to the power input) has all the debug stuff.
