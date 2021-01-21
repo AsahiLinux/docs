@@ -11,7 +11,7 @@ These are just some references for people to build some background knowledge int
 
 [Rod Smiths Blog](https://www.rodsbooks.com/refind/) (More about the former UEFI mode used on Intel Macs but added for some historical context)
 
-
+[S3C2400 datasheet download link](https://www.digchip.com/datasheets/parts/datasheet/409/S3C2400-pdf.php) for samsung serial hardware 
 ### Social Media
 
 [Hector Martin](https://twitter.com/marcan42) (Asahi Linux Lead)
