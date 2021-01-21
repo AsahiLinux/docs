@@ -59,9 +59,6 @@ HW irq flow:
 There are 11 targets? CPUs 0-7 and some auxiliary ones?
         
 Bits set in SW_GEN are ORed with the hardware IRQ lines
-        
-serial IRQ?: `000000023b104220 a0000000 00000000 00400000`
-
 
 ## Timer
 
