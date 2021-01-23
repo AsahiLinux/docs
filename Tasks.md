@@ -11,12 +11,12 @@
 
 ## Kernel bring-up
 
-* [ ] Create an initial devicetree for Linux to use
-* [ ] Add support for AIC to the kernel
-* [ ] Test initial kernel booting
+* [x] Create an initial devicetree for Linux to use
+* [x] Add support for AIC to the kernel
+* [x] Test initial kernel booting
 
 ## Drivers
-* [ ] UART
+* [x] UART
 * [ ] USB
   * [ ] USB2
   * [ ] USB3
