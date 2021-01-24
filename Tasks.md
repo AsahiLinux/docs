@@ -6,8 +6,27 @@
 
 * [x] Enable UART on Type-C ports - see [[HW:USB-PD]] and [vdmtool](https://github.com/AsahiLinux/vdmtool).
 * [x] Test code execution
-* [x] Build a UART-based RPC/loader tool
-* [ ] Build a USB device (dwcusb)-based RPC/loader tool
+* [x] Build a UART-based RPC/loader tool (m1n1)
+
+## Bootloader (m1n1)
+* [x] FB/Logo
+* [ ] MMU
+* [ ] Text console
+* [ ] USB device (dwc3)
+* [x] Decompression
+* [ ] SMP spin-up
+* [ ] Handle CPU chicken bits
+* [x] ADT parsing
+* [ ] Linux kernel booting
+  * [ ] UP
+  * [ ] SMP
+  * [ ] FDT modification
+  * [ ] Initramfs support
+* [ ] Storage driver
+* [ ] Filesystems
+* [ ] Config file
+* [ ] Boot / kernel selection menu
+
 
 ## Kernel bring-up
 
