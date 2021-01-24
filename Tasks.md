@@ -5,8 +5,8 @@
 ## Early bring-up
 
 * [x] Enable UART on Type-C ports - see [[HW:USB-PD]] and [vdmtool](https://github.com/AsahiLinux/vdmtool).
-* [ ] Test code execution
-* [ ] Build a UART-based RPC/loader tool
+* [x] Test code execution
+* [x] Build a UART-based RPC/loader tool
 * [ ] Build a USB device (dwcusb)-based RPC/loader tool
 
 ## Kernel bring-up
