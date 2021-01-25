@@ -394,7 +394,7 @@ Status register
 
 Needs a barrier (ISB SY) after clearing to avoid races with IPI handling.
 
-### Pointer Authentication related registers
+### Virtual Memory System Architecture Lock
 
 #### SYS_VMSA_LOCK
 
@@ -404,6 +404,10 @@ Needs a barrier (ISB SY) after clearing to avoid races with IPI handling.
 * [3] Lock TTBR0
 * [4] Lock TTBR1
 * [63] Lock SCTLR M bit
+
+This is used to lock down writes to some Arm registers for security reasons at boot time.
+
+### Pointer Authentication related registers
 
 #### SYS_APCTL_EL1
 
