@@ -64,7 +64,6 @@
 * [ ] Touch Bar
   * [ ] Display
   * [ ] Touchscreen
-* [ ] SEP
 * [ ] Battery/PMIC
   * [ ] Battery % readout
   * [ ] Charging monitor (V/A/W)
@@ -72,12 +71,25 @@
 * [ ] TouchID
 * [ ] Temperature sensor(s)
 
-## GPU
+## SOC
+### GPU
 * [ ] Hardware interface & init reverse engineering
 * [ ] Shader ISA reverse engineering
 * [ ] Command stream reverse engineering
 * [ ] Kernel driver
 * [ ] Mesa driver
+### SEP
+* [ ] Secure Enclave Processor
+### ISP
+* [ ] Image Signal Processor
+### DSP
+* [ ] Digital Signal Processor
+### NPU (ANE)
+* [ ] Neural Processing Unit (Apple Neural Engine)
+### Video codec
+* [ ] Video encoder/decoder unit
+### Unified Memory Controller
+* [ ] Unified Memory Controller
 
 ## Power management
 Lots of things here, including processor idling and general DVFS for all in-SoC & external peripherals.
