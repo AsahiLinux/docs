@@ -19,6 +19,9 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### B
 * **BootROM**: A read-only memory embedded in a chip such as the M1, which is the first code executed upon boot.
 
+### C
+* **Chicken Bits**: Otherwise known as "kill bits", configuration bits used for disabling/enabling specific features.
+
 ### D
 * **DART**: Device Address Resolution Table. Apple's custom IOMMU.
 * **DFU**: Device Firmware Update. A USB mode that allows flashing a device's firmware over USB. Apple devices support this in the SecureROM, to allow the user to restore devices which have otherwise been bricked.
