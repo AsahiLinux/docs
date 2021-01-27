@@ -3,7 +3,7 @@
 |      Property     |      Value       |      Meaning      |
 |-------------------|------------------|-------------------|
 | compatible        | apcie,t8103      | compatible string |
-| #address-cells    | 3                | normal PCI DT: <BAR type><addr>len> |
+| #address-cells    | 3                | normal PCI DT: `<BAR type><addr>len>` |
 | #size-cells       | 2                | normal PCI DT     |
 | interrupt-parent  | -                | phandle of AIC    |
 | interrupts        | (0x2b7, 0x2ba, 0x2bd) | Administrative interrupts. Maybe AER? |
