@@ -337,8 +337,9 @@ L2 subsystem fault control and info. This register is cluster-level and shared a
 
 * [1] Recursive fault (fault occurred while another fault was pending)
 * [7] Access fault (unmapped physical address, etc)
+* [38..34] Enable flags? (all 1 on entry from iBoot)
 * [39] Enable recursive fault (recursive faults do not update status registers)
-* [43..34] Enable flags? (all 1 on entry from iBoot)
+* [43..40] Enable flags? (all 1 on entry from iBoot)
 * [56] Enable write-1-to-clear behavior for fault flags
 * [60] Some enable? (1 on entry)
 * [32...63] Error masks
