@@ -331,6 +331,30 @@ Mainly error control?
 
 * [3] L1 DTLB Multi Hit Enable
 
+#### SYS_L2C_ERR_STS
+
+L2 subsystem fault control and info
+
+* [1] Recursive fault (fault occurred while another fault was pending)
+* [7] Access fault (unmapped physical address, etc)
+* [39] Enable recursive fault (recursive faults do not update status registers)
+* [43..34] Enable flags? (all 1 on entry from iBoot)
+* [56] Enable write-1-to-clear behavior for fault flags
+* [60] Some enable? (1 on entry)
+* [32...63] Error masks
+
+#### SYS_L2C_ERR_ADR
+
+Fault address for L2 subsystem fault.
+
+* [?:0] Physical address of the fault
+* [57:56] Set to '11'? Perhaps EL mode or other state info?
+* [62..61] Core within cluster that caused fault
+
+#### SYS_L2C_ERR_INF
+
+L2 subsystem error information.
+
 ### CTRR Registers
 
 Configurable Text Read-only Region
