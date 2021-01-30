@@ -333,7 +333,7 @@ Mainly error control?
 
 #### SYS_L2C_ERR_STS
 
-L2 subsystem fault control and info
+L2 subsystem fault control and info. This register is cluster-level and shared among all cores within a cluster.
 
 * [1] Recursive fault (fault occurred while another fault was pending)
 * [7] Access fault (unmapped physical address, etc)
