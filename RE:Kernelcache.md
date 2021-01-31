@@ -101,3 +101,28 @@ Disassembly of section .data:
      420:       710000bf        cmp     w5, #0x0
 ...
 ```
+* On the actual Mac with XCode installed as pointed out by **davidrysk** you can do the much simpler:
+```
+otool -xv /System/Library/Kernels/kernel.release.t8020
+
+...
+/System/Library/Kernels/kernel.release.t8020:
+(__TEXT_EXEC,__text) section
+fffffe00071ec000        sub     x13, sp, #0x60
+fffffe00071ec004        sub     sp, sp, #0x60
+fffffe00071ec008        st1.4s  { v0, v1, v2 }, [x13], #48 ; Latency: 4
+...
+fffffe00071f43f8        nop
+fffffe00071f43fc        nop
+fffffe00071f4400        msr     OSLAR_EL1, xzr
+fffffe00071f4404        msr     DAIFSet, #0xf
+fffffe00071f4408        movk    x0, #0x4455, lsl #48
+fffffe00071f440c        movk    x0, #0x4054, lsl #32
+fffffe00071f4410        movk    x0, #0x6466, lsl #16
+fffffe00071f4414        movk    x0, #0x6477
+fffffe00071f4418        adrp    x4, 2044 ; 0xfffffe00079f0000
+fffffe00071f441c        ldrb    w5, [x4, #0x130]        ; Latency: 4
+fffffe00071f4420        cmp     w5, #0x0
+fffffe00071f4424        b.ne    0xfffffe00071f4438
+....
+```
