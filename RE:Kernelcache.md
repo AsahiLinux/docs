@@ -20,14 +20,84 @@ Again, **only proceed if you have talked to us first about this**.
 
 ## Alternate using the kernel.release.* file
 
-* From suggestion by **davidrysk** there are some MacOS kernel images already available at **/System/Library/Kernels/kernel.release.t8101**
-* Dump out the macho header with Marcan's script [machodump.py](https://gist.github.com/marcan/e1808a2f4a5e1fc562357550a770afb1).
-  * Note: This requires the **construct** python package but the debian buster packages didn't work (python 3 or 2)
+* From suggestion by **davidrysk** there are some MacOS kernel images already available at **/System/Library/Kernels/kernel.release.t8020**
+* Below shows dumping the macho header with Marcan's script [machodump.py](https://gist.github.com/marcan/e1808a2f4a5e1fc562357550a770afb1) in order to get the offsets to disassemble the code:
+  * Note: This requires the **construct** python package but the debian buster packages didn't work (python 3 or 2) or even a github version
   * I had to use the pypi install via pip3:
-
-     apt install python3-pip`
-     pip3 install construct`
+```
+ apt install python3-pip
+ pip3 install construct
+```
 
  * Then dump out the headers to extract the offsets to the code:
+```
+python3 machodump.py kernel.release.t8020
+...
+            cmd = (enum) SEGMENT_64 25
+            args = Container: 
+                segname = u'__TEXT' (total 6)
+                vmaddr = 0xFFFFFE0007004000
+                vmsize = 0x00000000000C4000
+                fileoff = 0x0000000000000000
+                filesize = 0x00000000000C4000
+...
+        Container: 
+            cmd = (enum) UNIXTHREAD 5
+            args = ListContainer: 
+                Container: 
+                    flavor = (enum) THREAD64 6
+                    data = Container: 
+                        x = ListContainer: 
+                            0x0000000000000000
+...
+                            0x0000000000000000
+                        fp = 0x0000000000000000
+                        lr = 0x0000000000000000
+                        sp = 0x0000000000000000
+                        pc = 0xFFFFFE00071F4580
+                        cpsr = 0x00000000
+                        flags = 0x00000000
+....
+```
+* Calculate the offset from the starting instruction pc=0xFFFFFE00071F4580 to the start of the VM (vmaddr=0xFFFFFE0007004000)
+```
+calc "base(16); 0xFFFFFE00071F4580 - 0xFFFFFE0007004000"
+        0x1f0580
+```
+* Skip over the first 0x1f0000 = 0x1f0 x 0x1000 (4k) blocks and split off 64K from the here:
+```
+dd if=/home/amw/doc/share/kernel.release.t8020 of=init.bin bs=4k skip=$((0x1f0)) count=16
+```
+* Disassemble the raw binary blob
+```
+aarch64-linux-gnu-objdump -D -b binary -m aarch64 init.bin
 
-     python3 machodump.py kernel.release.t8020
+init.bin:     file format binary
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+       0:       14000100        b       0x400
+       4:       d503201f        nop
+       8:       d503201f        nop
+       c:       d503201f        nop
+      10:       d503201f        nop
+      14:       d503201f        nop
+      18:       d503201f        nop
+      1c:       d503201f        nop
+      20:       d503201f        nop
+...
+     3f4:       d503201f        nop
+     3f8:       d503201f        nop
+     3fc:       d503201f        nop
+     400:       d510109f        msr     oslar_el1, xzr
+     404:       d5034fdf        msr     daifset, #0xf
+     408:       f2e88aa0        movk    x0, #0x4455, lsl #48
+     40c:       f2c80a80        movk    x0, #0x4054, lsl #32
+     410:       f2ac8cc0        movk    x0, #0x6466, lsl #16
+     414:       f28c8ee0        movk    x0, #0x6477
+     418:       90003fe4        adrp    x4, 0x7fc000
+     41c:       3944c085        ldrb    w5, [x4, #304]
+     420:       710000bf        cmp     w5, #0x0
+...
+```
