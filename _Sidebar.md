@@ -8,6 +8,7 @@ Places to start:
 * [[SW:Getting Started]]
 * [[Project:References]]
 * [[SW:m1n1]] Boot loader
+* [[SW:Linux]] Kernel
 
 Documentation:
 * [[HW:USB-PD]]
