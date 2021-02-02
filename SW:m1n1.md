@@ -22,4 +22,18 @@ make
 ./qemu-system-aarch64 -M apple-m1 -bios ../../m1n1/build/m1n1.macho -serial pty
 ```
   * Then connect to the given VNC port `vncviewer :5900`
-  * Connect to the given serial port `picocom /dev/pts/8`
+  * **NOTE:** Connecting directly to the given serial port `picocom /dev/pts/8` doesn't seem too work well
+* But via the python proxyclient scripts in m1n1/proxyclient it does work.
+* First set the environment variable M1N1DEVICE for the scripts to know the serial port:
+```
+export M1N1DEVICE
+M1N1DEVICE=/dev/pts/8
+```
+* Then can load the m1n1 binary via itself
+```
+python3 proxyclient/chainload.py build/m1n1.macho
+```
+* Entry a simple python shell (see proxyclient/utils.py for commands available like `mrs(MIDR_EL1, r1)`
+```
+python3 proxyclient/chainload.py build/m1n1.macho
+```
