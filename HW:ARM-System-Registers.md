@@ -476,8 +476,8 @@ This is used to lock down writes to some Arm registers for security reasons at b
   * 17: Aruba Tempest (A12X/Z / H11G e-core)
   * 18: Cebu Lightning (A13 / H12 p-core)
   * 19: Cebu Thunder (A13 / H12 e-core)
-  * 33: M1 Firestorm (H13G p-core)
   * 34: M1 Icestorm (H13G e-core)
+  * 35: M1 Firestorm (H13G p-core)
   * 38: Turks (S6 / M10)
 
 * [31:24] Implementer (0x61 = 'a' = Apple)
