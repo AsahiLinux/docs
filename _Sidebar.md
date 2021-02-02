@@ -7,7 +7,7 @@ Places to start:
 * [[Codenames]]
 * [[SW:Getting Started]]
 * [[Project:References]]
-* [[SW:m1n1]] - Debug Boot loader
+* [[SW:m1n1]] Boot loader
 
 Documentation:
 * [[HW:USB-PD]]
