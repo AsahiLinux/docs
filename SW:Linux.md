@@ -67,3 +67,4 @@ sudo vi initrd//init
 python3 proxyclient/linux.py Image.gz apple-j274.dtb init-new.gz
 ```
 * **NOTE**: I haven't been able to get the shell to run yet... stay tuned for updates (or please add them)
+![Image of console showing panic running /init](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/qemu-boot.png)
