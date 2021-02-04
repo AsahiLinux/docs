@@ -345,8 +345,7 @@ Run `python shell.py` for an interactive debug shell.
 00000040  *
 00003320  00000000 00000000 00000000 00000001 00000000 00000000 00000000 00000000
 [...]
->>> u.msr(DAIF, u.mrs(DAIF) & ~0x3c0) # Enable IRQs
->>> AIC = 0x23b100000                
+>>> u.msr(DAIF, u.mrs(DAIF) & ~0x3c0) # Enable IRQs             
 >>> mon.add(AIC, 0x8000) # Monitor the AIC registers
 [...]
 >>> write32(AIC + 0x2008, 1) # Fire off an IPI to ourselves
