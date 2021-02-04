@@ -215,7 +215,7 @@ See also [[HW:USB-PD]] for details on the VDM commands and what you can do with 
 
 ### Using an M1 machine
 
-If you have two M1 boxes, this is the simplest solution. Just grab [macvdmtool](https://github.com/AsahiLinux/macvdmtool/), connect both machines with a standard Type C cable (using the DFU port on *both* machines!), and that's it!
+If you have two M1 boxes, this is the simplest solution. Just grab [macvdmtool](https://github.com/AsahiLinux/macvdmtool/), connect both machines with a standard Type C cable (needs to be the USB 3 / SuperSpeed type, USB 2 only cables won't work) using the DFU port on *both* machines, and that's it!
 
 ```shell
 $ xcode-select --install
