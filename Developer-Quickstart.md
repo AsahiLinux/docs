@@ -474,7 +474,7 @@ TTY>   CPU: M1 Firestorm
 TTY>   Index: 7 (table: 0x8153c4200)
 TTY> 
 TTY> FDT: initrd at 0x821700000 size 0xe8d17
-TTY> FDT: framebuffer@9e0df8000 size 0x9e0df8000
+TTY> FDT: framebuffer@9e0df8000 base 0x9e0df8000 size 0x7e9000
 TTY> FDT: DRAM at 0x800000000 size 0x200000000
 TTY> FDT: Usable memory is 0x80134c000..0x9db5e0000 (0x1da294000)
 TTY> FDT: CPU 0 MPIDR=0x0 release-addr=0x8153c4050
