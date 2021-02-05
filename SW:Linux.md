@@ -22,6 +22,10 @@ gzip < ../linux/arch/arm64/boot/Image > Image.gz
 ../linux/scripts/dtc/dtc dts/apple-j274.dts -o apple-j274.dtb
 ```
 ## Test it via qemu
+* Note: **Need to match qemu version to linux version**
+```
+Current rev e06aa5ca66 Feb 1 qemu <=> rev c837226506a6 Jan 21  linux *Not* later multi-CPU kernels
+```
 * See modwizcode's M1 supporting qemu [SW:m1n1 page](https://github.com/AsahiLinux/docs/wiki/SW%3Am1n1) for building extracting that
 * Run modwizcode's M1 supporting qemu on the m1n1.macho loader binary
 ```
