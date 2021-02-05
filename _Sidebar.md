@@ -3,6 +3,7 @@ Project related:
 * [[Tasks]]
 
 Places to start:
+* [[Developer Quickstart]]
 * [[Glossary]]
 * [[Codenames]]
 * [[SW:Getting Started]]
