@@ -263,7 +263,7 @@ Currently, m1n1 works as a serial "proxy" server, controlled via Python scripts 
 You need an `aarch64-linux-gnu-gcc` cross-compiler toolchain (or a native one, if running on ARM64). You also need `dtc` (the devicetree compiler) and `convert` (from ImageMagick) for the boot logos.
 
 ```shell
-$ git clone https://github.com/AsahiLinux/m1n1.git
+$ git clone --recursive https://github.com/AsahiLinux/m1n1.git
 $ cd m1n1
 $ make
 ```
