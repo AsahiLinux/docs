@@ -9,6 +9,7 @@ Apple likes to use a particular SET/CLR register pair style:
 
 ```
 0000~ global stuff
+  0004: NR_IRQ?
   0010: GLOBAL_CFG? (impl bits: f8fffff1)
 2000~ interrupt acks, IPIs, etc
 
@@ -36,7 +37,7 @@ IPI flow:
 * Write bit to IPI_FLAG_SET
 * ARM IRQ asserted
 * Read IRQ_REASON
-    * IPI is masked in IPO_MASK
+    * IPI is masked in IPI_MASK
     * ARM irq is desasserted
 * Write bit to IPI_FLAG_CLR
 * Write bit to IPI_MASK_CLR
