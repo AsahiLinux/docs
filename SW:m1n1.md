@@ -9,6 +9,7 @@ make
 ```
   * Should give you a .macho MacOS binary **m1n1.macho**
 ## Running under qemu
+* **Note:** version of qemu will affect version dtb/linux m1n1 can load/run
 * Build qemu with M1 support from github project [modwizcode qemu](https://github.com/modwizcode/qemu.git)
   * Use the relevant M1 branch  **add_M1_test** at the moment
 ```
