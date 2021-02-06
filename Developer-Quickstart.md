@@ -290,7 +290,7 @@ And on your target machine:
 To install m1n1 into the stub partition as a custom kernelcache:
 
 ```shell
-# kmutil configure-boot -c m1n1.macho -C -v /volumes/Linux
+# kmutil configure-boot -c m1n1.macho -C -v /Volumes/Linux
 ```
 
 Type in your credentials. If everything went well, you can restart and boot into m1n1!
