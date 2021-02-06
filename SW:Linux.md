@@ -11,7 +11,8 @@ wget https://mrcn.st/p/z8MgPiyO -O config-marcan
 * Build linux for arm64
 ```
 cp config-marcan .config
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j8 Image  dtbs
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- oldconfig
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j8 Image dtbs
 ```
 * m1n1's proxyclient linux.py script wants a gzip'ed image
 ```
