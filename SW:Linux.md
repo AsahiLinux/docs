@@ -6,7 +6,7 @@ git clone https://github.com/AsahiLinux/linux.git
 ```
 * Get marcan's config file:
 ```
-wget https://marcan.st/paste/YJp4iysm.txt -O config-marcan
+wget https://mrcn.st/p/z8MgPiyO -O config-marcan
 ```
 * Build linux for arm64
 ```
