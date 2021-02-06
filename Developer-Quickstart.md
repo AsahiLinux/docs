@@ -295,11 +295,34 @@ To install m1n1 into the stub partition as a custom kernelcache:
 
 Type in your credentials. If everything went well, you can restart and boot into m1n1!
 
+### Direct payload booting
+
+m1n1 supports running payloads embedded directly in the binary. This allows you to boot Linux (or a subsequent bootloader stage) without the need for serial interaction. Currently, debug output is over serial only; framebuffer debug console support is coming soon.
+
+To merge m1n1 with payloads, just concatenate them:
+
+```shell
+$ cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz > m1n1-payload.macho
+```
+
+The maximum cumulative payload size is currently 64 MiB. You can change this at the top of `m1n1.ld` if you need more. Bear in mind this incurs a fixed runtime memory cost when using m1n1 interactively, even with no payload (though this memory can be reclaimed by the next stage), and chainloading m1n1 will currently "waste" this memory (the next iteration is loaded above this region and cannot use memory "under" it).
+
+Supported payload file formats:
+
+* Linux ARM64 kernel images (or compatible). Must be compressed or last payload.
+* Devicetree blobs (FDT). May be uncompressed or compressed.
+* Initramfs cpio images. Must be compressed.
+
+Supported compression formats:
+
+* gzip
+* xz
+
 ### Host setup
 
-m1n1 currently requires a serial console to do anything. Go to the [getting a serial console](#getting-a-serial-console) section to learn more about available options.
+m1n1 currently requires a serial console for interactive usage or to get debug info. Go to the [getting a serial console](#getting-a-serial-console) section to learn more about available options.
 
-**NOTE(2021-02-05)**: we will add a framebuffer console and support for built-in payloads to m1n1 to remove this requirement in the following few days, at the expense of a long test cycle (you need to re-`kmutil` every kernel you want to test). Stay tuned. USB OTG support is also planned in the future, so you will be able to interact with m1n1 with a standard USB C cable and load kernels faster.
+**NOTE(2021-02-06)**: we will add a framebuffer console to make debugging easier without serial soon. USB OTG support is also planned in the future, so you will be able to interact with m1n1 with a standard USB C cable and load kernels faster.
 
 To use the m1n1 proxyclient, you need the Python packages `pyserial` and `construct`. If your distribution does not provide them for you, you can use:
 
