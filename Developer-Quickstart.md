@@ -258,6 +258,11 @@ m1n1 is our initial bootloader, which is in charge of pretending to be a XNU ker
 
 Currently, m1n1 works as a serial "proxy" server, controlled via Python scripts from a host. In this way, you can load kernels via serial and also explore the hardware interactively, with a Python console.
 
+### Debian build dependencies
+```shell
+$ sudo apt install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross device-tree-compiler imagemagick
+```
+
 ### Building
 
 You need an `aarch64-linux-gnu-gcc` cross-compiler toolchain (or a native one, if running on ARM64). You also need `dtc` (the devicetree compiler) and `convert` (from ImageMagick) for the boot logos.
