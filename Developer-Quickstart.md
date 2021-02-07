@@ -215,7 +215,9 @@ See also [[HW:USB-PD]] for details on the VDM commands and what you can do with 
 
 ### Using an M1 machine
 
-If you have two M1 boxes, this is the simplest solution. Just grab [macvdmtool](https://github.com/AsahiLinux/macvdmtool/), connect both machines with a standard Type C cable (needs to be the USB 3 / SuperSpeed type, USB 2 only cables won't work, **the charging cable that comes with the Macbook/Macbook Air will not work** and neither will most other cheap cables or cables marketed for their charging capacity. If it doesn't say "SuperSpeed" or "USB3.0" in the package it almost certainly won't work.) using the DFU port on *both* machines, and that's it!
+If you have two M1 boxes, this is the simplest solution. Just grab [macvdmtool](https://github.com/AsahiLinux/macvdmtool/), connect both machines with a standard Type C SuperSpeed cable using the DFU port on *both* machines, and that's it!
+
+**IMPORTANT NOTE:** The cable needs to be the USB 3 / SuperSpeed type. USB 2 only cables won't work, **the charging cable that comes with the Macbook/Macbook Air will not work** and neither will most other cheap cables or cables marketed for their charging capacity. If it doesn't say "SuperSpeed" or "USB3.0" in the package it almost certainly won't work. If it's thin and bendy it is almost certainly *not* a SuperSpeed cable. Cables that work need to have upwards of **15** wires inside them; if it doesn't feel like it could possibly have that many wires inside, it is not the cable you need. If you are sure your cable is SuperSpeed capable (i.e. devices do enumerate as SuperSpeed through it) and it still doesn't work, then it is non-compliant and the manufacturer deserves to be shamed on their Amazon reviews page, because it means they didn't connect the SBU1/2 pins.
 
 ```shell
 $ xcode-select --install
