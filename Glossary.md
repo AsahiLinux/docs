@@ -50,6 +50,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **JTAG**: Joint Test Action Group. Actually refers to a debugging interface released by that group, a 4/5-wire interface to debug chips and CPUs at the hardware level.
 
 ### K
+* **kASLR**: kernel Address Space Loacation Randomization: Linux kernel feature randomizes where the kernel code is placed in memory at boot time. Disabled by specifying `nokaslr` boot flag.
 * **kcOS**: OS with a custom kernel cache.
 * **Kernel cache**: A bundle of the kernel and its extensions, optionally encrypted.
 
