@@ -513,6 +513,10 @@ This is used to lock down writes to some Arm registers for security reasons at b
 
 ### Performance Counter registers
 
+#### SYS_PMC0-9
+
+Performance counter. 48 bits, bit 47 triggers PMI.
+
 #### SYS_PMCR0
 
 * [7:0] Counter enable for PMC #7-0
