@@ -15,143 +15,143 @@ Using Linux format:
 ```c
 
 /* These make sense... */
-#define SYS_HID0            sys_reg(3, 0, 15, 0, 0)
-#define SYS_HID1            sys_reg(3, 0, 15, 1, 0)
-#define SYS_EHID1           sys_reg(3, 0, 15, 1, 1)
-#define SYS_HID2            sys_reg(3, 0, 15, 2, 0)
-#define SYS_EHID2           sys_reg(3, 0, 15, 2, 1)
-#define SYS_HID3            sys_reg(3, 0, 15, 3, 0)
-#define SYS_EHID3           sys_reg(3, 0, 15, 3, 1)
-#define SYS_HID4            sys_reg(3, 0, 15, 4, 0)
-#define SYS_EHID4           sys_reg(3, 0, 15, 4, 1)
-#define SYS_HID5            sys_reg(3, 0, 15, 5, 0)
-#define SYS_EHID5           sys_reg(3, 0, 15, 5, 1)
-#define SYS_HID6            sys_reg(3, 0, 15, 6, 0)
-#define SYS_HID7            sys_reg(3, 0, 15, 7, 0)
-#define SYS_HID8            sys_reg(3, 0, 15, 8, 0)
-#define SYS_HID9            sys_reg(3, 0, 15, 9, 0)
-#define SYS_EHID9           sys_reg(3, 0, 15, 9, 1)
-#define SYS_HID10           sys_reg(3, 0, 15, 10, 0)
-#define SYS_EHID10          sys_reg(3, 0, 15, 10, 1)
-#define SYS_HID11           sys_reg(3, 0, 15, 11, 0)
-#define SYS_EHID11          sys_reg(3, 0, 15, 11, 1)
+#define SYS_APL_HID0            sys_reg(3, 0, 15, 0, 0)
+#define SYS_APL_HID1            sys_reg(3, 0, 15, 1, 0)
+#define SYS_APL_EHID1           sys_reg(3, 0, 15, 1, 1)
+#define SYS_APL_HID2            sys_reg(3, 0, 15, 2, 0)
+#define SYS_APL_EHID2           sys_reg(3, 0, 15, 2, 1)
+#define SYS_APL_HID3            sys_reg(3, 0, 15, 3, 0)
+#define SYS_APL_EHID3           sys_reg(3, 0, 15, 3, 1)
+#define SYS_APL_HID4            sys_reg(3, 0, 15, 4, 0)
+#define SYS_APL_EHID4           sys_reg(3, 0, 15, 4, 1)
+#define SYS_APL_HID5            sys_reg(3, 0, 15, 5, 0)
+#define SYS_APL_EHID5           sys_reg(3, 0, 15, 5, 1)
+#define SYS_APL_HID6            sys_reg(3, 0, 15, 6, 0)
+#define SYS_APL_HID7            sys_reg(3, 0, 15, 7, 0)
+#define SYS_APL_HID8            sys_reg(3, 0, 15, 8, 0)
+#define SYS_APL_HID9            sys_reg(3, 0, 15, 9, 0)
+#define SYS_APL_EHID9           sys_reg(3, 0, 15, 9, 1)
+#define SYS_APL_HID10           sys_reg(3, 0, 15, 10, 0)
+#define SYS_APL_EHID10          sys_reg(3, 0, 15, 10, 1)
+#define SYS_APL_HID11           sys_reg(3, 0, 15, 11, 0)
+#define SYS_APL_EHID11          sys_reg(3, 0, 15, 11, 1)
 
 /* Uh oh */
-#define SYS_HID13           sys_reg(3, 0, 15, 14, 0)
-#define SYS_HID14           sys_reg(3, 0, 15, 15, 0)
+#define SYS_APL_HID13           sys_reg(3, 0, 15, 14, 0)
+#define SYS_APL_HID14           sys_reg(3, 0, 15, 15, 0)
 
 /* All sanity went out the window here */
-#define SYS_HID16           sys_reg(3, 0, 15, 15, 2)
-#define SYS_HID17           sys_reg(3, 0, 15, 15, 5)
-#define SYS_HID18           sys_reg(3, 0, 15, 11, 2)
-#define SYS_EHID20          sys_reg(3, 0, 15, 1, 2)
-#define SYS_HID21           sys_reg(3, 0, 15, 1, 3)
+#define SYS_APL_HID16           sys_reg(3, 0, 15, 15, 2)
+#define SYS_APL_HID17           sys_reg(3, 0, 15, 15, 5)
+#define SYS_APL_HID18           sys_reg(3, 0, 15, 11, 2)
+#define SYS_APL_EHID20          sys_reg(3, 0, 15, 1, 2)
+#define SYS_APL_HID21           sys_reg(3, 0, 15, 1, 3)
 
-#define SYS_PMCR0           sys_reg(3, 1, 15, 0, 0)
-#define SYS_PMCR1           sys_reg(3, 1, 15, 1, 0)
-#define SYS_PMCR2           sys_reg(3, 1, 15, 2, 0)
-#define SYS_PMCR3           sys_reg(3, 1, 15, 3, 0)
-#define SYS_PMCR4           sys_reg(3, 1, 15, 4, 0)
-#define SYS_PMESR0          sys_reg(3, 1, 15, 5, 0)
-#define SYS_PMESR1          sys_reg(3, 1, 15, 6, 0)
-#define SYS_PMSR            sys_reg(3, 1, 15, 13, 0)
+#define SYS_APL_PMCR0           sys_reg(3, 1, 15, 0, 0)
+#define SYS_APL_PMCR1           sys_reg(3, 1, 15, 1, 0)
+#define SYS_APL_PMCR2           sys_reg(3, 1, 15, 2, 0)
+#define SYS_APL_PMCR3           sys_reg(3, 1, 15, 3, 0)
+#define SYS_APL_PMCR4           sys_reg(3, 1, 15, 4, 0)
+#define SYS_APL_PMESR0          sys_reg(3, 1, 15, 5, 0)
+#define SYS_APL_PMESR1          sys_reg(3, 1, 15, 6, 0)
+#define SYS_APL_PMSR            sys_reg(3, 1, 15, 13, 0)
 
-#define SYS_PMC0            sys_reg(3, 2, 15, 0, 0)
-#define SYS_PMC1            sys_reg(3, 2, 15, 1, 0)
-#define SYS_PMC2            sys_reg(3, 2, 15, 2, 0)
-#define SYS_PMC3            sys_reg(3, 2, 15, 3, 0)
-#define SYS_PMC4            sys_reg(3, 2, 15, 4, 0)
-#define SYS_PMC5            sys_reg(3, 2, 15, 5, 0)
-#define SYS_PMC6            sys_reg(3, 2, 15, 6, 0)
-#define SYS_PMC7            sys_reg(3, 2, 15, 7, 0)
-#define SYS_PMC8            sys_reg(3, 2, 15, 9, 0)
-#define SYS_PMC9            sys_reg(3, 2, 15, 10, 0)
+#define SYS_APL_PMC0            sys_reg(3, 2, 15, 0, 0)
+#define SYS_APL_PMC1            sys_reg(3, 2, 15, 1, 0)
+#define SYS_APL_PMC2            sys_reg(3, 2, 15, 2, 0)
+#define SYS_APL_PMC3            sys_reg(3, 2, 15, 3, 0)
+#define SYS_APL_PMC4            sys_reg(3, 2, 15, 4, 0)
+#define SYS_APL_PMC5            sys_reg(3, 2, 15, 5, 0)
+#define SYS_APL_PMC6            sys_reg(3, 2, 15, 6, 0)
+#define SYS_APL_PMC7            sys_reg(3, 2, 15, 7, 0)
+#define SYS_APL_PMC8            sys_reg(3, 2, 15, 9, 0)
+#define SYS_APL_PMC9            sys_reg(3, 2, 15, 10, 0)
 
-#define SYS_LSU_ERR_STS     sys_reg(3, 3, 15, 0, 0)
-#define SYS_E_LSU_ERR_STS   sys_reg(3, 3, 15, 2, 0)
-#define SYS_LSU_ERR_CTL     sys_reg(3, 3, 15, 1, 0)
+#define SYS_APL_LSU_ERR_STS     sys_reg(3, 3, 15, 0, 0)
+#define SYS_APL_E_LSU_ERR_STS   sys_reg(3, 3, 15, 2, 0)
+#define SYS_APL_LSU_ERR_CTL     sys_reg(3, 3, 15, 1, 0)
 
-#define SYS_L2C_ERR_STS     sys_reg(3, 3, 15, 8, 0)
-#define SYS_L2C_ERR_ADR     sys_reg(3, 3, 15, 9, 0)
-#define SYS_L2C_ERR_INF     sys_reg(3, 3, 15, 10, 0)
+#define SYS_APL_L2C_ERR_STS     sys_reg(3, 3, 15, 8, 0)
+#define SYS_APL_L2C_ERR_ADR     sys_reg(3, 3, 15, 9, 0)
+#define SYS_APL_L2C_ERR_INF     sys_reg(3, 3, 15, 10, 0)
 
-#define SYS_FED_ERR_STS     sys_reg(3, 4, 15, 0, 0)
-#define SYS_E_FED_ERR_STS   sys_reg(3, 4, 15, 0, 2)
+#define SYS_APL_FED_ERR_STS     sys_reg(3, 4, 15, 0, 0)
+#define SYS_APL_E_FED_ERR_STS   sys_reg(3, 4, 15, 0, 2)
 
-#define SYS_APCTL_EL1       sys_reg(3, 4, 15, 0, 4)
-#define SYS_KERNELKEYLO_EL1 sys_reg(3, 4, 15, 1, 0)
-#define SYS_KERNELKEYHI_EL1 sys_reg(3, 4, 15, 1, 1)
+#define SYS_APL_APCTL_EL1       sys_reg(3, 4, 15, 0, 4)
+#define SYS_APL_KERNELKEYLO_EL1 sys_reg(3, 4, 15, 1, 0)
+#define SYS_APL_KERNELKEYHI_EL1 sys_reg(3, 4, 15, 1, 1)
 
-#define SYS_VMSA_LOCK       sys_reg(3, 4, 15, 1, 2)
+#define SYS_APL_VMSA_LOCK       sys_reg(3, 4, 15, 1, 2)
 
-#define SYS_APRR_EL0        sys_reg(3, 4, 15, 2, 0)
-#define SYS_APRR_EL1        sys_reg(3, 4, 15, 2, 1)
+#define SYS_APL_APRR_EL0        sys_reg(3, 4, 15, 2, 0)
+#define SYS_APL_APRR_EL1        sys_reg(3, 4, 15, 2, 1)
 
-#define SYS_CTRR_LOCK_EL1   sys_reg(3, 4, 15, 2, 2)
-#define SYS_CTRR_A_LWR_EL1  sys_reg(3, 4, 15, 2, 3)
-#define SYS_CTRR_A_UPR_EL1  sys_reg(3, 4, 15, 2, 4)
-#define SYS_CTRR_CTL_EL1    sys_reg(3, 4, 15, 2, 5)
+#define SYS_APL_CTRR_LOCK_EL1   sys_reg(3, 4, 15, 2, 2)
+#define SYS_APL_CTRR_A_LWR_EL1  sys_reg(3, 4, 15, 2, 3)
+#define SYS_APL_CTRR_A_UPR_EL1  sys_reg(3, 4, 15, 2, 4)
+#define SYS_APL_CTRR_CTL_EL1    sys_reg(3, 4, 15, 2, 5)
 
-#define SYS_APRR_JIT_ENABLE sys_reg(3, 4, 15, 2, 6)
-#define SYS_APRR_JIT_MASK   sys_reg(3, 4, 15, 2, 7)
+#define SYS_APL_APRR_JIT_ENABLE sys_reg(3, 4, 15, 2, 6)
+#define SYS_APL_APRR_JIT_MASK   sys_reg(3, 4, 15, 2, 7)
 
-#define SYS_s3_4_c15_c5_0   sys_reg(3, 4, 15, 5, 0)
+#define SYS_APL_s3_4_c15_c5_0   sys_reg(3, 4, 15, 5, 0)
 
-#define SYS_CTRR_LOCK_EL2   sys_reg(3, 4, 15, 11, 5)
-#define SYS_CTRR_A_LWR_EL2  sys_reg(3, 4, 15, 11, 0)
-#define SYS_CTRR_A_UPR_EL2  sys_reg(3, 4, 15, 11, 1)
-#define SYS_CTRR_CTL_EL2    sys_reg(3, 4, 15, 11, 4)
+#define SYS_APL_CTRR_LOCK_EL2   sys_reg(3, 4, 15, 11, 5)
+#define SYS_APL_CTRR_A_LWR_EL2  sys_reg(3, 4, 15, 11, 0)
+#define SYS_APL_CTRR_A_UPR_EL2  sys_reg(3, 4, 15, 11, 1)
+#define SYS_APL_CTRR_CTL_EL2    sys_reg(3, 4, 15, 11, 4)
 
-#define SYS_IPI_RR_LOCAL    sys_reg(3, 5, 15, 0, 0)
-#define SYS_IPI_RR_GLOBAL   sys_reg(3, 5, 15, 0, 1)
+#define SYS_APL_IPI_RR_LOCAL    sys_reg(3, 5, 15, 0, 0)
+#define SYS_APL_IPI_RR_GLOBAL   sys_reg(3, 5, 15, 0, 1)
 
-#define SYS_DPC_ERR_STS     sys_reg(3, 5, 15, 0, 5)
+#define SYS_APL_DPC_ERR_STS     sys_reg(3, 5, 15, 0, 5)
 
-#define SYS_IPI_SR          sys_reg(3, 5, 15, 1, 1)
+#define SYS_APL_IPI_SR          sys_reg(3, 5, 15, 1, 1)
 
-#define SYS_HV_LR           sys_reg(3, 5, 15, 1, 2)
-#define SYS_HV_TMR_MASK     sys_reg(3, 5, 15, 1, 3)
+#define SYS_APL_HV_LR           sys_reg(3, 5, 15, 1, 2)
+#define SYS_APL_HV_TMR_MASK     sys_reg(3, 5, 15, 1, 3)
 
-#define SYS_IPI_CR          sys_reg(3, 5, 15, 3, 1)
+#define SYS_APL_IPI_CR          sys_reg(3, 5, 15, 3, 1)
 
-#define SYS_ACC_CFG         sys_reg(3, 5, 15, 4, 0)
-#define SYS_CYC_OVRD        sys_reg(3, 5, 15, 5, 0)
-#define SYS_ACC_OVRD        sys_reg(3, 5, 15, 6, 0)
-#define SYS_ACC_EBLK_OVRD   sys_reg(3, 5, 15, 6, 1)
+#define SYS_APL_ACC_CFG         sys_reg(3, 5, 15, 4, 0)
+#define SYS_APL_CYC_OVRD        sys_reg(3, 5, 15, 5, 0)
+#define SYS_APL_ACC_OVRD        sys_reg(3, 5, 15, 6, 0)
+#define SYS_APL_ACC_EBLK_OVRD   sys_reg(3, 5, 15, 6, 1)
 
-#define SYS_MMU_ERR_STS     sys_reg(3, 6, 15, 0, 0)
+#define SYS_APL_MMU_ERR_STS     sys_reg(3, 6, 15, 0, 0)
 
-#define SYS_E_MMU_ERR_STS   sys_reg(3, 6, 15, 2, 0)
+#define SYS_APL_E_MMU_ERR_STS   sys_reg(3, 6, 15, 2, 0)
 
-#define SYS_APSTS_EL1       sys_reg(3, 6, 15, 12, 4)
+#define SYS_APL_APSTS_EL1       sys_reg(3, 6, 15, 12, 4)
 
-#define SYS_UPMCR0          sys_reg(3, 7, 15, 0, 4)
-#define SYS_UPMESR0         sys_reg(3, 7, 15, 1, 4)
-#define SYS_UPMECM0         sys_reg(3, 7, 15, 3, 4)
-#define SYS_UPMECM1         sys_reg(3, 7, 15, 4, 4)
-#define SYS_UPMPCM          sys_reg(3, 7, 15, 5, 4)
-#define SYS_UPMSR           sys_reg(3, 7, 15, 6, 4)
-#define SYS_UPMECM2         sys_reg(3, 7, 15, 8, 5)
-#define SYS_UPMECM3         sys_reg(3, 7, 15, 9, 5)
-#define SYS_UPMESR1         sys_reg(3, 7, 15, 11, 5)
+#define SYS_APL_UPMCR0          sys_reg(3, 7, 15, 0, 4)
+#define SYS_APL_UPMESR0         sys_reg(3, 7, 15, 1, 4)
+#define SYS_APL_UPMECM0         sys_reg(3, 7, 15, 3, 4)
+#define SYS_APL_UPMECM1         sys_reg(3, 7, 15, 4, 4)
+#define SYS_APL_UPMPCM          sys_reg(3, 7, 15, 5, 4)
+#define SYS_APL_UPMSR           sys_reg(3, 7, 15, 6, 4)
+#define SYS_APL_UPMECM2         sys_reg(3, 7, 15, 8, 5)
+#define SYS_APL_UPMECM3         sys_reg(3, 7, 15, 9, 5)
+#define SYS_APL_UPMESR1         sys_reg(3, 7, 15, 11, 5)
 
 /* Note: out of order wrt above */
-#define SYS_UPMC0           sys_reg(3, 7, 15, 7, 4)
-#define SYS_UPMC1           sys_reg(3, 7, 15, 8, 4)
-#define SYS_UPMC2           sys_reg(3, 7, 15, 9, 4)
-#define SYS_UPMC3           sys_reg(3, 7, 15, 10, 4)
-#define SYS_UPMC4           sys_reg(3, 7, 15, 11, 4)
-#define SYS_UPMC5           sys_reg(3, 7, 15, 12, 4)
-#define SYS_UPMC6           sys_reg(3, 7, 15, 13, 4)
-#define SYS_UPMC7           sys_reg(3, 7, 15, 14, 4)
-#define SYS_UPMC8           sys_reg(3, 7, 15, 0, 5)
-#define SYS_UPMC9           sys_reg(3, 7, 15, 1, 5)
-#define SYS_UPMC10          sys_reg(3, 7, 15, 2, 5)
-#define SYS_UPMC11          sys_reg(3, 7, 15, 3, 5)
-#define SYS_UPMC12          sys_reg(3, 7, 15, 4, 5)
-#define SYS_UPMC13          sys_reg(3, 7, 15, 5, 5)
-#define SYS_UPMC14          sys_reg(3, 7, 15, 6, 5)
-#define SYS_UPMC15          sys_reg(3, 7, 15, 7, 5)
+#define SYS_APL_UPMC0           sys_reg(3, 7, 15, 7, 4)
+#define SYS_APL_UPMC1           sys_reg(3, 7, 15, 8, 4)
+#define SYS_APL_UPMC2           sys_reg(3, 7, 15, 9, 4)
+#define SYS_APL_UPMC3           sys_reg(3, 7, 15, 10, 4)
+#define SYS_APL_UPMC4           sys_reg(3, 7, 15, 11, 4)
+#define SYS_APL_UPMC5           sys_reg(3, 7, 15, 12, 4)
+#define SYS_APL_UPMC6           sys_reg(3, 7, 15, 13, 4)
+#define SYS_APL_UPMC7           sys_reg(3, 7, 15, 14, 4)
+#define SYS_APL_UPMC8           sys_reg(3, 7, 15, 0, 5)
+#define SYS_APL_UPMC9           sys_reg(3, 7, 15, 1, 5)
+#define SYS_APL_UPMC10          sys_reg(3, 7, 15, 2, 5)
+#define SYS_APL_UPMC11          sys_reg(3, 7, 15, 3, 5)
+#define SYS_APL_UPMC12          sys_reg(3, 7, 15, 4, 5)
+#define SYS_APL_UPMC13          sys_reg(3, 7, 15, 5, 5)
+#define SYS_APL_UPMC14          sys_reg(3, 7, 15, 6, 5)
+#define SYS_APL_UPMC15          sys_reg(3, 7, 15, 7, 5)
 ```
 
 ### HID registers
@@ -161,7 +161,7 @@ seem to be located here.
 
 These are mostly chicken bits to disable CPU features, and likely many only apply only to certain CPU generations. However, their definitions are global.
 
-#### SYS_HID0
+#### SYS_APL_HID0
 
 * [20] Loop Buffer Disable
 * [21] AMX Cache Fusion Disable
@@ -172,11 +172,11 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [45] Same Pg (page?) Power Optimization
 * [62:60] Instruction Cache Prefetch Depth
 
-#### SYS_EHID0
+#### SYS_APL_EHID0
 
 * [45] nfpRetFwdDisb
 
-#### SYS_HID1
+#### SYS_APL_HID1
 
 * [14] Disable CMP-Branch Fusion
 * [15] ForceMextL3ClkOn
@@ -189,21 +189,21 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [58] enMDSBStallPipeLineECO
 * [60] Enable Branch Kill Limit / SpareBit6
 
-#### SYS_EHID1
+#### SYS_APL_EHID1
 
 * [30] Disable MSR Speculation DAIF
 
 
-#### SYS_HID2
+#### SYS_APL_HID2
 
 * [13] Disable MMU MTLB Prefetch
 * [17] Force Purge MTB
 
-#### SYS_EHID2
+#### SYS_APL_EHID2
 
 * [17] Force Purge MTB
 
-#### SYS_HID3
+#### SYS_APL_HID3
 
 * [2] Disable Color Optimization
 * [25] Disable DC ZVA Command Only
@@ -211,12 +211,12 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [54] Disable Xmon Snp Evict Trigger L2 Starvation Mode
 * [63] Dev Pcie Throttle Enable
 
-#### SYS_EHID3
+#### SYS_APL_EHID3
 
 * [2] Disable Color Optimization
 * [25] Disable DC ZVA Command Only
 
-#### SYS_HID4
+#### SYS_APL_HID4
 
 * [1] Disable STNT Widget
 * [9] Disable Speculative LS Redirect
@@ -228,7 +228,7 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [49] Enable Lfsr Stall Load Pipe 2 Issue
 * [53] Enable Lfsr Stall Stq Replay
 
-#### SYS_HID5
+#### SYS_APL_HID5
 
 * [15:14] Crd Edb Snp Rsvd
 * [44] Disable HWP Load
@@ -237,16 +237,16 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [57] Disable Full Line Write
 * [61] Disable Fill 2C Merge
 
-#### SYS_EHID5
+#### SYS_APL_EHID5
 
 * [35] Disable Fill Bypass
 
-#### SYS_HID6
+#### SYS_APL_HID6
 
 * [9:5] Up Crd Tkn Init C2
 * [55] Disable ClkDiv Gating
 
-#### SYS_HID7
+#### SYS_APL_HID7
 
 * [7] Disable Cross Pick 2
 * [10] Disable Nex Fast FMUL
@@ -254,7 +254,7 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [20] Force Non Speculative If Stepping
 * [25:24] Force Non Speculative Target Timer Sel
 
-#### SYS_HID8
+#### SYS_APL_HID8
 
 * [7:4] DataSetID0
 * [11:8] DataSetID1
@@ -262,7 +262,7 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [59:56] DataSetID2
 * [63:60] DataSetID3
 
-#### SYS_HID9
+#### SYS_APL_HID9
 
 * [16] TSO Enable
 * [26] TSO Allow DC ZVA WC
@@ -275,21 +275,21 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [54] EnableFixBug47221499
 * [55] HidEnFix55719865
 
-#### SYS_EHID9
+#### SYS_APL_EHID9
 
 * [5] Dev Throttle 2 Enable
 
-#### SYS_HID10
+#### SYS_APL_HID10
 
 * [0] Disable Hwp Gups
 
-#### SYS_EHID10
+#### SYS_APL_EHID10
 
 * [19] RCC Disable Power Save Prf (performance?) Clock Off
 * [32] Force Wait State Drain UC
 * [49] Disable ZVA Temporal TSO
 
-#### SYS_HID11
+#### SYS_APL_HID11
 
 * [1] Disable X64 NT Lnch Optimization
 * [7] Disable Fill C1 Bub(ble?) Optimization
@@ -297,21 +297,21 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [23] Disable Fast Drain Optimization
 * [59] Disable LDNT (Load Non-Temporal?) Widget
 
-#### SYS_EHID11
+#### SYS_APL_EHID11
 
 * [41:40] SMB Drain Threshold
 
-#### SYS_HID13
+#### SYS_APL_HID13
 
 * [17:14] PreCyc
 * [63:60] Reset Cycle count
 
-#### SYS_HID14
+#### SYS_APL_HID14
 
 * [?:0] Nex Sleep Timeout Cyclone
 * [32] Nex Power Gating Enable
 
-#### SYS_HID16
+#### SYS_APL_HID16
 
 * [18] LEQ Throttle Aggr
 * [56] SpareBit0
@@ -322,23 +322,23 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [62] Enable MP Cyclone 7
 * [63] SpareBit7
 
-#### SYS_HID17
+#### SYS_APL_HID17
 
 * [2:0] Crd Edb Snp Rsvd
 
-#### SYS_HID18
+#### SYS_APL_HID18
 
 * [14] HVC Speculation Disable
 * [49] SpareBit17
 
-#### SYS_EHID20
+#### SYS_APL_EHID20
 
 * [8] Trap SMC
 * [15] Force Nonspeculation If Oldest Redir Valid And Older
 * [16] Force Nonspeculation If Spec Flush Pointer != Blk Rtr Pointer
 * [22:21] Force Nonspeculation Targeted Timer
 
-#### SYS_HID21
+#### SYS_APL_HID21
 
 * [19] Enable LDREX Fill Reply
 * [33] LDQ RTR Wait For Old ST Rel Cmpl
@@ -348,7 +348,7 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 
 These seem to relate to the core complex and power management configuration
 
-#### SYS_ACC_OVRD
+#### SYS_APL_ACC_OVRD
 
 * [14:13] OK To Power Down SRM (3=deepsleep)
 * [16:15] Disable L2 Flush For ACC Sleep (2=deepsleep)
@@ -359,13 +359,13 @@ These seem to relate to the core complex and power management configuration
 * [32] Disable PIO On WFI CPU
 * [34] Enable Deep Sleep
 
-#### SYS_ACC_CFG
+#### SYS_APL_ACC_CFG
 
 Branch predictor state retention across ACC sleep
 
 * [3:2] BP Sleep (2=BDP, 3=BTP)
 
-#### SYS_CYC_OVRD
+#### SYS_APL_CYC_OVRD
 
 * [0] Disable WFI Return
 * [25:24] OK To Power Down (2=force up, 3=force down)
@@ -376,15 +376,15 @@ Branch predictor state retention across ACC sleep
 
 Mainly error control?
 
-#### SYS_LSU_ERR_STS
+#### SYS_APL_LSU_ERR_STS
 
 * [54] L1 DTLB Multi Hit Enable
 
-#### SYS_LSU_ERR_CTL
+#### SYS_APL_LSU_ERR_CTL
 
 * [3] L1 DTLB Multi Hit Enable
 
-#### SYS_L2C_ERR_STS
+#### SYS_APL_L2C_ERR_STS
 
 L2 subsystem fault control and info. This register is cluster-level and shared among all cores within a cluster.
 
@@ -396,7 +396,7 @@ L2 subsystem fault control and info. This register is cluster-level and shared a
 * [56] Enable write-1-to-clear behavior for fault flags
 * [60] Some enable? (1 on entry)
 
-#### SYS_L2C_ERR_ADR
+#### SYS_APL_L2C_ERR_ADR
 
 Fault address for L2 subsystem fault.
 
@@ -404,7 +404,7 @@ Fault address for L2 subsystem fault.
 * [57:56] Set to '11'? Perhaps EL mode or other state info?
 * [62..61] Core within cluster that caused fault
 
-#### SYS_L2C_ERR_INF
+#### SYS_APL_L2C_ERR_INF
 
 L2 subsystem error information.
 
@@ -412,7 +412,7 @@ L2 subsystem error information.
 
 Configurable Text Read-only Region
 
-#### SYS_CTRR_CTL_EL1
+#### SYS_APL_CTRR_CTL_EL1
 
 * [0] A MMU off write protect
 * [1] A MMU on write protect
@@ -425,7 +425,7 @@ Configurable Text Read-only Region
 
 ### APRR Registers
 
-#### SYS_APRR_EL0 / SYS_APRR_EL1
+#### SYS_APL_APRR_EL0 / SYS_APL_APRR_EL1
 
 This is a table. The value is a 4-bit field:
 
@@ -446,37 +446,37 @@ The register value is 16 4-bit fields, in natural order ((_rwx) << (4*prot)).
 
 These are used for "fast" IPIs not using AIC
 
-#### SYS_IPI_RR_LOCAL
+#### SYS_APL_IPI_RR_LOCAL
 
 * [3:0] Target CPU
 * [29:28] RR Type (0=immediate, 1=retract, 2=deferred, 3=nowake)
 
-#### SYS_IPI_RR_GLOBAL
+#### SYS_APL_IPI_RR_GLOBAL
 
 * [3:0] Target CPU
 * [20:16] Target cluster
 * [29:28] RR Type (0=immediate, 1=retract, 2=deferred, 3=nowake)
 
-#### SYS_IPI_CR
+#### SYS_APL_IPI_CR
 
 Global register.
 
 * [15:0] Deferred IPI countdown value (in REFCLK ticks)
 
-#### SYS_HV_TMR_LR
+#### SYS_APL_HV_TMR_LR
 
 (Name unofficial)
 
-Seems to be similar to ICH_LR<n>_EL2 in GIC; state gets set to pending (63:62 == 1) when guest CNTV fires, is not masked in SYS_HV_TMR_MASK, and is masked in HACR_EL2.
+Seems to be similar to ICH_LR<n>_EL2 in GIC; state gets set to pending (63:62 == 1) when guest CNTV fires, is not masked in SYS_APL_HV_TMR_MASK, and is masked in HACR_EL2.
 
-#### SYS_HV_TMR_MASK
+#### SYS_APL_HV_TMR_MASK
 
 (Name unofficial)
 
 * [0] CNTV guest timer mask bit (1=enable FIQ, 0=disable FIQ)
 * [1] CNTP guest timer mask bit (1=enable FIQ, 0=disable FIQ)
 
-#### SYS_IPI_SR
+#### SYS_APL_IPI_SR
 
 Status register
 
@@ -486,7 +486,7 @@ Needs a barrier (ISB SY) after clearing to avoid races with IPI handling.
 
 ### Virtual Memory System Architecture Lock
 
-#### SYS_VMSA_LOCK
+#### SYS_APL_VMSA_LOCK
 
 * [0] Lock VBAR
 * [1] Lock SCTLR
@@ -499,7 +499,7 @@ This is used to lock down writes to some Arm registers for security reasons at b
 
 ### Pointer Authentication related registers
 
-#### SYS_APCTL_EL1
+#### SYS_APL_APCTL_EL1
 
 * [0] Apple Mode
 * [1] Kernel Key enable
@@ -507,17 +507,17 @@ This is used to lock down writes to some Arm registers for security reasons at b
 * [3] AP Key 1 Enable
 * [4] User Key Enable
 
-#### SYS_APSTS_EL1
+#### SYS_APL_APSTS_EL1
 
 * [0] M Key Valid
 
 ### Performance Counter registers
 
-#### SYS_PMC0-9
+#### SYS_APL_PMC0-9
 
 Performance counter. 48 bits, bit 47 triggers PMI.
 
-#### SYS_PMCR0
+#### SYS_APL_PMCR0
 
 * [7:0] Counter enable for PMC #7-0
 * [10:8] Interrupt mode (0=off 1=PMI 2=AIC 3=HALT 4=FIQ)
@@ -530,7 +530,7 @@ Performance counter. 48 bits, bit 47 triggers PMI.
 * [33:32] Counter enable for PMC #9-8
 * [45:44] Enable PMI for PMC #9-8
 
-#### SYS_PMCR1
+#### SYS_APL_PMCR1
 
 Controls which ELx modes count events
 
@@ -543,59 +543,59 @@ Controls which ELx modes count events
 * [49:48] EL1 A64 enable PMC #9-8
 * [57:56] EL3 A64 enable PMC #9-8 (not implemented on modern chips)
 
-#### SYS_PMCR2
+#### SYS_APL_PMCR2
 
 Controls watchpoint registers.
 
-#### SYS_PMCR3
+#### SYS_APL_PMCR3
 
 Controls breakpoints and address matching.
 
-#### SYS_PMCR4
+#### SYS_APL_PMCR4
 
 Controls opcode matching.
 
-#### SYS_PMSR
+#### SYS_APL_PMSR
 
 [7:0] Overflow detected on PMC #7-0 (XXX: are 8-9 here too?)
 
-#### SYS_PMESR0
+#### SYS_APL_PMESR0
 
 Event selection register
 
-#### SYS_PMESR1
+#### SYS_APL_PMESR1
 
 Event selection register
 
-#### SYS_UPMCx
+#### SYS_APL_UPMCx
 
 Uncore PMCs. 48 bits wide, bit 47 is an overflow bit and triggers a PMI.
 
-#### SYS_UPMCR0
+#### SYS_APL_UPMCR0
 
 * [15:0] Counter enable for counter #15-0
 * [18:16] Interrupt mode (0=off 2=AIC 3=HALT 4=FIQ)
 * [35:20] Enable PMI for counter #15-0
 
-#### SYS_UPMSR
+#### SYS_APL_UPMSR
 
 * [0] Uncore PMI
 * [1] CTI
 * [17:2] Overflow on uncore counter #15-0
 
-#### SYS_UPMPCM
+#### SYS_APL_UPMPCM
 
 * [7:0] PMI core mask for uncore PMIs - which cores have PMIs delivered to them
 
-#### SYS_UPMESR0
+#### SYS_APL_UPMESR0
 
 Event selection register
 
-#### SYS_UPMESR1
+#### SYS_APL_UPMESR1
 
 Event selection register
 
-#### SYS_UPMECM[0-3]
+#### SYS_APL_UPMECM[0-3]
 
 Sets core masks for each event in the cluster, i.e. only events from those cores will be counted in uncore PMCs.
 
@@ -614,7 +614,7 @@ Sets core masks for each event in the cluster, i.e. only events from those cores
 
 * [20] Mask guest CNTV timer (1=masked)
 
-This works differently from SYS_GTIMER_MASK; that one masks the timers earlier, this one leaves the FIQ "pending" in SYS_HV_TMR_LR.
+This works differently from SYS_APL_GTIMER_MASK; that one masks the timers earlier, this one leaves the FIQ "pending" in SYS_APL_HV_TMR_LR.
 
 ### ID registers
 
