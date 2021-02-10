@@ -534,12 +534,14 @@ Performance counter. 48 bits, bit 47 triggers PMI.
 
 Controls which ELx modes count events
 
-* [7:0] EL0 A32 enable PMC #0-7
+* [7:0] EL0 A32 enable PMC #0-7 (not implemented on modern chips)
 * [15:8] EL0 A64 enable PMC #0-7
 * [23:16] EL1 A64 enable PMC #0-7
-* [31:24] EL3 A64 enable PMC #0-7 (not implemented except on old chips)
-
-TODO: where are PMC 8-9 here?
+* [31:24] EL3 A64 enable PMC #0-7 (not implemented except on old chips with EL3)
+* [33:32] EL0 A32 enable PMC #9-8 (not implemented on modern chips)
+* [41:40] EL0 A64 enable PMC #9-8
+* [49:48] EL1 A64 enable PMC #9-8
+* [57:56] EL3 A64 enable PMC #9-8 (not implemented on modern chips)
 
 #### SYS_PMCR2
 
