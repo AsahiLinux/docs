@@ -88,6 +88,10 @@ Using Linux format:
 #define SYS_DPC_ERR_STS     sys_reg(3, 5, 15, 0, 5)
 
 #define SYS_IPI_SR          sys_reg(3, 5, 15, 1, 1)
+
+#define SYS_HV_LR           sys_reg(3, 5, 15, 1, 2)
+#define SYS_HV_TMR_MASK     sys_reg(3, 5, 15, 1, 3)
+
 #define SYS_IPI_CR          sys_reg(3, 5, 15, 3, 1)
 
 #define SYS_ACC_CFG         sys_reg(3, 5, 15, 4, 0)
@@ -412,6 +416,19 @@ Global register.
 
 * [15:0] Deferred IPI countdown value (in REFCLK ticks)
 
+#### SYS_HV_TMR_LR
+
+(Name unofficial)
+
+Seems to be similar to ICH_LR<n>_EL2 in GIC; state gets set to pending (63:62 == 1) when guest CNTV fires, is not masked in SYS_HV_TMR_MASK, and is masked in HACR_EL2.
+
+#### SYS_HV_TMR_MASK
+
+(Name unofficial)
+
+* [0] CNTV guest timer mask bit (1=enable FIQ, 0=disable FIQ)
+* [1] CNTP guest timer mask bit (1=enable FIQ, 0=disable FIQ)
+
 #### SYS_IPI_SR
 
 Status register
@@ -457,6 +474,12 @@ This is used to lock down writes to some Arm registers for security reasons at b
 * [5] Enable AFP
 * [6] Enable PRSV
 * [12] IC IVAU Enable ASID
+
+#### HACR_EL2 (ARM standard-not-standard)
+
+* [20] Mask guest CNTV timer (1=masked)
+
+This works differently from SYS_GTIMER_MASK; that one masks the timers earlier, this one leaves the FIQ "pending" in SYS_HV_TMR_LR.
 
 ### ID registers
 
