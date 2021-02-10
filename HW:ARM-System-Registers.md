@@ -1,3 +1,5 @@
+See [[HW:ARM System Registers Dumps]] for exhaustive enumeration and research.
+
 ## Glossary
 
 Some of these are guesses
