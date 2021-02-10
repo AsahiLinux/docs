@@ -567,19 +567,19 @@ Uncore PMCs. 48 bits wide, bit 47 is an overflow bit and triggers a PMI.
 
 #### SYS_UPMCR0
 
-[15:0] Counter enable for counter #15-0
-[18:16] Interrupt mode (0=off 2=AIC 3=HALT 4=FIQ)
-[35:20] Enable PMI for counter #15-0
+* [15:0] Counter enable for counter #15-0
+* [18:16] Interrupt mode (0=off 2=AIC 3=HALT 4=FIQ)
+* [35:20] Enable PMI for counter #15-0
 
 #### SYS_UPMSR
 
-[0] Uncore PMI
-[1] CTI
-[17:2] Overflow on uncore counter #15-0
+* [0] Uncore PMI
+* [1] CTI
+* [17:2] Overflow on uncore counter #15-0
 
 #### SYS_UPMPCM
 
-[7:0] PMI core mask for uncore PMIs - which cores have PMIs delivered to them
+* [7:0] PMI core mask for uncore PMIs - which cores have PMIs delivered to them
 
 #### SYS_UPMESR0
 
