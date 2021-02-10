@@ -47,6 +47,26 @@ Using Linux format:
 #define SYS_EHID20          sys_reg(3, 0, 15, 1, 2)
 #define SYS_HID21           sys_reg(3, 0, 15, 1, 3)
 
+#define SYS_PMCR0           sys_reg(3, 1, 15, 0, 0)
+#define SYS_PMCR1           sys_reg(3, 1, 15, 1, 0)
+#define SYS_PMCR2           sys_reg(3, 1, 15, 2, 0)
+#define SYS_PMCR3           sys_reg(3, 1, 15, 3, 0)
+#define SYS_PMCR4           sys_reg(3, 1, 15, 4, 0)
+#define SYS_PMESR0          sys_reg(3, 1, 15, 5, 0)
+#define SYS_PMESR1          sys_reg(3, 1, 15, 6, 0)
+#define SYS_PMSR            sys_reg(3, 1, 15, 13, 0)
+
+#define SYS_PMC0            sys_reg(3, 2, 15, 0, 0)
+#define SYS_PMC1            sys_reg(3, 2, 15, 1, 0)
+#define SYS_PMC2            sys_reg(3, 2, 15, 2, 0)
+#define SYS_PMC3            sys_reg(3, 2, 15, 3, 0)
+#define SYS_PMC4            sys_reg(3, 2, 15, 4, 0)
+#define SYS_PMC5            sys_reg(3, 2, 15, 5, 0)
+#define SYS_PMC6            sys_reg(3, 2, 15, 6, 0)
+#define SYS_PMC7            sys_reg(3, 2, 15, 7, 0)
+#define SYS_PMC8            sys_reg(3, 2, 15, 9, 0)
+#define SYS_PMC9            sys_reg(3, 2, 15, 10, 0)
+
 #define SYS_LSU_ERR_STS     sys_reg(3, 3, 15, 0, 0)
 #define SYS_E_LSU_ERR_STS   sys_reg(3, 3, 15, 2, 0)
 #define SYS_LSU_ERR_CTL     sys_reg(3, 3, 15, 1, 0)
@@ -105,6 +125,33 @@ Using Linux format:
 
 #define SYS_APSTS_EL1       sys_reg(3, 6, 15, 12, 4)
 
+#define SYS_UPMCR0          sys_reg(3, 7, 15, 0, 4)
+#define SYS_UPMESR0         sys_reg(3, 7, 15, 1, 4)
+#define SYS_UPMECM0         sys_reg(3, 7, 15, 3, 4)
+#define SYS_UPMECM1         sys_reg(3, 7, 15, 4, 4)
+#define SYS_UPMPCM          sys_reg(3, 7, 15, 5, 4)
+#define SYS_UPMSR           sys_reg(3, 7, 15, 6, 4)
+#define SYS_UPMECM2         sys_reg(3, 7, 15, 8, 5)
+#define SYS_UPMECM3         sys_reg(3, 7, 15, 9, 5)
+#define SYS_UPMESR1         sys_reg(3, 7, 15, 11, 5)
+
+/* Note: out of order wrt above */
+#define SYS_UPMC0           sys_reg(3, 7, 15, 7, 4)
+#define SYS_UPMC1           sys_reg(3, 7, 15, 8, 4)
+#define SYS_UPMC2           sys_reg(3, 7, 15, 9, 4)
+#define SYS_UPMC3           sys_reg(3, 7, 15, 10, 4)
+#define SYS_UPMC4           sys_reg(3, 7, 15, 11, 4)
+#define SYS_UPMC5           sys_reg(3, 7, 15, 12, 4)
+#define SYS_UPMC6           sys_reg(3, 7, 15, 13, 4)
+#define SYS_UPMC7           sys_reg(3, 7, 15, 14, 4)
+#define SYS_UPMC8           sys_reg(3, 7, 15, 0, 5)
+#define SYS_UPMC9           sys_reg(3, 7, 15, 1, 5)
+#define SYS_UPMC10          sys_reg(3, 7, 15, 2, 5)
+#define SYS_UPMC11          sys_reg(3, 7, 15, 3, 5)
+#define SYS_UPMC12          sys_reg(3, 7, 15, 4, 5)
+#define SYS_UPMC13          sys_reg(3, 7, 15, 5, 5)
+#define SYS_UPMC14          sys_reg(3, 7, 15, 6, 5)
+#define SYS_UPMC15          sys_reg(3, 7, 15, 7, 5)
 ```
 
 ### HID registers
@@ -463,6 +510,88 @@ This is used to lock down writes to some Arm registers for security reasons at b
 #### SYS_APSTS_EL1
 
 * [0] M Key Valid
+
+### Performance Counter registers
+
+#### SYS_PMCR0
+
+* [7:0] Counter enable for PMC #7-0
+* [10:8] Interrupt mode (0=off 1=PMI 2=AIC 3=HALT 4=FIQ)
+* [11] PMI interrupt is active (write 0 to clear)
+* [19:12] Enable PMI for PMC #7-0
+* [20] Disable counting on a PMI
+* [22] Block PMIs until after eret
+* [23] Count global (not just core) L2C events
+* [30] User-mode access to registers enable
+* [33:32] Counter enable for PMC #9-8
+* [45:44] Enable PMI for PMC #9-8
+
+#### SYS_PMCR1
+
+Controls which ELx modes count events
+
+* [7:0] EL0 A32 enable PMC #0-7
+* [15:8] EL0 A64 enable PMC #0-7
+* [23:16] EL1 A64 enable PMC #0-7
+* [31:24] EL3 A64 enable PMC #0-7 (not implemented except on old chips)
+
+TODO: where are PMC 8-9 here?
+
+#### SYS_PMCR2
+
+Controls watchpoint registers.
+
+#### SYS_PMCR3
+
+Controls breakpoints and address matching.
+
+#### SYS_PMCR4
+
+Controls opcode matching.
+
+#### SYS_PMSR
+
+[7:0] Overflow detected on PMC #7-0 (XXX: are 8-9 here too?)
+
+#### SYS_PMESR0
+
+Event selection register
+
+#### SYS_PMESR1
+
+Event selection register
+
+#### SYS_UPMCx
+
+Uncore PMCs. 48 bits wide, bit 47 is an overflow bit and triggers a PMI.
+
+#### SYS_UPMCR0
+
+[15:0] Counter enable for counter #15-0
+[18:16] Interrupt mode (0=off 2=AIC 3=HALT 4=FIQ)
+[35:20] Enable PMI for counter #15-0
+
+#### SYS_UPMSR
+
+[0] Uncore PMI
+[1] CTI
+[17:2] Overflow on uncore counter #15-0
+
+#### SYS_UPMPCM
+
+[7:0] PMI core mask for uncore PMIs - which cores have PMIs delivered to them
+
+#### SYS_UPMESR0
+
+Event selection register
+
+#### SYS_UPMESR1
+
+Event selection register
+
+#### SYS_UPMECM[0-3]
+
+Sets core masks for each event in the cluster, i.e. only events from those cores will be counted in uncore PMCs.
 
 ### General config registers
 
