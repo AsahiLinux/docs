@@ -10,18 +10,18 @@
 
 ## Bootloader (m1n1)
 * [x] FB/Logo
-* [ ] MMU
+* [x] MMU
 * [ ] Text console
 * [ ] USB device (dwc3)
 * [x] Decompression
-* [ ] SMP spin-up
-* [ ] Handle CPU chicken bits
+* [x] SMP spin-up
+* [x] Handle CPU chicken bits
 * [x] ADT parsing
-* [ ] Linux kernel booting
-  * [ ] UP
-  * [ ] SMP
-  * [ ] FDT modification
-  * [ ] Initramfs support
+* [x] Linux kernel booting
+  * [x] UP
+  * [x] SMP
+  * [x] FDT modification
+  * [x] Initramfs support
 * [ ] Storage driver
 * [ ] Filesystems
 * [ ] Config file
