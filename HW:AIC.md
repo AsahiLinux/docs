@@ -23,26 +23,29 @@ Apple likes to use a particular SET/CLR register pair style:
 8020 Low 32 bits of MSR CNTPCT_EL0 (system timer)
 8028 High 32 bits of MSR CNTPCT_EL0 (system timer)
 
+Mirror accessing per-core state for the current CPU core:
 2004 IRQ_REASON
-2008 IPI_FLAG_SET
-200c IPI_FLAG_CLR
-2024 IPI_MASK_SET
+2008 IPI_SEND - Send an IPI, bits 0..<31 send an other IPI to a CPU, bit 31 sends a "self" IPI to this CPU
+200c IPI_ACK  - Acks an IPI, bit 0 acks a "self" IPI, and bit 31 acks an "other" IPI
+2024 IPI_MASK_SET - Mask bits for IPIs correspond to the same type and position of the bits for IPI_ACK
 2028 IPI_MASK_CLR
+
+TODO Document direct access to per-core state offsets
 ```
 
 ## Usage
 
 IPI flow:
 
-* Write bit to IPI_FLAG_SET
+* Write bit to IPI_SEND
 * ARM IRQ asserted
 * Read IRQ_REASON
     * IPI is masked in IPI_MASK
     * ARM irq is desasserted
-* Write bit to IPI_FLAG_CLR
+* Write bit to IPI_ACK
 * Write bit to IPI_MASK_CLR
     * IPI is unmasked
-    * if IPI_FLAG was not cleared, ARM irq would reassert here
+    * if IPI_ACK was not cleared, ARM irq would reassert here
 
 HW irq flow:
 
