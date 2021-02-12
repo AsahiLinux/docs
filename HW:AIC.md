@@ -26,7 +26,7 @@ Apple likes to use a particular SET/CLR register pair style:
 Mirror accessing per-core state for the current CPU core:
 2004 IRQ_REASON
 2008 IPI_SEND - Send an IPI, bits 0..<31 send an other IPI to a CPU, bit 31 sends a "self" IPI to this CPU
-200c IPI_ACK  - Acks an IPI, bit 0 acks a "self" IPI, and bit 31 acks an "other" IPI
+200c IPI_ACK  - Acks an IPI, bit 0 acks an "other" IPI, and bit 31 acks a "self" IPI
 2024 IPI_MASK_SET - Mask bits for IPIs correspond to the same type and position of the bits for IPI_ACK
 2028 IPI_MASK_CLR
 
