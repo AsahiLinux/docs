@@ -344,6 +344,8 @@ $ arch -x86_64 brew install python
 $ pip3.9 install --user pyserial construct
 ```
 
+You can also use macports to install python and pip and than install the dependencies using pip as root. Macports has a native build for M1. The packages in macports that you need are python39 and py39-pip.
+
 ### Usage
 
 To use the proxyclient scripts, you need to set `M1N1DEVICE` to your serial port device. When using another M1 mac as the host, use `export M1N1DEVICE=/dev/cu.debug-console`.
