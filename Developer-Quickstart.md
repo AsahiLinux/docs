@@ -448,6 +448,12 @@ This is what you're here for, right? :-)
 $ python linux.py ../../linux/arch/arm64/boot/Image.gz ../build/dtb/apple-j274.dtb ../../../initramfs/initramfs.cpio.gz
 ```
 
+You can also pass kernel parameters
+
+```shell
+$ python linux.py -b 'earlycon console=ttySAC0,1500000 console=tty0 debug' Image.gz apple-j274.dtb initramfs.cpio.gz
+```
+
 <details>
  <summary>sample boot log</summary>
 
