@@ -583,4 +583,4 @@ Enter 'help' for a list of built-in commands.
 
 </details>
 
-The script currently does output only for the TTY passthrough. TODO: support input.
+The script currently supports input and output for the TTY passthrough.
