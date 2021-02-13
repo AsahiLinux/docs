@@ -109,8 +109,8 @@ Using Linux format:
 
 #define SYS_APL_IPI_SR          sys_reg(3, 5, 15, 1, 1)
 
-#define SYS_APL_HV_LR           sys_reg(3, 5, 15, 1, 2)
-#define SYS_APL_HV_TMR_MASK     sys_reg(3, 5, 15, 1, 3)
+#define SYS_APL_VM_LR           sys_reg(3, 5, 15, 1, 2)
+#define SYS_APL_VM_TMR_MASK     sys_reg(3, 5, 15, 1, 3)
 
 #define SYS_APL_IPI_CR          sys_reg(3, 5, 15, 3, 1)
 
@@ -463,13 +463,13 @@ Global register.
 
 * [15:0] Deferred IPI countdown value (in REFCLK ticks)
 
-#### SYS_APL_HV_TMR_LR
+#### SYS_APL_VM_TMR_LR
 
 (Name unofficial)
 
 Seems to be similar to ICH_LR<n>_EL2 in GIC; state gets set to pending (63:62 == 1) when guest CNTV fires, is not masked in SYS_APL_HV_TMR_MASK, and is masked in HACR_EL2.
 
-#### SYS_APL_HV_TMR_MASK
+#### SYS_APL_VM_TMR_MASK
 
 (Name unofficial)
 
