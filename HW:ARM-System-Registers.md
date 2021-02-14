@@ -513,9 +513,13 @@ This is used to lock down writes to some Arm registers for security reasons at b
 
 ### Performance Counter registers
 
+Writes to the control register need `isb` to take effect.
+
 #### SYS_APL_PMC0-9
 
 Performance counter. 48 bits, bit 47 triggers PMI.
+* PMC #0: fixed cpu cycle count if enabled
+* PMC #1: fixed instruction count if enabled
 
 #### SYS_APL_PMCR0
 
@@ -561,11 +565,21 @@ Controls opcode matching.
 
 #### SYS_APL_PMESR0
 
-Event selection register
+Event selection register for PMC #2-5
+
+* [7:0] event for PMC #2
+* [15:8] event for PMC #3
+* [23:16] event for PMC #4
+* [31:24] event for PMC #5
 
 #### SYS_APL_PMESR1
 
-Event selection register
+Event selection register for PMC #6-9
+
+* [7:0] event for PMC #6
+* [15:8] event for PMC #7
+* [23:16] event for PMC #8
+* [31:24] event for PMC #9
 
 #### SYS_APL_UPMCx
 
