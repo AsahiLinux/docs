@@ -369,6 +369,8 @@ All implemented (readable) vendor-specific registers. Dumped while running m1n1 
 
 ## System Registers dump while running Darwin
 
+Dump from Darwin version: 20.3.0 XNU: 7195.81.3~1
+
 | Name | Register | Icestorm | Firestorm |
 |-|-|-|-|
 | SYS_APL_HID0 | s3_0_c15_c0_0 | N/A | 0x10002990120e0e00 |
