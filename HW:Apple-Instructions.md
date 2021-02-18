@@ -16,6 +16,8 @@ Apple proprietary instructions seem to be in the 0x0020xxxx range.
 00201000 - 002012df            AMX, see https://gist.github.com/dougallj/7a75a3be1ec69ca550e7c36dc75e0d6f
    If AMX is not enabled (default), these fault with ESR_EL2 = 0xfe000003
 
+   ..222~23f "hole" of unknown instructions
+    
 002012e0 - 0020143f            Faults with unknown instruction
 
 00201440 | rA                  Translate address. Returns in the same register:
