@@ -25,6 +25,8 @@ Apple proprietary instructions seem to be in the 0x0020xxxx range.
    [??:12] Physical address
    [11:00] Flags/status/etc.  0x80x = unmapped, x varies depending on PT level that faulted?
 
+This seems to be the same as the PAR_EL1 system register, used as the output for the *official* ARM translate address instructions.
+
 00201460                       Unknown, executes without fault
 00201461                       Unknown, executes without fault
 00201462                       Unknown, executes without fault - used by iBoot trampoline
