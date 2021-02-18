@@ -27,7 +27,7 @@ Apple proprietary instructions seem to be in the 0x0020xxxx range.
 
 00201460                       Unknown, executes without fault
 00201461                       Unknown, executes without fault
-00201462                       Unknown, executes without fault
+00201462                       Unknown, executes without fault - used by iBoot trampoline
 00201463                       Unknown, executes without fault
 
 00201464 ~                     Faults with unknown instruction
