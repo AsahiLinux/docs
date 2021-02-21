@@ -3,6 +3,8 @@ These are just some references for people to build some background knowledge int
 
 [Explore the new system architecture of Apple silicon Macs (WWDC 2020 Session)](https://developer.apple.com/videos/play/wwdc2020/10686/)
 
+[Apple Platform Security Documentation](https://support.apple.com/en-au/guide/security/welcome/web)
+
 [The T2 Development Blog](https://blog.t8012.dev/ace-part-1/)
 
 [Apple Silicon DFU Restore guide](https://support.apple.com/no-no/guide/apple-configurator-2/apdd5f3c75ad/mac)
