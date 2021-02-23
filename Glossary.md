@@ -91,3 +91,4 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### V
 * **VBUS**: USB pin delivering power. Defaults to 5V, can go as high as 20V with USB-PD.
 * **VDM**: Vendor Defined Message. Used for both USB Alternate Mode (not actually proprietary) and vendor-proprietary commands over USB-PD. Apple uses these to configure special modes on their Type C ports.
+* **VHE**: Virtual Host Extensions. Extra Registers to allow more efficient switching between OS/VMs/User-space. See [ARM VHE explanation](https://developer.arm.com/documentation/102142/0100/Virtualization-Host-Extensions)
