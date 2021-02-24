@@ -123,6 +123,8 @@ Using Linux format:
 
 #define SYS_APL_E_MMU_ERR_STS   sys_reg(3, 6, 15, 2, 0)
 
+#define SYS_APL_AFPCR           sys_reg(3, 6, 15, 2, 5)
+
 #define SYS_APL_APSTS_EL1       sys_reg(3, 6, 15, 12, 4)
 
 #define SYS_APL_UPMCR0          sys_reg(3, 7, 15, 0, 4)
@@ -507,6 +509,17 @@ This is used to lock down writes to some Arm registers for security reasons at b
 * [3] AP Key 1 Enable
 * [4] User Key Enable
 
+#### SYS_APL_AFPCR
+
+Apple-specific floating point related bits.
+
+[0] DAZ (Denormals as Zero)
+[1] FTZ (Flush to Zero)
+
+These implement the SSE equivalent mode bits. This must be enabled to be useful, with ACTLR_EL1.AFP.
+
+The AArch64 FEAT_AFT feature implements equivalent support, but Apple implemented it before it was standardized. The standard version is that you need to set FPSCR[1] (AH) to 1, and then FPCR[0] (FIZ) is like DAZ, and FPCR[24] (FZ) is like FTZ.
+
 #### SYS_APL_APSTS_EL1
 
 * [0] M Key Valid
@@ -620,7 +633,7 @@ Sets core masks for each event in the cluster, i.e. only events from those cores
 * [1] Enable TSO
 * [3] Disable HWP
 * [4] Enable APFLG
-* [5] Enable AFP
+* [5] Enable Apple FP extensions. This makes FPCR.FZ a don't care, and replaces it with AFPCR.DAZ and AFPCR.FTZ.
 * [6] Enable PRSV
 * [12] IC IVAU Enable ASID
 
@@ -677,9 +690,8 @@ These look like a newer version of APRR
 
 #### s3_4_c15_c5_0
 
-Thisn gets written with the core ID (within the cluster) during init.
+This gets written with the core ID (within the cluster) during init.
 
 #### AHCR_EL2
 
 Encoding unknown. Related to ACTLR_EL1[12].
-
