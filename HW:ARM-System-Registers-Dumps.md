@@ -1,371 +1,371 @@
 All implemented (readable) vendor-specific registers. Dumped while running m1n1 (after chicken bits):
 
-| Name | Register | Icestorm | Firestorm |
+| Name | Register | Access | Icestorm | Firestorm |
 |-|-|-|-|
-| SYS_APL_HID0 | s3_0_c15_c0_0 | N/A | 0x10002990120e0e00 |
-| unknow | s3_0_c15_c0_1 | 0x7180080006000000 | N/A |
-| SYS_APL_HID1 | s3_0_c15_c1_0 | N/A | 0x40000002000000 |
-| SYS_APL_EHID1 | s3_0_c15_c1_1 | 0x129802000000 | N/A |
-| SYS_APL_EHID20 | s3_0_c15_c1_2 | 0x618100 | N/A |
-| SYS_APL_HID21 | s3_0_c15_c1_3 | N/A | 0x1040000 |
-| unknow | s3_0_c15_c1_4 | 0xce8e19f3b0a04081 | same |
-| unknow | s3_0_c15_c1_5 | 0x19d1c3862c081 | same |
-| SYS_APL_HID2 | s3_0_c15_c2_0 | N/A | 0x0 |
-| SYS_APL_EHID2 | s3_0_c15_c2_1 | 0x0 | N/A |
-| SYS_APL_HID3 | s3_0_c15_c3_0 | N/A | 0x4180000cf8001fe0 |
-| SYS_APL_EHID3 | s3_0_c15_c3_1 | 0x2030001fe0 | N/A |
-| SYS_APL_HID4 | s3_0_c15_c4_0 | N/A | 0x130800000800 |
-| SYS_APL_EHID4 | s3_0_c15_c4_1 | 0x100000000800 | N/A |
-| SYS_APL_HID5 | s3_0_c15_c5_0 | 0x2082df50e700df14 | 0x2082df205700ff12 |
-| SYS_APL_HID6 | s3_0_c15_c6_0 | 0x7dc8031f007f0e | 0x7dc8031f007c0e |
-| SYS_APL_HID7 | s3_0_c15_c7_0 | N/A | 0x3110000 |
-| unknow | s3_0_c15_c7_1 | 0x0 | N/A |
-| SYS_APL_HID8 | s3_0_c15_c8_0 | 0x381c109438000135 | 0x381c10a438000252 |
-| SYS_APL_HID9 | s3_0_c15_c9_0 | N/A | 0x100086c000000 |
-| SYS_APL_EHID9 | s3_0_c15_c9_1 | 0x600000811 | N/A |
-| SYS_APL_HID10 | s3_0_c15_c10_0 | N/A | 0x3180200 |
-| SYS_APL_EHID10 | s3_0_c15_c10_1 | 0x3000528002788 | N/A |
-| unknow | s3_0_c15_c10_2 | 0x40032014 | same |
-| SYS_APL_HID11 | s3_0_c15_c11_0 | N/A | 0x804000010000000 |
-| SYS_APL_EHID11 | s3_0_c15_c11_1 | 0x30000000010 | N/A |
-| SYS_APL_HID18 | s3_0_c15_c11_2 | N/A | 0x40004000 |
-| unknow | s3_0_c15_c11_3 | 0x0 | N/A |
-| unknow | s3_0_c15_c12_0 | 0xe10000000e020 | 0xe00000000e020 |
-| unknow | s3_0_c15_c12_1 | 0x1800 | same |
-| unknow | s3_0_c15_c12_2 | 0x40201008040201 | same |
-| unknow | s3_0_c15_c13_0 | 0x0 | same |
-| SYS_APL_HID13 | s3_0_c15_c14_0 | N/A | 0x332200211010205 |
-| SYS_APL_HID14 | s3_0_c15_c15_0 | N/A | 0x200000bb8 |
-| SYS_APL_HID16 | s3_0_c15_c15_2 | N/A | 0x6900000440000000 |
-| unknow | s3_0_c15_c15_3 | 0x20402000000 | same |
-| SYS_APL_HID17 | s3_0_c15_c15_5 | 0x54090afcfa9 | 0x50090af8faa |
-| SYS_APL_PMCR0 | s3_1_c15_c0_0 | 0x0 | same |
-| unknow | s3_1_c15_c0_1 | 0x0 | same |
-| unknow | s3_1_c15_c0_2 | 0x6 | same |
-| unknow | s3_1_c15_c0_3 | 0x0 | same |
-| unknow | s3_1_c15_c0_4 | 0x0 | same |
-| SYS_APL_PMCR1 | s3_1_c15_c1_0 | 0x0 | same |
-| unknow | s3_1_c15_c1_2 | 0x0 | same |
-| unknow | s3_1_c15_c1_3 | 0x0 | same |
-| unknow | s3_1_c15_c1_4 | 0x0 | same |
-| SYS_APL_PMCR2 | s3_1_c15_c2_0 | 0x0 | same |
-| unknow | s3_1_c15_c2_2 | 0x0 | same |
-| unknow | s3_1_c15_c2_3 | 0x0 | same |
-| SYS_APL_PMCR3 | s3_1_c15_c3_0 | 0x0 | same |
-| unknow | s3_1_c15_c3_2 | 0x0 | same |
-| unknow | s3_1_c15_c3_3 | 0x0 | same |
-| SYS_APL_PMCR4 | s3_1_c15_c4_0 | 0x0 | same |
-| unknow | s3_1_c15_c4_2 | 0x6 | same |
-| unknow | s3_1_c15_c4_3 | 0x0 | same |
-| SYS_APL_PMESR0 | s3_1_c15_c5_0 | 0x0 | same |
-| unknow | s3_1_c15_c5_2 | 0x0 | same |
-| unknow | s3_1_c15_c5_3 | 0x0 | same |
-| SYS_APL_PMESR1 | s3_1_c15_c6_0 | 0x0 | same |
-| unknow | s3_1_c15_c6_2 | 0x0 | same |
-| unknow | s3_1_c15_c6_3 | 0x0 | same |
-| unknow | s3_1_c15_c7_0 | 0x0 | same |
-| unknow | s3_1_c15_c7_2 | 0x0 | same |
-| unknow | s3_1_c15_c7_3 | 0x0 | same |
-| unknow | s3_1_c15_c8_0 | 0x0 | same |
-| unknow | s3_1_c15_c8_3 | 0x0 | same |
-| unknow | s3_1_c15_c9_0 | 0x0 | same |
-| unknow | s3_1_c15_c9_2 | 0x6 | same |
-| unknow | s3_1_c15_c9_3 | 0x0 | same |
-| unknow | s3_1_c15_c10_0 | 0x0 | same |
-| unknow | s3_1_c15_c10_2 | 0x0 | same |
-| unknow | s3_1_c15_c10_3 | 0x0 | same |
-| unknow | s3_1_c15_c11_0 | 0xfffff | same |
-| unknow | s3_1_c15_c11_3 | 0x0 | same |
-| unknow | s3_1_c15_c12_0 | 0x0 | same |
-| unknow | s3_1_c15_c12_3 | 0x0 | same |
-| SYS_APL_PMSR | s3_1_c15_c13_0 | 0x0 | same |
-| unknow | s3_1_c15_c13_3 | 0x0 | same |
-| unknow | s3_1_c15_c14_0 | 0x0 | same |
-| unknow | s3_1_c15_c14_1 | 0x0 | same |
-| unknow | s3_1_c15_c14_3 | 0x0 | same |
-| unknow | s3_1_c15_c15_0 | 0x0 | same |
-| unknow | s3_1_c15_c15_3 | 0x0 | same |
-| SYS_APL_PMC0 | s3_2_c15_c0_0 | 0x0 | same |
-| unknow | s3_2_c15_c0_1 | 0x0 | same |
-| unknow | s3_2_c15_c0_2 | 0x0 | same |
-| unknow | s3_2_c15_c0_3 | 0x0 | same |
-| unknow | s3_2_c15_c0_4 | 0x0 | same |
-| unknow | s3_2_c15_c0_5 | 0x0 | same |
-| unknow | s3_2_c15_c0_6 | 0x0 | same |
-| unknow | s3_2_c15_c0_7 | 0x0 | same |
-| SYS_APL_PMC1 | s3_2_c15_c1_0 | 0x0 | same |
-| unknow | s3_2_c15_c1_1 | 0x0 | same |
-| SYS_APL_PMC2 | s3_2_c15_c2_0 | 0x0 | same |
-| SYS_APL_PMC3 | s3_2_c15_c3_0 | 0x0 | same |
-| SYS_APL_PMC4 | s3_2_c15_c4_0 | 0x0 | same |
-| SYS_APL_PMC5 | s3_2_c15_c5_0 | 0x0 | same |
-| SYS_APL_PMC6 | s3_2_c15_c6_0 | 0x0 | same |
-| SYS_APL_PMC7 | s3_2_c15_c7_0 | 0x0 | same |
-| SYS_APL_PMC8 | s3_2_c15_c9_0 | 0x0 | same |
-| SYS_APL_PMC9 | s3_2_c15_c10_0 | 0x0 | same |
-| unknow | s3_2_c15_c12_0 | 0x0 | same |
-| unknow | s3_2_c15_c13_0 | 0x0 | same |
-| unknow | s3_2_c15_c14_0 | 0x0 | same |
-| unknow | s3_2_c15_c15_0 | 0x0 | same |
-| SYS_APL_LSU_ERR_STS | s3_3_c15_c0_0 | N/A | 0x0 |
-| unknow | s3_3_c15_c0_4 | 0x0 | same |
-| unknow | s3_3_c15_c0_5 | 0x0 | same |
-| unknow | s3_3_c15_c0_6 | 0x0 | same |
-| SYS_APL_LSU_ERR_CTL | s3_3_c15_c1_0 | N/A | 0x1 |
-| unknow | s3_3_c15_c1_4 | 0x0 | same |
-| unknow | s3_3_c15_c1_5 | 0x0 | same |
-| unknow | s3_3_c15_c1_6 | 0x0 | same |
-| SYS_APL_E_LSU_ERR_STS | s3_3_c15_c2_0 | 0x0 | N/A |
-| unknow | s3_3_c15_c2_4 | 0x0 | same |
-| unknow | s3_3_c15_c2_5 | 0x0 | same |
-| unknow | s3_3_c15_c3_0 | 0x60 | N/A |
-| unknow | s3_3_c15_c3_4 | 0x0 | same |
-| unknow | s3_3_c15_c3_5 | 0x0 | same |
-| unknow | s3_3_c15_c4_0 | 0x0 | same |
-| unknow | s3_3_c15_c4_4 | 0x0 | same |
-| unknow | s3_3_c15_c4_5 | 0x0 | same |
-| unknow | s3_3_c15_c4_6 | 0x3ffffffffff | same |
-| unknow | s3_3_c15_c5_0 | 0x0 | same |
-| unknow | s3_3_c15_c5_5 | 0x0 | same |
-| unknow | s3_3_c15_c6_5 | 0x0 | same |
-| unknow | s3_3_c15_c7_0 | 0xf1200 | 0xb1400 |
-| unknow | s3_3_c15_c7_5 | 0x0 | same |
-| SYS_APL_L2C_ERR_STS | s3_3_c15_c8_0 | 0x11000ffc00000000 | same |
-| unknow | s3_3_c15_c8_1 | 0x1 | 0x2 |
-| unknow | s3_3_c15_c8_2 | 0x1 | 0x2 |
-| unknow | s3_3_c15_c8_3 | 0x4 | same |
-| SYS_APL_L2C_ERR_ADR | s3_3_c15_c9_0 | 0x0 | same |
-| SYS_APL_L2C_ERR_INF | s3_3_c15_c10_0 | 0x0 | same |
-| unknow | s3_3_c15_c11_0 | 0x0 | same |
-| unknow | s3_3_c15_c12_0 | 0xfffffffff | same |
-| unknow | s3_3_c15_c13_0 | 0x238018600bc0024 | same |
-| unknow | s3_3_c15_c13_1 | 0x84005a002c0008 | same |
-| unknow | s3_3_c15_c13_2 | 0x1c8014e00a60024 | same |
-| unknow | s3_3_c15_c13_3 | 0x6a004e00260008 | same |
-| unknow | s3_3_c15_c13_4 | 0x20000 | same |
-| unknow | s3_3_c15_c13_5 | 0x40000 | same |
-| unknow | s3_3_c15_c13_6 | 0x80000 | same |
-| unknow | s3_3_c15_c13_7 | 0x100000 | same |
-| unknow | s3_3_c15_c14_0 | 0xf0000 | same |
-| unknow | s3_3_c15_c15_0 | 0x4ad4b4c00 | same |
-| unknow | s3_3_c15_c15_1 | 0x352b4b200 | same |
-| unknow | s3_3_c15_c15_2 | 0x10000 | same |
-| unknow | s3_3_c15_c15_3 | 0x20000 | same |
-| unknow | s3_3_c15_c15_4 | 0x8d48e9f929042518 | same |
-| SYS_APL_FED_ERR_STS | s3_4_c15_c0_0 | N/A | 0x0 |
-| unknow | s3_4_c15_c0_1 | N/A | 0x25 |
-| SYS_APL_E_FED_ERR_STS | s3_4_c15_c0_2 | 0x0 | N/A |
-| unknow | s3_4_c15_c0_3 | 0x7f | N/A |
-| SYS_APL_APCTL_EL1 | s3_4_c15_c0_4 | 0xc | same |
-| unknow | s3_4_c15_c0_5 | 0x0 | same |
-| unknow | s3_4_c15_c0_7 | 0x0 | same |
-| SYS_APL_KERNELKEYLO_EL1 | s3_4_c15_c1_0 | 0x0 | same |
-| SYS_APL_KERNELKEYHI_EL1 | s3_4_c15_c1_1 | 0x0 | same |
-| SYS_APL_VMSA_LOCK | s3_4_c15_c1_2 | 0x0 | same |
-| unknow | s3_4_c15_c1_3 | 0x0 | same |
-| unknow | s3_4_c15_c1_4 | 0x100 | same |
-| unknow | s3_4_c15_c1_5 | 0x0 | same |
-| unknow | s3_4_c15_c1_6 | 0x0 | same |
-| unknow | s3_4_c15_c1_7 | 0x0 | same |
-| SYS_APL_CTRR_LOCK_EL1 | s3_4_c15_c2_2 | 0x0 | same |
-| SYS_APL_CTRR_A_LWR_EL1 | s3_4_c15_c2_3 | 0x80485c000 | 0x0 |
-| SYS_APL_CTRR_A_UPR_EL1 | s3_4_c15_c2_4 | 0x804924000 | 0x0 |
-| SYS_APL_CTRR_CTL_EL1 | s3_4_c15_c2_5 | 0x0 | same |
-| SYS_APL_APRR_JIT_ENABLE | s3_4_c15_c2_6 | 0x0 | same |
-| SYS_APL_APRR_JIT_MASK | s3_4_c15_c2_7 | 0x0 | same |
-| unknow | s3_4_c15_c3_0 | 0x0 | same |
-| unknow | s3_4_c15_c3_1 | 0x0 | same |
-| unknow | s3_4_c15_c3_2 | 0x0 | same |
-| unknow | s3_4_c15_c3_3 | 0x0 | same |
-| unknow | s3_4_c15_c3_4 | 0x0 | same |
-| unknow | s3_4_c15_c3_5 | 0x0 | same |
-| unknow | s3_4_c15_c3_6 | 0x0 | same |
-| unknow | s3_4_c15_c3_7 | 0x0 | same |
-| unknow | s3_4_c15_c4_0 | 0x4 | same |
-| unknow | s3_4_c15_c4_6 | 0x0 | same |
-| unknow | s3_4_c15_c4_7 | 0x100 | same |
-| SYS_APL_s3_4_c15_c5_0 | s3_4_c15_c5_0 | 0x0 | same |
-| unknow | s3_4_c15_c5_6 | 0x0 | same |
-| unknow | s3_4_c15_c5_7 | 0x0 | same |
-| unknow | s3_4_c15_c6_0 | 0x0 | same |
-| unknow | s3_4_c15_c6_1 | 0x0 | same |
-| unknow | s3_4_c15_c6_2 | 0x0 | same |
-| unknow | s3_4_c15_c6_3 | 0x0 | same |
-| unknow | s3_4_c15_c6_4 | 0x80485c000 | 0x0 |
-| unknow | s3_4_c15_c6_5 | 0x804924000 | 0x0 |
-| unknow | s3_4_c15_c6_6 | 0x0 | same |
-| unknow | s3_4_c15_c6_7 | 0x0 | same |
-| unknow | s3_4_c15_c9_0 | 0x0 | same |
-| unknow | s3_4_c15_c9_1 | 0x0 | same |
-| unknow | s3_4_c15_c9_2 | 0x0 | same |
-| unknow | s3_4_c15_c9_3 | 0x0 | same |
-| unknow | s3_4_c15_c9_4 | 0x0 | same |
-| unknow | s3_4_c15_c9_5 | 0x0 | same |
-| unknow | s3_4_c15_c10_4 | 0x3 | same |
-| unknow | s3_4_c15_c10_5 | 0xfb8de8634 | 0x3edb4528 |
-| unknow | s3_4_c15_c10_6 | 0xfb8de8634 | 0x3edb4529 |
-| SYS_APL_CTRR_A_LWR_EL2 | s3_4_c15_c11_0 | 0x0 | same |
-| SYS_APL_CTRR_A_UPR_EL2 | s3_4_c15_c11_1 | 0x0 | same |
-| unknow | s3_4_c15_c11_2 | 0x0 | same |
-| unknow | s3_4_c15_c11_3 | 0x0 | same |
-| SYS_APL_CTRR_CTL_EL2 | s3_4_c15_c11_4 | 0x0 | same |
-| SYS_APL_CTRR_LOCK_EL2 | s3_4_c15_c11_5 | 0x0 | same |
-| unknow | s3_4_c15_c12_5 | 0x0 | same |
-| unknow | s3_4_c15_c12_7 | 0x0 | same |
-| unknow | s3_5_c15_c0_2 | 0xf | same |
-| unknow | s3_5_c15_c0_3 | 0xf | same |
-| unknow | s3_5_c15_c0_4 | 0x0 | same |
-| SYS_APL_DPC_ERR_STS | s3_5_c15_c0_5 | 0x0 | same |
-| unknow | s3_5_c15_c0_6 | 0x21f | same |
-| unknow | s3_5_c15_c1_0 | 0x0 | same |
-| SYS_APL_IPI_SR | s3_5_c15_c1_1 | 0x0 | same |
-| SYS_APL_VM_LR | s3_5_c15_c1_2 | 0x1b0000001b | same |
-| SYS_APL_VM_TMR_MASK | s3_5_c15_c1_3 | 0x3 | same |
-| unknow | s3_5_c15_c2_0 | 0x0 | same |
-| unknow | s3_5_c15_c3_0 | 0x0 | same |
-| SYS_APL_IPI_CR | s3_5_c15_c3_1 | 0x1800 | same |
-| unknow | s3_5_c15_c3_2 | 0x0 | same |
-| unknow | s3_5_c15_c3_4 | 0x0 | same |
-| unknow | s3_5_c15_c3_5 | 0x0 | same |
-| SYS_APL_ACC_CFG | s3_5_c15_c4_0 | 0xd | same |
-| unknow | s3_5_c15_c4_1 | 0x100003e485001f | 0x1030bc77e485001f |
-| SYS_APL_CYC_OVRD | s3_5_c15_c5_0 | 0x2000000 | same |
-| unknow | s3_5_c15_c5_2 | 0x0 | same |
-| unknow | s3_5_c15_c5_4 | 0x0 | same |
-| SYS_APL_ACC_OVRD | s3_5_c15_c6_0 | 0x180010102001c207 | same |
-| unknow | s3_5_c15_c7_0 | 0x100 | same |
-| unknow | s3_5_c15_c8_0 | 0x4 | same |
-| unknow | s3_5_c15_c8_1 | 0xffffffff | same |
-| unknow | s3_5_c15_c9_0 | 0x20001d1500f20014 | 0xc0000c0c00f20011 |
-| unknow | s3_5_c15_c10_0 | 0x2005f200102 | 0x2015fa00102 |
-| unknow | s3_5_c15_c10_1 | 0x0 | same |
-| unknow | s3_5_c15_c12_0 | N/A | 0x0 |
-| unknow | s3_5_c15_c12_1 | N/A | 0x0 |
-| unknow | s3_5_c15_c12_2 | N/A | 0x0 |
-| unknow | s3_5_c15_c12_3 | N/A | 0x0 |
-| unknow | s3_5_c15_c12_4 | N/A | 0x0 |
-| unknow | s3_5_c15_c12_5 | N/A | 0x0 |
-| unknow | s3_5_c15_c13_4 | 0x0 | same |
-| unknow | s3_5_c15_c13_5 | 0x0 | same |
-| unknow | s3_5_c15_c14_2 | 0x0 | N/A |
-| unknow | s3_5_c15_c14_3 | 0x0 | N/A |
-| unknow | s3_5_c15_c14_4 | 0x0 | N/A |
-| unknow | s3_5_c15_c14_5 | 0x0 | N/A |
-| unknow | s3_5_c15_c14_6 | 0x0 | N/A |
-| unknow | s3_5_c15_c14_7 | 0x0 | N/A |
-| SYS_APL_MMU_ERR_STS | s3_6_c15_c0_0 | N/A | 0x0 |
-| unknow | s3_6_c15_c1_0 | 0x0 | same |
-| unknow | s3_6_c15_c1_2 | 0x0 | same |
-| unknow | s3_6_c15_c1_4 | 0x0 | same |
-| SYS_APL_E_MMU_ERR_STS | s3_6_c15_c2_0 | 0x0 | N/A |
-| unknow | s3_6_c15_c2_1 | 0x12fa1db611a4c14 | 0x0 |
-| unknow | s3_6_c15_c2_2 | 0x7bea3a52c6e474ab | 0x0 |
-| unknow | s3_6_c15_c2_3 | 0x0 | same |
-| unknow | s3_6_c15_c2_4 | 0x0 | same |
-| unknow | s3_6_c15_c2_5 | 0x0 | same |
-| unknow | s3_6_c15_c2_7 | 0x10003 | same |
-| unknow | s3_6_c15_c7_0 | 0x3e094b905367a138 | 0x0 |
-| unknow | s3_6_c15_c7_1 | 0x729c61cc911db3d0 | 0x0 |
-| unknow | s3_6_c15_c7_2 | 0xdd3223b5c9807c14 | 0x0 |
-| unknow | s3_6_c15_c7_3 | 0x191277470b2e1017 | 0x0 |
-| unknow | s3_6_c15_c7_4 | 0xe5ac8d636d111ab8 | 0x0 |
-| unknow | s3_6_c15_c7_5 | 0x4c0a977780a1bf2e | 0x0 |
-| unknow | s3_6_c15_c7_6 | 0xd186cdb61af898a6 | 0x0 |
-| unknow | s3_6_c15_c7_7 | 0xfc9946bc0688369f | 0x0 |
-| unknow | s3_6_c15_c8_0 | 0x0 | same |
-| unknow | s3_6_c15_c8_3 | 0x2 | same |
-| unknow | s3_6_c15_c8_6 | 0x2 | same |
-| unknow | s3_6_c15_c12_2 | 0xc | same |
-| unknow | s3_6_c15_c12_3 | 0x1 | same |
-| SYS_APL_APSTS_EL1 | s3_6_c15_c12_4 | 0x1 | same |
-| unknow | s3_6_c15_c12_5 | 0x0 | same |
-| unknow | s3_6_c15_c12_6 | 0x0 | same |
-| unknow | s3_6_c15_c12_7 | 0x0 | same |
-| unknow | s3_6_c15_c13_0 | 0x7e1eb75eca93408c | 0x0 |
-| unknow | s3_6_c15_c13_1 | 0x69a4334ee673171b | 0x0 |
-| unknow | s3_6_c15_c13_2 | 0x7b0537a4c9237fd6 | 0x0 |
-| unknow | s3_6_c15_c13_3 | 0x356ec5ffdbda584e | 0x0 |
-| unknow | s3_6_c15_c13_4 | 0xc9dfbcc5b08d03b8 | 0x0 |
-| unknow | s3_6_c15_c13_5 | 0x5ecf1a29c0973432 | 0x0 |
-| unknow | s3_6_c15_c13_6 | 0x7684c29566e14dc9 | 0x0 |
-| unknow | s3_6_c15_c13_7 | 0x4bb4f32b76f2e6a9 | 0x0 |
-| unknow | s3_6_c15_c14_0 | 0x7fc148694e0bcc6d | 0x0 |
-| unknow | s3_6_c15_c14_1 | 0x2936a8c66238f8f4 | 0x0 |
-| unknow | s3_6_c15_c14_2 | 0x0 | same |
-| unknow | s3_6_c15_c14_4 | 0x0 | same |
-| unknow | s3_6_c15_c14_5 | 0x0 | same |
-| unknow | s3_6_c15_c14_6 | 0xc00 | same |
-| unknow | s3_6_c15_c14_7 | 0x0 | same |
-| unknow | s3_6_c15_c15_0 | 0xc | same |
-| unknow | s3_6_c15_c15_1 | 0x0 | same |
-| unknow | s3_6_c15_c15_4 | 0x0 | same |
-| unknow | s3_7_c15_c0_0 | 0x0 | same |
-| unknow | s3_7_c15_c0_1 | 0x0 | same |
-| unknow | s3_7_c15_c0_2 | 0x0 | same |
-| unknow | s3_7_c15_c0_3 | 0x0 | same |
-| SYS_APL_UPMCR0 | s3_7_c15_c0_4 | 0x0 | same |
-| SYS_APL_UPMC8 | s3_7_c15_c0_5 | 0x0 | same |
-| unknow | s3_7_c15_c1_0 | 0x0 | same |
-| unknow | s3_7_c15_c1_1 | 0x0 | same |
-| unknow | s3_7_c15_c1_2 | 0x0 | same |
-| unknow | s3_7_c15_c1_3 | 0x0 | same |
-| SYS_APL_UPMESR0 | s3_7_c15_c1_4 | 0x0 | same |
-| SYS_APL_UPMC9 | s3_7_c15_c1_5 | 0x0 | same |
-| unknow | s3_7_c15_c2_0 | 0x0 | same |
-| unknow | s3_7_c15_c2_1 | 0x3db15f4dfc5d5724 | 0x3db1b249a1cd79ad |
-| unknow | s3_7_c15_c2_2 | 0x0 | same |
-| unknow | s3_7_c15_c2_3 | 0x0 | same |
-| unknow | s3_7_c15_c2_4 | 0x0 | same |
-| SYS_APL_UPMC10 | s3_7_c15_c2_5 | 0x0 | same |
-| unknow | s3_7_c15_c3_2 | 0x0 | same |
-| unknow | s3_7_c15_c3_3 | 0x0 | same |
-| SYS_APL_UPMECM0 | s3_7_c15_c3_4 | 0x0 | same |
-| SYS_APL_UPMC11 | s3_7_c15_c3_5 | 0x0 | same |
-| unknow | s3_7_c15_c4_0 | 0x0 | same |
-| unknow | s3_7_c15_c4_2 | 0x0 | same |
-| unknow | s3_7_c15_c4_3 | 0x0 | same |
-| SYS_APL_UPMECM1 | s3_7_c15_c4_4 | 0x0 | same |
-| SYS_APL_UPMC12 | s3_7_c15_c4_5 | 0x0 | same |
-| unknow | s3_7_c15_c5_0 | 0x0 | same |
-| unknow | s3_7_c15_c5_2 | 0x0 | same |
-| unknow | s3_7_c15_c5_3 | 0x0 | same |
-| SYS_APL_UPMPCM | s3_7_c15_c5_4 | 0x0 | same |
-| SYS_APL_UPMC13 | s3_7_c15_c5_5 | 0x0 | same |
-| unknow | s3_7_c15_c6_2 | 0x0 | same |
-| unknow | s3_7_c15_c6_3 | 0x0 | same |
-| SYS_APL_UPMSR | s3_7_c15_c6_4 | 0x0 | same |
-| SYS_APL_UPMC14 | s3_7_c15_c6_5 | 0x0 | same |
-| unknow | s3_7_c15_c7_2 | 0x0 | same |
-| unknow | s3_7_c15_c7_3 | 0x0 | same |
-| SYS_APL_UPMC0 | s3_7_c15_c7_4 | 0x0 | same |
-| SYS_APL_UPMC15 | s3_7_c15_c7_5 | 0x0 | same |
-| unknow | s3_7_c15_c8_2 | 0x0 | same |
-| unknow | s3_7_c15_c8_3 | 0x0 | same |
-| SYS_APL_UPMC1 | s3_7_c15_c8_4 | 0x0 | same |
-| SYS_APL_UPMECM2 | s3_7_c15_c8_5 | 0x0 | same |
-| unknow | s3_7_c15_c9_2 | 0x0 | same |
-| unknow | s3_7_c15_c9_3 | 0x0 | same |
-| SYS_APL_UPMC2 | s3_7_c15_c9_4 | 0x0 | same |
-| SYS_APL_UPMECM3 | s3_7_c15_c9_5 | 0x0 | same |
-| unknow | s3_7_c15_c10_2 | 0x0 | same |
-| unknow | s3_7_c15_c10_3 | 0x0 | same |
-| SYS_APL_UPMC3 | s3_7_c15_c10_4 | 0x0 | same |
-| unknow | s3_7_c15_c10_5 | 0x0 | same |
-| unknow | s3_7_c15_c11_2 | 0x0 | same |
-| unknow | s3_7_c15_c11_3 | 0x0 | same |
-| SYS_APL_UPMC4 | s3_7_c15_c11_4 | 0x0 | same |
-| SYS_APL_UPMESR1 | s3_7_c15_c11_5 | 0x0 | same |
-| unknow | s3_7_c15_c12_2 | 0x0 | same |
-| unknow | s3_7_c15_c12_3 | 0x0 | same |
-| SYS_APL_UPMC5 | s3_7_c15_c12_4 | 0x0 | same |
-| unknow | s3_7_c15_c13_2 | 0x0 | same |
-| unknow | s3_7_c15_c13_3 | 0x0 | same |
-| SYS_APL_UPMC6 | s3_7_c15_c13_4 | 0x0 | same |
-| unknow | s3_7_c15_c14_2 | 0x0 | same |
-| unknow | s3_7_c15_c14_3 | 0x0 | same |
-| SYS_APL_UPMC7 | s3_7_c15_c14_4 | 0x0 | same |
-| unknow | s3_7_c15_c15_2 | 0x0 | same |
-| unknow | s3_7_c15_c15_3 | 0x0 | same |
+| SYS_APL_HID0 | s3_0_c15_c0_0 | RW | N/A | 0x10002990120e0e00 |
+| unknow | s3_0_c15_c0_1 | RW | 0x7180080006000000 | N/A |
+| SYS_APL_HID1 | s3_0_c15_c1_0 | RW | N/A | 0x40000002000000 |
+| SYS_APL_EHID1 | s3_0_c15_c1_1 | RW | 0x129802000000 | N/A |
+| SYS_APL_EHID20 | s3_0_c15_c1_2 | RW | 0x618100 | N/A |
+| SYS_APL_HID21 | s3_0_c15_c1_3 | RW | N/A | 0x1040000 |
+| unknow | s3_0_c15_c1_4 | RW | 0xce8e19f3b0a04081 | same |
+| unknow | s3_0_c15_c1_5 | RW | 0x19d1c3862c081 | same |
+| SYS_APL_HID2 | s3_0_c15_c2_0 | RW | N/A | 0x0 |
+| SYS_APL_EHID2 | s3_0_c15_c2_1 | RW | 0x0 | N/A |
+| SYS_APL_HID3 | s3_0_c15_c3_0 | RW | N/A | 0x4180000cf8001fe0 |
+| SYS_APL_EHID3 | s3_0_c15_c3_1 | RW | 0x2030001fe0 | N/A |
+| SYS_APL_HID4 | s3_0_c15_c4_0 | RW | N/A | 0x130800000800 |
+| SYS_APL_EHID4 | s3_0_c15_c4_1 | RW | 0x100000000800 | N/A |
+| SYS_APL_HID5 | s3_0_c15_c5_0 | RW | 0x2082df50e700df14 | 0x2082df205700ff12 |
+| SYS_APL_HID6 | s3_0_c15_c6_0 | RW | 0x7dc8031f007f0e | 0x7dc8031f007c0e |
+| SYS_APL_HID7 | s3_0_c15_c7_0 | RW | N/A | 0x3110000 |
+| unknow | s3_0_c15_c7_1 | RW | 0x0 | N/A |
+| SYS_APL_HID8 | s3_0_c15_c8_0 | RW | 0x381c109438000135 | 0x381c10a438000252 |
+| SYS_APL_HID9 | s3_0_c15_c9_0 | RW | N/A | 0x100086c000000 |
+| SYS_APL_EHID9 | s3_0_c15_c9_1 | RW | 0x600000811 | N/A |
+| SYS_APL_HID10 | s3_0_c15_c10_0 | RW | N/A | 0x3180200 |
+| SYS_APL_EHID10 | s3_0_c15_c10_1 | RW | 0x3000528002788 | N/A |
+| unknow | s3_0_c15_c10_2 | RW | 0x40032014 | same |
+| SYS_APL_HID11 | s3_0_c15_c11_0 | RW | N/A | 0x804000010000000 |
+| SYS_APL_EHID11 | s3_0_c15_c11_1 | RW | 0x30000000010 | N/A |
+| SYS_APL_HID18 | s3_0_c15_c11_2 | RW | N/A | 0x40004000 |
+| unknow | s3_0_c15_c11_3 | RW | 0x0 | N/A |
+| unknow | s3_0_c15_c12_0 | RW | 0xe10000000e020 | 0xe00000000e020 |
+| unknow | s3_0_c15_c12_1 | RW | 0x1800 | same |
+| unknow | s3_0_c15_c12_2 | RW | 0x40201008040201 | same |
+| unknow | s3_0_c15_c13_0 | RW | 0x0 | same |
+| SYS_APL_HID13 | s3_0_c15_c14_0 | RW | N/A | 0x332200211010205 |
+| SYS_APL_HID14 | s3_0_c15_c15_0 | RW | N/A | 0x200000bb8 |
+| SYS_APL_HID16 | s3_0_c15_c15_2 | RW | N/A | 0x6900000440000000 |
+| unknow | s3_0_c15_c15_3 | RW | 0x20402000000 | same |
+| SYS_APL_HID17 | s3_0_c15_c15_5 | RW | 0x54090afcfa9 | 0x50090af8faa |
+| SYS_APL_PMCR0 | s3_1_c15_c0_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c0_1 | RW | 0x0 | same |
+| unknow | s3_1_c15_c0_2 | RW | 0x6 | same |
+| unknow | s3_1_c15_c0_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c0_4 | RW | 0x0 | same |
+| SYS_APL_PMCR1 | s3_1_c15_c1_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c1_2 | RW | 0x0 | same |
+| unknow | s3_1_c15_c1_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c1_4 | RW | 0x0 | same |
+| SYS_APL_PMCR2 | s3_1_c15_c2_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c2_2 | RW | 0x0 | same |
+| unknow | s3_1_c15_c2_3 | RW | 0x0 | same |
+| SYS_APL_PMCR3 | s3_1_c15_c3_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c3_2 | RW | 0x0 | same |
+| unknow | s3_1_c15_c3_3 | RW | 0x0 | same |
+| SYS_APL_PMCR4 | s3_1_c15_c4_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c4_2 | RW | 0x6 | same |
+| unknow | s3_1_c15_c4_3 | RW | 0x0 | same |
+| SYS_APL_PMESR0 | s3_1_c15_c5_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c5_2 | RW | 0x0 | same |
+| unknow | s3_1_c15_c5_3 | RW | 0x0 | same |
+| SYS_APL_PMESR1 | s3_1_c15_c6_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c6_2 | RW | 0x0 | same |
+| unknow | s3_1_c15_c6_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c7_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c7_2 | RW | 0x0 | same |
+| unknow | s3_1_c15_c7_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c8_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c8_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c9_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c9_2 | RW | 0x6 | same |
+| unknow | s3_1_c15_c9_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c10_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c10_2 | RW | 0x0 | same |
+| unknow | s3_1_c15_c10_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c11_0 | RW | 0xfffff | same |
+| unknow | s3_1_c15_c11_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c12_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c12_3 | RW | 0x0 | same |
+| SYS_APL_PMSR | s3_1_c15_c13_0 | RO | 0x0 | same |
+| unknow | s3_1_c15_c13_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c14_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c14_1 | RW | 0x0 | same |
+| unknow | s3_1_c15_c14_3 | RW | 0x0 | same |
+| unknow | s3_1_c15_c15_0 | RW | 0x0 | same |
+| unknow | s3_1_c15_c15_3 | RW | 0x0 | same |
+| SYS_APL_PMC0 | s3_2_c15_c0_0 | RW | 0x0 | same |
+| unknow | s3_2_c15_c0_1 | RW | 0x0 | same |
+| unknow | s3_2_c15_c0_2 | RW | 0x0 | same |
+| unknow | s3_2_c15_c0_3 | RW | 0x0 | same |
+| unknow | s3_2_c15_c0_4 | RW | 0x0 | same |
+| unknow | s3_2_c15_c0_5 | RW | 0x0 | same |
+| unknow | s3_2_c15_c0_6 | RW | 0x0 | same |
+| unknow | s3_2_c15_c0_7 | RW | 0x0 | same |
+| SYS_APL_PMC1 | s3_2_c15_c1_0 | RW | 0x0 | same |
+| unknow | s3_2_c15_c1_1 | RW | 0x0 | same |
+| SYS_APL_PMC2 | s3_2_c15_c2_0 | RW | 0x0 | same |
+| SYS_APL_PMC3 | s3_2_c15_c3_0 | RW | 0x0 | same |
+| SYS_APL_PMC4 | s3_2_c15_c4_0 | RW | 0x0 | same |
+| SYS_APL_PMC5 | s3_2_c15_c5_0 | RW | 0x0 | same |
+| SYS_APL_PMC6 | s3_2_c15_c6_0 | RW | 0x0 | same |
+| SYS_APL_PMC7 | s3_2_c15_c7_0 | RW | 0x0 | same |
+| SYS_APL_PMC8 | s3_2_c15_c9_0 | RW | 0x0 | same |
+| SYS_APL_PMC9 | s3_2_c15_c10_0 | RW | 0x0 | same |
+| unknow | s3_2_c15_c12_0 | RW | 0x0 | same |
+| unknow | s3_2_c15_c13_0 | RW | 0x0 | same |
+| unknow | s3_2_c15_c14_0 | RW | 0x0 | same |
+| unknow | s3_2_c15_c15_0 | RW | 0x0 | same |
+| SYS_APL_LSU_ERR_STS | s3_3_c15_c0_0 | RW | N/A | 0x0 |
+| unknow | s3_3_c15_c0_4 | RW | 0x0 | same |
+| unknow | s3_3_c15_c0_5 | RW | 0x0 | same |
+| unknow | s3_3_c15_c0_6 | RW | 0x0 | same |
+| SYS_APL_LSU_ERR_CTL | s3_3_c15_c1_0 | RW | N/A | 0x1 |
+| unknow | s3_3_c15_c1_4 | RW | 0x0 | same |
+| unknow | s3_3_c15_c1_5 | RW | 0x0 | same |
+| unknow | s3_3_c15_c1_6 | RW | 0x0 | same |
+| SYS_APL_E_LSU_ERR_STS | s3_3_c15_c2_0 | RW | 0x0 | N/A |
+| unknow | s3_3_c15_c2_4 | RW | 0x0 | same |
+| unknow | s3_3_c15_c2_5 | RW | 0x0 | same |
+| unknow | s3_3_c15_c3_0 | RW | 0x60 | N/A |
+| unknow | s3_3_c15_c3_4 | RW | 0x0 | same |
+| unknow | s3_3_c15_c3_5 | RW | 0x0 | same |
+| unknow | s3_3_c15_c4_0 | RW | 0x0 | same |
+| unknow | s3_3_c15_c4_4 | RW | 0x0 | same |
+| unknow | s3_3_c15_c4_5 | RW | 0x0 | same |
+| unknow | s3_3_c15_c4_6 | RW | 0x3ffffffffff | same |
+| unknow | s3_3_c15_c5_0 | RW | 0x0 | same |
+| unknow | s3_3_c15_c5_5 | RW | 0x0 | same |
+| unknow | s3_3_c15_c6_5 | RW | 0x0 | same |
+| unknow | s3_3_c15_c7_0 | RW | 0xf1200 | 0xb1400 |
+| unknow | s3_3_c15_c7_5 | RW | 0x0 | same |
+| SYS_APL_L2C_ERR_STS | s3_3_c15_c8_0 | RW | 0x11000ffc00000000 | same |
+| unknow | s3_3_c15_c8_1 | RW | 0x1 | 0x2 |
+| unknow | s3_3_c15_c8_2 | RW | 0x1 | 0x2 |
+| unknow | s3_3_c15_c8_3 | RW | 0x4 | same |
+| SYS_APL_L2C_ERR_ADR | s3_3_c15_c9_0 | RW | 0x0 | same |
+| SYS_APL_L2C_ERR_INF | s3_3_c15_c10_0 | RW | 0x0 | same |
+| unknow | s3_3_c15_c11_0 | RW | 0x0 | same |
+| unknow | s3_3_c15_c12_0 | RW | 0xfffffffff | same |
+| unknow | s3_3_c15_c13_0 | RW | 0x238018600bc0024 | same |
+| unknow | s3_3_c15_c13_1 | RW | 0x84005a002c0008 | same |
+| unknow | s3_3_c15_c13_2 | RW | 0x1c8014e00a60024 | same |
+| unknow | s3_3_c15_c13_3 | RW | 0x6a004e00260008 | same |
+| unknow | s3_3_c15_c13_4 | RW | 0x20000 | same |
+| unknow | s3_3_c15_c13_5 | RW | 0x40000 | same |
+| unknow | s3_3_c15_c13_6 | RW | 0x80000 | same |
+| unknow | s3_3_c15_c13_7 | RW | 0x100000 | same |
+| unknow | s3_3_c15_c14_0 | RW | 0xf0000 | same |
+| unknow | s3_3_c15_c15_0 | RW | 0x4ad4b4c00 | same |
+| unknow | s3_3_c15_c15_1 | RW | 0x352b4b200 | same |
+| unknow | s3_3_c15_c15_2 | RW | 0x10000 | same |
+| unknow | s3_3_c15_c15_3 | RW | 0x20000 | same |
+| unknow | s3_3_c15_c15_4 | RW | 0x8d48e9f929042518 | same |
+| SYS_APL_FED_ERR_STS | s3_4_c15_c0_0 | RW | N/A | 0x0 |
+| unknow | s3_4_c15_c0_1 | RW | N/A | 0x25 |
+| SYS_APL_E_FED_ERR_STS | s3_4_c15_c0_2 | RW | 0x0 | N/A |
+| unknow | s3_4_c15_c0_3 | RW | 0x7f | N/A |
+| SYS_APL_APCTL_EL1 | s3_4_c15_c0_4 | RW | 0xc | same |
+| unknow | s3_4_c15_c0_5 | RW | 0x0 | same |
+| unknow | s3_4_c15_c0_7 | RW | 0x0 | same |
+| SYS_APL_KERNELKEYLO_EL1 | s3_4_c15_c1_0 | RW | 0x0 | same |
+| SYS_APL_KERNELKEYHI_EL1 | s3_4_c15_c1_1 | RW | 0x0 | same |
+| SYS_APL_VMSA_LOCK | s3_4_c15_c1_2 | RW | 0x0 | same |
+| unknow | s3_4_c15_c1_3 | RW | 0x0 | same |
+| unknow | s3_4_c15_c1_4 | RW | 0x100 | same |
+| unknow | s3_4_c15_c1_5 | RW | 0x0 | same |
+| unknow | s3_4_c15_c1_6 | RW | 0x0 | same |
+| unknow | s3_4_c15_c1_7 | RW | 0x0 | same |
+| SYS_APL_CTRR_LOCK_EL1 | s3_4_c15_c2_2 | RW | 0x0 | same |
+| SYS_APL_CTRR_A_LWR_EL1 | s3_4_c15_c2_3 | RW | 0x80485c000 | 0x0 |
+| SYS_APL_CTRR_A_UPR_EL1 | s3_4_c15_c2_4 | RW | 0x804924000 | 0x0 |
+| SYS_APL_CTRR_CTL_EL1 | s3_4_c15_c2_5 | RW | 0x0 | same |
+| SYS_APL_APRR_JIT_ENABLE | s3_4_c15_c2_6 | RW | 0x0 | same |
+| SYS_APL_APRR_JIT_MASK | s3_4_c15_c2_7 | RW | 0x0 | same |
+| unknow | s3_4_c15_c3_0 | RO | 0x0 | same |
+| unknow | s3_4_c15_c3_1 | RO | 0x0 | same |
+| unknow | s3_4_c15_c3_2 | RO | 0x0 | same |
+| unknow | s3_4_c15_c3_3 | RO | 0x0 | same |
+| unknow | s3_4_c15_c3_4 | RO | 0x0 | same |
+| unknow | s3_4_c15_c3_5 | RO | 0x0 | same |
+| unknow | s3_4_c15_c3_6 | RO | 0x0 | same |
+| unknow | s3_4_c15_c3_7 | RO | 0x0 | same |
+| unknow | s3_4_c15_c4_0 | RO | 0x4 | same |
+| unknow | s3_4_c15_c4_6 | RW | 0x0 | same |
+| unknow | s3_4_c15_c4_7 | RW | 0x100 | same |
+| SYS_APL_s3_4_c15_c5_0 | s3_4_c15_c5_0 | RW | 0x0 | same |
+| unknow | s3_4_c15_c5_6 | RW | 0x0 | same |
+| unknow | s3_4_c15_c5_7 | RW | 0x0 | same |
+| unknow | s3_4_c15_c6_0 | RW | 0x0 | same |
+| unknow | s3_4_c15_c6_1 | RW | 0x0 | same |
+| unknow | s3_4_c15_c6_2 | RW | 0x0 | same |
+| unknow | s3_4_c15_c6_3 | RW | 0x0 | same |
+| unknow | s3_4_c15_c6_4 | RW | 0x80485c000 | 0x0 |
+| unknow | s3_4_c15_c6_5 | RW | 0x804924000 | 0x0 |
+| unknow | s3_4_c15_c6_6 | RW | 0x0 | same |
+| unknow | s3_4_c15_c6_7 | RW | 0x0 | same |
+| unknow | s3_4_c15_c9_0 | RW | 0x0 | same |
+| unknow | s3_4_c15_c9_1 | RW | 0x0 | same |
+| unknow | s3_4_c15_c9_2 | RW | 0x0 | same |
+| unknow | s3_4_c15_c9_3 | RW | 0x0 | same |
+| unknow | s3_4_c15_c9_4 | RW | 0x0 | same |
+| unknow | s3_4_c15_c9_5 | RW | 0x0 | same |
+| unknow | s3_4_c15_c10_4 | RW | 0x3 | same |
+| unknow | s3_4_c15_c10_5 | RO | 0xfb8de8634 | 0x3edb4528 |
+| unknow | s3_4_c15_c10_6 | RO | 0xfb8de8634 | 0x3edb4529 |
+| SYS_APL_CTRR_A_LWR_EL2 | s3_4_c15_c11_0 | RW | 0x0 | same |
+| SYS_APL_CTRR_A_UPR_EL2 | s3_4_c15_c11_1 | RW | 0x0 | same |
+| unknow | s3_4_c15_c11_2 | RW | 0x0 | same |
+| unknow | s3_4_c15_c11_3 | RW | 0x0 | same |
+| SYS_APL_CTRR_CTL_EL2 | s3_4_c15_c11_4 | RW | 0x0 | same |
+| SYS_APL_CTRR_LOCK_EL2 | s3_4_c15_c11_5 | RW | 0x0 | same |
+| unknow | s3_4_c15_c12_5 | RW | 0x0 | same |
+| unknow | s3_4_c15_c12_7 | RW | 0x0 | same |
+| unknow | s3_5_c15_c0_2 | RW | 0xf | same |
+| unknow | s3_5_c15_c0_3 | RW | 0xf | same |
+| unknow | s3_5_c15_c0_4 | RW | 0x0 | same |
+| SYS_APL_DPC_ERR_STS | s3_5_c15_c0_5 | RW | 0x0 | same |
+| unknow | s3_5_c15_c0_6 | RW | 0x21f | same |
+| unknow | s3_5_c15_c1_0 | RW | 0x0 | same |
+| SYS_APL_IPI_SR | s3_5_c15_c1_1 | RW | 0x0 | same |
+| SYS_APL_VM_LR | s3_5_c15_c1_2 | RW | 0x1b0000001b | same |
+| SYS_APL_VM_TMR_MASK | s3_5_c15_c1_3 | RW | 0x3 | same |
+| unknow | s3_5_c15_c2_0 | RW | 0x0 | same |
+| unknow | s3_5_c15_c3_0 | RW | 0x0 | same |
+| SYS_APL_IPI_CR | s3_5_c15_c3_1 | RW | 0x1800 | same |
+| unknow | s3_5_c15_c3_2 | RW | 0x0 | same |
+| unknow | s3_5_c15_c3_4 | RW | 0x0 | same |
+| unknow | s3_5_c15_c3_5 | RO | 0x0 | same |
+| SYS_APL_ACC_CFG | s3_5_c15_c4_0 | RW | 0xd | same |
+| unknow | s3_5_c15_c4_1 | RW | 0x100003e485001f | 0x1030bc77e485001f |
+| SYS_APL_CYC_OVRD | s3_5_c15_c5_0 | RW | 0x2000000 | same |
+| unknow | s3_5_c15_c5_2 | RW | 0x0 | same |
+| unknow | s3_5_c15_c5_4 | RW | 0x0 | same |
+| SYS_APL_ACC_OVRD | s3_5_c15_c6_0 | RW | 0x180010102001c207 | same |
+| unknow | s3_5_c15_c7_0 | RW | 0x100 | same |
+| unknow | s3_5_c15_c8_0 | RW | 0x4 | same |
+| unknow | s3_5_c15_c8_1 | RW | 0xffffffff | same |
+| unknow | s3_5_c15_c9_0 | RW | 0x20001d1500f20014 | 0xc0000c0c00f20011 |
+| unknow | s3_5_c15_c10_0 | RW | 0x2005f200102 | 0x2015fa00102 |
+| unknow | s3_5_c15_c10_1 | RW | 0x0 | same |
+| unknow | s3_5_c15_c12_0 | RW | N/A | 0x0 |
+| unknow | s3_5_c15_c12_1 | RW | N/A | 0x0 |
+| unknow | s3_5_c15_c12_2 | RW | N/A | 0x0 |
+| unknow | s3_5_c15_c12_3 | RW | N/A | 0x0 |
+| unknow | s3_5_c15_c12_4 | RW | N/A | 0x0 |
+| unknow | s3_5_c15_c12_5 | RW | N/A | 0x0 |
+| unknow | s3_5_c15_c13_4 | RW | 0x0 | same |
+| unknow | s3_5_c15_c13_5 | RW | 0x0 | same |
+| unknow | s3_5_c15_c14_2 | RW | 0x0 | N/A |
+| unknow | s3_5_c15_c14_3 | RW | 0x0 | N/A |
+| unknow | s3_5_c15_c14_4 | RW | 0x0 | N/A |
+| unknow | s3_5_c15_c14_5 | RW | 0x0 | N/A |
+| unknow | s3_5_c15_c14_6 | RW | 0x0 | N/A |
+| unknow | s3_5_c15_c14_7 | RW | 0x0 | N/A |
+| SYS_APL_MMU_ERR_STS | s3_6_c15_c0_0 | RW | N/A | 0x0 |
+| unknow | s3_6_c15_c1_0 | RW | 0x0 | same |
+| unknow | s3_6_c15_c1_2 | RO | 0x0 | same |
+| unknow | s3_6_c15_c1_4 | RO | 0x0 | same |
+| SYS_APL_E_MMU_ERR_STS | s3_6_c15_c2_0 | RW | 0x0 | N/A |
+| unknow | s3_6_c15_c2_1 | RW | 0x12fa1db611a4c14 | 0x0 |
+| unknow | s3_6_c15_c2_2 | RW | 0x7bea3a52c6e474ab | 0x0 |
+| unknow | s3_6_c15_c2_3 | RW | 0x0 | same |
+| unknow | s3_6_c15_c2_4 | RW | 0x0 | same |
+| SYS_APL_AFPCR | s3_6_c15_c2_5 | RW | 0x0 | same |
+| unknow | s3_6_c15_c2_7 | RO | 0x10003 | same |
+| unknow | s3_6_c15_c7_0 | RW | 0x3e094b905367a138 | 0x0 |
+| unknow | s3_6_c15_c7_1 | RW | 0x729c61cc911db3d0 | 0x0 |
+| unknow | s3_6_c15_c7_2 | RW | 0xdd3223b5c9807c14 | 0x0 |
+| unknow | s3_6_c15_c7_3 | RW | 0x191277470b2e1017 | 0x0 |
+| unknow | s3_6_c15_c7_4 | RW | 0xe5ac8d636d111ab8 | 0x0 |
+| unknow | s3_6_c15_c7_5 | RW | 0x4c0a977780a1bf2e | 0x0 |
+| unknow | s3_6_c15_c7_6 | RW | 0xd186cdb61af898a6 | 0x0 |
+| unknow | s3_6_c15_c7_7 | RW | 0xfc9946bc0688369f | 0x0 |
+| unknow | s3_6_c15_c8_0 | RO | 0x0 | same |
+| unknow | s3_6_c15_c8_3 | RW | 0x2 | same |
+| unknow | s3_6_c15_c8_6 | RW | 0x2 | same |
+| unknow | s3_6_c15_c12_2 | RW | 0xc | same |
+| unknow | s3_6_c15_c12_3 | RO | 0x1 | same |
+| SYS_APL_APSTS_EL1 | s3_6_c15_c12_4 | RO | 0x1 | same |
+| unknow | s3_6_c15_c12_5 | RW | 0x0 | same |
+| unknow | s3_6_c15_c12_6 | RW | 0x0 | same |
+| unknow | s3_6_c15_c12_7 | RW | 0x0 | same |
+| unknow | s3_6_c15_c13_0 | RW | 0x7e1eb75eca93408c | 0x0 |
+| unknow | s3_6_c15_c13_1 | RW | 0x69a4334ee673171b | 0x0 |
+| unknow | s3_6_c15_c13_2 | RW | 0x7b0537a4c9237fd6 | 0x0 |
+| unknow | s3_6_c15_c13_3 | RW | 0x356ec5ffdbda584e | 0x0 |
+| unknow | s3_6_c15_c13_4 | RW | 0xc9dfbcc5b08d03b8 | 0x0 |
+| unknow | s3_6_c15_c13_5 | RW | 0x5ecf1a29c0973432 | 0x0 |
+| unknow | s3_6_c15_c13_6 | RW | 0x7684c29566e14dc9 | 0x0 |
+| unknow | s3_6_c15_c13_7 | RW | 0x4bb4f32b76f2e6a9 | 0x0 |
+| unknow | s3_6_c15_c14_0 | RW | 0x7fc148694e0bcc6d | 0x0 |
+| unknow | s3_6_c15_c14_1 | RW | 0x2936a8c66238f8f4 | 0x0 |
+| unknow | s3_6_c15_c14_2 | RW | 0x0 | same |
+| unknow | s3_6_c15_c14_4 | RW | 0x0 | same |
+| unknow | s3_6_c15_c14_5 | RW | 0x0 | same |
+| unknow | s3_6_c15_c14_6 | RW | 0xc00 | same |
+| unknow | s3_6_c15_c14_7 | RW | 0x0 | same |
+| unknow | s3_6_c15_c15_0 | RW | 0xc | same |
+| unknow | s3_6_c15_c15_1 | RO | 0x0 | same |
+| unknow | s3_6_c15_c15_4 | RO | 0x0 | same |
+| unknow | s3_7_c15_c0_0 | RW | 0x0 | same |
+| unknow | s3_7_c15_c0_1 | RW | 0x0 | same |
+| unknow | s3_7_c15_c0_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c0_3 | RW | 0x0 | same |
+| SYS_APL_UPMCR0 | s3_7_c15_c0_4 | RW | 0x0 | same |
+| SYS_APL_UPMC8 | s3_7_c15_c0_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c1_0 | RW | 0x0 | same |
+| unknow | s3_7_c15_c1_1 | RW | 0x0 | same |
+| unknow | s3_7_c15_c1_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c1_3 | RW | 0x0 | same |
+| SYS_APL_UPMESR0 | s3_7_c15_c1_4 | RW | 0x0 | same |
+| SYS_APL_UPMC9 | s3_7_c15_c1_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c2_0 | RW | 0x0 | same |
+| unknow | s3_7_c15_c2_1 | RW | 0x3db15f4dfc5d5724 | 0x3db1b249a1cd79ad |
+| unknow | s3_7_c15_c2_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c2_3 | RW | 0x0 | same |
+| unknow | s3_7_c15_c2_4 | RW | 0x0 | same |
+| SYS_APL_UPMC10 | s3_7_c15_c2_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c3_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c3_3 | RW | 0x0 | same |
+| SYS_APL_UPMECM0 | s3_7_c15_c3_4 | RW | 0x0 | same |
+| SYS_APL_UPMC11 | s3_7_c15_c3_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c4_0 | RW | 0x0 | same |
+| unknow | s3_7_c15_c4_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c4_3 | RW | 0x0 | same |
+| SYS_APL_UPMECM1 | s3_7_c15_c4_4 | RW | 0x0 | same |
+| SYS_APL_UPMC12 | s3_7_c15_c4_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c5_0 | RW | 0x0 | same |
+| unknow | s3_7_c15_c5_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c5_3 | RW | 0x0 | same |
+| SYS_APL_UPMPCM | s3_7_c15_c5_4 | RW | 0x0 | same |
+| SYS_APL_UPMC13 | s3_7_c15_c5_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c6_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c6_3 | RW | 0x0 | same |
+| SYS_APL_UPMSR | s3_7_c15_c6_4 | RW | 0x0 | same |
+| SYS_APL_UPMC14 | s3_7_c15_c6_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c7_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c7_3 | RW | 0x0 | same |
+| SYS_APL_UPMC0 | s3_7_c15_c7_4 | RW | 0x0 | same |
+| SYS_APL_UPMC15 | s3_7_c15_c7_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c8_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c8_3 | RW | 0x0 | same |
+| SYS_APL_UPMC1 | s3_7_c15_c8_4 | RW | 0x0 | same |
+| SYS_APL_UPMECM2 | s3_7_c15_c8_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c9_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c9_3 | RW | 0x0 | same |
+| SYS_APL_UPMC2 | s3_7_c15_c9_4 | RW | 0x0 | same |
+| SYS_APL_UPMECM3 | s3_7_c15_c9_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c10_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c10_3 | RW | 0x0 | same |
+| SYS_APL_UPMC3 | s3_7_c15_c10_4 | RW | 0x0 | same |
+| unknow | s3_7_c15_c10_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c11_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c11_3 | RW | 0x0 | same |
+| SYS_APL_UPMC4 | s3_7_c15_c11_4 | RW | 0x0 | same |
+| SYS_APL_UPMESR1 | s3_7_c15_c11_5 | RW | 0x0 | same |
+| unknow | s3_7_c15_c12_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c12_3 | RW | 0x0 | same |
+| SYS_APL_UPMC5 | s3_7_c15_c12_4 | RW | 0x0 | same |
+| unknow | s3_7_c15_c13_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c13_3 | RW | 0x0 | same |
+| SYS_APL_UPMC6 | s3_7_c15_c13_4 | RW | 0x0 | same |
+| unknow | s3_7_c15_c14_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c14_3 | RW | 0x0 | same |
+| SYS_APL_UPMC7 | s3_7_c15_c14_4 | RW | 0x0 | same |
+| unknow | s3_7_c15_c15_2 | RW | 0x0 | same |
+| unknow | s3_7_c15_c15_3 | RW | 0x0 | same |
 
 ## System Registers dump while running Darwin
 
