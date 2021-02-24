@@ -1,7 +1,7 @@
 All implemented (readable) vendor-specific registers. Dumped while running m1n1 (after chicken bits):
 
 | Name | Register | Access | Icestorm | Firestorm |
-|-|-|-|-|
+|-|-|-|-|-|
 | SYS_APL_HID0 | s3_0_c15_c0_0 | RW | N/A | 0x10002990120e0e00 |
 | unknow | s3_0_c15_c0_1 | RW | 0x7180080006000000 | N/A |
 | SYS_APL_HID1 | s3_0_c15_c1_0 | RW | N/A | 0x40000002000000 |
