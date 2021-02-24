@@ -20,6 +20,7 @@ Apple proprietary instructions seem to be in the 0x0020xxxx range.
     
 002012e0 - 0020143f            Faults with unknown instruction
 
+*00201400                      Used by macOS; must need some enable (faults by default)
 *00201420                      Used by macOS; must need some enable (faults by default)
 
 00201440 | rA                  Translate address. Returns in the same register:
