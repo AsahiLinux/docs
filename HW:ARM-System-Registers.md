@@ -509,17 +509,6 @@ This is used to lock down writes to some Arm registers for security reasons at b
 * [3] AP Key 1 Enable
 * [4] User Key Enable
 
-#### SYS_APL_AFPCR
-
-Apple-specific floating point related bits.
-
-[0] DAZ (Denormals as Zero)
-[1] FTZ (Flush to Zero)
-
-These implement the SSE equivalent mode bits. This must be enabled to be useful, with ACTLR_EL1.AFP.
-
-The AArch64 FEAT_AFT feature implements equivalent support, but Apple implemented it before it was standardized. The standard version is that you need to set FPSCR[1] (AH) to 1, and then FPCR[0] (FIZ) is like DAZ, and FPCR[24] (FZ) is like FTZ.
-
 #### SYS_APL_APSTS_EL1
 
 * [0] M Key Valid
@@ -642,6 +631,19 @@ Sets core masks for each event in the cluster, i.e. only events from those cores
 * [20] Mask guest CNTV timer (1=masked)
 
 This works differently from SYS_APL_GTIMER_MASK; that one masks the timers earlier, this one leaves the FIQ "pending" in SYS_APL_HV_TMR_LR.
+
+### Floating-point and AMX registers
+
+#### SYS_APL_AFPCR
+
+Apple-specific floating point related bits.
+
+[0] DAZ (Denormals as Zero)
+[1] FTZ (Flush to Zero)
+
+These implement the SSE equivalent mode bits. This must be enabled to be useful, with ACTLR_EL1.AFP.
+
+The AArch64 FEAT_AFT feature implements equivalent support, but Apple implemented it before it was standardized. The standard version is that you need to set FPSCR[1] (AH) to 1, and then FPCR[0] (FIZ) is like DAZ, and FPCR[24] (FZ) is like FTZ.
 
 ### ID registers
 
