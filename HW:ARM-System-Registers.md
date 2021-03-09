@@ -392,7 +392,7 @@ Mainly error control?
 
 L2 subsystem fault control and info. This register is cluster-level and shared among all cores within a cluster.
 
-* [1] Recursive fault (fault occurred while another fault was pending)
+* [1] Recursive fault (fault occurred while another fault was pending?)
 * [7] Access fault (unmapped physical address, etc)
 * [38..34] Enable flags? (all 1 on entry from iBoot)
 * [39] Enable SError interrupts (asynchronous errors)
@@ -405,12 +405,29 @@ L2 subsystem fault control and info. This register is cluster-level and shared a
 Fault address for L2 subsystem fault.
 
 * [?:0] Physical address of the fault
-* [57:56] Set to '11'? Perhaps EL mode or other state info?
+* [42] ? sometimes 1 after a recursive instruction fetch fault
+* [57:55] 5=data write 6=data read 7=instruction fetch?
 * [62..61] Core within cluster that caused fault
 
 #### SYS_APL_L2C_ERR_INF_EL1
 
 L2 subsystem error information.
+
+Low bits values seen:
+
+Writes:
+
+* 1: Write to unmapped or protected space, or nGnRnE write to PCIe BAR space
+* 2: 8-bit or 16-bit write to 32-bit only peripheral
+* 3: nGnRE write to SoC I/O space
+
+Reads:
+
+* 1: Read from unmapped or protected space
+
+Higher bits:
+
+* [26] Something to do with address alignment (seen on 16-bit and 32-bit reads/writes to addr 4 mod 8)
 
 ### CTRR Registers
 
@@ -565,7 +582,7 @@ Controls opcode matching.
 
 #### SYS_APL_PMSR_EL1
 
-[7:0] Overflow detected on PMC #7-0 (XXX: are 8-9 here too?)
+* [7:0] Overflow detected on PMC #7-0 (XXX: are 8-9 here too?)
 
 #### SYS_APL_PMESR0_EL1
 
@@ -640,8 +657,8 @@ This works differently from SYS_APL_GTIMER_MASK; that one masks the timers earli
 
 Apple-specific floating point related bits.
 
-[0] DAZ (Denormals as Zero)
-[1] FTZ (Flush to Zero)
+* [0] DAZ (Denormals as Zero)
+* [1] FTZ (Flush to Zero)
 
 These implement the SSE equivalent mode bits. This must be enabled to be useful, with ACTLR_EL1.AFP.
 
