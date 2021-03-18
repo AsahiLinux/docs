@@ -1,20 +1,20 @@
 Project related:
 * [[Project status]]
-* [[Tasks]] Current and completed progress objectives
+* [[Tasks]]
 
 Places to start:
 * [[Developer Quickstart]]
-* [[Glossary]] Common general terms and abbreviations
-* [[Accelerator-Engines]] Accelerator and compute coprocessor names
+* [[Glossary]]
+* [[Accelerator-Engines]]
 * [[Codenames]]
 * [[Project:References]]
 * [[SW:m1n1]] Boot loader
 * [[SW:Linux]] Kernel
 
 Hardware Documentation:
-* [[HW:AIC]] Interrupt controller
-* [[HW:APCIe]] PCIe controller
-* [[HW:Apple-Instructions]] Instruction set extensions
+* [[HW:AIC]]
+* [[HW:APCIe]]
+* [[HW:Apple-Instructions]]
 * [[HW:ARM-System-Registers]]
 * [[HW:Debug-USB]]
 * [[HW:Memory-map]]
@@ -22,6 +22,6 @@ Hardware Documentation:
 * [[HW:SMP-spin-up]]
 
 Software Documentation:
-* [[SW:Boot]] How the M1 boots
+* [[SW:Boot]]
 * [[SW:NVRAM]]
 * [[SW:Storage]]
