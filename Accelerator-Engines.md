@@ -1,5 +1,7 @@
 The SoC has several onboard accelerator units, this is a useful list of the names and what they refer to.
 
+## Names
+
 Names in quotes with a question mark like: "<name>?" are inventions/uncertain in origin.
 
 Names in *italics* like: *<name>* are found in Apple official documentation.
@@ -8,6 +10,7 @@ Names without quotes but not in italics are either common unofficial names or ha
 
 ### A
 * **AGX**: The internal name for Apple's GPU series.
+* **AMX**: Apple Matrix eXtensions. A matrix coprocessor partially integrated into the ISA.
 * **ANE**: "Apple Neural Engine?". Neural network execution acceleration
 * **AOP**: *Always On Processor*. "hey siri" activation and "other sensor stuff"
 * **AVE**: "Audio/Visual Encoder?". Handles encoding
