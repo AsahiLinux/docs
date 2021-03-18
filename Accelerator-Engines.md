@@ -5,3 +5,5 @@ The SoC has several onboard accelerator units, this is a useful list of the name
 * **DCP**: Displayport/Display
 * **AVE**: "Audio/Visual Encoder?" Handles encoding
 * **ANE**: "Apple Neural Engine?" Neural network execution acceleration
+* **SEP**: Secure Enclave Processor. The M1's built-in HSM/TPM/etc device. Handles Touch ID and most crypto, as well as boot policy decisions. Harmless to Linux, but we can use its features if we want to. Contrast to AP.
+* **AGX**: The internal name for Apple's GPU series.
