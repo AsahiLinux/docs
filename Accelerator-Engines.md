@@ -8,15 +8,15 @@ Names without quotes but not in italics are either common unofficial names or ha
 
 ### A
 * **AGX**: The internal name for Apple's GPU series.
-* **ANE**: "Apple Neural Engine?" Neural network execution acceleration
+* **ANE**: "Apple Neural Engine?". Neural network execution acceleration
 * **AOP**: *Always On Processor*. "hey siri" activation and "other sensor stuff"
-* **AVE**: "Audio/Visual Encoder?" Handles encoding
+* **AVE**: "Audio/Visual Encoder?". Handles encoding
 
 ### D
-* **DCP**: Displayport/Display
+* **DCP**: "Display Compression Processor?"/"Display Control Processor?". Displayport/Display control of some sort.
 
 ### P
-* **PMP**: "Power Management Processor?" probably, handles power functionality
+* **PMP**: "Power Management Processor?". Handles power functionality
 
 ### S
 * **SEP**: *Secure Enclave Processor*. The M1's built-in HSM/TPM/etc device. Handles Touch ID and most crypto, as well as boot policy decisions. Harmless to Linux, but we can use its features if we want to. Contrast to AP.
