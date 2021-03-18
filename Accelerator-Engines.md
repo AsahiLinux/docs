@@ -3,7 +3,7 @@ The SoC has several onboard accelerator units, this is a useful list of the name
 ### A
 * **AGX**: The internal name for Apple's GPU series.
 * **ANE**: "Apple Neural Engine?" Neural network execution acceleration
-* **AOP**: "hey siri" activation and "other sensor stuff"
+* **AOP**: "Always On Processor?" "hey siri" activation and "other sensor stuff"
 * **AVE**: "Audio/Visual Encoder?" Handles encoding
 
 ### D
