@@ -1,7 +1,9 @@
 The SoC has several onboard accelerator units, this is a useful list of the names and what they refer to.
 
 Names in quotes with a question mark like: "<name>?" are inventions/uncertain in origin.
+
 Names in *bold* like: *<name>* are found in Apple official documentation.
+
 Names without quotes but not in bold are either common unofficial names or have uncertain but safe sources.
 
 ### A
