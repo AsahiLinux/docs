@@ -198,7 +198,10 @@ Further disable SIP for good measure. This one is nice enough to ask you to pick
 ```shell
 # csrutil disable
 ```
-
+Note: If you get strange permission errors such as `Failed to create local policy` you may have to reset the system security policy first via
+```shell
+# csrutil clear
+```
 At this point you are ready to use custom kernels. Congrats!
 
 ## Getting a serial console
