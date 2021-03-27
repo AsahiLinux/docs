@@ -257,6 +257,36 @@ This is all rather rudimentary because it's a stop-gap for the proper solution, 
 
 In the coming weeks we'll be designing an open hardware interface for interfacing to M1 serial ports, and more (supporting other debug pinsets on Apple devices, as well as UARTs on other devices such as certain Android phones, etc). Stay tuned for more information. Established kernel developers who want to get an early prototype when they become available should contact [marcan](mailto:marcan@marcan.st).
 
+### Plain USB Type-C <-> Type-A ### 
+Using a USB-Type A (plug) to USB-Type C (plug) cable see  [USB connectors](https://en.wikipedia.org/wiki/USB_hardware#USB-C) you can use the Sven's experimental branch to generate a m1n1 that provides serial over USB using the [CDC ACM (Communication Device Class Abstract Control Module)](https://en.wikipedia.org/wiki/USB_communications_device_class) linux module.
+
+Checkout and compile this particular m1n1 branch
+```shell
+ git remote add sven https://github.com/svenpeter42/m1n1.git
+ git fetch sven
+ git checkout -b usb sven/usb-dwc3-serial-wip
+```
+Then compile and install the m1n1.macho as described below
+
+You boot with the cable connected to the (first?) USB-C port and the other end to you linux PC with the USB ACM module (cdc-acm.ko) available and should see lines such as:
+```
+Mar 25 00:05:25 localhost kernel: [373586.492689] usb 2-2: new high-speed USB device number 26 using xhci_hcd
+Mar 25 00:05:25 localhost kernel: [373586.645493] usb 2-2: New USB device found, idVendor=1337, idProduct=beef, bcdDevice= 1.00
+Mar 25 00:05:25 localhost kernel: [373586.645504] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Mar 25 00:05:25 localhost kernel: [373586.645508] usb 2-2: Product: m1n1 d2fa0c9-dirty
+Mar 25 00:05:25 localhost kernel: [373586.645512] usb 2-2: Manufacturer: Asahi Linux
+Mar 25 00:05:25 localhost kernel: [373586.645515] usb 2-2: SerialNumber: m1n1-uartproxy
+Mar 25 00:05:25 localhost kernel: [373586.646388] cdc_acm 2-2:1.0: ttyACM0: USB ACM device
+```
+
+
+When running the python proxyclient commands proxyclient/{shell,chainload,linux}.py as described below you must specify the USB ACM serial device. e.g. for shell.py
+```shell
+$ M1N1DEVICE=/dev/ttyACM0
+$ export M1N1DEVICE
+$ python3 proxyclient/shell.py
+``` 
+
 ## Using m1n1
 
 m1n1 is our initial bootloader, which is in charge of pretending to be a XNU kernel and performing Apple-specific initialization.
