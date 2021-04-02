@@ -87,6 +87,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### U
 * **UART**: Universal Asynchronous Receiver Transmitter. The hardware behind a serial port.
+* **USC**: Unified shader core. A shader core supporting all shader types (vertex, fragment, compute). AGX is a unified architecture, so this just refers to a shader core.
 * **USB-PD**: USB Power Delivery. A standard for side-band communications over USB Type C (we won't talk about the older standard for our own sanity). This is used for things like detecting what kind of cable is used, connector orientation, configuring the supply voltage, and switching to non-USB modes.
 
 ### V
