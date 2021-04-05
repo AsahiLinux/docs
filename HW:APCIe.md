@@ -75,7 +75,7 @@ On the 2020 M1 mini, this set of register writes modifies some bits on standardi
 ### pcie-rc-gen3-shadow-tunables
 | register | capability | effect |
 |----------|------------|--------|
-| 0x154    | Secundary PCI Express | set Downstream Port 8.0 GT/s Transmitter Preset |
+| 0x154    | Secondary PCI Express | set Downstream Port 8.0 GT/s Transmitter Preset |
 |          |                       | set Upstream Port 8.0 GT/s Transmitter Preset |
 | 0x890    |            | not part of an (extended) capability structure |
 | 0x8a8    |            | not part of an (extended) capability structure |
