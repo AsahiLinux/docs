@@ -55,3 +55,33 @@
 | portX link  | 0x800        | ?              | Read in initializeRootComplex()
 | portX link  | 0x804        | ?              | Read in enablePortHardware()
 | portX phy   | 0x0          | PhyGlueLaneReg / RefClockBuffer | Writing bits 0x1 and 0x2 toggle bits 0x4 and 0x2 respectively
+
+## Tunables
+
+### pcie-rc-tunables
+On the 2020 M1 mini, this set of register writes modifies some bits on standardized capability structures as well as some other registers.
+| register | capability | effect |
+|----------|------------|--------|
+| 0x194    | L1 PM Substates | clear Port Common_Mode_Restore_Time |
+|          |                 | clear Port T_POWER_ON Scale |
+|          |                 | clear Port T_POWER_ON Value |
+| 0x2a4    | Data Link Feature | ? |
+| 0xb80    |             | not part of an (extended) capability structure |
+| 0xb84    |             | not part of an (extended) capability structure |
+| 0x78     | PCI Express | clear Max_Read_Request_Size |
+
+### pcie-rc-gen3-shadow-tunables
+| register | capability | effect |
+|----------|------------|--------|
+| 0x154    | Secundary PCI Express | set Downstream Port 8.0 GT/s Transmitter Preset |
+|          |                       | set Upstream Port 8.0 GT/s Transmitter Preset |
+| 0x890    |            | not part of an (extended) capability structure |
+| 0x8a8    |            | not part of an (extended) capability structure |
+
+### pcie-rc-gen4-shadow-tunables
+| register | capability | effect |
+|----------|------------|--------|
+| 0x178    | Physical Layer 16.0 GT/s | set Downstream Port 16.0 GT/s Transmitter Preset |
+|          |                          | set Upstream Port 16.0 GT/s Transmitter Preset |
+| 0x890    |            | not part of an (extended) capability structure |
+| 0x8a8    |            | not part of an (extended) capability structure |
