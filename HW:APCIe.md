@@ -58,6 +58,8 @@
 
 ## Tunables
 
+The following set of tunables operate on config space of the per-port PCIe bridge devices.
+
 ### pcie-rc-tunables
 On the 2020 M1 mini, this set of register writes modifies some bits on standardized capability structures as well as some other registers.
 | register | capability | effect |
@@ -65,7 +67,7 @@ On the 2020 M1 mini, this set of register writes modifies some bits on standardi
 | 0x194    | L1 PM Substates | clear Port Common_Mode_Restore_Time |
 |          |                 | clear Port T_POWER_ON Scale |
 |          |                 | clear Port T_POWER_ON Value |
-| 0x2a4    | Data Link Feature | ? |
+| 0x2a4    | Data Link Feature | clear Data Link Feature Exchange Enable |
 | 0xb80    |             | not part of an (extended) capability structure |
 | 0xb84    |             | not part of an (extended) capability structure |
 | 0x78     | PCI Express | clear Max_Read_Request_Size |
@@ -85,3 +87,5 @@ On the 2020 M1 mini, this set of register writes modifies some bits on standardi
 |          |                          | set Upstream Port 16.0 GT/s Transmitter Preset |
 | 0x890    |            | not part of an (extended) capability structure |
 | 0x8a8    |            | not part of an (extended) capability structure |
+
+So the changes to documented registers seem to disable some (buggy?) features as well do some lane equalization tuning. Maybe Apple hopes to re-enable this in a future respin of the silicon without having to specify specific silicon revs in their xnu driver?
