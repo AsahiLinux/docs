@@ -78,7 +78,9 @@ On the 2020 M1 mini, this set of register writes modifies some bits on standardi
 | 0x154    | Secondary PCI Express | set Downstream Port 8.0 GT/s Transmitter Preset |
 |          |                       | set Upstream Port 8.0 GT/s Transmitter Preset |
 | 0x890    |            | not part of an (extended) capability structure |
+|          |            | appears to be the Synopsys Designware PCIe GEN3_RELATED register |
 | 0x8a8    |            | not part of an (extended) capability structure |
+|          |            | appears to be the Synopsys Designware PCIe GEN3_EQ_CONTROL register |
 
 ### pcie-rc-gen4-shadow-tunables
 | register | capability | effect |
@@ -86,6 +88,8 @@ On the 2020 M1 mini, this set of register writes modifies some bits on standardi
 | 0x178    | Physical Layer 16.0 GT/s | set Downstream Port 16.0 GT/s Transmitter Preset |
 |          |                          | set Upstream Port 16.0 GT/s Transmitter Preset |
 | 0x890    |            | not part of an (extended) capability structure |
+|          |            | (see above) |
 | 0x8a8    |            | not part of an (extended) capability structure |
+|          |            | (see above) |
 
 So the changes to documented registers seem to disable some (buggy?) features as well do some lane equalization tuning. Maybe Apple hopes to re-enable this in a future respin of the silicon without having to specify specific silicon revs in their xnu driver?
