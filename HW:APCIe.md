@@ -1,3 +1,5 @@
+The PCIe host bridge includes at least some Synopsys DesignWare derived logic.  The release version encoded at offset 0x8f8/0x8fc in PCIE config space indicates version 530*-ea15 (5.30a-ea15).
+
 ## DT bindings
 
 |      Property     |      Value       |      Meaning      |
