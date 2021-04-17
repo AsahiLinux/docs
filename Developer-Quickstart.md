@@ -257,7 +257,7 @@ This is all rather rudimentary because it's a stop-gap for the proper solution, 
 
 In the coming weeks we'll be designing an open hardware interface for interfacing to M1 serial ports, and more (supporting other debug pinsets on Apple devices, as well as UARTs on other devices such as certain Android phones, etc). Stay tuned for more information. Established kernel developers who want to get an early prototype when they become available should contact [marcan](mailto:marcan@marcan.st).
 
-### USB gadget mode using a plain USB Type-C <-> Type-A ### 
+### USB gadget mode using a standard USB cable
 
 m1n1 now supports exposing its debug console and proxy interface via a standard USB [CDC-ACM](https://en.wikipedia.org/wiki/USB_communications_device_class) device. All you need is a standard USB cable (C to C or A to C, whatever you need for your other device). This interface is much faster than a serial port, and is the preferred way of using m1n1 remotely. However, a serial console is still recommended in addition to this for low-level debugging and development.
 
