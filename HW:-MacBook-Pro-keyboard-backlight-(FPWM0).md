@@ -27,13 +27,17 @@ Registers, as far as I've figured them out:
 
 So a complete m1n1 sequence to make the keyboard backlight flash in an annoying and possibly seizure-inducing way is:
 
+```
 >>> write32(0x23b7001e0, 0xf)
 >>> write32(0x23504401c, 1200000)
 >>> write32(0x235044018, 1200000)
 >>> write32(0x235044000, 0x4239)
+```
 
 changing the frequency while keeping a 50% duty cycle:
 
+```
 >>> write32(0x235044018, 4000)
 >>> write32(0x23504401c, 4000)
 >>> write32(0x235044000, 0x4239)
+```
