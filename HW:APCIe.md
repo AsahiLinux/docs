@@ -1,6 +1,6 @@
 The PCIe host bridge includes at least some Synopsys DesignWare derived logic.  The release version encoded at offset 0x8f8/0x8fc in PCIE config space indicates version 530*-ea15 (5.30a-ea15).
 
-## DT bindings
+## ADT bindings
 
 |      Property     |      Value       |      Meaning      |
 |-------------------|------------------|-------------------|
@@ -95,3 +95,60 @@ On the 2020 M1 mini, this set of register writes modifies some bits on standardi
 |          |            | (see above) |
 
 So the changes to documented registers seem to disable some (buggy?) features as well do some lane equalization tuning. Maybe Apple hopes to re-enable this in a future respin of the silicon without having to specify specific silicon revs in their xnu driver?
+
+## DT bindings
+
+Here is what the DT bindings could look like:
+
+````
+                pcie@690000000 {
+                        compatible = "apple,t8103-pcie";
+                        reg = <0x6 0x90000000 0x0 0x1000000>;
+
+                        interrupt-parent = <&aic>;
+                        interrupts = <AIC_IRQ 695 IRQ_TYPE_LEVEL_HIGH>,
+                                     <AIC_IRQ 698 IRQ_TYPE_LEVEL_HIGH>,
+                                     <AIC_IRQ 701 IRQ_TYPE_LEVEL_HIGH>;
+
+                        clocks = <&pcie_core_clk>, <&pcie_aux_clk>,
+                                 <&pcie_ref_clk>;
+                        pinctrl-0 = <&pcie_pins>;
+                        pinctrl-names = "default";
+
+                        iommu-map = <0x100 &dart0 0x100 0x100>,
+                                    <0x200 &dart1 0x200 0x100>,
+                                    <0x300 &dart2 0x300 0x100>;
+                        iommu-map-mask = <0xff00>;
+
+                        bus-range = <0 7>;
+                        #address-cells = <3>;
+                        #size-cells = <2>;
+                        ranges = <0x43000000 0x6 0xa0000000 0x6 0xa0000000
+                                  0x0 0x20000000>,
+                                 <0x02000000 0x0 0xc0000000 0x6 0xc0000000
+                                  0x0 0x40000000>;
+
+                        device_type = "pci";
+
+                        pci@0,0 {
+                                device_type = "pci";
+                                reg = <0x0 0x0 0x0 0x0 0x0>;
+                                reset-gpios = <&gpio 152 0>;
+                                max-link-speed = <3>;
+                        };
+
+                        pci@1,0 {
+                                device_type = "pci";
+                                reg = <0x800 0x0 0x0 0x0 0x0>;
+                                reset-gpios = <&gpio 153 0>;
+                                max-link-speed = <2>;
+                        };
+
+                        pci@2,0 {
+                                device_type = "pci";
+                                reg = <0x1000 0x0 0x0 0x0 0x0>;
+                                reset-gpios = <&gpio 33 0>;
+                                max-link-speed = <1>;
+                        };
+                };
+```
