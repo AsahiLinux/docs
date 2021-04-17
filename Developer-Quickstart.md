@@ -259,7 +259,7 @@ In the coming weeks we'll be designing an open hardware interface for interfacin
 
 ### USB gadget mode using a standard USB cable
 
-m1n1 now supports exposing its debug console and proxy interface via a standard USB [CDC-ACM](https://en.wikipedia.org/wiki/USB_communications_device_class) device. All you need is a standard USB cable (C to C or A to C, whatever you need for your other device). This interface is much faster than a serial port, and is the preferred way of using m1n1 remotely. However, a serial console is still recommended in addition to this for low-level debugging and development.
+m1n1 now supports exposing its debug console and proxy interface via a standard USB [CDC-ACM](https://en.wikipedia.org/wiki/USB_communications_device_class) device. All you need is a standard USB cable (C to C or A to C, as appropriate for your host machine). This interface is much faster than a serial port, and is the preferred way of using m1n1 remotely. However, a serial console is still recommended in addition to this for low-level debugging and development.
 
 After booting m1n1, you will see a CDC-ACM device appear (e.g. as `/dev/ttyACM0` on Linux):
 ```
