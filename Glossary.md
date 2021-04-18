@@ -53,6 +53,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **kASLR**: kernel Address Space Loacation Randomization: Linux kernel feature randomizes where the kernel code is placed in memory at boot time. Disabled by specifying `nokaslr` boot flag.
 * **kcOS**: OS with a custom kernel cache.
 * **Kernel cache**: A bundle of the kernel and its extensions, optionally encrypted.
+* **kmutil** macOS Kernel Management utility for managing kernel extensions (kexts). Used to boot alternative kernels i.e. m1n1
 
 ### L
 * **LLB**: Low Level Bootloader. The first-stage iBoot located in NOR, loaded by the SecureROM. It chainloads the second-stage iBoot on the OS Preboot partition.
