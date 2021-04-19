@@ -39,21 +39,21 @@ Some guesses as to what they might mean:
 * `gP12`: on at least one system, the LCD backlight. Can be turned off, which reduces apparent power consumption, and turned back on.
 * `gp??` (note capitalization): presumably also some kind of GPIO pin?
 * `D1??`: information about the device connected to the first USB-C port
-** `D1in`: name of the connected charger
-** `D1is`: serial number of the connected charger
+* `D1in`: name of the connected charger
+* `D1is`: serial number of the connected charger
 * `D2??`: refer to `D1??`
 * `P???`: power meters, presumably in watts
-** `PSTR`: possibly the entire system's power consumption
+* `PSTR`: possibly the entire system's power consumption
 * `SBA?`: system battery information
-** `SBAS`: battery charge in percent
+* `SBAS`: battery charge in percent
 * `RPlt`: platform name, such as "J293".
 * `a???`: highly volatile power-related measurement, so possibly current going to various device parts.
 * `F???`: fan information. Refer to https://github.com/torvalds/linux/blob/master/drivers/hwmon/applesmc.c.
 * `CL??`: various times, measured in nanoseconds since (presumably) the SMC was booted.
-** `CLKU`: continuously-updated current time
-** `CLBT`: boot time
-** `CLSP`: possibly the time the system last went to sleep
-** `CLWK`: possibly the time the system last woke
+* `CLKU`: continuously-updated current time
+* `CLBT`: boot time
+* `CLSP`: possibly the time the system last went to sleep
+* `CLWK`: possibly the time the system last woke
 
 
 ### Quirks
