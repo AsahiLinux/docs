@@ -36,6 +36,7 @@ Some guesses as to what they might mean:
 * `T???`: temperature values, in centigrade/Celsius, as float. There are many of those. The question marks specify, presumably, the location (and possibly whether or not the value is averaged to provide a more meaningful reading?)
 * `V???`: voltages. Probably in volts.
 * `gP??`: "GPIO" pins. Actually output only, and there appears to be a bug preventing you from reading the level of a pin non-destructively, except it works for the very first such pin to be read.
+* `gP0d`: controls the WiFi/BT chips.  Without enabling this, the PCI devices for WiFi and BT don't show up.  Used to implement "rfkill" functionality?
 * `gP12`: on at least one system, the LCD backlight. Can be turned off, which reduces apparent power consumption, and turned back on.
 * `gp??` (note capitalization): presumably also some kind of GPIO pin?
 * `D1??`: information about the device connected to the first USB-C port
