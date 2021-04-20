@@ -56,6 +56,8 @@ Some guesses as to what they might mean:
 * `CLSP`: possibly the time the system last went to sleep
 * `CLWK`: possibly the time the system last woke
 * `MSLD`: the lid switch, 1 for closed, 0 for open
+* `bHLD`: power button currently pressed
+* `MBSe`: power button pressed since last read, read-to-clear
 
 ### Quirks
 
