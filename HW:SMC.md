@@ -63,4 +63,5 @@ Or possibly quirks?
 
 * `#KEY`: contains the number of keys in the SMC, but in reversed byte order.
 * `VP3b`: apparently byte-reversed
-* `gP??`: latched in a weird way: the first time one of these keys is read, the data indicates the pin's power status. But reading any of the keys afterwards returns `0`, except after a write to one of them, which allows you to read data once more (but just once), for any of the pins. So you can read all pins by repeatedly writing 1 to a pin you know to be at high level, then reading the other pin levels one by one.
+* `gP??`: latched in a weird way: the first time one of these keys is read, the data indicates the pin's power status. But reading any of the keys afterwards returns `0`, except after a write to one of them, which allows you to read data once more (but just once), for any of the pins. So you can read all pins by repeatedly writing 1 to a pin you know to be at high level, then reading the other pin levels one by one. Reading with a payload of 0xffffffff or 0x00000001 returns the right value.
+* `rLD0` etc. cannot be read normally, but can be read with a 0x00000001 or 0x00ffffff payload. Maybe that's related to the "flags" byte being 0xf0.
