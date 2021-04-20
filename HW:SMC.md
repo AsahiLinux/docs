@@ -1,4 +1,4 @@
-The SMC is a piece of hardware handling access to such things as temperature sensors, voltage/power meters, battery status, fan status, and the LCD backlight.
+The SMC is a piece of hardware handling access to such things as temperature sensors, voltage/power meters, battery status, fan status, and the LCD backlight and Lid switch.
 
 It is "documented", to the extent that it is, in https://github.com/corellium/linux-m1/blob/master/drivers/hwmon/apple-m1-smc.c, but that's just the protocol, which essentially allows you to do three things:
 
@@ -55,7 +55,7 @@ Some guesses as to what they might mean:
 * `CLBT`: boot time
 * `CLSP`: possibly the time the system last went to sleep
 * `CLWK`: possibly the time the system last woke
-
+* `MSLD`: the lid switch, 1 for closed, 0 for open
 
 ### Quirks
 
