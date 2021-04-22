@@ -8,7 +8,7 @@ Names can be formatted the following ways depending on their official-ness:
 * Names in *italics* like: *<name>* are either common unofficial names or have uncertain but safe sources.
 
 ### A
-* **AGX**: "Apple Graphics"? (via `gfx`) The internal name for Apple's GPU series.
+* **AGX**: "Apple Graphics?" (via `gfx`) The internal name for Apple's GPU series.
 * **AMX**: *Apple Matrix eXtensions*. A matrix coprocessor partially integrated into the ISA.
 * **ANE**: "Apple Neural Engine?". Neural network execution acceleration
 * **AOP**: **Always On Processor**. "hey siri" activation and "other sensor stuff"
