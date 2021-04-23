@@ -100,25 +100,37 @@ So the changes to documented registers seem to disable some (buggy?) features as
 
 Here is what the DT bindings could look like:
 
-````
-                pcie@690000000 {
+```
+                pcie0: pcie@690000000 {
                         compatible = "apple,t8103-pcie";
-                        reg = <0x6 0x90000000 0x0 0x1000000>;
+                        reg = <0x6 0x90000000 0x0 0x1000000>,
+                              <0x6 0x80000000 0x0 0x4000>,
+                              <0x6 0x8c000000 0x0 0x4000>,
+                              <0x6 0x81000000 0x0 0x8000>,
+                              <0x6 0x82000000 0x0 0x8000>,
+                              <0x6 0x83000000 0x0 0x8000>;
+                        reg-names = "ecam", "rc", "phy", "port0",
+                                    "port1", "port2";
 
                         interrupt-parent = <&aic>;
                         interrupts = <AIC_IRQ 695 IRQ_TYPE_LEVEL_HIGH>,
                                      <AIC_IRQ 698 IRQ_TYPE_LEVEL_HIGH>,
                                      <AIC_IRQ 701 IRQ_TYPE_LEVEL_HIGH>;
 
-                        clocks = <&pcie_core_clk>, <&pcie_aux_clk>,
-                                 <&pcie_ref_clk>;
-                        pinctrl-0 = <&pcie_pins>;
-                        pinctrl-names = "default";
+                        msi-controller;
+                        msi-parent = <&pcie0>;
+                        apple,msi-base-vec = <704>;
+                        apple,msi-num-vecs = <32>;
 
                         iommu-map = <0x100 &dart0 0x100 0x100>,
                                     <0x200 &dart1 0x200 0x100>,
                                     <0x300 &dart2 0x300 0x100>;
-                        iommu-map-mask = <0xff00>;
+                        iommu-map-mask = <0xff00>;                        
+
+                        clocks = <&pcie_core_clk>, <&pcie_aux_clk>,
+                                 <&pcie_ref_clk>;
+                        pinctrl-0 = <&pcie_pins>;
+                        pinctrl-names = "default";
 
                         bus-range = <0 7>;
                         #address-cells = <3>;
@@ -128,13 +140,18 @@ Here is what the DT bindings could look like:
                                  <0x02000000 0x0 0xc0000000 0x6 0xc0000000
                                   0x0 0x40000000>;
 
+                        clocks = <&pcie_core_clk>, <&pcie_aux_clk>,
+                                 <&pcie_ref_clk>;
+                        pinctrl-0 = <&pcie_pins>;
+                        pinctrl-names = "default";
+
                         device_type = "pci";
 
                         pci@0,0 {
                                 device_type = "pci";
                                 reg = <0x0 0x0 0x0 0x0 0x0>;
                                 reset-gpios = <&gpio 152 0>;
-                                max-link-speed = <3>;
+                                max-link-speed = <2>;
                         };
 
                         pci@1,0 {
