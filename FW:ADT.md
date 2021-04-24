@@ -2,7 +2,7 @@ When Apple firmware boots a kernel, it passes a device tree in a binary format. 
 
 Like Linux devicetrees, the Apple device tree (ADT) encodes a number of untyped byte arrays (properties) in a hierarchy of nodes. These describe the available hardware, or provide other information that Apple thinks the firmware might need to tell the kernel about.
 
-The main difference between ADTs and Linux DTs is byte order; since properties are untyped, we can't automatically correct for that. Also, MMIO addresses in Linux generally include a 0x200000000 offset, while Apple's MMIO addresses start at 0 instead.
+The main difference between ADTs and Linux DTs is byte order; since properties are untyped, we can't automatically correct for that.
 
 ## Obtaining your ADT
 
