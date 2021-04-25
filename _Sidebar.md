@@ -17,6 +17,7 @@ Hardware Documentation:
 * [[HW:Apple-Instructions]]
 * [[HW:ARM-System-Registers]]
 * [[HW:Debug-USB]]
+* [[HW:GPIO]]
 * [[HW:Memory-map]]
 * [[HW:USB-PD]]
 * [[HW:SMP-spin-up]]
