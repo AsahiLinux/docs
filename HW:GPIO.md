@@ -32,4 +32,4 @@ It is unlikely we need the full 16 bits to encode the pin function so we repurpo
 
 Some open questions:
 * Should the compatible string be "apple,t8101-gpio" given the name of the node in the ADT?  Or should we mention both?
-* The controllers seem to provide interrupt functionality as well.  The standard bindings allow for an `interrupt-controller` property so this this can be handled as well.
+* The controllers seem to provide interrupt functionality as well.  The standard bindings allow for an `interrupt-controller` property so this this can be handled as well. There are (up to) 7 AIC interrupts per controllers each handling a group of GPIO pins.  It seems GPIO pins can be freely assigned to a group although the ADT contains properties that suggest that not all groups are functional on some of the controllers.
