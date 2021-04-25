@@ -152,6 +152,10 @@ Here is what the DT bindings could look like:
                                 reg = <0x0 0x0 0x0 0x0 0x0>;
                                 reset-gpios = <&gpio 152 0>;
                                 max-link-speed = <2>;
+
+                                #address-cells = <3>;
+                                #size-cells = <2>;
+                                ranges;
                         };
 
                         pci@1,0 {
@@ -159,6 +163,10 @@ Here is what the DT bindings could look like:
                                 reg = <0x800 0x0 0x0 0x0 0x0>;
                                 reset-gpios = <&gpio 153 0>;
                                 max-link-speed = <2>;
+
+                                #address-cells = <3>;
+                                #size-cells = <2>;
+                                ranges;
                         };
 
                         pci@2,0 {
@@ -166,6 +174,10 @@ Here is what the DT bindings could look like:
                                 reg = <0x1000 0x0 0x0 0x0 0x0>;
                                 reset-gpios = <&gpio 33 0>;
                                 max-link-speed = <1>;
+
+                                #address-cells = <3>;
+                                #size-cells = <2>;
+                                ranges;
                         };
                 };
 ```
