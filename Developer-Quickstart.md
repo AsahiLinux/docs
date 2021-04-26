@@ -4,7 +4,7 @@ So you want to help us bring Linux to M1 Macs? Read on! This guide describes the
 
 This guide is meant for developers who want to hack on Asahi Linux. It is not representative of what the install process for end-users will look like. It is meant for experienced Linux developers who may not know anything about Macs or M1 machines.
 
-It is extremely unlikely that you will damage your computer by following these steps, but we can make no guarantees at this time. Please proceed under your own responsibility.
+It is extremely unlikely that you will damage your computer by following these steps, but we can make no guarantees at this time. Please proceed at your own risk.
 
 ## Introduction
 
@@ -17,11 +17,11 @@ We will be setting up a dual-boot M1 computer with two OSes: a vanilla macOS ins
 * An Apple M1 machine 
     We recommend the Mac Mini as a baseline target. 
     * Mac Mini: Does not require Type C power, has additional on-board PCIe hardware (Ethernet & xHCI for type A ports). Requires an HDMI monitor.
-    * Macbook Air: USB via DWC3/Type-C only. Built-in screen. SPI keyboard. Requires Type C power for charging.
-    * Macbook Pro: Like the Air, but with a Touch Bar replacing the F keys, which means your keyboard will be crippled until the drivers for that are written.
+    * MacBook Air: USB via DWC3/Type-C only. Built-in screen. SPI keyboard. Requires Type C power for charging.
+    * MacBook Pro: Like the Air, but with a Touch Bar replacing the F keys, which means your keyboard will be crippled until the drivers for that are written.
 
 * macOS installed on the machine (we assume you will start from a stock configuration with a single macOS partition)
-    * No FileVault (encryption). This will just complicate things and is not tested.
+    * No FileVault (encryption). This will complicate things and is not tested.
 
 * A Linux development machine (any architecture)
     * If not arm64: an `aarch64-linux-gnu` gcc crosscompiler/toolchain (clang is also supported to build m1n1 but less tested).
@@ -109,7 +109,7 @@ While DFU boot works with a totally corrupted NOR flash, vital product identific
 
 You need at least macOS 11.2. Don't bother with older versions, they won't work.
 
-You will need to have gone through the macOS first-setup, including having created a primary administrator user/password.
+You will need to have gone through the macOS first-setup, including having created an administrator user with a password.
 
 ### Step 1: Partitioning
 
@@ -128,7 +128,7 @@ We want to get here:
 * disk0s5: Linux / (ext4)
 * disk0s6: 1TR (One True Recovery OS)
 
-Note that storage is not yet supported in our tree or bootloader, but we are targeting this partition layout a priori. disk0s3 will be our "stub" macOS, which at this time will be used to hold a full macOS install (eventually we will provide tooling to allow this to be a minimal partition containing only boot files, to avoid wasted space, but this is not ready yet).
+Note that storage is not yet supported in our tree or bootloader, but we are targeting this partition layout _a priori_. disk0s3 will be our "stub" macOS, which at this time will be used to hold a full macOS install (eventually we will provide tooling to allow this to be a minimal partition containing only boot files, to avoid wasted space, but this is not ready yet).
 
 Assuming you have a 500GB model:
 
@@ -169,7 +169,7 @@ Wait a while. This will reboot the machine into the new OS automatically.
 
 Go through OS first-time setup. Create an administrator user and password.
 
-Check the OS version. If it is not 11.2, you should update this OS too.
+Check the OS version. If it is not 11.2, you should update to at least this version.
 
 Shut down the machine again.
 
@@ -210,17 +210,17 @@ Having a serial console is indispensable for a fast development cycle and to deb
 
 M1 Macs expose their debug serial port over one of their Type C ports (the same one used for DFU). On MacBooks, this is the rear left port. On the Mac Mini, this is the port closest to the power plug.
 
+The target machine can also be hard-rebooted using USB-PD VDM commands, making for a quick test cycle (no holding down power buttons).
+
+See [[HW:USB-PD]] for details on the USB-PD VDM commands and what you can do with them.
+
 The serial port is a UART using 1.2V logic levels, and requires vendor-specific USB-PD VDM commands to enable. Thus, making a compatible cable is nontrivial. You have the following options.
-
-The target machine can also be hard-rebooted using USB-PD commands, making for a quick test cycle (no holding down power buttons).
-
-See also [[HW:USB-PD]] for details on the VDM commands and what you can do with them.
 
 ### Using an M1 machine
 
 If you have two M1 boxes, this is the simplest solution. Just grab [macvdmtool](https://github.com/AsahiLinux/macvdmtool/), connect both machines with a standard Type C SuperSpeed cable using the DFU port on *both* machines, and that's it!
 
-**IMPORTANT NOTE:** The cable needs to be the USB 3 / SuperSpeed type. USB 2 only cables won't work, **the charging cable that comes with the Macbook/Macbook Air will not work** and neither will most other cheap cables or cables marketed for their charging capacity. If it doesn't say "SuperSpeed" or "USB3.0" in the package it almost certainly won't work. If it's thin and bendy it is almost certainly *not* a SuperSpeed cable. Cables that work need to have upwards of **15** wires inside them; if it doesn't feel like it could possibly have that many wires inside, it is not the cable you need. If you are sure your cable is SuperSpeed capable (i.e. devices do enumerate as SuperSpeed through it) and it still doesn't work, then it is non-compliant and the manufacturer deserves to be shamed on their Amazon reviews page, because it means they didn't connect the SBU1/2 pins.
+**IMPORTANT NOTE:** The cable needs to be the USB 3 / SuperSpeed type. USB 2 only cables won't work, **the charging cable that comes with the MacBook/MacBook Air will not work** and neither will most other cheap cables or cables marketed for their charging capacity. If it doesn't say "SuperSpeed" or "USB3.0" in the package it almost certainly won't work. If it's thin and bendy it is almost certainly *not* a SuperSpeed cable. Cables that work need to have upwards of **15** wires inside them; if it doesn't feel like it could possibly have that many wires inside, it is not the cable you need. If you are sure your cable is SuperSpeed capable (i.e. devices do enumerate as SuperSpeed through it) and it still doesn't work, then it is non-compliant and the manufacturer deserves to be shamed on their Amazon reviews page, because it means they didn't connect the SBU1/2 pins.
 
 ```shell
 $ xcode-select --install
@@ -239,8 +239,8 @@ NOTE: if you have enabled serial debug output on your host machine (via nvram se
 You can build a DIY USB-PD interface with the following parts:
 
 * An Arduino or clone
-* A FUSB302 chip, either stand-alone or on a breakout board
-* A USB Type C breakout board (get a male one, plugging in directly into the target, for the most flexibility
+* An FUSB302 chip, either stand-alone or on a breakout board
+* A USB Type C breakout board (get a male one, plugging in directly into the target, for the most flexibility)
 * A 1.2V compatible UART interface
 
 Note that most FUSB302 breakout boards will not usefully break out the Type C pins you need, so it's best to use a separate full breakout board.
@@ -272,7 +272,7 @@ After booting m1n1, you will see a CDC-ACM device appear (e.g. as `/dev/ttyACM0`
 [1957890.934006] cdc_acm 1-2:1.0: ttyACM0: USB ACM device
 ```
 
-When running the python proxyclient commands proxyclient/{shell,chainload,linux}.py as described below you must specify the USB ACM serial device. e.g. for shell.py
+When running the python proxyclient commands `proxyclient/{shell,chainload,linux}.py` as described below you must specify the USB ACM serial device. e.g. for `shell.py`:
 ```shell
 $ M1N1DEVICE=/dev/ttyACM0
 $ export M1N1DEVICE
@@ -371,17 +371,17 @@ $ arch -x86_64 brew install python
 $ pip3.9 install --user pyserial construct
 ```
 
-You can also use macports to install python and pip and than install the dependencies using pip as root. Macports has a native build for M1.
+You can also use macports to install python and pip and then install the dependencies using pip as root. Macports has a native build for M1.
 
 ```shell
 $ sudo su -
-$ port isntall python39 py39-pip
+$ port install python39 py39-pip
 $ pip install pyserial construct
 ```
 
 ### Usage
 
-To use the proxyclient scripts, you need to set `M1N1DEVICE` to your serial port device. When using another M1 mac as the host, use `export M1N1DEVICE=/dev/cu.debug-console`. For a Linux host connecting via USB, use something like `export M1N1DEVICE=/dev/ttyACM0`.
+To use the proxyclient scripts, you need to set the envar `M1N1DEVICE` to your serial port device. When using another M1 mac as the host, use `export M1N1DEVICE=/dev/cu.debug-console`. For a Linux host connecting via USB, use something like `export M1N1DEVICE=/dev/ttyACM0`.
 
 Things to do:
 
