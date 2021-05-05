@@ -24,5 +24,6 @@ Hardware Documentation:
 
 Software Documentation:
 * [[SW:Boot]]
+* [[SW:MachO-Boot-Protocol]]
 * [[SW:NVRAM]]
 * [[SW:Storage]]
