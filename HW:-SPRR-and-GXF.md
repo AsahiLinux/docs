@@ -1,3 +1,29 @@
+
+# Guarded execution
+
+Guarded execution mode is a lateral exception level next to EL1 and EL2 which uses the same pagetables but different permissions (see SPRR). These levels are called GL1 and GL2. It's enabled with bit 1 in S3_6_C15_1_2.
+
+The instruction `0x00201420` is genter and switches from EL to GL and sets the PC to `S3_6_C15_C8_1`.
+`0x00201420` is gexit which returns to EL.
+
+```
+#define SYS_GXF_ENTER_EL1 sys_reg(3, 6, 15, 8, 1)
+```
+
+Guarded mode has a separate set of ELR, FAR, ESR, SPSR, VBAR and TPIDR registers just like EL1/2.
+Additionally the ASPSR register indicates if gexit should return to GL or EL.
+
+```
+#define SYS_TPIDR_GL1 sys_reg(3, 6, 15, 10, 1)
+#define SYS_VBAR_GL1 sys_reg(3, 6, 15, 10, 2)
+#define SYS_SPSR_GL1 sys_reg(3, 6, 15, 10, 3)
+#define SYS_ASPSR_GL1 sys_reg(3, 6, 15, 10, 4)
+#define SYS_ESR_GL1 sys_reg(3, 6, 15, 10, 5)
+#define SYS_ELR_GL1 sys_reg(3, 6, 15, 10, 6)
+#define SYS_FAR_GL1 sys_reg(3, 6, 15, 10, 7)
+```
+
+
 # SPRR
 
 SPRR takes the permission bits from pagetable entries and converts them into an attribute index similar to how MAIR works:
@@ -57,27 +83,3 @@ S3_6_C15_1_5 is the permissions register for EL0 and S3_6_C15_1_6 is for EL1/GL1
 #define SYS_SPRR_PERM_EL1 sys_reg(3, 6, 15, 1, 6)
 ```
 
-
-# Guarded execution
-
-Guarded execution mode is a lateral exception level next to EL1 and EL2 which uses the same pagetables but different permissions (see SPRR). These levels are called GL1 and GL2. It's enabled with bit 1 in S3_6_C15_1_2.
-
-The instruction `0x00201420` is genter and switches from EL to GL and sets the PC to `S3_6_C15_C8_1`.
-`0x00201420` is gexit which returns to EL.
-
-```
-#define SYS_GXF_ENTER_EL1 sys_reg(3, 6, 15, 8, 1)
-```
-
-Guarded mode has a separate set of ELR, FAR, ESR, SPSR, VBAR and TPIDR registers just like EL1/2.
-Additionally the ASPSR register indicates if gexit should return to GL or EL.
-
-```
-#define SYS_TPIDR_GL1 sys_reg(3, 6, 15, 10, 1)
-#define SYS_VBAR_GL1 sys_reg(3, 6, 15, 10, 2)
-#define SYS_SPSR_GL1 sys_reg(3, 6, 15, 10, 3)
-#define SYS_ASPSR_GL1 sys_reg(3, 6, 15, 10, 4)
-#define SYS_ESR_GL1 sys_reg(3, 6, 15, 10, 5)
-#define SYS_ELR_GL1 sys_reg(3, 6, 15, 10, 6)
-#define SYS_FAR_GL1 sys_reg(3, 6, 15, 10, 7)
-```
