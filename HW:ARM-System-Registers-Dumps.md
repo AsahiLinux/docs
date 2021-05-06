@@ -294,7 +294,7 @@ All implemented (readable) vendor-specific registers. Dumped while running m1n1 
 | unknow | s3_6_c15_c14_2 | RW | 0x0 | same |
 | unknow | s3_6_c15_c14_4 | RW | 0x0 | same |
 | unknow | s3_6_c15_c14_5 | RW | 0x0 | same |
-| SYS_APL_UNK1_EL2 | s3_6_c15_c14_6 | RW | 0xc00 | same |
+| ACTLR_EL12 | s3_6_c15_c14_6 | RW | 0xc00 | same |
 | unknow | s3_6_c15_c14_7 | RW | 0x0 | same |
 | unknow | s3_6_c15_c15_0 | RW | 0xc | same |
 | unknow | s3_6_c15_c15_1 | RO | 0x0 | same |
