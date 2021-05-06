@@ -30,8 +30,10 @@ SPRR takes the permission bits from pagetable entries and converts them into an 
 
 ```
    3      2      1     0
- AP[1]  AP[0]   PXN   UXN
+ AP[1]  AP[0]   UXN   PXN
 ```
+
+Note that UXN and PXN are flipped compared to APRR!
 
 This is then used to index into a system register where each entry has four bits:
 
