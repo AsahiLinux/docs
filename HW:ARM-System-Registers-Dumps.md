@@ -665,7 +665,7 @@ Dump from Darwin version: 20.3.0 XNU: 7195.81.3~1
 | unknow | s3_6_c15_c14_2 | 0xff | same |
 | unknow | s3_6_c15_c14_4 | 0x0 | same |
 | unknow | s3_6_c15_c14_5 | 0x0 | same |
-| unknow | s3_6_c15_c14_6 | 0x1c00 | same |
+| ACTLR_EL12 | s3_6_c15_c14_6 | 0x1c00 | same |
 | unknow | s3_6_c15_c14_7 | 0x0 | same |
 | unknow | s3_6_c15_c15_0 | 0xc | same |
 | unknow | s3_6_c15_c15_1 | 0x0 | same |
