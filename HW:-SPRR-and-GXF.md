@@ -62,7 +62,7 @@ modifies what the two EL bits usually mean.
 | `1100` | `---` | `rw-` |
 | `1101` | `r-x` | `rw-` |
 | `1110` | `r--` | `rw-` |
-| `1101` | `rw-` | `rw-` |
+| `1111` | `rw-` | `rw-` |
 
 
 These four bits indicate the actual permissions when running in EL or GL mode.
