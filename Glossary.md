@@ -34,6 +34,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### G
 * **GPT**: GUID Partition Table: A partition table format created for EFI/UEFI and now used on most modern systems.
+* **GXF**: probably Guarded Execution Function. Lateral exception levels used to create a low-overhead hypervisor to protect pagetables and equally important structures from XNU itself. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [[HW:-SPRR-and-GXF]]
 
 ### H
 * **HFS+**: Hierarchical Filesystem+: Apple's previous filesystem, used for external storage. Not used for internal storage on M1 Macs.
@@ -79,7 +80,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **SFR**: System Firmware, the portion of firmware stored in NOR flash. This includes the first stage of iBoot, which will boot the second stage from the OS partition.
 * **SIP**: System Integrity Protection. Also called "rootless", where the macOS kernel stops even root from doing some things.
 * **SOP**: Start Of Packet. Used to differentiate packet types in USB-PD. SOP for normal comms, SOP' and SOP" to talk to built-in chips in a cable, SOP'DEBUG and SOP"DEBUG for custom vendor specific things like Apple VDMs.
-* **SPI**: Serial Peripheral Interface. A 4-wire standard for communicating at low speed between chips on a board.
+* **SPRR**: probably Shadow Permission Remap Registers. Turns the normal page permission attributes (AP,PXN,UXN) into an index to a separate table. This new table then determines the real page permissions. Also disallows pages that writeable and executable at the same time. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [[HW:-SPRR-and-GXF]]
 * **SWD**: Serial Wire Debug. A 2-pin interface used for debugging ARM cores, like JTAG over fewer pins. Used on Apple devices, but inaccessible (for the main CPU/SoC) in production devices due to security restrictions.
 
 ### T
