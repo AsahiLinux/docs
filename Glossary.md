@@ -31,6 +31,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### F
 * **fuOS**: Custom OS, speculated to mean "fully untrusted OS".
+* **Fallback Recovery OS**: 2nd copy of recovery OS accessed by double clicking and holding power button to boot. Unlike 1TR is unable to change security state(settings). Can be distinguished from Recovery OS 1TR by Utilities missing "Start Security Utility" option under Utilities
 
 ### G
 * **GPT**: GUID Partition Table: A partition table format created for EFI/UEFI and now used on most modern systems.
