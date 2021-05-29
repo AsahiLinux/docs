@@ -4,15 +4,15 @@
 
 ## Early bring-up
 
-* [x] Enable UART on Type-C ports - see [[HW:USB-PD]] and [vdmtool](https://github.com/AsahiLinux/vdmtool).
+* [x] Enable UART on Type-C ports - see [[HW:USB-PD]] and [vdmtool](https://github.com/AsahiLinux/vdmtool)/[macvdmtool](https://github.com/AsahiLinux/macvdmtool).
 * [x] Test code execution
 * [x] Build a UART-based RPC/loader tool (m1n1)
 
 ## Bootloader (m1n1)
 * [x] FB/Logo
 * [x] MMU
-* [ ] Text console
-* [ ] USB device (dwc3)
+* [x] Text console
+* [x] USB device (dwc3)
 * [x] Decompression
 * [x] SMP spin-up
 * [x] Handle CPU chicken bits
