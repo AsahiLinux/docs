@@ -4,7 +4,7 @@
 
 ## Early bring-up
 
-* [x] Enable UART on Type-C ports - see [[HW:USB-PD]] and [vdmtool](https://github.com/AsahiLinux/vdmtool)/[macvdmtool](https://github.com/AsahiLinux/macvdmtool).
+* [x] Enable UART on Type-C ports - see [[HW:USB-PD]] and [vdmtool](https://github.com/AsahiLinux/vdmtool) or [macvdmtool](https://github.com/AsahiLinux/macvdmtool).
 * [x] Test code execution
 * [x] Build a UART-based RPC/loader tool (m1n1)
 
