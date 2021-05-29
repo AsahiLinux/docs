@@ -18,10 +18,7 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j8 Image dtbs
 ```
 gzip < ../linux/arch/arm64/boot/Image > Image.gz
 ```
-* Create dtb from the device tree source file in the m1n1 loader at m1n1/dts/apple-j274.dts
-```
-../linux/scripts/dtc/dtc dts/apple-j274.dts -o apple-j274.dtb
-```
+* m1n1's build system creates following dtb: `build/dtb/t8103-j274.dtb`
 ## Test it via qemu
 * Note: **Need to match qemu version to linux version**
 ```
@@ -44,7 +41,7 @@ M1N1DEVICE=/dev/pts/8
 
 * Load kernel via python proxy script
 ```
-python3 proxyclient/linux.py Image.gz apple-j274.dtb
+python3 proxyclient/linux.py Image.gz build/dtb/t8103-j274.dtb
 ```
 * Get a 27Mb initrd from debian arm64 installer
 ```
@@ -69,7 +66,7 @@ sudo vi initrd//init
 ```
 * Try loading with ramdisk
 ```
-python3 proxyclient/linux.py Image.gz apple-j274.dtb init-new.gz
+python3 proxyclient/linux.py Image.gz build/dtb/t8103-j274.dtb init-new.gz
 ```
 * **NOTE**: I haven't been able to get the shell to run yet... stay tuned for updates (or please add them)
 ![Image of console showing panic running /init](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/qemu-boot.png)
