@@ -8,14 +8,14 @@ The main difference between ADTs and Linux DTs is byte order; since properties a
 
 Given hardware, you can access your ADT in a number of ways.
 
-The easiest way is probably using m1n1:
+The easiest way is probably using m1n1 via adt.py
 
 ```
-open("dt.bin", "wb").write(readmem(ba.devtree - ba.virt_base + ba.phys_base, ba.devtree_size))
+m1n1/proxyclient/adt.py --retrieve dt.bin
 ```
 
-in the m1n1 shell, which will write a file called "dt.bin" containing the raw (binary) ADT.
+This will write a file called "dt.bin" containing the raw (binary) ADT and print the decoded ADT.
 
 ## Decoding an ADT
 
-`m1n1/proxyclient/adt.py`. Other ways?
+`m1n1/proxyclient/adt.py dt.bin`. Other ways?
