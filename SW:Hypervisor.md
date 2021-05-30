@@ -5,5 +5,6 @@
 3. Install the KDK into Mac OS, the KDK will be installed to `/Library/Developer/KDKs/KDK_<MACOS_VERSION>_<KDK_VERSION>.kdk`
 4. Switch into the KDK folder and run the following command:
 ```
-
+kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -k kernel.development.t8101 -V development -r . -r /System/Library/Extensions/ -r /System/Library/DriverExtensions -V development -x $(kmutil inspect -V release --no-header \
+  | grep -v "SEPHiber" | awk '{print " -b "$1; }')
 ```
