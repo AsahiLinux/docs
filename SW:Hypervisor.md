@@ -22,4 +22,4 @@ kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -V development \
 to start macOS with the m1n1 hypervisor.
 
 # Sources
-Source for the kernelcache creation: https://github.com/AsahiLinux/docs/wiki/SW:Hypervisor
+Source for the kernelcache creation: https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html
