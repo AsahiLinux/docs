@@ -1,7 +1,7 @@
 # Getting the macOS development kernel and creating the kernelcache
 
 1. Create a macOS developer account (requires an icloud account.
-2. Download the Mac OS Kernel Development Kit (KDK) from apple: https://developer.apple.com/download/more/, it should match your macOS version.
+2. Download the Mac OS Kernel Debug Kit (KDK) from Apple: https://developer.apple.com/download/more/, it should match your Mac OS version.
 3. Install the KDK into Mac OS, the KDK will be installed to `/Library/Developer/KDKs/KDK_<MACOS_VERSION>_<KDK_VERSION>.kdk`
 4. Change to the kernels directory: `cd /Library/Developer/KDKs/KDK_<MACOS_VERSION>_<KDK_VERSION>.kdk/System/Library/Kernels`
 5. Switch into the KDK folder and run the following command:
