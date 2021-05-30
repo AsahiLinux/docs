@@ -20,3 +20,6 @@ kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -V development \
 3. Run 
 ```python3 proxyclient/run_guest.py -s <PATH_TO_DEBUG_DWARF> <PATH_TO_DEVELOPMENT_KERNEL_CACHE> -- "cpus=1 debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1"```
 to start macOS with the m1n1 hypervisor.
+
+# Sources
+Source for the kernelcache creation: https://github.com/AsahiLinux/docs/wiki/SW:Hypervisor
