@@ -13,6 +13,7 @@ Names can be formatted the following ways depending on their official-ness:
 * **ANE**: "Apple Neural Engine?". Neural network execution acceleration
 * **AOP**: **Always On Processor**. "hey siri" activation and "other sensor stuff"
 * **AVE**: **AVE Video Encoder**. Handles video encoding. Ostensibly the A is for Apple [citation needed], but I see a recursive acronym.
+* **AVD**: **AVD Video Decoder**. Handles video decoding. ^
 
 ### D
 * **DCP**: "Display Compression Processor?"/"Display Control Processor?". Displayport/Display control of some sort.
