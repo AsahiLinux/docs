@@ -1,6 +1,7 @@
 Project related:
 * [[Project status]]
 * [[Tasks]]
+* [Recent Changes](https://github.com/AsahiLinux/docs/wiki/_history)
 
 Places to start:
 * [[Developer Quickstart]]
