@@ -457,7 +457,8 @@ TTY> SYS_E_MMU_ERR_STS: 0x0
 TTY> Recovering from exception (ELR=0x8135aaaa0)
 0xacce5515abad1dea
 ```
-
+Note: If you get an error that says ```proxy.ProxyCommandError: Reply error: Bad Command``` you most
+likely need to upgrade the m1n1 on the M1. A quick way around this is to just upload the newest m1n1.macho via the chainload.py as described below:
 #### Loading another m1n1
 
 Useful to test changes without using `kmutil` again.
