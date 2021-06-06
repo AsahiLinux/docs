@@ -43,3 +43,7 @@ bluetooth              | 136 | 0x2000002 | 0x76a80
 audio-tas5770L-speaker | 182 | 0x1       | 0x76b81
 audio-codec-output     | 183 | 0x1       | 0x76b81
 wlan                   | 196 | 0x2       | 0x76ac0
+
+Observed Mac OS behavior for device `/arm-io/gpio` at address `0x23c100000`:
+1. read pin config (4 bytes) from offset `0x0000` to `0x34c` (212 pins)
+2. clear interrupts for all 7 groups? writing ones 7 x 4 bytes in seven groups to the offsets `0x800`, `0x840`, `0x880`, `0x8C0`, `0x900`, `0x940`, `0x980`
