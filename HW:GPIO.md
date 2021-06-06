@@ -33,3 +33,13 @@ It is unlikely we need the full 16 bits to encode the pin function so we repurpo
 Some open questions:
 * Should the compatible string be "apple,t8101-gpio" given the name of the node in the ADT?  Or should we mention both?
 * The controllers seem to provide interrupt functionality as well.  The standard bindings allow for an `interrupt-controller` property so this this can be handled as well. There are (up to) 7 AIC interrupts per controllers each handling a group of GPIO pins.  It seems GPIO pins can be freely assigned to a group although the ADT contains properties that suggest that not all groups are functional on some of the controllers.
+
+The gpio controller provides interrupt functionality to devices which uses it as `interrupt-parent`. Those devices have 2 `#interrupt-cells`. The first cell specifies the GPIO pin. The meaning of the second pin is unknown. `audio-tas5770L-speaker`, `audio-codec-output`, `hpmBusManager` use 0x1, `wlan` 0x2 and `bluetooth` 0x2000002. The second cells' value does not seem to correspond to the pin's configuration register.
+
+device                 | pin | 2nd cell  | config by iboot (mac mini)
+---------------------- | --- | --------- | --------------------------
+hpmBusManager          | 106 | 0x1       | 0x76b80
+bluetooth              | 136 | 0x2000002 | 0x76a80
+audio-tas5770L-speaker | 182 | 0x1       | 0x76b81
+audio-codec-output     | 183 | 0x1       | 0x76b81
+wlan                   | 196 | 0x2       | 0x76ac0
