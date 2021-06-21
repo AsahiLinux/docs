@@ -33,10 +33,15 @@ python3.9 proxyclient/tools/linux.py -b 'earlycon console=ttySAC0,1500000 consol
 ```
 ## Under Hypervisor
   * Running Linux under m1n1 hypervisor lets you inspect the memory/stop/start and even do a stack trace
-    * Create a .macho combined image (run_guest.py only accepts .macho) 
-```cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz > m1n1-payload.macho```
-    * Load it with run_guest 
-```python3.9 proxyclient/tools/run_guest.py -S m1n1-payload.macho```
+  * Create a .macho combined image (run_guest.py only accepts .macho) 
+```
+cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz > m1n1-payload.macho
+```
+
+ * Load it with run_guest 
+```
+python3.9 proxyclient/tools/run_guest.py -S m1n1-payload.macho
+```
 
 <details>
 <summary>See full log</summary>
@@ -100,7 +105,7 @@ Entering hypervisor shell. Type `start` to start the guest.
 
 </details>
 
-    * It prompts with debug shell and you begin execution from the load point with the start command:
+ * It prompts with debug shell and you begin execution from the load point with the start command:
 <details>
 <summary>See bootup log</summary>
 
@@ -150,11 +155,15 @@ Skip: msr ACC_CFG_EL1, x1 = d
 
   * Once it is running use **^C** to get a debug shell 
 ```
+...
+Skip: msr CYC_OVRD_EL1, x1 = 2000000
+Pass: mrs x1, ACC_CFG_EL1 = d (ACC_CFG_EL1)
+Skip: msr ACC_CFG_EL1, x1 = d
 ^CUser interrupt
 Entering debug shell
 >>> 
 ```
-  * Then was able to get a stack trace (with symbols) after setting some things up
+  * Then get a stack trace (with symbols) after loading System.map file of the kernel and setting the PAC_MASK (pointer protection mask)
 ```
 >>> load_system_map('../linux/System.map')
 >>> hv.pac_mask = 0xfffff00000000000
@@ -169,7 +178,7 @@ Stack trace:
  - 0xffff8000103d0c7c (arch_call_rest_init+0xc)
  - 0xffff8000103d11f0 (start_kernel+0x528)
 ```
-  * Disassemble addresses around the cur CPU
+  * Disassemble addresses before the program counter
 ```
 >>> disassemble_at(p.hv_translate(hv.ctx.elr, True) - 32, 64)
     81f6fdc04:  d53cd042        mrs     x2, tpidr_el2
