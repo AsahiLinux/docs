@@ -263,15 +263,22 @@ m1n1 now supports exposing its debug console and proxy interface via a standard 
 
 This interface is much faster than a serial port, and is the preferred way of using m1n1 remotely. However, a serial console is still recommended in addition to this for low-level debugging and development.
 
-After booting m1n1, you will see a CDC-ACM device appear (e.g. as `/dev/ttyACM0` on Linux):
+After booting m1n1, you will now see two CDC-ACM device appear (e.g. as `/dev/ttyACM0` and `/dev/ttyACM1` on Linux):
 ```
-[1957890.803460] usb 1-2: new high-speed USB device number 117 using xhci_hcd
-[1957890.931275] usb 1-2: New USB device found, idVendor=1209, idProduct=316d, bcdDevice= 1.00
-[1957890.931282] usb 1-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
-[1957890.931285] usb 1-2: Product: m1n1 uartproxy c2e2094
-[1957890.931288] usb 1-2: Manufacturer: Asahi Linux
-[1957890.931290] usb 1-2: SerialNumber: P-0
-[1957890.934006] cdc_acm 1-2:1.0: ttyACM0: USB ACM device
+[977820.091168] usb 2-2: USB disconnect, device number 95
+[977820.832569] usb 2-2: new high-speed USB device number 96 using xhci_hcd
+[977821.069287] usb 2-2: New USB device found, idVendor=1209, idProduct=316d, bcdDevice= 1.00
+[977821.069296] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[977821.069300] usb 2-2: Product: m1n1 uartproxy da44067
+[977821.069303] usb 2-2: Manufacturer: Asahi Linux
+[977821.069305] usb 2-2: SerialNumber: P-0
+[977821.070574] cdc_acm 2-2:1.0: ttyACM0: USB ACM device
+[977821.070825] probe of 2-2:1.0 returned 1 after 323 usecs
+[977821.071036] cdc_acm 2-2:1.2: ttyACM1: USB ACM device
+[977821.071099] probe of 0000:00:02.0 returned 0 after 19 usecs
+[977821.071262] probe of 2-2:1.2 returned 1 after 284 usecs
+[977821.071375] probe of 2-2 returned 1 after 1838 usecs
+[977821.071428] probe of 0000:00:02.0 returned 0 after 9 usecs
 ```
 
 When running the python proxyclient commands `proxyclient/tools/{shell,chainload,linux}.py` as described below you must specify the USB ACM serial device. e.g. for `shell.py`:
@@ -280,6 +287,10 @@ $ M1N1DEVICE=/dev/ttyACM0
 $ export M1N1DEVICE
 $ python3 proxyclient/tools/shell.py
 ``` 
+  * Can start up a terminal program on the 2nd tty which linux console output can be made to go to 
+```
+picocom /dev/ttyACM1
+```
 
 Note that this method cannot (yet) be used as an earlycon for Linux, and USB gadget support is not yet in our main Linux tree either.
 
