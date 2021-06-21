@@ -259,7 +259,9 @@ In the coming weeks we'll be designing an open hardware interface for interfacin
 
 ### USB gadget mode using a standard USB cable
 
-m1n1 now supports exposing its debug console and proxy interface via a standard USB [CDC-ACM](https://en.wikipedia.org/wiki/USB_communications_device_class) device. All you need is a standard USB cable (C to C or A to C, as appropriate for your host machine). This interface is much faster than a serial port, and is the preferred way of using m1n1 remotely. However, a serial console is still recommended in addition to this for low-level debugging and development.
+m1n1 now supports exposing its debug console and proxy interface via a standard USB [CDC-ACM](https://en.wikipedia.org/wiki/USB_communications_device_class) device. All you need is a standard USB cable (C to C or A to C, as appropriate for your host machine). ![USB Type-C  to Type A cable](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/USB-TypeC-A-cable.png)
+
+This interface is much faster than a serial port, and is the preferred way of using m1n1 remotely. However, a serial console is still recommended in addition to this for low-level debugging and development.
 
 After booting m1n1, you will see a CDC-ACM device appear (e.g. as `/dev/ttyACM0` on Linux):
 ```
@@ -272,14 +274,16 @@ After booting m1n1, you will see a CDC-ACM device appear (e.g. as `/dev/ttyACM0`
 [1957890.934006] cdc_acm 1-2:1.0: ttyACM0: USB ACM device
 ```
 
-When running the python proxyclient commands `proxyclient/{shell,chainload,linux}.py` as described below you must specify the USB ACM serial device. e.g. for `shell.py`:
+When running the python proxyclient commands `proxyclient/tools/{shell,chainload,linux}.py` as described below you must specify the USB ACM serial device. e.g. for `shell.py`:
 ```shell
 $ M1N1DEVICE=/dev/ttyACM0
 $ export M1N1DEVICE
-$ python3 proxyclient/shell.py
+$ python3 proxyclient/tools/shell.py
 ``` 
 
 Note that this method cannot (yet) be used as an earlycon for Linux, and USB gadget support is not yet in our main Linux tree either.
+
+* See [Running Linux via USB cable](https://github.com/AsahiLinux/docs/wiki/SW:Linux#running-linux-via-usb-cable) for some more details
 
 ## Using m1n1
 
