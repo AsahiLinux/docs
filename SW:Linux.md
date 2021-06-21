@@ -37,6 +37,10 @@ python3.9 proxyclient/tools/linux.py -b 'earlycon console=ttySAC0,1500000 consol
 ```cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz > m1n1-payload.macho```
     * Load it with run_guest 
 ```python3.9 proxyclient/tools/run_guest.py -S m1n1-payload.macho```
+
+<details>
+<summary>See full log</summary>
+
 ```
 % python3.9 proxyclient/tools/run_guest.py -S m1n1-payload.macho
 Fetching ADT (0x00058000 bytes)...
@@ -93,7 +97,13 @@ Setting up bootargs at 0x81bf98000...
 Entering hypervisor shell. Type `start` to start the guest.
 >>>
 ```
+
+</details>
+
     * It prompts with debug shell and you begin execution from the load point with the start command:
+<details>
+<summary>See bootup log</summary>
+
 ```
 Entering hypervisor shell. Type `start` to start the guest.
 >>> start
@@ -136,6 +146,8 @@ Skip: msr CYC_OVRD_EL1, x1 = 2000000
 Pass: mrs x1, ACC_CFG_EL1 = d (ACC_CFG_EL1)
 Skip: msr ACC_CFG_EL1, x1 = d
 ```
+</details>
+
   * Once it is running use **^C** to get a debug shell 
 ```
 ^CUser interrupt
@@ -148,12 +160,37 @@ Entering debug shell
 >>> hv.pac_mask = 0xfffff00000000000
 >>> bt
 Stack trace:
- - 0xfffff000102fdc3c (init_pg_end+0x6fffffd0dc3c)
- - 0xfffff000102fdc5c (init_pg_end+0x6fffffd0dc5c)
- - 0xfffff00010305420 (init_pg_end+0x6fffffd15420)
- - 0xfffff0001005fcf0 (init_pg_end+0x6fffffa6fcf0)
- - 0xfffff0001005fec4 (init_pg_end+0x6fffffa6fec4)
- - 0xfffff000102fe278 (init_pg_end+0x6fffffd0e278)
- - 0xfffff000103d0c7c (init_pg_end+0x6fffffde0c7c)
- - 0xfffff000103d11f0 (init_pg_end+0x6fffffde11f0)
+ - 0xffff8000102fdc3c (cpu_do_idle+0xc)
+ - 0xffff8000102fdc5c (arch_cpu_idle+0xc)
+ - 0xffff800010305420 (default_idle_call+0x20)
+ - 0xffff80001005fcf0 (do_idle+0x210)
+ - 0xffff80001005fec4 (cpu_startup_entry+0x24)
+ - 0xffff8000102fe278 (rest_init+0xd0)
+ - 0xffff8000103d0c7c (arch_call_rest_init+0xc)
+ - 0xffff8000103d11f0 (start_kernel+0x528)
+```
+  * Disassemble addresses around the cur CPU
+```
+>>> disassemble_at(p.hv_translate(hv.ctx.elr, True) - 32, 64)
+    81f6fdc04:  d53cd042        mrs     x2, tpidr_el2
+    81f6fdc08:  d53cd041        mrs     x1, tpidr_el2
+    81f6fdc0c:  d53cd041        mrs     x1, tpidr_el2
+    81f6fdc10:  d53cd040        mrs     x0, tpidr_el2
+    81f6fdc14:  d53cd040        mrs     x0, tpidr_el2
+    81f6fdc18:  d503233f        paciasp
+    81f6fdc1c:  d5033f9f        dsb     sy
+    81f6fdc20:  d503207f        wfi
+    81f6fdc24:  d50323bf        autiasp
+    81f6fdc28:  d65f03c0        ret
+    81f6fdc2c:  d503201f        nop
+    81f6fdc30:  d503233f        paciasp
+    81f6fdc34:  a9bf7bfd        stp     x29, x30, [sp, #-16]!
+    81f6fdc38:  910003fd        mov     x29, sp
+    81f6fdc3c:  97fffff7        bl      81f6fdc18 <_start+0x14>
+    81f6fdc40:  a8c17bfd        ldp     x29, x30, [sp], #16
+```
+  * Dump out register %0 from the last exception to the hypervisor
+```
+>>> hv.ctx.regs[0]
+0xffff0003ccaf21e0
 ```
