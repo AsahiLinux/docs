@@ -85,14 +85,16 @@ Entering debug shell
 ```
   * Then was able to get a stack trace (with symbols) after setting some things up
 ```
+>>> load_system_map('../linux/System.map')
+>>> hv.pac_mask = 0xfffff00000000000
 >>> bt
 Stack trace:
- - 0xffff8000102fdc3c (cpu_do_idle+0xc)
- - 0xffff8000102fdc5c (arch_cpu_idle+0xc)
- - 0xffff800010305420 (default_idle_call+0x20)
- - 0xffff80001005fcf0 (do_idle+0x210)
- - 0xffff80001005fec4 (cpu_startup_entry+0x24)
- - 0xffff8000102fe278 (rest_init+0xd0)
- - 0xffff8000103d0c7c (arch_call_rest_init+0xc)
- - 0xffff8000103d11f0 (start_kernel+0x528)
+ - 0xfffff000102fdc3c (init_pg_end+0x6fffffd0dc3c)
+ - 0xfffff000102fdc5c (init_pg_end+0x6fffffd0dc5c)
+ - 0xfffff00010305420 (init_pg_end+0x6fffffd15420)
+ - 0xfffff0001005fcf0 (init_pg_end+0x6fffffa6fcf0)
+ - 0xfffff0001005fec4 (init_pg_end+0x6fffffa6fec4)
+ - 0xfffff000102fe278 (init_pg_end+0x6fffffd0e278)
+ - 0xfffff000103d0c7c (init_pg_end+0x6fffffde0c7c)
+ - 0xfffff000103d11f0 (init_pg_end+0x6fffffde11f0)
 ```
