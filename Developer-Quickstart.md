@@ -130,7 +130,7 @@ We want to get here:
 
 Note that storage is not yet supported in our tree or bootloader, but we are targeting this partition layout _a priori_. disk0s3 will be our "stub" macOS, which at this time will be used to hold a full macOS install (eventually we will provide tooling to allow this to be a minimal partition containing only boot files, to avoid wasted space, but this is not ready yet).
 
-Assuming you have a 500GB model:
+Assuming you have a 500GB model, follow these commands (note that your machine may freeze for several minutes while these commands are running):
 
 ```shell
 # diskutil apfs resizeContainer disk0s2 200GB
@@ -157,7 +157,8 @@ We can change the FS and GPT type of the true Linux root and boot partitions lat
 
 Shut down the machine. Boot with the power button held down, until "Loading startup options..." appears. This enters 1TR, the OS recovery environment.
 
-Select "Options" in the boot picker.
+Select "Options" in the boot picker. You may be prompted to enter your credentials.
+These are the login credential for the main macOS installation.
 
 In the main recovery menu, select "Reinstall macOS Big Sur".
 
@@ -263,7 +264,7 @@ m1n1 now supports exposing its debug console and proxy interface via a standard 
 
 This interface is much faster than a serial port, and is the preferred way of using m1n1 remotely. However, a serial console is still recommended in addition to this for low-level debugging and development.
 
-After booting m1n1, you will now see two CDC-ACM device appear (e.g. as `/dev/ttyACM0` and `/dev/ttyACM1` on Linux):
+After booting m1n1, you will now see two CDC-ACM device appear (e.g. as `/dev/ttyACM0` and `/dev/ttyACM1` on Linux or `/dev/tty.usbmodemP_01` and `/dev/tty.usbmodemP_03` on macOS):
 ```
 [977820.091168] usb 2-2: USB disconnect, device number 95
 [977820.832569] usb 2-2: new high-speed USB device number 96 using xhci_hcd
@@ -281,7 +282,7 @@ After booting m1n1, you will now see two CDC-ACM device appear (e.g. as `/dev/tt
 [977821.071428] probe of 0000:00:02.0 returned 0 after 9 usecs
 ```
 
-When running the python proxyclient commands `proxyclient/tools/{shell,chainload,linux}.py` as described below you must specify the USB ACM serial device. e.g. for `shell.py`:
+When running the python proxyclient commands `proxyclient/tools/{shell,chainload,linux}.py` as described below (N.B.: see below for python version and installation requirements) you must specify the USB ACM serial device. e.g. for `shell.py`:
 ```shell
 $ M1N1DEVICE=/dev/ttyACM0
 $ export M1N1DEVICE
@@ -498,7 +499,7 @@ Proxy is alive again
 
 #### Boot a Linux kernel
 
-This is what you're here for, right? :-)
+This is what you're here for, right? :-). See [[SW:Linux]] for full instructions.
 
 ```shell
 $ python linux.py -b 'earlycon console=ttySAC0,1500000 console=tty0 debug' Image.gz apple-j274.dtb initramfs.cpio.gz
