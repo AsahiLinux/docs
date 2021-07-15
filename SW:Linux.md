@@ -4,13 +4,14 @@
 ```
 git clone https://github.com/AsahiLinux/linux.git
 ```
-* Get marcan's config file:
+* Use [this config file](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/config-jannau-iso9660-noR.gz) which provides filesystems support and unix domain sockets needed by Debian's initrd ramdisk
 ```
-wget https://mrcn.st/p/z8MgPiyO -O config-marcan
+wget https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/config-jannau-iso9660-noR.gz -O config-M1.gz
+gunzip config-M1.gz
 ```
 * Build linux for arm64
 ```
-cp config-marcan .config
+cp config-M1 .config
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- oldconfig
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j8 Image dtbs
 ```
