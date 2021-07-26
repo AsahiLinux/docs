@@ -10,11 +10,14 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### A
 * **AGX**: The internal name for Apple's GPU series.
 * **AIC**: Apple Interrupt Controller. Apple's custom ARM interrupt controller, because the standard GIC was too standard for Apple.
+* **ANS**: NVME / storage coprocessor?
 * **AP**: Application Processor. The main CPU running most of the OS. Contrast to SEP.
 * **APFS**: Apple File System. Apple's new container and volume oriented "modern" filesystem, think ZFS and btrfs.
 * **APFS Container**: a physical partition on a disk that can itself contain multiple filesystems (volumes), all dynamically sharing space.
 * **APFS Snapshot**: a read-only copy-on-write snapshot of an APFS volume.
 * **APFS Volume**: a logical filesystem within an APFS container, that can be mounted on a directory.
+* **ASC**: Possible generic name for Coprocessors? e.g. gfx-asc
+
 
 ### B
 * **BootROM**: A read-only memory embedded in a chip such as the M1, which is the first code executed upon boot.
