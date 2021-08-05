@@ -134,12 +134,12 @@ Assuming you have a 500GB model, follow these commands (note that your machine m
 
 ```shell
 # diskutil apfs resizeContainer disk0s2 200GB
-# diskutil addPartition disk0s2 APFS Linux 70GB
+# diskutil addPartition disk0s2 APFS Linux 80GB
 # diskutil addPartition disk0s5 FAT32 LB 1GB
 # diskutil addPartition disk0s4 FAT32 LR 0
 ```
 
-You need at least 70GB for the stub partition, because the macOS install/update process is very inefficient. This will not be necessary in the future, once we have our own setup process.
+You need at least 80GB for the stub partition, because the macOS install/update process is very inefficient. This will not be necessary in the future, once we have our own setup process.
 
 Shrinking the OS APFS partition can be done on-line.
 
