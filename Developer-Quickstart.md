@@ -311,7 +311,7 @@ To run the python proxy clients you need a newer version of python3 than default
 * Download latest stable (3.9.5) [16-May-2021] and build [Building latest python on Debian 10](https://linuxize.com/post/how-to-install-python-3-9-on-debian-10/)
 * Install the various packages required as user a normal user
 ```shell
-python3.9 -m pip install serial construct serial.tool
+python3.9 -m pip install pyserial construct serial.tool
 ```
 ### Building
 
