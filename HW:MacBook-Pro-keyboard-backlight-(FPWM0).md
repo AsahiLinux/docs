@@ -44,4 +44,4 @@ changing the frequency while keeping a 50% duty cycle:
 >>> write32(0x235044000, 0x4239)
 ```
 
-There's an initial shot at a driver at https://github.com/pipcet/linux/commit/9cacc53dffe7c3d804e0be7990b09d46ef41907d
+PR at https://github.com/AsahiLinux/linux/pull/5
