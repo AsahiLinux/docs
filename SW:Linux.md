@@ -429,6 +429,7 @@ python3.9 proxyclient/tools/linux.py -b 'earlycon console=tty0  console=tty0 deb
   * **Also** even though I could fsck and mount the drive on another computer it was still corrupt, missing files and **unbootable**
   * Wiping the partition and recreating again as above and it booted fine with same kernel/dtb...
 * Compiled a merge of the two branches that e.g. [transitory snapshot tree](https://github.com/amworsley/AsahiLinux/tree/nvme-dart) as above
+  * Note: The dev/dart (rev 6756bb246de5) corrupt my USB rootfs reliable on boot (usually able to login first if I'm quick :-)
 * To avoid crashing (at present) you need to manually start the ans (nvme co processor clocks?)
 ```
 echo 'pmgr_adt_clocks_enable("/arm-io/ans") ' | python3.9 proxyclient/tools/shell.py
