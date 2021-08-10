@@ -425,6 +425,9 @@ python3.9 proxyclient/tools/linux.py -b 'earlycon console=tty0  console=tty0 deb
 * NO initrd is passed
 ## nvme + usb
 * **VERY** hacky - so be - aware and code is likely to change
+* **NOTE**: I did corrupt my USB drive after a few boots and it was very confusing because it just said _JBD2: recovery failed_ then suggested sda1 as an available even though it was corrupt
+  * **Also** even though I could fsck and mount the drive on another computer it was still corrupt, missing files and **unbootable**
+  * Wiping the partition and recreating again as above and it booted fine with same kernel/dtb...
 * Compiled a merge of the two branches that e.g. [transitory snapshot tree](https://github.com/amworsley/AsahiLinux/tree/nvme-dart) as above
 * To avoid crashing (at present) you need to manually start the ans (nvme co processor clocks?)
 ```
