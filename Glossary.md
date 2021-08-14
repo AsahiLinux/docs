@@ -49,7 +49,8 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **iBoot**: Apple's bootloader. Can refer to the specific second-stage loader on the OS Preboot partition, or to the LLB, iBSS or iBEC.
 * **iBSS**: iBoot Single Stage. Replacement for the first-stage iBoot (LLB), loaded in the DFU boot flow when the NOR is corrupted.
 * **iBEC**: iBoot Epoch Change. Replacement for the second-stage iBoot, loaded in the DFU boot flow.
-* **IOMMU**: I/O Memory Management Unit, a more general term for Apple's DART. 
+* **IOMMU**: I/O Memory Management Unit, a more general term for Apple's DART.
+* **IOKit**: I/O Kit is Apple's device driver framework for XNU (Apple's operating system kernel).
 * **IPI**: Inter-processor interupt. An interrupt used by one processor to interrupt another.
 * **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [[SW:Storage]])
 
@@ -104,3 +105,6 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **VBUS**: USB pin delivering power. Defaults to 5V, can go as high as 20V with USB-PD.
 * **VDM**: Vendor Defined Message. Used for both USB Alternate Mode (not actually proprietary) and vendor-proprietary commands over USB-PD. Apple uses these to configure special modes on their Type C ports.
 * **VHE**: Virtual Host Extensions. Extra Registers to allow more efficient switching between OS/VMs/User-space. See [ARM VHE explanation](https://developer.arm.com/documentation/102142/0100/Virtualization-Host-Extensions)
+
+### X
+* **XNU**: Apple's operating system kernel for macOS, iOS, iPadOS, watchOS, tvOS and so on. "XNU" is an abbreviation for "X is not Unix"
