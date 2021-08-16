@@ -39,12 +39,12 @@ This can come from a mismatch of macOS version between the kernel cache (kernel+
 
 To figure out where the boot process is stuck, you can start a serial utility like minicom/picocom and the like, with 115200 baud rate (something like picocom -b 115200 /dev/ttyACM1).
 
-Be patient when you are booting, with one cpu and the hypervisor, depending on what you are tracing, it is slower than normal and it is expected.
-Here are some numbers from some experiment with macOS 11.5.2 and m1n1 version commit bd5211909e36944cb376d66c909544ad23c203bc:
-From run_guest command launched(t0) to start loading kernel: 9s
-From t0 to login screen(without keyboard nor mouse cursor moving first): around 2min.
-With keyboard and mouse cursor moving: around 2min35s.
-From password entered to desktop and menu bar: around +2min
+Be patient when you are booting, with one cpu and the hypervisor, depending on what you are tracing, it is slower than normal and it is expected. 
+Here are some numbers from some experiment with macOS 11.5.2 and m1n1 version commit bd5211909e36944cb376d66c909544ad23c203bc: 
+From run_guest command launched(t0) to start loading kernel: 9s 
+From t0 to login screen(without keyboard nor mouse cursor moving first): around 2min. 
+With keyboard and mouse cursor moving: around 2min35s. 
+From password entered to desktop and menu bar: around +2min. 
 
 
 # Sources
