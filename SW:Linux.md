@@ -47,6 +47,18 @@ export M1N1DEVICE
 python3.9 proxyclient/tools/linux.py -b 'earlycon console=ttySAC0,1500000 console=tty0 debug' \
   Image.gz t8103-j274.dtb initrd.gz
 ```
+The debian arm64 installer(initrd.gz) will boot the installer. If you want to have a shell that you can use with an USB keyboard, you can modify the init script of this installer initrd.gz(ramdisk) to launch a shell.
+Extract the ramdisk: 
+```
+gzip -cd < /pathto/initrd.gz | cpio --extract
+```
+=> you will get the content of the ramdisk in the current directory
+Modify the init script by replacing the last "exec $init" line by "exec /bin/busybox sh" for instance.
+Recreate the new ramdisk: (from the ramdisk directory) 
+```
+find . | cpio -o -H newc | gzip -c -9 >| /pathto/initrd-new.gz
+```
+
 ## Under Hypervisor
   * Running Linux under m1n1 hypervisor lets you inspect the memory/stop/start and even do a stack trace
   * Create a .macho combined image (run_guest.py only accepts .macho) 
