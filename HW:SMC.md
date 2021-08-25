@@ -67,3 +67,11 @@ Or possibly quirks?
 * `VP3b`: apparently byte-reversed
 * `gP??`: latched in a weird way: the first time one of these keys is read, the data indicates the pin's power status. But reading any of the keys afterwards returns `0`, except after a write to one of them, which allows you to read data once more (but just once), for any of the pins. So you can read all pins by repeatedly writing 1 to a pin you know to be at high level, then reading the other pin levels one by one. Reading with a payload of 0xffffffff or 0x00000001 returns the right value.
 * `rLD0` etc. cannot be read normally, but can be read with a 0x00000001 or 0x00ffffff payload. Maybe that's related to the "flags" byte being 0xf0.
+
+### Notifications
+
+Setting the "NTAP" (notify application processor, maybe?) flag to 1 makes the SMC send notifications when certain system events happen, such as power being connected and disconnected, the power button being pressed, or the lid being opened or
+closed. Notifications are mailbox messages apparently limited to the 64-bit payload.
+### ADC
+
+In addition to the keys accessible "directly" through the SMC, there is what appears to be a muxed single-channel ADC providing access to 111 further values.  It is accessed through "aDC#" (giving the nmuber of keys), "aDC?" (query key name using a numeric payload), and "aDCR", the actual result value.
