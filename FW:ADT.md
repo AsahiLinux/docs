@@ -11,11 +11,15 @@ Given hardware, you can access your ADT in a number of ways.
 The easiest way is probably using m1n1 via adt.py
 
 ```
-m1n1/proxyclient/adt.py --retrieve dt.bin
+cd m1n1/proxyclient ; python3.9 -m m1n1.adt --retrieve dt.bin
 ```
 
 This will write a file called "dt.bin" containing the raw (binary) ADT and print the decoded ADT.
 
 ## Decoding an ADT
 
-`m1n1/proxyclient/adt.py dt.bin`. Other ways?
+`cd m1n1/proxyclient ; python3.9 -m m1n1.adt dt.bin`. Other ways?
+
+You can also get a memory map with the -a option:
+
+`cd m1n1/proxyclient ; python3.9 -m m1n1.adt -a dt.bin` 
