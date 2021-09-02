@@ -77,7 +77,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **NVRAM**: Non-Volatile RAM. The name is obsolete, it just means a list of key=value parameters stored in a Mac for boot configuration. Akin to UEFI variables.
 
 ### P
-* **PMGR**: Power manager (probably).
+* **PMGR**: Power manager.
 
 ### R
 * **RecoveryOS:** The recovery environment, either the 1TR located on the internal disk, or a recovery environment associated with any particular macOS install, located inside an APFS subvolume.
