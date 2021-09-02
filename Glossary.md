@@ -27,6 +27,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### D
 * **DART**: Device Address Resolution Table. Apple's custom IOMMU.
+* **DCP**: Display Control Processor (probably). It enables support for displaying new frames without tearing, hardware sprites e.g. mouse cursor, switching resolutions, configuring multiple outputs, and more.
 * **DFR**: Dynamic Function Row. Apple's internal name for the Touch Bar.
 * **DFU**: Device Firmware Update. A USB mode that allows flashing a device's firmware over USB. Apple devices support this in the SecureROM, to allow the user to restore devices which have otherwise been bricked.
 
@@ -74,6 +75,9 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **NAND**: Not-AND. A type of logic gate, but normally refers to a type of Flash memory, which is the one used on all modern high-capacity Flash-based storage such as SD cards and SSDs, but also comes in bare chips.
 * **NOR**: Not-OR. A type of logic gate, but normally refers to a type of Flash memory, which is only used for low-capacity applications (up to a few megabytes at most). More robust than NAND. Usually comes in bare 8-pin chips these days.
 * **NVRAM**: Non-Volatile RAM. The name is obsolete, it just means a list of key=value parameters stored in a Mac for boot configuration. Akin to UEFI variables.
+
+### P
+* **PMGR**: Power manager (probably).
 
 ### R
 * **RecoveryOS:** The recovery environment, either the 1TR located on the internal disk, or a recovery environment associated with any particular macOS install, located inside an APFS subvolume.
