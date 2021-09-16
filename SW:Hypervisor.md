@@ -36,6 +36,18 @@ Here are some numbers from some experiment with macOS 11.5.2 and m1n1 version co
 * With keyboard and mouse cursor moving: around 2min35s. 
 * From password entered to desktop and menu bar: around +2min. 
 
+# Getting the macOS kernel from a macOS install
+1. Boot into macOS
+2. Find the `kernelcache`, it is at ```/System/Volumes/Preboot/(UUID)/boot/(long hash)/System/Library/Caches/com.apple.kernelcaches/kernelcache```
+3. Make a copy of this file somewhere
+4. Get (or build) a copy of img4tool (https://github.com/tihmstar/img4tool)
+5. Extract the im4p image:
+```img4tool -e -p out.im4p kernelcache```
+6. Extract the machO from the im4p:
+```img4tool -e -o kernel.macho out.im4p```
+7. You can now run macOS in a similar manner as shown above (just no debug DWARF):
+```python3 proxyclient/run_guest.py  <PATH_TO_DEVELOPMENT_KERNEL_CACHE> -- "cpus=1 debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1"```
+
 
 # Sources
 Source for the kernelcache creation: https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html
