@@ -231,7 +231,25 @@ $ make
 $ sudo ./macvdmtool reboot serial
 ```
 
-See the macvdmtool page or just run it without arguments for a list of supported commands. Your serial port device is `/dev/cu.debug-console`.
+You should something like this:
+
+```
+Mac type: J313AP
+Looking for HPM devices...
+Found: IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/i2c0@35010000/AppleS5L8940XI2CController/hpmBusManager@6B/AppleHPMBusController/hpm0/AppleHPMARM
+Connection: Sink
+Status: APP 
+Unlocking... OK
+Entering DBMa mode... Status: DBMa
+Rebooting target into normal mode... OK
+Waiting for connection........ Connected
+Putting target into serial mode... OK
+Putting local end into serial mode... OK
+Exiting DBMa mode... OK
+```
+
+See the macvdmtool page or just run it without arguments for a list of supported commands. Your serial port device is `/dev/cu.debug-console`. You can try picocom with: `sudo picocom -q --omap crlf --imap lfcrlf -b 115200 /dev/tty.debug-console`.
+
 
 NOTE: if you have enabled serial debug output on your host machine (via nvram settings), the serial port device will be in use by the kernel. You need to turn that off to use it as a generic serial port.
 
