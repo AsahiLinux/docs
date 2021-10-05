@@ -231,7 +231,7 @@ $ make
 $ sudo ./macvdmtool reboot serial
 ```
 
-You should something like this:
+You should see something like this:
 
 ```
 Mac type: J313AP
