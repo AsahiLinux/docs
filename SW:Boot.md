@@ -8,12 +8,12 @@ This stage is located in the boot [ROM](./Glossary#R). Among others, it verifies
 
 ## Stage 1 (LLB)
 
-This stage is the primary early loader, located in the on-board NOR. This boot stage very roughly goes as follows:
+This stage is the primary early loader, located in the on-board [NOR](./Glossary#N). This boot stage very roughly goes as follows:
 
-* Read the `boot-volume` variable from NVRAM: its format is `<gpt-partition-type-uuid>:<gpt-partition-uuid>:<volume-group-uuid>`. Other related variables seem to be `update-volume` and `upgrade-boot-volume`, possibly selected by metadata inside the `boot-info-payload` variable;
+* Read the `boot-volume` variable from [NVRAM](./Glossary#N): its format is `<gpt-partition-type-uuid>:<gpt-partition-uuid>:<volume-group-uuid>`. Other related variables seem to be `update-volume` and `upgrade-boot-volume`, possibly selected by metadata inside the `boot-info-payload` variable;
 * Get the local policy hash:
-  - First try the local proposed hash (SEP command 11);
-  - If that is not available, get the local blessed hash (SEP command 14)
+  - First try the local proposed hash ([SEP](./Glossary#S) command 11);
+  - If that is not available, get the local blessed hash ([SEP](./Glossary#S)( command 14)
 * Read the local boot policy, located on the iSCPreboot partition at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.img4`. This boot policy has the following specific metadata keys:
   - `vuid`: UUID: Volume group UUID - same as above
   - `kuid`: UUID: KEK group UUID
@@ -45,17 +45,17 @@ This stage is the primary early loader, located in the on-board NOR. This boot s
   - The boot directory is located at the target partition Preboot subvolume, at path `/<volume-uuid>/boot/<local-policy.metadata.nsih>`;
   - Decrypt, verify and execute `<boot-dir>/usr/standalone/firmware/iBoot.img4` with the device tree and other firmware files in the same directory. No evidence towards other metadata descriptors yet.
 
-* If loading a custom stage (fuOS):
+* If loading a custom stage ([fuOS](./Glossary#F)):
 
   - ...
 
-If it fails at any point during this, it will either error out or fall back to DFU, waiting for an iBEC loader to be sent, before continuing with the DFU flow at stage 2.
+If it fails at any point during this, it will either error out or fall back to [DFU](./Glossary#D), waiting for an iBEC loader to be sent, before continuing with the [DFU](./Glossary#D) flow at stage 2.
 
 ## Stage 2 (iBoot)
 
 This stage is the OS-level loader, located inside the OS partition and shipped as part of macOS. It loads the rest of the system.
 
-# DFU flow
+# [DFU](./Glossary#D) flow
 
 ## Stage 1 (iBSS)
 
@@ -65,7 +65,7 @@ This stage is sent to the device by the "reviving" host. It bootstraps, verifies
 
 # Modes
 
-Once booted, the AP can be in one of several boot modes, as confirmed by the SEP:
+Once booted, the [AP](./Glossary#A) can be in one of several boot modes, as confirmed by the [SEP](./Glossary#S):
 
 |  ID | Name                                      |
 |----:|-------------------------------------------|
@@ -76,4 +76,4 @@ Once booted, the AP can be in one of several boot modes, as confirmed by the SEP
 |   4 | restoreOS                                 |
 | 255 | unknown                                   |
 
-The SEP only allows execution of certain commands (such as editing the boot policy) in 1TR, or it will fail with error 11, "AP boot mode".
+The [SEP](./Glossary#S) only allows execution of certain commands (such as editing the boot policy) in [1TR](./Glossary#1), or it will fail with error 11, "AP boot mode".
