@@ -82,6 +82,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### R
 * **RecoveryOS:** The recovery environment, either the 1TR located on the internal disk, or a recovery environment associated with any particular macOS install, located inside an APFS subvolume.
 * **RestoreOS:** The restore environment, loaded onto the device when "reviving" it through DFU mode by Apple Configurator. [[more info]](https://www.theiphonewiki.com/wiki/Restore_Ramdisk)
+* **ROM** ROM is an acronym for Read-Only Memory. It refers to computer memory chips containing permanent or semi-permanent data.
 * **RTKit:** Apple's proprietary real-time operating system. Most of the accelerators (AGX, ANE, AOP, DCP, AVE, PMP) run RTKit on an internal processor. The string "RTKSTACKRTKSTACK" is characteristic of a firmware containing RTKit.
 * **RTOS:** Real-time operating system.
 
