@@ -165,6 +165,32 @@ S: DISCONNECTED
 IRQ: VBUSOK (VBUS=OFF)
 (device reboots and PD renegotiates)
 ```
+#### about reboot command
+the command "5AC8012,0105,80000000" is sent through the Serial Monitor of Arduino IDE. if you want to reboot Mac more conveniently,
+you can try the following commands:
+```
+Option 1:
+echo "5AC8012,0105,80000000" | picocom -c -b 500000 --imap lfcrlf -qrx 1000 /dev/<your Arduino Serial device>
+
+Option 2:
+stty 500000 </dev/<your Arduino Serial device> 
+echo > /dev/<your Arduino Serial device> 
+echo 5AC8012,0105,80000000 > /dev/<your Arduino Serial device> 
+```
+However due to the [default Arduino operations on Serial port](https://forum.arduino.cc/t/solved-problem-with-serial-communication-on-leonardo/139614), the above cmds probably will fail, and succeed randomly.
+It turns out that the following python code works fine by manually reseting Arduino before sending cmd data:
+```
+import serial
+import time
+ser = serial.Serial("/dev/<your Arduino Serial device>", 500000, dsrdtr=True)
+ser.dtr = True
+ser.dtr = False
+time.sleep(0.5)
+ser.dtr = True
+time.sleep(2)
+ser.write(b'5AC8012,0105,80000000\n')
+ser.close() 
+```
 
 ### 106: DFU / hold mode
 
