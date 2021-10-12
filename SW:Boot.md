@@ -2,7 +2,7 @@ Apple Silicon devices seem to follow a boot flow very similar to modern iOS devi
 
 # Stage 0 (SecureROM)
 
-This stage is located in the boot ROM. Among others, it verifies, loads and executes normal stage 1 from NOR. If this fails, it falls back to DFU and wait for an iBSS loader to be sent, before continuing with the DFU flow at stage 1.
+This stage is located in the boot [ROM](./Glossary#R). Among others, it verifies, loads and executes normal stage 1 from [NOR](./Glossary#N). If this fails, it falls back to [DFU](./Glossary#D) and wait for an [iBSS](./Glossary#I) loader to be sent, before continuing with the [DFU](./Glossary#D) flow at stage 1.
 
 # Normal flow
 
