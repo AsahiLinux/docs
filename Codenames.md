@@ -35,11 +35,3 @@ Apple likes to use many different names for the same devices.
 | M1 Pro  | H13J | Jade Chop | T6000 | Firestorm | Icestorm
 | M1 Max | H13J | Jade Die | T6001 | Firestorm | Icestorm
 | A15 | H14P | Ellis | T8110 | Avalanche | Blizzard
-
-## Devices
-| Marketing name | Device | Product | SoC |
-| -------------- | ------ | ------- | --- |
-| Apple Watch 2 | Watch2,4 | N74AP, N75AP | T8002
-| Mac mini "M1" 8-Core 3.2 (2020) | Macmini9,1 | J274AP | T8103
-| MacBook Pro (M1, 2020) | MacBookPro17,1 | J293AP | T8103
-| MacBook Air (M1, 2020) | MacBookAir10,1 | J313AP | T8103
