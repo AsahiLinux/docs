@@ -8,6 +8,7 @@ Places to start:
 * [[Glossary]]
 * [[Accelerator-Engines]]
 * [[Codenames]]
+* [[Devices]]
 * [[Project:References]]
 * [[SW:m1n1]] Boot loader
 * [[SW:Linux]] Kernel
