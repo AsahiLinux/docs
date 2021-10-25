@@ -8,6 +8,7 @@ The main difference between ADTs and Linux DTs is byte order; since properties a
 
 Given hardware, you can access your ADT in a number of ways.
 
+### Option 1: via m1n1 debug console. 
 The easiest way is probably using m1n1 via adt.py
 
 ```
@@ -15,6 +16,28 @@ cd m1n1/proxyclient ; python3.9 -m m1n1.adt --retrieve dt.bin
 ```
 
 This will write a file called "dt.bin" containing the raw (binary) ADT and print the decoded ADT.
+
+### Option 2: via macOS im4p files (Note: these are missing details filled in by iBoot during boot)
+Get a copy of tihmstar's img4tool (you will also need his libgeneral as well as autoconf, automate, libtool, pkg-config, openssl and libelist-2.0).
+
+```
+git clone https://github.com/tihmstar/libgeneral.git
+git clone https://github.com/tihmstar/img4tool.git
+```
+then for each 
+```
+./autogen.sh
+make
+make install
+```
+copy the im4p file from the below directory. See [[Devices]] for Machine 'j' model details.
+
+`/System/Volumes/Preboot/Firmware/all_flash/DeviceTree.{model}.im4p`
+
+then use imp4tool to extract the dt.bin e.g.
+```
+img4tool -e DeviceTree.j274ap.im4p -o j274.bin
+```
 
 ## Decoding an ADT
 
