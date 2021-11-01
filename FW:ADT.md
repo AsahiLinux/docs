@@ -39,6 +39,13 @@ then use imp4tool to extract the dt.bin e.g.
 img4tool -e DeviceTree.j274ap.im4p -o j274.bin
 ```
 
+### Option 3: From macOS
+
+You can get a textual representation of the ADT directly from macOS by running:
+```
+ioreg -p IODeviceTree -l
+```
+
 ## Decoding an ADT
 
 `cd m1n1/proxyclient ; python3.9 -m m1n1.adt dt.bin`. Other ways?
