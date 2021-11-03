@@ -368,6 +368,11 @@ To install m1n1 into the stub partition as a custom kernelcache:
 
 Type in your credentials. If everything went well, you can restart and boot into m1n1!
 
+If you ever need to boot the stub partition back into macOS afterwards, enter 1TR again, open the Terminal, get the partition ID, and run:
+```
+# bputil -n
+```
+
 ### Direct payload booting
 
 m1n1 supports running payloads embedded directly in the binary. This allows you to boot Linux (or a subsequent bootloader stage) without the need for serial interaction. Currently, debug output is over serial only; framebuffer debug console support is coming soon.
