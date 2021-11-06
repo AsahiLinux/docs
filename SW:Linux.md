@@ -439,6 +439,9 @@ python3.9 proxyclient/tools/linux.py -b 'earlycon console=tty0  console=tty0 deb
 * **VERY** hacky - so be - aware and code is likely to change
 * **NOTE**: I did corrupt my USB drive after a few boots and it was very confusing because it just said _JBD2: recovery failed_ then suggested sda1 as an available even though it was corrupt
   * **Also** even though I could fsck and mount the drive on another computer it was still corrupt, missing files and **unbootable**
+  * **After** revisiting this with a much later kernel and still having the same problems with corruption I have traced the issue to my USB setup:
+### Warning A Hub can reset all it's devices on a plug-in
+  * My USB drive I mounted as root filesystem was **reset** when I plugged in the USB keyboard causing my corruption!
   * Wiping the partition and recreating again as above and it booted fine with same kernel/dtb...
 * Compiled a merge of the two branches that e.g. [transitory snapshot tree](https://github.com/amworsley/AsahiLinux/tree/nvme-dart) as above
   * Note: The dev/dart (rev 6756bb246de5) corrupt my USB rootfs reliable on boot (usually able to login first if I'm quick :-)
