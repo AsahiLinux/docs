@@ -37,7 +37,7 @@
 ## Drivers
 * [x] UART
 * [ ] USB
-  * [ ] USB2
+  * [x] USB2
   * [ ] USB3
 * [x] PCIe
 * [ ] SSD
@@ -52,7 +52,7 @@
 * [ ] Sound
   * [ ] 3.5mm jack
   * [ ] Built-in speaker(s)
-* [ ] Ethernet
+* [x] Ethernet
 * [ ] Keyboard
   * [ ] Keyboard (duh)
   * [ ] Keyboard backlight
