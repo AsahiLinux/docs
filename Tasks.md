@@ -39,7 +39,7 @@
 * [ ] USB
   * [ ] USB2
   * [ ] USB3
-* [ ] PCIe
+* [x] PCIe
 * [ ] SSD
 * [ ] Type-C/PD
   * [ ] Host / sink mode
