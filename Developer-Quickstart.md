@@ -382,6 +382,7 @@ To merge m1n1 with payloads, just concatenate them:
 ```shell
 $ cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz > m1n1-payload.macho
 ```
+**Note:** M1N1 is now checking the model read from the Hw versus the one in the device tree(dtb file) and will not execute the payload if they are not matching. See payload_run in src/payload.c. j274 stands for MacMini Hw model.
 
 The maximum cumulative payload size is currently 64 MiB. You can change this at the top of `m1n1.ld` if you need more. Bear in mind this incurs a fixed runtime memory cost when using m1n1 interactively, even with no payload (though this memory can be reclaimed by the next stage), and chainloading m1n1 will currently "waste" this memory (the next iteration is loaded above this region and cannot use memory "under" it).
 
