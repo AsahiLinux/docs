@@ -59,7 +59,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **JTAG**: Joint Test Action Group. Actually refers to a debugging interface released by that group, a 4/5-wire interface to debug chips and CPUs at the hardware level.
 
 ### K
-* **kASLR**: kernel Address Space Loacation Randomization: Linux kernel feature randomizes where the kernel code is placed in memory at boot time. Disabled by specifying `nokaslr` boot flag.
+* **kASLR**: kernel Address Space Location Randomization: Linux kernel feature randomizes where the kernel code is placed in memory at boot time. Disabled by specifying `nokaslr` boot flag.
 * **kcOS**: OS with a custom kernel cache.
 * **Kernel cache**: A bundle of the kernel and its extensions, optionally encrypted.
 * **kmutil** macOS Kernel Management utility for managing kernel extensions (kexts). Used to boot alternative kernels i.e. m1n1
@@ -92,6 +92,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **SEP**: Secure Enclave Processor. The M1's built-in HSM/TPM/etc device. Handles Touch ID and most crypto, as well as boot policy decisions. Harmless to Linux, but we can use its features if we want to. Contrast to AP.
 * **SFR**: System Firmware, the portion of firmware stored in NOR flash. This includes the first stage of iBoot, which will boot the second stage from the OS partition.
 * **SIP**: System Integrity Protection. Also called "rootless", where the macOS kernel stops even root from doing some things.
+* **SMC**: System Management Controller: a piece of hardware handling access to such things as temperature sensors, voltage/power meters, battery status, fan status, and the LCD backlight and lid switch. See [HW:SMC](https://github.com/AsahiLinux/docs/wiki/HW:SMC)
 * **SOP**: Start Of Packet. Used to differentiate packet types in USB-PD. SOP for normal comms, SOP' and SOP" to talk to built-in chips in a cable, SOP'DEBUG and SOP"DEBUG for custom vendor specific things like Apple VDMs.
 * **SPI**: Serial Peripheral Interface. A 4-wire standard for communicating at low speed between chips on a board.
 * **SPRR**: probably Shadow Permission Remap Registers. Turns the normal page permission attributes (AP,PXN,UXN) into an index to a separate table. This new table then determines the real page permissions. Also disallows pages that writeable and executable at the same time. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [[HW:-SPRR-and-GXF]]
