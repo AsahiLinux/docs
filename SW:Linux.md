@@ -435,37 +435,3 @@ python3.9 proxyclient/tools/linux.py -b 'earlycon console=tty0  console=tty0 deb
 * **Image-dart-dev.gz** - dart/dev branch of the Asahi linux as above
 * **t8103-j274-dart-dev.dtb** - the dtb from the above linux
 * NO initrd is passed
-## nvme + usb
-* **VERY** hacky - so be - aware and code is likely to change
-* **NOTE**: I did corrupt my USB drive after a few boots and it was very confusing because it just said _JBD2: recovery failed_ then suggested sda1 as an available even though it was corrupt
-  * **Also** even though I could fsck and mount the drive on another computer it was still corrupt, missing files and **unbootable**
-  * **After** revisiting this with a much later kernel and still having the same problems with corruption I have traced the issue to my USB setup:
-### Warning A Hub can reset all it's devices on a plug-in
-  * My USB drive I mounted as root filesystem was **reset** when I plugged in the USB keyboard causing my corruption!
-  * Wiping the partition and recreating again as above and it booted fine with same kernel/dtb...
-* Compiled a merge of the two branches that e.g. [transitory snapshot tree](https://github.com/amworsley/AsahiLinux/tree/nvme-dart) as above
-  * Note: The dev/dart (rev 6756bb246de5) corrupt my USB rootfs reliable on boot (usually able to login first if I'm quick :-)
-* To avoid crashing (at present) you need to manually start the ans (nvme co processor clocks?)
-```
-echo 'pmgr_adt_clocks_enable("/arm-io/ans") ' | python3.9 proxyclient/tools/shell.py
-```
-* Then passing in kernel parameters to boot off the USB drive partition with the arm64 rootfs as above
-```
-python3.9 proxyclient/tools/linux.py -b 'earlycon console=tty0  console=tty0 debug net.ifnames=0 rw root=/dev/sda1 rootdelay=5 rootfstype=ext4'  Image-nvme-dart.gz t8103-j274-nvme-dart.dtb
-```
-![cli showing fdisk -l with nvme partitions](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/nvme-boot.jpg)
-* **Note this is very unstable and prone to corrupting the USB drive let alone your precious nvme/MacOS**
-* To get to run under HV we need to compile the kernel parameters into config:
-```
-CONFIG_CMDLINE="earlycon console=tty0  console=tty0 debug net.ifnames=0 rw root=/dev/sda1 rootdelay=5 rootfstype=ext4"
-```
-* You need to use the device with the first USB port disabled (the HV needs it) - **t8103-j274-no-usb0-nvme-dart.dtb** from the above linux image
-
-* Assemble the macho payload as above:
-```
-cat build/m1n1.macho  Image-dart-dev-nvme-2.gz t8103-j274-no-usb0-nvme-dart.dtb > m1n1-payload-nvme-dart.macho
-```
-* Run it
-```
-python3.9 proxyclient/tools/run_guest.py -S m1n1-payload-nvme-dart.macho
-```
