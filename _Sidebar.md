@@ -30,3 +30,4 @@ Software Documentation:
 * [[SW:MachO-Boot-Protocol]]
 * [[SW:NVRAM]]
 * [[SW:Storage]]
+* [[SW:-DT-bindings]]
