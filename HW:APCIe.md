@@ -98,91 +98,9 @@ So the changes to documented registers seem to disable some (buggy?) features as
 
 ## DT bindings
 
-Here is what the DT bindings could look like:
-
-```
-                pcie0: pcie@690000000 {
-                        compatible = "apple,t8103-pcie";
-                        reg = <0x6 0x90000000 0x0 0x1000000>,
-                              <0x6 0x80000000 0x0 0x4000>,
-                              <0x6 0x81000000 0x0 0x8000>,
-                              <0x6 0x82000000 0x0 0x8000>,
-                              <0x6 0x83000000 0x0 0x8000>;
-                        reg-names = "config", "rc", "port0",
-                                    "port1", "port2";
-
-                        interrupt-parent = <&aic>;
-                        interrupts = <AIC_IRQ 695 IRQ_TYPE_LEVEL_HIGH>,
-                                     <AIC_IRQ 698 IRQ_TYPE_LEVEL_HIGH>,
-                                     <AIC_IRQ 701 IRQ_TYPE_LEVEL_HIGH>;
-
-                        msi-controller;
-                        msi-parent = <&pcie0>;
-                        msi-ranges = <704 32>;
-
-                        iommu-map = <0x100 &dart0 1 1>,
-                                    <0x200 &dart1 1 1>,
-                                    <0x300 &dart2 1 1>;
-                        iommu-map-mask = <0xff00>;                       
-
-                        clocks = <&pcie_core_clk>, <&pcie_aux_clk>,
-                                 <&pcie_ref_clk>;
-                        pinctrl-0 = <&pcie_pins>;
-                        pinctrl-names = "default";
-
-                        bus-range = <0 7>;
-                        #address-cells = <3>;
-                        #size-cells = <2>;
-                        ranges = <0x43000000 0x6 0xa0000000 0x6 0xa0000000
-                                  0x0 0x20000000>,
-                                 <0x02000000 0x0 0xc0000000 0x6 0xc0000000
-                                  0x0 0x40000000>;
-
-                        clocks = <&pcie_core_clk>, <&pcie_aux_clk>,
-                                 <&pcie_ref_clk>;
-                        pinctrl-0 = <&pcie_pins>;
-                        pinctrl-names = "default";
-
-                        device_type = "pci";
-
-                        pci@0,0 {
-                                device_type = "pci";
-                                reg = <0x0 0x0 0x0 0x0 0x0>;
-                                reset-gpios = <&gpio 152 0>;
-                                max-link-speed = <2>;
-
-                                #address-cells = <3>;
-                                #size-cells = <2>;
-                                ranges;
-                        };
-
-                        pci@1,0 {
-                                device_type = "pci";
-                                reg = <0x800 0x0 0x0 0x0 0x0>;
-                                reset-gpios = <&gpio 153 0>;
-                                max-link-speed = <2>;
-
-                                #address-cells = <3>;
-                                #size-cells = <2>;
-                                ranges;
-                        };
-
-                        pci@2,0 {
-                                device_type = "pci";
-                                reg = <0x1000 0x0 0x0 0x0 0x0>;
-                                reset-gpios = <&gpio 33 0>;
-                                max-link-speed = <1>;
-
-                                #address-cells = <3>;
-                                #size-cells = <2>;
-                                ranges;
-                        };
-                };
-```
-Apart from the `apple,msi-base-vec` and `apple,msi-num-vecs` properties these are all standard bindings.  The `apple,msi-base-vec` and `apple,msi-num-vecs` proprties follow an existing pattern, matching for example `arm,msi-base-spi` and `loongson,msi-base-vec`.
+Device tree bindings have been accepted upstream.
 
 Some open questions remain:
-* Which register blocks should we expose?  The ADT has a grand total of 17 register sets.  It makes sense to leave out the "fuses" register set sine m1n1 will readand apply those and they're not part of the APCIe hardware block.  The example above exposes the same set of registers as Corellium did, but with the length adjusted to what is in the ADT.  That is more or less the minimum set we need to bring up the PCIe links.  The use of `reg-names` means that we can add more sets later.
 * How do we enable the WiFi/BT PCIe device?  This device needs to be explicitly enabled through the SMC before it shows up as a PCIe device.  It has been suggested that this is how Apple implements "Airplane Mode" and there is a separate "amfm" node in the ADT for this.  So maybe it makes sense to have some sort of rfkill device/node that takes care of this.  Hopefully this means the APCIe device gets an interrupt when it is turned on such that we can (re)train the PCIe link.
 
 This proposed binding has been successfully implemented/tested in u-boot and OpenBSD.  However, we still need clock, pinctrl/gpio and DART bindings to make this all work.
