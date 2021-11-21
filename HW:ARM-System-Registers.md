@@ -582,7 +582,7 @@ Controls opcode matching.
 
 #### SYS_APL_PMSR_EL1
 
-* [7:0] Overflow detected on PMC #7-0 (XXX: are 8-9 here too?)
+* [9:0] Overflow detected on PMC #9-0
 
 #### SYS_APL_PMESR0_EL1
 
