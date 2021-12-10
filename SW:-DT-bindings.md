@@ -30,4 +30,4 @@ Used by OpenBSD; not submitted upstream yet
 ### SPI keyboard/touchpad
 - 'apple,keyboard'
 
-Used by OpenBSD; should probably be changed to something like 'apple,hid-transport'
+Used by OpenBSD; should probably be changed to something like 'apple,spi-hid-transport'
