@@ -50,6 +50,7 @@ Some guesses as to what they might mean:
 * `SBA2`: battery cell 3 voltage in mV
 * `SBA3`: battery cell 3 voltage in mV
 * `SBAV`: battery voltage in mV (sum of `SBA1`, `SBA2` and `SBA3`, same as `B0AV` but as a `flt`)
+* `SBAR`: battery remaining capacity in mAh (same as `B0RM` but as a `flt`)
 * `SBAS`: battery charge in percent (same as `BRSC` but as a `flt`)
 * `RPlt`: platform name, such as "J293".
 * `a???`: highly volatile power-related measurement, so possibly current going to various device parts.
@@ -65,6 +66,9 @@ Some guesses as to what they might mean:
 * `B0CT`: battery charge cycle count
 * `B0AV`: battery voltage in mV (same as `SBAV` but as an `si16`)
 * `BRSC`: battery charge in percent (same as `SBAS` but as a `ui16`)
+* `B0DC`: battery design capacity in mAh?
+* `B0FC`: battery full capacity in mAh?
+* `B0RM`: battery remaining capacity in mAh? (same as `SBAR` but as a `ui16` in reverse byte order)
 
 ### Quirks
 
