@@ -49,8 +49,8 @@ Some guesses as to what they might mean:
 * `SBA1`: battery cell 1 voltage in mV
 * `SBA2`: battery cell 3 voltage in mV
 * `SBA3`: battery cell 3 voltage in mV
-* `SBAV`: battery voltage in mV (sum of `SBA1`, `SBA2` and `SBA3`, same as `B0AV` but as a flt)
-* `SBAS`: battery charge in percent
+* `SBAV`: battery voltage in mV (sum of `SBA1`, `SBA2` and `SBA3`, same as `B0AV` but as a `flt`)
+* `SBAS`: battery charge in percent (same as `BRSC` but as a `flt`)
 * `RPlt`: platform name, such as "J293".
 * `a???`: highly volatile power-related measurement, so possibly current going to various device parts.
 * `F???`: fan information. Refer to https://github.com/torvalds/linux/blob/master/drivers/hwmon/applesmc.c.
@@ -63,7 +63,8 @@ Some guesses as to what they might mean:
 * `bHLD`: power button currently pressed
 * `MBSe`: power button pressed since last read, read-to-clear
 * `B0CT`: battery charge cycle count
-* `B0AV`: battery voltage in mV (same as `SBAV` but as an si16)
+* `B0AV`: battery voltage in mV (same as `SBAV` but as an `si16`)
+* `BRSC`: battery charge in percent (same as `SBAS` but as a `ui16`)
 
 ### Quirks
 
