@@ -58,6 +58,7 @@ Some guesses as to what they might mean:
 * `MSLD`: the lid switch, 1 for closed, 0 for open
 * `bHLD`: power button currently pressed
 * `MBSe`: power button pressed since last read, read-to-clear
+* `B0CT`: battery charge cycle count
 
 ### Quirks
 
