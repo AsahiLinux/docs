@@ -66,9 +66,9 @@ Some guesses as to what they might mean:
 * `B0CT`: battery charge cycle count
 * `B0AV`: battery voltage in mV (same as `SBAV` but as an `si16`)
 * `BRSC`: battery charge in percent (same as `SBAS` but as a `ui16`)
-* `B0DC`: battery design capacity in mAh?
-* `B0FC`: battery full capacity in mAh?
-* `B0RM`: battery remaining capacity in mAh? (same as `SBAR` but as a `ui16` in reverse byte order)
+* `B0DC`: battery design capacity in mAh
+* `B0FC`: battery full capacity in mAh
+* `B0RM`: battery remaining capacity in mAh (same as `SBAR` but as a `ui16` in reverse byte order)
 
 ### Quirks
 
