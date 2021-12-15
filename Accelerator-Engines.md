@@ -12,6 +12,7 @@ Names can be formatted the following ways depending on their official-ness:
 * **AMX**: *Apple Matrix eXtensions*. A matrix coprocessor partially integrated into the ISA.
 * **ANE**: **Apple Neural Engine** Neural network execution acceleration
 * **AOP**: **Always On Processor**. "hey siri" activation and "other sensor stuff"
+* **APR**: **APR ProRes**. Handles ProRes video encoding + decoding.
 * **AVE**: **AVE Video Encoder**. Handles video encoding. Ostensibly the A is for Apple [citation needed], but I see a recursive acronym.
 * **AVD**: **AVD Video Decoder**. Handles video decoding. ^
 
