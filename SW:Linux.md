@@ -22,6 +22,8 @@ gzip < ./arch/arm64/boot/Image > Image.gz
 ```
 cp ../linux/arch/arm64/boot/dts/apple/t8103-j274.dtb t8103-j274.dtb
 ```
+### keyboard  + nvme working 
+* Snapshot of [rev a2281d64fdbc](https://github.com/amworsley/AsahiLinux/tree/asahi-kbd) with config such as [this one](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/config-keyboard+nvme)
 ## Boot with your USB cables plugged in
   * Plug your USB cables/hubs/adapters **before** booting your Mac as m1n1/linux doesn't do the USB low level PHY setup yet. Let the iBoot do this when it boots to m1n1 you installed via your [setup of boot to m1n1](https://github.com/AsahiLinux/docs/wiki/Developer-Quickstart#setup)
   * If m1n1 C code has been updated since the set up you should chain load the new .macho image
