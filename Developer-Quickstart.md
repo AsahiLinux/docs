@@ -1,3 +1,11 @@
+# THIS GUIDE IS LARGELY OBSOLETE
+
+This guide documents a manual installation process that is only required for kernel developers doing reverse engineering of macOS drivers using the m1n1 hypervisor.
+
+If you are a more typical developer and you want to help work on the kernel or just experiment with the platform, and are happy doing tethered boots via USB (uploading the kernel from another machine), please ask on IRC for a quick guide on how to set up tethered boot using the alpha installer.
+
+If you are an end user or you would otherwise like to set up a stand-alone install, stop now. It isn't ready yet. It will be soon. Just hang tight.
+
 # Developer Quick Start Guide
 
 So you want to help us bring Linux to M1 Macs? Read on! This guide describes the recommended set-up for developing for Linux on an M1.
