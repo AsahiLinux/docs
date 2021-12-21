@@ -14,6 +14,8 @@ This guide is meant for developers who want to hack on Asahi Linux. It is not re
 
 It is extremely unlikely that you will damage your computer by following these steps, but we can make no guarantees at this time. Please proceed at your own risk.
 
+For a quick idea of the steps that might be involved see this very [succinct summary](https://ab34.de/u/asahi.txt) of steps. Obviously things are moving quickly so details will have changed in practise
+
 ## Introduction
 
 ### Objective
