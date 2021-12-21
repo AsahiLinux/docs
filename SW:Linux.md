@@ -1,6 +1,7 @@
 # Building Linux
 * See github linux [Asahi Kernel](https://github.com/AsahiLinux/linux) for the latest Asahi kernel patched for M1 support
-* Even though development happens on the AsahiLinux repo, the changes for supporting M1 were mainlined in the linux kernel, so you can clone the official Linux kernel mirror
+ * In particular according to [Dec 2021 progress report](https://asahilinux.org/2021/12/progress-report-oct-nov-2021/) you can try the [asahi branch](https://github.com/AsahiLinux/linux/tree/asahi) which "...is a bleeding edge kernel ... in a usable enough state that we would like people to test..."
+* Even though development happens on the AsahiLinux repo, some changes for supporting M1 were mainlined in the linux kernel (see table in [progress report](https://asahilinux.org/2021/12/progress-report-oct-nov-2021/) for details) , so you can clone the official Linux kernel mirror
 ```
 git clone https://github.com/torvalds/linux.git
 cd ./linux
