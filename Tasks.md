@@ -47,7 +47,7 @@
   * [ ] Plug detect / extcon
 * [ ] Thunderbolt
 * [ ] Camera
-* [ ] Wi-Fi
+* [x] Wi-Fi
 * [ ] Bluetooth
 * [ ] Sound
   * [ ] 3.5mm jack
@@ -58,7 +58,7 @@
   * [ ] Keyboard backlight
   * [ ] Special keys (brightness etc.)
 * [ ] Touchpad
-  * [ ] Basic mouse functionality
+  * [x] Basic mouse functionality
   * [ ] Multi-finger gestures
   * [ ] Force Touch
 * [ ] Touch Bar
