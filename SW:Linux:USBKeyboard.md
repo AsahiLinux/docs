@@ -8,4 +8,4 @@
 * Then I used a Type-C to Type-A adapter to plug in a normal old USB Dell keyboard and enter commands into the /bin/sh running.
 ![Linux running on M1 macbook with input via external USB keyboard](https://github.com/amworsley/asahi-wiki/blob/main/images/linuxOnM1.png)
 
- * You can go one step further and try [booting a USB drive](https://github.com/AsahiLinux/docs/wiki/_new#root-as-usb-drive)
+ * You can go one step further and try [booting a USB drive](https://github.com/AsahiLinux/docs/wiki/SW:Linux:USB-drive)
