@@ -20,7 +20,7 @@ Intel/AMD PCs also have various ROMs and a complicated boot process, but we neve
 
 # iBoot
 
-iBoot is the main bootloader on M1 machines. It is small. It cannot understand external storage. It does not support USB. It does not have a UI. All it can do is boot from internal storage, and show an Apple logo, a progress bar, and a few error messages.
+iBoot is the main bootloader on M1 machines. It is small. It cannot understand external storage. It does not support USB. It does not have a UI. All it can do is boot from internal storage, and show an Apple logo and a few error messages.
 
 iBoot is like the lower level components of UEFI firmware on a PC. Enough to boot from internal NVMe, but without any USB drivers.
 
@@ -50,4 +50,4 @@ DFU does not exist on most PCs. If the UEFI flash is corrupted, the PC is bricke
 
 Some PC motherboards implement a similar feature as part of a separate chip, which can flash the UEFI firmware from a USB stick without actually turning on the motherboard normally, but this is only common in higher-end stand alone motherboards.
 
-Thanks to DFU mode, it is just about impossible to brick an Apple Silicon machine in such a way that it cannot be recovered externally by Apple. It is only slightly less impossible to brick an Apple Silicon machine in a way that cannot be recovered externally by an end user. The worst case scenario is that the product information (serial number, calibration, etc) in NOR is erased. If that happens, the machine needs to be repaired by Apple, because end users do not have the hardware/software/tools to re-create this information properly. This happening by accident is vanishingly unlikely.
+Thanks to DFU mode, it is just about impossible to brick an Apple Silicon machine in such a way that it cannot be recovered externally. The worst case scenario is that the product information (serial number, calibration, etc) in NOR is erased. If that happens, in theory, the DFU process should pull that information from Apple during the phone-home steps of the recovery process. Even then, this happening by accident is vanishingly unlikely.
