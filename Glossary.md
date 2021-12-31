@@ -95,6 +95,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **SMC**: System Management Controller: a piece of hardware handling access to such things as temperature sensors, voltage/power meters, battery status, fan status, and the LCD backlight and lid switch. See [HW:SMC](https://github.com/AsahiLinux/docs/wiki/HW:SMC)
 * **SOP**: Start Of Packet. Used to differentiate packet types in USB-PD. SOP for normal comms, SOP' and SOP" to talk to built-in chips in a cable, SOP'DEBUG and SOP"DEBUG for custom vendor specific things like Apple VDMs.
 * **SPI**: Serial Peripheral Interface. A 4-wire standard for communicating at low speed between chips on a board.
+* **SPMI**: System Power Management Interface from MIPI Alliance: 2-wire bi-directional interface, Multi master(up to 4), Multi slave(up to 16), 32KHz to 26MHz. See [System Power Management Interface](https://en.wikipedia.org/wiki/System_Power_Management_Interface)
 * **SPRR**: probably Shadow Permission Remap Registers. Turns the normal page permission attributes (AP,PXN,UXN) into an index to a separate table. This new table then determines the real page permissions. Also disallows pages that writeable and executable at the same time. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [[HW:-SPRR-and-GXF]]
 * **SWD**: Serial Wire Debug. A 2-pin interface used for debugging ARM cores, like JTAG over fewer pins. Used on Apple devices, but inaccessible (for the main CPU/SoC) in production devices due to security restrictions.
 
