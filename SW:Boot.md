@@ -6,7 +6,7 @@ This stage is located in the boot [ROM](./Glossary#R). Among others, it verifies
 
 # Normal flow
 
-## Stage 1 (LLB)
+## Stage 1 (LLB/iBoot1)
 
 This stage is the primary early loader, located in the on-board [NOR](./Glossary#N). This boot stage very roughly goes as follows:
 
@@ -51,7 +51,7 @@ This stage is the primary early loader, located in the on-board [NOR](./Glossary
 
 If it fails at any point during this, it will either error out or fall back to [DFU](./Glossary#D), waiting for an iBEC loader to be sent, before continuing with the [DFU](./Glossary#D) flow at stage 2.
 
-## Stage 2 (iBoot)
+## Stage 2 (iBoot2)
 
 This stage is the OS-level loader, located inside the OS partition and shipped as part of macOS. It loads the rest of the system.
 
