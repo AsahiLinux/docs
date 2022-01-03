@@ -9,11 +9,11 @@
   * **disk0s2 = disk3**: "Container" - macOS install
     * **disk3s1**: "System" - OS (root filesystem, sealed)
     * **disk3s2**: "Preboot" - iBoot2 (OS loader), iBoot-loaded firmwares, Darwin kernelcache, firmwares, devicetree, other preboot stuff
-    * **disk3s3**: "Recovery" - OS-associated recovery (not 1TR): iBoot2, firmwwares, Darwin kernelcache, ramdisk image
+    * **disk3s3**: "Recovery" - OS-paired RecoveryOS: iBoot2, firmwwares, Darwin kernelcache, ramdisk image
     * **disk3s4**: "Update" - macOS update temp storage and logs
     * **disk3s5**: "Data" - user data (root filesystem, merged). This volume's UUID defines the identity of the OS install.
     * **disk3s6**: "VM" - swap partition (when needed)
-  * **disk0s3 = disk2**: "RecoveryOSContainer" - 1TR (One True Recovery)
+  * **disk0s3 = disk2**: "RecoveryOSContainer" - System RecoveryOS
     * **disk2s1**: "Recovery" - one or more sets of {iBoot2 (OS loader), Darwin kernelcache, firmwares, devicetree, other preboot stuff}
     * **disk2s2**: "Update" - system firmware update temp storage and logs
 
@@ -681,8 +681,7 @@ Files look like:
 ```
 </details>
 
-OS recovery partition. Roughly the same layout/contents as 1TR below.
-
+OS recovery partition. Roughly the same layout/contents as System RecoveryOS below. If the current default boot OS is macOS 12 or newer, its RecoveryOS partition is started as One True RecoveryOS when the power button is held on boot. Otherwise, for macOS 11.x, the System RecoveryOS is used for this purpose instead.
 
 ### disk3s4 (Update)
 
@@ -870,7 +869,7 @@ The main user data partition, which is overlaid on top of the OS root with firml
 
 Swap partition. Seems to be empty if not necessary.
 
-## disk0s3: Recovery OS
+## disk0s3: System RecoveryOS
 
 <details>
   <summary>diskutil apfs list</summary>
@@ -901,7 +900,7 @@ Swap partition. Seems to be empty if not necessary.
 ```
 </details>
 
-This is the main One True Recovery partition, containing one or more versions of 1TR.
+This is the System RecoveryOS partition, containing one or two versions of RecoveryOS.
 
 There is a hidden *Update* volume (disk2s2).
 
@@ -963,7 +962,7 @@ There is a hidden *Update* volume (disk2s2).
 ```
 </details>
 
-This contains one or more versions of One True Recovery.
+This contains one or more versions of RecoveryOS.
 
 Files look like:
 
@@ -978,7 +977,7 @@ Files look like:
     * System/Library/Caches/com.apple.kernelcaches/
         * kernelcache - Darwin kernelcache
 
-When 1TR is loaded, this partition apparently gets copied wholesale to a tmpfs, and then the arm64eBaseSystem.dmg is attached
+When RecoveryOS is loaded, this partition apparently gets copied wholesale to a tmpfs, and then the arm64eBaseSystem.dmg is attached
         
 ## disk2s2: Update
 
