@@ -5,7 +5,7 @@ Add terms specific to the hardware, reverse engineering, and Apple ecosystems th
 If you want to collect a large set of terms specific to a sub-field (such as GPUs), feel free to create a separate page.
 
 ### 1
-* **1TR**: One True Recovery. The recovery partition in M1 Macs, running with full codesigning. Boot with the power button held down. You get root access, but you can only run software signed by Apple. From here you can change the Mac's security settings.
+* **1TR**: One True Recovery. This is what recoveryOS is called when you boot it by holding down the power button. This means you have asserted physical presence and you are running a fully Apple-trusted recovery environment, which gives you special powers, like the ability to install a custom OS. You get root access, but you can only run software signed by Apple, and if FileVault is enabled you first need to authenticate.
 
 ### A
 * **AGX**: The internal name for Apple's GPU series.
@@ -20,7 +20,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 
 ### B
-* **BootROM**: A read-only memory embedded in a chip such as the M1, which is the first code executed upon boot.
+* **BootROM**: A read-only memory embedded in a chip such as the M1, which is the first code executed upon boot. See SecureROM.
 
 ### C
 * **Chicken Bits**: Otherwise known as "kill bits", configuration bits used for disabling/enabling specific features.
@@ -47,7 +47,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### I
 * **I²C**: Inter-Integrated Circuit. A 2-wire standard for communicating at low speed between chips on a board.
-* **iBoot**: Apple's bootloader. Can refer to the specific second-stage loader on the OS Preboot partition, or to the LLB, iBSS or iBEC.
+* **iBoot**: Apple's bootloader. Can refer to the specific second-stage loader on the OS Preboot partition (often called iBoot2), or any of LLB, iBSS, iBEC, or even the SecureROM (which are all different builds of iBoot with different capabilities). iBoot1 is a newer name for LLB.
 * **iBSS**: iBoot Single Stage. Replacement for the first-stage iBoot (LLB), loaded in the DFU boot flow when the NOR is corrupted.
 * **iBEC**: iBoot Epoch Change. Replacement for the second-stage iBoot, loaded in the DFU boot flow.
 * **IOMMU**: I/O Memory Management Unit, a more general term for Apple's DART.
@@ -65,7 +65,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **kmutil** macOS Kernel Management utility for managing kernel extensions (kexts). Used to boot alternative kernels i.e. m1n1
 
 ### L
-* **LLB**: Low Level Bootloader. The first-stage iBoot located in NOR, loaded by the SecureROM. It chainloads the second-stage iBoot on the OS Preboot partition.
+* **LLB**: Low Level Bootloader. The first-stage iBoot located in NOR, loaded by the SecureROM, and also called iBoot1. It chainloads the second-stage iBoot on the OS Preboot partition.
 
 ### M
 * **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such a switching one set of pins between USB, UART, and SWD modes.
@@ -80,7 +80,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **PMGR**: Power manager.
 
 ### R
-* **RecoveryOS:** The recovery environment, either the 1TR located on the internal disk, or a recovery environment associated with any particular macOS install, located inside an APFS subvolume.
+* **RecoveryOS:** The recovery environment, which can either be a recovery image paired to an OS install (located inside an APFS subvolume) or the global recovery image installed in the last APFS container on disk. macOS 11.x uses the global image by default, while macOS 12.0 and newer uses a paired recoveryOS.
 * **RestoreOS:** The restore environment, loaded onto the device when "reviving" it through DFU mode by Apple Configurator. [[more info]](https://www.theiphonewiki.com/wiki/Restore_Ramdisk)
 * **ROM** is an acronym for Read-Only Memory. It refers to computer memory chips containing permanent or semi-permanent data.
 * **RTKit:** Apple's proprietary real-time operating system. Most of the accelerators (AGX, ANE, AOP, DCP, AVE, PMP) run RTKit on an internal processor. The string "RTKSTACKRTKSTACK" is characteristic of a firmware containing RTKit.
