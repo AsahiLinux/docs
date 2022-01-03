@@ -5,7 +5,7 @@ Add terms specific to the hardware, reverse engineering, and Apple ecosystems th
 If you want to collect a large set of terms specific to a sub-field (such as GPUs), feel free to create a separate page.
 
 ### 1
-* **1TR**: One True Recovery. This is what recoveryOS is called when you boot it by holding down the power button. This means you have asserted physical presence and you are running a fully Apple-trusted recovery environment, which gives you special powers, like the ability to install a custom OS. You get root access, but you can only run software signed by Apple, and if FileVault is enabled you first need to authenticate.
+* **1TR**: One True RecoveryOS. This is what RecoveryOS is called when you boot it by holding down the power button. This means you have asserted physical presence and you are running a fully Apple-trusted recovery environment, which gives you special powers, like the ability to install a custom OS. You get root access, but you can only run software signed by Apple, and if FileVault is enabled you first need to authenticate.
 
 ### A
 * **AGX**: The internal name for Apple's GPU series.
