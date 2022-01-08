@@ -1,10 +1,12 @@
 ### PMGR
+- 'apple,t6000-pmgr'
 - 'apple,t8103-pmgr'
 - 'apple,pmgr'
 
 Proposal submitted by marcan
 
 ### PMGR nodes
+- 'apple,t6000-pmgr-pwrstate'
 - 'apple,t8103-pmgr-pwrstate'
 - 'apple,pmgr-pwrstate'
 
@@ -22,12 +24,19 @@ Used by OpenBSD; not submitted upstrean yet
 Used by OpenBSD; not submitted upstream yet
 
 ### SPI
+- 'apple,t6000-spi'
 - 'apple,t8103-spi'
 - 'apple,spi'
 
 Used by OpenBSD; not submitted upstream yet
 
 ### SPI keyboard/touchpad
-- 'apple,keyboard'
+- 'apple,spi-hid-transport'
 
-Used by OpenBSD; should probably be changed to something like 'apple,spi-hid-transport'
+Not sumitted upstream yet
+
+### SMC
+- 'apple,t8103-smc'
+- 'apple,smc'
+
+Soon to be used by OpenBSD; not submitted upstream yet
