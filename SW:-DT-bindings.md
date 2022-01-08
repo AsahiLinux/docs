@@ -40,3 +40,10 @@ Not sumitted upstream yet
 - 'apple,smc'
 
 Soon to be used by OpenBSD; not submitted upstream yet
+
+### NVME
+- 'apple-t6000-nvme-ans2'
+- 'apple,t8103-nvme-ans2'
+- 'apple,nvme-ans2'
+
+Not submitted upstream yet
