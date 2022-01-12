@@ -33,7 +33,12 @@ Almost totally unknown. Keys with `0xf0` flags don't appear to return non-zero v
 Many. https://github.com/torvalds/linux/blob/master/drivers/hwmon/applesmc.c documents some, but mostly you have to guess based on the four-character name. There are more than 1,400 such keys on the MacBook Pro, with many apparently unused.
 
 Some guesses as to what they might mean:
-* `T???`: temperature values, in centigrade/Celsius, as float. There are many of those. The question marks specify, presumably, the location (and possibly whether or not the value is averaged to provide a more meaningful reading?)
+* `T???`: temperature values, in Celsius, as float. There are many of those. The question marks specify, presumably, the location (and possibly whether or not the value is averaged to provide a more meaningful reading?)
+* `TB0T`: battery temperature
+* `TCHP`: charger temperature (increases sligtly when charging)
+* `TW0P`: wireless temperature (increases slightly when wireless is turned on)
+* `Ts0P`: palm rest temperature
+* `Ts1P`: palm rest temperature
 * `V???`: voltages. Probably in volts.
 * `gP??`: "GPIO" pins. Actually output only, and there appears to be a bug preventing you from reading the level of a pin non-destructively, except it works for the very first such pin to be read.
 * `gP0d`: controls the WiFi/BT chips.  Without enabling this, the PCI devices for WiFi and BT don't show up.  Used to implement "rfkill" functionality?
@@ -44,7 +49,7 @@ Some guesses as to what they might mean:
 * `D1is`: serial number of the connected charger
 * `D2??`: refer to `D1??`
 * `P???`: power meters, presumably in watts
-* `PSTR`: possibly the entire system's power consumption
+* `PSTR`: entire system's power consumption in W
 * `SBA?`: system battery information
 * `SBA1`: battery cell 1 voltage in mV
 * `SBA2`: battery cell 3 voltage in mV
@@ -69,6 +74,12 @@ Some guesses as to what they might mean:
 * `B0DC`: battery design capacity in mAh
 * `B0FC`: battery full capacity in mAh
 * `B0RM`: battery remaining capacity in mAh (same as `SBAR` but as a `ui16` in reverse byte order)
+* `B0TE`: battery time-to-empty in minutes
+* `B0TF`: battery time-to-full in minutes
+* `ID0R`: input current in A
+* `VD0R`: input voltage in V
+* `PDTR`: input power in W
+
 
 ### Quirks
 
