@@ -391,3 +391,6 @@ Still running 21
 # Other features
  * [WiFi Support](https://github.com/AsahiLinux/docs/wiki/SW:Linux:WiFi)
  * [X11 Support](https://github.com/AsahiLinux/docs/wiki/SW:Linux:X11)
+# Missing
+ * Sound
+ * Power management - do **NOT** shut the lid
