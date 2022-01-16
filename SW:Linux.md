@@ -388,3 +388,5 @@ Still running 21
  * [initrd + USB keyboard](https://github.com/AsahiLinux/docs/wiki/SW:Linux:USBKeyboard#linux-usb-keyboard)
  * [USB drive boot](https://github.com/AsahiLinux/docs/wiki/SW:Linux:USB-drive)
  * [USB Drive to NVME partition](https://github.com/AsahiLinux/docs/wiki/SW:Linux:NVME)
+# Other features
+ * [WiFi Support](https://github.com/AsahiLinux/docs/wiki/SW:Linux:WiFi)
