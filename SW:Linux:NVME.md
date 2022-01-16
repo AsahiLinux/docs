@@ -39,7 +39,7 @@ python3 proxyclient/tools/linux.py -b 'earlycon console=tty0  console=tty0 debug
 ### Install rootfs in the nvme
  * Under MacOS you need to create some free space as per [Glanzmann's notes](https://tg.st/u/asahi.txt) 
  * Be very careful you know exactly what partition you specify this is just an  **example** your numbers may vary
- * make space - the last number is the space that macos will occupy `iskutil apfs resizeContainer disk0s2 200GB`
+ * make space - the last number is the space that macos will occupy `diskutil apfs resizeContainer disk0s2 200GB`
  * List the partitions and see where the free space now lies `diskutil list`
  * Allocate a FAT32 partition for your linux rootfs on the NVME from the free space
  * **NOTE** you have to specify the partition **before** the free space `diskutil addPartition disk0s3 FAT32 LB 42.6GB`
