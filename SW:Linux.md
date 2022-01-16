@@ -390,3 +390,4 @@ Still running 21
  * [USB Drive to NVME partition](https://github.com/AsahiLinux/docs/wiki/SW:Linux:NVME)
 # Other features
  * [WiFi Support](https://github.com/AsahiLinux/docs/wiki/SW:Linux:WiFi)
+ * [X11 Support](https://github.com/AsahiLinux/docs/wiki/SW:Linux:X11)
