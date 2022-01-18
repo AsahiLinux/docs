@@ -60,11 +60,11 @@ Some guesses as to what they might mean:
 * `RPlt`: platform name, such as "J293".
 * `a???`: highly volatile power-related measurement, so possibly current going to various device parts.
 * `F???`: fan information. Refer to https://github.com/torvalds/linux/blob/master/drivers/hwmon/applesmc.c.
-* `CL??`: various times, measured in nanoseconds since (presumably) the SMC was booted.
+* `CL??`: various times, measured in microseconds since (possibly) manufacturing/RTC reset time
 * `CLKU`: continuously-updated current time
-* `CLBT`: boot time
-* `CLSP`: possibly the time the system last went to sleep
-* `CLWK`: possibly the time the system last woke
+* `CLBT`: SMC boot time (e.g. AC power applied)
+* `CLSP`: possibly the time the SMC last went to sleep
+* `CLWK`: possibly the time the SMC last woke up
 * `MSLD`: the lid switch, 1 for closed, 0 for open
 * `bHLD`: power button currently pressed
 * `MBSe`: power button pressed since last read, read-to-clear
