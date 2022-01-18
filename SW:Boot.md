@@ -13,7 +13,7 @@ This stage is the primary early loader, located in the on-board [NOR](./Glossary
 * Read the `boot-volume` variable from [NVRAM](./Glossary#N): its format is `<gpt-partition-type-uuid>:<gpt-partition-uuid>:<volume-group-uuid>`. Other related variables seem to be `update-volume` and `upgrade-boot-volume`, possibly selected by metadata inside the `boot-info-payload` variable;
 * Get the local policy hash:
   - First try the local proposed hash ([SEP](./Glossary#S) command 11);
-  - If that is not available, get the local blessed hash ([SEP](./Glossary#S)( command 14)
+  - If that is not available, get the local blessed hash ([SEP](./Glossary#S) command 14)
 * Read the local boot policy, located on the iSCPreboot partition at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.img4`. This boot policy has the following specific metadata keys:
   - `vuid`: UUID: Volume group UUID - same as above
   - `kuid`: UUID: KEK group UUID
