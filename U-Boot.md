@@ -1,8 +1,8 @@
 U-Boot in combination with m1n1 and device trees can be used to load grub or
-any other efi boot loader from vfat partition located the internal NVMe drive
-or USB stick. Grub can load a Linux kernel and initird to boot Linux. U-Boot
-also enables wifi pcie device. U-Boot will try to load EFI/BOOT/BOOTAA64.EFI
-make sure that grub or any other boot loder is located there.
+any other efi boot loader from vfat esp partition located on the internal NVMe drive
+or an USB stick. Grub can than load a Linux kernel and initird to boot Linux. U-Boot
+also enables the wifi pcie device. U-Boot will try to load **EFI/BOOT/BOOTAA64.EFI**.
+Make sure that grub or any other boot loder is located there.
 
 # Building
 In order to get the boot object, we need to build m1n1 and u-boot and
