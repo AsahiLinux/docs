@@ -31,3 +31,4 @@ Software Documentation:
 * [[SW:NVRAM]]
 * [[SW:Storage]]
 * [[SW:-DT-bindings]]
+* [[SW:U-Boot]]
