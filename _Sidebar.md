@@ -13,6 +13,7 @@ Places to start:
 * [[SW:m1n1]] Boot loader
 * [[SW:Linux]] Kernel
 * [[SW:Hypervisor]]
+* [[U-Boot]]
 
 Hardware Documentation:
 * [[HW:AIC]]
@@ -31,4 +32,3 @@ Software Documentation:
 * [[SW:NVRAM]]
 * [[SW:Storage]]
 * [[SW:-DT-bindings]]
-* [[SW:U-Boot]]
