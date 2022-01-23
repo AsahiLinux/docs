@@ -34,3 +34,13 @@ The I²C peripheral in the M1 and other recent Apple SoCs is a modified version 
 ## My M1 natively runs x86 code
 
 The DisplayPort to HDMI bridge chip in the Mac Mini and 14"/16" MacBook Pros (MDCP29xx) uses a V186 CPU core. That's an Intel 80186 clone, running good old 16-bit x86 real mode code. Yes, x86 from the MS-DOS era is in your Mac.
+
+# Attention to detail
+
+## Help me!
+
+The Mac’s [SecureROM](AsahiLinux/docs/wiki/SW:Boot) is small and can’t do much by itself; on the Mac mini, it cannot display an image on the screen. It can, however, control the power LED.
+If you start the Mac in [DFU mode](AsahiLinux/docs/wiki/Glossary#D), the LED will be amber instead of white.
+If you start the Mac normally and the early boot process fails (for instance, because of a failed restore operation), the power LED will be amber, and blink with the following pattern: three short blinks, three longer blinks, three shorts blinks, a pause, and repeat. That is [Morse code for SOS](https://en.wikipedia.org/wiki/Morse_code#Applications_for_the_general_public)! The Mac is quietly asking to be saved…
+
+
