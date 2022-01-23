@@ -14,6 +14,7 @@ Places to start:
 * [[SW:Linux]] Kernel
 * [[SW:Hypervisor]]
 * [[U-Boot]]
+* [[DesktopKernel]]
 
 Hardware Documentation:
 * [[HW:AIC]]
