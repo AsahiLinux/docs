@@ -1,0 +1,70 @@
+This pages explain how to build a desktop kernel with the latest features. It also lists all kernel options that are necessary to get all ASAHI features and which one better to disable.
+
+# Current Desktop Kernel
+```
+# Install Build Dependencies
+sudo apt install -y gcc-aarch64-linux-gnu device-tree-compiler
+
+# Checkout the kernel
+git clone https://github.com/AsahiLinux/linux
+cd linux
+git checkout origin/asahi
+# SPI patches (one crash, keyboard on notebooks)
+curl https://tg.st/u/aa6a11b3feeda0f57284f99406188e4615e7c43c.patch | patch -p1
+curl https://tg.st/u/9ce9060dea91951a330feeeda3ad636bc88c642c.patch | patch -p1
+# i2C Sound patch
+curl https://tg.st/u/5nly | patch -p1
+# Config with sound enabled
+curl https://tg.st/u/asahi-config-2022-01-19 > .config
+
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- olddefconfig
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j64 Image.gz modules dtbs
+```
+
+If you want to build debian packages
+
+```
+make -j $(( 2* `nproc`)) V=0 bindeb-pkg
+```
+
+# Kerneloptions
+
+The following kernel options are necessary to get all features. FIXME: I think there are some for wifi missing.
+```
+CONFIG_ARCH_APPLE=y
+CONFIG_PCIE_APPLE_MSI_DOORBELL_ADDR=0xfffff000
+CONFIG_PCIE_APPLE=y
+CONFIG_NVME_APPLE=y
+CONFIG_I2C_APPLE=y
+CONFIG_SPI_APPLE=y
+CONFIG_PINCTRL_APPLE_GPIO=y
+CONFIG_APPLE_WATCHDOG=y
+CONFIG_SND_SOC_APPLE_MCA=y
+CONFIG_HID_APPLE=y
+CONFIG_SPI_HID_APPLE_OF=y
+CONFIG_SPI_HID_APPLE_CORE=y
+CONFIG_APPLE_ADMAC=y
+CONFIG_COMMON_CLK_APPLE_NCO=y
+CONFIG_APPLE_MAILBOX=y
+CONFIG_APPLE_DART=y
+CONFIG_APPLE_PMGR_PWRSTATE=y
+CONFIG_APPLE_RTKIT=y
+CONFIG_APPLE_SART=y
+CONFIG_APPLE_AIC=y
+CONFIG_SND_SIMPLE_CARD=y
+CONFIG_SND_SOC_CS42L42=y
+CONFIG_FW_LOADER_USER_HELPER_FALLBACK=n
+CONFIG_FW_LOADER_USER_HELPER=n
+CONFIG_USB_DWC3=y
+CONFIG_USB_DWC3_PCI=y
+CONFIG_BRCMFMAC=m
+CONFIG_BRCMFMAC_PCIE=y
+CONFIG_DRM_SIMPLEDRM=y
+```
+
+The following kernel options should be disabled because otherwise loading the right firmware takes forever due to a timeout:
+
+```
+CONFIG_FW_LOADER_USER_HELPER_FALLBACK
+CONFIG_FW_LOADER_USER_HELPER
+```
