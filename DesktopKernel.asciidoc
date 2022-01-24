@@ -14,8 +14,8 @@ curl https://tg.st/u/aa6a11b3feeda0f57284f99406188e4615e7c43c.patch | patch -p1
 curl https://tg.st/u/9ce9060dea91951a330feeeda3ad636bc88c642c.patch | patch -p1
 # i2C Sound patch
 curl https://tg.st/u/5nly | patch -p1
-# Config with sound enabled
-curl https://tg.st/u/asahi-config-2022-01-19 > .config
+# Config with all asahi options enabled
+curl https://tg.st/u/config-2022-01-24 > .config
 
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- olddefconfig
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j64 Image.gz modules dtbs
@@ -60,7 +60,7 @@ CONFIG_USB_DWC3_PCI=y
 CONFIG_BRCMFMAC=m
 CONFIG_BRCMFMAC_PCIE=y
 CONFIG_DRM_SIMPLEDRM=y
-CONFIG_SND_SOC_TAS2770=y
+CONFIG_SND_SOC_TAS2770=m
 CONFIG_SND_SIMPLE_CARD=m
 ```
 
