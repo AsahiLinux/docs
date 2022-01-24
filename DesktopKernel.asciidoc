@@ -60,6 +60,8 @@ CONFIG_USB_DWC3_PCI=y
 CONFIG_BRCMFMAC=m
 CONFIG_BRCMFMAC_PCIE=y
 CONFIG_DRM_SIMPLEDRM=y
+CONFIG_SND_SOC_TAS2770=y
+CONFIG_SND_SIMPLE_CARD=m
 ```
 
 The following kernel options should be disabled because otherwise loading the right firmware takes forever due to a timeout:
