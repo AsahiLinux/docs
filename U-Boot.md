@@ -121,8 +121,8 @@ following needs to be done. Adopt the X with your esp partition:
 grub-install --removable /dev/nvme0nX
 ```
 
-Also run the following command and set Force extra installation to the EFI
-removable media path to yes.
+Also run the following command and set **Force extra installation to the EFI**
+**removable media path** to **yes**.
 
 ```
 dpkg-reconfigure grub-efi-arm64
@@ -134,7 +134,7 @@ Do not forget to update-grub afterwards:
 update-grub
 ```
 
-The current version that is shipped with grub refuses to be booted from U-Boot
+The current version that is shipped with Debian testing refuses to be booted from U-Boot
 because one efi binary. In order to make U-boot boot the grub that is shipped
 with Debian Testing, remove this binary:
 
