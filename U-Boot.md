@@ -4,51 +4,19 @@ or an USB stick. Grub can than load a Linux kernel and initird to boot Linux. U-
 also enables the wifi pcie device. U-Boot will try to load **EFI/BOOT/BOOTAA64.EFI**.
 Make sure that grub or any other boot loder is located there.
 
-# Building
-In order to get the boot object, we need to build m1n1 and u-boot and
-concatenate the two and the device trees. m1n1 automatically picks the
-right device tree for the model you're booting it on.
+# Prerequisit: Supported SOC
 
-FIXME: Add instructions to crosscompile
-FIXME: Add dependencies
+At the moment only the T8103 Devices work.
 
-```
-git clone https://github.com/kettenis/u-boot
-cd u-boot/
-git checkout apple-m1-m1n1-nvme
-make apple_m1_defconfig
-make
-cd ..
+| Marketing name | Device | Product | SoC |
+| -------------- | ------ | ------- | --- |
+| Mac mini (M1,2020) | Macmini9,1 | J274AP | T8103
+| MacBook Pro (13-inch, M1, 2020) | MacBookPro17,1 | J293AP | T8103
+| MacBook Air (M1, 2020) | MacBookAir10,1 | J313AP | T8103
+| iMac (24-inch (4-ports), M1, 2021) | iMac21,1 | J456AP | T8103
+| iMac (24-inch (2-ports), M1, 2021) | iMac21,2  | J457AP | T8103
 
-git clone --recursive https://github.com/AsahiLinux/m1n1.git
-cd m1n1
-make -j
-cd ..
-
-cat m1n1/build/m1n1.macho `find u-boot -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.macho
-```
-
-# Installing
-In order to install the u-boot.macho object, we need to make sure that Linux
-boots by default, power off the m1 system completely, and boot it by holding
-the power button until it says 'showing boot options', than select the Options
-menu. Open a terminal, download u-boot.macho that you build in the previous
-step and run the following command:
-
-```
-kmutil configure-boot -c u-boot.macho -v /Volumes/Linux
-```
-
-# Binary
-
-FIXME; This should be hosted by marcan or better included in the installer
-
-You can download a prebuild versio which was built by Thomas Glanzmann from here:
-```
-curl -LO https://tg.st/u/u-boot.macho
-```
-
-# Bootchain
+# Prerequisit: Bootchain
 
 In order to use u-boot, you need three extra partitions: The Linux stub from
 the asahi installer, you get it my making space for Linux, running the asahi
@@ -88,16 +56,51 @@ To create the additional partitions (esp vfat and Linux root), the easiest way
 is to boot Linux from a live stick, but I'll also add instructions howto do it
 under macos.
 
-Here are the commands to add the efi parition using parted in Linux.
+# Building
+In order to get the boot object, we need to build m1n1 and u-boot and
+concatenate the two and the device trees. m1n1 automatically picks the
+right device tree for the model you're booting it on.
+
+FIXME: Add instructions to crosscompile
+FIXME: Add dependencies
 
 ```
-parted /dev/nvme0n1 print free
-parted /dev/nvme0n1 mkpart primary fat32 <start of free space> 512MiB
-parted /dev/nvme0n1 print
-parted /dev/nvme0n1 set <esp partition number> esp on
+git clone https://github.com/kettenis/u-boot
+cd u-boot/
+git checkout apple-m1-m1n1-nvme
+make apple_m1_defconfig
+make
+cd ..
+
+git clone --recursive https://github.com/AsahiLinux/m1n1.git
+cd m1n1
+make -j
+cd ..
+
+cat m1n1/build/m1n1.macho `find u-boot -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.macho
 ```
 
-# Debian
+# Binary
+
+FIXME; This should be hosted by marcan or better included in the installer
+
+You can download a prebuild versio which was built by Thomas Glanzmann from here:
+```
+curl -LO https://tg.st/u/u-boot.macho
+```
+
+# Installing
+In order to install the u-boot.macho object, we need to make sure that Linux
+boots by default, power off the m1 system completely, and boot it by holding
+the power button until it says 'showing boot options', than select the Options
+menu. Open a terminal, download u-boot.macho that you build in the previous
+step and run the following command:
+
+```
+kmutil configure-boot -c u-boot.macho -v /Volumes/Linux
+```
+
+# Distribution Example: Debian
 
 The esp vfat partition should be mounted to /boot/efi. Replace the X with your partition:
 
@@ -149,4 +152,12 @@ any key. The following command can be used to boot via usb:
 
 ```
 run bootcmd_usb0
+```
+
+# Other useful commands
+
+```
+boot
+reset
+poweroff
 ```
