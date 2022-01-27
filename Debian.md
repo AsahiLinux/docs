@@ -117,6 +117,10 @@ umount /mnt
 
 * Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space, setup a 12.1 stub partition using the asahi installer and install u-boot.
 
+* If you have a EFI binary on the NVMe and want to boot from the usb stick, you need to interrupt u-boot on the countdoun by pressing any key and run the following comamnd to boot from usb:
+
+        run bootcmd_usb0
+
 * Reboot with the USB stick connected, the Debian livesystem should automatically start, if it doesn't load the kernel and initrd manually, you can use tab. For x try 0,1,2,...
 
 ```
