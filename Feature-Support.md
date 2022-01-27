@@ -32,7 +32,7 @@ These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 | WiFi | linux-asahi |
 | Bluetooth | unsupported |
 | SMC | unsupported |
-| 3.5mm jack | linux-assahi [line out only] |
+| 3.5mm jack | linux-asahi [line out only] |
 | Sound capture | unsupported |
 | ARM SPMI | unsupported |
 | RTC | unsupported |
