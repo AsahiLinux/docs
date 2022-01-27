@@ -97,7 +97,21 @@ cd /
         * USB Stick. this is what this guide assumes, but it is also possible to run the Debian installer from another PC using m1n1 chainloading. But if you know how to do that, you probably don't need this guide.
         * If possible us an Ethernet Dongle, less typing.
 
-* Create USB Stick with a single vfat partition on it and untar the modified Debian installer on it. Instructions for Linux you find above under the Debian Installer section.
+* Create USB Stick with a single vfat partition on it and untar the modified Debian installer on it. Instructions for Linux:
+
+```
+# Identify the usb stick device
+lsblk
+DEVICE=/dev/sdX
+parted -a optimal $DEVICE mklabel msdos
+parted -a optimal $DEVICE mkpart primary fat32 2048s 100%
+mkfs.vfat ${DEVICE}1
+
+mount /dev/sdX1 /mnt
+cd /mnt
+curl -sL https://tg.st/u/asahi-debian-live.tar | tar -C /mnt -xf -
+umount /mnt
+```
 
 * Boot into MacOS, capture the firmware and copy it to the usb stick, if you don't have done that already.
 
