@@ -16,6 +16,7 @@ Places to start:
 * [[SW:Hypervisor]]
 * [[U-Boot]]
 * [[DesktopKernel]]
+* [[Debian]]
 
 Hardware Documentation:
 * [[HW:AIC]]
