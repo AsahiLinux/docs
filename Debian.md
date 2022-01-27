@@ -64,7 +64,7 @@ wpa_supplicant -i <interface> -c /etc/wpa.conf
     * Create one 256M EFI system partition. 512M and 1G partitions fail with an error about wrong clustersize.
     * Create another partition for root
 
-* When you get an error about grub failing, switch to the third console by pressing **Fn + Option + F3**, press **return* to active the console, and issue the following commands:
+* When you get an error about grub failing, switch to the third console by pressing **Fn + Option + F3**, press **return** to active the console, and issue the following commands:
 
 ```
 # Switch into the system that is being installed
