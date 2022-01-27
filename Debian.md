@@ -27,7 +27,7 @@ curl -sL https://tg.st/u/m1-d-i.tar | tar -C /mnt -xf -
 umount /mnt
 ```
 
-* Boot into MacOS, capture the firmware and copy it to the usb stick, if you want to install via wifi, or elsewhere
+* Boot into MacOS, capture the firmware and copy it to the usb stick, if you want to install via wifi, or elsewhere,
 
 * Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space, setup a 12.1 stub partition using the asahi installer and install u-boot.
 
@@ -91,8 +91,29 @@ cd /
 
 * Switch back to the installer console by pressing **Fn + Option + F1** and continue the installer besides errors. The system will reboot into the newly installed system.
 
-
 # live
+* Prerequisits
+
+        * USB Stick. this is what this guide assumes, but it is also possible to run the Debian installer from another PC using m1n1 chainloading. But if you know how to do that, you probably don't need this guide.
+        * If possible us an Ethernet Dongle, less typing.
+
+* Create USB Stick with a single vfat partition on it and untar the modified Debian installer on it. Instructions for Linux you find above under the Debian Installer section.
+
+* Boot into MacOS, capture the firmware and copy it to the usb stick, if you don't have done that already.
+
+* Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space, setup a 12.1 stub partition using the asahi installer and install u-boot.
+
+* Reboot with the USB stick connected, the Debian livesystem should automatically start, if it doesn't load the kernel and initrd manually, you can use tab. For x try 0,1,2,...
+
+```
+linux (hdX,msdos1)/vmlinuz
+initrd (hd0,msdos1)/initrd.gz
+boot
+```
+
+* Log in as **root** without password.
+
+* Consult the **quickstart.txt** file to find out how to get the networking up, set the time etc.
 
 # dd
 [Video Recording](https://tg.st/u/m1debian.mp4)
