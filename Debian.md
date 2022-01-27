@@ -9,3 +9,4 @@ If you don't want to use the prebuild artefacts, you can build them yourself usi
 # live
 
 # dd
+[Video Recording](https://tg.st/u/m1debian.mp4)
