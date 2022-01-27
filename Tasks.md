@@ -1,3 +1,7 @@
+This page lists currently supported features, as well as features still needed to support a "nice" desktop experience on Apple Silicon Macs.
+
+An item being ticked off means that it is, at the very least, supported and available for testing in m1n1 or linux-asahi. Some drivers may still require stabilisation or cleaning up before being submitted upstream. See [[Feature Support]] for details on what has been upstreamed and what has not.
+
 ## Research
 * [ ] Document SoC memory map and macOS device tree
 * [ ] Document AIC
@@ -40,7 +44,7 @@
   * [x] USB2
   * [ ] USB3
 * [x] PCIe
-* [ ] SSD
+* [x] SSD
 * [ ] Type-C/PD
   * [ ] Host / sink mode
   * [ ] PD negotiation
@@ -53,13 +57,13 @@
   * [ ] 3.5mm jack
   * [ ] Built-in speaker(s)
 * [x] Ethernet
-* [ ] Keyboard
-  * [ ] Keyboard (duh)
+* [x] Keyboard
+  * [x] Keyboard (duh)
   * [ ] Keyboard backlight
-  * [ ] Special keys (brightness etc.)
+  * [x] Special keys (brightness etc.)
 * [ ] Touchpad
   * [x] Basic mouse functionality
-  * [ ] Multi-finger gestures
+  * [x] Multi-finger gestures
   * [ ] Force Touch
 * [ ] Touch Bar
   * [ ] Display
@@ -93,3 +97,4 @@
 
 ## Power management
 Lots of things here, including processor idling and general DVFS for all in-SoC & external peripherals.
+
