@@ -1,9 +1,9 @@
-This pages explains how to install Debian using three different methods: d-i, live and dd.
+This pages explains how to install Debian using three different methods: Debian Installer, livesystem and disk dump.
 
 # Artefacts
 If you don't want to use the prebuild artefacts, you can build them yourself using the bootstrap.sh script found in [Glanzmanns m1-debian script repository](https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian)
 
-# Debian Installer (d-i)
+# Debian Installer
 [Video Recording](https://tg.st/u/m1-d-i.mp4)
 
 * Prerequisits
@@ -91,7 +91,7 @@ cd /
 
 * Switch back to the installer console by pressing **Fn + Option + F1** and continue the installer besides errors. The system will reboot into the newly installed system.
 
-# live
+# Livesystem
 * Prerequisits
 
     * USB Stick. this is what this guide assumes, but it is also possible to run the Debian installer from another PC using m1n1 chainloading. But if you know how to do that, you probably don't need this guide.
@@ -129,5 +129,5 @@ boot
 
 * Consult the **quickstart.txt** file to find out how to get the networking up, set the time etc.
 
-# dd
+# Diskdump
 [Video Recording](https://tg.st/u/m1debian.mp4)
