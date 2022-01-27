@@ -78,6 +78,7 @@ make -j
 cd ..
 
 cat m1n1/build/m1n1.macho `find u-boot -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.macho
+cat m1n1/build/m1n1.bin `find u-boot -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.bin
 ```
 
 # Binary
@@ -87,6 +88,7 @@ FIXME; This should be hosted by marcan or better included in the installer
 You can download a prebuild versio which was built by Thomas Glanzmann from here:
 ```
 curl -LO https://tg.st/u/u-boot.macho
+curl -LO https://tg.st/u/u-boot.bin
 ```
 
 # Installing
@@ -97,7 +99,10 @@ menu. Open a terminal, download u-boot.macho that you build in the previous
 step and run the following command:
 
 ```
+# <= MaOS 12.0.1
 kmutil configure-boot -c u-boot.macho -v /Volumes/Linux
+# Macos 12.1 and newer
+kmutil configure-boot -c u-boot.bin --raw --entry-point 2048 --lowest-virtual-address 0 -v /Volumes/Linux
 ```
 
 # Distribution Example: Debian
