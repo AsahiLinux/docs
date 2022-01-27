@@ -27,7 +27,9 @@ curl -sL https://tg.st/u/m1-d-i.tar | tar -C /mnt -xf -
 umount /mnt
 ```
 
-* Boot into MacOS, capture the firmware and copy it to the usb stick, if you want to install via wifi, or elsewhere,
+* Boot into MacOS, capture the firmware and copy it to the usb stick, if you want to install via wifi, or elsewhere
+
+      curl -sL tg.st/u/fwx.sh | sh
 
 * Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space, setup a 12.1 stub partition using the asahi installer and install u-boot.
 
@@ -114,6 +116,8 @@ umount /mnt
 ```
 
 * Boot into MacOS, capture the firmware and copy it to the usb stick, if you don't have done that already.
+
+      curl -sL tg.st/u/fwx.sh | sh
 
 * Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space, setup a 12.1 stub partition using the asahi installer and install u-boot.
 
