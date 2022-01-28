@@ -81,6 +81,7 @@ lsblk
 grub-install --removable /dev/nvme0n1pX
 # Create grub configuration
 update-grub
+# Remove this otherwise u-boot does not load grub
 find /boot/efi -name fbaa64.efi | xargs rm
 # Install the wifi firmware if you have it on the USB stick
 mount /dev/sda1 /mnt
