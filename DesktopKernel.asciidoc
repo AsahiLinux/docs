@@ -11,8 +11,10 @@ cd linux
 git checkout origin/asahi
 # SPI patch
 curl -s https://tg.st/u/9ce9060dea91951a330feeeda3ad636bc88c642c.patch | git am -
-# Sound patch
+# Sound patches
 curl -s https://tg.st/u/5nly | git am -
+curl -s https://tg.st/u/0wM8 | git am -
+
 # Config
 curl -s https://tg.st/u/m1-config-2022-01-27 > .config
 
