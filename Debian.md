@@ -73,7 +73,7 @@ wpa_supplicant -i <interface> -c /etc/wpa.conf
 cd /target
 chroot . bin/bash
 # Install the kernel
-wget https://tg.st/u/k,deb
+wget https://tg.st/u/k.deb
 dpkg -i k.deb
 # Fix grub
 lsblk
