@@ -112,7 +112,7 @@ from the host machine **before** uploading a kernel.
 m1n1 supports directly booting a kernel untethered. In this example, we will prepare an M1 Pro 14" MacBook Pro for untethered booting, this time with an initramfs. Ensure that your kernel is built with whatever boot arguments you want to start with in the default bootargs string, which can be found in `Boot options` in `menuconfig`.
 
 
-### Preparing a Mach-O payload
+### Preparing a boot payload
 On the host machine, you will concatenate m1n1, the gzipped kernel, your machine's Device Tree, and optionally a gzipped initramfs. As above, the order in which you concatenate these payloads matters.
 ```shell
 cd build/
