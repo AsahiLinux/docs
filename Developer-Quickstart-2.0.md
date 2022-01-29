@@ -46,7 +46,7 @@ In this phase, the installer will:
 3. Copy machine firmware and other files required for booting to the stub
 4. Convince macOS that the stub is a real Startup Disk
 
-The installer may ask you which version of macOS you want to use as the stub. We are currently working with macOS 12.1 as our base, so pick this if prompted. The installer will not offer newer version than the base macOS installation.
+The installer may ask you which version of macOS you want to use as the stub. We are currently working with macOS 12.1 as our base, so pick this if prompted. The installer will not offer a newer version of macOS than the one installed on your machine.
 
 You will then go to System Preferences/Startup Disk and choose the newly created `Linux` disk and click Restart. Close System Preferences and then follow the instructions given to you by the installer. Do not be alarmed when your machine does not restart despite you having clicked Restart. The installer actually intervenes and initiates a full shutdown.
 
