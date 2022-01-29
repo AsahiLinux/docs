@@ -7,13 +7,12 @@ If you are an end user after nice desktop Linux experience on their Apple Silico
 
 
 ## Hardware Requirements
-* An Apple Silicon Mac with _at least_ **macOS 11.2** installed and configured
+* An Apple Silicon Mac with _at least_ **macOS 12.0.1** installed and configured
   * You must have a password-protected administrator account. Typically, this will be the first account you created when setting up the machine for the first time. 
 * A machine of any architecture running a GNU/Linux distribution
   * Both GCC and Clang/LLVM AArch64 cross-toolchains are supported.
 
 If you are interested in low-level access to the SoC via its debug UART, you will also require a real, physical serial port solution. See [[Low level serial debug]] for more information on this. This is not necessary for general kernel development or reverse engineering, but is nice for easy debugging of low-level hardware issues.
-
 
 ## Installing m1n1 on your Apple Silicon Mac
 m1n1 is our Apple Silicon playground/hypervisor/bootloader, and is required to boot a Linux kernel or U-Boot. There are three steps to installing it. You must first prepare the disk, run the Asahi Linux installer script from a Terminal inside macOS, then finalise the installation of m1n1 from inside 1TR.
@@ -47,7 +46,7 @@ In this phase, the installer will:
 3. Copy machine firmware and other files required for booting to the stub
 4. Convince macOS that the stub is a real Startup Disk
 
-The installer may ask you which version of macOS you want to use as the stub. We are currently working with macOS 12.1 as our base, so pick this if prompted.
+The installer may ask you which version of macOS you want to use as the stub. We are currently working with macOS 12.1 as our base, so pick this if prompted. The installer will not offer newer version than the base macOS installation.
 
 You will then go to System Preferences/Startup Disk and choose the newly created `Linux` disk and click Restart. Close System Preferences and then follow the instructions given to you by the installer. Do not be alarmed when your machine does not restart despite you having clicked Restart. The installer actually intervenes and initiates a full shutdown.
 
