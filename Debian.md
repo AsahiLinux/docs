@@ -1,8 +1,9 @@
 This pages explains how to install Debian using three different methods: Debian Installer, livesystem and disk dump.
 
 # Supported systems
-The approach below uses the bootchain m1n1+dtbs+u-boot and than grub. This only available on the models in the following tables. If you
-have a more recent model, you can use a tethered boot described here [succinct developerquickstart](https://tg.st/u/asahi.txt) or you won't have WIFI until marcan pushed the SMC patch.
+The approach below uses the bootchain m1n1+dtbs+u-boot and than grub. This is only available on the models in the following table. If you
+have a more recent model, you can use a tethered boot described here [succinct developerquickstart](https://tg.st/u/asahi.txt). You can also
+concat the kernel directly to m1n1 and have so a system that boots byitself, but then you won't have internal wifi until marcan has pushed the SMC branch and kernel updates are painful because you have to boot in 1tr and 'kmutil' a new boot object.
 
 | Marketing name | Device | Product | SoC |
 | -------------- | ------ | ------- | --- |
