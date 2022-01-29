@@ -51,7 +51,7 @@ The installer may ask you which version of macOS you want to use as the stub. We
 You will then go to System Preferences/Startup Disk and choose the newly created `Linux` disk and click Restart. Close System Preferences and then follow the instructions given to you by the installer. Do not be alarmed when your machine does not restart despite you having clicked Restart. The installer actually intervenes and initiates a full shutdown.
 
 ### Step 3: Configuring 1TR to allow m1n1 to boot
-With your machine shut down completely, **hold down** the power button and **do not let go** until you see `Loading startup options...` appear under the Apple logo, _or_ a spinning cogwheel appears on screen. You will then click on Options, which will boot you into 1TR -- Apple's fully trusted playground with _real_ root access. You will be asked to authenticate yourself with your administrator user account and password. After this is done and 1TR is done `Examining disks`, find Utilities in the Menu Bar and open a Terminal window. From there, run
+With your machine shut down completely, **hold down** the power button and **do not let go** until you see `Loading startup options...` appear under the Apple logo, _or_ a spinning cogwheel appears on screen. The boot menu is localised, so the text prompts may be slightly different depending on your locale. You will then click on Options, which will boot you into 1TR -- Apple's fully trusted playground with _real_ root access. You will be asked to authenticate yourself with your administrator user account and password. After this is done and 1TR is done `Examining disks`, find Utilities in the Menu Bar and open a Terminal window. From there, run
 
 ```shell
 /Volumes/Linux/step2.sh
