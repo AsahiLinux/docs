@@ -1,5 +1,17 @@
 This pages explains how to install Debian using three different methods: Debian Installer, livesystem and disk dump.
 
+# Supported systems
+The approach below uses the bootchain m1n1+dtbs+u-boot and than grub. This only available on the models in the following tables. If you
+have a more recent model, you can use a tethered boot described here [succinct developerquickstart](https://tg.st/u/asahi.txt) or you won't have WIFI until marcan pushed the SMC patch.
+
+| Marketing name | Device | Product | SoC |
+| -------------- | ------ | ------- | --- |
+| Mac mini (M1,2020) | Macmini9,1 | J274AP | T8103
+| MacBook Pro (13-inch, M1, 2020) | MacBookPro17,1 | J293AP | T8103
+| MacBook Air (M1, 2020) | MacBookAir10,1 | J313AP | T8103
+| iMac (24-inch (4-ports), M1, 2021) | iMac21,1 | J456AP | T8103
+| iMac (24-inch (2-ports), M1, 2021) | iMac21,2  | J457AP | T8103
+
 # Artefacts
 If you don't want to use the prebuild artefacts, you can build them yourself using the bootstrap.sh script found in [Glanzmanns m1-debian script repository](https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian)
 
