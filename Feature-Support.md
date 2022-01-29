@@ -129,7 +129,7 @@ These features are common to all M1 Pro/Max devices
 | ANE | unsupported |
 | Apple ProRes | unsupported |
 
-## MacBook Pro (13"/16", M1 Pro/Max)
+## MacBook Pro (14"/16", M1 Pro/Max)
 | Feature | Support Level |
 |---------|---------------|
 | Device tree | linux-asahi (5.17) |
