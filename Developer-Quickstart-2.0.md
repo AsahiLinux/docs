@@ -12,7 +12,7 @@ If you are an end user after nice desktop Linux experience on their Apple Silico
 * A machine of any architecture running a GNU/Linux distribution
   * Both GCC and Clang/LLVM AArch64 cross-toolchains are supported.
 
-If you are interested in low-level access to the SoC via its debug UART, you will also require a real, physical serial port solution. See [[Low-level UART]] for more information on this. This is not necessary for general kernel development or reverse engineering, but is nice for easy debugging of low-level hardware issues.
+If you are interested in low-level access to the SoC via its debug UART, you will also require a real, physical serial port solution. See [[Low level serial debug]] for more information on this. This is not necessary for general kernel development or reverse engineering, but is nice for easy debugging of low-level hardware issues.
 
 
 ## Installing m1n1 on your Apple Silicon Mac
