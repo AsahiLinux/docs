@@ -77,7 +77,7 @@ pip3 install --user pyserial construct serial.tool
 ### Preparing m1n1
 You must clone the m1n1 git repo and build it.
 ```shell
-git clone https://github.com/AsahiLinux/m1n1.git
+git clone --recursive https://github.com/AsahiLinux/m1n1.git
 cd m1n1
 make
 ```
