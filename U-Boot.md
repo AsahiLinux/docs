@@ -38,7 +38,9 @@ curl -L https://mrcn.st/alxsh | sh
 
 Wait for the system to shutdown and the LEDs turn off. Than wait another 5 seconds. Now press and do _not_ let go of the power button for 15 seconds.  In the boot picker, select 'Options' and select Utilities > Terminal. In this terminal execute. If you screw the power button holding, turn the System off by pressing the power button until it is off and start from the beginning of this paragraph.
 
-      /Volumes/Linux/step2.sh
+```
+/Volumes/Linux/step2.sh
+```
 
 Create an EFI parition because the final layout will have that
 ```
