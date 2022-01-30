@@ -42,7 +42,9 @@ umount /mnt
 
 * Boot into MacOS, capture the firmware and copy it to the usb stick, if you want to install via wifi, or elsewhere
 
-      curl -sL tg.st/u/fwx.sh | sh
+```
+curl -sL tg.st/u/fwx.sh | sh
+```
 
 * Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space, setup a 12.1 stub partition using the asahi installer and install u-boot.
 
@@ -89,13 +91,14 @@ chroot . bin/bash
 wget https://tg.st/u/k.deb
 dpkg -i k.deb
 # Fix grub
-lsblk
-# Find out the partitioning number for /boot/efi and replace the X in the next command
-grub-install --removable /dev/nvme0n1pX
-# Create grub configuration
+# We deinstall grub-efi-arm64-signed- because it creates a file fbaa64.efi
+# which makes u-boot hang.
+apt-get install grub-efi grub-efi-arm64-signed-
+grub-install --target=arm64-efi --efi-directory=/boot/efi --removable
 update-grub
-# Remove this otherwise u-boot does not load grub
-find /boot/efi -name fbaa64.efi | xargs rm
+# Set removable media to yes and nvram to no to make later grub updates work
+dpkg-reconfigure grub-efi-arm64
+
 # Install the wifi firmware if you have it on the USB stick
 mount /dev/sda1 /mnt
 tar -C /lib/firmware/ -xf /mnt/linux-firmware.tar
