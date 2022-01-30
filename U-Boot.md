@@ -36,24 +36,21 @@ select Linux and click on Restart.
 curl -L https://mrcn.st/alxsh | sh
 ```
 
-Once the system has shutdown, follow these instructions:
+Wait for the system to shutdown and the LEDs turn off. Than wait another 5 seconds. Now press and do _not_ let go of the power button for 15 seconds.  In the boot picker, select 'Options' and select Utilities > Terminal. In this terminal execute. If you screw the power button holding, turn the System off by pressing the power button until it is off and start from the beginning of this paragraph.
+
+      /Volumes/Linux/step2.sh
+
+Create an EFI parition because the final layout will have that
 ```
-1. Press and hold down the power button to power on the system.
-   * It is important that the system be fully powered off before this step,
-     and that you press and hold down the button once, not multiple times.
-     This is required to put the machine into the right mode.
-2. Release it once 'Entering startup options' is displayed.
-3. Choose Options.
-4. You will briefly see a 'macOS Recovery' dialog.
-   * If you are asked to 'Select a volume to recover',
-     then choose your normal macOS volume and click Next.
-5. Click on the Utilities menu and select Terminal.
-6. Type the following command and follow the prompts:
+diskutil list
+diskutil addPartition <identifier before free space> %EFI% LB 512MB
 ```
 
-To create the additional partitions (esp vfat and Linux root), the easiest way
-is to boot Linux from a live stick, but I'll also add instructions howto do it
-under macos.
+Create partition to hold a root filesystem
+```
+diskutil list
+diskutil addPartition <identifier before free space> %Linux% %noformat% <size>
+```
 
 # Building
 In order to get the boot object, we need to build m1n1 and u-boot and
@@ -84,7 +81,7 @@ cat m1n1/build/m1n1.bin `find u-boot -name \*.dtb` u-boot/u-boot-nodtb.bin > u-b
 
 FIXME; This should be hosted by marcan or better included in the installer
 
-You can download a prebuild versio which was built by Thomas Glanzmann from here:
+You can download a prebuild version which was built by Thomas Glanzmann from here:
 ```
 curl -LO https://tg.st/u/u-boot.macho
 curl -LO https://tg.st/u/u-boot.bin
@@ -115,21 +112,21 @@ echo '/dev/nvme0n1pX /boot/efi vfat defaults 0 0' >> /etc/fstab
 mount /boot/efi
 ```
 
-Install the right grub version:
+Install grub and make sure grub-efi-arm64-signed is not installed because it makes u-boot hang.
 
 ```
-apt-get install grub-efi
+apt-get install grub-efi grub-efi-arm64-signed-
 ```
 
-In order to make Debian install grub in the location that U-Boot expects, the
-following needs to be done. Adopt the X with your esp partition:
+Install grub where u-boot expects it by specifying the --removable flag
 
 ```
-grub-install --removable /dev/nvme0nX
+grub-install --target=arm64-efi --efi-directory=/boot/efi --removable
 ```
 
 Also run the following command and set **Force extra installation to the EFI**
-**removable media path** to **yes**.
+**removable media path** to **yes** in order to make grub updates not break your
+bootchain.
 
 ```
 dpkg-reconfigure grub-efi-arm64
