@@ -140,14 +140,6 @@ Do not forget to update-grub afterwards:
 update-grub
 ```
 
-The current version that is shipped with Debian testing refuses to be booted from U-Boot
-because one efi binary. In order to make U-boot boot the grub that is shipped
-with Debian Testing, remove this binary:
-
-```
-find /boot/efi -name fbaa64.efi | xargs rm
-```
-
 # Boot from USB
 
 When U-Boot loads it gives you two seconds to interrupt the startup by pressing
