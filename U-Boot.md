@@ -19,7 +19,7 @@ At the moment only the T8103 Devices work.
 # Prerequisit: Bootchain
 
 In order to use u-boot, you need three extra partitions: The Linux stub from
-the asahi installer, an vfat EFI System Partition (esp) partition and a root partion.
+the asahi installer, an vfat EFI System Partition (esp) and a root partion.
 Optionally a boot partition if you have an encrypted root device. Not covered here.
 
 Under MacOS, lets make space - the last number is the space that macos will
