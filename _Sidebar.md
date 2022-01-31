@@ -5,7 +5,7 @@ Project related:
 * [Recent Changes](https://github.com/AsahiLinux/docs/wiki/_history)
 
 Places to start:
-* [[Developer Quickstart]]
+* [[Developer Quickstart 2.0]]
 * [[Glossary]]
 * [[Accelerator-Engines]]
 * [[Codenames]]
