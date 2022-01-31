@@ -127,7 +127,7 @@ grub-install --target=arm64-efi --efi-directory=/boot/efi --removable
 ```
 
 Also run the following command and set **Force extra installation to the EFI**
-**removable media path** to **yes** in order to make grub updates not break your
+**removable media path** to **yes** and **update nvrma** to **no** in order to make grub updates not break your
 bootchain.
 
 ```
