@@ -1,7 +1,7 @@
 Project related:
-* [[Project status]]
-* [[Tasks]]
+* [["When will Asahi Linux be done?"]]
 * [[Feature Support]]
+* [[Tasks]]
 * [Recent Changes](https://github.com/AsahiLinux/docs/wiki/_history)
 
 Places to start:
