@@ -7,7 +7,7 @@ If you ask on any of our IRC channels when Asahi Linux will be done, you will li
 * "It already works"
 * "Never"
 
-All of these are actually correct, and the confusion sewn by having all of these correct answers thrown at you will likely just give you a headache.
+All of these are actually correct, and the confusion sown by having all of these correct answers thrown at you will likely just give you a headache.
 
 ## Why they're all correct
 The problem with asking about "doneness" in such a broad community is that everyone's idea of "done" is different. We have a large community of developers, testers, and eager users from a variety of backgrounds, all of whom have different expectations of the project.
