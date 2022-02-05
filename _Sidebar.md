@@ -17,7 +17,6 @@ Places to start:
 * [[U-Boot]]
 * [[DesktopKernel]]
 * [[Debian]]
-* [[Untethered-m1n1]]
 
 Hardware Documentation:
 * [[HW:AIC]]
@@ -36,3 +35,4 @@ Software Documentation:
 * [[SW:NVRAM]]
 * [[SW:Storage]]
 * [[SW:-DT-bindings]]
+* [[Untethered-m1n1]]
