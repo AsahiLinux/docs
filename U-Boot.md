@@ -16,8 +16,7 @@ At the moment only the T8103 Devices work.
 | iMac (24-inch (4-ports), M1, 2021) | iMac21,1 | J456AP | T8103
 | iMac (24-inch (2-ports), M1, 2021) | iMac21,2  | J457AP | T8103
 
-If you're device is not supported, you can use the tethered boot option. Until someone has enabled PCIe in the kernel, you won't have wifi.
-See here for instructions: [[Untethered-m1n1]]
+If you're device is not supported, you can use [[Untethered-m1n1]]. Until someone has enabled PCIe in the kernel, you won't have wifi.
 
 # Prerequisit: Bootchain
 
