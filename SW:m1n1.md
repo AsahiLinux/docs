@@ -3,8 +3,8 @@
 * Needs the  **aarch64-linux-gnu-gcc** compiler installed and artwork submodule
 * Build with:
 ```
-git submodule init
-git submodule update
+git clone --recursive https://github.com/AsahiLinux/m1n1.git
+cd m1n1
 make
 ```
   * Should give you a .macho MacOS binary **m1n1.macho**
