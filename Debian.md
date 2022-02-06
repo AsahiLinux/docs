@@ -3,7 +3,7 @@ This pages explains how to install Debian using three different methods: Debian 
 # Supported systems
 The approach below uses the bootchain m1n1+dtbs+u-boot and than grub. This is only available on the models in the following table. If you
 have a more recent model, you can use a tethered boot described here [succinct developerquickstart](https://tg.st/u/asahi.txt). You can also
-concat the kernel directly to m1n1 and have  a system that boots by itself, but then you won't have internal wifi until marcan has pushed the SMC branch and kernel updates are painful because you have to boot in 1tr and 'kmutil' a new boot object.
+concat the kernel directly to m1n1 and have a system that boots by itself, see [[Untethered-m1n1]]. Kernel updates are painful because you have to boot in 1tr and 'kmutil' a new boot object.
 
 | Marketing name | Device | Product | SoC |
 | -------------- | ------ | ------- | --- |
