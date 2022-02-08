@@ -17,7 +17,7 @@ make modules_install
 make -j 16 bindeb-pkg
 ```
 
-Do not forget to install the kernel or at least copy over the modules on the system that you're booting otherwise you will have no network drivers.
+Do not forget to install the kernel or at least copy over the modules on the system that you're booting otherwise you will have no network drivers and no framebuffer.
 
 # Creating that boot object
 
