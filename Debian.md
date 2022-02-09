@@ -1,8 +1,9 @@
 This pages explains how to install Debian using three different methods: Debian Installer, livesystem and disk dump.
 
-# Supported systems
+# Tripwires
 All systems are supported. But currently the USB-A Port on the Mac Mini will not work in u-boot and grub. Mark Kettenis is working on it,
-but first the other patches need to land in u-boot.
+but first the other patches need to land in u-boot. The two additional USB-3 ports on the iMac 4 port model also don't work in u-boot,
+grub and Linux.
 
 # Artefacts
 If you don't want to use the prebuild artefacts, you can build them yourself using the bootstrap.sh script found in [Glanzmanns m1-debian script repository](https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian)
