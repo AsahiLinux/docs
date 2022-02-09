@@ -4,19 +4,9 @@ or an USB stick. Grub can than load a Linux kernel and initird to boot Linux. U-
 also enables the wifi pcie device. U-Boot will try to load **EFI/BOOT/BOOTAA64.EFI**.
 Make sure that grub or any other boot loader is located there.
 
-# Prerequisit: Supported SOC
+# Tripwires
 
-At the moment only the T8103 Devices work.
-
-| Marketing name | Device | Product | SoC |
-| -------------- | ------ | ------- | --- |
-| Mac mini (M1,2020) | Macmini9,1 | J274AP | T8103
-| MacBook Pro (13-inch, M1, 2020) | MacBookPro17,1 | J293AP | T8103
-| MacBook Air (M1, 2020) | MacBookAir10,1 | J313AP | T8103
-| iMac (24-inch (4-ports), M1, 2021) | iMac21,1 | J456AP | T8103
-| iMac (24-inch (2-ports), M1, 2021) | iMac21,2  | J457AP | T8103
-
-If you're device is not supported, you can use [[Untethered-m1n1]].
+The USB-a ports on the mac mini will not work in u-boot and grub.
 
 # Prerequisit: Bootchain
 
