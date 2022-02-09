@@ -8,6 +8,12 @@ Make sure that grub or any other boot loader is located there.
 
 The USB-a ports on the mac mini will not work in u-boot and grub. The two additional USB-3 ports on the iMac 4 port model also don't work.
 
+In order that the internal keyboard work on pro/max models you need the following two **kernel** patches:
+
+```
+https://tg.st/u/256f5efbf23ff68c489dad92f99d1cecfb021729.patch
+https://tg.st/u/8737955a0263d09ffa8550658dfcac1df3d0665c.patch
+```
 # Prerequisit: Bootchain
 
 In order to use u-boot, you need three extra partitions: The Linux stub from
