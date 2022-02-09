@@ -6,7 +6,7 @@ Make sure that grub or any other boot loader is located there.
 
 # Tripwires
 
-The USB-a ports on the mac mini will not work in u-boot and grub.
+The USB-a ports on the mac mini will not work in u-boot and grub. The two additional USB-3 ports on the iMac 4 port model also don't work.
 
 # Prerequisit: Bootchain
 
