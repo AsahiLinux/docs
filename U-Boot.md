@@ -48,27 +48,22 @@ diskutil addPartition <identifier before free space> %Linux% %noformat% <size>
 
 # Building
 In order to get the boot object, we need to build m1n1 and u-boot and
-concatenate the two and the device trees. m1n1 automatically picks the
-right device tree for the model you're booting it on.
-
-FIXME: Add instructions to crosscompile
-FIXME: Add dependencies
+concatenate the two and the device trees from the kernel. m1n1 automatically
+picks the right device tree for the model you're booting it on.
 
 ```
-git clone https://github.com/kettenis/u-boot
-cd u-boot/
-git checkout apple-m1-m1n1-nvme
+git clone --depth 1 https://github.com/jannau/u-boot -b x2r10g10b10
+cd u-boot
 make apple_m1_defconfig
-make
-cd ..
+make -j 16
 
 git clone --recursive https://github.com/AsahiLinux/m1n1.git
 cd m1n1
 make -j
 cd ..
 
-cat m1n1/build/m1n1.macho `find u-boot -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.macho
-cat m1n1/build/m1n1.bin `find u-boot -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.bin
+cat m1n1/build/m1n1.macho `find linux/arch/arm64/boot/dts/apple/ -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.macho
+cat m1n1/build/m1n1.bin `find linux/arch/arm64/boot/dts/apple/ -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.bin
 ```
 
 # Binary
