@@ -97,7 +97,14 @@ kmutil configure-boot -c u-boot.macho -v /Volumes/Linux
 kmutil configure-boot -c u-boot.bin --raw --entry-point 2048 --lowest-virtual-address 0 -v /Volumes/Linux
 ```
 
-# Distribution Example: Debian
+# Arch
+Move Image.gz to /boot
+
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+# Debian
 
 The esp vfat partition should be mounted to /boot/efi. Replace the X with your partition:
 
