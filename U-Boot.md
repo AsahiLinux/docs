@@ -156,4 +156,5 @@ run bootcmd_usb0
 boot
 reset
 poweroff
+ls nvme 0:4 /
 ```
