@@ -4,6 +4,8 @@ or an USB stick. Grub can than load a Linux kernel and initird to boot Linux. U-
 also enables the wifi pcie device. U-Boot will try to load **EFI/BOOT/BOOTAA64.EFI**.
 Make sure that grub or any other boot loader is located there.
 
+[U-Boot Installation Video](https://tg.st/u/asahi-installer-u-boot.mp4)
+
 # Tripwires
 
 The USB-a ports on the mac mini will not work in u-boot and grub. The two additional USB-3 ports on the iMac 4 port model also don't work.
