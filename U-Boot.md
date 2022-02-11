@@ -1,7 +1,6 @@
 U-Boot in combination with m1n1 and device trees can be used to load grub or
 any other efi boot loader from vfat esp partition located on the internal NVMe drive
-or an USB stick. Grub can than load a Linux kernel and initird to boot Linux. U-Boot
-also enables the wifi pcie device. U-Boot will try to load **EFI/BOOT/BOOTAA64.EFI**.
+or an USB stick. Grub can than load a Linux kernel and initird to boot Linux. U-Boot will try to load **EFI/BOOT/BOOTAA64.EFI**.
 Make sure that grub or any other boot loader is located there.
 
 [U-Boot Installation Video](https://tg.st/u/asahi-installer-u-boot.mp4)
