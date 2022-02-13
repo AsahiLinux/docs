@@ -54,9 +54,5 @@ Here are some numbers from some experiment with macOS 11.5.2 and m1n1 version co
 7. You can now run macOS in a similar manner as shown above (just no debug DWARF):
 ```python3 proxyclient/tools/run_guest.py <PATH_TO_EXTRACTED_MACHO> -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1"```
 
-## Notes
-
- * Put ```cpus=1``` into boot arguments (the string beginning with ```debug=0x14e```) to limit macOS to one CPU. Putting in ```cpus=8``` has been reported to crash macOS, so do not specify ```cpus=``` if you wish macOS to run on all cores.
-
 # Sources
 Source for the kernelcache creation: https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html
