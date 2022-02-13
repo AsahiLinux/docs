@@ -28,7 +28,7 @@ mkfs.vfat ${DEVICE}1
 
 mount /dev/sdX1 /mnt
 cd /mnt
-curl -sL https://tg.st/u/m1-d-i.tar | tar -C /mnt -xf -
+curl -sL https://tg.st/u/m1-d-i.tar | tar -xf -
 umount /mnt
 ```
 
