@@ -43,7 +43,7 @@ curl -sL tg.st/u/fwx.sh | sh
 * Reboot with the USB stick connected, the Debian installer should automatically start, if it doesn't load the kernel and initrd manually, you can use tab. For x try 0,1,2,...
 
 ```
-linux (hdX,msdos1)/vmlinuz expert
+linux (hdX,msdos1)/vmlinuz expert net.ifnames=0
 initrd (hd0,msdos1)/initrd.gz
 boot
 ```
@@ -51,19 +51,7 @@ boot
 * If you need wifi, on the first installer page press **Fn + Option + F2** to change to the second terminal, press **return** to activate the console, and issue the following commands to configure wifi
 
 ```
-# change the ssid and psk
-nano /etc/wpa.conf
-rmmod brcmfmac
-rmmod brcmutil
-mount /dev/sda1 /mnt
-tar -C /lib/firmware/ -xf /mnt/linux-firmware.tar
-umount /mnt
-modprobe brcmfmac
-vim /etc/wpa.conf
-wpa_supplicant -i <interface> -c /etc/wpa.conf
-# If WPA supplicant does not associate, than run rerun the
-# rmmod, modprobe, and wpa_supplicant commands until it does.
-# I always had to. No idea why.
+./wifi.sh
 ```
 
 * Once wifi is associated switch back to the primary console by pressing **Fn + Option + F1**.
@@ -76,28 +64,7 @@ wpa_supplicant -i <interface> -c /etc/wpa.conf
 * When you get an error about grub failing, switch to the third console by pressing **Fn + Option + F3**, press **return** to active the console, and issue the following commands:
 
 ```
-# Switch into the system that is being installed
-cd /target
-chroot . bin/bash
-# Install the kernel
-wget https://tg.st/u/k.deb
-dpkg -i k.deb
-# Fix grub
-# We deinstall grub-efi-arm64-signed- because it creates a file fbaa64.efi
-# which makes u-boot hang.
-apt-get install grub-efi grub-efi-arm64-signed-
-grub-install --target=arm64-efi --efi-directory=/boot/efi --removable
-update-grub
-# Set removable media to yes and nvram to no to make later grub updates work
-dpkg-reconfigure grub-efi-arm64
-
-# Install the wifi firmware if you have it on the USB stick
-mount /dev/sda1 /mnt
-tar -C /lib/firmware/ -xf /mnt/linux-firmware.tar
-umount /mnt
-# Leave the system that is being installed
-exit
-cd /
+./boot.sh
 ```
 
 * Switch back to the installer console by pressing **Fn + Option + F1** and continue the installer besides errors. The system will reboot into the newly installed system.
