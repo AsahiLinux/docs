@@ -11,7 +11,7 @@ If you don't want to use the prebuild artefacts, you can build them yourself usi
 # Debian Installer
 [Video Recording](https://tg.st/u/m1-d-i.mp4)
 
-* Prerequisits
+* Prerequisites
 
     * USB Stick. this is what this guide assumes, but it is also possible to run the Debian installer from another PC using m1n1 chainloading. But if you know how to do that, you probably don't need this guide.
     * If possible us an Ethernet Dongle, less typing.
@@ -104,7 +104,7 @@ cd /
 
 # Livesystem
 [Video Recording](https://tg.st/u/live.mp4)
-* Prerequisits
+* Prerequisites
 
     * USB Stick. this is what this guide assumes, but it is also possible to run the Debian installer from another PC using m1n1 chainloading. But if you know how to do that, you probably don't need this guide.
     * If possible us an Ethernet Dongle, less typing.
