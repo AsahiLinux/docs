@@ -18,7 +18,7 @@ kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -V development \
 ```
 `-B` designates the output file, our kernel cache is written to `dev.kc.macho` in the home directory
 
-## Preparing the macOS Volume by disabling securoty features
+## Preparing the macOS Volume by disabling security features
 1. Start into 1tr and start a terminal
 2. Disable most security feature in the boot policy: `bputil -nkcas`
 3. Disable SIP (bputil resets it): `csrutil disable`
