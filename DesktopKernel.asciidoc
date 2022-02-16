@@ -5,12 +5,17 @@ This pages explain how to build a desktop kernel with the latest features. It al
 # Install Build Dependencies
 sudo apt install -y gcc-aarch64-linux-gnu device-tree-compiler
 
-git clone --depth 1 https://github.com/AsahiLinux/linux -b smc/work
+git clone --depth 1 https://github.com/jannau/linux -b spmi/work
 cd linux
 curl -s https://tg.st/u/9ce9060dea91951a330feeeda3ad636bc88c642c.patch | git am -
 curl -s https://tg.st/u/5nly | git am -
 curl -s https://tg.st/u/0wM8 | git am -
-curl -s https://tg.st/u/m1-config-smc-2022-02-06 > .config
+curl -s https://tg.st/u/256f5efbf23ff68c489dad92f99d1cecfb021729.patch | git am -
+curl -s https://tg.st/u/8737955a0263d09ffa8550658dfcac1df3d0665c.patch | git am -
+curl -s https://tg.st/u/0001-4k-iommu-patch.patch | git am -
+curl -s https://tg.st/u/0001-21-02-axboe-grabbing-anv-lock-around-the-issue-does-.patch | git am -
+curl -s https://tg.st/u/config-2022-02-16 > .config
+
 
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- olddefconfig
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j64 Image.gz modules dtbs
@@ -60,6 +65,12 @@ CONFIG_USB_DWC3_PCI=y
 CONFIG_NLMON=m
 CONFIG_CFG80211_WEXT=y
 CONFIG_MMC_SDHCI_PCI=y
+CONFIG_ARM_APPLE_SOC_CPUFREQ=y
+CONFIG_RTC_DRV_MACSMC=y
+CONFIG_NVMEM_SPMI_MFD=y
+CONFIG_MFD_APPLE_SPMI_PMU=y
+CONFIG_SPMI_APPLE=y
+CONFIG_POWER_RESET_MACSMC=y
 ```
 
 The following kernel options should be disabled because otherwise loading the right firmware takes forever due to a timeout:
