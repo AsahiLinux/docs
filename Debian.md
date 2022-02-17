@@ -54,14 +54,14 @@ boot
 ./wifi.sh
 ```
 
-* Once wifi is associated switch back to the primary console by pressing **Fn + Option + F1**.
+* Switch back to the primary console by pressing **Fn + Option + F1**.
 
 * Follow the installer along until you end up in the partitioning menu
 
     * Create one 256M EFI system partition. 512M and 1G partitions fail with an error about wrong clustersize.
     * Create another partition for root
 
-* When you get an error about grub failing, switch to the third console by pressing **Fn + Option + F3**, press **return** to active the console, and issue the following commands:
+* When you get an error about grub failing, switch to the third console by pressing **Fn + Option + F2**, press **return** to active the console unless already activated, and issue the following commands:
 
 ```
 ./boot.sh
