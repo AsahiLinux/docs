@@ -71,6 +71,11 @@ CONFIG_MFD_APPLE_SPMI_PMU=y
 CONFIG_SPMI_APPLE=y
 CONFIG_POWER_RESET_MACSMC=y
 CONFIG_SND_SOC_APPLE_SILICON=y
+CONFIG_GPIO_MACSMC=y
+CONFIG_CHARGER_MACSMC=y
+CONFIG_APPLE_PLATFORMS=y
+CONFIG_APPLE_SMC=y
+CONFIG_APPLE_SMC_RTKIT=y
 ```
 
 The following kernel options should be disabled because otherwise loading the right firmware takes forever due to a timeout:
