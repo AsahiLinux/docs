@@ -53,7 +53,7 @@ These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 | 10Gbps Ethernet | linux-asahi (5.17) |
 | Internal Speaker | linux-asahi |
 
-## MacBook Pro (13", M1, 2020)
+## MacBook Pro (13-inch, M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
 | Device tree | linux-asahi (5.17) |
@@ -64,8 +64,9 @@ These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 | Backlight | unsupported |
 | Webcam | unsupported |
 | Internal speakers | unsupported |
+| Battery/charge monitoring | linux-asahi |
 
-## MacBook Air (13", M1, 2020)
+## MacBook Air (13-inch, M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
 | Device tree | linux-asahi (5.17) |
@@ -75,6 +76,7 @@ These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 | Backlight | unsupported |
 | Webcam | unsupported |
 | Internal speakers | unsupported |
+| Battery/charge monitoring | linux-asahi |
 
 ## iMac (M1, 2020)
 | Feature | Support Level |
@@ -129,7 +131,7 @@ These features are common to all M1 Pro/Max devices
 | ANE | unsupported |
 | Apple ProRes | unsupported |
 
-## MacBook Pro (14"/16", M1 Pro/Max)
+## MacBook Pro (14/16-inch, M1 Pro/Max, 2021)
 | Feature | Support Level |
 |---------|---------------|
 | Device tree | linux-asahi (5.17) |
@@ -142,3 +144,4 @@ These features are common to all M1 Pro/Max devices
 | Internal speakers | unsupported |
 | HDMI Out | unsupported |
 | SD Card Reader | linux-asahi (5.17) |
+| Battery/charge monitoring | linux-asahi |
