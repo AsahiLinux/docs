@@ -97,11 +97,6 @@ In this example, we pass m1n1 a gzipped kernel and the Device Tree for the 14" M
 ## Some tips
 * If you need to get back to macOS power down the machine, bring up the startup options by holding the power button and select Macintosh HD.
 * When passing `root=` to your kernel, use a UUID. macOS updates sometimes shift the partition numbers.
-* Devices on the PCIe bus (Ethernet and USB-A on the Mac Mini, WiFi on the MacBooks) can be enabled by running 
-```shell
-python3 proxyclient/experiments/pcie_enable_devices.py
-``` 
-from the host machine **before** uploading a kernel.
 * MacBooks will charge under Linux, there is no need to reboot into macOS to charge them.
 * Power management does not work. Shutting down from Linux will halt execution, but will not power down the machine. Once your console cursor stops blinking, it is safe to power off the machine by holding in the power button. 
 
@@ -128,5 +123,3 @@ curl [host machine hostname]:8000/payload.bin -o payload.bin
 kmutil configure-boot -c payload.bin --raw --entry-point 2048 --lowest-virtual-address 0 -v /Volumes/Linux
 ```
 You will be asked once again to authenticate yourself, and after a moment you will be able to reboot straight into Linux, bypassing the need for booting tethered to your host machine.
-
-**IMPORTANT NOTE**: You will _not_ be able to enable PCI Express devices via this method. If your device has an M1 (_not_ Pro and _not_ Max) SoC, it is highly recommended that you follow the guide in [[U-Boot]] for untethered booting, as U-Boot brings up PCIe. M1 Pro and Max support is on the way.
