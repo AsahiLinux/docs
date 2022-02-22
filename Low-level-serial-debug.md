@@ -61,7 +61,7 @@ Note that most FUSB302 breakout boards will not usefully break out the Type C pi
 
 Go to the [vdmtool](https://github.com/AsahiLinux/vdmtool) repository for more information and a wiring list. Documentation is a bit sparse at the moment. You can ask us on IRC (OFTC/#asahi) if you need help.
 
-1.2V compatible UART interfaces are relatively rare. 1.8V ones will usually work for input (RX); you can use a resistor divider to step down the TX voltage (`TX -- 470Ω -+- 220Ω -- GND` will step down 1.8V TX to 1.22V at the `+` point).
+1.2V compatible UART interfaces are relatively rare. 1.8V ones will usually work for input (RX); you can use a resistor divider to step down the TX voltage (`TX -- 220Ω -+- 470Ω -- GND` will step down 1.8V TX to 1.22V at the `+` point).
 
 The default `vdmtool` code will put serial on the SBU1/SBU2 pins. At the device side connector (no cable), TX (output from the Mac) will be on the SBU1 pin on the connector side that has the active CC line (you should only connect one), and RX (input to the Mac) will be directly opposite the CC line.
 
