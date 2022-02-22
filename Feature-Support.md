@@ -34,7 +34,7 @@ These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 | SMC | linux-asahi |
 | 3.5mm jack | linux-asahi [line out only] |
 | Sound capture | unsupported |
-| ARM SPMI | unsupported |
+| ARM SPMI | linux-asahi |
 | RTC | linux-asahi |
 | SEP | unsupported |
 | TouchID | unsupported |
@@ -94,7 +94,7 @@ These features are common to all M1 Pro/Max devices
 |---------|---------|
 | Bringup | 5.17 |
 | ARM PMU | linux-asahi (5.18) |
-| cpufreq | needs rewrite |
+| cpufreq | linux-asahi |
 | CPU power gating | in review |
 | System sleep | in review |
 | UART | 5.13 |
@@ -116,11 +116,11 @@ These features are common to all M1 Pro/Max devices
 | USB3 (via TB ports) | unsupported |
 | WiFi | linux-asahi |
 | Bluetooth | unsupported |
-| SMC | unsupported |
+| SMC | linux-asahi |
 | 3.5mm jack | unsupported |
 | Sound capture | unsupported |
-| ARM SPMI | unsupported |
-| RTC | unsupported |
+| ARM SPMI | linux-asahi |
+| RTC | linux-asahi |
 | SEP | unsupported |
 | TouchID | unsupported |
 | AVD | unsupported |
