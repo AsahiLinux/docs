@@ -9,3 +9,4 @@ This wiki page lists software known to have issues with 16k page size (default o
 | f2fs      | ❌     |                                                 |                                                        |
 | lvm2 | ❌ | |Seems to work, but will throw warnings. Examples: [1 (pvcreate)](https://sourceware.org/git/?p=lvm2.git;a=blob;f=lib/metadata/metadata.c;h=1cda1888f35698c43a0dbc0ca4d8693730ad9a0f;hb=HEAD#l134) [2 (pvck)](https://sourceware.org/git/?p=lvm2.git;a=blob;f=tools/pvck.c;h=5273da63ca4ea7f527972a392df998dcc88692cb;hb=HEAD#l1150) |
 | fex-emu | ❌ | https://github.com/FEX-Emu/FEX/issues/1221 | Looks as though Ryan has no intention to ever properly support 16k pages. Builds fine but will not run, complaining about "incorrect" system page size. |
+| emacs | ✅ | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fix to appear in the yet-unreleased emacs-28 |
