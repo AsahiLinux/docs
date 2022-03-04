@@ -21,14 +21,19 @@ In the boot picker, select Debian and click Restart.
 
 After the system powers off, press and hold the power button until you see the Options wheels icon, than release it and select Debian Linux. Enter your macos username and password when prompted.
 
-After that you have a Debian bookworm testing. Wifi should work, but you need to edit /etc/wpa/wpa_supplicant.conf for your wifi credentials. If you use a system with an ethernet card, you need to edit /etc/network/interfaces. You find out the name of the interface
+After that you have a Debian bookworm (testing). You can log in with username root without password. Wifi should work, but you need to edit /etc/wpa/wpa_supplicant.conf for your wifi credentials. If you use a system with an ethernet card, you need to edit /etc/network/interfaces. You find out the name of the interface
 with
 
 ```
 ip link show
 ```
 
-The hostname of the system is live, in order to change it you need to edit /etc/hosts and /etc/hostname.
+The hostname of the system is live, in order to change it you need to edit /etc/hosts and /etc/hostname. Also set a root password:
+
+```
+passwd
+pwconv
+```
 
 # Debian Installer
 [Video Recording](https://tg.st/u/m1-d-i.mp4)
