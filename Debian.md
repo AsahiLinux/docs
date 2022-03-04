@@ -10,6 +10,8 @@ If you don't want to use the prebuild artefacts, you can build them yourself usi
 
 # Soon to be released Asahi installer
 
+[Video Recording](https://tg.st/u/debian_asahi_installer.mp4)
+
 * Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space.
 
 * Run the asahi installer and select Debian (2):
