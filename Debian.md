@@ -8,6 +8,28 @@ grub and Linux.
 # Artefacts
 If you don't want to use the prebuild artefacts, you can build them yourself using the bootstrap.sh script found in [Glanzmanns m1-debian script repository](https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian)
 
+# Soon to be released Asahi installer
+
+* Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space.
+
+* Run the asahi installer and select Debian (2):
+```
+curl -sL tg.st/u/bootstrap.sh | sh
+```
+
+In the boot picker, select Debian and click Restart.
+
+After the system powers off, press and hold the power button until you see the Options wheels icon, than release it and select Debian Linux. Enter your macos username and password when prompted.
+
+After that you have a Debian bookworm testing. Wifi should work, but you need to edit /etc/wpa/wpa_supplicant.conf for your wifi credentials. If you use a system with an ethernet card, you need to edit /etc/network/interfaces. You find out the name of the interface
+with
+
+```
+ip link show
+```
+
+The hostname of the system is live, in order to change it you need to edit /etc/hosts and /etc/hostname.
+
 # Debian Installer
 [Video Recording](https://tg.st/u/m1-d-i.mp4)
 
