@@ -20,8 +20,8 @@ These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 | USB-PD | 5.16 |
 | Power management | linux-asahi (5.17) |
 | NVMe | linux-asahi |
-| SPI | linux-asahi (5.17) |
-| SPI NOR | linux-asahi (5.17) |
+| SPI | linux-asahi |
+| SPI NOR | linux-asahi |
 | Primary display (SimpleFB) | 5.13 |
 | Primary display (SimpleDRM) | linux-asahi (5.17) |
 | DCP | needs cleanup |
@@ -107,8 +107,8 @@ These features are common to all M1 Pro/Max devices
 | USB-PD | 5.16 |
 | Power management | linux-asahi (5.17) |
 | NVMe | linux-asahi |
-| SPI | linux-asahi (5.17) |
-| SPI NOR | linux-asahi (5.17) |
+| SPI | linux-asahi |
+| SPI NOR | linux-asahi |
 | Primary display (SimpleFB) | 5.13 |
 | Primary display (SimpleDRM) | linux-asahi (5.17) |
 | DCP | needs cleanup |
