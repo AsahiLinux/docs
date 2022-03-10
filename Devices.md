@@ -12,3 +12,5 @@ This is a list of the Asahi Linux targeted support models. The Product and SoC a
 | MacBook Pro (16-inch, M1 Max, 2021) | MacBookPro18,2 | J316cAP | T6001
 | MacBook Pro (14-inch, M1 Pro, 2021) | MacBookPro18,3 | J314sAP | T6000
 | MacBook Pro (14-inch, M1 Max, 2021) | MacBookPro18,4 | J314cAP | T6001
+| Mac Studio (M1 Max, 2022) | Mac13,1 | J375cAP | T6001
+| Mac Studio (M1 Ultra, 2022) | Mac13,2 | J375dAP | T6002
