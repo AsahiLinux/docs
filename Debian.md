@@ -12,30 +12,74 @@ If you don't want to use the prebuild artefacts, you can build them yourself usi
 
 [Video Recording](https://tg.st/u/debian_asahi_installer.mp4)
 
-* Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space.
+* Poweroff your Mac. Hold and press the power button until you see a wheel chain and Options written below. Approx 20 seconds.
+
+* In the boot picker, choose Options. Once loaded, open a Terminal under Utilities > Terminal
+
+* Lets make space - the last number is the space that macos will occupy. It is
+recommended to have at least 70 GB. I recommend on leaving at least 100 GB for
+macos.
+
+```
+diskutil apfs resizeContainer disk0s2 200GB
+```
 
 * Run the asahi installer and select Debian (2):
 ```
 curl -sL tg.st/u/bootstrap.sh | sh
 ```
 
-In the boot picker, select Debian and click Restart.
+* Follow the installer, to install Debian.
 
-After the system powers off, press and hold the power button until you see the Options wheels icon, than release it and select Debian Linux. Enter your macos username and password when prompted.
-
-After that you have a Debian bookworm (testing). You can log in with username root without password. Wifi should work, but you need to edit /etc/wpa/wpa_supplicant.conf for your wifi credentials. If you use a system with an ethernet card, you need to edit /etc/network/interfaces. You find out the name of the interface
-with
-
-```
-ip link show
-```
-
-The hostname of the system is live, in order to change it you need to edit /etc/hosts and /etc/hostname. Also set a root password:
+* Once Debian is booted log in as root without password and set a root password
 
 ```
 passwd
 pwconv
 ```
+
+* Configure wifi by editing the wpa_supplicant.conf, enabling the interface and remove the # before allow-hotplug to enable it during boot.
+
+```
+vi /etc/wpa/wpa_supplicant.conf
+ifup wlp1s0f0
+vi /etc/network/interfaces
+```
+* Resize the rootfs by finding out the end of the free space, extend the partition and than the filesystem.
+
+```
+parted /dev/nvme0n1
+print free
+reseizepartition 5 <end of free space>
+quit
+resize2fs /dev/nvme0n1p5
+```
+
+* Reboot to see if grub was correctly installed
+```
+reboot
+```
+
+* Install a desktop environment for example blackbox
+
+```
+apt-get install -y xinit blackbox xterm firefox-esr lightdm
+```
+
+* Create yourself an unprivileged user
+
+```
+useradd -m -c 'Firstname Lastname' -s /bin/bash <username>
+passwd <username>
+````
+
+* Optional install sshd. You can not log in as root, but only with your unprivileged user
+
+```
+apt update
+apt install -y openssh-server
+```
+
 
 # Debian Installer
 [Video Recording](https://tg.st/u/m1-d-i.mp4)
