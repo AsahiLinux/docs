@@ -9,7 +9,7 @@
   * **disk0s2 = disk3**: "Container" - macOS install
     * **disk3s1**: "System" - OS (root filesystem, sealed)
     * **disk3s2**: "Preboot" - iBoot2 (OS loader), iBoot-loaded firmwares, Darwin kernelcache, firmwares, devicetree, other preboot stuff
-    * **disk3s3**: "Recovery" - OS-paired RecoveryOS: iBoot2, firmwwares, Darwin kernelcache, ramdisk image
+    * **disk3s3**: "Recovery" - OS-paired RecoveryOS: iBoot2, firmwares, Darwin kernelcache, ramdisk image
     * **disk3s4**: "Update" - macOS update temp storage and logs
     * **disk3s5**: "Data" - user data (root filesystem, merged). This volume's UUID defines the identity of the OS install.
     * **disk3s6**: "VM" - swap partition (when needed)
