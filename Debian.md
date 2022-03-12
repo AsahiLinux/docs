@@ -161,8 +161,23 @@ mkfs.vfat ${DEVICE}1
 
 mount /dev/sdX1 /mnt
 cd /mnt
-curl -sL https://tg.st/u/asahi-debian-live.tar | tar -C /mnt -xf -
+curl -sL https://tg.st/u/asahi-debian-live.tar | tar -xf -
 umount /mnt
+```
+
+In order to format the usb stick under Macos, open the disk utility, right-click on the usb stick (usually the lowest device in the list) and select erase. Choose the following options:
+
+```
+Name: LIVE
+Format: MS-DOS (FAT)
+Scheme: Master Boot Record
+```
+
+Than open a terminal, and run the following commands:
+```
+sudo su -
+cd /Volumes/LIVE
+curl -sL https://tg.st/u/asahi-debian-live.tar | tar -xf -
 ```
 
 * Boot into MacOS, capture the firmware and copy it to the usb stick, if you don't have done that already.
