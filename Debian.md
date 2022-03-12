@@ -147,7 +147,7 @@ boot
 * Prerequisites
 
     * USB Stick. this is what this guide assumes, but it is also possible to run the Debian installer from another PC using m1n1 chainloading. But if you know how to do that, you probably don't need this guide.
-    * If possible us an Ethernet Dongle, less typing.
+    * If possible use an Ethernet Dongle, less typing.
 
 * Create USB Stick with a single vfat partition on it and untar the modified Debian installer on it. Instructions for Linux:
 
