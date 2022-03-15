@@ -48,10 +48,7 @@ vi /etc/network/interfaces
 * Resize the rootfs by finding out the end of the free space, extend the partition and than the filesystem.
 
 ```
-parted /dev/nvme0n1
-print free
-reseizepartition 5 <end of free space>
-quit
+sgdisk -n 0:0
 resize2fs /dev/nvme0n1p5
 ```
 
