@@ -45,7 +45,7 @@ vi /etc/wpa/wpa_supplicant.conf
 ifup wlp1s0f0
 vi /etc/network/interfaces
 ```
-* Resize the rootfs by finding out the end of the free space, extend the partition and than the filesystem.
+* Extend the root partition and filesystem
 
 ```
 sgdisk -n 0:0
