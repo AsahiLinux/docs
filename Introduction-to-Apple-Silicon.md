@@ -142,16 +142,6 @@ In addition, there is a "special" boot flow that grants additional capabilities.
 
 If the user chooses "Options", they will be presented with the recoveryOS menu, as above. When booted this way, it is called "One True recoveryOS" (1TR), and it has additional powers granted to it by SEP (secure enclave) firmware. Additionally, this recoveryOS will be considered "paired" with the OS container it belongs to, and be able to perform specific operations on that OS. In particular, this mode is required in order to install a custom OS kernel.
 
-## Boot Picker
-
-The built-in boot picker is a macOS application running under recoveryOS, and it scans internal and external volumes for bootable OSes. There are two things that can show up on the list: OS installs, and OS installers. OS installs exist in APFS containers following the expected OS layout (multiple OSes can be present in one APFS container, as subvolumes and subdirectories in certain subvolumes).
-
-Since iBoot has no mechanism for booting from external devices, upon selecting an external OS to boot, the boot picker will copy that OS's Preboot structure into NVMe, create a Boot Policy for it, and then configure iBoot to boot from that instead. The copied parts include everything up to the XNU kernel itself, including iBoot2 and firmware. This means that external storage is only initialized once XNU is already running, and it will merely mount its root filesystem from there, having been booted from NVMe. Note that, since this process requires the creation of a new Boot Policy (that will not be in the appropriate security state), it cannot be used to boot third-party OSes installed on external drives in this manner (at least not without further manual action, but it's unclear whether this would be possible at all).
-
-OS installers are identified by a magic `.IAPhysicalMedia` plist at the root of the volume, and may exist on volumes of any supported filesystem (APFS and FAT32 both work). That plist specifies a macOS application bundle present in the volume to launch. When the volume is selected, boot proceeds into the main recoveryOS environment (including authentication mandated by FileVault, if enabled), and then automatically launches the application bundle. This happens in 1TR mode if the boot picker was invoked via the appropriate power button hold gesture. This feature is currently used in the Asahi Linux installer to launch its second stage in a more user-friendly manner, and could be used to ship third-party installers as USB install images (but not ones usable as-is completely offline, as they would still require non-redistributable Apple components).
-
-One consequence of the boot picker being implemented as a macOS application behind the scenes is that is has full accessibility support (including VoiceOver), which is rather unique.
-
 ## SEP (Secure Enclave Processor)
 
 The SEP is the Mac's equivalent of a TPM, and is in charge of all security-critical operations such as validating the creation and modification of Boot Policies. It has knowledge of the security state of the system, including whether it is in 1TR, plain recoveryOS, or regular OS boot.
@@ -191,6 +181,16 @@ Boot policies can be managed using the `bputil` command from macOS/recoveryOS/1T
 fuOS is Apple's term for a third-party OS kernel. In order to configure fuOS boot, an existing OS has to first be downgraded to Permissive Security, and then a custom kernel image can be installed. The image is installed using the `kmutil` command and it will modify the Boot Policy to insert its hash into it, thereby preserving the secure boot chain. iBoot2 will only load this specific fuOS image; replacing or upgrading it requires booting into 1TR and running `kmutil` again. This operation requires machine owner credentials.
 
 Custom kernel images can be flat ARM64 executable images; the entrypoint and (virtual; mostly meaningless) load address are specified when the image is configured. Previously Mach-O binaries were required, but it seems Apple added this feature in 12.1 in order to make life easier for us (as the Mach-O file format requirements changed in that version, breaking our existing tooling).
+
+## Boot Picker
+
+The built-in boot picker is a macOS application running under recoveryOS, and it scans internal and external volumes for bootable OSes. There are two things that can show up on the list: OS installs, and OS installers. OS installs exist in APFS containers following the expected OS layout (multiple OSes can be present in one APFS container).
+
+Since iBoot has no mechanism for booting from external devices, upon selecting an external OS to boot, the boot picker will copy that OS's Preboot structure into NVMe, create a Boot Policy for it, and then configure iBoot1 to boot from that instead. The copied parts include everything up to the XNU kernel itself, including iBoot2 and firmware. This means that external storage is only initialized once XNU is already running, and it will merely mount its root filesystem from there, having been booted from NVMe. Note that, since this process requires the creation of a new Boot Policy (that will not be in the appropriate security state, nor can it be put into it at that point due to pairing requirements), it cannot be used to boot fuOS kernels installed on external drives in this manner (at least not without further manual action, but it's unclear whether this would be possible at all).
+
+OS installers are identified by a magic `.IAPhysicalMedia` plist at the root of the volume, and may exist on volumes of any supported filesystem (APFS and FAT32 both work). That plist specifies a macOS application bundle present in the volume to launch. When the volume is selected, boot proceeds into the main recoveryOS environment (including authentication mandated by FileVault, if enabled), and then automatically launches the application bundle. This happens in 1TR mode if the boot picker was invoked via the appropriate power button hold gesture. This feature is currently used in the Asahi Linux installer to launch its second stage in a more user-friendly manner, and could be used to ship third-party installers as USB install images (but not ones usable as-is completely offline, as they would still require non-redistributable Apple components).
+
+One consequence of the boot picker being implemented as a macOS application behind the scenes is that is has full accessibility support (including VoiceOver), which is rather unique.
 
 ## ARM64 XNU boot protocol
 
