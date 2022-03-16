@@ -34,8 +34,8 @@ It would be remiss not to briefly cover where these machines stand in terms of u
 
 * Boot components are signed and opaque (encrypted)
 * Runtime components (e.g. firmware and macOS itself) are signed and transparent (plaintext)
- * With the exception of the SEP (a TPM equivalent), which is optional and disabled by default
- * And two small blobs (SMC and PMU) which are merely incidentally encrypted; it would be nice to get Apple to disclose these, but they have a rather small I/O surface.
+    * With the exception of the SEP (a TPM equivalent), which is optional and disabled by default
+    * And two small blobs (SMC and PMU) which are merely incidentally encrypted; it would be nice to get Apple to disclose these, but they have a rather small I/O surface.
 * Brick recovery / total system flash (DFU) requires phoning home
 * Normal operation, including OS installs, can be performed off-line with physical user presence. It is possible to take an out-of-the-box Mac and install Linux on it without ever connecting it to a network.
 * Owner control is asserted on first boot (you become machine owner by going through the macOS setup flow and creating the first admin user).
@@ -77,18 +77,18 @@ NOR is formatted as raw regions and contains:
 NVMe is a GPT volume and contains:
 
 * System-global storage (iBoot System Container; iSC) including:
- * Boot policies (think boot configs, but secure) (Preboot)
- * SEP secure storage (xARTS)
- * Misc system config data
+    * Boot policies (think boot configs, but secure) (Preboot)
+    * SEP secure storage (xARTS)
+    * Misc system config data
 * One or more APFS container partitions
- * Each containing one or more bootable OSes sharing a container, each comprising
-  * Preboot volume subfolder
-   * 2nd stage bootloader (iBoot2)
-   * Apple Device Tree
-   * OS-paired firmware
-   * OS kernel (XNU)
-  * OS-paired recoveryOS image (in Recovery volume)
-  * Per-OS root & data filesystem volumes (may be empty)
+    * Each containing one or more bootable OSes sharing a container, each comprising
+        * Preboot volume subfolder
+            * 2nd stage bootloader (iBoot2)
+            * Apple Device Tree
+            * OS-paired firmware
+            * OS kernel (XNU)
+        * OS-paired recoveryOS image (in Recovery volume)
+        * Per-OS root & data filesystem volumes (may be empty)
 * System-global recoveryOS image (+ optional fallback)
 
 There are no restrictions on additional partitions and types; they are ignored by Apple's tooling.
@@ -106,21 +106,21 @@ Terminology note: "OS kernel" here refers to a XNU kernel image, or an equivalen
 The platform-mandated boot flow can be summarized as follows:
 
 * SecureROM:
-  * Reads/validates iBoot1 from NOR
-  * Enters USB DFU mode on failure
+    * Reads/validates iBoot1 from NOR
+    * Enters USB DFU mode on failure
 * iBoot1:
-  * Reads/validates system-global firmware from NOR
-  * Bootstraps some coprocessors
-  * Shows the Apple logo and plays the boot chime
-  * Picks and validates a boot policy
-  * Reads/validates iBoot2 from the chosen OS container on NVMe
+    * Reads/validates system-global firmware from NOR
+    * Bootstraps some coprocessors
+    * Shows the Apple logo and plays the boot chime
+    * Picks and validates a boot policy
+    * Reads/validates iBoot2 from the chosen OS container on NVMe
 * iBoot2:
-  * Reads/validates OS-paired firmware from NVMe
-  * Loads and locks some of that firmware, re-bootstraps display coprocessor
-  * Reads/validates the Apple Device Tree from NVMe
-  * Reads/validates the OS kernel from NVMe
-  * Puts some coprocessors to sleep
-  * Jumps to OS kernel
+    * Reads/validates OS-paired firmware from NVMe
+    * Loads and locks some of that firmware, re-bootstraps display coprocessor
+    * Reads/validates the Apple Device Tree from NVMe
+    * Reads/validates the OS kernel from NVMe
+    * Puts some coprocessors to sleep
+    * Jumps to OS kernel
 
 The OS kernel is the first point in the boot flow where we can run non-Apple-signed code.
 
