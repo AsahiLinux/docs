@@ -1,5 +1,3 @@
-# Asahi Linux Distribution Differences
-
 The Asahi Linux project provides pre-configured OS images intended to showcase the bleeding edge of Linux support for Apple Silicon machines. We do this by taking [Arch Linux ARM](https://archlinuxarm.org/) as a base and adding our own package repository on top. This living document lists the differences between our images and vanilla ALARM.
 
 ## Builds
