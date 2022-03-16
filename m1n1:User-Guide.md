@@ -102,13 +102,13 @@ m1n1 stage 1 is configured by the Asahi Linux Installer by appending variables l
 
 ```
 cp build/m1n1.bin m1n1-stage1.bin
-echo 'chosen.efi-partition=EFI-PARTITION-PARTUUID' >> m1n1-stage1.bin
+echo 'chosen.asahi,efi-system-partition=EFI-PARTITION-PARTUUID' >> m1n1-stage1.bin
 echo 'chainload=EFI-PARTITION-PARTUUID;m1n1/boot.bin' >> m1n1-stage1.bin
 ```
 
 ### Configuring for stage 2
 
-m1n1 stage 2 will normally boot payloads directly, plus receive the `chosen.efi-partition` config from stage 1 automatically. Using device trees shipped with U-Boot:
+m1n1 stage 2 will normally boot payloads directly, plus receive the `chosen.asahi,efi-system-partition` config from stage 1 automatically. Using device trees shipped with U-Boot:
 
 ```
 cat build/m1n1.bin \
