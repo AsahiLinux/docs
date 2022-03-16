@@ -40,7 +40,11 @@ This is a lightweight remix of Arch Linux ARM.
 
 ### [linux-asahi](https://github.com/AsahiLinux/PKGBUILDs/tree/main/linux-asahi)
 
-Our main kernel package. Usually built from the `asahi` branch on [AsahiLinux/linux](https://github.com/AsahiLinux/linux). Frequently updated and often based on bleeding-edge kernels (linux-next). Kernel config is [here](https://github.com/AsahiLinux/PKGBUILDs/blob/main/linux-asahi/config). This kernel is built with a large assortment of USB device drivers to allow for external devices, but only the PCI/SPI/I²C/SPMI/etc drivers useful for Apple machines (PCI drivers will be enabled once Thunderbolt works). Most drivers are built as modules, except dependencies of simpledrm to make the framebuffer work early (Note: this currently pulls in macsmc and all its dependencies as built-ins to make the GPIO backlight work; this is a temporary hack until the DCP driver supersedes simpledrm for most users, at which point we will remove the GPIO backlight feature from the simpledrm framebuffer device and macsmc will become a module).
+Our main kernel package. Usually built from the `asahi` branch on [AsahiLinux/linux](https://github.com/AsahiLinux/linux). Frequently updated and often based on bleeding-edge kernels (linux-next). Kernel config is [here](https://github.com/AsahiLinux/PKGBUILDs/blob/main/linux-asahi/config).
+
+This kernel is built with a large assortment of USB device drivers to allow for external devices, but only the PCI/SPI/I²C/SPMI/etc drivers useful for Apple machines (PCI drivers will be enabled once Thunderbolt works).
+
+Most drivers are built as modules, except dependencies of simpledrm to make the framebuffer work early (Note: this currently pulls in macsmc and all its dependencies as built-ins to make the GPIO backlight work; this is a temporary hack until the DCP driver supersedes simpledrm for most users, at which point we will remove the GPIO backlight feature from the simpledrm framebuffer device and macsmc will become a module).
 
 ### [asahilinux-keyring](https://github.com/AsahiLinux/PKGBUILDs/tree/main/asahilinux-keyring)
 
