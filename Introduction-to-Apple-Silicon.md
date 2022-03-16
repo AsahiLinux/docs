@@ -1,5 +1,3 @@
-# Introduction to Apple Silicon
-
 ## Foreword
 
 This document attempts to explain the Apple Silicon (i.e. M1 and later) Mac boot ecosystem (henceforth "AS Macs"), as it pertains for how open OSes interoperate with the platform.
