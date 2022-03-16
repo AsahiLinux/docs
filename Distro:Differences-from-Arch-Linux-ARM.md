@@ -42,9 +42,11 @@ This is a lightweight remix of Arch Linux ARM.
 
 Our main kernel package. Usually built from the `asahi` branch on [AsahiLinux/linux](https://github.com/AsahiLinux/linux). Frequently updated and often based on bleeding-edge kernels (linux-next). Kernel config is [here](https://github.com/AsahiLinux/PKGBUILDs/blob/main/linux-asahi/config).
 
-This kernel is built with a large assortment of USB device drivers to allow for external devices, but only the PCI/SPI/I²C/SPMI/etc drivers useful for Apple machines (PCI drivers will be enabled once Thunderbolt works).
+This kernel is built with a large assortment of USB device drivers to allow for external devices, but only the PCI/SPI/I²C/SPMI/etc drivers useful for Apple machines (PCI drivers will be enabled once Thunderbolt works). It is not intended to be bootable on non-Apple systems (although we do have virtio drivers, so it might work in a qemu VM if anyone wants to try that - shout in IRC if you need this and it doesn't work).
 
 Most drivers are built as modules, except dependencies of simpledrm to make the framebuffer work early (Note: this currently pulls in macsmc and all its dependencies as built-ins to make the GPIO backlight work; this is a temporary hack until the DCP driver supersedes simpledrm for most users, at which point we will remove the GPIO backlight feature from the simpledrm framebuffer device and macsmc will become a module).
+
+If you need .config options not yet enabled, feel free to request it on IRC or as an issue [here](https://github.com/AsahiLinux/PKGBUILDs).
 
 ### [asahilinux-keyring](https://github.com/AsahiLinux/PKGBUILDs/tree/main/asahilinux-keyring)
 
