@@ -198,6 +198,3 @@ boot
 * Log in as **root** without password.
 
 * Consult the **quickstart.txt** file to find out how to get the networking up, set the time etc.
-
-# Diskdump
-[Video Recording](https://tg.st/u/m1debian.mp4)
