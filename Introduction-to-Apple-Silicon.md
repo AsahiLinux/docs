@@ -34,7 +34,7 @@ It would be remiss not to briefly cover where these machines stand in terms of u
 
 * Boot components are signed and opaque (encrypted)
 * Runtime components (e.g. firmware and macOS itself) are signed and transparent (plaintext)
-    * With the exception of the SEP (a TPM equivalent), which is optional and disabled by default
+    * With the exception of the SEP (Secure Enclave Processor, a TPM equivalent), which is optional and disabled by default
     * And two small blobs (SMC and PMU) which are merely incidentally encrypted; it would be nice to get Apple to disclose these, but they have a rather small I/O surface.
 * Brick recovery / total system flash (DFU) requires phoning home
 * Normal operation, including OS installs, can be performed off-line with physical user presence. It is possible to take an out-of-the-box Mac and install Linux on it without ever connecting it to a network.
