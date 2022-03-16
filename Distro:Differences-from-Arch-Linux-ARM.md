@@ -47,7 +47,7 @@ Our main kernel package. Usually built from the `asahi` branch on [AsahiLinux/li
 Keyring package for the packages and repos distributed by the project. Current signers:
 
 * `Hector Martin Cantero <marcan@marcan.st>` (FC18F00317968B7BE86201CBE22A629A4C515DD5)
- * Same key used for Linux kernel pull request tag signing. Signing subkeys are held in redundant YubiKeys set to mandatory touch mode. Master key is backed up to two different sites and protected with a very strong passphrase, and only ever unlocked on offline machines.
+  * Same key used for Linux kernel pull request tag signing. Signing subkeys are held in redundant YubiKeys set to mandatory touch mode. Master key is backed up to two different sites and protected with a very strong passphrase, and only ever unlocked on offline machines.
 
 The Asahi images also inherit the Arch Linux ARM repos and keyring.
 
@@ -72,15 +72,15 @@ Upstream `mkinitcpio` with a couple minor patches. Will probably go away soon on
 Maintenance and automation scripts for Apple Silicon machines. Built from [AsahiLinux/asahi-scripts](https://github.com/AsahiLinux/asahi-scripts).
 
 * `/usr/bin/update-grub`: Generates the GRUB config and installs/updates GRUB into the EFI system partition:
- * Probes for the right partition UUIDs
- * Generates and installs a GRUB core image that looks up the root partition via UUID instead of partition index (note: Debian/Ubuntu does something similar).
- * Runs `grub-mkconfig`.
+  * Probes for the right partition UUIDs
+  * Generates and installs a GRUB core image that looks up the root partition via UUID instead of partition index (note: Debian/Ubuntu does something similar).
+  * Runs `grub-mkconfig`.
 * `/usr/bin/first-boot` and `first-boot.service`: Performs automated tasks on the first boot of the pre-baked image:
- * Randomizes the rootfs UUID
- * Randomizes the EFI system partition FAT volume ID
- * Re-creates `/etc/fstab`
- * Runs `update-grub` (see above)
- * Initializes the Pacman keyring (normally done manually on ALARM).
+  * Randomizes the rootfs UUID
+  * Randomizes the EFI system partition FAT volume ID
+  * Re-creates `/etc/fstab`
+  * Runs `update-grub` (see above)
+  * Initializes the Pacman keyring (normally done manually on ALARM).
 * `/usr/bin/update-vendor-firmware` and `update-vendor-firmware.service`: Fetches vendor firmware from the EFI system partition and installs it to /lib/firmware, or upgrades it if necessary, on each boot. This is required to make WiFi work out of the box, and more drivers in the future.
 * `systemd-udev-trigger-early.service`: Helper service to ensure that the NVMe modules are loaded before `update-vendor-firmware.service` runs so that the EFI partition can be mounted, but does not trigger other subsystems which may request firmware that is not yet available. This actually runs in parallel with the rest of the boot process, but `update-vendor-firmware.service` depends on the EFI partition being mounted (which will wait for it to appear) and will block `systemd-udev-trigger.service` until it is done (which prevents other modules from being autoloaded too early).
 * `/lib/initcpio/install/asahi`: `mkinitcpio` hook to add the modules required on Apple Silicon systems. This is needed because the `mkinitcpio` automatic module selection logic cannot follow dynamic device provider dependencies, which are only expressed in the device tree and not as module dependencies (e.g. it would pull in `nvme_apple` and its direct dependencies `apple-rtkit` and `apple-sart`, but fail to pull in `apple-mailbox` which is required for the NVMe device to actually probe). Note that this only concerns module filtering/selection a `mkinitcpio` time; the required modules *are* loaded properly by udev since it knows how to match module aliases to devices at runtime, so we do not force any explicit module loading.
