@@ -32,7 +32,7 @@ The Asahi Linux reference images use the "full fat" boot chain with U-Boot and G
 
 SecureROM → iBoot1 → iBoot2 → m1n1 (stage 1) → m1n1 (stage 2) → U-Boot → GRUB (UEFI) → Linux → initramfs → Arch
 
-*SecureROM* and *iBoot1* are core system firmware and not managed by us. *iBoot2* and *m1n1 (stage 1)* are provisioned by the Asahi Linux Installer and not normally modified after initial install. Components after *m1n1 (stage 2)* are shipped and updated as Pacman packages.
+*SecureROM* and *iBoot1* are core system firmware and not managed by us. *iBoot2* and *m1n1 (stage 1)* are provisioned by the Asahi Linux Installer and not normally modified after initial install. The components starting with *m1n1 (stage 2)* and later are shipped and updated as Pacman packages.
 
 ## Asahi Linux Core
 
