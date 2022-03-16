@@ -13,7 +13,7 @@ GitHub: [AsahiLinux/m1n1](https://github.com/AsahiLinux/m1n1)
   * Configuration statements
 * Chainloads another version of itself from a FAT32 partition (if configured to do so)
 
-Proxy mode enables a huge toolset of developer features, from reducing your Linux kernel test cycle to 7 seconds, to live hardware probing and experimentation, to a hypervisor capable of running macOS or Linux and tracing hardware accesses in deal time while provding a virtual UART over USB. See [[m1n1:Developer Guide]] for that. This guide only describes trivial proxy use cases.
+Proxy mode enables a huge toolset of developer features, from reducing your Linux kernel test cycle to 7 seconds, to live hardware probing and experimentation, to a hypervisor capable of running macOS or Linux and tracing hardware accesses in real time while provding a virtual UART over USB. See [[m1n1:Developer Guide]] for that. This guide only describes trivial proxy use cases.
 
 ## Building
 
