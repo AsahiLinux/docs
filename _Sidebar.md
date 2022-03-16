@@ -11,7 +11,7 @@ Places to start:
 * [[Codenames]]
 * [[Devices]]
 * [[Project:References]]
-* [[SW:m1n1]] Boot loader
+* [[m1n1:User Guide]] Boot loader
 * [[SW:Linux]] Kernel
 * [[SW:Hypervisor]]
 * [[U-Boot]]
