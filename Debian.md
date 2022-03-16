@@ -24,7 +24,7 @@ macos.
 diskutil apfs resizeContainer disk0s2 200GB
 ```
 
-* Run the asahi installer and select Debian (2):
+* Run the asahi installer and select Debian (1):
 ```
 curl -sL tg.st/u/bootstrap.sh | sh
 ```
