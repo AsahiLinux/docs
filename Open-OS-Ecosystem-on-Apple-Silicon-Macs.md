@@ -146,7 +146,7 @@ The stub OS installer collects available platform firmware from the IPSW, and pa
 
 * firmare.tar: Tarball containing the firmware, in a structure compatible with the `/lib/firmware` hierarchy (e.g. `brcm/foo.bin`).
 * manifest.txt: A text file containing lines of the following two forms:
-  * `LINK <src> <tgt>` : symlink
+  * `LINK <src> <tgt>` : hard link
   * `FILE <name> SHA256 <hash>`: file
 
 These files are then placed in the EFI system partition under the `vendorfw` directory.
