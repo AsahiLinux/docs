@@ -55,21 +55,25 @@ Keyring package for the packages and repos distributed by the project. Current s
 
 The Asahi images also inherit the Arch Linux ARM repos and keyring.
 
-### [m1n1-uboot](https://github.com/AsahiLinux/PKGBUILDs/tree/main/m1n1-uboot)
+### [m1n1](https://github.com/AsahiLinux/PKGBUILDs/tree/main/m1n1)
 
-Bootloader stack for Apple Silicon machines, including device trees. Built from:
-
-* [AsahiLinux/m1n1](https://github.com/AsahiLinux/m1n1)
+Second stage m1n1 bootloader for Apple Silicon machines. See [AsahiLinux/m1n1](https://github.com/AsahiLinux/m1n1).
 * [AsahiLinux/u-boot](https://github.com/AsahiLinux/u-boot)
 * [AsahiLinux/devicetrees](https://github.com/AsahiLinux/devicetrees)
 
-This package installs the components separately to `/usr/lib/asahi-boot`, and normally also copies the combined binary to `/boot/efi/m1n1/boot.bin` as a postupgrade step (unless that directory does not exist).
+This package installs m1n1 to `/usr/lib/asahi-boot`. To update the combined image in the ESP, use the `update-m1n1` command. This is done automatically on postupgrade if m1n1 is already installed there.
 
-Note: the components are merely concatenated to build the final image (`cat m1n1.bin dtb/*.dtb u-boot-nodtb.bin > m1n1-uboot.bin`). This allows users to easily replace one for experiments if they so choose. TODO: provide a way to disable the postupgrade step without uninstalling the package or unmounting the EFI partition.
+TODO: provide a way to disable the postupgrade step without uninstalling the package or unmounting the EFI partition.
+
+### [uboot-asahi](https://github.com/AsahiLinux/PKGBUILDs/tree/main/uboot-asahi)
+
+U-Boot port for Apple Silicon machines. Built from [AsahiLinux/u-boot](https://github.com/AsahiLinux/u-boot). Provides UEFI services to GRUB.
+
+This package installs u-boot and its device trees to `/usr/lib/asahi-boot`. To update the combined image in the ESP, use the `update-m1n1` command. This is done automatically on postupgrade if m1n1 is already installed there.
 
 ### [mkinitcpio](https://github.com/AsahiLinux/PKGBUILDs/tree/main/mkinitcpio)
 
-Upstream `mkinitcpio` with a couple minor patches. Will probably go away soon once upstreamed.
+Upstream `mkinitcpio` with a minor patch. Will probably go away soon once upstreamed.
 
 ### [asahi-scripts](https://github.com/AsahiLinux/PKGBUILDs/tree/main/asahi-scripts)
 
@@ -79,6 +83,7 @@ Maintenance and automation scripts for Apple Silicon machines. Built from [Asahi
   * Probes for the right partition UUIDs
   * Generates and installs a GRUB core image that looks up the root partition via UUID instead of partition index (note: Debian/Ubuntu does something similar).
   * Runs `grub-mkconfig`.
+* `/usr/bin/update-m1n1`: Generates the second stage m1n1 image from files contained in the `m1n1`, `uboot-asahi`, and `linux-asahi` packages.
 * `/usr/bin/first-boot` and `first-boot.service`: Performs automated tasks on the first boot of the pre-baked image:
   * Randomizes the rootfs UUID
   * Randomizes the EFI system partition FAT volume ID
