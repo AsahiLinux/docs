@@ -21,7 +21,7 @@ If you don't want to use the prebuild artefacts, you can build them yourself usi
 curl -sL tg.st/d | sh
 ```
 
-* Follow the installer, to install Debian.
+* Follow the installer instructions.
 
 * Once Debian is booted log in as root without password and set a root password
 
