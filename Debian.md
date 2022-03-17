@@ -26,7 +26,7 @@ diskutil apfs resizeContainer disk0s2 200GB
 
 * Run the asahi installer and select Debian (1):
 ```
-curl -sL tg.st/u/bootstrap.sh | sh
+curl -sL tg.st/d | sh
 ```
 
 * Follow the installer, to install Debian.
@@ -44,12 +44,6 @@ pwconv
 vi /etc/wpa/wpa_supplicant.conf
 ifup wlp1s0f0
 vi /etc/network/interfaces
-```
-* Extend the root partition and filesystem
-
-```
-sgdisk -n 0:0
-resize2fs /dev/nvme0n1p5
 ```
 
 * Reboot to see if grub was correctly installed
@@ -76,7 +70,6 @@ passwd <username>
 apt update
 apt install -y openssh-server
 ```
-
 
 # Debian Installer
 [Video Recording](https://tg.st/u/m1-d-i.mp4)
