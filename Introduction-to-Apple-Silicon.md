@@ -134,7 +134,7 @@ recoveryOS can be requested via NVRAM variables on reboot, or can automatically 
 
 [[https://github.com/AsahiLinux/docs/blob/main/assets/recoveryos.png|alt=recoveryOS]]
 
-In addition, there is a "special" boot flow that grants additional capabilities. When the users powers up the machine by holding down the power button, this loads the recoveryOS paired with the currently active default boot OS volume (falling back to the system one), and first shows a boot picker to allow the user to choose an OS to boot (and optionally make the default):
+In addition, there is a "special" boot flow that grants additional capabilities. When the user powers up the machine by holding down the power button, this loads the recoveryOS paired with the currently active default boot OS volume (falling back to the system one), and first shows a boot picker to allow the user to choose an OS to boot (and optionally make the default):
 
 [[https://github.com/AsahiLinux/docs/blob/main/assets/boot_picker.png|alt=Boot Picker]]
 
