@@ -16,14 +16,6 @@ If you don't want to use the prebuild artefacts, you can build them yourself usi
 
 * In the boot picker, choose Options. Once loaded, open a Terminal under Utilities > Terminal
 
-* Lets make space - the last number is the space that macos will occupy. It is
-recommended to have at least 70 GB. I recommend on leaving at least 100 GB for
-macos.
-
-```
-diskutil apfs resizeContainer disk0s2 200GB
-```
-
 * Run the asahi installer and select Debian (1):
 ```
 curl -sL tg.st/d | sh
