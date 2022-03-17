@@ -206,6 +206,8 @@ nvram boot-args=-v
 
 By doing this, m1n1 will turn on verbose logging, and wait 5 seconds before booting its payloads. If it receives a USB proxy connection in that time, it will go into proxy mode. This is extremely useful when you want to have a working, auto-booting Linux install, but retain the ability to boot kernels via proxy mode if something goes wrong, or just for fast development.
 
+Note that this state is less secure, as any installed OS can alter the `boot-args` property. Reset your boot policy with `bputil -nc` and then use `kmutil` to install m1n1 again to go back to the original state of requiring authentication to enable this feature.
+
 To break into proxy mode, the host needs to *open* the USB ACM device (either of the 2 will do). This can be done by e.g. running a serial terminal in a loop on the secondary interface (which you might want for the hypervisor anyway):
 
 ```
@@ -216,6 +218,4 @@ while true; do
 done
 ```
 
-Once picocom connnects, you can then invoke proxy scripts with `M1N1DEVICE=/dev/ttyACM0`.
-
-Note that this state is less secure, as any installed OS can alter the `boot-args` property. Reset your boot policy with `bputil -nc` and then use `kmutil` to install m1n1 again to go back to the original state of requiring authentication to enable this feature.
+Once picocom connects, you can then invoke proxy scripts with `M1N1DEVICE=/dev/ttyACM0`.
