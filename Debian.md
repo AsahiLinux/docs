@@ -3,14 +3,12 @@ This pages explains how to install Debian using three different methods: Debian 
 # Tripwires
 All systems are supported. But currently the USB-A Port on the Mac Mini will not work in u-boot and grub. Mark Kettenis is working on it,
 but first the other patches need to land in u-boot. The two additional USB-3 ports on the iMac 4 port model also don't work in u-boot,
-grub and Linux.
+grub and Linux. In order to install Linux on a FileVault-enabled Mac run the installer from Recovery open Disk Utility > Expanding "Macintosh HD" > Selecting locked volume > click "Mount".
 
 # Artefacts
 If you don't want to use the prebuild artefacts, you can build them yourself using the bootstrap.sh script found in [Glanzmanns m1-debian script repository](https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian)
 
 # Soon to be released Asahi installer
-
-**N.B the procedure below will not work if you have FileVault enabled. It should be safe to run the installer on a live MacOS system, although other stuff might freeze temporarily if it tries to access the disk while the resize is in progress**
 
 [Video Recording](https://tg.st/u/debian_asahi_installer.mp4)
 
