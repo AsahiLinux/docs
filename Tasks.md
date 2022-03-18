@@ -1,3 +1,5 @@
+> NOTE: This list is old / unused, see See [[Feature Support]] instead. 
+
 This page lists currently supported features, as well as features still needed to support a "nice" desktop experience on Apple Silicon Macs.
 
 An item being ticked off means that it is, at the very least, supported and available for testing in m1n1 or linux-asahi. Some drivers may still require stabilisation or cleaning up before being submitted upstream. See [[Feature Support]] for details on what has been upstreamed and what has not.
