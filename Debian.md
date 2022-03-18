@@ -1,4 +1,4 @@
-This pages explains how to install Debian using three different methods: Debian Installer, livesystem and disk dump.
+This pages explains how to install Debian using three different methods: Asahi Installer, Debian Installer and livesystem.
 
 # Tripwires
 All systems are supported. But currently the USB-A Port on the Mac Mini will not work in u-boot and grub. Mark Kettenis is working on it,
