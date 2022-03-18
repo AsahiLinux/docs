@@ -10,6 +10,8 @@ If you don't want to use the prebuild artefacts, you can build them yourself usi
 
 # Soon to be released Asahi installer
 
+**N.B the procedure below will not work if you have FileVault enabled. It should be safe to run the installer on a live MacOS system, although other stuff might freeze temporarily if it tries to access the disk while the resize is in progress**
+
 [Video Recording](https://tg.st/u/debian_asahi_installer.mp4)
 
 * Poweroff your Mac. Hold and press the power button until you see a wheel chain and Options written below. Approx 20 seconds.
