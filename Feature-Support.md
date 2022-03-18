@@ -61,10 +61,11 @@ These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 | Keyboard | linux-asahi |
 | Touchpad | linux-asahi |
 | Touch Bar | unsupported |
-| Backlight | unsupported |
+| Keyboard Backlight | unsupported |
 | Webcam | unsupported |
 | Internal speakers | unsupported |
 | Battery/charge monitoring | linux-asahi |
+| Display brightness | unsupported |
 
 ## MacBook Air (13-inch, M1, 2020)
 | Feature | Support Level |
@@ -73,10 +74,11 @@ These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 | SPI HID | linux-asahi |
 | Keyboard | linux-asahi |
 | Touchpad | linux-asahi |
-| Backlight | unsupported |
+| Keyboard Backlight | unsupported |
 | Webcam | unsupported |
 | Internal speakers | unsupported |
 | Battery/charge monitoring | linux-asahi |
+| Display brightness | unsupported |
 
 ## iMac (M1, 2020)
 | Feature | Support Level |
@@ -85,6 +87,7 @@ These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 | 1Gbps Ethernet | 5.16 |
 | Webcam | unsupported |
 | Internal speakers | unsupported |
+| Display brightness | unsupported |
 
 
 # M1 Pro/Max (T6000/T6001)
@@ -139,9 +142,10 @@ These features are common to all M1 Pro/Max devices
 | SPI HID | linux-asahi |
 | Keyboard | linux-asahi |
 | Touchpad | linux-asahi |
-| Backlight | unsupported |
+| Keyboard Backlight | unsupported |
 | Webcam | unsupported |
 | Internal speakers | unsupported |
 | HDMI Out | unsupported |
 | SD Card Reader | linux-asahi (5.17) |
 | Battery/charge monitoring | linux-asahi |
+| Display brightness | unsupported |
