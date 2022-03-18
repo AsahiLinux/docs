@@ -1,3 +1,9 @@
+# This page has been replaced by https://github.com/AsahiLinux/docs/wiki/m1n1:User-Guide
+
+
+***
+
+
 Normally m1n1 is used in a tethered setup. Where one computer is used to boot another computer. Or it is used in combination with u-boot. For system where u-boot is currently not available (m1 max/pro), you can use m1n1 in a untethered way. In order to do so you create a boot object which contains m1n1, kernel command line, device trees, a linux kernel and optionally a ram disk. Than you boot into 1tr and use kmutil to configure this boot object.
 
 # Compiling the kernel with smc support
