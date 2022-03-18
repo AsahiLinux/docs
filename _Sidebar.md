@@ -14,6 +14,7 @@ Places to start:
 * [[m1n1:User Guide]] Boot loader
 * [[SW:Linux]] Kernel
 * [[SW:Hypervisor]]
+* [[SW:Alternative-Distros]]
 * [[U-Boot]]
 * [[DesktopKernel]]
 * [[Debian]]
