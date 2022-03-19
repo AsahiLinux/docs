@@ -7,7 +7,7 @@ If you are an end user after nice desktop Linux experience on their Apple Silico
 
 
 ## Hardware Requirements
-* An Apple Silicon Mac with _at least_ **macOS 12.0.1** installed and configured
+* An Apple Silicon Mac with _at least_ **macOS 12.3** installed and configured
   * You must have a password-protected administrator account. Typically, this will be the first account you created when setting up the machine for the first time. 
 * A machine of any architecture running a GNU/Linux distribution
   * Both GCC and Clang/LLVM AArch64 cross-toolchains are supported.
