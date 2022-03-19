@@ -18,6 +18,7 @@ Places to start:
 * [[U-Boot]]
 * [[DesktopKernel]]
 * [[Debian]]
+* [[Fedora]]
 
 Hardware Documentation:
 * [[HW:AIC]]
