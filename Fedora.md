@@ -30,7 +30,7 @@ Sandor pointed me to the issue that the system no longer boots after an update. 
 rpm -qa | grep kernel-core | xargs yum remove
 ```
 
-I'll fix that issue in the master image right away.
+The issue is fixed for new installs.
 
 # How this image was built
-I downloaded Fedora-Workstation-35-1.2.aarch64.raw.xz, extracted it and loopback mounted all partitions. Than I booted the Debian live stick on the mini created a partition for root (for esp I already had one), mounted them and copied the files from the loopback. The original raw image used btrfs. I don't like it because it is slow, so I used ext4. Than I copied the kernel, modules, config, system.map over and used dracut to build a initrd. Than I modified the /etc/fstab and modified grub to pick up the grub.cfg from the right path. Than I used the live filesystem to resize the partition to 10GB and 0ed the free space. Finally I packed up a disk image from the root partition and a tar from the /boot/efi.
+I downloaded Fedora-Workstation-35-1.2.aarch64.raw.xz, extracted it and loopback mounted all partitions. Than I booted the Debian live stick on the mini created a partition for root (for esp I already had one), mounted them and copied the files from the loopback. The original raw image used btrfs. I don't like it because it is slow, so I used ext4. Than I copied the kernel, modules, config, system.map over and used dracut to build a initrd. Than I modified the /etc/fstab and modified grub to pick up the grub.cfg from the right path. Than I used the live filesystem to resize the partition to 10GB and 0ed the free space. Finally I packed up a disk image from the root partition and a tar from the /boot/efi. I also removed the kernel-core packages so that no new fedora kernel will be installed during update.
