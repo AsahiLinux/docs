@@ -7,6 +7,7 @@ Project related:
 Places to start:
 * [[Tethered Boot Setup (For Developers)]]
 * [[Glossary]]
+* [[FAQ]]
 * [[Accelerator-Engines]]
 * [[Codenames]]
 * [[Devices]]
