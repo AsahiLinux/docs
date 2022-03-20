@@ -27,7 +27,7 @@ reboot
 Sandor pointed me to the issue that the system no longer boots after an update. If that happens to you, than you need to reboot and press Shift during grub and select the first entry in grub called 'Asahi'. Than your system will boot. In order to avoid this breake in the future, you need to execute the following commands as root in order to deinstall the fedora kernels and avoid updating them in future:
 
 ```
-rpm -qa | grep kernel-core | xargs yum remove
+rpm -qa | grep kernel-core | xargs yum remove -y
 ```
 
 The issue is fixed for new installs.
