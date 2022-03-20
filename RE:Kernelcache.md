@@ -1,6 +1,6 @@
 # READ THIS BEFORE PROCEEDING FURTHER
 
-**Asahi Linux has a very strict [reverse engineering policy](asahilinux.org/copyright/). Do not start disassembling macOS code, including the Darwin kernel, unless you have fully read and understood the policy.**
+**Asahi Linux has a very strict [reverse engineering policy](https://asahilinux.org/copyright/). Do not start disassembling macOS code, including the Darwin kernel, unless you have fully read and understood the policy.**
 
 We expect any contributors who wish to use binary reverse engineering as part of their contribution to their project to discuss the specifics with us in advance. This will usually mean arranging a clean-room environment, where their only job will be to write specifications, not any source code, on any related subsystems.
 
