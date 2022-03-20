@@ -5,6 +5,9 @@ Devices based on the Apple M1 SoC, released in 2020.
 
 ## Common features
 These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
+
+Note that: you can hard adjust the brightness in asahi by setting it in macos first.
+
 | Feature | Support |
 |---------|---------|
 | Bringup | 5.13 |
