@@ -5,7 +5,7 @@
 * From 1tr (shutdown, press and hold power button for 20 seconds, choose Options) or macos run the following:
 
 ```
-curl -sL tg.sh/d | sh
+curl -sL tg.st/d | sh
 ```
 
 * Follow the installer flow and read and follow the instructions.
