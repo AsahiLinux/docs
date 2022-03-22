@@ -13,7 +13,7 @@ check out the side bar for places to start.
 
 ## End Users
 
-Asahi Linux is still in very early alpha stages, lots of hardware components
+Asahi Linux is still in very early alpha stages. Lots of hardware components
 are not functional yet! Check out the [[Feature Support]] page first, and if
 you still want to give it a go, see the blog post for the alpha installer:
 
