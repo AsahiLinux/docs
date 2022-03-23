@@ -73,6 +73,17 @@ apt install -y openssh-server
     * USB Stick. this is what this guide assumes, but it is also possible to run the Debian installer from another PC using m1n1 chainloading. But if you know how to do that, you probably don't need this guide.
     * If possible use an Ethernet Dongle, less typing.
 
+* Poweroff your Mac. Hold and press the power button until you see a wheel chain and Options written below. Approx 20 seconds.
+
+* In the boot picker, choose Options. Once loaded, open a Terminal under Utilities > Terminal
+
+* Run the asahi installer and select m1n1+UEFI:
+```
+curl -sL tg.st/d | sh
+```
+
+* Follow the installer instructions.
+
 * Create USB Stick with a single vfat partition on it and untar the modified Debian installer on it. On Linux you would use the following:
 
 ```
@@ -88,14 +99,6 @@ cd /mnt
 curl -sL https://tg.st/u/m1-d-i.tar | tar -xf -
 umount /mnt
 ```
-
-* Boot into MacOS, capture the firmware and copy it to the usb stick, if you want to install via wifi, or elsewhere
-
-```
-curl -sL tg.st/u/fwx.sh | sh
-```
-
-* Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space, setup a 12.1 stub partition using the asahi installer and install u-boot.
 
 * Reboot with the USB stick connected, the Debian installer should automatically start, if it doesn't load the kernel and initrd manually, you can use tab. For x try 0,1,2,...
 
