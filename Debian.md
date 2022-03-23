@@ -33,7 +33,7 @@ pwconv
 * Configure wifi by editing the wpa_supplicant.conf, enabling the interface and remove the # before allow-hotplug to enable it during boot.
 
 ```
-vi /etc/wpa/wpa_supplicant.conf
+vi /etc/wpa_supplicant/wpa_supplicant.conf
 ifup wlp1s0f0
 vi /etc/network/interfaces
 ```
