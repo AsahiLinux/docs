@@ -123,12 +123,12 @@ Note that U-Boot is compressed before appending. Uncompressed kernels may cause 
 
 m1n1 can boot a Linux kernel and initramfs directly, either as stage 1 or 2 (but you probably don't want to do this for stage 1). You can specify the boot arguments directly. Using device trees shipped with the kernel:
 
-```
+```shell
 cat build/m1n1.bin \
     <(echo 'chosen.bootargs=earlycon debug root=/dev/nvme0n1p6 rootwait rw') \
-    <kernel>/arch/arm64/boot/dts/apple/*.dtb \
-    <initramfs>/initramfs.cpio.gz \
-    <kernel>/arch/arm64/boot/Image.gz \
+    ${KERNEL}/arch/arm64/boot/dts/apple/*.dtb \
+    ${INITRAMFS}/initramfs.cpio.gz \
+    ${KERNEL}/arch/arm64/boot/Image.gz \
     >m1n1-linux.bin
 ```
 
