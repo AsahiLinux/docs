@@ -176,7 +176,7 @@ curl -sL https://tg.st/u/asahi-debian-live.tar | tar -xf -
 
 ```
 linux (hdX,msdos1)/vmlinuz
-initrd (hd0,msdos1)/initrd.gz
+initrd (hdX,msdos1)/initrd.gz
 boot
 ```
 
