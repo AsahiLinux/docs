@@ -66,6 +66,8 @@ apt install -y openssh-server
 # Debian Installer
 [Video Recording](https://tg.st/u/m1-d-i.mp4)
 
+**Do not use. It is broken at the moment.**
+
 * Prerequisites
 
     * USB Stick. this is what this guide assumes, but it is also possible to run the Debian installer from another PC using m1n1 chainloading. But if you know how to do that, you probably don't need this guide.
