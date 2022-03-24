@@ -1,7 +1,6 @@
 Project related:
 * [["When will Asahi Linux be done?"]]
 * [[Feature Support]]
-* [[Tasks]]
 * [Recent Changes](https://github.com/AsahiLinux/docs/wiki/_history)
 
 Places to start:
@@ -13,11 +12,9 @@ Places to start:
 * [[Devices]]
 * [[Project:References]]
 * [[m1n1:User Guide]] Boot loader
-* [[SW:Linux]] Kernel
 * [[SW:Hypervisor]]
 * [[SW:Alternative-Distros]]
 * [[U-Boot]]
-* [[DesktopKernel]]
 * [[Debian]]
 * [[Fedora]]
 
@@ -38,5 +35,4 @@ Software Documentation:
 * [[SW:NVRAM]]
 * [[SW:Storage]]
 * [[SW:-DT-bindings]]
-* [[Untethered-m1n1]]
 * [[Software-known-to-have-issues-with-16k-page-size]]
