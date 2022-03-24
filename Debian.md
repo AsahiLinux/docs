@@ -167,11 +167,7 @@ cd /Volumes/LIVE
 curl -sL https://tg.st/u/asahi-debian-live.tar | tar -xf -
 ```
 
-* Boot into MacOS, capture the firmware and copy it to the usb stick, if you don't have done that already.
-
-      curl -sL tg.st/u/fwx.sh | sh
-
-* Follow the [U-Boot Wiki Entry](https://github.com/AsahiLinux/docs/wiki/U-Boot) to make space, setup a 12.1 stub partition using the asahi installer and install u-boot.
+* You need to run the asahi installer and have either an OS installed or m1n1+UEFI.
 
 * If you have a EFI binary on the NVMe and want to boot from the usb stick, you need to interrupt u-boot on the countdoun by pressing any key and run the following comamnd to boot from usb:
 
