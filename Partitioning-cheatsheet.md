@@ -1,4 +1,10 @@
-Partition management from macOS can be confusing.
+Partition management from macOS can be confusing. Hopefully this helps explain things.
+
+Note: We'll add uninstall/cleanup options to the installer soon, but by definition it will always be a simplified tool that is only guaranteed to work for the common case of vanilla Asahi Linux installs; if you do your own partition management or install another distro, you'll have to know how to do your own partition management like this in order to clean up properly.
+
+## Just wipe it all, please
+
+We have a stupidly dangerous script lying around that will indiscriminately wipe anything with "Linux", "EFI" or "Asahi" in its name, as well as all 2.5GB APFS containers (which the installer creates), with no confirmation. Nobody has blown anything up with it yet as far as we know, and it should work for the vast majority of users as long as they don't already have any weird partitions, but please don't use it indiscriminately. You're much better off deleting partitions manually if you can help it. We wrote it mostly for developers who do lots of reinstalls and needed a quick way to reset. If you must use it, `curl -L https://alx.sh/wipe-linux | sh` as root. Ignore "operation not permitted" errors at the end (or run it from recovery mode for that optional part to work properly). Don't blame us if it eats your data.
 
 ## Do not use the *Disk Utility* application
 
@@ -8,7 +14,9 @@ The commandline `diskutil` has a strange interface and is harder to understand, 
 
 ## If everything goes wrong
 
-Apple Silicon machines cannot be bricked, but they can be rendered completely unbootable if you break your System Recovery. To fix this, you will need to connect another machine to it and use a special DFU recovery procedure to restore it via USB. If you have another Mac handy (Intel works), follow Apple's [official documentation](https://support.apple.com/guide/apple-configurator-2/revive-or-restore-a-mac-with-apple-silicon-apdd5f3c75ad/mac). If you don't, you can use [idevicerestore](https://github.com/libimobiledevice/idevicerestore) instead. Here's a quick [guide](https://tg.st/u/idevicerestore_quickstart.txt) for that.
+Apple Silicon machines cannot be bricked, but they can be rendered unbootable if you break your System Recovery. To fix this, you will need to connect another machine to it and use a special DFU recovery procedure to restore it via USB. If you have another Mac handy (Intel works), follow Apple's [official documentation](https://support.apple.com/guide/apple-configurator-2/revive-or-restore-a-mac-with-apple-silicon-apdd5f3c75ad/mac). If you don't, you can use [idevicerestore](https://github.com/libimobiledevice/idevicerestore) instead. Here's a quick [guide](https://tg.st/u/idevicerestore_quickstart.txt) for that.
+
+If you broke your OS recovery, you might find yourself in a boot loop. If this happens, shut down the machine, then boot with a quick *double-tap-hold* of the power button (tap, release, press and hold). If you're on a laptop, you might find you can't actually force a shutdown from the boot loop. If this happens, count three seconds from the point where the Apple logo disappears during a loop cycle, then do the double tap. This should get you into System Recovery and you can fix things from there without a full DFU flash.
 
 ## Physical disk layout on Apple Silicon
 
@@ -145,6 +153,10 @@ This shows the physical partitions in the order they are present on disk0 first:
 
 After this, you can see the two APFS containers broken out into volumes, each as their own virtual disk: `disk3` and `disk4`. In fact, there are two more: `disk1` is the iBoot System Container (backed by `disk0s1`) and `disk2` is the System Recovery (backed by `disk0s3`), but these are hidden from diskutil output. Remember, the numbering may/will be different for you!
 
+# **Do not blindly copy and paste these commands**
+
+All the following examples *use disk/partition numbers from the above output*. You need to substitute the right numbers for your system. These *will be different for you*. You have been warned.
+
 ## Deleting partitions with `diskutil`
 
 Deleting partitions works *differently* for APFS and non-APFS partitions.
@@ -165,9 +177,18 @@ To delete the EFI and Linux partitions, do this:
 
 ```
 diskutil eraseVolume free free disk0s4
+diskutil eraseVolume free free disk0s7
 ```
 
+This is called "eraseVolume free free" because diskutil's amazingly intuitive interface represents the concept of deleting partitions as "formatting them as free space" (except for APFS). Yes, really.
 
+### Resizing APFS containers
 
+After deleting Asahi Linux, you could re-install it again (no need to use the resize option in the installer). But if you want to grow macOS to use the full size of the disk again, use either of these:
 
+`diskutil apfs resizeContainer disk0s2 0`
+
+`diskutil apfs resizeContainer disk3 0`
+
+Again, you can use the physical partition identifier or the logical disk number. They are equivalent. The `0` means resize to fill all available free space after the partition. If instead you want to expand/shrink to a given size, specify it there, e.g. `100GB`.
 
