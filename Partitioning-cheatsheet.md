@@ -88,7 +88,7 @@ This shows:
   * If the install were complete, this would show your m1n1 stage 1 version. However, because it is not, it is listed as `incomplete install` until you reboot into it holding down the power button and complete the second step of installation.
   * disk4s2 is the *volume* for this stub's system, which means `disk4` is the virtual disk that represents this APFS container partition
 * One EFI system partition (FAT32)
-* One Linux Filesystem partition (ext4, not shown)
+* One Linux Filesystem partition (ext4 in this case, but the specific FS isn't identified/shown)
 * Some free space (unpartitioned) - note that the installer represents this as its own "partition", same as `diskutil` itself does.
 * The System Recovery partition (always exists last), which contains 2 APFS volumes and has one instance of recoveryOS installed (version 12.3).
   * You don't want to touch this, but we show it since knowing what version of recoveryOS is present is useful. There could be a fallback version too.
