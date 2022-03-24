@@ -1,6 +1,6 @@
 Partition management from macOS can be confusing. Hopefully this helps explain things.
 
-Note: We'll add uninstall/cleanup options to the installer soon, but by definition it will always be a simplified tool that is only guaranteed to work for the common case of vanilla Asahi Linux installs; if you do your own partition management or install another distro, you'll have to know how to do your own partition management like this in order to clean up properly.
+Note: We'll add uninstall/cleanup options to the installer soon, but by definition it will always be a simplified tool that is only guaranteed to work for the common case of vanilla Asahi Linux installs; if you do your own partition management or install another distro, you'll have to know how to do it manually like this in order to clean up properly.
 
 ## Just wipe it all, please
 
