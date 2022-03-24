@@ -20,7 +20,7 @@ If you broke your OS recovery, you might find yourself in a boot loop. If this h
 
 ## Physical disk layout on Apple Silicon
 
-* The NVMe drive has namespaces. You only care about the primary one, that's `disk0` on macOs or `nvme0n1` on Linux.
+* The NVMe drive has namespaces. You only care about the primary one, that's `disk0` on macOS or `nvme0n1` on Linux.
   * The others are used for kernel panic logs and stuff like that. That's pretty low level stuff you don't have to care about. This is an NVMe thing, like "low-level partitions". Just don't think too much about it.
 * The primary namespace is formatted as a GPT partition table, same as on most Linux/Windows/Intel Mac systems these days
 * The GPT contains partitions, which can be traditional ones (FAT32, HFS+, Linux...) or APFS containers
