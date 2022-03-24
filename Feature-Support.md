@@ -1,9 +1,9 @@
 This page details currently supported features on all extant Apple Silicon Macs, as well as their upstream status. Kernel versions indicate when each feature was upstreamed. Versions in parentheses indicate when features currently in review are scheduled/likely to be scheduled for merging upstream.
 
-# M1 (T8103)
+## M1 (T8103)
 Devices based on the Apple M1 SoC, released in 2020.
 
-## Common features
+### Common features
 These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
 
 Note that: you can hard adjust the brightness in asahi by setting it in macos first.
@@ -46,7 +46,7 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 | GPU | unsupported |
 | ANE | unsupported |
 
-## Mac Mini (M1, 2020)
+### Mac Mini (M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
 | Device tree | 5.13 |
@@ -56,7 +56,7 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 | 10Gbps Ethernet | linux-asahi (5.17) |
 | Internal Speaker | linux-asahi |
 
-## MacBook Pro (13-inch, M1, 2020)
+### MacBook Pro (13-inch, M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
 | Device tree | linux-asahi (5.17) |
@@ -70,7 +70,7 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 | Battery/charge monitoring | linux-asahi |
 | Display brightness | unsupported |
 
-## MacBook Air (13-inch, M1, 2020)
+### MacBook Air (13-inch, M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
 | Device tree | linux-asahi (5.17) |
@@ -83,7 +83,7 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 | Battery/charge monitoring | linux-asahi |
 | Display brightness | unsupported |
 
-## iMac (M1, 2020)
+### iMac (M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
 | USB Type-C Ports | unsupported |
@@ -93,10 +93,10 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 | Display brightness | unsupported |
 
 
-# M1 Pro/Max (T6000/T6001)
+## M1 Pro/Max (T6000/T6001)
 Devices based on the Apple M1 Pro and Max SoCs, released late 2021.
 
-## Common Features
+### Common Features
 These features are common to all M1 Pro/Max devices
 | Feature | Support |
 |---------|---------|
@@ -137,7 +137,7 @@ These features are common to all M1 Pro/Max devices
 | ANE | unsupported |
 | Apple ProRes | unsupported |
 
-## MacBook Pro (14/16-inch, M1 Pro/Max, 2021)
+### MacBook Pro (14/16-inch, M1 Pro/Max, 2021)
 | Feature | Support Level |
 |---------|---------------|
 | Device tree | linux-asahi (5.17) |
@@ -152,3 +152,22 @@ These features are common to all M1 Pro/Max devices
 | SD Card Reader | linux-asahi (5.17) |
 | Battery/charge monitoring | linux-asahi |
 | Display brightness | unsupported |
+
+
+## M1 Ultra (T6002)
+The M1 Ultra consists of two M1 Max SoCs connected together
+in a NUMA configuration. Responsibility for whole-chip functions
+is split between the two dice. Since none of the hardware is actually
+new, hardware support is identical to the M1 Max. Only a device tree
+is required to support this SoC. Machine-specific hardware will still
+need to be evaluated on a per-machine basis.
+
+### Mac Studio (M1 Max/Ultra, 2022)
+| Feature | Support Level |
+| ------- | ------------- |
+| Device tree | unsupported |
+| Internal speaker | unsupported |
+| HDMI Out | unsupported |
+| Ethernet | unsupported |
+| Audio jack | unsupported |
+
