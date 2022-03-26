@@ -30,7 +30,7 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 | DCP | needs cleanup |
 | DP Alt Mode | unsupported |
 | Thunderbolt | unsupported |
-| USB2 (via TB ports) | linux-asahi (5.17) |
+| USB2 (via TB ports) | linux-asahi |
 | USB3 (via TB ports) | unsupported |
 | WiFi | linux-asahi |
 | Bluetooth | unsupported |
@@ -100,14 +100,15 @@ Devices based on the Apple M1 Pro and Max SoCs, released late 2021.
 These features are common to all M1 Pro/Max devices
 | Feature | Support |
 |---------|---------|
-| Bringup | 5.17 |
+| Bringup (AICv2) | 5.18 |
+| I/O MMU | linux asahi (posted) |
 | ARM PMU | linux-asahi (5.18) |
 | cpufreq | linux-asahi |
 | CPU power gating | in review |
 | System sleep | in review |
 | UART | 5.13 |
 | Watchdog | linux-asahi (5.17) |
-| PCIe | 5.16 |
+| PCIe | 5.16, requires I/O MMU |
 | I<sup>2</sup>C | 5.16 |
 | GPIO | 5.16 |
 | USB-PD | 5.16 |
@@ -120,7 +121,7 @@ These features are common to all M1 Pro/Max devices
 | DCP | needs cleanup |
 | DP Alt Mode | unsupported |
 | Thunderbolt | unsupported |
-| USB2 (via TB ports) | linux-asahi (5.17) |
+| USB2 (via TB ports) | linux-asahi |
 | USB3 (via TB ports) | unsupported |
 | WiFi | linux-asahi |
 | Bluetooth | unsupported |
@@ -140,7 +141,7 @@ These features are common to all M1 Pro/Max devices
 ### MacBook Pro (14/16-inch, M1 Pro/Max, 2021)
 | Feature | Support Level |
 |---------|---------------|
-| Device tree | linux-asahi (5.17) |
+| Device tree | linux-asahi |
 | MagSafe connector | 5.16 |
 | SPI HID | linux-asahi |
 | Keyboard | linux-asahi |
@@ -149,7 +150,7 @@ These features are common to all M1 Pro/Max devices
 | Webcam | unsupported |
 | Internal speakers | unsupported |
 | HDMI Out | unsupported |
-| SD Card Reader | linux-asahi (5.17) |
+| SD Card Reader | linux-asahi (5.17, requires I/O MMU) |
 | Battery/charge monitoring | linux-asahi |
 | Display brightness | unsupported |
 
