@@ -156,7 +156,7 @@ These features are common to all M1 Pro/Max devices
 
 ## M1 Ultra (T6002)
 The M1 Ultra consists of two M1 Max SoCs connected together
-in a NUMA configuration. Responsibility for whole-chip functions
+in an interleaved UMA configuration. Responsibility for whole-chip functions
 is split between the two dice. Since none of the hardware is actually
 new, hardware support is identical to the M1 Max. Only a device tree
 is required to support this SoC. Machine-specific hardware will still
