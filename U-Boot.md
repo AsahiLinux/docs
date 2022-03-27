@@ -3,143 +3,29 @@ any other efi boot loader from vfat esp partition located on the internal NVMe d
 or an USB stick. Grub can then load a Linux kernel and initird to boot Linux. U-Boot will try to load **EFI/BOOT/BOOTAA64.EFI**.
 Make sure that grub or any other boot loader is located there.
 
-[U-Boot Installation Video](https://tg.st/u/asahi-installer-u-boot.mp4)
-
 # Tripwires
 
 The USB-a ports on the mac mini will not work in u-boot and grub. The two additional USB-3 ports on the iMac 4 port model also don't work.
 
-In order that the internal keyboard work on pro/max models you need the following two **kernel** patches:
+```
+# Prerequisit: Asahi Installer
 
+Run the Asahi Installer and Select UEFI environment only (m1n1 + U-Boot + ESP)
 ```
-https://tg.st/u/256f5efbf23ff68c489dad92f99d1cecfb021729.patch
-https://tg.st/u/8737955a0263d09ffa8550658dfcac1df3d0665c.patch
-```
-# Prerequisit: Bootchain
-
-In order to use u-boot, you need three extra partitions: The Linux stub from
-the asahi installer, an vfat EFI System Partition (esp) and a root partion.
-Optionally a boot partition if you have an encrypted root device. Not covered here.
-
-Under MacOS, lets make space - the last number is the space that macos will
-occupy. It is recommended to have at least 70 GB. I recommend on leaving at
-least 100 GB for macos.
-```
-diskutil apfs resizeContainer disk0s2 200GB
-```
-
-Than run the Asahi Installer. In the MacOS Boot picker, you have to unlock,
-select Linux and click on Restart.
-
-```
-curl -L https://mrcn.st/alxsh | sh
-```
-
-Wait for the system to shutdown and the LEDs turn off. Than wait another 5 seconds. Now press and do _not_ let go of the power button for 15 seconds.  In the boot picker, select 'Options' and select Utilities > Terminal. In this terminal execute. If you screw the power button holding, turn the System off by pressing the power button until it is off and start from the beginning of this paragraph.
-
-```
-/Volumes/Linux/step2.sh
-```
-
-Create an EFI parition because the final layout will have that
-```
-diskutil list
-diskutil addPartition <identifier before free space> %EFI% LB 512MB
-```
-
-Create partition to hold a root filesystem
-```
-diskutil list
-diskutil addPartition <identifier before free space> %Linux% %noformat% <size>
+curl -L https://alx.sh | sh
 ```
 
 # Building
-In order to get the boot object, we need to build m1n1 and u-boot and
-concatenate the two and the device trees from the kernel. m1n1 automatically
-picks the right device tree for the model you're booting it on.
-
-```
-git clone --depth 1 https://github.com/jannau/u-boot -b x2r10g10b10
-cd u-boot
-make apple_m1_defconfig
-make -j 16
-
-git clone --recursive https://github.com/AsahiLinux/m1n1.git
-cd m1n1
-make -j
-cd ..
-
-cat m1n1/build/m1n1.macho `find linux/arch/arm64/boot/dts/apple/ -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.macho
-cat m1n1/build/m1n1.bin `find linux/arch/arm64/boot/dts/apple/ -name \*.dtb` u-boot/u-boot-nodtb.bin > u-boot.bin
-```
+See
+https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/blob_plain/refs/heads/master:/bootstrap.sh
+in the fuctions build_linux, build_m1n1, build_uboot.
 
 # Binary
 
-FIXME; This should be hosted by marcan or better included in the installer
-
-You can download a prebuild version which was built by Thomas Glanzmann from here:
-```
-curl -LO https://tg.st/u/u-boot.macho
-curl -LO https://tg.st/u/u-boot.bin
-```
+Are included in the asahi installer.
 
 # Installing
-In order to install the u-boot.macho object, we need to make sure that Linux
-boots by default, power off the m1 system completely, and boot it by holding
-the power button until it says 'showing boot options', than select the Options
-menu. Open a terminal, download u-boot.macho that you build in the previous
-step and run the following command:
-
-```
-# <= MaOS 12.0.1
-kmutil configure-boot -c u-boot.macho -v /Volumes/Linux
-# Macos 12.1 and newer
-kmutil configure-boot -c u-boot.bin --raw --entry-point 2048 --lowest-virtual-address 0 -v /Volumes/Linux
-```
-
-# Arch
-Move Image.gz to /boot
-
-```
-grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-# Debian
-
-The esp vfat partition should be mounted to /boot/efi. Replace the X with your partition:
-
-```
-lsblk
-mkdir -p /boot/efi
-echo '/dev/nvme0n1pX /boot/efi vfat defaults 0 0' >> /etc/fstab
-mount /boot/efi
-```
-
-Install grub and make sure grub-efi-arm64-signed is not installed because it makes u-boot hang.
-
-```
-apt-get install grub-efi grub-efi-arm64-signed-
-```
-
-Install grub where u-boot expects it by specifying the --removable flag
-
-```
-grub-install --target=arm64-efi --efi-directory=/boot/efi --removable
-```
-
-Also run the following command and set **Force extra installation to the EFI**
-**removable media path** to **yes** and **update nvrma** to **no** in order to make grub updates not break your
-bootchain.
-
-```
-dpkg-reconfigure grub-efi-arm64
-```
-
-Do not forget to update-grub afterwards:
-
-```
-update-grub
-```
+Copy it to the esp partition to m1n1/boot.bin.
 
 # Boot from USB
 
