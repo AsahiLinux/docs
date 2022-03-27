@@ -1,4 +1,4 @@
-# Install Fedora using the Debian installer
+# Install Fedora using the Asahi installer
 
 [Video Recording](https://tg.st/u/m1-fedora.mp4)
 
