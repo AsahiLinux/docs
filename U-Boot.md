@@ -7,7 +7,6 @@ Make sure that grub or any other boot loader is located there.
 
 The USB-a ports on the mac mini will not work in u-boot and grub. The two additional USB-3 ports on the iMac 4 port model also don't work.
 
-```
 # Prerequisit: Asahi Installer
 
 Run the Asahi Installer and Select UEFI environment only (m1n1 + U-Boot + ESP)
