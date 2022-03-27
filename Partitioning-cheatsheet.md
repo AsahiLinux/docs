@@ -2,7 +2,7 @@ Partition management from macOS can be confusing. Hopefully this helps explain t
 
 Note: We'll add uninstall/cleanup options to the installer soon, but by definition it will always be a simplified tool that is only guaranteed to work for the common case of vanilla Asahi Linux installs; if you do your own partition management or install another distro, you'll have to know how to do it manually like this in order to clean up properly.
 
-**Note: If you are deleting Asahi Linux, you will have to set macOS as the default boot OS again if you have not already done so.** You can do this from System Settings in macOS itself, or by holding down the Option key while selecting it in the Boot Picker.
+**Note: If you are deleting Asahi Linux, you will have to set macOS as the default boot OS again if you have not already done so.** You can do this from System Settings in macOS itself, or by holding down the Option key while selecting it in Startup Options. Not doing this ahead of time won't break your computer, but you may not be able to boot automatically until you do so. If you find you cannot go into the Startup Options screen normally, try starting up with a double tap (tap, release, tap and hold the power button).
 
 ## Just wipe it all, please
 
