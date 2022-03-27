@@ -195,3 +195,19 @@ After deleting Asahi Linux, you could re-install it again (no need to use the re
 
 Again, you can use the physical partition identifier or the logical disk number. They are equivalent. The `0` means resize to fill all available free space after the partition. If instead you want to expand/shrink to a given size, specify it there, e.g. `100GB`.
 
+### Mountig EFI partition
+There are two methods to mount the EFI partition. The first one is this:
+
+```
+diskutil list
+diskutil mount disk0s4
+mount
+cd /Volumes/...
+```
+
+The second one is this:
+
+```
+mkdir /Volumes/efi
+mount -t msdos /dev/disk0s4 /Volumes/efi
+```
