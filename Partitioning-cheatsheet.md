@@ -2,6 +2,8 @@ Partition management from macOS can be confusing. Hopefully this helps explain t
 
 Note: We'll add uninstall/cleanup options to the installer soon, but by definition it will always be a simplified tool that is only guaranteed to work for the common case of vanilla Asahi Linux installs; if you do your own partition management or install another distro, you'll have to know how to do it manually like this in order to clean up properly.
 
+**Note: If you are deleting Asahi Linux, you will have to set macOS as the default boot OS again if you have not already done so.** You can do this from System Settings in macOS itself, or by holding down the Option key while selecting it in the Boot Picker.
+
 ## Just wipe it all, please
 
 We have a stupidly dangerous script lying around that will indiscriminately wipe anything with "Linux", "EFI" or "Asahi" in its name, as well as all 2.5GB APFS containers (which the installer creates), with no confirmation. Nobody has blown anything up with it yet as far as we know, and it should work for the vast majority of users as long as they don't already have any weird partitions, but please don't use it indiscriminately. You're much better off deleting partitions manually if you can help it. We wrote it mostly for developers who do lots of reinstalls and needed a quick way to reset. If you must use it, `curl -L https://alx.sh/wipe-linux | sh` as root. Ignore "operation not permitted" errors at the end (or run it from recovery mode for that optional part to work properly). Don't blame us if it eats your data. Note that this *won't* expand macOS to fill all freed up space; see below for that.
