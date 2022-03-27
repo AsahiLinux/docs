@@ -16,17 +16,17 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 | CPU power gating | in review |
 | System sleep | in review |
 | UART | 5.13 |
-| Watchdog | linux-asahi (5.17) |
+| Watchdog | 5.17 |
 | PCIe | 5.16 |
 | I<sup>2</sup>C | 5.16 |
 | GPIO | 5.16 |
 | USB-PD | 5.16 |
-| Power management | linux-asahi (5.17) |
+| Power management | 5.17 |
 | NVMe | linux-asahi |
 | SPI | linux-asahi |
 | SPI NOR | linux-asahi |
-| Primary display (SimpleFB) | 5.13 |
-| Primary display (SimpleDRM) | linux-asahi (5.17) |
+| Primary display (SimpleFB) | 5.13 [_deprecated_] |
+| Primary display (SimpleDRM) | 5.17 |
 | DCP | needs cleanup |
 | DP Alt Mode | unsupported |
 | Thunderbolt | unsupported |
@@ -53,13 +53,13 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 | USB-A ports | 5.16 |
 | HDMI Out | see M1 primary display |
 | 1Gbps Ethernet | 5.16 |
-| 10Gbps Ethernet | linux-asahi (5.17) |
+| 10Gbps Ethernet | 5.17 |
 | Internal Speaker | linux-asahi |
 
 ### MacBook Pro (13-inch, M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
-| Device tree | linux-asahi (5.17) |
+| Device tree | 5.17 |
 | SPI HID | linux-asahi |
 | Keyboard | linux-asahi |
 | Touchpad | linux-asahi |
@@ -73,7 +73,7 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 ### MacBook Air (13-inch, M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
-| Device tree | linux-asahi (5.17) |
+| Device tree | 5.17 |
 | SPI HID | linux-asahi |
 | Keyboard | linux-asahi |
 | Touchpad | linux-asahi |
@@ -86,6 +86,7 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 ### iMac (M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
+| Device tree | 5.17 |
 | USB Type-C Ports | unsupported |
 | 1Gbps Ethernet | 5.16 |
 | Webcam | unsupported |
@@ -107,17 +108,17 @@ These features are common to all M1 Pro/Max devices
 | CPU power gating | in review |
 | System sleep | in review |
 | UART | 5.13 |
-| Watchdog | linux-asahi (5.17) |
+| Watchdog | 5.17 |
 | PCIe | 5.16, requires I/O MMU |
 | I<sup>2</sup>C | 5.16 |
 | GPIO | 5.16 |
 | USB-PD | 5.16 |
-| Power management | linux-asahi (5.17) |
+| Power management | 5.17 |
 | NVMe | linux-asahi |
 | SPI | linux-asahi |
 | SPI NOR | linux-asahi |
-| Primary display (SimpleFB) | 5.13 |
-| Primary display (SimpleDRM) | linux-asahi (5.17) |
+| Primary display (SimpleFB) | 5.13 [_deprecated_] |
+| Primary display (SimpleDRM) | 5.17 |
 | DCP | needs cleanup |
 | DP Alt Mode | unsupported |
 | Thunderbolt | unsupported |
