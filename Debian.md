@@ -1,1 +1,1 @@
-This page has moved [here](https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/)
+This page has moved [here](https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/).
