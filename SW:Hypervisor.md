@@ -22,7 +22,7 @@ kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -V development \
 1. Start into 1tr and start a terminal
 2. Disable most security feature in the boot policy: `bputil -nkcas`
 3. Disable SIP (bputil resets it): `csrutil disable`
-4. install m1n1 as custom boot object if not already done
+4. install m1n1 as custom boot object
 
 ## Starting the development kernel under the m1n1 hypervisor
 
