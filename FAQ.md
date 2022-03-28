@@ -1,6 +1,6 @@
 ### When will Asahi Linux be "done"?
 
---> [["When will Asahi Linux be done?"]]
+→ [["When will Asahi Linux be done?"]]
 
 ### How do I install it?
 
