@@ -2,4 +2,4 @@ I've created a Fedora installer that will allow you to install Fedora 35 in the 
 Only a minimal build is supported at this time. 
 
 You can find more details here:  
-https://github.com/leifliddy/asahi-alarm-builder
+https://github.com/leifliddy/asahi-fedora-builder
