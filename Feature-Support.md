@@ -3,15 +3,15 @@ This page details currently supported features on all extant Apple Silicon Macs,
 ## Table of Contents
 - [M1 (T8103)](#m1--t8103-)
   * [T8103 Common features](#T8103-common-features)
-  * [Mac Mini (M1, 2020)](#mac-mini--m1--2020-)
-  * [MacBook Pro (13-inch, M1, 2020)](#macbook-pro--13-inch--m1--2020-)
-  * [MacBook Air (13-inch, M1, 2020)](#macbook-air--13-inch--m1--2020-)
-  * [iMac (M1, 2020)](#imac--m1--2020-)
-- [M1 Pro/Max (T6000/T6001)](#m1-pro-max--t6000-t6001-)
+  * [Mac Mini (M1, 2020)](#mac-mini-m1--2020)
+  * [MacBook Pro (13-inch, M1, 2020)](#macbook-pro-13-inch-m1-2020)
+  * [MacBook Air (13-inch, M1, 2020)](#macbook-air-13-inch-m1-2020)
+  * [iMac (M1, 2020)](#imac-m1-2020)
+- [M1 Pro/Max (T6000/T6001)](#m1-pro-max-t6000-t6001)
   * [T600X Common Features](#T600X-common-features)
-  * [MacBook Pro (14/16-inch, M1 Pro/Max, 2021)](#macbook-pro--14-16-inch--m1-pro-max--2021-)
-- [M1 Ultra (T6002)](#m1-ultra--t6002-)
-  * [Mac Studio (M1 Max/Ultra, 2022)](#mac-studio--m1-max-ultra--2022-)
+  * [MacBook Pro (14/16-inch, M1 Pro/Max, 2021)](#macbook-pro-14-16-inch-m1-pro-max-2021)
+- [M1 Ultra (T6002)](#m1-ultra-t6002)
+  * [Mac Studio (M1 Max/Ultra, 2022)](#mac-studio-m1-max-ultra-2022)
 
 
 ## M1 (T8103)
