@@ -175,7 +175,7 @@ cat build/m1n1.macho \
     ../linux/arch/arm64/boot/dts/apple/*.dtb \
     <initramfs path>/initramfs-fw.cpio.gz \
     ../linux/arch/arm64/boot/Image.gz \
-    >m1n1-linux.macho
+    > /tmp/m1n1-linux.macho
 python tools/run_guest.py /tmp/m1n1-linux.macho
 ```
 
