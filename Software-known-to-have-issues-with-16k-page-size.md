@@ -13,3 +13,4 @@ This wiki page lists software known to have issues with 16k page size (default o
 | hardened_malloc | ❌ | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
 | zig | ❌ | https://github.com/ziglang/zig/issues/11308 | 
 | rust | ❌ | build issue | might use embedded jemalloc using the build system's page size by default, AsahiLinux/Arch Linux Arm [fix](https://github.com/AsahiLinux/alarm-PKGBUILDs/commit/c2459a0ae6fc04b7fe98bb04f10795248eca949b)
+| btrfs | | https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/btrfs/subpage.c | blocksize==pagesize works, 4K blocksize support with 16K pages needs more work
