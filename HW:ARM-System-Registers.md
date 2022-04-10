@@ -701,7 +701,10 @@ The AArch64 FEAT_AFT feature implements equivalent support, but Apple implemente
 * [0] MUL53
 * [1] WKDM
 * [2] ARCHRETENTION
-
+* [4] AMX
+* [9] TSO
+* [19] APFLG
+* [20] PSRV
 
 ### Unknown registers
 
