@@ -187,22 +187,22 @@ If you have a standard release build of m1n1 installed as fuOS (i.e. what you ge
 
 ```
 bputil -a
+```
+
+You will be prompted to select the correct boot volume if you are multi booting  (you can check which volume is which using `diskutil list <UUID>`) and then asked to authenticate yourself. 
+
+You can then enable verbose mode using:
+
+```
 nvram boot-args=-v
 ```
 
-You'll have to select the correct boot volume and authenticate yourself for `bputil`.
-
-Once initially enabled, the feature can be toggled off with:
+Once initially enabled, this feature can be toggled off with:
 
 ```
 nvram boot-args=
 ```
 
-And back on with:
-
-```
-nvram boot-args=-v
-```
 
 By doing this, m1n1 will turn on verbose logging, and wait 5 seconds before booting its payloads. If it receives a USB proxy connection in that time, it will go into proxy mode. This is extremely useful when you want to have a working, auto-booting Linux install, but retain the ability to boot kernels via proxy mode if something goes wrong, or just for fast development.
 
