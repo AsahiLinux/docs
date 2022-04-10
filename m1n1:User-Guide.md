@@ -142,7 +142,7 @@ If given no payloads, or if booting the payloads fails, m1n1 will fall back to p
 
 Proxy mode provides a USB device interface (available on all Thunderbolt ports) for debugging. To use it, connect your target device to your host device with a USB cable (e.g. a USB-C to USB-A cable, with the C side on the m1n1 target). See [[m1n1:Developer Guide]] for all the crazy details. These are just some simple examples of what you can do.
 
-When in proxy mode, a Linux host will see two USB TTY ACM devices, typically /dev/ttyACM0 & /dev/ttyACM1. (In macOS this will be /dev/cu.usbmodemP_01 and /dev/usbmodemP_03). The first one is the proper proxy interface, while the second one is reserved for use by the hypervisor's virtual UART feature. You should set the `M1N1DEVICE` environment variable to the path to the right device.
+When in proxy mode, a Linux host will see two USB TTY ACM devices, typically /dev/ttyACM0 & /dev/ttyACM1. (In macOS this will be /dev/cu.usbmodemP_01 and /dev/cu.usbmodemP_03). The first one is the proper proxy interface, while the second one is reserved for use by the hypervisor's virtual UART feature. You should set the `M1N1DEVICE` environment variable to the path to the right device.
 
 ### Booting a Linux kernel
 
