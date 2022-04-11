@@ -158,7 +158,7 @@ export M1N1DEVICE=/dev/ttyACM0
 proxyclient/tools/chainload.py -r build/m1n1.bin
 ```
 
-### Running a Linux kernel as a VM guest, with virtual UART
+### Running a Linux kernel as a m1n1 hypervisor guest, with virtual UART
 
 First, open the secondary port (e.g. `/dev/ttyACM1`) with a serial terminal:
 
@@ -180,6 +180,10 @@ python tools/run_guest.py /tmp/m1n1-linux.macho
 ```
 
 Note the use of the `macho` version for run_guest.py (no bin support yet). Also note that we chainload m1n1 first; this is *mandatory* as the hypervisor ABI is extremely unstable.
+
+### Running a macOS kernel as a m1n1 hypervisor guest
+
+See [SW:Hypervisor](https://github.com/AsahiLinux/docs/wiki/SW%3AHypervisor)
 
 ### Backdoor proxy mode in stage 1 release builds
 
