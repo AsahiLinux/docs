@@ -14,3 +14,4 @@ This wiki page lists software known to have issues with 16k page size (default o
 | zig | ❌ | https://github.com/ziglang/zig/issues/11308 | 
 | rust | ❌ | build issue | might use embedded jemalloc using the build system's page size by default, AsahiLinux/Arch Linux Arm [fix](https://github.com/AsahiLinux/alarm-PKGBUILDs/commit/c2459a0ae6fc04b7fe98bb04f10795248eca949b)
 | btrfs | | https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/btrfs/subpage.c | blocksize==pagesize works, 4K blocksize support with 16K pages needs more work |
+| rr | ❌ | https://github.com/rr-debugger/rr/issues/3143 |
