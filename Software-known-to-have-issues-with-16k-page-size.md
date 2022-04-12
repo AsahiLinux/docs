@@ -2,7 +2,7 @@ This wiki page lists software known to have issues with 16k page size (default o
 
 | Software  | Fixed? | upstream report / PR / fix                      | Notes                                                  |
 |-----------|--------|-------------------------------------------------|--------------------------------------------------------|
-| chromium  | ❌ | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788                                                | Includes electron-based apps (e.g. vscode, spotify, …) |
+| chromium  | ✅ | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788                                                | Includes electron-based apps (e.g. vscode, spotify, …) <br> Fix to appear in the yet-unreleased chromium 102 |
 | jemalloc  | ❌ | https://github.com/archlinuxarm/PKGBUILDs/pull/1914                                                | Works when compiled for a page size greater than or equal to the system's    |
 | libunwind | ✅ | https://github.com/libunwind/libunwind/pull/330 | fix in master, not yet released                        |
 | webkitgtk | ✅ | https://github.com/WebKit/WebKit/commit/0a4a03da45f774 | Fixed since 2.34.6 (see [changelog](https://trac.webkit.org/wiki/WebKitGTK/2.34.x)) |
