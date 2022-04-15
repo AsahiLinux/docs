@@ -8,3 +8,4 @@ Several members of the community have contributed guides and pre-built artifacts
 | Gentoo | https://github.com/kellermanrivero | https://medium.com/@kellermanrivero/installing-gentoo-linux-in-apple-macbook-pro-m1-49e163534898 |
 | NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-m1/blob/main/docs/uefi-standalone.md |
 | Pop!_OS | IRC: Lucy (https://github.com/Absolucy) | https://github.com/pop-os/asahi-pop |
+| Alpine Linux | IRC: mps (https://arvanta.net/alpine) | https://arvanta.net/alpine/install-alpine-m1/ |
