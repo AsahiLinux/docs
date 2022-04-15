@@ -5,5 +5,6 @@ Several members of the community have contributed guides and pre-built artifacts
 | Debian | https://thomas.glanzmann.de/ | https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/ |
 | Fedora | https://thomas.glanzmann.de/ | https://github.com/AsahiLinux/docs/wiki/Fedora |
 | Fedora | https://github.com/leifliddy| https://github.com/leifliddy/asahi-fedora-builder |
+| Gentoo | https://github.com/kellermanrivero | https://medium.com/@kellermanrivero/installing-gentoo-linux-in-apple-macbook-pro-m1-49e163534898 |
 | NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-m1/blob/main/docs/uefi-standalone.md |
 | Pop!_OS | IRC: Lucy (https://github.com/Absolucy) | https://github.com/pop-os/asahi-pop |
