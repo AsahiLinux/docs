@@ -17,7 +17,7 @@ curl -L https://alx.sh | sh
 # Building
 See
 https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/blob_plain/refs/heads/master:/bootstrap.sh
-in the fuctions build_linux, build_m1n1, build_uboot.
+in the functions build_linux, build_m1n1, build_uboot.
 
 # Binary
 
