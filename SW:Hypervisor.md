@@ -4,7 +4,7 @@ You can run either a development kernel obtained from Apple, in which case you w
 
 ## Preparation
 
-You can use either use your existing macOS install, or alternatively install a second copy of macOS. _Note: Apple Silicon Mac's cannot go backwards with Firmware versions for security reasons - so be careful to not just install the latest macOS version from the App Store if you wish to share code with others in the project._
+You can use either your existing macOS install, or alternatively install a second copy of macOS. _Note: Apple Silicon Mac's cannot go backwards with Firmware versions for security reasons - so be careful to not just install the latest macOS version from the App Store if you wish to share code with others in the project._
 
 To install a second copy of macOS you will need to complete a couple of steps:
 1. Create a second Volume on your macOS partition:
