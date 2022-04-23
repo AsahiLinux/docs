@@ -2,6 +2,16 @@
 
 You can run either a development kernel obtained from Apple, in which case you will have debug symbols, or use the stock kernel found in a macOS install.
 
+## Preparation
+
+You can use either your existing macOS install, or alternatively install a second copy of macOS. _Note: Apple Silicon Mac's cannot go backwards with Firmware versions for security reasons - so be careful to not just install the latest macOS version from the App Store if you wish to share code with others in the project._
+
+To install a second copy of macOS you will need to complete a couple of steps:
+1. Create a second Volume on your macOS partition:
+`sudo diskutil APFS addVolume disk4 APFS macOSTest -mountpoint /System/Volumes/macOSTest` Change disk4 and volume name (i.e macOSTest) for your particular system/preferences.  _Note: Don't make this a system role or it will mess with your existing system (no valid users in 1TR)_
+2. Download and install macOS. To download a specific version of macOS installer you can use the command
+`softwareupdate --fetch-full-installer --full-installer-version 12.3` substituting 12.3 for whichever version you require. The installer will be found in the Applications folder. Copy it out of here if you want to save it, otherwise it deletes itself once you have installed once. 
+
 ## Getting the macOS development kernel and creating the kernelcache
 
 1. Create a macOS developer account (requires an icloud account.
