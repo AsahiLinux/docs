@@ -193,7 +193,7 @@ If you have a standard release build of m1n1 installed as fuOS (i.e. what you ge
 bputil -a
 ```
 
-You will be prompted to select the correct boot volume if you are multi booting  (you can check which volume is which using `diskutil list <UUID>`) and then asked to authenticate yourself. 
+You will be prompted to select the correct boot volume if you are multi booting  (you can check which volume is which using `diskutil apfs list`) and then asked to authenticate yourself. 
 
 You can then enable verbose mode using:
 
