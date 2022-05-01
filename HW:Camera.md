@@ -4,7 +4,8 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 ## Registers 
 
 - ISP registers (regs[0])
-- PS registers (regs[1])
+- PS registers (regs[1]): Depending on chip revision diffrent register range is used. Most chip revisions seems to use 0x4000-0x4060
+    - Unknown (offset: 0x00)
     - Unknown (offset: 0x08)
     - Unknown (offset: 0x10)
     - Unknown (offset: 0x18) 
