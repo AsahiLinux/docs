@@ -11,6 +11,7 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
     - Unknown (offset: 0x4018)
     - Unknown (offset: 0x4020)
     - Unknown (offset: 0x4028)
+    - Unknown (offset: 0x4030)
     - Unknown (offset: 0x4038)
     - Unknown (offset: 0x4040)
     - Unknown (offset: 0x4048)
