@@ -8,6 +8,10 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
     - Unknown (offset: 0x24e0080)
     - Unknown (offset: 0x1400044)
     - Unknown (offset: 0x1aa801c)
+    - Unknown (offset: 0x24c41d0) (Note: Related to clock)
+    - Unknown (offset: 0x24c41f0) (Note: Related to clock)
+    - Unknown (offset: 0x24c41f4) (Note: Related to clock)
+    - Unknown (offset: 0x2104190) (Note: Related to clock)
 
 - PS registers (regs[1]): Depending on chip revision different register range is used. Most chip revisions seems to use 0x4000-0x4060
     - Unknown (offset: 0x00)
