@@ -15,7 +15,6 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 | Unknown  	| 0xF  	| == 0x15b | 0x24c41f8 | Related to Ref Clock |
 | Unknown  	| 0xF  	| == 0x15b | 0x24c41fc | Related to Ref Clock |
 | Unknown  	| 0xF  	| == 0x15b | 0x24c4200 | Related to Ref Clock |
--
 | Unknown  	| 0xC  	| != 0x14c | 0x24c41d0 | Related to Ref Clock |
 | Unknown  	| 0xC  	| != 0x14c | 0x24c41d4 | Related to Ref Clock |
 | Unknown  	| 0xC  	| != 0x14c | 0x24c41d8 | Related to Ref Clock |
