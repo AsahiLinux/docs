@@ -4,6 +4,11 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 ## Registers 
 
 - ISP registers (regs[0]): Depending on chip revision different registers are used.
+
+| Register Name | ISP Version | ISP Revision? | Offset | Notes |
+|---	|---	|---	|---	|---	|
+|   	|   	|   	|   	|   	|
+
     - Unknown (offset: 0x24a0080)
     - Unknown (offset: 0x24e0080)
     - Unknown (offset: 0x1400044)
