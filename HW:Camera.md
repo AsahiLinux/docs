@@ -7,7 +7,14 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 
 | Register Name | ISP Version | ISP Revision? | Offset | Notes |
 |---	|---	|---	|---	|---	|
-|   	|   	|   	|   	|   	|
+| Unknown  	| 0xF  	| != 0x15b | 0x24c41f0 | Related to Ref Clock |
+| Unknown  	| 0xF  	| != 0x15b | 0x24c41f4 | Related to Ref Clock |
+| Unknown  	| 0xF  	| != 0x15b | 0x24c41f8 | Related to Ref Clock |
+| Unknown  	| 0xF  	| != 0x15b | 0x24c41fc | Related to Ref Clock |
+| Unknown  	| 0xF  	| == 0x15b | 0x24c41f4 | Related to Ref Clock |
+| Unknown  	| 0xF  	| == 0x15b | 0x24c41f8 | Related to Ref Clock |
+| Unknown  	| 0xF  	| == 0x15b | 0x24c41fc | Related to Ref Clock |
+| Unknown  	| 0xF  	| == 0x15b | 0x24c4200 | Related to Ref Clock |
 
     - Unknown (offset: 0x24a0080)
     - Unknown (offset: 0x24e0080)
