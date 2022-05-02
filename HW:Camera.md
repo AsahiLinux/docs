@@ -7,25 +7,25 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 
 | Register Name | ISP Version | ISP Revision? | Offset | Notes |
 |---	|---	|---	|---	|---	|
-| Unknown  	| 0xF  	| != 0x15b | 0x24c41f0 | Related to Ref Clock |
-| Unknown  	| 0xF  	| != 0x15b | 0x24c41f4 | Related to Ref Clock |
-| Unknown  	| 0xF  	| != 0x15b | 0x24c41f8 | Related to Ref Clock |
-| Unknown  	| 0xF  	| != 0x15b | 0x24c41fc | Related to Ref Clock |
-| Unknown  	| 0xF  	| == 0x15b | 0x24c41f4 | Related to Ref Clock |
-| Unknown  	| 0xF  	| == 0x15b | 0x24c41f8 | Related to Ref Clock |
-| Unknown  	| 0xF  	| == 0x15b | 0x24c41fc | Related to Ref Clock |
-| Unknown  	| 0xF  	| == 0x15b | 0x24c4200 | Related to Ref Clock |
-| Unknown  	| 0xC  	| != 0x14c | 0x24c41d0 | Related to Ref Clock |
-| Unknown  	| 0xC  	| != 0x14c | 0x24c41d4 | Related to Ref Clock |
-| Unknown  	| 0xC  	| != 0x14c | 0x24c41d8 | Related to Ref Clock |
-| Unknown  	| 0xC  	| != 0x14c | 0x24c41dc | Related to Ref Clock |
-| Unknown  	| 0xC  	| == 0x14c | 0x2104190 | Related to Ref Clock |
-| Unknown  	| 0xC  	| == 0x14c | 0x2104194 | Related to Ref Clock |
-| Unknown  	| 0xC  	| == 0x14c | 0x2104198 | Related to Ref Clock |
-| Unknown  	| 0xC  	| == 0x14c | 0x210419c | Related to Ref Clock |
-| Unknown  	| Other | * | 0x2104190 | Related to Ref Clock |
-| Unknown  	| Other | * | 0x2104194 | Related to Ref Clock |
-| Unknown  	| Other | * | 0x2104198 | Related to Ref Clock |
+| Unknown  	| 0xF  	| != 0x15b | 0x24c41f0 | Sensor Ref Clock 0 |
+| Unknown  	| 0xF  	| != 0x15b | 0x24c41f4 | Sensor Ref Clock 1 |
+| Unknown  	| 0xF  	| != 0x15b | 0x24c41f8 | Sensor Ref Clock 2 |
+| Unknown  	| 0xF  	| != 0x15b | 0x24c41fc | Sensor Ref Clock 3  |
+| Unknown  	| 0xF  	| == 0x15b | 0x24c41f4 | Sensor Ref Clock 0  |
+| Unknown  	| 0xF  	| == 0x15b | 0x24c41f8 | Sensor Ref Clock 1  |
+| Unknown  	| 0xF  	| == 0x15b | 0x24c41fc | Sensor Ref Clock 2  |
+| Unknown  	| 0xF  	| == 0x15b | 0x24c4200 | Sensor Ref Clock 3  |
+| Unknown  	| 0xC  	| != 0x14c | 0x24c41d0 | Sensor Ref Clock 0  |
+| Unknown  	| 0xC  	| != 0x14c | 0x24c41d4 | Sensor Ref Clock 1  |
+| Unknown  	| 0xC  	| != 0x14c | 0x24c41d8 | Sensor Ref Clock 2  |
+| Unknown  	| 0xC  	| != 0x14c | 0x24c41dc | Sensor Ref Clock 3  |
+| Unknown  	| 0xC  	| == 0x14c | 0x2104190 | Sensor Ref Clock 0  |
+| Unknown  	| 0xC  	| == 0x14c | 0x2104194 | Sensor Ref Clock 1  |
+| Unknown  	| 0xC  	| == 0x14c | 0x2104198 | Sensor Ref Clock 2  |
+| Unknown  	| 0xC  	| == 0x14c | 0x210419c | Sensor Ref Clock 4  |
+| Unknown  	| Other | * | 0x2104190 | Sensor Ref Clock 0 |
+| Unknown  	| Other | * | 0x2104194 | Sensor Ref Clock 1 |
+| Unknown  	| Other | * | 0x2104198 | Sensor Ref Clock 2 |
 
 
     - Unknown (offset: 0x24a0080)
