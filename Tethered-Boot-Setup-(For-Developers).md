@@ -3,7 +3,7 @@ This guide will walk you through the steps required to set up your Apple Silicon
 
 This guide is intended specifically for kernel developers and advanced users who wish to assist in testing patches in the <a href="https://github.com/AsahiLinux/linux">`asahi`</a> branch. Building a kernel is outside the scope of this guide. If you are here, you should be capable of building an AArch64 kernel by yourself. A somewhat sane `.config` can be found at [[_DesktopKernel_]]. Keep in mind that m1n1 expects a gzipped kernel image, your target machine's Device Tree, and will also optionally take a gzipped _initramfs_.
 
-If you are an end-user after a nice desktop Linux experience on their Apple Silicon Mac, this guide is not for you. Support for these machines is not yet at a point where it is ready for production use, or even your average power user. See [[_Feature Support_]] for what works and what doesn't (hint: most things you would expect from a modern desktop do not work yet or are unstable).
+If you are an end-user after a nice desktop Linux experience on their Apple Silicon Mac, this guide is not for you. Support for these machines is not yet at a point where it is ready for production use, or even your average power user. See [[Feature Support]] for what works and what doesn't (hint: most things you would expect from a modern desktop do not work yet or are unstable).
 
 
 ## Hardware Requirements
@@ -12,7 +12,7 @@ If you are an end-user after a nice desktop Linux experience on their Apple Sili
 * A machine of any architecture running a GNU/Linux distribution
   * Both `GCC` and `Clang/LLVM` AArch64 cross-toolchains are supported.
 
-If you are interested in low-level access to the SoC via its debug UART, you will also require a real, physical serial port solution. See [[_low-level serial debug_]] for more information on this. This is not necessary for general kernel development or reverse-engineering but is nice for easy debugging of low-level hardware issues.
+If you are interested in low-level access to the SoC via its debug UART, you will also require a real, physical serial port solution. See [[Low-level-serial-debug]] for more information on this. This is not necessary for general kernel development or reverse-engineering but is nice for easy debugging of low-level hardware issues.
 
 ## Installing m1n1 on your Apple Silicon Mac
 `m1n1` is our Apple Silicon playground/hypervisor/bootloader and is required to boot a Linux kernel or U-Boot. There are three steps to installing it. You must first prepare the disk, run the Asahi Linux installer script from a Terminal inside macOS, then finalize the installation of m1n1 from inside 1TR.
