@@ -26,9 +26,9 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 |  | 0xF  	| == 0x15b | 0x24c4200 | Sensor Ref Clock 3 |
 |  | 0xC  	| != 0x14c | 0x24c41dc | Sensor Ref Clock 3 |
 |  | 0xC  	| == 0x14c | 0x210419c | Sensor Ref Clock 3 |
-| ISP_REVISION | 0xF | N/A | 0x1800000 | 31:0 bits are used. ([31:0] == 0x1) => 0x15a, ([31:0] != 0x1001) => 0x15b |
-| ISP_REVISION | 0xC | N/A | 0x1800000 | 31:0 bits are used. ([31:0] == 0x90) => 0x14a, ([31:0] != 0x1090) => 0x14b, ([31:0] == 0x3091) => 0x14c |
-| ISP_REVISION | 0xB | N/A | 0x1800000 | 31:0 bits are used. ([31:0] == 0x90) => 0x13a, ([31:0] != 0x3091) => 0x13c |
+| ISP_REVISION | 0xF | N/A | 0x1800000 | 31:0 bits are used. ([31:0] == 0x1) => 0x15a <br/> ([31:0] != 0x1001) => 0x15b |
+| ISP_REVISION | 0xC | N/A | 0x1800000 | 31:0 bits are used. ([31:0] == 0x90) => 0x14a <br/> ([31:0] != 0x1090) => 0x14b <br/> ([31:0] == 0x3091) => 0x14c |
+| ISP_REVISION | 0xB | N/A | 0x1800000 | 31:0 bits are used. ([31:0] == 0x90) => 0x13a <br/> ([31:0] != 0x3091) => 0x13c |
 
 
     - Unknown (offset: 0x24a0080)
