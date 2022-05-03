@@ -26,6 +26,7 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 |  | 0xF  	| == 0x15b | 0x24c4200 | Sensor Ref Clock 3 |
 |  | 0xC  	| != 0x14c | 0x24c41dc | Sensor Ref Clock 3 |
 |  | 0xC  	| == 0x14c | 0x210419c | Sensor Ref Clock 3 |
+| ISP_REVISION | N/A | N/A | 0x1800000 | Used to fetch revision. ([31:0] == 0x1) => 0x15a, ([31:0] != 0x1001) => 0x15b, ([31:0] == 0x90) => 0x14a, ([31:0] == 0x1090) => 0x14b, ([31:0] == 0x3091) => 0x14c |
 
 
     - Unknown (offset: 0x24a0080)
