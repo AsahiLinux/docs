@@ -7,6 +7,10 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 
 | Register Name | ISP Version | ISP Revision? | Offset | Notes |
 |---	|---	|---	|---	|---	|
+| ISP_REVISION | 0xF | N/A | 0x1800000 | 31:0 bits are used.<br/> ([31:0] == 0x1) => 0x15a <br/> ([31:0] != 0x1001) => 0x15b |
+|  | 0xC | N/A | 0x1800000 | 31:0 bits are used.<br/> ([31:0] == 0x90) => 0x14a <br/> ([31:0] != 0x1090) => 0x14b <br/> ([31:0] == 0x3091) => 0x14c |
+|  | 0xB | N/A | 0x1800000 | 31:0 bits are used.<br/> ([31:0] == 0x90) => 0x13a <br/> ([31:0] != 0x3091) => 0x13c |
+|---	|---	|---	|---	|---	|
 | SENSOR_REF_CLOCK0 | 0xF  	| != 0x15b | 0x24c41f0 | Sensor Ref Clock 0 |
 |  | 0xF  	| == 0x15b | 0x24c41f4 | Sensor Ref Clock 0 |
 |  | 0xC  	| != 0x14c | 0x24c41d0 | Sensor Ref Clock 0 |
@@ -26,12 +30,11 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 |  | 0xF  	| == 0x15b | 0x24c4200 | Sensor Ref Clock 3 |
 |  | 0xC  	| != 0x14c | 0x24c41dc | Sensor Ref Clock 3 |
 |  | 0xC  	| == 0x14c | 0x210419c | Sensor Ref Clock 3 |
-| ISP_REVISION | 0xF | N/A | 0x1800000 | 31:0 bits are used.<br/> ([31:0] == 0x1) => 0x15a <br/> ([31:0] != 0x1001) => 0x15b |
-|  | 0xC | N/A | 0x1800000 | 31:0 bits are used.<br/> ([31:0] == 0x90) => 0x14a <br/> ([31:0] != 0x1090) => 0x14b <br/> ([31:0] == 0x3091) => 0x14c |
-|  | 0xB | N/A | 0x1800000 | 31:0 bits are used.<br/> ([31:0] == 0x90) => 0x13a <br/> ([31:0] != 0x3091) => 0x13c |
+|---	|---	|---	|---	|---	|
 | POWER_ON? | 0xF | * | 0x24a0080 | Set to 0x1 during power on |
 | POWER_ON? | 0xC | != 0x14c | 0x24a0080 | Set to 0x1 during power on |
 | POWER_ON? | Other | * | 0x20e0080 | Set to 0x1 during power on |
+|---	|---	|---	|---	|---	|
 | UNKNOWN0 | 0xF | * | 0x24c41d0 |  |
 |  | 0xC | != 0x14c | 0x24c41b0 |  |
 |  | Other | Other | 0x2104170 |  |
@@ -57,6 +60,7 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 |  | 0xC | != 0x14c | 0x24c41cc |  |
 |  | 0xC | * | 0x210418c |  |
 |  | 0xB | * | 0x188 |  |
+|---	|---	|---	|---	|---	|
 
     - Unknown (offset: 0x1400044)
     - Unknown (offset: 0x1aa801c)
