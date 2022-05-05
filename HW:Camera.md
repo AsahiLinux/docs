@@ -136,15 +136,18 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
     - Unknown (offset: 0x1c418)   
 - SOC SPMI CSR registers (regs[2])
     - Unknown (offset: 0x80a0) (Initialized as 1 << 2^(1..5))
+    - Unknown (offset: 0x80a4) (Value here seems to be ORed with one of following values: 0x4000000, 0x8000000, 0x1, 0x2)
     - Unknown (offset: 0x28) (Initialized as 0)
     - Unknown (offset: 0x90) (Initialized as 1)
 
 - SOC SPMI0 registers (regs[3])
     - Unknown (offset: 0x80a0) (Initialized as 1 << 2^(1..5))
+    - Unknown (offset: 0x80a4) (Value here seems to be ORed with one of following values: 0x4000000, 0x8000000, 0x1, 0x2)
     - Unknown (offset: 0x28) (Initialized as 0)
     - Unknown (offset: 0x90) (Initialized as 1)
 - SOC SPMI1 registers (regs[4])
     - Unknown (offset: 0x80a0) (Initialized as 1 << 2^(1..5))
+    - Unknown (offset: 0x80a4) (Value here seems to be ORed with one of following values: 0x4000000, 0x8000000, 0x1, 0x2)
     - Unknown (offset: 0x28) (Initialized as 0)
     - Unknown (offset: 0x90) (Initialized as 1)
 
