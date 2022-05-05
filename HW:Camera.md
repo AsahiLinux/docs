@@ -135,8 +135,11 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
     - Unknown (offset: 0x1c400)
     - Unknown (offset: 0x1c418)   
 - SOC SPMI CSR registers (regs[2])
+    - Unknown (offset: 0x80a0)
 - SOC SPMI0 registers (regs[3])
+    - Unknown (offset: 0x80a0)
 - SOC SPMI1 registers (regs[4])
+    - Unknown (offset: 0x80a0)
 
 
 
