@@ -4,6 +4,7 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 ## Sensor Type -> ISP Version 
 
 | Sensor Type | ISP Version |
+|---	|---	|
 | 0xee | 0xf |
 | 0x54 | 0xb |
 | 0x55 | 0xb |
