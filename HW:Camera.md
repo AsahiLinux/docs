@@ -138,10 +138,10 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
     - Unknown (offset: 0x80a0)
     - Unknown (offset: 0x28)
 - SOC SPMI0 registers (regs[3])
-    - Unknown (offset: 0x80a0)
-    - Unknown (offset: 0x28)
+    - Unknown (offset: 0x80a0) (Initialized as 1 << 2^(1..5))
+    - Unknown (offset: 0x28) 
 - SOC SPMI1 registers (regs[4])
-    - Unknown (offset: 0x80a0)
+    - Unknown (offset: 0x80a0) (Initialized as 1 << 2^(1..5))
     - Unknown (offset: 0x28)
 
 
