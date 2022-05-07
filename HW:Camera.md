@@ -103,6 +103,21 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 |  | 0xB | * | 0x188 |  |
 |---	|---	|---	|---	|---	|
 
+
+      isp_base_address = (this->m_AppleH13CamIn).isp_registers_virtual_address;
+      *(undefined4 *)((long)isp_base_address + (ulong)(smbc_address + 0x18)) = 0;
+      *(uint *)((long)isp_base_address + (ulong)(smbc_address + 0x1c)) = *(uint *)puVar1 | 0x900;
+      *(undefined4 *)((long)isp_base_address + (ulong)(smbc_address + 0x30)) = 0x10a;
+      *(undefined4 *)((long)isp_base_address + (ulong)(smbc_address + 0x3c)) = 0x4e4710;
+      *(undefined4 *)((long)isp_base_address + (ulong)(smbc_address + 0x34)) = 0x50282814;
+
+
+    - Unknown (offset: 0x2110018) (I2C | Initialized to 0)
+    - Unknown (offset: 0x211001c) (I2C | Initialized with 0x20 | 0x900)
+    - Unknown (offset: 0x2110030) (I2C | Initialized with 0x10a)
+    - Unknown (offset: 0x2110034) (I2C | Initialized with 0x50282814)
+    - Unknown (offset: 0x211003c) (I2C | Initialized with 0x4e4710)
+
     - Unknown (offset: 0x1400044)
     - Unknown (offset: 0x1aa801c)
 
