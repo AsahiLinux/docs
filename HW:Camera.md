@@ -102,13 +102,16 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 |  | 0xC | * | 0x210418c |  |
 |  | 0xB | * | 0x188 |  |
 | SMBUS_REG_UNKNOWN0 | * | * | 0x2110000 |
-| SMBUS_REG_UNKNOWN1 | * | * | 0x2110008 |
+| SMBUS_REG_UNKNOWN1* | * | * | 0x2110004 |
+| SMBUS_REG_UNKNOWN2 | * | * | 0x2110008 |
+| SMBUS_REG_UNKNOWN3* | * | * | 0x211000c |
+| SMBUS_REG_UNKNOWN4* | * | * | 0x2110010 | 
 | SMBUS_REG_SMCR | * | * | 0x2110014 | SMBus Control Register |
-| SMBUS_REG_UNKNOWN2 | * | * | 0x2110018 |
-| SMBUS_REG_UNKNOWN3 | * | * | 0x211001c |
-| SMBUS_REG_UNKNOWN4 | * | * | 0x2110030 |
-| SMBUS_REG_UNKNOWN5 | * | * | 0x2110034 |
-| SMBUS_REG_UNKNOWN6 | * | * | 0x211003c |
+| SMBUS_REG_UNKNOWN5 | * | * | 0x2110018 |
+| SMBUS_REG_UNKNOWN6 | * | * | 0x211001c |
+| SMBUS_REG_UNKNOWN7 | * | * | 0x2110030 |
+| SMBUS_REG_UNKNOWN8 | * | * | 0x2110034 |
+| SMBUS_REG_UNKNOWN9 | * | * | 0x211003c |
 |---	|---	|---	|---	|---	|
 
     - Unknown (offset: 0x2110018) (I2C | Initialized to 0)
