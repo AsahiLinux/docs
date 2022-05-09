@@ -101,24 +101,54 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 |  | 0xC | != 0x14c | 0x24c41cc |  |
 |  | 0xC | * | 0x210418c |  |
 |  | 0xB | * | 0x188 |  |
-| SMBUS_REG_UNKNOWN0 | * | * | 0x2110000 |
-| SMBUS_REG_UNKNOWN1* | * | * | 0x2110004 |
-| SMBUS_REG_UNKNOWN2 | * | * | 0x2110008 |
-| SMBUS_REG_UNKNOWN3* | * | * | 0x211000c |
-| SMBUS_REG_UNKNOWN4* | * | * | 0x2110010 | 
-| SMBUS_REG_SMCR | * | * | 0x2110014 | SMBus Control Register |
-| SMBUS_REG_UNKNOWN5 | * | * | 0x2110018 |
-| SMBUS_REG_UNKNOWN6 | * | * | 0x211001c |
-| SMBUS_REG_UNKNOWN7 | * | * | 0x2110030 |
-| SMBUS_REG_UNKNOWN8 | * | * | 0x2110034 |
-| SMBUS_REG_UNKNOWN9 | * | * | 0x211003c |
+| SMBUS_REG_MTXFIFO0 | * | * | 0x2110000 | I2C Channel 0
+| SMBUS_REG_MRXFIFO0 | * | * | 0x2110004 | 
+| SMBUS_REG_UNKNOWN0_1 | * | * | 0x2110008 |
+| SMBUS_REG_UNKNOWN0_2* | * | * | 0x211000c |
+| SMBUS_REG_UNKNOWN0_3* | * | * | 0x2110010 | 
+| SMBUS_REG_SMSTA0 | * | * | 0x2110014 | |
+| SMBUS_REG_UNKNOWN0_4 | * | * | 0x2110018 |
+| SMBUS_REG_CTL0 | * | * | 0x211001c |
+| SMBUS_REG_UNKNOWN0_5 | * | * | 0x2110030 |
+| SMBUS_REG_UNKNOWN0_6 | * | * | 0x2110034 |
+| SMBUS_REG_UNKNOWN0_7 | * | * | 0x211003c |
 |---	|---	|---	|---	|---	|
-
-    - Unknown (offset: 0x2110018) (I2C | Initialized to 0)
-    - Unknown (offset: 0x211001c) (I2C | Initialized with 0x20 | 0x900)
-    - Unknown (offset: 0x2110030) (I2C | Initialized with 0x10a)
-    - Unknown (offset: 0x2110034) (I2C | Initialized with 0x50282814)
-    - Unknown (offset: 0x211003c) (I2C | Initialized with 0x4e4710)
+| SMBUS_REG_MTXFIFO1 | * | * | 0x2111000 | I2C Channel 1
+| SMBUS_REG_MRXFIFO1 | * | * | 0x2111004 | 
+| SMBUS_REG_UNKNOWN1_1 | * | * | 0x2111008 |
+| SMBUS_REG_UNKNOWN1_2* | * | * | 0x211100c |
+| SMBUS_REG_UNKNOWN1_3* | * | * | 0x2111010 | 
+| SMBUS_REG_SMSTA1 | * | * | 0x2111014 | |
+| SMBUS_REG_UNKNOWN1_4 | * | * | 0x2111018 |
+| SMBUS_REG_CTL1 | * | * | 0x211101c |
+| SMBUS_REG_UNKNOWN1_5 | * | * | 0x2111030 |
+| SMBUS_REG_UNKNOWN1_6 | * | * | 0x2111034 |
+| SMBUS_REG_UNKNOWN1_7 | * | * | 0x211103c |
+|---	|---	|---	|---	|---	|
+| SMBUS_REG_MTXFIFO2 | * | * | 0x2112000 | I2C Channel 2
+| SMBUS_REG_MRXFIFO2 | * | * | 0x2112004 | 
+| SMBUS_REG_UNKNOWN2_1 | * | * | 0x2112008 |
+| SMBUS_REG_UNKNOWN2_2* | * | * | 0x211200c |
+| SMBUS_REG_UNKNOWN2_3* | * | * | 0x2112010 | 
+| SMBUS_REG_SMSTA2 | * | * | 0x2112014 | |
+| SMBUS_REG_UNKNOWN2_4 | * | * | 0x2112018 |
+| SMBUS_REG_CTL2 | * | * | 0x211201c |
+| SMBUS_REG_UNKNOWN2_5 | * | * | 0x2112030 |
+| SMBUS_REG_UNKNOWN2_6 | * | * | 0x2112034 |
+| SMBUS_REG_UNKNOWN2_7 | * | * | 0x211203c |
+|---	|---	|---	|---	|---	|
+| SMBUS_REG_MTXFIFO3 | * | * | 0x2113000 | I2C Channel 3
+| SMBUS_REG_MRXFIFO3 | * | * | 0x2113004 | 
+| SMBUS_REG_UNKNOWN3_1 | * | * | 0x2113008 |
+| SMBUS_REG_UNKNOWN3_2* | * | * | 0x211300c |
+| SMBUS_REG_UNKNOWN3_3* | * | * | 0x2113010 | 
+| SMBUS_REG_SMSTA3 | * | * | 0x2113014 | |
+| SMBUS_REG_UNKNOWN3_4 | * | * | 0x2113018 |
+| SMBUS_REG_CTL3 | * | * | 0x211301c |
+| SMBUS_REG_UNKNOWN3_5 | * | * | 0x2113030 |
+| SMBUS_REG_UNKNOWN3_6 | * | * | 0x2113034 |
+| SMBUS_REG_UNKNOWN3_7 | * | * | 0x211303c |
+|---	|---	|---	|---	|---	|
 
     - Unknown (offset: 0x1400044)
     - Unknown (offset: 0x1aa801c)
