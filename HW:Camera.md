@@ -149,6 +149,8 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 | SMBUS_REG_UNKNOWN3_6 | * | * | 0x2113034 |
 | SMBUS_REG_UNKNOWN3_7 | * | * | 0x211303c |
 |---	|---	|---	|---	|---	|
+| REG_DPE_UNKNOWN0 | * | * | 0x2504000 |
+| REG_DPE_UNKNOWN1 | * | * | 0x2508000 |
 
     - Unknown (offset: 0x1400044)
     - Unknown (offset: 0x1aa801c)
