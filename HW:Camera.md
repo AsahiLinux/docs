@@ -151,6 +151,8 @@ This information is based on Macbook Pro M1 2020 ISP. It may differ for other de
 |---	|---	|---	|---	|---	|
 | REG_DPE_UNKNOWN0 | * | * | 0x2504000 |
 | REG_DPE_UNKNOWN1 | * | * | 0x2508000 |
+|---	|---	|---	|---	|---	|
+| REG_UNKNOWN | * | * | 0x1050000 |
 
     - Unknown (offset: 0x1400044)
     - Unknown (offset: 0x1aa801c)
