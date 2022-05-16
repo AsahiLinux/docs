@@ -31,3 +31,7 @@ by function.
 * [[HW:Debug USB]]
 * [[HW:USB PD]]
 * [[SW:Storage]]
+
+
+### Peripherals
+* [[HW:Camera]]
