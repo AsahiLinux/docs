@@ -17,18 +17,16 @@ This page details currently supported features on all extant Apple Silicon Macs,
 ## M1 (T8103)
 Devices based on the Apple M1 SoC, released in 2020.
 
-### T8103 Common features
-These features are common to all Apple Silicon devices with the M1 (T8103) SoC.
-
-Note that: you can hard adjust the brightness in asahi by setting it in macos first.
+### T8103 platform support
+Devices and features common to the platform.
 
 | Feature | Support |
 |---------|---------|
-| Bringup | 5.13 |
-| ARM PMU | linux-asahi (5.18) |
+| Boot | 5.13 |
+| ARM PMU | 5.18 |
 | cpufreq | linux-asahi |
-| CPU power gating | in review |
-| System sleep | in review |
+| cpuidle | see note on power |
+| System suspend | see note on power |
 | UART | 5.13 |
 | Watchdog | 5.17 |
 | PCIe | 5.16 |
@@ -36,138 +34,152 @@ Note that: you can hard adjust the brightness in asahi by setting it in macos fi
 | GPIO | 5.16 |
 | USB-PD | 5.16 |
 | Power management | 5.17 |
-| NVMe | linux-asahi |
+| NVMe | linux-asahi (5.19) |
 | SPI | linux-asahi |
 | SPI NOR | linux-asahi |
-| Primary display (SimpleFB) | 5.13 [_deprecated_] |
 | Primary display (SimpleDRM) | 5.17 |
-| DCP | needs cleanup |
+| DCP | WIP |
 | DP Alt Mode | unsupported |
-| Thunderbolt | unsupported |
+| Thunderbolt | WIP |
 | USB2 (via TB ports) | linux-asahi |
-| USB3 (via TB ports) | unsupported |
-| WiFi | linux-asahi |
-| Bluetooth | unsupported |
+| USB3 (via TB ports) | WIP |
 | SMC | linux-asahi |
-| 3.5mm jack | linux-asahi [line out only] |
-| Sound capture | unsupported |
-| ARM SPMI | linux-asahi |
+| SPMI | linux-asahi |
 | RTC | linux-asahi |
 | SEP | unsupported |
-| TouchID | unsupported |
-| AVD | unsupported |
-| AVE | unsupported |
-| GPU | unsupported |
+| AVD | WIP |
+| AVE | WIP |
+| GPU | WIP |
 | ANE | unsupported |
 
 ### Mac Mini (M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
-| Device tree | 5.13 |
+| Devicetree | 5.13 |
 | USB-A ports | 5.16 |
 | HDMI Out | see M1 primary display |
+| External TouchID | unsupported |
 | 1Gbps Ethernet | 5.16 |
 | 10Gbps Ethernet | 5.17 |
-| Internal Speaker | linux-asahi |
+| WiFi | linux-asahi |
+| Bluetooth | WIP |
+| 3.5mm jack | linux-asahi [see note on audio] |
+| Microphones | unsupported |
+| Internal Speaker | linux-asahi [see note on audio] |
 
 ### MacBook Pro (13-inch, M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
-| Device tree | 5.17 |
+| Devicetree | 5.17 |
+| WiFi | linux-asahi |
+| Bluetooth | WIP |
 | SPI HID | linux-asahi |
 | Keyboard | linux-asahi |
 | Touchpad | linux-asahi |
 | Touch Bar | unsupported |
+| TouchID | unsupported |
 | Keyboard Backlight | unsupported |
-| Webcam | unsupported |
-| Internal speakers | unsupported |
+| Webcam | WIP |
+| Internal speakers | linux-asahi [see note on audio] |
+| 3.5mm jack | linux-asahi [see note on audio] |
+| Microphones | unsupported |
 | Battery/charge monitoring | linux-asahi |
-| Display brightness | unsupported |
+| Display brightness | see note on brightness |
 
 ### MacBook Air (13-inch, M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
-| Device tree | 5.17 |
+| Devicetree | 5.17 |
 | SPI HID | linux-asahi |
 | Keyboard | linux-asahi |
 | Touchpad | linux-asahi |
+| TouchID | unsupported |
+| WiFi | linux-asahi |
+| Bluetooth | WIP |
 | Keyboard Backlight | unsupported |
-| Webcam | unsupported |
-| Internal speakers | unsupported |
+| Webcam | WIP |
+| Internal speakers | linux-asahi [see note on audio] |
+| 3.5mm jack | linux-asahi [see note on audio] |
+| Microphones | unsupported |
 | Battery/charge monitoring | linux-asahi |
-| Display brightness | unsupported |
+| Display brightness | see note on brightness |
 
 ### iMac (M1, 2020)
 | Feature | Support Level |
 |---------|---------------|
-| Device tree | 5.17 |
+| Devicetree | 5.17 |
 | USB Type-C Ports | unsupported |
 | 1Gbps Ethernet | 5.16 |
-| Webcam | unsupported |
-| Internal speakers | unsupported |
-| Display brightness | unsupported |
+| External TouchID | unsupported |
+| WiFi | linux-asahi |
+| Bluetooth | WIP |
+| Webcam | WIP |
+| Internal speakers | linux-asahi [see note on audio] |
+| 3.5mm jack | linux-asahi [see note on audio] |
+| Microphones | unsupported |
+| Display brightness | see note on brightness |
 
 
 ## M1 Pro/Max (T6000/T6001)
 Devices based on the Apple M1 Pro and Max SoCs, released late 2021.
 
-### T600X Common Features
-These features are common to all M1 Pro/Max devices
+### T600X platform support
+Devices and features common to the platform.
+
 | Feature | Support |
 |---------|---------|
-| Bringup (AICv2) | 5.18 |
-| I/O MMU | linux asahi (posted) |
-| ARM PMU | linux-asahi (5.18) |
+| AICv2 | 5.18 |
+| DART | linux-asahi |
+| ARM PMU | 5.18 |
 | cpufreq | linux-asahi |
-| CPU power gating | in review |
-| System sleep | in review |
+| cpuidle | see note on power |
+| System sleep | see note on power |
 | UART | 5.13 |
 | Watchdog | 5.17 |
-| PCIe | 5.16, requires I/O MMU |
+| PCIe | 5.16, requires DART |
 | I<sup>2</sup>C | 5.16 |
 | GPIO | 5.16 |
 | USB-PD | 5.16 |
 | Power management | 5.17 |
-| NVMe | linux-asahi |
+| NVMe | linux-asahi (5.19) |
 | SPI | linux-asahi |
 | SPI NOR | linux-asahi |
-| Primary display (SimpleFB) | 5.13 [_deprecated_] |
 | Primary display (SimpleDRM) | 5.17 |
-| DCP | needs cleanup |
+| DCP | WIP |
 | DP Alt Mode | unsupported |
-| Thunderbolt | unsupported |
+| Thunderbolt | WIP |
 | USB2 (via TB ports) | linux-asahi |
-| USB3 (via TB ports) | unsupported |
-| WiFi | linux-asahi |
-| Bluetooth | unsupported |
+| USB3 (via TB ports) | WIP |
 | SMC | linux-asahi |
-| 3.5mm jack | unsupported |
-| Sound capture | unsupported |
-| ARM SPMI | linux-asahi |
+| SPMI | linux-asahi |
 | RTC | linux-asahi |
 | SEP | unsupported |
-| TouchID | unsupported |
-| AVD | unsupported |
-| AVE | unsupported |
-| GPU | unsupported |
+| AVD | WIP |
+| AVE | WIP |
+| GPU | WIP |
 | ANE | unsupported |
-| Apple ProRes | unsupported |
+| Apple ProRes | WIP |
 
 ### MacBook Pro (14/16-inch, M1 Pro/Max, 2021)
 | Feature | Support Level |
 |---------|---------------|
-| Device tree | linux-asahi |
+| Devicetree | linux-asahi |
 | MagSafe connector | 5.16 |
 | SPI HID | linux-asahi |
 | Keyboard | linux-asahi |
 | Touchpad | linux-asahi |
+| TouchID | unsupported |
+| WiFi | linux-asahi |
+| Bluetooth | WIP |
 | Keyboard Backlight | unsupported |
-| Webcam | unsupported |
-| Internal speakers | unsupported |
+| Webcam | WIP |
+| Internal speakers | linux-asahi [see note on audio] |
+| 3.5mm jack | unsupported |
+| Microphones | unsupported |
 | HDMI Out | unsupported |
-| SD Card Reader | linux-asahi (5.17, requires I/O MMU) |
+| SD Card Reader | linux-asahi (5.17, requires DART) |
 | Battery/charge monitoring | linux-asahi |
-| Display brightness | unsupported |
+| Display brightness | see note on brightness |
 
 
 ## M1 Ultra (T6002)
@@ -181,9 +193,35 @@ need to be evaluated on a per-machine basis.
 ### Mac Studio (M1 Max/Ultra, 2022)
 | Feature | Support Level |
 | ------- | ------------- |
-| Device tree | unsupported |
+| Devicetree | linux-asahi |
 | Internal speaker | unsupported |
 | HDMI Out | unsupported |
 | Ethernet | unsupported |
-| Audio jack | unsupported |
+| 3.5mm jack | unsupported |
 
+
+## Notes
+
+### Audio
+Audio is functioning, however remains unsafe. There is a serious risk of _blowing up_ your machine
+should you misconfigure any part of the userspace stack. As such, audio is disabled in the devicetree
+on machines that support it. In order to get functioning audio, you must manually edit the devicetree
+to enable it and build a m1n1 payload with your new devicetree. As this is potentially dangerous and
+suitable only for well seasoned power users, no specific instructions are provided.
+
+Currently, the 3.5mm jack supports audio output _only_.
+
+
+### Power
+Some power management functionality on these machines is tied to PSCI. These machines do not support the
+normal way the kernel handles PSCI calls. We could implement this functionality as a one-off ugly driver,
+but this would duplicate a lot of functionality that already exists in the kernel, and likely would not
+fly upstream. Instead, changes to the kernel's PSCI interface have been proposed which would provide a generic
+method for any future machines with similar designs. Until this discussion has resolved, these features
+cannot be implemented.
+
+
+### Brightness
+Setting the display brightness remains unsupported until DCP support lands, however you _can_ switch the backlight
+on and off. Display brightness settings seem to persist across boots on these machines, so setting the brightness
+in macOS and then rebooting into Linux suffices as a workaround until the patches for the DCP are distributed.
