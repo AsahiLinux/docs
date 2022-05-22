@@ -6,9 +6,10 @@ by function.
 * [[Accelerator Engines]]
 
 ### Platform control logic
-* [[HW:AIC]] (Apple Interrupt Controller)
-* [[HW:WDT]] (Watchdog Timer)
-* [[HW:SMC]] (System Management Controller)
+* [[HW:AIC]] - Apple Interrupt Controller
+* [[HW:WDT]] - Watchdog Timer
+* [[HW:SMC]] - System Management Controller
+* [[HW:AGX]] - Apple's PowerVR-derived tile-based deferred renderer
 
 ### Platform initialisation and boot
 * [[SW:Boot]]
@@ -32,6 +33,5 @@ by function.
 * [[HW:USB PD]]
 * [[SW:Storage]]
 
-
 ### Peripherals
-* [[HW:Camera]]
+* [[HW:Camera]] - Broadcom camera and ISP
