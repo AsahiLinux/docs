@@ -12,7 +12,7 @@ Platform documentation:
 * [[Codenames]]
 
 For users:
-* [[Software known to have issues with 16k page size]]
+* [[Broken Software]]
 * [[SW:Alternative Distros]]
 
 For developers:
