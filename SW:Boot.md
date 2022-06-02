@@ -70,8 +70,8 @@ Once booted, the [AP](./Glossary#A) can be in one of several boot modes, as conf
 |  ID | Name                                      |
 |----:|-------------------------------------------|
 |   0 | macOS                                     |
-|   1 | 1TR ("system/one true" recoveryOS)        |
-|   2 | recoveryOS ("paired/ordinary" recoveryOS) |
+|   1 | 1TR ("one true" recoveryOS)               |
+|   2 | recoveryOS ("ordinary" recoveryOS)        |
 |   3 | kcOS                                      |
 |   4 | restoreOS                                 |
 | 255 | unknown                                   |
