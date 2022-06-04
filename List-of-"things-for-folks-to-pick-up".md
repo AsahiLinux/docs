@@ -3,7 +3,9 @@ Reachout to the asahi-dev irc channel to check latest status if you want to cont
 
 * hwmon support
 > status: just started
+> contact: marcan/jeffmiw
 
 * irq support for the i2c driver
 > status: to be started
+> contact: sven
 
