@@ -10,6 +10,7 @@ by function.
 * [[HW:WDT]] - Watchdog Timer
 * [[HW:SMC]] - System Management Controller
 * [[HW:AGX]] - Apple's PowerVR-derived tile-based deferred renderer
+* [[HW:ASC]] - Apple's Mailbox-like firmware interface
 
 ### Platform initialisation and boot
 * [[SW:Boot]]
@@ -26,7 +27,6 @@ by function.
 * [[HW:Apple Instructions]]
 
 ### I/O
-* [[HW:Mailbox]]
 * [[HW:APCIe]] (Apple PCIe controller)
 * [[HW:GPIO]]
 * [[HW:Debug USB]]
