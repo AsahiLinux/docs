@@ -22,3 +22,4 @@ For developers:
 * [[U-Boot]]
 * [[SW:-DT-bindings]]
 * [[Open OS ecosystem on Apple Silicon Macs]]
+* [[List of "things for folks to pick-up"]]
