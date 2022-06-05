@@ -10,6 +10,12 @@ See the alpha release blog post: https://asahilinux.org/2022/03/asahi-linux-alph
 
 There is no automated uninstaller, but see [[Partitioning cheatsheet]] to learn how to delete the partitions manually.
 
+## I have ~40GB of free disk space but the installer says that's not enough!
+
+The installer always leaves 38GB of disk space *free* for macOS upgrades to work. That means you need enough disk space for the new OS *on top of* those 38GB.
+
+If you want to skip this check, enable expert mode at the beginning. Keep in mind that you might be unable to update macOS if you do not have enough free disk space left over!
+
 ## Common problems
 
 ### I get an error during the macOS resize step of the installer
