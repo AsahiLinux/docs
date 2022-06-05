@@ -1,16 +1,34 @@
-### When will Asahi Linux be "done"?
+## When will Asahi Linux be "done"?
 
 → [["When will Asahi Linux be done?"]]
 
-### How do I install it?
+## How do I install it?
 
 See the alpha release blog post: https://asahilinux.org/2022/03/asahi-linux-alpha-release/
 
-### How come HDMI works on Mac Mini but not MacBook?
+## How do I uninstall / clean up a failed installation?
+
+There is no automated uninstaller, but see [[Partitioning cheatsheet]] to learn how to delete the partitions manually.
+
+## Common problems
+
+### I get an error during the macOS resize step of the installer
+
+Read the error message carefully. It'll be one of these:
+
+#### "Storage system verify or repair failed"
+
+You have existing APFS filesystem corruption (not caused by the installer) that is preventing a successful resize of your macOS partition. See [this issue](https://github.com/AsahiLinux/asahi-installer/issues/81) for more information and fix steps.
+
+#### "Your APFS Container resize request is below the APFS-system-imposed minimal container size (perhaps caused by APFS Snapshot usage by Time Machine)"
+
+As the message implies, this is caused by Time Machine snapshots taking up "free" space on your disk. See [this issue](https://github.com/AsahiLinux/asahi-installer/issues/86) for more information and fix steps.
+
+## How come HDMI works on Mac Mini but not MacBook?
 
 HDMI on the MacBook is internally connected to a Thunderbolt port.
 HDMI on the Mac Mini is internally connected to a DisplayPort port.
 
-### Do I need to reinstall to get new features / updates?
+## Do I need to reinstall to get new features / updates?
 
 No! Just upgrade your system using `pacman -Syu`. Kernel updates will require a reboot. Consider a tool like `needrestart` to determine if there are any outdated services or an outdated kernel running.  
