@@ -30,6 +30,10 @@ You have existing APFS filesystem corruption (not caused by the installer) that 
 
 As the message implies, this is caused by Time Machine snapshots taking up "free" space on your disk. See [this issue](https://github.com/AsahiLinux/asahi-installer/issues/86) for more information and fix steps.
 
+### Disk Utility doesn't work for me after installing / for uninstalling / any other time!
+
+Don't use Disk Utility, it's broken and only works for really simple partition setups. See [[Partitioning cheatsheet]] to learn how to manage partitions with the command line instead.
+
 ## How come HDMI works on Mac Mini but not MacBook?
 
 HDMI on the MacBook is internally connected to a Thunderbolt port.
