@@ -26,7 +26,6 @@ want us to keep Emacs all to ourselves, now would you?
 ## Broken packages
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
-| 1Password | https://1password.community/discussion/123176/1password-for-linux-aarch64-m1-for-linux |
 | f2fs | https://github.com/torvalds/linux/commit/5c9b469295fb | |
 | FEX | https://github.com/FEX-Emu/FEX/issues/1221 | Not likely to be fixed in the near future.<br>Box64 works as an alternative. |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
