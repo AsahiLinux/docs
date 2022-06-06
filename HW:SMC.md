@@ -96,4 +96,4 @@ Setting the "NTAP" (notify application processor, maybe?) flag to 1 makes the SM
 closed. Notifications are mailbox messages apparently limited to the 64-bit payload.
 ### ADC
 
-In addition to the keys accessible "directly" through the SMC, there is what appears to be a muxed single-channel ADC providing access to 111 further values.  It is accessed through "aDC#" (giving the nmuber of keys), "aDC?" (query key name using a numeric payload), and "aDCR", the actual result value.
+In addition to the keys accessible "directly" through the SMC, there is what appears to be a muxed single-channel ADC providing access to 111 further values.  It is accessed through "aDC#" (giving the number of keys), "aDC?" (query key name using a numeric payload), and "aDCR", the actual result value.
