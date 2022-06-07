@@ -37,6 +37,7 @@ want us to keep Emacs all to ourselves, now would you?
 ## Fixed packages
 | Package | Fixing commit | Notes |
 | ------- | ------------- | ----- |
+| 1Password | _proprietary_ | Fixed as of 8.8.0-119 beta. |
 | btrfs | https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/ | 16k subpage handling queued for Linux 5.19 |
 | Chromium | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788| Includes Electron apps.<br>Fixed since 102. |
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
