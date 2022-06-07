@@ -16,10 +16,10 @@ For users:
 * [[SW:Alternative Distros]]
 
 For developers:
+* [[Yaks in need of shaving]] (**HELP WANTED!**)
 * [[Tethered Boot Setup (For Developers)]]
 * [[m1n1:User Guide]] Boot loader
 * [[SW:Hypervisor]]
 * [[U-Boot]]
 * [[SW:-DT-bindings]]
 * [[Open OS ecosystem on Apple Silicon Macs]]
-* [[List of "things for folks to pick-up"]]
