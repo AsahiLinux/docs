@@ -2,16 +2,17 @@ This page details currently supported features on all extant Apple Silicon Macs,
 
 ## Table of Contents
 - [M1 (T8103)](#m1-t8103)
-  * [T8103 Common features](#T8103-common-features)
   * [Mac Mini (M1, 2020)](#mac-mini-m1-2020)
   * [MacBook Pro (13-inch, M1, 2020)](#macbook-pro-13-inch-m1-2020)
   * [MacBook Air (13-inch, M1, 2020)](#macbook-air-13-inch-m1-2020)
   * [iMac (M1, 2020)](#imac-m1-2020)
 - [M1 Pro/Max (T6000/T6001)](#m1-promax-t6000t6001)
-  * [T600X Common Features](#T600X-common-features)
   * [MacBook Pro (14/16-inch, M1 Pro/Max, 2021)](#macbook-pro-1416-inch-m1-promax-2021)
 - [M1 Ultra (T6002)](#m1-ultra-t6002)
   * [Mac Studio (M1 Max/Ultra, 2022)](#mac-studio-m1-maxultra-2022)
+- [M2 (T8112)](#m2-t8112)
+  * [MacBook Air (13-inch, M2, 2022)](#macbook-air-13-inch-m2-2022)
+  * [MacBook Pro (13-inch, M2, 2022)](#macbook-pro-13-inch-m2-2022)
 
 
 ## M1 (T8103)
@@ -199,6 +200,86 @@ need to be evaluated on a per-machine basis.
 | Ethernet | unsupported |
 | 3.5mm jack | unsupported |
 
+## M2 (T8112)
+Devices based on the Apple M2 SoC, released in 2022.
+
+**Note: These levels of support are extrapolated from the MacBook Air devicetree,
+and as such should be taken with a grain of salt until we have real hardware to test.**
+
+### T8112 platform support
+Devices and features common to the platform.
+
+| Feature | Support |
+|---------|---------|
+| AICv2 | 5.18 |
+| DART | WIP |
+| PMU | unsupported |
+| cpufreq | unsupported |
+| cpuidle | see note on power |
+| System sleep | see note on power |
+| UART | 5.13 |
+| Watchdog | 5.17 |
+| PCIe | 5.16, requires DART |
+| I<sup>2</sup>C | 5.16 |
+| GPIO | 5.16 |
+| USB-PD | unsupported |
+| Power management | unsupported |
+| NVMe | linux-asahi (5.19) |
+| SPI | linux-asahi |
+| SPI NOR | linux-asahi |
+| Primary display (SimpleDRM) | unsupported |
+| DCP | WIP |
+| DP Alt Mode | unsupported |
+| Thunderbolt | unsupported |
+| USB2 (via TB ports) | unsupported |
+| USB3 (via TB ports) | unsupported |
+| SMC | linux-asahi |
+| SPMI | unsupported |
+| RTC | linux-asahi |
+| SEP | unsupported |
+| AVD | WIP |
+| AVE | WIP |
+| GPU | WIP |
+| ANE | unsupported |
+| Apple ProRes | WIP |
+
+
+### MacBook Air (13-inch, M2, 2022)
+| Feature | Support Level |
+|---------|---------------|
+| Devicetree | unsupported |
+| SPI HID | linux-asahi |
+| Keyboard | linux-asahi |
+| Touchpad | linux-asahi |
+| TouchID | unsupported |
+| WiFi | linux-asahi |
+| Bluetooth | WIP |
+| Keyboard Backlight | unsupported |
+| Webcam | unsupported |
+| Internal speakers | unsupported [see note on audio] |
+| 3.5mm jack | unsupported [see note on audio] |
+| Microphones | unsupported |
+| Battery/charge monitoring | linux-asahi |
+| Display brightness | see note on brightness |
+
+### MacBook Pro (13-inch, M2, 2022)
+| Feature | Support Level |
+|---------|---------------|
+| Devicetree | unsupported |
+| WiFi | linux-asahi |
+| Bluetooth | WIP |
+| SPI HID | linux-asahi |
+| Keyboard | linux-asahi |
+| Touchpad | linux-asahi |
+| Touch Bar | unsupported |
+| TouchID | unsupported |
+| Keyboard Backlight | unsupported |
+| Webcam | unsupported |
+| Internal speakers | unsupported [see note on audio] |
+| 3.5mm jack | unsupported [see note on audio] |
+| Microphones | unsupported |
+| Battery/charge monitoring | linux-asahi |
+| Display brightness | see note on brightness |
 
 ## Notes
 
