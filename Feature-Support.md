@@ -5,7 +5,7 @@ This page details currently supported features on all extant Apple Silicon Macs,
   * [Mac Mini (M1, 2020)](#mac-mini-m1-2020)
   * [MacBook Pro (13-inch, M1, 2020)](#macbook-pro-13-inch-m1-2020)
   * [MacBook Air (13-inch, M1, 2020)](#macbook-air-13-inch-m1-2020)
-  * [iMac (M1, 2020)](#imac-m1-2020)
+  * [iMac (M1, 2021)](#imac-m1-2021)
 - [M1 Pro/Max (T6000/T6001)](#m1-promax-t6000t6001)
   * [MacBook Pro (14/16-inch, M1 Pro/Max, 2021)](#macbook-pro-1416-inch-m1-promax-2021)
 - [M1 Ultra (T6002)](#m1-ultra-t6002)
@@ -105,7 +105,7 @@ Devices and features common to the platform.
 | Battery/charge monitoring | linux-asahi |
 | Display brightness | see note on brightness |
 
-### iMac (M1, 2020)
+### iMac (M1, 2021)
 | Feature | Support Level |
 |---------|---------------|
 | Devicetree | 5.17 |
