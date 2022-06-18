@@ -145,7 +145,7 @@ To draw a frame first you need these things:
 * (U) TVB heap metadata block (fixed size?)
 * (K) TVB heap manager & (U) heap (arbitrary size >= 3 128K blocks, CPU can dynamically adjust in response to overflows for future frames)
 
-macOS allocates these in the kernel. Do we want to do it in the kernel or userspace? Userspace should probably be in control of sizing at least? Could let the kernel decide, or have unserspace donate pages to the buffer manager. Kernel needs to handle the heap manager structure at least.
+macOS allocates these in the kernel. Do we want to do it in the kernel or userspace? Userspace should probably be in control of sizing at least? Could let the kernel decide, or have userspace donate pages to the buffer manager. Kernel needs to handle the heap manager structure at least.
 
 ### Stamp objects & event management
 
