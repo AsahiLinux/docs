@@ -119,7 +119,7 @@ The GPU tiler needs a buffer to store vertex attribute and primitive data. This 
 
 The tiler buffer overflow / partial store / reload process is entirely managed by ASC firmware.
 
-Data structures: see BufferManager* in [controllist.py](https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/microsequence.py)
+Data structures: see BufferManager* in [microsequence.py](https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/microsequence.py)
 
 ### Event Management
 
