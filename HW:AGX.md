@@ -1,5 +1,3 @@
-Moved here from `phire-gpu-infodump.md`
-
 # Lina's AGX notes
 
 Reader beware, here be dragons. Pointer-shaped dragons. Lots of them.
@@ -277,6 +275,8 @@ This blocks 3D until TA is done. Unclear what black magic makes partial renders 
 
 
 # phire's M1x GPU infodump
+
+(Moved here from `phire-gpu-infodump.md`)
 
 All my work was done on my T6000 14" M1 Max with MacOS 12.2
 
