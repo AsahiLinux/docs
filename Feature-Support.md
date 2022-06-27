@@ -248,9 +248,8 @@ Devices and features common to the platform.
 | Feature | Support Level |
 |---------|---------------|
 | Devicetree | unsupported |
-| SPI HID | linux-asahi |
-| Keyboard | linux-asahi |
-| Touchpad | linux-asahi |
+| Keyboard | unsupported |
+| Touchpad | unsupported |
 | TouchID | unsupported |
 | WiFi | linux-asahi |
 | Bluetooth | WIP |
@@ -268,9 +267,8 @@ Devices and features common to the platform.
 | Devicetree | unsupported |
 | WiFi | linux-asahi |
 | Bluetooth | WIP |
-| SPI HID | linux-asahi |
-| Keyboard | linux-asahi |
-| Touchpad | linux-asahi |
+| Keyboard | unsupported |
+| Touchpad | unsupported |
 | Touch Bar | unsupported |
 | TouchID | unsupported |
 | Keyboard Backlight | unsupported |
