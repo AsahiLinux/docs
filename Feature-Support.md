@@ -212,26 +212,26 @@ Devices and features common to the platform.
 | Feature | Support |
 |---------|---------|
 | AICv2 | 5.18 |
-| DART | WIP |
+| DART | linux-asahi |
 | PMU | unsupported |
-| cpufreq | unsupported |
+| cpufreq | linux-asahi |
 | cpuidle | see note on power |
 | System sleep | see note on power |
 | UART | 5.13 |
 | Watchdog | 5.17 |
-| PCIe | 5.16, requires DART |
+| PCIe | unsupported |
 | I<sup>2</sup>C | 5.16 |
 | GPIO | 5.16 |
-| USB-PD | unsupported |
+| USB-PD | 5.16 |
 | Power management | unsupported |
 | NVMe | linux-asahi (5.19) |
 | SPI | linux-asahi |
 | SPI NOR | linux-asahi |
-| Primary display (SimpleDRM) | unsupported |
+| Primary display (SimpleDRM) | linux-asahi |
 | DCP | WIP |
 | DP Alt Mode | unsupported |
 | Thunderbolt | unsupported |
-| USB2 (via TB ports) | unsupported |
+| USB2 (via TB ports) | linux-asahi |
 | USB3 (via TB ports) | unsupported |
 | SMC | linux-asahi |
 | SPMI | unsupported |
@@ -251,7 +251,7 @@ Devices and features common to the platform.
 | Keyboard | unsupported |
 | Touchpad | unsupported |
 | TouchID | unsupported |
-| WiFi | linux-asahi |
+| WiFi | unsupported |
 | Bluetooth | WIP |
 | Keyboard Backlight | unsupported |
 | Webcam | unsupported |
@@ -264,8 +264,8 @@ Devices and features common to the platform.
 ### MacBook Pro (13-inch, M2, 2022)
 | Feature | Support Level |
 |---------|---------------|
-| Devicetree | unsupported |
-| WiFi | linux-asahi |
+| Devicetree | linux-asahi |
+| WiFi | unsupported |
 | Bluetooth | WIP |
 | Keyboard | unsupported |
 | Touchpad | unsupported |
