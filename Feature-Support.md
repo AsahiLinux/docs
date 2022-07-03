@@ -234,7 +234,7 @@ Devices and features common to the platform.
 | USB2 (via TB ports) | linux-asahi |
 | USB3 (via TB ports) | unsupported |
 | SMC | linux-asahi |
-| SPMI | unsupported |
+| SPMI | linux-asahi |
 | RTC | linux-asahi |
 | SEP | unsupported |
 | AVD | WIP |
@@ -251,7 +251,7 @@ Devices and features common to the platform.
 | Keyboard | unsupported |
 | Touchpad | unsupported |
 | TouchID | unsupported |
-| WiFi | unsupported |
+| WiFi | linux-asahi |
 | Bluetooth | WIP |
 | Keyboard Backlight | unsupported |
 | Webcam | unsupported |
@@ -265,7 +265,7 @@ Devices and features common to the platform.
 | Feature | Support Level |
 |---------|---------------|
 | Devicetree | linux-asahi |
-| WiFi | unsupported |
+| WiFi | linux-asahi |
 | Bluetooth | WIP |
 | Keyboard | unsupported |
 | Touchpad | unsupported |
