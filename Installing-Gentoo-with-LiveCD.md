@@ -44,14 +44,16 @@ From here, install Gentoo as you normally would, stopping when it's time to inst
 Merge Git by running `emerge -av dev-vcs/git`, then clone `asahi-gentoosupport` again. Run `./install.sh` and follow the prompts. This will
 * Install the Asahi Overlay, which provides the kernel, boot tooling and (possibly) patched packages
 * Install the boot tooling and firmware required for Apple Silicon machines to function correctly
-
-Optionally
 * Merge the Asahi Linux kernel sources as `asahi-sources`, replacing the standard `gentoo-sources` package
 * Copy the running kernel's config to `/usr/src/linux/.config`
 * Automate building the kernel
+
+Kbuild may ask you about certain Kconfig options. Just accept its defaults for now.
 
 This allows you to skip setting up GRUB, the kernel, and the boot tooling yourself which can be a bit of a hassle on these
 machines and may leave you with an unbootable Linux setup.
 
 ## Step 7: Have fun!
-Finish off the rest of your usual Gentoo install procedure, reboot, and have fun!
+Finish off the rest of your usual Gentoo install procedure, reboot, and have fun! It's a good idea to customise the kernel as
+you see fit since the running config will be based on Arch/Asahi Linux. Remember to save the running kernel and initramfs as
+a fallback so you can easily boot it from GRUB should anything go wrong.
