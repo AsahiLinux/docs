@@ -40,6 +40,13 @@ Run `./genstrap.sh` inside the `asahi-gentoosupport` directory. This will automa
 Reboot the machine. When the GRUB menu appears, select Gentoo Live Install Environment. This will boot you to the standard LiveCD.
 From here, install Gentoo as you normally would, stopping when it's time to install the kernel and bootloader.
 
+**Note**: It is absolutely imperative that you **DO NOT** alter **any** other partition
+on the system, including the EFI System Partition set up by Asahi Linux. You
+are free to do anything you wish to the partition that was previously your
+Asahi Linux **root** filesystem, such as shrinking it to add some swap space,
+but never, **ever** delete any APFS partition or the Asahi EFI System partition.
+You have been warned...
+
 ## Step 6: Install Asahi support files
 Merge Git by running `emerge -av dev-vcs/git`, then clone `asahi-gentoosupport` again. Run `./install.sh` and follow the prompts. This will
 * Install the Asahi Overlay, which provides the kernel, boot tooling and (possibly) patched packages
