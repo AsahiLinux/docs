@@ -64,9 +64,9 @@ Devices and features common to the platform.
 | 10Gbps Ethernet | 5.17 |
 | WiFi | linux-asahi |
 | Bluetooth | WIP |
-| 3.5mm jack | linux-asahi [see note on audio] |
+| 3.5mm jack | linux-asahi |
 | Microphones | unsupported |
-| Internal Speaker | linux-asahi [see note on audio] |
+| Internal Speaker | linux-asahi [see note on speakers] |
 
 ### MacBook Pro (13-inch, M1, 2020)
 | Feature | Support Level |
@@ -81,8 +81,8 @@ Devices and features common to the platform.
 | TouchID | unsupported |
 | Keyboard Backlight | unsupported |
 | Webcam | WIP |
-| Internal speakers | linux-asahi [see note on audio] |
-| 3.5mm jack | linux-asahi [see note on audio] |
+| Internal speakers | linux-asahi [see note on speakers] |
+| 3.5mm jack | linux-asahi |
 | Microphones | unsupported |
 | Battery/charge monitoring | linux-asahi |
 | Display brightness | see note on brightness |
@@ -99,8 +99,8 @@ Devices and features common to the platform.
 | Bluetooth | WIP |
 | Keyboard Backlight | unsupported |
 | Webcam | WIP |
-| Internal speakers | linux-asahi [see note on audio] |
-| 3.5mm jack | linux-asahi [see note on audio] |
+| Internal speakers | linux-asahi [see note on speakers] |
+| 3.5mm jack | linux-asahi |
 | Microphones | unsupported |
 | Battery/charge monitoring | linux-asahi |
 | Display brightness | see note on brightness |
@@ -115,8 +115,8 @@ Devices and features common to the platform.
 | WiFi | linux-asahi |
 | Bluetooth | WIP |
 | Webcam | WIP |
-| Internal speakers | linux-asahi [see note on audio] |
-| 3.5mm jack | linux-asahi [see note on audio] |
+| Internal speakers | linux-asahi [see note on speakers] |
+| 3.5mm jack | linux-asahi |
 | Microphones | unsupported |
 | Display brightness | see note on brightness |
 
@@ -174,7 +174,7 @@ Devices and features common to the platform.
 | Bluetooth | WIP |
 | Keyboard Backlight | unsupported |
 | Webcam | WIP |
-| Internal speakers | linux-asahi [see note on audio] |
+| Internal speakers | linux-asahi [see note on speakers] |
 | 3.5mm jack | unsupported |
 | Microphones | unsupported |
 | HDMI Out | unsupported |
@@ -255,8 +255,8 @@ Devices and features common to the platform.
 | Bluetooth | WIP |
 | Keyboard Backlight | unsupported |
 | Webcam | unsupported |
-| Internal speakers | unsupported [see note on audio] |
-| 3.5mm jack | unsupported [see note on audio] |
+| Internal speakers | unsupported [see note on speakers] |
+| 3.5mm jack | unsupported |
 | Microphones | unsupported |
 | Battery/charge monitoring | linux-asahi |
 | Display brightness | see note on brightness |
@@ -273,22 +273,21 @@ Devices and features common to the platform.
 | TouchID | unsupported |
 | Keyboard Backlight | unsupported |
 | Webcam | unsupported |
-| Internal speakers | unsupported [see note on audio] |
-| 3.5mm jack | unsupported [see note on audio] |
+| Internal speakers | unsupported |
+| 3.5mm jack | unsupported |
 | Microphones | unsupported |
 | Battery/charge monitoring | linux-asahi |
 | Display brightness | see note on brightness |
 
 ## Notes
 
-### Audio
-Audio is functioning, however remains unsafe. There is a serious risk of _blowing up_ your machine
-should you misconfigure any part of the userspace stack. As such, audio is disabled in the devicetree
-on machines that support it. In order to get functioning audio, you must manually edit the devicetree
-to enable it and build a m1n1 payload with your new devicetree. As this is potentially dangerous and
-suitable only for well seasoned power users, no specific instructions are provided.
-
-Currently, the 3.5mm jack supports audio output _only_.
+### Speakers
+Speakers are functioning, however remain unsafe. There is a serious risk of _blowing up_ the speakers
+should you misconfigure any part of the userspace stack. As such, on machines where we have (preliminary)
+support for speakers, the speakers are disabled in the devicetree. In order to get functioning speakers,
+you must manually edit the devicetree to enable it and build a new m1n1 payload containing the modifications.
+As this is potentially dangerous and suitable only for well seasoned power users, no specific instructions
+are provided.
 
 
 ### Power
