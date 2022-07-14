@@ -63,7 +63,7 @@ Devices and features common to the platform.
 | 1Gbps Ethernet | 5.16 |
 | 10Gbps Ethernet | 5.17 |
 | WiFi | linux-asahi |
-| Bluetooth | WIP |
+| Bluetooth | linux-asahi |
 | 3.5mm jack | linux-asahi |
 | Microphones | unsupported |
 | Internal Speaker | linux-asahi [see note on speakers] |
@@ -73,7 +73,7 @@ Devices and features common to the platform.
 |---------|---------------|
 | Devicetree | 5.17 |
 | WiFi | linux-asahi |
-| Bluetooth | WIP |
+| Bluetooth | linux-asahi |
 | SPI HID | linux-asahi |
 | Keyboard | linux-asahi |
 | Touchpad | linux-asahi |
@@ -96,7 +96,7 @@ Devices and features common to the platform.
 | Touchpad | linux-asahi |
 | TouchID | unsupported |
 | WiFi | linux-asahi |
-| Bluetooth | WIP |
+| Bluetooth | linux-asahi |
 | Keyboard Backlight | unsupported |
 | Webcam | WIP |
 | Internal speakers | linux-asahi [see note on speakers] |
@@ -113,7 +113,7 @@ Devices and features common to the platform.
 | 1Gbps Ethernet | 5.16 |
 | External TouchID | unsupported |
 | WiFi | linux-asahi |
-| Bluetooth | WIP |
+| Bluetooth | linux-asahi |
 | Webcam | WIP |
 | Internal speakers | linux-asahi [see note on speakers] |
 | 3.5mm jack | linux-asahi |
@@ -171,7 +171,7 @@ Devices and features common to the platform.
 | Touchpad | linux-asahi |
 | TouchID | unsupported |
 | WiFi | linux-asahi |
-| Bluetooth | WIP |
+| Bluetooth | linux-asahi |
 | Keyboard Backlight | unsupported |
 | Webcam | WIP |
 | Internal speakers | linux-asahi [see note on speakers] |
@@ -196,8 +196,8 @@ need to be evaluated on a per-machine basis.
 | ------- | ------------- |
 | Devicetree | linux-asahi |
 | Internal speaker | unsupported |
-| HDMI Out | unsupported |
-| Ethernet | unsupported |
+| HDMI Out | linux-asahi |
+| Ethernet | linux-asahi |
 | 3.5mm jack | unsupported |
 
 ## M2 (T8112)
@@ -219,7 +219,7 @@ Devices and features common to the platform.
 | System sleep | see note on power |
 | UART | 5.13 |
 | Watchdog | 5.17 |
-| PCIe | unsupported |
+| PCIe | linux-asahi |
 | I<sup>2</sup>C | 5.16 |
 | GPIO | 5.16 |
 | USB-PD | 5.16 |
@@ -227,6 +227,7 @@ Devices and features common to the platform.
 | NVMe | linux-asahi (5.19) |
 | SPI | linux-asahi |
 | SPI NOR | linux-asahi |
+| MTP | linux-asahi |
 | Primary display (SimpleDRM) | linux-asahi |
 | DCP | WIP |
 | DP Alt Mode | unsupported |
@@ -266,9 +267,9 @@ Devices and features common to the platform.
 |---------|---------------|
 | Devicetree | linux-asahi |
 | WiFi | linux-asahi |
-| Bluetooth | WIP |
-| Keyboard | unsupported |
-| Touchpad | unsupported |
+| Bluetooth | linux-asahi |
+| Keyboard | linux-asahi |
+| Touchpad | linux-asahi |
 | Touch Bar | unsupported |
 | TouchID | unsupported |
 | Keyboard Backlight | unsupported |
