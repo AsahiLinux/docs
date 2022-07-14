@@ -56,7 +56,7 @@ Features found on all devices featuring a given SoC
 | Touchpad           | N/A             | linux-asahi                 | linux-asahi                 | N/A         |
 | Touch Bar          | N/A             | unsupported                 | N/A                         | N/A         |
 | USB-A ports        | 5.16            | N/A                         | N/A                         | N/A         |
-| HDMI Out           | 5.17            | unsupported                 | unsupported                 | N/A         |
+| HDMI Out           | 5.13            | N/A                         | N/A                         | N/A         |
 | TouchID            | unsupported     | unsupported                 | unsupported                 | unsupported |
 | 1Gbps Ethernet     | 5.16            | N/A                         | N/A                         | N/A         |
 | 10Gbps Ethernet    | 5.17            | N/A                         | N/A                         | N/A         |
@@ -82,9 +82,9 @@ Features found on all devices featuring a given SoC
 | Ethernet           | linux-asahi       | N/A                            |
 | WiFi               | linux-asahi       | linux-asahi                    |
 | Bluetooth          | linux-asahi       | linux-asahi                    |
-| 3.5mm jack         | unsupported       | see notes                      |
-| Microphones        | unsupported       | unsupported                    |
-| Internal speakers  | unsupported       | see notes                      |
+| 3.5mm jack         | unsupported       | unsupported                    |
+| Microphones        | N/A               | unsupported                    |
+| Internal speakers  | see notes         | see notes                      |
 | Webcam             | N/A               | WIP                            |
 | Battery monitoring | N/A               | linux-asahi                    |
 | Screen brightness  | N/A               | unsupported                    |
@@ -132,13 +132,13 @@ Features found on all devices with a given SoC.
 ### M2 device-specific support
 |                    | MacBook Air (13-inch, 2022)  | MacBook Pro (13-inch, 2022) | 
 | -------------------| :--------------------------: | :-------------------------: |
-| Devicetree         | unsupported                  | linux-asahi                 |
-| MagSafe            | 5.16                         | 5.16                        |
+| Devicetree         | linux-asahi (untested)       | linux-asahi                 |
+| MagSafe            | 5.16                         | N/A                         |
 | Keyboard           | linux-asahi                  | linux-asahi                 |
 | Keyboard backlight | unsupported                  | unsupported                 |
 | Touchpad           | linux-asahi                  | linux-asahi                 |
 | Touch Bar          | N/A                          | unsupported                 |
-| HDMI Out           | unsupported                  | unsupported                 |
+| HDMI Out           | N/A                          | N/A                         |
 | TouchID            | unsupported                  | unsupported                 |
 | WiFi               | linux-asahi                  | linux-asahi                 |
 | Bluetooth          | linux-asahi                  | linux-asahi                 |
@@ -148,7 +148,7 @@ Features found on all devices with a given SoC.
 | Webcam             | WIP                          | WIP                         |
 | Battery monitoring | linux-asahi                  | linux-asahi                 |
 | Screen brightness  | see notes                    | see notes                   |
-| SD card reader     | N/A                          | 5.17                        |
+| SD card reader     | N/A                          | N/A                         |
 
 ## Notes
 
