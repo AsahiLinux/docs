@@ -1,5 +1,7 @@
 This page details currently supported features on all extant Apple Silicon Macs, as well as their upstream status. Kernel versions indicate when each feature was upstreamed. Versions in parentheses indicate when features currently in review are scheduled/likely to be scheduled for merging upstream.
 
+Values for feature-completeness are given as a rough indicator of progress only. Upstream values are the proportion of _currently supported_ features which are present upstream, not the proportion of _total_ features.
+
 ## Table of Contents
 - [M1 Series (M1, M1 Pro, M1 Max, M1 Ultra)](#m1-series-soc-features)
   * [M1 device-specific support](#m1-device-specific-support)
@@ -12,42 +14,41 @@ This page details currently supported features on all extant Apple Silicon Macs,
 ### M1 series SoC features
 Features found on all devices featuring a given SoC
 
-|                  | M1 (T8103)  | M1 Pro/Max/Ultra (T600x) |
-| ---------------- | :---------: | :----------------------: |
-| AICv2            | N/A         | 5.18                     |
-| DART             | linux-asahi | linux-asahi              |
-| ARM PMU          | 5.18        | 5.18                     |
-| cpufreq          | linux-asahi | linux-asahi              |
-| cpuidle          | see notes   | see notes                |
-| System suspend   | see notes   | see notes                |
-| UART             | 5.13        | 5.13                     |
-| Watchdog         | 5.17        | 5.17                     |
-| PCIe             | 5.16        | 5.16                     |
-| I<sup>2</sup>C   | 5.16        | 5.16                     |
-| GPIO             | 5.16        | 5.16                     |
-| USB-PD           | 5.16        | 5.16                     |
-| Power management | 5.17        | 5.17                     |
-| NVMe             | 5.19        | 5.19                     |
-| SPI              | linux-asahi | linux-asahi              |
-| SPI NOR          | linux-asahi | linux-asahi              |
-| Primary display  | 5.17        | 5.17                     |
-| DCP              | WIP         | WIP                      |
-| DP Alt Mode      | unsupported | unsupported              |
-| Thunderbolt      | WIP         | WIP                      |
-| USB2 (TB ports)  | linux-asahi | linux-asahi              |
-| USB3 (TB ports)  | WIP         | WIP                      |
-| SMC              | linux-asahi | linux-asahi              |
-| SPMI             | linux-asahi | linux-asahi              |
-| RTC              | linux-asahi | linux-asahi              |
-| SEP              | unsupported | unsupported              |
-| Video Decoder    | WIP         | WIP                      |
-| Video Encoder    | WIP         | WIP                      |
-| ProRes Codec     | N/A         | WIP                      |
-| GPU              | WIP         | WIP                      |
-| Neural Engine    | unsupported | unsupported              |
+|                        | M1 (T8103)  | M1 Pro/Max/Ultra (T600x) |
+| ---------------------- | :---------: | :----------------------: |
+| AICv2                  | N/A         | 5.18                     |
+| DART                   | linux-asahi | linux-asahi              |
+| ARM PMU                | 5.18        | 5.18                     |
+| cpufreq                | linux-asahi | linux-asahi              |
+| cpuidle                | see notes   | see notes                |
+| System suspend         | see notes   | see notes                |
+| UART                   | 5.13        | 5.13                     |
+| Watchdog               | 5.17        | 5.17                     |
+| PCIe                   | 5.16        | 5.16                     |
+| I<sup>2</sup>C         | 5.16        | 5.16                     |
+| GPIO                   | 5.16        | 5.16                     |
+| USB-PD                 | 5.16        | 5.16                     |
+| Power management       | 5.17        | 5.17                     |
+| NVMe                   | 5.19        | 5.19                     |
+| SPI                    | linux-asahi | linux-asahi              |
+| SPI NOR                | linux-asahi | linux-asahi              |
+| Primary display        | 5.17        | 5.17                     |
+| DCP                    | WIP         | WIP                      |
+| DP Alt Mode            | unsupported | unsupported              |
+| Thunderbolt            | WIP         | WIP                      |
+| USB2 (TB ports)        | linux-asahi | linux-asahi              |
+| USB3 (TB ports)        | WIP         | WIP                      |
+| SMC                    | linux-asahi | linux-asahi              |
+| SPMI                   | linux-asahi | linux-asahi              |
+| RTC                    | linux-asahi | linux-asahi              |
+| SEP                    | unsupported | unsupported              |
+| Video Decoder          | WIP         | WIP                      |
+| Video Encoder          | WIP         | WIP                      |
+| ProRes Codec           | N/A         | WIP                      |
+| GPU                    | WIP         | WIP                      |
+| Neural Engine          | unsupported | unsupported              |
 
 ### M1 device-specific support
-
 |                    | Mac Mini (2020) | MacBook Pro (13-inch, 2020) | MacBook Air (13-inch, 2020) | iMac (2020) |
 | -------------------| :-------------: | :-------------------------: | :-------------------------: | :---------: |
 | Devicetree         | 5.13            | 5.17                        | 5.17                        | 5.17        |
@@ -68,6 +69,8 @@ Features found on all devices featuring a given SoC
 | Webcam             | N/A             | WIP                         | WIP                         | WIP         |
 | Battery monitoring | N/A             | linux-asahi                 | linux-asahi                 | N/A         |
 | Screen brightness  | N/A             | unsupported                 | unsupported                 | unsupported |
+| **% Complete**     | **66%**         | **59%**                     | **59%**                     | **59%**     |
+| **% Upstream**     | **55%**         | **42%**                     | **42%**                     | **42%**     |
 
 ### M1 Pro/Max/Ultra device-specific support
 |                    | Mac Studio (2021) | MacBook Pro (14/16-inch, 2021) | 
@@ -89,6 +92,8 @@ Features found on all devices featuring a given SoC
 | Battery monitoring | N/A               | linux-asahi                    |
 | Screen brightness  | N/A               | unsupported                    |
 | SD card reader     | 5.17              | 5.17                           |
+| **% Complete**     | **70%**           | **63%**                        |
+| **% Upstream**     | **43%**           | **43%**                        |
 
 ## M2 Series (M2)
 
@@ -110,7 +115,7 @@ Features found on all devices with a given SoC.
 | GPIO             | 5.16        |
 | USB-PD           | 5.16        |
 | Power management | linux-asahi |
-| NVMe             | 5.19)       |
+| NVMe             | 5.19        |
 | SPI              | linux-asahi |
 | SPI NOR          | linux-asahi |
 | Primary display  | linux-asahi |
@@ -149,6 +154,8 @@ Features found on all devices with a given SoC.
 | Battery monitoring | linux-asahi                  | linux-asahi                 |
 | Screen brightness  | see notes                    | see notes                   |
 | SD card reader     | N/A                          | N/A                         |
+| **% Complete**     | **60%**                      | **57%**                     |
+| **% Upstream**     | **30%**                      | **27%**                     |
 
 ## Notes
 
