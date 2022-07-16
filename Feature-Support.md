@@ -49,7 +49,7 @@ Features found on all devices featuring a given SoC
 | Neural Engine          | unsupported | unsupported              |
 
 ### M1 device-specific support
-|                    | Mac Mini (2020) | MacBook Pro (13-inch, 2020) | MacBook Air (13-inch, 2020) | iMac (2020) |
+|                    | Mac Mini (2020) | MacBook Pro (13-inch, 2020) | MacBook Air (2020) | iMac (2021) |
 | -------------------| :-------------: | :-------------------------: | :-------------------------: | :---------: |
 | Devicetree         | 5.13            | 5.17                        | 5.17                        | 5.17        |
 | Keyboard           | N/A             | linux-asahi                 | linux-asahi                 | N/A         |
@@ -135,7 +135,7 @@ Features found on all devices with a given SoC.
 | Neural Engine    | unsupported |
 
 ### M2 device-specific support
-|                    | MacBook Air (13-inch, 2022)  | MacBook Pro (13-inch, 2022) | 
+|                    | MacBook Air (2022)  | MacBook Pro (13-inch, 2022) | 
 | -------------------| :--------------------------: | :-------------------------: |
 | Devicetree         | linux-asahi (untested)       | linux-asahi                 |
 | MagSafe            | 5.16                         | N/A                         |
