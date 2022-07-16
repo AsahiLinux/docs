@@ -73,7 +73,7 @@ Features found on all devices featuring a given SoC
 | **% Upstream**     | **55%**         | **42%**                     | **42%**                     | **42%**     |
 
 ### M1 Pro/Max/Ultra device-specific support
-|                    | Mac Studio (2021) | MacBook Pro (14/16-inch, 2021) | 
+|                    | Mac Studio (2022) | MacBook Pro (14/16-inch, 2021) | 
 | -------------------| :---------------: | :----------------------------: |
 | Devicetree         | linux-asahi       | linux-asahi                    |
 | MagSafe            | N/A               | 5.16                           |
