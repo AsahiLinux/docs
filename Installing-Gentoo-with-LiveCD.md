@@ -14,12 +14,14 @@ It is important to note that the ESP _must_ be mounted at `/boot/efi` for certai
 As such, it is best if you put it in `/etc/fstab` and leave it there.
 
 ## Step 1: Set up Asahi Linux Minimal
-Install Asahi Linux Minimal and set up networking. The environment comes with iwd and NetworkManager for setting
-up WiFi. Ethernet connections should be handled automatically at boot.
+Install Asahi Linux Minimal (with more than the minimal disk space, 12GB worked) and set up networking.
+The environment comes with iwd and NetworkManager for setting up WiFi. Ethernet connections
+should be handled automatically at boot.
 
-Update the system by running `sudo pacman -Syu`. Reboot into Asahi Linux.
+Update the system by running `pacman -Syu` as root (or `sudo pacman -Syu` when you installed AsahiLinux Desktop).
+Reboot into Asahi Linux.
 
-Install Git by running `sudo pacman -S git`.
+Install Git by running `pacman -S git`/`sudo pacman -S git`..
 
 ## Step 2: Clone [`asahi-gentoosupport`](https://github.com/chadmed/asahi-gentoosupport)
 This repo automates setting up the LiveCD for booting on Apple Silicon. Clone it somewhere and enter the directory.
