@@ -23,6 +23,60 @@ via distro repositories, improving the AArch64 ecosystem for everyone! See [Fixe
 for a list of software that has been fixed for everyone as a result of this. You wouldn't
 want us to keep Emacs all to ourselves, now would you?
 
+### Checking for alignment
+
+```sh
+readelf -l YOUR_ELF_HERE
+python -c "print(LOAD_ADDRESS_HERE%pow(2, 15)==0)"
+```
+
+#### Example
+
+```
+[dave@dave-mac cf]$ readelf -l lib64/ld-android.so
+
+Elf file type is DYN (Shared object file)
+Entry point 0x0
+There are 9 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040
+                 0x00000000000001f8 0x00000000000001f8  R      0x8
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000874 0x0000000000000874  R      0x1000
+  LOAD           0x0000000000001000 0x0000000000001000 0x0000000000001000
+                 0x0000000000000004 0x0000000000000004  R E    0x1000
+  LOAD           0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x00000000000000a0 0x00000000000000a0  RW     0x1000
+  DYNAMIC        0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x00000000000000a0 0x00000000000000a0  RW     0x8
+  GNU_RELRO      0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x00000000000000a0 0x0000000000001000  R      0x1
+  GNU_EH_FRAME   0x000000000000082c 0x000000000000082c 0x000000000000082c
+                 0x0000000000000014 0x0000000000000014  R      0x4
+  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000  RW     0x0
+  NOTE           0x0000000000000238 0x0000000000000238 0x0000000000000238
+                 0x0000000000000020 0x0000000000000020  R      0x4
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     
+   01     .note.gnu.build-id .dynsym .gnu.hash .dynstr .eh_frame_hdr .eh_frame 
+   02     .text 
+   03     .dynamic 
+   04     .dynamic 
+   05     .dynamic 
+   06     .eh_frame_hdr 
+   07     
+   08     .note.gnu.build-id 
+
+[dave@dave-mac cf]$ python -c "print(0x0000000000001000%pow(2, 15)==0)"
+False
+```
+
 ## Broken packages
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
