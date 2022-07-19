@@ -33,6 +33,8 @@ want us to keep Emacs all to ourselves, now would you?
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Seems to work, but will throw warnings. |
 | Rust | build issue | might use embedded jemalloc using the build system's page size by default, AsahiLinux/Arch Linux Arm [fix](https://github.com/AsahiLinux/alarm-PKGBUILDs/commit/c2459a0ae6fc04b7fe98bb04f10795248eca949b)<br>Does not affect Rust installed via rustup. |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
+| cuttlefish |  | 
+
 
 ## Fixed packages
 | Package | Fixing commit | Notes |
