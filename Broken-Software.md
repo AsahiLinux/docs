@@ -11,9 +11,9 @@ AArch64 is unique in that an AArch64 machine can use 4K, 16K _or_ 64K pages.
 
 ### Why not just use 4K pages then?
 While these machines can boot 4K kernels, doing so requires some very hacky patches,
-as the IOMMUs only support 16K-aligned pages. Not does this cause severe performance
-penalties, it does not address the actual problem which is userspace software with
-incomplete support for AArch64. XNU gets around this by supporting independent
+as the IOMMUs only support 16K-aligned pages. Not only does this cause severe performance
+penalties, but it does not address the actual problem which is userspace software with
+incomplete support for AArch64. XNU (macOS) gets around this by supporting independent
 page sizes in userspace, however we have no such mechanism in Linux and likely never will.
 
 ### Why not just host a fixed version of ${PACKAGE} yourself?
@@ -23,17 +23,18 @@ via distro repositories, improving the AArch64 ecosystem for everyone! See [Fixe
 for a list of software that has been fixed for everyone as a result of this. You wouldn't
 want us to keep Emacs all to ourselves, now would you?
 
-### Checking for alignment
+### Why does "not work" sometimes mean "instantly segfault"?
+If an ELF executable or library has sections which are not aligned to 16K pages, the loader
+will be unable to map the binary into memory and will signal this failure by causing
+a segmentation fault before the program even technically starts execution.
 
-```sh
-readelf -l YOUR_ELF_HERE
-python -c "print(LOAD_ADDRESS_HERE%pow(2, 15)==0)"
+You can confirm that this is the case using `readelf -l /path/to/binary`. All program
+header sections of type `LOAD` must have an `ALIGN` value of at least `0x4000` to
+successfully load on a 16K machine like Apple Silicon. The library illustrated here
+is only aligned for 4K pages (`0x1000`) so it cannot load.
+
 ```
-
-#### Example
-
-```
-[dave@dave-mac cf]$ readelf -l lib64/ld-android.so
+$ readelf -l lib64/ld-android.so
 
 Elf file type is DYN (Shared object file)
 Entry point 0x0
@@ -72,10 +73,13 @@ Program Headers:
    06     .eh_frame_hdr 
    07     
    08     .note.gnu.build-id 
-
-[dave@dave-mac cf]$ python -c "print(0x0000000000001000%pow(2, 15)==0)"
-False
 ```
+
+Though the default for AArch64 compilers is to produce ELF files with sections aligned
+to 64K for compatibility with all AArch64 machines, tooling bugs (such as binaries
+manipulated by old versions of `patchelf`) or customized compiler flags (such as
+many Google programs, including older versions of Chrome (and Electron) and most current
+Android programs) may result in a binary whose sections are only aligned to 4K.
 
 ## Broken packages
 | Package | Upstream report | Notes |
