@@ -63,7 +63,7 @@ Features found on all devices featuring a given SoC
 | 10Gbps Ethernet    | 5.17            | N/A                         | N/A                         | N/A         |
 | WiFi               | linux-asahi     | linux-asahi                 | linux-asahi                 | linux-asahi |
 | Bluetooth          | linux-asahi     | linux-asahi                 | linux-asahi                 | linux-asahi |
-| 3.5mm jack         | see notes       | see notes                   | see notes                   | see notes   |
+| 3.5mm jack         | linux-asahi     | linux-asahi                 | linux-asahi                 | linux-asahi |
 | Microphones        | unsupported     | unsupported                 | unsupported                 | unsupported |
 | Internal speakers  | see notes       | see notes                   | see notes                   | see notes   |
 | Webcam             | N/A             | WIP                         | WIP                         | WIP         |
