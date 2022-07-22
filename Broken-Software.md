@@ -92,6 +92,9 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Rust | build issue | might use embedded jemalloc using the build system's page size by default, AsahiLinux/Arch Linux Arm [fix](https://github.com/AsahiLinux/alarm-PKGBUILDs/commit/c2459a0ae6fc04b7fe98bb04f10795248eca949b)<br>Does not affect Rust installed via rustup. |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 | cuttlefish |  | 
+|pdfium| https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 |bundles an old version of chromium allocator|
+|qt5-webengine||chromium 87, likely won’t be fixed upstream, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
+|qt6-webengine||chromium 94 for 6.3, likely will be (partially) fixed upstream by 6.5 but is also affected by pdfium, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
 
 
 ## Fixed packages
