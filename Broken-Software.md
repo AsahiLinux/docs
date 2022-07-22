@@ -93,8 +93,8 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 | cuttlefish |  | 
 |pdfium| https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 |bundles an old version of chromium allocator|
-|qt5-webengine||chromium 87, likely won’t be fixed upstream, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
-|qt6-webengine||chromium 94 for 6.3, likely will be (partially) fixed upstream by 6.5 but is also affected by pdfium, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
+|qt5-webengine| https://bugreports.qt.io/browse/QTBUG-105145 |chromium 87, likely won’t be fixed upstream, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
+|qt6-webengine| https://bugreports.qt.io/browse/QTBUG-105145 |chromium 94 for 6.3, likely will be (partially) fixed upstream by 6.5 but is also affected by pdfium, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
 
 
 ## Fixed packages
