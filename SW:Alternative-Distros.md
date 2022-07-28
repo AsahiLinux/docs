@@ -2,6 +2,7 @@ Several members of the community have contributed guides and pre-built artifacts
 
 | Distro | Maintainer | Installation Guide |
 |--------|------------|--------------------|
+| CentOS Steam | https://github.com/ericcurtin | https://github.com/ericcurtin/asahi-centosstream-builder |
 | Debian | https://thomas.glanzmann.de/ | https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/ |
 | Fedora Desktop| https://thomas.glanzmann.de/ | https://thomas.glanzmann.de/fedora/ |
 | Fedora | https://github.com/leifliddy| https://github.com/leifliddy/asahi-fedora-builder |
