@@ -66,3 +66,10 @@ machines and may leave you with an unbootable Linux setup.
 Finish off the rest of your usual Gentoo install procedure, reboot, and have fun! It's a good idea to customise the kernel as
 you see fit since the running config will be based on Arch/Asahi Linux. Remember to save the running kernel and initramfs as
 a fallback so you can easily boot it from GRUB should anything go wrong.
+
+## Important notes
+* If you are using the [`asahi-audio`](https://github.com/chadmed/asahi-audio) package, PipeWire _must_ be compiled with `extra` 
+  and `gstreamer` USE flags. Failing to do so will stop PipeWire from being linked against `libsndfile`, which will stop the
+  FIRs from loading.
+* If you are switching your toolchain to clang/LLVM, be sure to force `kmod` to be built with gcc. Your system will be
+  unbootable if you try building with clang!
