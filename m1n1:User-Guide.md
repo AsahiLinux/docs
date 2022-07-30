@@ -190,10 +190,10 @@ See [SW:Hypervisor](https://github.com/AsahiLinux/docs/wiki/SW%3AHypervisor)
 If you have a standard release build of m1n1 installed as fuOS (i.e. what you get when you run the Asahi Linux installer), you can enable verbose messages and a backdoor proxy mode by going into 1TR and doing this from the macOS Terminal:
 
 ```
-bputil -a
+csrutil disable
 ```
 
-You will be prompted to select the correct boot volume if you are multi booting  (you can check which volume is which using `diskutil apfs list`) and then asked to authenticate yourself. 
+You will be prompted to select the correct boot volume if you are multi booting and then asked to authenticate yourself. 
 
 You can then enable verbose mode using:
 
@@ -207,10 +207,9 @@ Once initially enabled, this feature can be toggled off with:
 nvram boot-args=
 ```
 
-
 By doing this, m1n1 will turn on verbose logging, and wait 5 seconds before booting its payloads. If it receives a USB proxy connection in that time, it will go into proxy mode. This is extremely useful when you want to have a working, auto-booting Linux install, but retain the ability to boot kernels via proxy mode if something goes wrong, or just for fast development.
 
-Note that this state is less secure, as any installed OS can alter the `boot-args` property. Reset your boot policy with `bputil -nc` and then use `kmutil` to install m1n1 again to go back to the original state of requiring authentication to enable this feature.
+Note that this state is less secure, as any installed OS can alter the `boot-args` property. Reset your boot policy with `csrutil enable` (do NOT choose to enable full security when prompted, as this will uninstall m1n1).
 
 To break into proxy mode, the host needs to *open* the USB ACM device (either of the 2 will do). This can be done by e.g. running a serial terminal in a loop on the secondary interface (which you might want for the hypervisor anyway): _Note: for macOS use_ `/dev/cu.usbmodemP_01`
 
@@ -223,3 +222,5 @@ done
 ```
 
 Once picocom connects, you can then invoke proxy scripts with `M1N1DEVICE=/dev/ttyACM0`.
+
+Note: the proxy backdoor requires both verbose mode (`boot-args=-v`) and disabled SIP (`csrutil disable`). Just using verbose mode may give you m1n1 debug output (depending on Apple's boot-arg filtering policy, which can change) but will not enable the proxy backdoor in recent m1n1 builds, for security.
