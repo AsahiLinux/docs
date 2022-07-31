@@ -2,7 +2,7 @@
 
 → [["When will Asahi Linux be done?"]]
 
-## Does <something> work yet?
+## Does &lt;something&gt; work yet?
 
 → [[Feature Support]]
 
