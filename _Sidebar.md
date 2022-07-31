@@ -21,5 +21,5 @@ For developers:
 * [[m1n1:User Guide]] Boot loader
 * [[SW:Hypervisor]]
 * [[U-Boot]]
-* [[SW:-DT-bindings]]
+* [[SW:DT-bindings]]
 * [[Open OS ecosystem on Apple Silicon Macs]]
