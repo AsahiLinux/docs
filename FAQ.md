@@ -2,6 +2,10 @@
 
 → [["When will Asahi Linux be done?"]]
 
+## Does <something> work yet?
+
+→ [[Feature Support]]
+
 ## How do I install it?
 
 See the alpha release blog post: https://asahilinux.org/2022/03/asahi-linux-alpha-release/
