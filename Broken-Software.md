@@ -90,6 +90,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | jemalloc | https://github.com/archlinuxarm/PKGBUILDs/pull/1914 | Only works when compiled for page sizes >= system. |
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Seems to work, but will throw warnings. |
 | Rust | build issue | might use embedded jemalloc using the build system's page size by default, AsahiLinux/Arch Linux Arm [fix](https://github.com/AsahiLinux/alarm-PKGBUILDs/commit/c2459a0ae6fc04b7fe98bb04f10795248eca949b)<br>Does not affect Rust installed via rustup. |
+| Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/24564 | |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 | cuttlefish |  | 
 |pdfium| https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 |bundles an old version of chromium allocator|
