@@ -84,19 +84,18 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 ## Broken packages
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
+| cuttlefish |  | 
 | f2fs | https://github.com/torvalds/linux/commit/5c9b469295fb | |
 | FEX | https://github.com/FEX-Emu/FEX/issues/1221 | Not likely to be fixed in the near future.<br>Box64 works as an alternative. |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
 | jemalloc | https://github.com/archlinuxarm/PKGBUILDs/pull/1914 | Only works when compiled for page sizes >= system. |
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Seems to work, but will throw warnings. |
+| pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | bundles an old version of chromium allocator |
+| qt5-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 87, likely won’t be fixed upstream, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
+| qt6-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 94 for 6.3, likely will be (partially) fixed upstream by 6.5 but is also affected by pdfium, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
 | Rust | build issue | might use embedded jemalloc using the build system's page size by default, AsahiLinux/Arch Linux Arm [fix](https://github.com/AsahiLinux/alarm-PKGBUILDs/commit/c2459a0ae6fc04b7fe98bb04f10795248eca949b)<br>Does not affect Rust installed via rustup. |
 | Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/24564 | |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
-| cuttlefish |  | 
-|pdfium| https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 |bundles an old version of chromium allocator|
-|qt5-webengine| https://bugreports.qt.io/browse/QTBUG-105145 |chromium 87, likely won’t be fixed upstream, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
-|qt6-webengine| https://bugreports.qt.io/browse/QTBUG-105145 |chromium 94 for 6.3, likely will be (partially) fixed upstream by 6.5 but is also affected by pdfium, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
-
 
 ## Fixed packages
 | Package | Fixing commit | Notes |
