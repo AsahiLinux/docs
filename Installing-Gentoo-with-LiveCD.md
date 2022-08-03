@@ -13,6 +13,18 @@ it.
 It is important to note that the ESP _must_ be mounted at `/boot/efi` for certain Asahi scripts to function properly.
 As such, it is best if you put it in `/etc/fstab` and leave it there.
 
+## Important prerequisite information
+* When upgrading the kernel, you **must** pass `--all-ramdisk-modules` to `genkernel` for building the initramfs. Since we have
+  some required softdeps for booting, failing to put all modules in the initramfs will leave your system in an unbootable state.
+  Of course, this only applies if you actually use an initramfs.
+
+* If you are using the [`asahi-audio`](https://github.com/chadmed/asahi-audio) package, PipeWire _must_ be compiled with `extra` 
+  and `gstreamer` USE flags. Failing to do so will stop PipeWire from being linked against `libsndfile`, which will stop the
+  FIRs from loading.
+
+* If you are switching your toolchain to clang/LLVM, be sure to force `kmod` to be built with gcc. Your system will be
+  unbootable if you try building with clang!
+
 ## Step 1: Set up Asahi Linux Minimal
 Install Asahi Linux Minimal (with more than the minimal disk space, 12GB worked) and set up networking.
 The environment comes with iwd and NetworkManager for setting up WiFi. Ethernet connections
@@ -66,10 +78,3 @@ machines and may leave you with an unbootable Linux setup.
 Finish off the rest of your usual Gentoo install procedure, reboot, and have fun! It's a good idea to customise the kernel as
 you see fit since the running config will be based on Arch/Asahi Linux. Remember to save the running kernel and initramfs as
 a fallback so you can easily boot it from GRUB should anything go wrong.
-
-## Important notes
-* If you are using the [`asahi-audio`](https://github.com/chadmed/asahi-audio) package, PipeWire _must_ be compiled with `extra` 
-  and `gstreamer` USE flags. Failing to do so will stop PipeWire from being linked against `libsndfile`, which will stop the
-  FIRs from loading.
-* If you are switching your toolchain to clang/LLVM, be sure to force `kmod` to be built with gcc. Your system will be
-  unbootable if you try building with clang!
