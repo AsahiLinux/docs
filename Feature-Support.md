@@ -135,9 +135,9 @@ Features found on all devices with a given SoC.
 | Neural Engine    | unsupported |
 
 ### M2 device-specific support
-|                    | MacBook Air (2022)  | MacBook Pro (13-inch, 2022) | 
+|                    | MacBook Air (2022)           | MacBook Pro (13-inch, 2022) | 
 | -------------------| :--------------------------: | :-------------------------: |
-| Devicetree         | linux-asahi (untested)       | linux-asahi                 |
+| Devicetree         | linux-asahi                  | linux-asahi                 |
 | MagSafe            | 5.16                         | N/A                         |
 | Keyboard           | linux-asahi                  | linux-asahi                 |
 | Keyboard backlight | unsupported                  | unsupported                 |
