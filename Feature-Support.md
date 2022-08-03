@@ -69,8 +69,6 @@ Features found on all devices featuring a given SoC
 | Webcam             | N/A             | WIP                         | WIP                         | WIP         |
 | Battery monitoring | N/A             | linux-asahi                 | linux-asahi                 | N/A         |
 | Screen brightness  | N/A             | unsupported                 | unsupported                 | unsupported |
-| **% Complete**     | **66%**         | **59%**                     | **59%**                     | **59%**     |
-| **% Upstream**     | **55%**         | **42%**                     | **42%**                     | **42%**     |
 
 ### M1 Pro/Max/Ultra device-specific support
 |                    | Mac Studio (2022) | MacBook Pro (14/16-inch, 2021) | 
@@ -92,8 +90,6 @@ Features found on all devices featuring a given SoC
 | Battery monitoring | N/A               | linux-asahi                    |
 | Screen brightness  | N/A               | unsupported                    |
 | SD card reader     | 5.17              | 5.17                           |
-| **% Complete**     | **70%**           | **63%**                        |
-| **% Upstream**     | **43%**           | **43%**                        |
 
 ## M2 Series (M2)
 
@@ -154,8 +150,15 @@ Features found on all devices with a given SoC.
 | Battery monitoring | linux-asahi                  | linux-asahi                 |
 | Screen brightness  | see notes                    | see notes                   |
 | SD card reader     | N/A                          | N/A                         |
-| **% Complete**     | **60%**                      | **57%**                     |
-| **% Upstream**     | **30%**                      | **27%**                     |
+
+## Upstream Statistics
+Here we track the absolute number of patches carried in `linux-asahi` compared to the
+upstream base. This number should decrease with each new kernel version, major hardware
+changes notwithstanding.
+ 
+| Kernel base    | Patches carried |
+| :------------: | :-------------: |
+| 5.19.0         | 173             |
 
 ## Notes
 
