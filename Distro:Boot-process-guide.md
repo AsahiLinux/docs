@@ -50,6 +50,8 @@ In the real world,
 
 Since you *can* have multiple kernels installed, you have to pick where you source your DTs somehow. The logical choice would be the most recent kernel. For Arch, since there is only ever one installed kernel with the standard package, we get to ignore this issue (for typical users) and just always update the DTs on package updates to that version.
 
+TL;DR: Update your DTs when you update your kernel (unless you know they weren't touched), and also update your m1n1 to make big new stuff work.
+
 ## Build instructions
 
 Assuming everything is done natively (no cross-compiling):
