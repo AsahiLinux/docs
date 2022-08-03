@@ -144,7 +144,7 @@ Details on Broadcom FullMAC WiFi firmware naming: https://lore.kernel.org/all/20
 
 The stub OS installer collects available platform firmware from the IPSW, and packages it as two files:
 
-* firmare.tar: Tarball containing the firmware, in a structure compatible with the `/lib/firmware` hierarchy (e.g. `brcm/foo.bin`).
+* firmware.tar: Tarball containing the firmware, in a structure compatible with the `/lib/firmware` hierarchy (e.g. `brcm/foo.bin`).
 * manifest.txt: A text file containing lines of the following two forms:
   * `LINK <src> <tgt>` : hard link
   * `FILE <name> SHA256 <hash>`: file
