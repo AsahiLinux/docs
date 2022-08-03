@@ -6,7 +6,7 @@ This is a practical guide. For a more formal description/spec, including how we 
 
 [Apple stuff] → m1n1 stage 1 → m1n1 stage 2 → DT + U-Boot → GRUB → Linux
 
-m1n1 stage 1 is installed by the Asahi Linux installer from recovery mode (in step2.sh), is signed by an internal machine-specific key in the process (as part of Apple's secure boot policy), and can be considered immutable. Upgrading it should seldom be needed, we'll make tooling for this when it becomes necessary. It has the PARTUUID of the EFI system partition assigned to this OS hardcoded into it (set at install time), and chainloads m1n1 stage 2 from `<ESP>/m1n1/boot.bin` (the ESP must be in internal NVMe storage, no external storage is supported). It also passes through this PARTUUID to the next stage (as a to-be-set /chosen property, see below), so it knows what partition it's booting from.
+m1n1 stage 1 is installed by the Asahi Linux installer from recovery mode (in step2.sh), is signed by an internal machine-specific key in the process (as part of Apple's secure boot policy), and can be considered immutable. Upgrading it should seldom be needed, we'll make tooling for this when it becomes necessary. It has the PARTUUID of the EFI system partition assigned to this OS hardcoded into it (set at install time), and chainloads m1n1 stage 2 from `<ESP>/m1n1/boot.bin` (the ESP must be in internal NVMe storage, no external storage is supported). It also passes through this PARTUUID to the next stage (as a to-be-set /chosen property, see below), so the next stage knows what partition it's booting from.
 
 An OS/distribution is in charge of maintaining and upgrading the rest of the boot components.
 
