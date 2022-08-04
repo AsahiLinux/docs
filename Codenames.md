@@ -36,5 +36,6 @@ Apple likes to use many different names for the same devices.
 | M1 Pro | H13J | Jade Chop | T6000 | Firestorm | Icestorm
 | M1 Max | H13J | Jade 1C | T6001 | Firestorm | Icestorm
 | M1 Ultra | H13J | Jade 2C | T6002 | Firestorm | Icestorm
+| | | | T6500 | |
 | A15 | H14P | Ellis | T8110 | Avalanche | Blizzard
 | M2 | H14G | Staten | T8112 | Avalanche | Blizzard
