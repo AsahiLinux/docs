@@ -13,6 +13,7 @@ Apple likes to use many different names for the same devices.
 | A5 | H4A || S5L8942 | Cortex-A9
 | A5 | H4i || S5L8947 | Cortex-A9
 | A6 | H5P | Bali | S5L8950 | Swift
+| | | | S5L8747 |
 | A6X | H5G | Bali | S5L8955 | Swift
 | A7 | H6 | Alcatraz| S5L8960 | Cyclone
 | A8 | H7P | Fiji | T7000 | Typhoon
