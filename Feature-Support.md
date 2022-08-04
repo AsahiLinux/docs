@@ -17,7 +17,7 @@ Features found on all devices featuring a given SoC
 |                        | M1 (T8103)  | M1 Pro/Max/Ultra (T600x) |
 | ---------------------- | :---------: | :----------------------: |
 | AICv2                  | N/A         | 5.18                     |
-| DART                   | linux-asahi | linux-asahi              |
+| DART                   | 5.15        | linux-asahi              |
 | ARM PMU                | 5.18        | 5.18                     |
 | cpufreq                | linux-asahi | linux-asahi              |
 | cpuidle                | see notes   | see notes                |
