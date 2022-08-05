@@ -7,7 +7,7 @@ Apple likes to use many different names for the same devices.
 | S1 | M7 | | S7002 | Cortex-A7
 | S1P, S2 | M8 | | T8002 | Cortex-A7
 | S3 | M8P | | T8004 | Cortex-A7
-| | | | S5L8747 |
+| | | | S5L8747 | Cortex-A5
 | | H2 | | | Cortex-A8
 | A4 | H3 | | S5L8930 | Cortex-A8
 | A5 | H4 | | S5L8940 | Cortex-A9
