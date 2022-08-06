@@ -14,81 +14,81 @@ Values for feature-completeness are given as a rough indicator of progress only.
 ### M1 series SoC features
 Features found on all devices featuring a given SoC
 
-|                        | M1 (T8103)  | M1 Pro/Max/Ultra (T600x) |
-| ---------------------- | :---------: | :----------------------: |
-| AICv2                  | N/A         | 5.18                     |
-| DART                   | 5.15        | linux-asahi              |
-| ARM PMU                | 5.18        | 5.18                     |
-| cpufreq                | linux-asahi | linux-asahi              |
-| cpuidle                | see notes   | see notes                |
-| System suspend         | see notes   | see notes                |
-| UART                   | 5.13        | 5.13                     |
-| Watchdog               | 5.17        | 5.17                     |
-| PCIe                   | 5.16        | 5.16                     |
-| I<sup>2</sup>C         | 5.16        | 5.16                     |
-| GPIO                   | 5.16        | 5.16                     |
-| USB-PD                 | 5.16        | 5.16                     |
-| Power management       | 5.17        | 5.17                     |
-| NVMe                   | 5.19        | 5.19                     |
-| SPI                    | linux-asahi | linux-asahi              |
-| SPI NOR                | linux-asahi | linux-asahi              |
-| Primary display        | 5.17        | 5.17                     |
-| DCP                    | WIP         | WIP                      |
-| DP Alt Mode            | unsupported | unsupported              |
-| Thunderbolt            | WIP         | WIP                      |
-| USB2 (TB ports)        | linux-asahi | linux-asahi              |
-| USB3 (TB ports)        | WIP         | WIP                      |
-| SMC                    | linux-asahi | linux-asahi              |
-| SPMI                   | linux-asahi | linux-asahi              |
-| RTC                    | linux-asahi | linux-asahi              |
-| SEP                    | unsupported | unsupported              |
-| Video Decoder          | WIP         | WIP                      |
-| Video Encoder          | WIP         | WIP                      |
-| ProRes Codec           | N/A         | WIP                      |
-| GPU                    | WIP         | WIP                      |
-| Neural Engine          | unsupported | unsupported              |
+|                  | M1 (T8103)        | M1 Pro/Max/Ultra (T600x) |
+|------------------|:-----------------:|:------------------------:|
+| AICv2            | N/A               | 5.18                     |
+| DART             | 5.15              | linux-asahi              |
+| ARM PMU          | 5.18              | 5.18                     |
+| cpufreq          | linux-asahi       | linux-asahi              |
+| cpuidle          | see notes         | see notes                |
+| System suspend   | see notes         | see notes                |
+| UART             | 5.13              | 5.13                     |
+| Watchdog         | 5.17              | 5.17                     |
+| PCIe             | 5.16              | 5.16                     |
+| I<sup>2</sup>C   | 5.16              | 5.16                     |
+| GPIO             | 5.16              | 5.16                     |
+| USB-PD           | 5.16              | 5.16                     |
+| Power management | 5.17              | 5.17                     |
+| NVMe             | 5.19              | 5.19                     |
+| SPI              | linux-asahi       | linux-asahi              |
+| SPI NOR          | linux-asahi       | linux-asahi              |
+| Primary display  | 5.17              | 5.17                     |
+| DCP              | WIP               | WIP                      |
+| DP Alt Mode      | not yet supported | not yet supported        |
+| Thunderbolt      | WIP               | WIP                      |
+| USB2 (TB ports)  | linux-asahi       | linux-asahi              |
+| USB3 (TB ports)  | WIP               | WIP                      |
+| SMC              | linux-asahi       | linux-asahi              |
+| SPMI             | linux-asahi       | linux-asahi              |
+| RTC              | linux-asahi       | linux-asahi              |
+| SEP              | not yet supported | not yet supported        |
+| Video Decoder    | WIP               | WIP                      |
+| Video Encoder    | WIP               | WIP                      |
+| ProRes Codec     | N/A               | WIP                      |
+| GPU              | WIP               | WIP                      |
+| Neural Engine    | not yet supported | not yet supported        |
 
 ### M1 device-specific support
-|                    | Mac Mini (2020) | MacBook Pro (13-inch, 2020) | MacBook Air (2020) | iMac (2021) |
-| -------------------| :-------------: | :-------------------------: | :-------------------------: | :---------: |
-| Devicetree         | 5.13            | 5.17                        | 5.17                        | 5.17        |
-| Keyboard           | N/A             | linux-asahi                 | linux-asahi                 | N/A         |
-| Keyboard backlight | N/A             | unsupported                 | unsupported                 | N/A         |
-| Touchpad           | N/A             | linux-asahi                 | linux-asahi                 | N/A         |
-| Touch Bar          | N/A             | unsupported                 | N/A                         | N/A         |
-| USB-A ports        | 5.16            | N/A                         | N/A                         | N/A         |
-| HDMI Out           | 5.13            | N/A                         | N/A                         | N/A         |
-| TouchID            | unsupported     | unsupported                 | unsupported                 | unsupported |
-| 1Gbps Ethernet     | 5.16            | N/A                         | N/A                         | N/A         |
-| 10Gbps Ethernet    | 5.17            | N/A                         | N/A                         | N/A         |
-| WiFi               | linux-asahi     | linux-asahi                 | linux-asahi                 | linux-asahi |
-| Bluetooth          | linux-asahi     | linux-asahi                 | linux-asahi                 | linux-asahi |
-| 3.5mm jack         | linux-asahi     | linux-asahi                 | linux-asahi                 | linux-asahi |
-| Microphones        | unsupported     | unsupported                 | unsupported                 | unsupported |
-| Internal speakers  | see notes       | see notes                   | see notes                   | see notes   |
-| Webcam             | N/A             | WIP                         | WIP                         | WIP         |
-| Battery monitoring | N/A             | linux-asahi                 | linux-asahi                 | N/A         |
-| Screen brightness  | N/A             | unsupported                 | unsupported                 | unsupported |
+|                    | Mac Mini (2020)   | MacBook Pro (13-inch, 2020) | MacBook Air (2020) | iMac (2021)       |
+|--------------------|:-----------------:|:---------------------------:|:------------------:|:-----------------:|
+| Devicetree         | 5.13              | 5.17                        | 5.17               | 5.17              |
+| Keyboard           | N/A               | linux-asahi                 | linux-asahi        | N/A               |
+| Keyboard backlight | N/A               | not yet supported           | not yet supported  | N/A               |
+| Touchpad           | N/A               | linux-asahi                 | linux-asahi        | N/A               |
+| Touch Bar          | N/A               | not yet supported           | N/A                | N/A               |
+| USB-A ports        | 5.16              | N/A                         | N/A                | N/A               |
+| HDMI Out           | 5.13              | N/A                         | N/A                | N/A               |
+| TouchID            | not yet supported | not yet supported           | not yet supported  | not yet supported |
+| 1Gbps Ethernet     | 5.16              | N/A                         | N/A                | N/A               |
+| 10Gbps Ethernet    | 5.17              | N/A                         | N/A                | N/A               |
+| WiFi               | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
+| Bluetooth          | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
+| 3.5mm jack         | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
+| Microphones        | not yet supported | not yet supported           | not yet supported  | not yet supported |
+| Internal speakers  | see notes         | see notes                   | see notes          | see notes         |
+| Webcam             | N/A               | WIP                         | WIP                | WIP               |
+| Battery monitoring | N/A               | linux-asahi                 | linux-asahi        | N/A               |
+| Screen brightness  | N/A               | not yet supported           | not yet supported  | not yet supported |
 
 ### M1 Pro/Max/Ultra device-specific support
-|                    | Mac Studio (2022) | MacBook Pro (14/16-inch, 2021) | 
-| -------------------| :---------------: | :----------------------------: |
+|                    | Mac Studio (2022) | MacBook Pro (14/16-inch, 2021) |
+|--------------------|:-----------------:|:------------------------------:|
 | Devicetree         | linux-asahi       | linux-asahi                    |
 | MagSafe            | N/A               | 5.16                           |
 | Keyboard           | N/A               | linux-asahi                    |
-| Keyboard backlight | N/A               | unsupported                    |
+| Keyboard backlight | N/A               | not yet supported              |
 | Touchpad           | N/A               | linux-asahi                    |
-| HDMI Out           | linux-asahi       | unsupported                    |
-| TouchID            | unsupported       | unsupported                    |
+| HDMI Out           | linux-asahi       | not yet supported              |
+| TouchID            | not yet supported | not yet supported              |
 | Ethernet           | linux-asahi       | N/A                            |
 | WiFi               | linux-asahi       | linux-asahi                    |
 | Bluetooth          | linux-asahi       | linux-asahi                    |
-| 3.5mm jack         | unsupported       | unsupported                    |
-| Microphones        | N/A               | unsupported                    |
+| 3.5mm jack         | not yet supported | not yet supported              |
+| Microphones        | N/A               | not yet supported              |
 | Internal speakers  | see notes         | see notes                      |
 | Webcam             | N/A               | WIP                            |
 | Battery monitoring | N/A               | linux-asahi                    |
-| Screen brightness  | N/A               | unsupported                    |
+| Screen brightness  | N/A               | not yet supported              |
 | SD card reader     | 5.17              | 5.17                           |
 
 ## M2 Series (M2)
@@ -96,60 +96,60 @@ Features found on all devices featuring a given SoC
 ### M2 series SoC features
 Features found on all devices with a given SoC.
 
-|                  | M2 (T8112)  |
-| ---------------- | :---------: |
-| AICv2            | 5.18        |
-| DART             | linux-asahi |
-| PMU              | unsupported |
-| cpufreq          | linux-asahi |
-| cpuidle          | see notes   |
-| System sleep     | see notes   |
-| UART             | 5.13        |
-| Watchdog         | 5.17        |
-| PCIe             | linux-asahi |
-| I<sup>2</sup>C   | 5.16        |
-| GPIO             | 5.16        |
-| USB-PD           | 5.16        |
-| Power management | linux-asahi |
-| NVMe             | 5.19        |
-| SPI              | linux-asahi |
-| SPI NOR          | linux-asahi |
-| Primary display  | linux-asahi |
-| DCP              | WIP         |
-| DP Alt Mode      | unsupported |
-| Thunderbolt      | unsupported |
-| USB2 (TB ports)  | linux-asahi |
-| USB3 (TB ports)  | unsupported |
-| SMC              | linux-asahi |
-| SPMI             | linux-asahi |
-| RTC              | linux-asahi |
-| SEP              | unsupported |
-| Video Decoder    | WIP         |
-| Video Encoder    | WIP         |
-| ProRes Codec     | WIP         |
-| GPU              | WIP         |
-| Neural Engine    | unsupported |
+|                  | M2 (T8112)        |
+|------------------|:-----------------:|
+| AICv2            | 5.18              |
+| DART             | linux-asahi       |
+| PMU              | not yet supported |
+| cpufreq          | linux-asahi       |
+| cpuidle          | see notes         |
+| System sleep     | see notes         |
+| UART             | 5.13              |
+| Watchdog         | 5.17              |
+| PCIe             | linux-asahi       |
+| I<sup>2</sup>C   | 5.16              |
+| GPIO             | 5.16              |
+| USB-PD           | 5.16              |
+| Power management | linux-asahi       |
+| NVMe             | 5.19              |
+| SPI              | linux-asahi       |
+| SPI NOR          | linux-asahi       |
+| Primary display  | linux-asahi       |
+| DCP              | WIP               |
+| DP Alt Mode      | not yet supported |
+| Thunderbolt      | not yet supported |
+| USB2 (TB ports)  | linux-asahi       |
+| USB3 (TB ports)  | not yet supported |
+| SMC              | linux-asahi       |
+| SPMI             | linux-asahi       |
+| RTC              | linux-asahi       |
+| SEP              | not yet supported |
+| Video Decoder    | WIP               |
+| Video Encoder    | WIP               |
+| ProRes Codec     | WIP               |
+| GPU              | WIP               |
+| Neural Engine    | not yet supported |
 
 ### M2 device-specific support
-|                    | MacBook Air (2022)           | MacBook Pro (13-inch, 2022) | 
-| -------------------| :--------------------------: | :-------------------------: |
-| Devicetree         | linux-asahi                  | linux-asahi                 |
-| MagSafe            | 5.16                         | N/A                         |
-| Keyboard           | linux-asahi                  | linux-asahi                 |
-| Keyboard backlight | unsupported                  | unsupported                 |
-| Touchpad           | linux-asahi                  | linux-asahi                 |
-| Touch Bar          | N/A                          | unsupported                 |
-| HDMI Out           | N/A                          | N/A                         |
-| TouchID            | unsupported                  | unsupported                 |
-| WiFi               | linux-asahi                  | linux-asahi                 |
-| Bluetooth          | linux-asahi                  | linux-asahi                 |
-| 3.5mm jack         | unsupported                  | unsupported                 |
-| Microphones        | unsupported                  | unsupported                 |
-| Internal speakers  | unsupported                  | unsupported                 |
-| Webcam             | WIP                          | WIP                         |
-| Battery monitoring | linux-asahi                  | linux-asahi                 |
-| Screen brightness  | see notes                    | see notes                   |
-| SD card reader     | N/A                          | N/A                         |
+|                    | MacBook Air (2022) | MacBook Pro (13-inch, 2022) |
+|--------------------|:------------------:|:---------------------------:|
+| Devicetree         | linux-asahi        | linux-asahi                 |
+| MagSafe            | 5.16               | N/A                         |
+| Keyboard           | linux-asahi        | linux-asahi                 |
+| Keyboard backlight | not yet supported  | not yet supported           |
+| Touchpad           | linux-asahi        | linux-asahi                 |
+| Touch Bar          | N/A                | not yet supported           |
+| HDMI Out           | N/A                | N/A                         |
+| TouchID            | not yet supported  | not yet supported           |
+| WiFi               | linux-asahi        | linux-asahi                 |
+| Bluetooth          | linux-asahi        | linux-asahi                 |
+| 3.5mm jack         | not yet supported  | not yet supported           |
+| Microphones        | not yet supported  | not yet supported           |
+| Internal speakers  | not yet supported  | not yet supported           |
+| Webcam             | WIP                | WIP                         |
+| Battery monitoring | linux-asahi        | linux-asahi                 |
+| Screen brightness  | see notes          | see notes                   |
+| SD card reader     | N/A                | N/A                         |
 
 ## Upstream Statistics
 Here we track the absolute number of patches carried in `linux-asahi` compared to the
