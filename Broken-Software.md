@@ -105,5 +105,5 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Chromium | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788| Includes Electron apps.<br>Fixed since 102. |
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
 | libunwind | https://github.com/libunwind/libunwind/pull/330 | Fix merged to master. Not yet released |
-| rr | https://github.com/rr-debugger/rr/pull/3146 | Fix merged to master. Not yet released. |
+| rr | https://github.com/rr-debugger/rr/pull/3146 | Fixed since 5.6.0. |
 | WebKitGTK | https://github.com/WebKit/WebKit/commit/0a4a03da45f774 | Fixed since 2.34.6 |
