@@ -84,7 +84,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 ## Broken packages
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
-| cuttlefish |  | 
+| cuttlefish |  | downstream patches: [bionic](https://r.android.com/2083840), [build/soong](https://r.android.com/2084588), [external/scudo](https://github.com/pcc/llvm-project/tree/scudo-bionic-page-size) |
 | f2fs | https://github.com/torvalds/linux/commit/5c9b469295fb | |
 | FEX | https://github.com/FEX-Emu/FEX/issues/1221 | Not likely to be fixed in the near future.<br>Box64 works as an alternative. |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
