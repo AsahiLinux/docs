@@ -12,7 +12,7 @@ An OS/distribution is in charge of maintaining and upgrading the rest of the boo
 
 m1n1 stage 2 is in charge of initializing (more) hardware, choosing the appropriate DT for this platform, filling in dynamic properties, and loading U-Boot.
 
-U-Boot initializes more things (e.g. keyboard, USB), provides UEFI services, and (by default, in our release configuration) loads a UEFI binary from `<ESP>/EFI/BOOTAA64.EFI`, honoring the magic. Note that U-Boot both consumes, slightly modifies*, and forwards on the DT.
+U-Boot initializes more things (e.g. keyboard, USB), provides UEFI services, and (by default, in our release configuration) loads a UEFI binary from `<ESP>/EFI/BOOT/BOOTAA64.EFI`, honoring the magic. Note that U-Boot both consumes, slightly modifies*, and forwards on the DT.
 
 GRUB is vanilla, nothing special there. You could use any other arm64 EFI binary.
 
@@ -26,7 +26,7 @@ For Asahi we have a non-standard setup where each OS install has its own EFI sys
 * Since there can only be one set of DTs, U-Boot, and m1n1 stage 2 version per container/ESP, there is no sane way for multiple distros to cooperate to manage updates if they share one container.
 * We don't have persistent EFI variable storage (and no good idea for how to do it in runtime services), which means there's no way to manage the EFI boot order. So you end up with the default only.
 
-Thus, if you're adding distro support for end-users, please stick to this model. An exception is USB-bootable rescue/installer images, which should be bootable by the vanilla m1n1.bin bundle that the Asahi Linux installer installs in plain UEFI container mode, from their own ESP on the USB drive containing `/EFI/BOOTAA64.EFI` (no `m1n1/boot.bin`). Those should never try to manage the `boot.bin` in the internal ESP themselves (until/unless installed proper, thus becoming the owners of that container), and hopefully the DT situation will work out for the USB boot.
+Thus, if you're adding distro support for end-users, please stick to this model. An exception is USB-bootable rescue/installer images, which should be bootable by the vanilla m1n1.bin bundle that the Asahi Linux installer installs in plain UEFI container mode, from their own ESP on the USB drive containing `/EFI/BOOT/BOOTAA64.EFI` (no `m1n1/boot.bin`). Those should never try to manage the `boot.bin` in the internal ESP themselves (until/unless installed proper, thus becoming the owners of that container), and hopefully the DT situation will work out for the USB boot.
 
 The PARTUUID of the EFI system partition assigned to the currently booted OS is set by m1n1 as the `asahi,efi-system-partition` property of the `/chosen` device tree node, which can be read from Linux at `/proc/device-tree/chosen/asahi,efi-system-partition`. Our U-Boot branch also uses this to find the right ESP.
 
