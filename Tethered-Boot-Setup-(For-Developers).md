@@ -47,7 +47,7 @@ Alternatively, if you enable expert mode in the installer, you can opt to instal
 
 ## Enabling the backdoor proxy mode
 
-m1n1 consists of two stages. Stage 1 is installed during the 1TR step of the installation (after the first reboot into macOS recovery) and cannot de modified without a trip through recovery. Stage 2 is loaded from the EFI system partition at `m1n1/boot.bin`, and can be updated by distributions to add new features and hardware support. Release builds of stage 1 have a backdoor proxy mode, which allows for optional tethered boot. This has to be enabled from 1TR, and requires machine authentication for security.
+m1n1 consists of two stages. Stage 1 is installed during the 1TR step of the installation (after the first reboot into macOS recovery) and cannot be modified without a trip through recovery. Stage 2 is loaded from the EFI system partition at `m1n1/boot.bin`, and can be updated by distributions to add new features and hardware support. Release builds of stage 1 have a backdoor proxy mode, which allows for optional tethered boot. This has to be enabled from 1TR, and requires machine authentication for security.
 
 To enable the proxy mode, ensure that m1n1 / Asahi Linux is the default boot volume (this will be the case after a fresh install), then boot the machine by holding down the power button from a fully shut down state until "Loading startup options..." appears. Select "Options", enter your macOS machine owner credentials if prompted, then click on the Utilities menu and open a Terminal window.
 
