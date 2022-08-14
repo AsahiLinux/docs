@@ -89,6 +89,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | FEX | https://github.com/FEX-Emu/FEX/issues/1221 | Not likely to be fixed in the near future.<br>Box64 works as an alternative. |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
 | jemalloc | https://github.com/archlinuxarm/PKGBUILDs/pull/1914 | Only works when compiled for page sizes >= system. |
+| [fd](https://github.com/sharkdp/fd/issues/1085) or any project using `jemallocator` crate    | https://github.com/sharkdp/fd/issues/1085 | Same reason as jemalloc (also almost always statically linked) |
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Seems to work, but will throw warnings. |
 | pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | bundles an old version of chromium allocator |
 | qt5-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 87, likely won’t be fixed upstream, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
