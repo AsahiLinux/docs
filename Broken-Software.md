@@ -91,7 +91,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | jemalloc | https://github.com/archlinuxarm/PKGBUILDs/pull/1914 | Only works when compiled for page sizes >= system. |
 | [fd](https://github.com/sharkdp/fd/issues/1085) or any project using `jemallocator` crate    | https://github.com/sharkdp/fd/issues/1085 | Same reason as jemalloc (also almost always statically linked) |
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Seems to work, but will throw warnings. |
-| notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | |
+| notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
 | pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | bundles an old version of chromium allocator |
 | qt5-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 87, likely won’t be fixed upstream, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
 | qt6-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 94 for 6.3, likely will be (partially) fixed upstream by 6.5 but is also affected by pdfium, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
