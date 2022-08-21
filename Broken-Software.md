@@ -93,8 +93,6 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Seems to work, but will throw warnings. |
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
 | pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | bundles an old version of chromium allocator |
-| qt5-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 87, likely won’t be fixed upstream, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
-| qt6-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 94 for 6.3, likely will be (partially) fixed upstream by 6.5 but is also affected by pdfium, [downstream patch](https://github.com/AsahiLinux/PKGBUILDs/pull/17) |
 | Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/24564 | |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 
@@ -106,6 +104,8 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Chromium | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788| Includes Electron apps.<br>Fixed since 102. |
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
 | libunwind | https://github.com/libunwind/libunwind/pull/330 | Fix merged to master. Not yet released |
+| qt5-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 87, likely won’t be fixed upstream. [Fixed in downstream ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1928) |
+| qt6-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 94 for 6.3, partially fixed upstream in 6.4 for webview but not for QtPdf. [Fixed in downstream ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1928) |
 | Rust | https://github.com/archlinuxarm/PKGBUILDs/commit/19a1393 | Fixed for `rust-1.62.1-1.1` in ALARM/extra |  
 | rr | https://github.com/rr-debugger/rr/pull/3146 | Fixed since 5.6.0. |
 | WebKitGTK | https://github.com/WebKit/WebKit/commit/0a4a03da45f774 | Fixed since 2.34.6 |
