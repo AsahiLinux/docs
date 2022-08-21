@@ -156,9 +156,13 @@ Here we track the absolute number of patches carried in `linux-asahi` compared t
 upstream base. This number should decrease with each new kernel version, major hardware
 changes notwithstanding.
  
-| Kernel base    | Patches carried |
-| :------------: | :-------------: |
-| 5.19.0         | 173             |
+| Kernel base tag | Carried patches |
+| :-------------: | :-------------: |
+| v5.19           | 175             |
+| v6.0-rc1        | 172             |
+
+The number of carried patches is computed with the formula
+`$(git rev-list HEAD --no-merges --count) - $(git rev-list [base tag] --no-merges --count)`.
 
 ## Notes
 
