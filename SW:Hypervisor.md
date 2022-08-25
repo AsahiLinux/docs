@@ -70,5 +70,24 @@ Here are some numbers from some experiment with macOS 11.5.2 and m1n1 version co
 7. You can now run macOS in a similar manner as shown above (just no debug DWARF):
 ```python3 proxyclient/tools/run_guest.py <PATH_TO_EXTRACTED_MACHO> -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1"```
 
+## Using GDB/LLDB
+
+`gdbserver` command starts the server implementation that can be connected to GDB or LLDB. LLDB is more recommended because it supports pointer authentication and Darwin kernel dyld.
+
+You need to load kernel extensions to get symbols on LLDB. The below shell script generates `target.lldb`, a convenient LLDB script that sets the target and loads kernel extensions:
+
+```sh
+echo target create -s kernel.development.t8101.dSYM kernel.development.t8101 > target.lldb
+for k in $(find Extensions); do [ "$(file -b --mime-type $k)" != application/x-mach-binary ] || printf 'image add %q\n' $k; done >> target.lldb
+```
+
+The following commands for LLDB loads the generated script and connects to m1n1:
+```
+command source -e false target.lldb
+process connect unix-connect:///tmp/.m1n1-unix
+```
+
+Do not run hypervisor console commands interfering with GDB/LLDB, or they will be out-of-sync. For example, do not edit breakpoints from both of hypervisor console and GDB/LLDB at the same time.
+
 # Sources
 Source for the kernelcache creation: https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html
