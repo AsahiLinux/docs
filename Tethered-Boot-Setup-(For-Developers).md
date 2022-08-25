@@ -101,3 +101,7 @@ m1n1 will first load as a guest inside m1n1 (inception!), and the inner guest wi
 Note that if you use an initramfs with this script, *it must be gzipped* (and be a single gzipped image - concatenate then gzip, don't gzip then concatenate). This is due to limitations of how m1n1 handles embedded payloads.
 
 You can use ^C in the hypervisor console to break into the guest. The script automatically loads `System.map`, so you can use the `bt` command to get a stack trace with symbols. Try `cpu(1)` (etc.) to switch between guest CPUs, `ctx` to print execution context, `reboot` to force a hard system reboot, or `cont` (or just ^D) to resume execution.
+
+Debugging with GDB or LLDB to get source line location, to investigate structs, etc, is also possible. Run `gdbserver` command in the hypervisor console, and connect GDB/LLDB to `/tmp/.m1n1-unix` UNIX domain socket. There are some caveats with gdbserver:
+- GDB lacks with in-kernel pointer-authentication support. Disable `CONFIG_ARM64_PTR_AUTH_KERNEL` or use LLDB to avoid problems with pointers.
+- Do not run hypervisor console commands interfering with GDB/LLDB, or they will be out-of-sync. For example, do not edit breakpoints from both of hypervisor console and GDB/LLDB at the same time.
