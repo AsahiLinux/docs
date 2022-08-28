@@ -93,7 +93,6 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Seems to work, but will throw warnings. |
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
 | pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | bundles an old version of chromium allocator |
-| Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/24564 | |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 
 ## Fixed packages
@@ -110,3 +109,4 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Rust | https://github.com/archlinuxarm/PKGBUILDs/commit/19a1393 | Fixed for `rust-1.62.1-1.1` in ALARM/extra |  
 | rr | https://github.com/rr-debugger/rr/pull/3146 | Fixed since 5.6.0. |
 | WebKitGTK | https://github.com/WebKit/WebKit/commit/0a4a03da45f774 | Fixed since 2.34.6 |
+| Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/24564 | Fixed since 4.1.1 |
