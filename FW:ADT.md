@@ -48,10 +48,10 @@ ioreg -p IODeviceTree -l
 
 ## Decoding an ADT
 
-after m1n1 installation (see main page) 
+after m1n1 installation (see [repo page](https://github.com/AsahiLinux/m1n1)) 
 `cd m1n1/proxyclient`
 
-get construct python library
+get construct python library (not a construct.py file, it's a library)
 `pip install construct`
 
 copy obtained j{*}.bin file into proxyclient dir && extract by:
