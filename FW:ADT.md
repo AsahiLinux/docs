@@ -12,7 +12,7 @@ Given hardware, you can access your ADT in a number of ways.
 The easiest way is probably using m1n1 via adt.py
 
 ```
-cd m1n1/proxyclient ; python3.9 -m m1n1.adt --retrieve dt.bin
+cd m1n1/proxyclient ; python -m m1n1.adt --retrieve dt.bin
 ```
 
 This will write a file called "dt.bin" containing the raw (binary) ADT and print the decoded ADT.
@@ -32,9 +32,11 @@ make install
 ```
 copy the im4p file from the below directory. See [[Devices]] for Machine 'j' model details.
 
-`/System/Volumes/Preboot/Firmware/all_flash/DeviceTree.{model}.im4p`
+`/System/Volumes/Preboot/[UUID]/restore/Firmware/all_flash/DeviceTree.{model}.im4p`
 
-then use imp4tool to extract the dt.bin e.g.
+If the dir doesn't exist try disabling csrutil in recovery mode, going to settings and enabling terminal to acces all files, or start from `Volumes/Macintosh HD/` because it may be symlinked. If it's still not accessible, try good ol `sudo find . -type f -name '*.im4p'`.
+
+then use imp4tool to extract the im4p file into a .bin file e.g.
 ```
 img4tool -e DeviceTree.j274ap.im4p -o j274.bin
 ```
