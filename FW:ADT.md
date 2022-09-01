@@ -48,8 +48,18 @@ ioreg -p IODeviceTree -l
 
 ## Decoding an ADT
 
-`cd m1n1/proxyclient ; python3.9 -m m1n1.adt dt.bin`. Other ways?
+after m1n1 installation (see main page) 
+`cd m1n1/proxyclient`
+
+get construct python library
+`pip install construct`
+
+copy obtained j{*}.bin file into proxyclient dir && extract by:
+`python -m m1n1.adt j{*}.bin`
 
 You can also get a memory map with the -a option:
 
-`cd m1n1/proxyclient ; python3.9 -m m1n1.adt -a dt.bin` 
+`python -m m1n1.adt -a j{*}.bin` 
+
+Other ways?
+
