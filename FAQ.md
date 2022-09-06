@@ -45,4 +45,8 @@ HDMI on the Mac Mini is internally connected to a DisplayPort port.
 
 ## Do I need to reinstall to get new features / updates?
 
-No! Just upgrade your system using `pacman -Syu`. Kernel updates will require a reboot. Consider a tool like `needrestart` to determine if there are any outdated services or an outdated kernel running.  
+No! Just upgrade your system using `pacman -Syu`. Kernel updates will require a reboot. Consider a tool like `needrestart` to determine if there are any outdated services or an outdated kernel running.
+
+## Two of the keys on my keyboard are swapped
+
+This is a propriety inherent to some apple keyboards. Please read https://wiki.archlinux.org/title/Apple_Keyboard to learn how to fix this issue.
