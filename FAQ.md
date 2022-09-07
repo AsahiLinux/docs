@@ -49,4 +49,4 @@ No! Just upgrade your system using `pacman -Syu`. Kernel updates will require a 
 
 ## Two of the keys on my keyboard are swapped
 
-This is a propriety inherent to some apple keyboards. Please read https://wiki.archlinux.org/title/Apple_Keyboard to learn how to fix this issue.
+This is a property inherent to some apple keyboards. Please read https://wiki.archlinux.org/title/Apple_Keyboard to learn how to fix this issue.
