@@ -68,7 +68,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **LLB**: Low Level Bootloader. The first-stage iBoot located in NOR, loaded by the SecureROM, and also called iBoot1. It chainloads the second-stage iBoot on the OS Preboot partition.
 
 ### M
-* **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such a switching one set of pins between USB, UART, and SWD modes.
+* **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such as switching one set of pins between USB, UART, and SWD modes.
 * **Mini** - Custom bootloader for internal investigation. May or may not support booting from SSD. This project uses a fork that's referred to as M1N1.
 
 ### N
