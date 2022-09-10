@@ -67,7 +67,7 @@ Connect your host and target with a USB Type C cable (any reasonable cable shoul
 
 On your host machine, pull up a terminal window and run `proxyclient/tools/picocom-sec.sh`. This will wait until a m1n1 device connects, then open its secondary USB device as a serial terminal. This serves two purposes: to break into proxy mode (see the previous section), and also will be your virtual serial console when you run kernels under the hypervisor.
 
-Once that script is running and the machines are connected, boot your target device. m1n1 will break into proxy mode. Confirm that this works by running `tools/shell.py`, which will drop you into an interactive Python shell (exit with ^D).
+Once that script is running and the machines are connected, boot your target device. m1n1 will break into proxy mode. Confirm that this works by running `proxyclient/tools/shell.py`, which will drop you into an interactive Python shell (exit with ^D).
 
 ## Booting a kernel directly
 
