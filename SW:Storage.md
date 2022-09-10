@@ -38,7 +38,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 ```
 </details>
 
-The raw disk contains a GPT partition table with a standard protective MBR and three partitions. These correspond to /dev/disk0s1, /dev/disk0s2, /dev/disk0s3 on macOS.
+The raw disk contains a GUID partition table with a standard protective MBR and three partitions. These correspond to /dev/disk0s1, /dev/disk0s2, /dev/disk0s3 on macOS.
 
 Each of the 3 partitions is an APFS container, containing several subvolumes. The type GUIDs are as follows:
 
