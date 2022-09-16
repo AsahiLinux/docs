@@ -1,3 +1,19 @@
+## Table of Contents
+- [Introduction](#Introduction)
+- [Prerequisites](#Important-prerequisite-information)
+- [Installation](#Step-1-Set-up-Asahi-Linux-Minimal)
+  * [Step 1: Set up Asahi Linux Minimal](#Step-1-Set-up-Asahi-Linux-Minimal)
+  * [Step 2: Clone asahi-gentoosupport](#Step-2-Clone-asahi-gentoosupport)
+  * [Step 3: Acquire the latest LiveCD](#Step-3-Acquire-the-latest-LiveCD)
+  * [Step 4: Prepare the system for booting the Gentoo LiveCD](#Step-4-Prepare-the-system-for-booting-the-Gentoo-LiveCD)
+  * [Step 5: Reboot into the Live Image](#Step-5-Reboot-into-the-Live-Image)
+  * [Step 6: Install Asahi support files](#Step-6-Install-Asahi-support-files)
+  * [Step 7: Have fun!](#Step-7-Have-fun)
+- [Maintenance](#Maintenance)
+  * [Upgrading U-Boot and m1n1](#Upgrading-U-Boot-and-m1n1)
+  * [Upgrading the kernel](#Upgrading-the-kernel)
+  * [Syncing the Asahi overlay](#Syncing-the-Asahi-overlay)
+
 ## Introduction
 Installing Gentoo on Apple Silicon is not that different to doing so on a bog-standard amd64 machine.
 We leverage the Asahi installer and the Asahi Linux Minimal environment to bootstrap a secret sauce version
@@ -12,6 +28,9 @@ it.
 
 It is important to note that the ESP _must_ be mounted at `/boot/efi` for certain Asahi scripts to function properly.
 As such, it is best if you put it in `/etc/fstab` and leave it there.
+
+If you've never used a Portage overlay before, take a few minutes to read the final section on maintaining the system.
+Failure to do so properly may result in you missing critical system updates or leaving your machine in an unbootable state.
 
 ## Important prerequisite information
 * When upgrading the kernel, you **must** pass `--all-ramdisk-modules` to `genkernel` for building the initramfs. Since we have
@@ -78,3 +97,33 @@ machines and may leave you with an unbootable Linux setup.
 Finish off the rest of your usual Gentoo install procedure, reboot, and have fun! It's a good idea to customise the kernel as
 you see fit since the running config will be based on Arch/Asahi Linux. Remember to save the running kernel and initramfs as
 a fallback so you can easily boot it from GRUB should anything go wrong.
+
+## Maintenance
+Getting and applying system updates is a little more involved than a totally vanilla Gentoo installation. You need to keep
+the Asahi overlay synced and make sure that system firmware is updated correctly.
+
+### Updating U-Boot and m1n1
+When you update the U-Boot or m1n1 packages, Portage will only install the resultant binaries to `/usr/lib/asahi-boot/`.
+This is both a security and a reliability measure. m1n1 ships with a script, `update-m1n1`, which must be run as root
+every time you update the kernel, U-Boot, or m1n1 itself. This script is responsible for collecting the m1n1, U-Boot
+and Devicetree blobs, packaging them up into a single binary object, and installing it on the EFI System Partition.
+For more information on how this works and why it must work this way, consult [[Open OS ecosystem on Apple Silicon Macs]]
+
+### Upgrading the kernel
+When you are running through a kernel upgrade, it is extremely important that you update the Stage 2 m1n1 payload at the
+same time. m1n1 Stage 2 contains the Devicetree blobs required for the kernel to find the hardware, probe it properly, and
+boot the system. Devicetrees are not stable, and a kernel upgrade with new DTs may result in an unbootable system, loss of
+function, or missing out on a newly enabled feature. To make sure this does not occur, it is imperative that you run
+```bash
+root# update-m1n1
+```
+after *every* kernel upgrade. 
+
+### Syncing the Asahi overlay
+In order to receive Asahi-specific updates, you must ensure that the Asahi overlay remains synchronised. By default,
+Portage will not do this for you. In addition to `emerge --sync` or `emerge-webrsync`, you must also run
+```bash
+root# emaint -r asahi sync
+```
+before trying to update. No other steps are necessary to make sure that packages are updated, just update 
+your system like you normally would at this point.
