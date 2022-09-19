@@ -61,7 +61,7 @@ Features found on all devices featuring a given SoC
 | TouchID            | not yet supported | not yet supported           | not yet supported  | not yet supported |
 | 1Gbps Ethernet     | 5.16              | N/A                         | N/A                | N/A               |
 | 10Gbps Ethernet    | 5.17              | N/A                         | N/A                | N/A               |
-| WiFi               | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
+| WiFi               | linux-asahi (6.1) | linux-asahi (6.1)           | linux-asahi (6.1)  | linux-asahi (6.1) |
 | Bluetooth          | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
 | 3.5mm jack         | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
 | Microphones        | not yet supported | not yet supported           | not yet supported  | not yet supported |
@@ -81,7 +81,7 @@ Features found on all devices featuring a given SoC
 | HDMI Out           | linux-asahi       | not yet supported              |
 | TouchID            | not yet supported | not yet supported              |
 | Ethernet           | linux-asahi       | N/A                            |
-| WiFi               | linux-asahi       | linux-asahi                    |
+| WiFi               | linux-asahi (6.1) | linux-asahi (6.1)              |
 | Bluetooth          | linux-asahi       | linux-asahi                    |
 | 3.5mm jack         | not yet supported | not yet supported              |
 | Microphones        | N/A               | not yet supported              |
@@ -90,6 +90,8 @@ Features found on all devices featuring a given SoC
 | Battery monitoring | N/A               | linux-asahi                    |
 | Screen brightness  | N/A               | not yet supported              |
 | SD card reader     | 5.17              | 5.17                           |
+
+Note: Many peripherals depend on T600x DART support.
 
 ## M2 Series (M2)
 
@@ -141,7 +143,7 @@ Features found on all devices with a given SoC.
 | Touch Bar          | N/A                | not yet supported           |
 | HDMI Out           | N/A                | N/A                         |
 | TouchID            | not yet supported  | not yet supported           |
-| WiFi               | linux-asahi        | linux-asahi                 |
+| WiFi               | linux-asahi (6.1)  | linux-asahi (6.1)           |
 | Bluetooth          | linux-asahi        | linux-asahi                 |
 | 3.5mm jack         | not yet supported  | not yet supported           |
 | Microphones        | not yet supported  | not yet supported           |
@@ -151,6 +153,8 @@ Features found on all devices with a given SoC.
 | Screen brightness  | see notes          | see notes                   |
 | SD card reader     | N/A                | N/A                         |
 
+Note: Many peripherals depend on T600x DART support.
+
 ## Upstream Statistics
 Here we track the absolute number of patches carried in `linux-asahi` compared to the
 upstream base. This number should decrease with each new kernel version, major hardware
@@ -159,10 +163,9 @@ changes notwithstanding.
 | Kernel base tag | Carried patches |
 | :-------------: | :-------------: |
 | v5.19           | 175             |
-| v6.0-rc1        | 172             |
+| v6.0-rc5        | 208             |
 
-The number of carried patches is computed with the formula
-`$(git rev-list HEAD --no-merges --count) - $(git rev-list [base tag] --no-merges --count)`.
+The number of carried patches can be computed with the command `git rev-list [base tag]..[asahi tag] | wc -l`
 
 ## Notes
 
