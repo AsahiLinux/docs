@@ -67,5 +67,6 @@ run bootcmd_usb0
 bootd # Continue the default U-Boot script
 reset # Reboot the machine
 poweroff # Shutdown the machine completely
+nvme scan # Discover NVMe disks (required for next command to succeed)
 ls nvme 0:4 / # List the contents of the paired EFI System Partition
 ```
