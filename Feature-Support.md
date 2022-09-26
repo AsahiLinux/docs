@@ -17,7 +17,7 @@ Features found on all devices featuring a given SoC
 |                  | M1 (T8103)        | M1 Pro/Max/Ultra (T600x) |
 |------------------|:-----------------:|:------------------------:|
 | AICv2            | N/A               | 5.18                     |
-| DART             | 5.15              | linux-asahi              |
+| DART             | 5.15              | linux-asahi (6.1)        |
 | ARM PMU          | 5.18              | 5.18                     |
 | cpufreq          | linux-asahi       | linux-asahi              |
 | cpuidle          | see notes         | see notes                |
@@ -83,7 +83,7 @@ Features found on all devices featuring a given SoC
 | Ethernet           | linux-asahi       | N/A                            |
 | WiFi               | linux-asahi (6.1) | linux-asahi (6.1)              |
 | Bluetooth          | linux-asahi       | linux-asahi                    |
-| 3.5mm jack         | not yet supported | not yet supported              |
+| 3.5mm jack         | linux-asahi       | linux-asahi                    |
 | Microphones        | N/A               | not yet supported              |
 | Internal speakers  | see notes         | see notes                      |
 | Webcam             | N/A               | WIP                            |
