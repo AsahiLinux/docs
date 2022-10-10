@@ -93,6 +93,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Seems to work, but will throw warnings. |
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
 | pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | bundles an old version of chromium allocator |
+| Wine | https://bugs.winehq.org/show_bug.cgi?id=52715 |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 
 ## Fixed packages
