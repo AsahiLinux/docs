@@ -29,7 +29,7 @@ If you broke your OS recovery, you might find yourself in a boot loop, even as y
 * An APFS container contains multiple logical volumes sharing disk space
 * Each Apple Silicon machine has two special system APFS containers, the first one on the disk (iBoot System Container) and the last one on the disk (System Recovery). These should never be touched. Only create/remove partitions between them.
 
-Warning: Some of Apple's tools do not like partitions not being sorted in the GPT partition table. Since you need to keep the first and last partition in place, that means most disk management operations from Linux will append partitions to the GPT, and put it out of order. Make sure you fix this. With the `fdisk` Linux command this can be done with `x` (go into expert mode) → `f` (fix partitions order) → `r` (return to main menu) → `w` (write changes and exit).
+Warning: Some of Apple's tools do not like unsorted partitions in the GPT partition table. Since you need to keep the first and last partition in place, that means most disk management operations from Linux will append partitions to the GPT, and put it out of order. Make sure you fix this. With the `fdisk` Linux command this can be done with `x` (go into expert mode) → `f` (fix partitions order) → `r` (return to main menu) → `w` (write changes and exit).
 
 ## macOS disk management basics
 
