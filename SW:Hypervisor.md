@@ -12,6 +12,16 @@ To install a second copy of macOS you will need to complete a couple of steps:
 2. Download and install macOS. To download a specific version of macOS installer you can use the command
 `softwareupdate --fetch-full-installer --full-installer-version 12.3` substituting 12.3 for whichever version you require. The installer will be found in the Applications folder. Copy it out of here if you want to save it, otherwise it deletes itself once you have installed once. 
 
+Unfortunately, Apple's CDN only keeps the full-installer package for a limited number of version, and doesn't have 12.3 anymore. 
+
+### Using archived InstallAssistant.pkg
+
+The Montery 12.3 InstallAssistant.pkg has been archived [here](https://archive.org/details/12.3-21-e-230-release), but trying to install by double-clicking installs an online version of the `Install macOS Monterey.app`, with a file size of about 40mb. When that run, that will install the latest version of macOS.
+
+But installing it via the command line appears to do the correct thing: `sudo installer -pkg 12.3\ 21E230\ \(Release\).pkg -target /`
+
+Check that `Install macOS Monterey.app` in the applications folder is ~12GB.
+
 ## Getting the macOS development kernel and creating the kernelcache
 
 1. Create a macOS developer account (requires an icloud account.
