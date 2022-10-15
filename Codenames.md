@@ -39,4 +39,4 @@ Apple likes to use many different names for the same devices.
 | | | | T6500 | |
 | A15 | H14P | Ellis | T8110 | Avalanche | Blizzard
 | M2 | H14G | Staten | T8112 | Avalanche | Blizzard
-| A16 | H15P | | | Everest | Sawtooth
+| A16 | H15P | | T8120 | Everest | Sawtooth
