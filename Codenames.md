@@ -25,7 +25,7 @@ Apple likes to use many different names for the same devices.
 | A10X | H9G | Myst | T8011 | Hurricane | Zephyr (CLS)
 | T2 | H9M | Gibraltar | T8012 | Hurricane | Zephyr (CLS)
 | A11 | H10 | Skye | T8015 | Monsoon | Mistral
-| A12 | H11P | Cyprus | T8020 | Vortex | Tempest |
+| A12 | H11P | Cyprus | T8020 | Vortex | Tempest
 | S4, S5 | M9 | | T8006 | - | Tempest
 | A12X, A12Z | H11G | Aruba | T8027 | Vortex | Tempest
 | | | Tinos | T8028 | Vortex | -
@@ -39,3 +39,4 @@ Apple likes to use many different names for the same devices.
 | | | | T6500 | |
 | A15 | H14P | Ellis | T8110 | Avalanche | Blizzard
 | M2 | H14G | Staten | T8112 | Avalanche | Blizzard
+| A16 | H15P | | | Everest | Sawtooth
