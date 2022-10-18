@@ -145,7 +145,7 @@ Features found on all devices with a given SoC.
 | TouchID            | not yet supported  | not yet supported           |
 | WiFi               | linux-asahi (6.1)  | linux-asahi (6.1)           |
 | Bluetooth          | linux-asahi        | linux-asahi                 |
-| 3.5mm jack         | not yet supported  | not yet supported           |
+| 3.5mm jack         | linux-asahi        | linux-asahi                 |
 | Microphones        | not yet supported  | not yet supported           |
 | Internal speakers  | not yet supported  | not yet supported           |
 | Webcam             | WIP                | WIP                         |
@@ -163,7 +163,8 @@ changes notwithstanding.
 | Kernel base tag | Carried patches |
 | :-------------: | :-------------: |
 | v5.19           | 175             |
-| v6.0-rc5        | 208             |
+| v6.0-rc6        | 440             |
+| v6.1-rc1        | 198             |
 
 The number of carried patches can be computed with the command `git rev-list [base tag]..[asahi tag] | wc -l`
 
