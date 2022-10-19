@@ -5,11 +5,14 @@ by function.
 * [[Introduction to Apple Silicon]]
 * [[Accelerator Engines]]
 
+### Coprocessors and accelerators
+* [[HW:AGX]] - Apple's PowerVR-derived tile-based deferred renderer
+* [[HW:SEP]] - The Secure Enclave, Apple's crypto/biometrics/security engine
+
 ### Platform control logic
 * [[HW:AIC]] - Apple Interrupt Controller
 * [[HW:WDT]] - Watchdog Timer
 * [[HW:SMC]] - System Management Controller
-* [[HW:AGX]] - Apple's PowerVR-derived tile-based deferred renderer
 * [[HW:ASC]] - Apple's Mailbox-like firmware interface
 
 ### Platform initialisation and boot
