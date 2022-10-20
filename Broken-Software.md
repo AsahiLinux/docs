@@ -94,6 +94,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
 | pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | bundles an old version of chromium allocator |
 | Wine | https://bugs.winehq.org/show_bug.cgi?id=52715 |
+| qemu-user | https://lists.gnu.org/archive/html/qemu-devel/2019-09/msg03664.html | qemu-user can't emulate architectures with a 4K page size (that is, most of them) |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 
 ## Fixed packages
