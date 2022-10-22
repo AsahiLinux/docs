@@ -36,9 +36,18 @@ Basically a key/value store updated by SEP (where keybag data is stored)
 SEP Message format:
 
 bits 0-7 - Endpoint number
+
+
 bits 8-15 - a "tag" value (for the control endpoint, an inbound and outbound message may sometimes share tags)
+
+
 bits 16-24 - a message "type" (for the debug endpoint always 0x1)
+
+
+
 bits 25-31 - message parameters (debug endpoint, this is always the endpoint the debug endpoint is responding/receiving info about)
+
+
 bits 32-63 - some kind of data (can be either a pointer, or a configuration value)
 
 SEP boot flow:
