@@ -25,10 +25,20 @@ Endpoint information:
 Gigalocker/xART format (thanks sven for this info!)
 
 0x00-0x01 - Always 0 (perhaps some kind of version identifier?)
+
+
 0x01-0x12 - UUID/key (identifies SEP request, possibly handled by SKS?)
+
+
 0x12-0x16 - length
+
+
 0x16-0x1a - CRC of data (CRC32, ISO-HDLC)
+
+
 0x1a-0x22 - unknown
+
+
 0x22-end of payload - payload data (max of 0x8000)
 
 Basically a key/value store updated by SEP (where keybag data is stored)
