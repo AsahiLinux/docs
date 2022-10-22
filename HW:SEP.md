@@ -59,15 +59,26 @@ SEP boot flow:
 
 xART init flow (incomplete atm, may be wrong):
 
+
 (message type 0 is some sort of fetch request, message type 0x5 is a fetch response it seems for individual lockers)
 (tags seem to be increasing in the order of the lockers within the gigalocker)
 
+
 //???? (possibly initialization? there is a "gigalocker initialization completed" message in XNU bootlog)
+
+
 [cpu1] [SEPTracer@/arm-io/sep] [xarm] >0x0(None) 0000010000000213 (EP=0x13, TAG=0x2, TYPE=0x0, PARAM=0x0, DATA=0x100)
+
+
 [cpu14] [SEPTracer@/arm-io/sep] [xarm] <0x13(None) 0000000000130113 (EP=0x13, TAG=0x1, TYPE=0x13, PARAM=0x0, DATA=0x0)
 
+
 //SEP xART fetch from gigalocker (this xART itself seems to have many sublockers?)
+
+
 [cpu0] [SEPTracer@/arm-io/sep] [xarm] >0x0(None) 0000000000000113 (EP=0x13, TAG=0x1, TYPE=0x0, PARAM=0x0, DATA=0x0)
+
+
 [cpu10] [SEPTracer@/arm-io/sep] [xarm] <0x0(None) 0000010000000313 (EP=0x13, TAG=0x3, TYPE=0x0, PARAM=0x0, DATA=0x100)
 
 
