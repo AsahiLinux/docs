@@ -62,6 +62,12 @@ xART init flow (incomplete atm, may be wrong):
 [cpu10] [SEPTracer@/arm-io/sep] [xarm] <0x0(None) 0000010000000313 (EP=0x13, TAG=0x3, TYPE=0x0, PARAM=0x0, DATA=0x100)
 
 
+SEP backwards compatibility notes:
+
+SKS IPC is negotiated on both the kernel side and SEP side, lowest compatible version between both will be the IPC used for communication between main processor and SEP.
+
+This should ensure that SEP and OS can continue to be compatible with each other even if SEP gets upgraded (since it'll just use the older IPC version). (potential question: in the Linux driver how should this be accounted for?)
+
 
 Miscellaneous notes:
 
