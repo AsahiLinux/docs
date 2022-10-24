@@ -77,20 +77,12 @@ kmutil configure-boot -c m1n1-stage1.macho -v <path to your OS volume>
 
 The Asahi Linux installer will normally do this for you, and most users will never have to do it again manually.
 
-Each OS has its own recovery OS. You must go to the recovery for Asahi Linux to run this command, or you'll get errors with something like `not paired`. To check if you have entered the correct recovery:
+Each OS has its own recovery OS. You must go to the recovery for Asahi Linux to run this command, or you'll get errors with something like `not paired`. 
 
+If you're not in the correct recovery OS, you can go to the correct one by:
 ```shell
-bputil -d
+/Volumes/Asahi\ Linux/Finish\ Installation.app/Contents/Resources/step2.sh
 ```
-
-You'll be asked to choose a VGID. I don't know any good method to determine the VGID of your Asahi Linux install, so I recommend you to try all the options one by one. If the output corresponding to Asahi Linux contains `: Paired` then you've succeeded. If you see `not paired` then you've entered the wrong recovery OS. 
-
-To boot into Asahi Linux's recovery:
-```shell
-bless --setBoot --mount <Path to your Asahi Linux volume>
-```
-
-Then power off, and power on by holding the power button until you see `Loading boot options`. When you're asked to choose an OS, choose `Options` and you'll go into the recovery of Asahi Linux. 
 
 ### Stage 2 (in the ESP)
 
