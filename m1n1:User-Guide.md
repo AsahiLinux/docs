@@ -100,6 +100,8 @@ Stage 2 m1n1 is normally stored in the EFI system partition, typically with U-Bo
 cat build/m1n1.bin /path/to/dtbs/*.dtb /path/to/uboot/u-boot-nodtb.bin > /boot/efi/m1n1/boot.bin
 ```
 
+For details on how to add dtb and uboot to m1n1, see `Configuring for stage 2` under `Payloads` below. 
+
 ## Payloads
 
 m1n1 supports the following payloads:
