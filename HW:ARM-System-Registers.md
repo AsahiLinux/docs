@@ -719,3 +719,8 @@ This gets written with the core ID (within the cluster) during init.
 #### AHCR_EL2
 
 Encoding unknown. Related to ACTLR_EL1[12].
+
+
+#### s3_4_c15_c10_4
+
+If a core writes 0x3 to it's copy of the register, AICv2 will not send IRQs to that core. FIQs unaffected, as those are part of the core complexes themselves. (0x1 and 0x2 are also valid values for this sysreg, however their effect is unknown). Maybe some kind of "affinity" for the hardware IRQ selection heuristic?
