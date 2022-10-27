@@ -1,6 +1,10 @@
-This page details currently supported features on all extant Apple Silicon Macs, as well as their upstream status. Kernel versions indicate when each feature was upstreamed. Versions in parentheses indicate when features currently in review are scheduled/likely to be scheduled for merging upstream.
+This page details currently supported features on all extant Apple Silicon Macs, as well as their upstream status. The tables can
+be interpreted as follows:
 
-Values for feature-completeness are given as a rough indicator of progress only. Upstream values are the proportion of _currently supported_ features which are present upstream, not the proportion of _total_ features.
+* **Kernel release, ie. 6.0:** the feature was incorporated upstream as of this release
+* **linux-asahi (kernel release):** the feature is stable, available for use, and scheduled for merging upstream by the release indicated
+* **linux-asahi:** the feature is (mostly) stable and available for use in Asahi Linux, or other distros which package our kernel
+* **linux-asahi-dev:** the feature is working to some extent, but is not suitable for general use
 
 ## Table of Contents
 - [M1 Series (M1, M1 Pro, M1 Max, M1 Ultra)](#m1-series-soc-features)
@@ -17,11 +21,12 @@ Features found on all devices featuring a given SoC
 |                  | M1 (T8103)        | M1 Pro/Max/Ultra (T600x) |
 |------------------|:-----------------:|:------------------------:|
 | AICv2            | N/A               | 5.18                     |
-| DART             | 5.15              | linux-asahi (6.1)        |
+| DART             | 5.15              | 6.1                      |
 | ARM PMU          | 5.18              | 5.18                     |
 | cpufreq          | linux-asahi       | linux-asahi              |
 | cpuidle          | see notes         | see notes                |
 | System suspend   | see notes         | see notes                |
+| Suspend to idle  | linux-asahi-dev   | linux-asahi-dev          |
 | UART             | 5.13              | 5.13                     |
 | Watchdog         | 5.17              | 5.17                     |
 | PCIe             | 5.16              | 5.16                     |
@@ -33,7 +38,7 @@ Features found on all devices featuring a given SoC
 | SPI              | linux-asahi       | linux-asahi              |
 | SPI NOR          | linux-asahi       | linux-asahi              |
 | Primary display  | 5.17              | 5.17                     |
-| DCP              | WIP               | WIP                      |
+| DCP              | linux-asahi-dev   | linux-asahi-dev          |
 | DP Alt Mode      | not yet supported | not yet supported        |
 | Thunderbolt      | WIP               | WIP                      |
 | USB2 (TB ports)  | linux-asahi       | linux-asahi              |
@@ -41,7 +46,7 @@ Features found on all devices featuring a given SoC
 | SMC              | linux-asahi       | linux-asahi              |
 | SPMI             | linux-asahi       | linux-asahi              |
 | RTC              | linux-asahi       | linux-asahi              |
-| SEP              | not yet supported | not yet supported        |
+| SEP              | WIP               | WIP                      |
 | Video Decoder    | WIP               | WIP                      |
 | Video Encoder    | WIP               | WIP                      |
 | ProRes Codec     | N/A               | WIP                      |
@@ -61,19 +66,19 @@ Features found on all devices featuring a given SoC
 | TouchID            | not yet supported | not yet supported           | not yet supported  | not yet supported |
 | 1Gbps Ethernet     | 5.16              | N/A                         | N/A                | N/A               |
 | 10Gbps Ethernet    | 5.17              | N/A                         | N/A                | N/A               |
-| WiFi               | linux-asahi (6.1) | linux-asahi (6.1)           | linux-asahi (6.1)  | linux-asahi (6.1) |
+| WiFi               | 6.1               | 6.1                         | 6.1                | 6.1               |
 | Bluetooth          | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
 | 3.5mm jack         | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
 | Microphones        | not yet supported | not yet supported           | not yet supported  | not yet supported |
 | Internal speakers  | see notes         | see notes                   | see notes          | see notes         |
 | Webcam             | N/A               | WIP                         | WIP                | WIP               |
 | Battery monitoring | N/A               | linux-asahi                 | linux-asahi        | N/A               |
-| Screen brightness  | N/A               | not yet supported           | not yet supported  | not yet supported |
+| Screen brightness  | N/A               | WIP                         | WIP                | WIP               |
 
 ### M1 Pro/Max/Ultra device-specific support
 |                    | Mac Studio (2022) | MacBook Pro (14/16-inch, 2021) |
 |--------------------|:-----------------:|:------------------------------:|
-| Devicetree         | linux-asahi       | linux-asahi                    |
+| Devicetree         | linux-asahi (6.2) | linux-asahi (6.2)              |
 | MagSafe            | N/A               | 5.16                           |
 | Keyboard           | N/A               | linux-asahi                    |
 | Keyboard backlight | N/A               | not yet supported              |
@@ -81,7 +86,7 @@ Features found on all devices featuring a given SoC
 | HDMI Out           | linux-asahi       | not yet supported              |
 | TouchID            | not yet supported | not yet supported              |
 | Ethernet           | linux-asahi       | N/A                            |
-| WiFi               | linux-asahi (6.1) | linux-asahi (6.1)              |
+| WiFi               | 6.1               | 6.1                            |
 | Bluetooth          | linux-asahi       | linux-asahi                    |
 | 3.5mm jack         | linux-asahi       | linux-asahi                    |
 | Microphones        | N/A               | not yet supported              |
@@ -90,8 +95,6 @@ Features found on all devices featuring a given SoC
 | Battery monitoring | N/A               | linux-asahi                    |
 | Screen brightness  | N/A               | not yet supported              |
 | SD card reader     | 5.17              | 5.17                           |
-
-Note: Many peripherals depend on T600x DART support.
 
 ## M2 Series (M2)
 
@@ -125,7 +128,7 @@ Features found on all devices with a given SoC.
 | SMC              | linux-asahi       |
 | SPMI             | linux-asahi       |
 | RTC              | linux-asahi       |
-| SEP              | not yet supported |
+| SEP              | WIP               |
 | Video Decoder    | WIP               |
 | Video Encoder    | WIP               |
 | ProRes Codec     | WIP               |
@@ -143,7 +146,7 @@ Features found on all devices with a given SoC.
 | Touch Bar          | N/A                | not yet supported           |
 | HDMI Out           | N/A                | N/A                         |
 | TouchID            | not yet supported  | not yet supported           |
-| WiFi               | linux-asahi (6.1)  | linux-asahi (6.1)           |
+| WiFi               | 6.1                | 6.1                         |
 | Bluetooth          | linux-asahi        | linux-asahi                 |
 | 3.5mm jack         | linux-asahi        | linux-asahi                 |
 | Microphones        | not yet supported  | not yet supported           |
@@ -153,7 +156,7 @@ Features found on all devices with a given SoC.
 | Screen brightness  | see notes          | see notes                   |
 | SD card reader     | N/A                | N/A                         |
 
-Note: Many peripherals depend on T600x DART support.
+Note: Many peripherals depend on T600x DART, T8112 DART, and PCIe support.
 
 ## Upstream Statistics
 Here we track the absolute number of patches carried in `linux-asahi` compared to the
