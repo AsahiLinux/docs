@@ -1,7 +1,7 @@
 This page details currently supported features on all extant Apple Silicon Macs, as well as their upstream status. The tables can
 be interpreted as follows:
 
-* **Kernel release, ie. 6.0:** the feature was incorporated upstream as of this release
+* **Kernel release, *e.g.* 6.0:** the feature was incorporated upstream as of this release
 * **linux-asahi (kernel release):** the feature is stable, available for use, and scheduled for merging upstream by the release indicated
 * **linux-asahi:** the feature is (mostly) stable and available for use in Asahi Linux, or other distros which package our kernel
 * **linux-asahi-dev:** the feature is working to some extent, but is not suitable for general use
