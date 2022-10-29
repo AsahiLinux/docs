@@ -132,32 +132,58 @@ Note: There is currently a hack in the installer to dump out all firmware raw to
 
 ### Packaged blobs
 
-Currently, Broadcom FullMAC WiFi firmware is packaged. These blobs have also been identified as necessary, but are not yet packaged:
+Currently, these blobs are packaged:
 
+* Broadcom FullMAC WiFi firmware
 * Broadcom Bluetooth firmware
+* ASMedia xHCI firmware
+* Apple MTP multitouch firmware (M2 machines)
+
+And these blobs aren't yet packaged:
+
 * AVD (Apple Video Decoder) Cortex-M3 firmware
-* USB xHCI firmware (only needed for iMac models with 4 USB-C ports).
 
 Details on Broadcom FullMAC WiFi firmware naming: https://lore.kernel.org/all/20220104072658.69756-10-marcan@marcan.st/
 
 ### VendorFW package
 
-The stub OS installer collects available platform firmware from the IPSW, and packages it as two files:
+The stub OS installer collects available platform firmware from the IPSW, and packages it as as cpio archive. The cpio file contains:
 
-* firmware.tar: Tarball containing the firmware, in a structure compatible with the `/lib/firmware` hierarchy (e.g. `brcm/foo.bin`).
-* manifest.txt: A text file containing lines of the following two forms:
+* The firmwares in `/lib/firmware` hierarchy format, under the `vendorfw` subdirectory (e.g. `/vendorfw/brcm/foo.bin`).
+* `/vendorfw/.vendorfw.manifest`: A text file containing lines of the following two forms:
   * `LINK <src> <tgt>` : hard link
   * `FILE <name> SHA256 <hash>`: file
 
-These files are then placed in the EFI system partition under the `vendorfw` directory.
+This cpio is named `firmware.cpio` and placed in the EFI system partition under the `vendorfw` directory.
 
 ### OS handling
 
-A booted OS shall mount the ESP and inspect the `manifest.txt` file. If it is found to be different from the existing vendor firmware installed in the OS partition (if any), it shall update it by extracting `firmware.tar` into `/lib/firmware`, and then comparing both manifest files and removing any files that are no longer present in the ESP manifest. This should be done before any drivers requiring firmware are loaded.
+Ideally, the bootloader should load the `firmware.cpio` archive directly as an early initrd, which allows the booted OS to access firmware without any race conditions or complications. However, this mechanism may only be practical for booting directly-installed OSes, not booting installers from USB, and it may not work with all bootloaders.
 
-Alternatively, an OS that supports a more complex dynamic firmware loading mechanism could read the `firmware.tar` file directly as firmware is requested.
+OSes should check whether the initrd was loaded by the bootloader. If it wasn't, they should use the following algorithm to locate and load it:
 
-An example implementation of this process is available in the asahi-scripts repo [here](https://github.com/AsahiLinux/asahi-scripts/blob/main/update-vendor-firmware).
+* Look for the `asahi,efi-system-partition` /chosen Device Tree property, to find the ESP UUID (see above). If not found, abort.
+* Load the internal NVMe drivers and wait for the device to be available.
+* Locate the ESP using the UUID obtained above.
+* Mount the ESP (read-only is fine)
+* Find the /vendorfw/firmware.cpio file
+* Extract it or make it available as necessary
 
-The firmware package should be checked on every boot, to pick up changes from users who upgrade their stub OS by re-running the installer. This will be rare, but it's worth supporting properly.
+The OS should then ensure that the loaded firmware is persisted in memory throughout the current boot.
 
+#### Linux-specific
+
+For Linux, we propose a patch to add `/lib/firmware/vendor` to the Linux kernel firmware loading path list. This allows us to keep vendor firmware segregated from distro-managed firmware (e.g. linux-firmware), and means it can live in a tmpfs or other mount, separate from the root filesystem (which could then be immutable). It can also override linux-firmware installed firmwares, if necessary (while we do not anticipate this, it is useful to have the option should the need arise).
+
+Distros should then ship an initramfs with a `/lib/firmware/vendor -> /vendorfw` symlink, to allow the kernel to load early-loaded firmware directly. Where possible, they should have their bootloader directly load the CPIO. However, this might be difficult for external boot scenarios, or when /boot isn't directly the ESP. To support the fallback scenario, there are a few requirements:
+
+* All drivers requiring firmware must be built as modules
+* Firmware must be located and loaded *before* udev starts up. This is because udev can arbitrarily cause modules to load and devices to probe (even if not triggered directly, the kernel can e.g. discover PCI devices while the initramfs is already running), and this creates race conditions where firmware might not be available when it is needed.
+
+The initramfs must then forward this firmware into the final root filesystem. The recommended mechanism for this is to mount a tmpfs on `/lib/firmware/vendor` under the target root filesystem tree, and the copy the firmware there.
+
+An example implementation for Linux can be found in the [asahi-scripts](https://github.com/AsahiLinux/asahi-scripts/blob/main/initcpio/hooks/asahi) repository.
+
+Direct CPIO load can be accomplished with stock GRUB if `/boot` is the ESP mountpoint (i.e. GRUB and the kernels are directly installed in the ESP), using `GRUB_EARLY_INITRD_LINUX_STOCK=vendorfw/firmware.cpio` in `/etc/default/grub`.
+
+Note: an [older version](https://github.com/AsahiLinux/docs/wiki/Open-OS-Ecosystem-on-Apple-Silicon-Macs/3b621488994daed2cd480184b9229dcf33b8f0fb#packaged-blobs) of this document proposed an alternate mechanism with a tarball and incremental updates of firmware on the root filesystem. This was found to be error-prone, insufficient when the initramfs is not involved, and incompatible with immutable-root setups, and is now deprecated.
