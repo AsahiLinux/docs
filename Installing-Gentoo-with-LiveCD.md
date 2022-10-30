@@ -10,7 +10,7 @@
   * [Step 6: Install Asahi support files](#Step-6-Install-Asahi-support-files)
   * [Step 7: Have fun!](#Step-7-Have-fun)
 - [Maintenance](#Maintenance)
-  * [Updating U-Boot and m1n1](#Upgrading-U-Boot-and-m1n1)
+  * [Updating U-Boot and m1n1](#Updating-U-Boot-and-m1n1)
   * [Upgrading the kernel](#Upgrading-the-kernel)
   * [Syncing the Asahi overlay](#Syncing-the-Asahi-overlay)
 
