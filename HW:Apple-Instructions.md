@@ -21,7 +21,8 @@ Apple proprietary instructions seem to be in the 0x0020xxxx range.
 002012e0 - 0020143f            Faults with unknown instruction
 
 *00201400                      gexit, Exit guarded mode. Used by macOS; must need some enable (faults by default).
-*00201420                      genter, Enter guarded mode. Used by macOS; must need some enable (faults by default). 
+*00201420 | imm5               genter, Enter guarded mode. Used by macOS; must need some enable (faults by default).
+   imm5 stored in ESR_GLx[5:0] 
 
 00201440 | rA                  at_as1elx, Translate address. Returns in the same register:
    [63:56] MAIR attributes for translation (not index!)
