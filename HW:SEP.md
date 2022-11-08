@@ -17,7 +17,7 @@ Endpoint information:
 | 0x14 | hibe (according to tracer) | hibernation related? | 
 | 0x15 | pnon (tracer name) | unknown purpose |
 | 0x17 | skdl | unknown |
-| 0x18 | stac | seems to be linked to the AppleTrustedAccessory extension, perhaps "Secure/SEP Trusted Accessory Connection"? | 
+| 0x18 | stac | linked to the AppleTrustedAccessory extension, probably "Secure/SEP Trusted Accessory Connection" | 
 | 0xFD | Debug | debug endpoint, signals some events to XNU? |
 | 0xFE | Boot254 | Used in sending the IMG4 SEP OS image into SEP memory |
 | 0xFF | Boot255 | Signals to SEP via the BootTZ0 message to proceed booting |
