@@ -67,7 +67,7 @@ Features found on all devices featuring a given SoC
 | 1Gbps Ethernet     | 5.16              | N/A                         | N/A                | N/A               |
 | 10Gbps Ethernet    | 5.17              | N/A                         | N/A                | N/A               |
 | WiFi               | 6.1               | 6.1                         | 6.1                | 6.1               |
-| Bluetooth          | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
+| Bluetooth          | linux-asahi (6.2) | linux-asahi (6.2)           | linux-asahi (6.2)  | linux-asahi (6.2) |
 | 3.5mm jack         | linux-asahi       | linux-asahi                 | linux-asahi        | linux-asahi       |
 | Microphones        | not yet supported | not yet supported           | not yet supported  | not yet supported |
 | Internal speakers  | see notes         | see notes                   | see notes          | see notes         |
@@ -87,7 +87,7 @@ Features found on all devices featuring a given SoC
 | TouchID            | not yet supported | not yet supported              |
 | Ethernet           | linux-asahi       | N/A                            |
 | WiFi               | 6.1               | 6.1                            |
-| Bluetooth          | linux-asahi       | linux-asahi                    |
+| Bluetooth          | linux-asahi (6.2) | linux-asahi (6.2)              |
 | 3.5mm jack         | linux-asahi       | linux-asahi                    |
 | Microphones        | N/A               | not yet supported              |
 | Internal speakers  | see notes         | see notes                      |
@@ -147,7 +147,7 @@ Features found on all devices with a given SoC.
 | HDMI Out           | N/A                | N/A                         |
 | TouchID            | not yet supported  | not yet supported           |
 | WiFi               | 6.1                | 6.1                         |
-| Bluetooth          | linux-asahi        | linux-asahi                 |
+| Bluetooth          | linux-asahi (6.2)  | linux-asahi (6.2)           |
 | 3.5mm jack         | linux-asahi        | linux-asahi                 |
 | Microphones        | not yet supported  | not yet supported           |
 | Internal speakers  | not yet supported  | not yet supported           |
