@@ -22,26 +22,19 @@ Endpoint information:
 | 0xFE | Boot254 | Used in sending the IMG4 SEP OS image into SEP memory |
 | 0xFF | Boot255 | Signals to SEP via the BootTZ0 message to proceed booting |
 
-Gigalocker/xART format (thanks sven for this info!)
-
-0x00-0x01 - Always 0 (perhaps some kind of version identifier?)
 
 
-0x01-0x12 - UUID/key (identifies SEP request, possibly handled by SKS?)
+Gigalocker/xART format (thanks sven for this info!):
+| Section start-section end | Description |
+| ------------------------- | ----------- |
+| 0x00-0x01 | Always 0 (perhaps some kind of version identifier?) |
+| 0x01-0x12 | UUID/key (a key identifier for SKS?) |
+| 0x12-0x16 | length of key |
+| 0x16-0x1a | CRC of wrapped key |
+| 0x1a-0x22 | unknown purpose |
+| 0x22-end of payload | payload/wrapped keybag data |
 
 
-0x12-0x16 - length
-
-
-0x16-0x1a - CRC of data (CRC32, ISO-HDLC)
-
-
-0x1a-0x22 - unknown
-
-
-0x22-end of payload - payload data (max of 0x8000)
-
-Basically a key/value store updated by SEP (where keybag data is stored)
 
 SEP Message format:
 
@@ -51,7 +44,7 @@ bits 0-7 - Endpoint number
 bits 8-15 - a "tag" value (for the control endpoint, an inbound and outbound message may sometimes share tags)
 
 
-bits 16-24 - a message "type" (for the debug endpoint always 0x1)
+bits 16-24 - message "type" (for the debug endpoint, 0x1 is )
 
 
 
@@ -73,8 +66,8 @@ xART init flow (incomplete atm, may be wrong):
 (message type 0 is some sort of fetch request, message type 0x5 is a fetch response it seems for individual lockers)
 (tags seem to be increasing in the order of the lockers within the gigalocker)
 
-
-//???? (possibly initialization? there is a "gigalocker initialization completed" message in XNU bootlog)
+```c:
+//Gigalocker initialization (TODO: verify if later OS versions use the same format)
 
 
 [cpu1] [SEPTracer@/arm-io/sep] [xarm] >0x0(None) 0000010000000213 (EP=0x13, TAG=0x2, TYPE=0x0, PARAM=0x0, DATA=0x100)
@@ -90,6 +83,22 @@ xART init flow (incomplete atm, may be wrong):
 
 
 [cpu10] [SEPTracer@/arm-io/sep] [xarm] <0x0(None) 0000010000000313 (EP=0x13, TAG=0x3, TYPE=0x0, PARAM=0x0, DATA=0x100)
+```
+
+
+
+SEP Trusted Accessory notes:
+
+```c:
+
+//ping
+[cpu0] [SEPTracer@/arm-io/sep] [stac] >0xf(None) 00000000000ffc18 (EP=0x18, TAG=0xfc, TYPE=0xf, PARAM=0x0, DATA=0x0)
+
+//pong
+[cpu0] [SEPTracer@/arm-io/sep] [stac] <0xf(None) 00000000000ffc18 (EP=0x18, TAG=0xfc, TYPE=0xf, PARAM=0x0, DATA=0x0)
+```
+
+AppleTrustedAccessory talks to this endpoint, likely for the Touch ID sensor on external keyboards.
 
 
 SEP backwards compatibility notes:
@@ -105,4 +114,24 @@ The control endpoint seems to reply to incoming requests with a message type of 
 
 SKS is *very* spammy in normal mode as mailbox messages to/from sep with it as the endpoint are constantly being sent (this is likely because of how Data Protection works according to the Apple security guide, a lot of these likely are retrieving/updating keys from/to gigalocker)
 
-Single-user mode is helpful when tracing sep, as SKS will not be nearly as spammy and we can capture the early initialization sequence.
+Single-user mode is helpful when tracing, as SKS will not be nearly as spammy and we can capture the initialization sequence.
+
+
+
+Questions:
+
+- when the debug endpoint is notifying the AP that an endpoint has come to life, the "DATA" field has a value of 0x2020202, 0x1010101, 0x0, or 0x2020404
+
+
+- why is there both an xars endpoint and an xarm endpoint?
+
+
+- one part of the SEP shared mem buffer at the very beginning during endpoint setup changes the lower byte of the first 32-bit word from 02 to 1f. why would that be? is that a configuration bit? is that done by macOS or the SEP OS?
+
+
+
+TODOs:
+
+- build a table of message types and tags for all endpoints
+
+- capture how a gigalocker is created (this is a long term thing)
