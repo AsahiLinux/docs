@@ -45,10 +45,17 @@ baudrate is    : 500000
 :
 ```
 
-From now on m1n1 hypervisor is ready to accept command through the m1n1 proxy client:
+From now on m1n1 hypervisor is ready to accept command through m1n1 proxy client tools:
 
 ```shell
-python3 ~/asahi/m1n1/proxyclient/tools/run_guest.py ...
+$ python3 ~/asahi/m1n1/proxyclient/tools/shell.py
+:
+:
+TTY> Waiting for proxy connection... . Connected!
+Fetching ADT (0x00058000 bytes)...
+m1n1 base: 0x802848000
+Have fun!
+>>>
 ```
 
 ### Find actual device names
