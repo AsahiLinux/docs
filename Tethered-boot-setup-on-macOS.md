@@ -130,6 +130,19 @@ brew install picocom
 
 ### Installing img4tool (optional)
 
+Either use Homebrew Tap or install it manually
+
+#### Use Homebrew tap
+
+I created a tap to ease installation through Homebrew, just add the tap and install:
+
+```shell
+brew tap aderuelle/homebrew-tap
+brew install img4tool
+```
+
+#### Install manually
+
 If you intend to boot a stock macOS kernel, you'll need these tools to extract the actual kernel file from the kernlecache of a macOS install on the target machine. In the absence of precompiled version for macOS you'll have to compile it.
 
 For this step, setup a `asahi` folder in your home directory and clone everything there, additionaly install everything in an `~/asahi/deps` folder so as to not mess up with the rest of the system.
