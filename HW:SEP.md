@@ -11,7 +11,7 @@ Endpoint information:
 | 0x0a | SCRD | likely "Secure/SEP credential manager" used for user credential auth? |
 | 0x0c | sse  | unknown |
 | 0x0e | HDCP | likely HDCP content protection |
-| 0x10 | xars (according to tracer) | xART setup? |
+| 0x10 | xars (according to tracer) | xART setup? involved in startup/shutdown |
 | 0x12 | Secure/SEP Key Store | SEP encrypt/decrypt operations and key management |
 | 0x13 | xART manager | manages xARTs, gigalockers and keybags (needed for SKS to start) |
 | 0x14 | hibe (according to tracer) | hibernation related? | 
