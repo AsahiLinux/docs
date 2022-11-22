@@ -3,8 +3,9 @@ be interpreted as follows:
 
 * **Kernel release, *e.g.* 6.0:** the feature was incorporated upstream as of this release
 * **linux-asahi (kernel release):** the feature is stable, available for use, and scheduled for merging upstream by the release indicated
-* **linux-asahi:** the feature is (mostly) stable and available for use in Asahi Linux, or other distros which package our kernel
-* **linux-asahi-dev:** the feature is working to some extent, but is not suitable for general use
+* **linux-asahi**: the feature is (mostly) stable and available for use in Asahi Linux, or other distros which package our kernel
+* **linux-asahi-edge**: the feature is available for wider testing in the linux-asahi-edge package in the Asahi Linux distrobution
+* **linux-asahi-dev**: the feature is working to some extent, but is not suitable for general use
 
 ## Table of Contents
 - [M1 Series (M1, M1 Pro, M1 Max, M1 Ultra)](#m1-series-soc-features)
@@ -26,7 +27,7 @@ Features found on all devices featuring a given SoC
 | cpufreq          | linux-asahi       | linux-asahi              |
 | cpuidle          | see notes         | see notes                |
 | System suspend   | see notes         | see notes                |
-| Suspend to idle  | linux-asahi-dev   | linux-asahi-dev          |
+| Suspend to idle  | linux-asahi-edge  | linux-asahi-edge         |
 | UART             | 5.13              | 5.13                     |
 | Watchdog         | 5.17              | 5.17                     |
 | PCIe             | 5.16              | 5.16                     |
@@ -38,11 +39,11 @@ Features found on all devices featuring a given SoC
 | SPI              | linux-asahi       | linux-asahi              |
 | SPI NOR          | linux-asahi       | linux-asahi              |
 | Primary display  | 5.17              | 5.17                     |
-| DCP              | linux-asahi-dev   | linux-asahi-dev          |
+| DCP              | linux-asahi-edge  | linux-asahi-edge         |
 | DP Alt Mode      | WIP               | WIP                      |
 | Thunderbolt      | WIP               | WIP                      |
 | USB2 (TB ports)  | linux-asahi       | linux-asahi              |
-| USB3 (TB ports)  | linux-asahi-dev   | linux-asahi-dev          |
+| USB3 (TB ports)  | linux-asahi       | linux-asahi              |
 | SMC              | linux-asahi       | linux-asahi              |
 | SPMI             | linux-asahi       | linux-asahi              |
 | RTC              | linux-asahi       | linux-asahi              |
@@ -58,7 +59,7 @@ Features found on all devices featuring a given SoC
 |--------------------|:-----------------:|:---------------------------:|:------------------:|:-----------------:|
 | Devicetree         | 5.13              | 5.17                        | 5.17               | 5.17              |
 | Keyboard           | N/A               | linux-asahi                 | linux-asahi        | N/A               |
-| Keyboard backlight | N/A               | linux-asahi-dev             | linux-asahi-dev    | N/A               |
+| Keyboard backlight | N/A               | linux-asahi-edge            | linux-asahi-edge   | N/A               |
 | Touchpad           | N/A               | linux-asahi                 | linux-asahi        | N/A               |
 | Touch Bar          | N/A               | not yet supported           | N/A                | N/A               |
 | USB-A ports        | 5.16              | N/A                         | N/A                | N/A               |
@@ -81,7 +82,7 @@ Features found on all devices featuring a given SoC
 | Devicetree         | linux-asahi (6.2) | linux-asahi (6.2)              |
 | MagSafe            | N/A               | 5.16                           |
 | Keyboard           | N/A               | linux-asahi                    |
-| Keyboard backlight | N/A               | linux-asahi-dev                |
+| Keyboard backlight | N/A               | linux-asahi-edge               |
 | Touchpad           | N/A               | linux-asahi                    |
 | HDMI Out           | linux-asahi       | not yet supported              |
 | TouchID            | not yet supported | not yet supported              |
@@ -124,7 +125,7 @@ Features found on all devices with a given SoC.
 | DP Alt Mode      | WIP               |
 | Thunderbolt      | not yet supported |
 | USB2 (TB ports)  | linux-asahi       |
-| USB3 (TB ports)  | WIP               |
+| USB3 (TB ports)  | linux-asahi       |
 | SMC              | linux-asahi       |
 | SPMI             | linux-asahi       |
 | RTC              | linux-asahi       |
@@ -141,7 +142,7 @@ Features found on all devices with a given SoC.
 | Devicetree         | linux-asahi        | linux-asahi                 |
 | MagSafe            | 5.16               | N/A                         |
 | Keyboard           | linux-asahi        | linux-asahi                 |
-| Keyboard backlight | linux-asahi-dev    | linux-asahi-dev             |
+| Keyboard backlight | linux-asahi-edge   | linux-asahi-edge            |
 | Touchpad           | linux-asahi        | linux-asahi                 |
 | Touch Bar          | N/A                | not yet supported           |
 | HDMI Out           | N/A                | N/A                         |
@@ -153,7 +154,7 @@ Features found on all devices with a given SoC.
 | Internal speakers  | not yet supported  | not yet supported           |
 | Webcam             | WIP                | WIP                         |
 | Battery monitoring | linux-asahi        | linux-asahi                 |
-| Screen brightness  | see notes          | see notes                   |
+| Screen brightness  | WIP                | WIP                         |
 | SD card reader     | N/A                | N/A                         |
 
 Note: Many peripherals depend on T600x DART, T8112 DART, and PCIe support.
