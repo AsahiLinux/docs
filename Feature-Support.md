@@ -26,8 +26,7 @@ Features found on all devices featuring a given SoC
 | ARM PMU          | 5.18              | 5.18                     |
 | cpufreq          | linux-asahi       | linux-asahi              |
 | cpuidle          | see notes         | see notes                |
-| System suspend   | see notes         | see notes                |
-| Suspend to idle  | linux-asahi-edge  | linux-asahi-edge         |
+| Suspend          | linux-asahi-edge  | linux-asahi-edge         |
 | UART             | 5.13              | 5.13                     |
 | Watchdog         | 5.17              | 5.17                     |
 | PCIe             | 5.16              | 5.16                     |
@@ -109,7 +108,7 @@ Features found on all devices with a given SoC.
 | PMU              | not yet supported |
 | cpufreq          | linux-asahi       |
 | cpuidle          | see notes         |
-| System sleep     | see notes         |
+| Suspend          | linux-asahi-edge  |
 | UART             | 5.13              |
 | Watchdog         | 5.17              |
 | PCIe             | linux-asahi       |
