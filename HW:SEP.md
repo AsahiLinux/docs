@@ -135,3 +135,8 @@ TODOs:
 - build a table of message types and tags for all endpoints
 
 - capture how a gigalocker is created (this is a long term thing)
+
+
+xART fetch notes:
+
+during the locker fetch sequence, all message have 0x100 as the "data" part. responses from the SEP with respect to a locker fetch/unwrap request will always have parameter 0x10. A response with type 0x5 is success, 0x7 is an error (at minimum it's the error signaling that a user xART locker couldn't be found)
