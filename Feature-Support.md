@@ -69,7 +69,7 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | 6.1                  | 6.1                            | 6.1                   | 6.1                  | 6.1                               | 6.1                  |
 | Bluetooth          | linux-asahi<br>(6.2) | linux-asahi<br>(6.2)           | linux-asahi<br>(6.2)  | linux-asahi<br>(6.2) | linux-asahi<br>(6.2)              | linux-asahi<br>(6.2) |
 | 3.5mm jack         | linux-asahi          | linux-asahi                    | linux-asahi           | linux-asahi          | linux-asahi                       | linux-asahi          |
-| Speakers           | linux-asahi          | WIP                            | WIP                   | WIP                  | WIP                               | WIP                  |
+| Speakers           | linux-asahi          | WIP                            | WIP                   | WIP                  | WIP                               | WIP                  | 
 | SD card slot       | -                    | -                              | -                     | -                    | 5.17                              | 5.17                 |
 | 1Gbps Ethernet     | 5.16                 | -                              | -                     | -                    | -                                 | -                    |
 | 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    | -                                 | linux-asahi          |
