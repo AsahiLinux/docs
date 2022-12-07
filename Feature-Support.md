@@ -25,7 +25,7 @@ These are features/hardware blocks that are present on all devices with the give
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          |
 | Thunderbolt      | WIP                  | WIP                         | TBA                  |
 | DP Alt Mode      | WIP                  | WIP                         | WIP                  |
-| GPU              | WIP                  | WIP                         | WIP                  |
+| GPU              | asahi-edge           | asahi-edge                  | asahi-edge           |
 | Video Decoder    | TBA                  | TBA                         | TBA                  |
 | NVMe             | 5.19                 | 5.19                        | 5.19                 |
 | PCIe             | 5.16                 | 5.16                        | linux-asahi          |
@@ -112,6 +112,7 @@ changes notwithstanding.
 | v5.19           | 175             |
 | v6.0-rc6        | 409             |
 | v6.1-rc7        | 1214            |
+| v6.1-rc8        | 1610            | 
 
 The number of carried patches can be computed with the command `git rev-list [base tag]..[asahi tag] --no-merges | wc -l`
 
