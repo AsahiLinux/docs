@@ -42,6 +42,7 @@ These are features/hardware blocks that are present on all devices with the give
 | I<sup>2</sup>C   | 5.16                 | 5.16                        | 5.16                 |
 | GPIO             | 5.16                 | 5.16                        | 5.16                 |
 | USB-PD           | 5.16                 | 5.16                        | 5.16                 |
+| MCA              | 6.1                  | 6.1                         | linux-asahi          |
 | SPI              | linux-asahi          | linux-asahi                 | linux-asahi          |
 | SPI NOR          | linux-asahi          | linux-asahi                 | linux-asahi          |
 | SMC              | linux-asahi          | linux-asahi                 | linux-asahi          |
@@ -72,7 +73,7 @@ These are features/hardware blocks that are present on all devices with the give
 | SD card slot       | -                    | -                              | -                     | -                    | 5.17                              | 5.17                 |
 | 1Gbps Ethernet     | 5.16                 | -                              | -                     | -                    | -                                 | -                    |
 | 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    | -                                 | linux-asahi          |
-| Microphones        | TBA                  | TBA                            | TBA                   | TBA                  | TBA                               | -                    |
+| Microphones        | WIP                  | WIP                            | WIP                   | WIP                  | WIP                               | -                    |
 | Webcam             | -                    | TBA                            | TBA                   | TBA                  | TBA                               | -                    |
 | Touch Bar          | -                    | TBA                            | -                     | -                    | -                                 | -                    |
 | TouchID            | TBA                  | TBA                            | TBA                   | TBA                  | TBA                               | TBA                  |
@@ -93,8 +94,8 @@ These are features/hardware blocks that are present on all devices with the give
 | Bluetooth          | linux-asahi<br>(6.2)  | linux-asahi<br>(6.2)           |
 | HDMI Out           | -                     | -                              |
 | 3.5mm jack         | linux-asahi           | linux-asahi                    |
-| Speakers           | TBA                   | TBA                            |
-| Microphones        | TBA                   | TBA                            |
+| Speakers           | WIP                   | WIP                            |
+| Microphones        | WIP                   | WIP                            |
 | Webcam             | TBA                   | TBA                            |
 | SD card slot       | -                     | -                              |
 | Touch Bar          | -                     | TBA                            |
