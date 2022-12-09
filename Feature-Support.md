@@ -60,7 +60,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Devicetree         | 5.13                 | 5.17                           | 5.17                  | 5.17                 | linux-asahi<br>(6.2)              | linux-asahi<br>(6.2) |
 | Main display       | 5.17                 | 5.17                           | 5.17                  | 5.17                 | 5.17                              | 5.17                 |
 | Brightness         | -                    | asahi-edge                     | asahi-edge            | asahi-edge           | asahi-edge                        | -                    |
-| HDMI Out           | 5.13                 | -                              | -                     | -                    | WIP                               | linux-asahi          |
+| HDMI Out           | 5.13                 | -                              | -                     | -                    | WIP                               | linux-asahi<br>(6.2) |
 | Keyboard           | -                    | linux-asahi                    | linux-asahi           | -                    | linux-asahi                       | -                    |
 | KB backlight       | -                    | asahi-edge                     | asahi-edge            | -                    | asahi-edge                        | -                    |
 | Touchpad           | -                    | linux-asahi                    | linux-asahi           | -                    | linux-asahi                       | -                    |
@@ -88,7 +88,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Keyboard           | linux-asahi           | linux-asahi                    |
 | KB backlight       | asahi-edge            | asahi-edge                     |
 | Touchpad           | linux-asahi           | linux-asahi                    |
-| Brightness         | WIP                   | WIP                            |
+| Brightness         | asahi-edge            | asahi-edge                     |
 | Battery info       | linux-asahi           | linux-asahi                    |
 | WiFi               | 6.1                   | 6.1                            |
 | Bluetooth          | linux-asahi<br>(6.2)  | linux-asahi<br>(6.2)           |
