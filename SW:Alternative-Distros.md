@@ -4,7 +4,6 @@ Several members of the community have contributed guides and pre-built artifacts
 |--------|------------|--------------------|
 | CentOS Stream | https://github.com/ericcurtin | https://github.com/ericcurtin/asahi-centosstream-builder |
 | Debian | https://thomas.glanzmann.de/ | https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/ |
-| Fedora Desktop| https://thomas.glanzmann.de/ | https://thomas.glanzmann.de/fedora/ |
 | Fedora | https://github.com/leifliddy| https://github.com/leifliddy/asahi-fedora-builder |
 | Gentoo<br>(LiveCD method) | IRC: chadmed (https://github.com/chadmed) | [[Installing Gentoo with LiveCD]] |
 | NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-m1/blob/main/docs/uefi-standalone.md |
