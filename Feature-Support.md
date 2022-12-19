@@ -80,7 +80,7 @@ These are features/hardware blocks that are present on all devices with the give
 
 
 ## M2 Series (M2)
-### M2 device-specific support
+### M2 series device-specific support
 |                    | MacBook Air<br>(2022) | MacBook Pro<br>(13-inch, 2022) |
 |--------------------|:---------------------:|:------------------------------:|
 | Devicetree         | linux-asahi           | linux-asahi                    |
