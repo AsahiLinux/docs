@@ -29,7 +29,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Video Decoder    | TBA                  | TBA                         | TBA                  |
 | NVMe             | 5.19                 | 5.19                        | 5.19                 |
 | PCIe             | 5.16                 | 5.16                        | linux-asahi          |
-| cpufreq          | linux-asahi<br>(6.2) | linux-asahi<br>(6.2)        | linux-asahi          |
+| cpufreq          | 6.2                  | 6.2                         | linux-asahi          |
 | cpuidle          | see notes            | see notes                   | see notes            |
 | Suspend/sleep    | asahi-edge           | asahi-edge                  | asahi-edge           |
 | Video Encoder    | TBA                  | TBA                         | TBA                  |
@@ -57,17 +57,17 @@ These are features/hardware blocks that are present on all devices with the give
 ### M1 series device-specific support
 |                    | Mac Mini<br>(2020)   | MacBook Pro<br>(13-inch, 2020) | MacBook Air<br>(2020) | iMac<br>(2021)       | MacBook Pro<br>(14/16-inch, 2021) | Mac Studio<br>(2022) |
 |--------------------|:--------------------:|:------------------------------:|:---------------------:|:--------------------:|:---------------------------------:|:--------------------:|
-| Devicetree         | 5.13                 | 5.17                           | 5.17                  | 5.17                 | linux-asahi<br>(6.2)              | linux-asahi<br>(6.2) |
+| Devicetree         | 5.13                 | 5.17                           | 5.17                  | 5.17                 | 6.2                               | 6.2                  |
 | Main display       | 5.17                 | 5.17                           | 5.17                  | 5.17                 | 5.17                              | 5.17                 |
 | Brightness         | -                    | asahi-edge                     | asahi-edge            | asahi-edge           | asahi-edge                        | -                    |
-| HDMI Out           | 5.13                 | -                              | -                     | -                    | WIP                               | linux-asahi<br>(6.2) |
+| HDMI Out           | 5.13                 | -                              | -                     | -                    | WIP                               | 6.2                  |
 | Keyboard           | -                    | linux-asahi                    | linux-asahi           | -                    | linux-asahi                       | -                    |
 | KB backlight       | -                    | asahi-edge                     | asahi-edge            | -                    | asahi-edge                        | -                    |
 | Touchpad           | -                    | linux-asahi                    | linux-asahi           | -                    | linux-asahi                       | -                    |
 | Battery info       | -                    | linux-asahi                    | linux-asahi           | -                    | linux-asahi                       | -                    |
 | USB-A ports        | 5.16                 | -                              | -                     | -                    | -                                 | linux-asahi          |
 | WiFi               | 6.1                  | 6.1                            | 6.1                   | 6.1                  | 6.1                               | 6.1                  |
-| Bluetooth          | linux-asahi<br>(6.2) | linux-asahi<br>(6.2)           | linux-asahi<br>(6.2)  | linux-asahi<br>(6.2) | linux-asahi<br>(6.2)              | linux-asahi<br>(6.2) |
+| Bluetooth          | 6.2                  | 6.2                            | 6.2                   | 6.2                  | 6.2                               | 6.2                  |
 | 3.5mm jack         | linux-asahi          | linux-asahi                    | linux-asahi           | linux-asahi          | linux-asahi                       | linux-asahi          |
 | Speakers           | linux-asahi          | WIP                            | WIP                   | WIP                  | WIP                               | WIP                  | 
 | SD card slot       | -                    | -                              | -                     | -                    | 5.17                              | 5.17                 |
@@ -91,7 +91,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Brightness         | asahi-edge            | asahi-edge                     |
 | Battery info       | linux-asahi           | linux-asahi                    |
 | WiFi               | 6.1                   | 6.1                            |
-| Bluetooth          | linux-asahi<br>(6.2)  | linux-asahi<br>(6.2)           |
+| Bluetooth          | 6.2                   | 6.2                            |
 | HDMI Out           | -                     | -                              |
 | 3.5mm jack         | linux-asahi           | linux-asahi                    |
 | Speakers           | WIP                   | WIP                            |
@@ -111,9 +111,8 @@ changes notwithstanding.
 | Kernel base tag | Carried patches |
 | :-------------: | :-------------: |
 | v5.19           | 175             |
-| v6.0-rc6        | 409             |
-| v6.1-rc7        | 1214            |
-| v6.1-rc8        | 1610            | 
+| v6.0            | 409             |
+| v6.1            | 1642            |
 
 The number of carried patches can be computed with the command `git rev-list [base tag]..[asahi tag] --no-merges | wc -l`
 
