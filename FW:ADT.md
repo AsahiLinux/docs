@@ -36,7 +36,7 @@ copy the im4p file from the below directory. See [[Devices]] for Machine 'j' mod
 
 If the dir doesn't exist try disabling csrutil in recovery mode, going to settings and enabling terminal to acces all files, or start from `Volumes/Macintosh HD/` because it may be symlinked. If it's still not accessible, try good ol `sudo find . -type f -name '*.im4p'`.
 
-then use imp4tool to extract the im4p file into a .bin file e.g.
+then use img4tool to extract the im4p file into a .bin file e.g.
 ```
 img4tool -e DeviceTree.j274ap.im4p -o j274.bin
 ```
