@@ -1,3 +1,5 @@
+Tested on M1 Air.
+
 https://gambas.sourceforge.net
 
 ```
