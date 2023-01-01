@@ -30,10 +30,8 @@ git libssl-dev
 ./reconf-all
 
 ./configure -C --disable-keyring
-```
-Because M1 Air has 8 cores, here used `-j8`:
-```
-make -j8
+
+make -j$(nproc)
 
 sudo make install
 ```
