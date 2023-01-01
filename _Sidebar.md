@@ -14,6 +14,7 @@ Platform documentation:
 For users:
 * [[Broken Software]]
 * [[SW:Alternative Distros]]
+* [[SW:Ubuntu Asahi Qemu]]
 
 For developers:
 * [[Yaks in need of shaving]] (**HELP WANTED!**)
