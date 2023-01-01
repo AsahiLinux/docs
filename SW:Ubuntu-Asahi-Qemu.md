@@ -16,7 +16,7 @@ libsnappy-dev libssh-dev \
 libvde-dev libvdeplug-dev libvte-2.91-dev \
 libxen-dev liblzo2-dev valgrind xfslibs-dev \
 libnfs-dev libiscsi-dev flex bison meson \
- qemu-utils virt-manager
+qemu-utils virt-manager
 
 git clone https://gitlab.com/qemu-project/qemu.git
 
