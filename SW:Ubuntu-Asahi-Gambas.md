@@ -1,4 +1,4 @@
-Tested on M1 Air.
+Tested on Ubuntu 22.10 Asahi on M1 Air.
 
 https://gambas.sourceforge.net
 
