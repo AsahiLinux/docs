@@ -93,7 +93,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Seems to work, but will throw warnings. |
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
 | Wine | https://bugs.winehq.org/show_bug.cgi?id=52715 |
-| qemu-user | https://lists.gnu.org/archive/html/qemu-devel/2019-09/msg03664.html | qemu-user can't emulate architectures with a 4K page size (that is, most of them) |
+| qemu-user | https://lists.gnu.org/archive/html/qemu-devel/2019-09/msg03664.html | qemu-user can't emulate architectures with a 4K page size (that is, most of them) <br /> <br />Some qemu-user and qemu-system works at [[SW:Ubuntu Asahi Qemu]] of [[SW:Alternative Distros]] |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 
 ## Fixed packages
