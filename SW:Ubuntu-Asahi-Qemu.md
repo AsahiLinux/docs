@@ -1,3 +1,5 @@
+Tested on Ubuntu 22.10 Asahi on M1 Air.
+
 Also installs virt-manager.
 
 Slirp included when compiling, to have user networking:
