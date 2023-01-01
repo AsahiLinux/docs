@@ -2,6 +2,7 @@ Tested on Ubuntu 22.10 Asahi on M1 Air.
 
 https://gambas.sourceforge.net
 
+Change to root during installing packages:
 ```
 sudo su
 
@@ -27,6 +28,10 @@ libqt5svg5-dev libqt5webkit5-dev libqt5x11extras5-dev \
 qtbase5-dev qtwebengine5-dev libwebkit2gtk-4.0-dev \
 git libssl-dev
 
+exit
+```
+As normal user:
+```
 ./reconf-all
 
 ./configure -C --disable-keyring
