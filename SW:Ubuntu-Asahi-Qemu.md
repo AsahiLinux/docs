@@ -43,10 +43,8 @@ mkdir build
 cd build
 
 ../configure --enable-slirp
-```
-M1 Air `nproc` shows 8 cores, so using it as option `-j8` here:
-```
-make -j8
+
+make -j$(nproc)
 
 sudo make install
 ```
