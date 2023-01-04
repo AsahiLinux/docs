@@ -49,6 +49,8 @@ Install Asahi Linux Minimal (with more than the minimal disk space, 12GB worked)
 The environment comes with iwd and NetworkManager for setting up WiFi. Ethernet connections
 should be handled automatically at boot.
 
+Switch to the `asahi-dev` repo by changing `[asahi]` to `[asahi-dev]` in `/etc/pacman.conf`.
+
 Update the system by running `pacman -Syu` as root (or `sudo pacman -Syu` when you installed AsahiLinux Desktop).
 Reboot into Asahi Linux.
 
