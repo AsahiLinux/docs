@@ -8,7 +8,7 @@ You can use either your existing macOS install, or alternatively install a secon
 
 To install a second copy of macOS you will need to complete a couple of steps:
 1. Create a second Volume on your macOS partition:
-`sudo diskutil APFS addVolume disk4 APFS macOSTest -mountpoint /System/Volumes/macOSTest` Change disk4 and volume name (i.e macOSTest) for your particular system/preferences.  _Note: Don't make this a system role or it will mess with your existing system (no valid users in 1TR)_
+`diskutil apfs addVolume disk4 APFS macOSTest -mountpoint /Volumes/macOSTest` Change disk4 and volume name (i.e macOSTest) for your particular system/preferences.  _Note: Don't make this a system role or it will mess with your existing system (no valid users in 1TR)_
 2. Download and install macOS. To download a specific version of macOS installer you can use the command
 `softwareupdate --fetch-full-installer --full-installer-version 12.3` substituting 12.3 for whichever version you require. The installer will be found in the Applications folder. Copy it out of here if you want to save it, otherwise it deletes itself once you have installed once. 
 
