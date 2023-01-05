@@ -44,7 +44,10 @@ kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -V development \
 1. Start into 1tr and start a terminal
 2. Disable most security feature in the boot policy: `bputil -nkcas`
 3. Disable SIP (bputil resets it): `csrutil disable`
-4. install m1n1 as custom boot object
+4. install [m1n1](https://github.com/AsahiLinux/docs/wiki/m1n1%3AUser-Guide) as custom boot object
+```
+kmutil configure-boot -c build/m1n1.bin --raw --entry-point 2048 --lowest-virtual-address 0 -v /Volumes/macOSTest
+```
 
 ## Starting the development kernel under the m1n1 hypervisor
 
