@@ -47,8 +47,10 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### I
 * **I²C**: Inter-Integrated Circuit. A 2-wire standard for communicating at low speed between chips on a board.
-* **iBoot**: Apple's bootloader. Can refer to the specific second-stage loader on the OS Preboot partition (iBoot2), the first-stage loader in NOR flash (iBoot1), or any of iBSS, iBEC, or even the SecureROM itself (which are all different builds of iBoot with different capabilities). LLB is an older name for iBoot1.
-* **iBSS**: iBoot Single Stage. Replacement for the first-stage iBoot (LLB), loaded in the DFU boot flow when the NOR is corrupted.
+* **iBoot**: Apple's bootloader. Can refer to iBoot1, iBoot1, or any of iBSS, iBEC, or even the SecureROM itself (which are all different builds of iBoot with different capabilities).
+* **iBoot1**: The first-stage iBoot located in NOR, loaded by the SecureROM. It chainloads the second-stage iBoot (iBoot2) on the OS Preboot partition, after doing early initialization and loading OS-independent firmwares. LLB is an older name for iBoot1.
+* **iBoot2**: The second-stage iBoot located in the OS Preboot partition. This version of iBoot is specific to each installed OS, and is packaged with the bundle of runtime firmwares the OS needs to run.
+* **iBSS**: iBoot Single Stage. Replacement for the first-stage iBoot (iBoot1/LLB), loaded in the DFU boot flow when the NOR is corrupted.
 * **iBEC**: iBoot Epoch Change. Replacement for the second-stage iBoot, loaded in the DFU boot flow.
 * **IOMMU**: I/O Memory Management Unit, a more general term for Apple's DART.
 * **IOKit**: I/O Kit is Apple's device driver framework for XNU (Apple's operating system kernel).
@@ -65,7 +67,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **kmutil** macOS Kernel Management utility for managing kernel extensions (kexts). Used to boot alternative kernels i.e. m1n1
 
 ### L
-* **LLB**: Low Level Bootloader. The first-stage iBoot located in NOR, loaded by the SecureROM, and also called iBoot1. It chainloads the second-stage iBoot on the OS Preboot partition.
+* **LLB**: Low Level Bootloader, an older name for iBoot1 inherited from iOS platforms.
 
 ### M
 * **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such as switching one set of pins between USB, UART, and SWD modes.
