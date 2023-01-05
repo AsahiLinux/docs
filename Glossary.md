@@ -47,7 +47,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### I
 * **I²C**: Inter-Integrated Circuit. A 2-wire standard for communicating at low speed between chips on a board.
-* **iBoot**: Apple's bootloader. Can refer to the specific second-stage loader on the OS Preboot partition (often called iBoot2), or any of LLB, iBSS, iBEC, or even the SecureROM (which are all different builds of iBoot with different capabilities). iBoot1 is a newer name for LLB.
+* **iBoot**: Apple's bootloader. Can refer to the specific second-stage loader on the OS Preboot partition (iBoot2), the first-stage loader in NOR flash (iBoot1), or any of iBSS, iBEC, or even the SecureROM itself (which are all different builds of iBoot with different capabilities). LLB is an older name for iBoot1.
 * **iBSS**: iBoot Single Stage. Replacement for the first-stage iBoot (LLB), loaded in the DFU boot flow when the NOR is corrupted.
 * **iBEC**: iBoot Epoch Change. Replacement for the second-stage iBoot, loaded in the DFU boot flow.
 * **IOMMU**: I/O Memory Management Unit, a more general term for Apple's DART.
@@ -88,9 +88,9 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### S
 * **SBU**: Sideband Use. Two pins on Type C connectors free to be used for random stuff, not defined by the Type C standard itself.
-* **SecureROM**: The BootROM of the M1. This is in charge of reading SFR from NOR and passing control to it, or falling back to DFU mode.
+* **SecureROM**: The BootROM of the M1. This is in charge of reading iBoot1 from NOR and passing control to it, or falling back to DFU mode.
 * **SEP**: Secure Enclave Processor. The M1's built-in HSM/TPM/etc device. Handles Touch ID and most crypto, as well as boot policy decisions. Harmless to Linux, but we can use its features if we want to. Contrast to AP.
-* **SFR**: System Firmware, the portion of firmware stored in NOR flash. This includes the first stage of iBoot, which will boot the second stage from the OS partition.
+* **SFR**: System Firmware and Recovery, the collection of firmware and the recovery image shared by all OSes installed on the system, including components in NOR (like iBoot1), the iBoot System Container, the System Recovery partition, and external Flash memories and other miscellaneous locations. SFR always goes forward in version, never backwards (other than via a full wipe).
 * **SIP**: System Integrity Protection. Also called "rootless", where the macOS kernel stops even root from doing some things.
 * **SMC**: System Management Controller: a piece of hardware handling access to such things as temperature sensors, voltage/power meters, battery status, fan status, and the LCD backlight and lid switch. See [HW:SMC](https://github.com/AsahiLinux/docs/wiki/HW:SMC)
 * **SOP**: Start Of Packet. Used to differentiate packet types in USB-PD. SOP for normal comms, SOP' and SOP" to talk to built-in chips in a cable, SOP'DEBUG and SOP"DEBUG for custom vendor specific things like Apple VDMs.
