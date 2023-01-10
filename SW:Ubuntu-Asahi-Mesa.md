@@ -1,5 +1,7 @@
 For accelerated graphics. Tested on Ubuntu 22.10 Asahi on M1 Air.
 
+https://asahilinux.org/2022/12/gpu-drivers-now-in-asahi-linux/
+
 NOTE: Maybe this is not needed, if there is PPA or already installed here?
 - https://github.com/tobhe/ubuntu-asahi/issues/3
 - https://launchpad.net/~tobhe/+archive/ubuntu/asahi
