@@ -20,10 +20,6 @@ deb-src http://ports.ubuntu.com/ubuntu-ports/ kinetic-backports main multiverse 
 
 Mesa code is from https://gitlab.freedesktop.org/asahi/mesa/-/tree/asahi/oq
 
-Building below with meson https://docs.mesa3d.org/meson.html without options mentioned at
-https://github.com/AsahiLinux/PKGBUILDs/blob/main/mesa-asahi-edge/PKGBUILD ,
-because with those options came some errors.
-
 ```
 sudo apt update
 
@@ -41,6 +37,10 @@ mkdir build
 ```
 
 ## 3) Build
+
+Building below with meson https://docs.mesa3d.org/meson.html without options mentioned at
+https://github.com/AsahiLinux/PKGBUILDs/blob/main/mesa-asahi-edge/PKGBUILD ,
+because with those options came some errors.
 
 ```
 meson build/
