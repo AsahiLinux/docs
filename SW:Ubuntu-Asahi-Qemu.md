@@ -1,5 +1,7 @@
 Tested on Ubuntu 22.10 Asahi on M1 Air.
 
+Other Ubuntu Asahi install info at https://github.com/AsahiLinux/docs/wiki/SW%3AAlternative-Distros
+
 Also installs virt-manager.
 
 Slirp included when compiling, to have user networking:
@@ -77,3 +79,45 @@ qemu-system-i386 -m 3G -drive if=ide,index=0,media=disk,file=ReactOS.qcow2 \
 -serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
 ```
 Then run `./start.sh`
+
+## WinXP 32bit with networking
+
+1) Create growable harddisk image of 80 GB:
+```
+qemu-img create -f qcow2 winxp.qcow2 80G
+```
+2) Start install from winxp.iso
+
+Edit start.sh and set it executeable `chmod +x start.sh`, here `-m 4G` is 4 GB RAM:
+```
+qemu-system-i386 -m 4G -drive if=ide,index=0,media=disk,file=winxp.qcow2 \
+-drive if=ide,index=2,media=cdrom,file=winxp.iso -boot order=d \
+-serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
+```
+3) After install, boot without iso
+```
+qemu-system-i386 -m 4G -drive if=ide,index=0,media=disk,file=winxp.qcow2 \
+-boot order=c \
+-serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
+```
+
+## Win10 64bit with networking
+
+1) Create growable harddisk image of 80 GB:
+```
+qemu-img create -f qcow2 win10.qcow2 80G
+```
+2) Start install from win10.iso
+
+Edit start.sh and set it executeable `chmod +x start.sh`, here `-m 4G` is 4 GB RAM:
+```
+qemu-system-x86_64 -m 4G -drive if=ide,index=0,media=disk,file=win10.qcow2 \
+-drive if=ide,index=2,media=cdrom,file=win10.iso -boot order=d \
+-serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
+```
+3) After install, boot without iso
+```
+qemu-system-x86_64 -m 4G -drive if=ide,index=0,media=disk,file=win10.qcow2 \
+-boot order=c \
+-serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
+```
