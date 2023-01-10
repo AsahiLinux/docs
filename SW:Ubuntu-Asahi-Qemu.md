@@ -143,7 +143,7 @@ a) Use bypass registry keys:
 
 https://blogs.oracle.com/virtualization/post/install-microsoft-windows-11-on-virtualbox
 
-b) Figure out TPM and how to activate it, not tested:
+b) Figure out UEFI and TPM and how to activate it, not tested:
 
 - https://getlabsdone.com/how-to-install-windows-11-on-kvm/
 - https://getlabsdone.com/how-to-enable-tpm-and-secure-boot-on-kvm/
