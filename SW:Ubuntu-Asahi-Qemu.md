@@ -88,7 +88,7 @@ qemu-img create -f qcow2 winxp.qcow2 80G
 ```
 2) Start install from winxp.iso
 
-Edit start.sh and set it executeable `chmod +x start.sh`, here `-m 4G` is 4 GB RAM:
+Edit `start.sh` and set it executeable `chmod +x start.sh`, here `-m 4G` is 4 GB RAM:
 ```
 qemu-system-i386 -m 4G -drive if=ide,index=0,media=disk,file=winxp.qcow2 \
 -drive if=ide,index=2,media=cdrom,file=winxp.iso -boot order=d \
@@ -109,7 +109,7 @@ qemu-img create -f qcow2 win10.qcow2 80G
 ```
 2) Start install from win10.iso
 
-Edit start.sh and set it executeable `chmod +x start.sh`, here `-m 4G` is 4 GB RAM:
+Edit `start.sh` and set it executeable `chmod +x start.sh`, here `-m 4G` is 4 GB RAM:
 ```
 qemu-system-x86_64 -m 4G -drive if=ide,index=0,media=disk,file=win10.qcow2 \
 -drive if=ide,index=2,media=cdrom,file=win10.iso -boot order=d \
