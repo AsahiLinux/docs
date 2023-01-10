@@ -1,4 +1,4 @@
-Tested on Ubuntu 22.10 Asahi on M1 Air.
+For accelerated graphics. Tested on Ubuntu 22.10 Asahi on M1 Air.
 
 ## 1) /etc/apt/sources.list
 
