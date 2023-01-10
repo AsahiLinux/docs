@@ -101,7 +101,7 @@ qemu-system-i386 -m 4G -drive if=ide,index=0,media=disk,file=winxp.qcow2 \
 -serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
 ```
 
-## Win10 64bit with networking
+## Win10 amd64 with networking
 
 1) Create growable harddisk image of 80 GB:
 ```
@@ -119,5 +119,59 @@ qemu-system-x86_64 -m 4G -drive if=ide,index=0,media=disk,file=win10.qcow2 \
 ```
 qemu-system-x86_64 -m 4G -drive if=ide,index=0,media=disk,file=win10.qcow2 \
 -boot order=c \
+-serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
+```
+
+## Win11 amd64 with networking
+
+1) Create growable harddisk image of 80 GB:
+```
+qemu-img create -f qcow2 win11.qcow2 80G
+```
+2) Start install from win11.iso
+
+Edit `start.sh` and set it executeable `chmod +x start.sh`, here `-m 8G` is 8 GB RAM, `-usbdevice tablet` makes using mouse more exact:
+```
+qemu-system-x86_64 -hda win11.qcow2 -cdrom win11.iso -boot d \
+-smp 2 -m 8G -usbdevice tablet \
+-serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
+```
+
+3) When installing
+
+a) Use bypass registry keys:
+
+https://blogs.oracle.com/virtualization/post/install-microsoft-windows-11-on-virtualbox
+
+b) Figure out TPM and how to activate it, not tested:
+
+- https://getlabsdone.com/how-to-install-windows-11-on-kvm/
+- https://getlabsdone.com/how-to-enable-tpm-and-secure-boot-on-kvm/
+- https://github.com/stefanberger/swtpm/wiki
+
+```
+sudo apt-get install dh-autoreconf libssl-dev \
+     libtasn1-6-dev pkg-config libtpms-dev \
+     net-tools iproute2 libjson-glib-dev \
+     libgnutls28-dev expect gawk socat \
+     libseccomp-dev make -y
+
+git clone https://github.com/stefanberger/swtpm
+
+cd swtpm
+
+./autogen.sh --with-openssl --prefix=/usr
+
+make -j4
+
+make -j4 check
+
+sudo make install
+```
+
+3) After install, boot without iso
+```
+qemu-system-x86_64 -hda win11.qcow2 -boot c \
+-smp 2 -m 8G -usbdevice tablet \
 -serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
 ```
