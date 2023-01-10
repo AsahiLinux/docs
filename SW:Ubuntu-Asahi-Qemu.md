@@ -55,7 +55,7 @@ sudo make install
 
 https://wiki.qemu.org/Documentation/Networking
 
-## ReactOS with networking
+## ReactOS x86 32bit with networking
 
 https://reactos.org
 
@@ -80,7 +80,7 @@ qemu-system-i386 -m 3G -drive if=ide,index=0,media=disk,file=ReactOS.qcow2 \
 ```
 Then run `./start.sh`
 
-## WinXP 32bit with networking
+## WinXP x86 32bit with networking
 
 1) Create growable harddisk image of 80 GB:
 ```
@@ -101,7 +101,7 @@ qemu-system-i386 -m 4G -drive if=ide,index=0,media=disk,file=winxp.qcow2 \
 -serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
 ```
 
-## Win10 amd64 with networking
+## Win10 x86_64 with networking
 
 1) Create growable harddisk image of 80 GB:
 ```
@@ -122,7 +122,7 @@ qemu-system-x86_64 -m 4G -drive if=ide,index=0,media=disk,file=win10.qcow2 \
 -serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
 ```
 
-## Win11 amd64 with networking
+## Win11 x86_64 with networking
 
 1) Create growable harddisk image of 80 GB:
 ```
@@ -130,14 +130,14 @@ qemu-img create -f qcow2 win11.qcow2 80G
 ```
 2) Start install from win11.iso
 
-Edit `start.sh` and set it executeable `chmod +x start.sh`, here `-m 8G` is 8 GB RAM, `-usbdevice tablet` makes using mouse more exact:
+Edit `start.sh` and set it executeable `chmod +x start.sh`, here `-m 4G` is 4 GB RAM, `-usbdevice tablet` makes using mouse more exact:
 ```
 qemu-system-x86_64 -hda win11.qcow2 -cdrom win11.iso -boot d \
--smp 2 -m 8G -usbdevice tablet \
+-smp 2 -m 4G -usbdevice tablet \
 -serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
 ```
 
-3) When installing
+3) When installing Win11
 
 a) Use bypass registry keys:
 
@@ -173,5 +173,26 @@ sudo make install
 ```
 qemu-system-x86_64 -hda win11.qcow2 -boot c \
 -smp 2 -m 8G -usbdevice tablet \
+-serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
+```
+
+## Ubuntu x86_64 with networking
+
+1) Create growable harddisk image of 80 GB:
+```
+qemu-img create -f qcow2 ubuntu.qcow2 80G
+```
+2) Start install from ubuntu.iso
+
+Edit `start.sh` and set it executeable `chmod +x start.sh`, here `-m 4G` is 4 GB RAM:
+```
+qemu-system-x86_64 -m 4G -drive if=ide,index=0,media=disk,file=ubuntu.qcow2 \
+-drive if=ide,index=2,media=cdrom,file=ubuntu.iso -boot order=d \
+-serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
+```
+3) After install, boot without iso
+```
+qemu-system-x86_64 -m 4G -drive if=ide,index=0,media=disk,file=ubuntu.qcow2 \
+-boot order=c \
 -serial stdio -netdev user,id=n0 -device rtl8139,netdev=n0
 ```
