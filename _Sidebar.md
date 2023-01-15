@@ -8,6 +8,7 @@ Project related:
 
 Platform documentation:
 * [[Apple Silicon Subsystems]]
+* [[Apple Platform Security Crash Course]]
 * [[Devices]]
 * [[Codenames]]
 
