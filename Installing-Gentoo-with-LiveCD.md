@@ -26,9 +26,6 @@ these manually, however it will take you longer than bootstrapping the rest of t
 This guide will assume that you are familiar withe the Asahi Linux installer and will not walk you through using
 it.
 
-It is important to note that the ESP _must_ be mounted at `/boot/efi` for certain Asahi scripts to function properly.
-As such, it is best if you put it in `/etc/fstab` and leave it there.
-
 If you've never used a Portage overlay before, take a few minutes to read the final section on maintaining the system.
 Failure to do so properly may result in you missing critical system updates or leaving your machine in an unbootable state.
 
