@@ -12,7 +12,7 @@ be interpreted as follows:
 - [Common SoC Features](#common-soc-features)
 - **M1 Series (M1, M1 Pro, M1 Max, M1 Ultra)**
   * [M1 device-specific support](#m1-series-device-specific-support)
-- **M2 Series (M2)**
+- **M2 Series (M2, M2 Pro, M2 Max)**
   * [M2 device-specific support](#m2-series-device-specific-support)
 
 ## Common SoC Features
