@@ -79,7 +79,7 @@ These are features/hardware blocks that are present on all devices with the give
 | TouchID            | TBA                  | TBA                            | TBA                   | TBA                  | TBA                               | TBA                  |
 
 
-## M2 Series (M2)
+## M2 Series (M2, M2 Pro, M2 Max)
 ### M2 series device-specific support
 |                    | MacBook Air<br>(2022) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) |
 |--------------------|:---------------------:|:------------------------------:|:------------------:|:---------------------------------:|
