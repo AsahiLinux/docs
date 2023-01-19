@@ -40,5 +40,5 @@ Apple likes to use many different names for the same devices.
 | A15 | H14P | Ellis | T8110 | Avalanche | Blizzard
 | M2 | H14G | Staten | T8112 | Avalanche | Blizzard
 | A16 | H15P | Crete | T8120 | Everest | Sawtooth
-| M2 Pro |  | Rhodes Chop | T6020 | Everest | Sawtooth
-| M2 Max |  | Rhodes 1C | T6021 | Everest | Sawtooth
+| M2 Pro |  | Rhodes Chop | T6020 | Avalanche | Blizzard
+| M2 Max |  | Rhodes 1C | T6021 | Avalanche | Blizzard
