@@ -18,7 +18,7 @@ be interpreted as follows:
 ## Common SoC Features
 These are features/hardware blocks that are present on all devices with the given SoC.
 
-|                  | M1<br>(T8103)        | M1 Pro/Max/Ultra<br>(T600x) | M2<br>(T8112)        | M2 Pro/Max/<br>(???) |
+|                  | M1<br>(T8103)        | M1 Pro/Max/Ultra<br>(T600x) | M2<br>(T8112)        | M2 Pro/Max<br>(T602x) |
 |------------------|:--------------------:|:---------------------------:|:--------------------:|:--------------------:|
 | DCP              | asahi-edge           | asahi-edge                  | asahi-edge           | TBA                  |
 | USB2 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | TBA                  |
