@@ -233,7 +233,7 @@ Brief overview of known firmware blobs (note: some details here are unverified):
 | AVD      | SoC      | Apple Video Decoder                 | No        | Embedded in XNU    | OS           | OS          | ~40 KB
 | SECDIS   | SECDIS   | Secure Mic/Cam Disable FPGA \*5     | No        | On-chip flash      | Self         | Self        | Not upgradable by design
 | IPD      | IPD      | InputDevice (Touchpad/Keyboard) \*5 | No        | Preboot/Flash \*6  | Self         | Self        | ~900 KB (~384 KB comp.)
-| MT       | DFR      | Touch Bar (DFR) Multitouch \*7      | No        | Preboot/Flash? \*6 | Self?        | Self?       | ~60 KB
+| MT       | DFR      | Touch Bar (DFR) Multitouch \*7      | No        | Preboot            | OS           | OS          | ~60 KB
 | XHCI     | ASM3142  | PCI xHCI USB controller \*8         | No        | Embedded in XNU    | OS           | OS          | ~128 KB
 | WLAN     | WLBT     | Wi-Fi (Broadcom FullMAC)            | No        | OS filesystem      | OS           | OS          | ~1.4 MB (~700 KB comp.)
 | BT       | WLBT     | Bluetooth (Broadcom)                | No        | OS filesystem      | OS           | OS          | ~470 KB (~280 KB comp.)
