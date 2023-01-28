@@ -38,17 +38,12 @@ Failure to do so properly may result in you missing critical system updates or l
   and `gstreamer` USE flags. Failing to do so will stop PipeWire from being linked against `libsndfile`, which will stop the
   FIRs from loading.
 
-* If you are switching your toolchain to clang/LLVM, be sure to force `kmod` to be built with gcc. Your system will be
-  unbootable if you try building with clang!
-
 ## Step 1: Set up Asahi Linux Minimal
 Install Asahi Linux Minimal (with more than the minimal disk space, 12GB worked) and set up networking.
 The environment comes with iwd and NetworkManager for setting up WiFi. Ethernet connections
 should be handled automatically at boot.
 
-Switch to the `asahi-dev` repo by changing `[asahi]` to `[asahi-dev]` in `/etc/pacman.conf`.
-
-Update the system by running `pacman -Syu` as root (or `sudo pacman -Syu` when you installed AsahiLinux Desktop).
+Update the system by running `pacman -Syu` as root (or `sudo pacman -Syu` if you installed Asahi Linux Desktop).
 Reboot into Asahi Linux.
 
 Install Git by running `pacman -S git`/`sudo pacman -S git`..
