@@ -85,6 +85,10 @@ Here are some numbers from some experiment with macOS 11.5.2 and m1n1 version co
 7. You can now run macOS in a similar manner as shown above (just no debug DWARF):
 ```python3 proxyclient/tools/run_guest.py <PATH_TO_EXTRACTED_MACHO> -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1"```
 
+## Updating your m1n1 hypervisor tree
+
+The hypervisor/m1n1 ABI is *not* stable. If you have installed a fresh m1n1 build as above, you can use `run_guest.py` directy to save some time. However, as soon as you update your m1n1 git tree, you *must* build the updated m1n1 and run `python tools/chainload.py -r ../build/m1n1.bin` before `run_guest.py`, to make sure the ABI is synced. Failure to do this will lead to random errors/crashes due to ABI mismatches.
+
 ## Using GDB/LLDB
 
 `gdbserver` command starts the server implementation that can be connected to GDB or LLDB. LLDB is more recommended because it supports pointer authentication and Darwin kernel dyld.
