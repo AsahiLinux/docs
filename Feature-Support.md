@@ -57,6 +57,7 @@ These are features/hardware blocks that are present on all devices with the give
 ### M1 series device-specific support
 |                    | Mac Mini<br>(2020)   | MacBook Pro<br>(13-inch, 2020) | MacBook Air<br>(2020) | iMac<br>(2021)       | MacBook Pro<br>(14/16-inch, 2021) | Mac Studio<br>(2022) |
 |--------------------|:--------------------:|:------------------------------:|:---------------------:|:--------------------:|:---------------------------------:|:--------------------:|
+| Installer          | yes                  | yes                            | yes                   | yes                  | yes                              | yes                  |
 | Devicetree         | 5.13                 | 5.17                           | 5.17                  | 5.17                 | 6.2                               | 6.2                  |
 | Main display       | 5.17                 | 5.17                           | 5.17                  | 5.17                 | 5.17                              | 5.17                 |
 | Brightness         | -                    | asahi-edge                     | asahi-edge            | asahi-edge           | asahi-edge                        | -                    |
@@ -83,6 +84,7 @@ These are features/hardware blocks that are present on all devices with the give
 ### M2 series device-specific support
 |                    | MacBook Air<br>(2022) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) |
 |--------------------|:---------------------:|:------------------------------:|:------------------:|:---------------------------------:|
+| Installer          | yes                   | yes                            | no                 | no                                |
 | Devicetree         | linux-asahi           | linux-asahi                    | TBA                | TBA                               |
 | Main display       | linux-asahi           | linux-asahi                    | TBA                | TBA                               |
 | Keyboard           | linux-asahi           | linux-asahi                    | -                  | linux-asahi                       |
