@@ -172,7 +172,7 @@ functionality as coming with one simple condition - do not, under any circumstan
 macOS container.
 
 ### How we uphold this agreement
-Asahi Linux creates a small APFS container with the correct file structure to be recognised as a valid OS,
+Asahi Linux creates a small APFS container and volume set with the correct file structure to be recognised as a valid OS,
 then uses Apple's tooling to set its security to Permissive and enroll m1n1 as its signed boot object. We do
-not - and never will - alter the security settings of _any other_ APFS container, nor will Apple's security
-policies for those containers affect the Asahi container. More details can be found at [[Open OS Ecosystem on Apple Silicon Macs]].
+not - and never will - alter the security settings of _any other_ OS volume, nor will Apple's security
+policies for those containers affect the Asahi volume. More details can be found at [[Open OS Ecosystem on Apple Silicon Macs]].
