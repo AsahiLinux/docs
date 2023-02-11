@@ -107,19 +107,6 @@ These are features/hardware blocks that are present on all devices with the give
 
 Note: Many peripherals depend on T600x DART, T8112 DART, and PCIe support.
 
-## Upstream Statistics
-Here we track the absolute number of patches carried in `asahi` compared to the
-upstream base. This number should decrease with each new kernel version, major hardware
-changes notwithstanding.
- 
-| Kernel base tag | Carried patches |
-| :-------------: | :-------------: |
-| v5.19           | 175             |
-| v6.0            | 409             |
-| v6.1            | 1642            |
-
-The number of carried patches can be computed with the command `git rev-list [base tag]..[asahi tag] --no-merges | wc -l`
-
 ## Notes
 
 ### Power
