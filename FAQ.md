@@ -51,6 +51,6 @@ No! Just upgrade your system using `pacman -Syu`. Kernel updates will require a 
 
 This is a property inherent to some apple keyboards. Please read https://wiki.archlinux.org/title/Apple_Keyboard to learn how to fix this issue.
 
-## My system keeps booting into OSX, not Asahi!
+## My system keeps booting into macOS, not Asahi!
 
-OSX may be set as your default boot medium. Enter One True Recovery (1TR) by shutting down and powering on while holding the power button for 15 seconds. You can either select Asahi Linux while holding the Option key or enter the Settings page, unlock OSX, then set the bootloader to reboot into Asahi.
+macOS may be set as your default boot medium. Enter One True Recovery (1TR) by shutting down and powering on while holding the power button for 15 seconds. You can either select Asahi Linux while holding the Option key or enter the Settings page, unlock macOS, then set the bootloader to reboot into Asahi.
