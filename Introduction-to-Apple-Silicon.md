@@ -2,7 +2,7 @@
 
 This document attempts to explain the Apple Silicon (i.e. M1 and later) Mac boot ecosystem (henceforth "AS Macs"), as it pertains for how open OSes interoperate with the platform.
 
-It is intended for developers and maintainers of Linux, BSD and other OS distributions and boot-related components, as well as users interested in the platform, and its goal is to cover the overall picture without delving into excessive technical detail. Specifics should be left to other wiki pages. It also omits details that only pertain to macOS (such as how kernel extensions work and are loaded).
+It is intended for developers and maintainers of Linux, BSD and other OS distributions and boot-related components, as well as users interested in the platform, and its goal is to cover the overall picture without delving into excessive technical detail. Specifics should be left to other wiki pages. It also omits details that only pertain to macOS (such as how kernel extensions work and how they are loaded).
 
 The information here is based on how things work in system firmware and macOS versions 12.0 (Monterey) and later. A number of rapid design changes took place in the first year after the initial M1 Mac announcement; although older 11.x firmwares are usable, they are obsolete and buggy in various ways, and attempting to cover these changes would make things too confusing. We expect users wishing to run open OSes to run system firmware corresponding to macOS 12.1 or later, for practical reasons (though they may have older versions of macOS itself installed).
 
