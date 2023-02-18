@@ -185,7 +185,7 @@ cat build/m1n1.macho \
     <initramfs path>/initramfs-fw.cpio.gz \
     ../linux/arch/arm64/boot/Image.gz \
     > /tmp/m1n1-linux.macho
-python tools/run_guest.py /tmp/m1n1-linux.macho
+python proxytools/tools/run_guest.py /tmp/m1n1-linux.macho
 ```
 
 Note the use of the `macho` version for run_guest.py (no bin support yet). Also note that we chainload m1n1 first; this is *mandatory* as the hypervisor ABI is extremely unstable.
