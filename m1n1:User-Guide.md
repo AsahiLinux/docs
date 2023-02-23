@@ -115,6 +115,8 @@ echo 'chosen.asahi,efi-system-partition=EFI-PARTITION-PARTUUID' >> m1n1-stage1.b
 echo 'chainload=EFI-PARTITION-PARTUUID;m1n1/boot.bin' >> m1n1-stage1.bin
 ```
 
+**PITFALL:** Make sure the UUID is lowercase otherwise some consumers of the devicetree (notably U-Boot) won't find the system partion.
+
 ### Configuring for stage 2
 
 m1n1 stage 2 will normally boot payloads directly, plus receive the `chosen.asahi,efi-system-partition` config from stage 1 automatically. Using device trees shipped with U-Boot:
