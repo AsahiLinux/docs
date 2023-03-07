@@ -85,13 +85,25 @@ Right now, the Gallium driver only issues single-command submissions and always 
 
 Userspace can optionally request feedback from command execution. This is done by specifying a result buffer BO, and then per-command offsets and sizes into that buffer. The kernel will write command result information there, once the command is complete. Currently, this includes basic timing information, tiled vertex buffer statistics and partial render counts (for render commands), and detailed fault information (for faulting commands, very handy when combined with some BO lookup logic in mesa!).
 
+### FAQ
+
+* **What's up with the `struct drm_asahi_cmd_render` mess?**
+  The firmware commands directly specify all these low-level render details and we cannot expose those structures directly to userspace, since it is not safe to do so. There is no other way, and macOS does the same thing... (at least it's less of a mess than PowerVR!)
+
 ### TODO
+
+Upstreaming blockers (affect current draft UAPI):
+
+* [ ] Figure out the attachment flags and confirm exactly what this does/how it works
+* [ ] Sort out the compute preemption kernel stuff and the command fields it uses (or else drop it and leave it for a future rev/feature flag)
+* [ ] Figure out one or two remaining unknown buffers and whether they should go in the UAPI (the 02345 thing...)
+
+Other:
 
 * [ ] Implement `DRM_IOCTL_ASAHI_GET_TIME`
 * [ ] Implement RTKit runtime-PM (sleep ASC when GPU is idle, macOS does this on laptops)
 * [ ] Reverse engineer and implement blit commands
 * [ ] Hook up firmware KTrace to Linux tracing
-* [ ] Figure out one or two remaining unknown buffers and whether they should go in the UAPI
 * [ ] Complete the VM management (arbitrary subrange maps/unmaps)
 * [ ] Performance counters
 * [ ] M2 Pro/Max support
