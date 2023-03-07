@@ -97,6 +97,7 @@ Upstreaming blockers (affect current draft UAPI):
 * [ ] Figure out the attachment flags and confirm exactly what this does/how it works
 * [ ] Sort out the compute preemption kernel stuff and the command fields it uses (or else drop it and leave it for a future rev/feature flag)
 * [ ] Figure out one or two remaining unknown buffers and whether they should go in the UAPI (the 02345 thing...)
+* [ ] Add the missing abstractions for mmu.rs (memremap stuff)
 
 Other:
 
