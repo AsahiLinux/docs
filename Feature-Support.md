@@ -20,7 +20,7 @@ These are features/hardware blocks that are present on all devices with the give
 
 |                  | M1<br>(T8103)        | M1 Pro/Max/Ultra<br>(T600x) | M2<br>(T8112)        | M2 Pro/Max<br>(T602x) |
 |------------------|:--------------------:|:---------------------------:|:--------------------:|:--------------------:|
-| DCP              | asahi-edge           | asahi-edge                  | asahi-edge           | TBA                  |
+| DCP              | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                  |
 | USB2 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | TBA                  |
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | TBA                  |
 | Thunderbolt      | WIP                  | WIP                         | TBA                  | TBA                  |
@@ -35,7 +35,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Video Encoder    | TBA                  | TBA                         | TBA                  | TBA                  |
 | ProRes Codec     | -                    | TBA                         | TBA                  | TBA                  |
 | AICv2            | -                    | 5.18                        | 5.18                 | 5.18                 |
-| DART             | 5.15                 | 6.1                         | linux-asahi          | TBA                  |
+| DART             | 5.15                 | 6.1                         | linux-asahi          | linux-asahi          |
 | PMU              | 5.18                 | 5.18                        | TBA                  | TBA                  |
 | UART             | 5.13                 | 5.13                        | 5.13                 | 5.13                 |
 | Watchdog         | 5.17                 | 5.17                        | 5.17                 | 5.17                 |
@@ -57,7 +57,7 @@ These are features/hardware blocks that are present on all devices with the give
 ### M1 series device-specific support
 |                    | Mac Mini<br>(2020)   | MacBook Pro<br>(13-inch, 2020) | MacBook Air<br>(2020) | iMac<br>(2021)       | MacBook Pro<br>(14/16-inch, 2021) | Mac Studio<br>(2022) |
 |--------------------|:--------------------:|:------------------------------:|:---------------------:|:--------------------:|:---------------------------------:|:--------------------:|
-| Installer          | yes                  | yes                            | yes                   | yes                  | yes                              | yes                  |
+| Installer          | yes                  | yes                            | yes                   | yes                  | yes                               | yes                  |
 | Devicetree         | 5.13                 | 5.17                           | 5.17                  | 5.17                 | 6.2                               | 6.2                  |
 | Main display       | 5.17                 | 5.17                           | 5.17                  | 5.17                 | 5.17                              | 5.17                 |
 | Brightness         | -                    | asahi-edge                     | asahi-edge            | asahi-edge           | asahi-edge                        | -                    |
@@ -85,8 +85,8 @@ These are features/hardware blocks that are present on all devices with the give
 |                    | MacBook Air<br>(2022) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) |
 |--------------------|:---------------------:|:------------------------------:|:------------------:|:---------------------------------:|
 | Installer          | yes                   | yes                            | no                 | no                                |
-| Devicetree         | linux-asahi           | linux-asahi                    | TBA                | TBA                               |
-| Main display       | linux-asahi           | linux-asahi                    | TBA                | TBA                               |
+| Devicetree         | linux-asahi           | linux-asahi                    | WIP                | TBA                               |
+| Main display       | linux-asahi           | linux-asahi                    | WIP                | TBA                               |
 | Keyboard           | linux-asahi           | linux-asahi                    | -                  | linux-asahi                       |
 | KB backlight       | asahi-edge            | asahi-edge                     | -                  | TBA                               |
 | Touchpad           | linux-asahi           | linux-asahi                    | -                  | linux-asahi                       |
@@ -94,7 +94,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Battery info       | linux-asahi           | linux-asahi                    | -                  | linux-asahi                       |
 | WiFi               | 6.1                   | 6.1                            | TBA                | TBA                               |
 | Bluetooth          | 6.2                   | 6.2                            | TBA                | TBA                               |
-| HDMI Out           | -                     | -                              | TBA                | TBA                               |
+| HDMI Out           | -                     | -                              | WIP                | TBA                               |
 | 3.5mm jack         | linux-asahi           | linux-asahi                    | TBA                | TBA                               |
 | Speakers           | WIP                   | WIP                            | TBA                | TBA                               |
 | Microphones        | WIP                   | WIP                            | TBA                | TBA                               |
