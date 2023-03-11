@@ -69,4 +69,6 @@ This is all rather rudimentary because it's a stop-gap for the proper solution, 
 
 ### Flexible USB-PD Debug Interface (project name TBD)
 
-In the coming weeks we'll be designing an open hardware interface for interfacing to M1 serial ports, and more (supporting other debug pinsets on Apple devices, as well as UARTs on other devices such as certain Android phones, etc). Stay tuned for more information. Established kernel developers who want to get an early prototype when they become available should contact [marcan](mailto:marcan@marcan.st).
+~~In the coming weeks we'll be designing an open hardware interface for interfacing to M1 serial ports, and more (supporting other debug pinsets on Apple devices, as well as UARTs on other devices such as certain Android phones, etc). Stay tuned for more information. Established kernel developers who want to get an early prototype when they become available should contact [marcan](mailto:marcan@marcan.st).~~
+
+Note: This is indefinitely backburnered and mostly rendered obsolete by USB support in m1n1/hypervisor.
