@@ -110,3 +110,10 @@ Apple MacBook Pro (14-inch, M1 Pro, 2021)
 0d
 00
 ```
+
+## ISO - French - M1 Pro MBP
+* Best XKB keyboard layout/variant: "French (MacIntosh)"
+
+I had to set the model to "Apple | Apple" for this variant to work. None of the Apple Aluminium worked for me, with Apple Aluminium, the "@" key was typing "²". Disabling ISO layout in apple_hid didn't help either.
+
+This test was done using KDE, Wayland, xkeyboard-config-asahi, on Apple MacBook Pro (14-inch, M1 Pro, 2021)
