@@ -88,3 +88,23 @@ Apple MacBook Air (13-inch, M2, 2022)
 00
 00
 ```
+## ISO - Swiss - M1 Pro MBP
+* Best XKB keyboard layout/variant: "German (Switzerland)"
+
+There's also "German (Switzerland, Macintosh)", but it fails to preview. Since I didn't find any issues with the above, I don't know the benefits of the Macintosh variant.
+
+### System configuration
+```
+fnmode:3
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+xkeyboard-config-asahi 2.35.1_3-1
+6.2.0-rc3-asahi-7-1-edge-ARCH
+Apple MacBook Pro (14-inch, M1 Pro, 2021)
+00
+00
+0d
+00
+```
