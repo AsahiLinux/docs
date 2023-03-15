@@ -93,6 +93,8 @@ Apple MacBook Air (13-inch, M2, 2022)
 
 There's also "German (Switzerland, Macintosh)", but it fails to preview. Since I didn't find any issues with the above, I don't know the benefits of the Macintosh variant.
 
+Note that in Switzerland, there are four national languages: German, French, Italian and Rumantsch. German and French have their own XKB keyboard layout variants ("French (Switzerland)") but identical physical layouts. The above applies to the German variant, I don't know much about the French variant.
+
 ### System configuration
 ```
 fnmode:3
