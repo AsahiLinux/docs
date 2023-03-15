@@ -117,3 +117,21 @@ Apple MacBook Pro (14-inch, M1 Pro, 2021)
 Selecting a variant will give a wrong mapping.
 
 This test was done using KDE, Wayland, xkeyboard-config-asahi, on Apple MacBook Pro (14-inch, M1 Pro, 2021)
+
+## ISO - Greek - M1 Max MBP
+* Best XKB keyboard layout/variant: **US** and **Greek**
+
+The §± key functions as `~ (in both layouts)
+
+The `~ key functions as «» (in both layouts)
+
+```
+fmode:3
+iso_layout:-1
+swap_fn_leftctrl:0
+xkeyboard-config-asahi 2.35.1_3-1
+6.1.0-asahi-2-2-edge-ARCH
+Apple Macbook Pro (14-inch, M1 Max, 2021)
+0d
+00
+```
