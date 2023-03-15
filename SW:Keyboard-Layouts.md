@@ -75,7 +75,7 @@ When `iso_layout` is set to `-1`, the `~`/`\` key (engraved with `~` on top of `
 ### System configuration
 ```
 fnmode:3
-iso_layout:0
+iso_layout:-1
 swap_fn_leftctrl:0
 swap_opt_cmd:0
 xkeyboard-config-asahi 2.35.1_3-1
