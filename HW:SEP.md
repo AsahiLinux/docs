@@ -132,10 +132,11 @@ Questions:
 
 TODOs:
 
-- build a table of message types and tags for all endpoints
+- build a table of message types and tags for all endpoints (in XNU logs, a lot of the messages seem to have parts of the true SEP message masked out)
 
 - capture how a gigalocker is created (this is a long term thing)
 
+- update the SEP tracer for Ventura
 
 xART fetch notes:
 
