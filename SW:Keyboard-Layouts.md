@@ -70,21 +70,17 @@ Apple MacBook Pro (14-inch, M1 Pro, 2021)
 ## ANSI - Korean - M2 MBA
 * Best XKB keyboard layout/variant: `Korean`
 
-When `iso_layout` is set to `-1`, the `~`/`\` key (engraved with `~` on top of `₩`) next to the `1` key acts as `<`/`>` instead as of 2021-03-15.
-
 ### System configuration
 ```
 fnmode:3
 iso_layout:-1
+swap_ctrl_cmd:0
 swap_fn_leftctrl:0
 swap_opt_cmd:0
 xkeyboard-config-asahi 2.35.1_3-1
-6.1.0-asahi-2-2-edge-ARCH
+6.2.0-asahi-11-1-edge-ARCH
 Apple MacBook Air (13-inch, M2, 2022)
-0d
-00
-00
-00
+21
 00
 00
 ```
