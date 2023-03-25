@@ -138,10 +138,10 @@ Apple Macbook Pro (14-inch, M1 Max, 2021)
 
 Keyboard model on startup defaulted to Generic.
 
-Letters with diacritics (ąćęłóćżź) work with the right option key: correct
-Special characters (digits + shift): correct
-Special characters right to letters: correct
-backtick / tilde left to digits: correct
+Letters with diacritics (ąćęłóćżź) work with the right option key: correct  
+Special characters (digits + shift): correct  
+Special characters right to letters: correct  
+backtick / tilde left to digits: correct  
 
 ### System configuration
 ```
