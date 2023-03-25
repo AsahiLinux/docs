@@ -131,3 +131,27 @@ Apple Macbook Pro (14-inch, M1 Max, 2021)
 0d
 00
 ```
+
+## ANSI US - Polish - M1 Max MBP 2021
+
+* Best XKB keyboard layout/variant: pl
+
+Keyboard model on startup defaulted to Generic.
+
+Letters with diacritics (ąćęłóćżź) work with the right option key: correct
+Special characters (digits + shift): correct
+Special characters right to letters: correct
+backtick / tilde left to digits: correct
+
+### System configuration
+```
+fnmode:3
+iso_layout:-1
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+xkeyboard-config-asahi 2.35.1_3-1
+6.1.0-rc6-asahi-4-1-ARCH
+Apple MacBook Pro (16-inch, M1 Max, 2021)
+21
+00
+```
