@@ -111,7 +111,7 @@ Apple MacBook Pro (14-inch, M1 Pro, 2021)
 * Best XKB keyboard layout/variant: **Italian**
 
 I'm on Gnome, an Italian (Machinintosh) is present, but is completely wrong, use a strange qzerty layout.
-With Italian layout I don't have alt gr function, so I can't type @, #, €, ecc 
+With Italian layout I don't have alt gr function, it seems that the right command is acting as left alt, so I can't type @, #, €, ecc 
 
 ```
 fnmode:3
