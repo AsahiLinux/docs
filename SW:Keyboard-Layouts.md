@@ -107,6 +107,25 @@ Apple MacBook Pro (14-inch, M1 Pro, 2021)
 00
 ```
 
+## ISO - Italian - MBP 16-inch M1 Pro
+* Best XKB keyboard layout/variant: **Italian**
+
+I'm on Gnome, an Italian (Machinintosh) is present, but is completely wrong, use a strange qzerty layout.
+With Italian layout I don't have alt gr function, so I can't type @, #, €, ecc 
+
+```
+fnmode:3
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+xkeyboard-config-asahi 2.35.1_3-1
+6.2.0-asahi-11-1-edge-ARCH
+Apple MacBook Pro (16-inch, M1 Pro, 2021)
+0d
+00
+```
+
 ## ISO - French - M1 Pro MBP
 * Best XKB keyboard layout/variant: **Apple | Apple Aluminium (ISO)** with no variant
 
