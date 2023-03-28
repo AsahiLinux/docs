@@ -111,5 +111,5 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Rust | https://github.com/archlinuxarm/PKGBUILDs/commit/19a1393 | Fixed for `rust-1.62.1-1.1` in ALARM/extra |  
 | rr | https://github.com/rr-debugger/rr/pull/3146 | Fixed since 5.6.0. |
 | WebKitGTK | https://github.com/WebKit/WebKit/commit/0a4a03da45f774 | Fixed since 2.34.6 |
-| Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/24564 | Fixed since 4.1.1 |
+| Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/26103 | Fixed since 4.1.1 |
 | Visual Studio Code | https://aur.archlinux.org/packages/visual-studio-code-bin | Fixed since 1.71.0 (uses Electron 19) |
