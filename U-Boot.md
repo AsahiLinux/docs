@@ -62,6 +62,15 @@ known good state. For an example of how we do this in Asahi, see `uboot-asahi` a
 ```
 run bootcmd_usb0
 ```
+
+If the USB fails to load, you might need to restart the USB, which can be done via:
+```
+usb start
+usb reset
+```
+
+If you are using a USB to load a recovery / "Live CD", ensure you also have `usbhid xhci_hcd` under MODULES in `/etc/mkinitcpio.conf`. Also have a read of [Install_Arch_Linux_on_a_removable_medium](https://wiki.archlinux.org/title/Install_Arch_Linux_on_a_removable_medium) for tips and tricks.
+
 ### Other useful U-Boot commands
 ```sh
 bootd # Continue the default U-Boot script
