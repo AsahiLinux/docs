@@ -49,7 +49,7 @@ These are features/hardware blocks that are present on all devices with the give
 | SPMI             | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi          |
 | RTC              | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi          |
 | SEP              | WIP                  | WIP                         | WIP                  | WIP                  |
-| Neural Engine    | WIP                  | WIP                         | TBA                  | TBA                  |
+| Neural Engine    | WIP                  | WIP                         | WIP                  | WIP                  |
   
   
 ## M1 series (M1, M1 Pro, M1 Max, M1 Ultra)
