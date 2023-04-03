@@ -54,7 +54,7 @@ kmutil configure-boot -c build/m1n1.bin --raw --entry-point 2048 --lowest-virtua
 1. Copy the kernelcache to your development machine
 2. Copy the debug DWARF from `/Library/Developer/KDKs/KDK_<MACOS_VERSION>_<KDK_VERSION>.kdk/System/Library/Kernels/kernel.development.t8101.dSYM/Contents/Resources/DWARF/kernel.development.t8101`
 3. Run 
-```python3 proxyclient/tools/run_guest.py -s <PATH_TO_DEBUG_DWARF> <PATH_TO_DEVELOPMENT_KERNEL_CACHE> -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1"```
+```python3 proxyclient/tools/run_guest.py -s <PATH_TO_DEBUG_DWARF> <PATH_TO_DEVELOPMENT_KERNEL_CACHE> -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"```
 to start macOS with the m1n1 hypervisor.
 
 Note: t8101 files(both kernel and dwarf symbols) are available starting with KDK for macOS 11.3. Marcan streams on booting macOs with hypervisor were done with 11.3. These notes have also been validated with macOS 11.5.2 and can get to login with wifi network on MacBookAir:
@@ -83,7 +83,7 @@ Here are some numbers from some experiment with macOS 11.5.2 and m1n1 version co
 6. Extract the machO from the im4p:
 ```img4tool -e -o kernel.macho out.im4p```
 7. You can now run macOS in a similar manner as shown above (just no debug DWARF):
-```python3 proxyclient/tools/run_guest.py <PATH_TO_EXTRACTED_MACHO> -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1"```
+```python3 proxyclient/tools/run_guest.py <PATH_TO_EXTRACTED_MACHO> -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"```
 
 ## Updating your m1n1 hypervisor tree
 
