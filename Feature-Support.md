@@ -11,9 +11,11 @@ be interpreted as follows:
 ## Table of Contents
 - [Common SoC Features](#common-soc-features)
 - **M1 Series (M1, M1 Pro, M1 Max, M1 Ultra)**
-  * [M1 device-specific support](#m1-series-device-specific-support)
+  * [M1 device-specific support](#m1-device-specific-support)
+  * [M1 Pro/Max/Ultra device-specific support](#m1-promaxultra-device-specific-support)
 - **M2 Series (M2, M2 Pro, M2 Max)**
-  * [M2 device-specific support](#m2-series-device-specific-support)
+  * [M2 device-specific support](#m2-device-specific-support)
+  * [M2 Pro/Max device-specific support](#m2-promax-device-specific-support)
 
 ## Common SoC Features
 These are features/hardware blocks that are present on all devices with the given SoC.
@@ -54,56 +56,104 @@ These are features/hardware blocks that are present on all devices with the give
   
 ## M1 series (M1, M1 Pro, M1 Max, M1 Ultra)
 
-### M1 series device-specific support
-|                    | Mac Mini<br>(2020)   | MacBook Pro<br>(13-inch, 2020) | MacBook Air<br>(2020) | iMac<br>(2021)       | MacBook Pro<br>(14/16-inch, 2021) | Mac Studio<br>(2022) |
-|--------------------|:--------------------:|:------------------------------:|:---------------------:|:--------------------:|:---------------------------------:|:--------------------:|
-| Installer          | yes                  | yes                            | yes                   | yes                  | yes                               | yes                  |
-| Devicetree         | 5.13                 | 5.17                           | 5.17                  | 5.17                 | 6.2                               | 6.2                  |
-| Main display       | 5.17                 | 5.17                           | 5.17                  | 5.17                 | 5.17                              | 5.17                 |
-| Brightness         | -                    | asahi-edge                     | asahi-edge            | asahi-edge           | asahi-edge                        | -                    |
-| HDMI Out           | 5.13                 | -                              | -                     | -                    | WIP                               | 6.2                  |
-| Keyboard           | -                    | linux-asahi                    | linux-asahi           | -                    | linux-asahi                       | -                    |
-| KB backlight       | -                    | asahi-edge                     | asahi-edge            | -                    | asahi-edge                        | -                    |
-| Touchpad           | -                    | linux-asahi                    | linux-asahi           | -                    | linux-asahi                       | -                    |
-| Battery info       | -                    | linux-asahi                    | linux-asahi           | -                    | linux-asahi                       | -                    |
-| USB-A ports        | 5.16                 | -                              | -                     | -                    | -                                 | linux-asahi          |
-| WiFi               | 6.1                  | 6.1                            | 6.1                   | 6.1                  | 6.1                               | 6.1                  |
-| Bluetooth          | 6.2                  | 6.2                            | 6.2                   | 6.2                  | 6.2                               | 6.2                  |
-| 3.5mm jack         | linux-asahi          | linux-asahi                    | linux-asahi           | linux-asahi          | linux-asahi                       | linux-asahi          |
-| Speakers           | linux-asahi          | WIP                            | WIP                   | WIP                  | WIP                               | WIP                  | 
-| SD card slot       | -                    | -                              | -                     | -                    | 5.17                              | 5.17                 |
-| 1Gbps Ethernet     | 5.16                 | -                              | -                     | -                    | -                                 | -                    |
-| 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    | -                                 | linux-asahi          |
-| Microphones        | WIP                  | WIP                            | WIP                   | WIP                  | WIP                               | -                    |
-| Webcam             | -                    | TBA                            | TBA                   | TBA                  | TBA                               | -                    |
-| Touch Bar          | -                    | TBA                            | -                     | -                    | -                                 | -                    |
-| TouchID            | TBA                  | TBA                            | TBA                   | TBA                  | TBA                               | TBA                  |
+### M1 device-specific support
+|                    | Mac Mini<br>(2020)   | MacBook Pro<br>(13-inch, 2020) | MacBook Air<br>(2020) | iMac<br>(2021)       |
+|--------------------|:--------------------:|:------------------------------:|:---------------------:|:--------------------:|
+| Installer          | yes                  | yes                            | yes                   | yes                  |
+| Devicetree         | 5.13                 | 5.17                           | 5.17                  | 5.17                 |
+| Main display       | 5.17                 | 5.17                           | 5.17                  | 5.17                 |
+| Brightness         | -                    | asahi-edge                     | asahi-edge            | asahi-edge           |
+| HDMI Out           | 5.13                 | -                              | -                     | -                    |
+| Keyboard           | -                    | linux-asahi                    | linux-asahi           | -                    |
+| KB backlight       | -                    | asahi-edge                     | asahi-edge            | -                    |
+| Touchpad           | -                    | linux-asahi                    | linux-asahi           | -                    |
+| Battery info       | -                    | linux-asahi                    | linux-asahi           | -                    |
+| USB-A ports        | 5.16                 | -                              | -                     | -                    |
+| WiFi               | 6.1                  | 6.1                            | 6.1                   | 6.1                  |
+| Bluetooth          | 6.2                  | 6.2                            | 6.2                   | 6.2                  |
+| 3.5mm jack         | linux-asahi          | linux-asahi                    | linux-asahi           | linux-asahi          |
+| Speakers           | linux-asahi          | WIP                            | WIP                   | WIP                  | 
+| SD card slot       | -                    | -                              | -                     | -                    |
+| 1Gbps Ethernet     | 5.16                 | -                              | -                     | -                    |
+| 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    |
+| Microphones        | WIP                  | WIP                            | WIP                   | WIP                  |
+| Webcam             | -                    | TBA                            | TBA                   | TBA                  |
+| Touch Bar          | -                    | TBA                            | -                     | -                    |
+| TouchID            | TBA                  | TBA                            | TBA                   | TBA                  |
 
+### M1 Pro/Max/Ultra device-specific support
+|                    | MacBook Pro<br>(14/16-inch, 2021) | Mac Studio<br>(2022) |
+|--------------------|:---------------------------------:|:--------------------:|
+| Installer          | yes                               | yes                  |
+| Devicetree         | 6.2                               | 6.2                  |
+| Main display       | 5.17                              | 5.17                 |
+| Brightness         | asahi-edge                        | -                    |
+| HDMI Out           | WIP                               | 6.2                  |
+| Keyboard           | linux-asahi                       | -                    |
+| KB backlight       | asahi-edge                        | -                    |
+| Touchpad           | linux-asahi                       | -                    |
+| Battery info       | linux-asahi                       | -                    |
+| USB-A ports        | -                                 | linux-asahi          |
+| WiFi               | 6.1                               | 6.1                  |
+| Bluetooth          | 6.2                               | 6.2                  |
+| 3.5mm jack         | linux-asahi                       | linux-asahi          |
+| Speakers           | WIP                               | WIP                  |
+| SD card slot       | 5.17                              | 5.17                 |
+| 1Gbps Ethernet     | -                                 | -                    |
+| 10Gbps Ethernet    | -                                 | linux-asahi          |
+| Microphones        | WIP                               | -                    |
+| Webcam             | TBA                               | -                    |
+| Touch Bar          | -                                 | -                    |
+| TouchID            | TBA                               | TBA                  |
 
 ## M2 Series (M2, M2 Pro, M2 Max)
-### M2 series device-specific support
-|                    | MacBook Air<br>(2022) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) |
-|--------------------|:---------------------:|:------------------------------:|:------------------:|:---------------------------------:|
-| Installer          | yes                   | yes                            | no                 | no                                |
-| Devicetree         | linux-asahi           | linux-asahi                    | WIP                | TBA                               |
-| Main display       | linux-asahi           | linux-asahi                    | WIP                | TBA                               |
-| Keyboard           | linux-asahi           | linux-asahi                    | -                  | linux-asahi                       |
-| KB backlight       | asahi-edge            | asahi-edge                     | -                  | TBA                               |
-| Touchpad           | linux-asahi           | linux-asahi                    | -                  | linux-asahi                       |
-| Brightness         | asahi-edge            | asahi-edge                     | -                  | TBA                               |
-| Battery info       | linux-asahi           | linux-asahi                    | -                  | linux-asahi                       |
-| WiFi               | 6.1                   | 6.1                            | TBA                | TBA                               |
-| Bluetooth          | 6.2                   | 6.2                            | TBA                | TBA                               |
-| HDMI Out           | -                     | -                              | WIP                | TBA                               |
-| 3.5mm jack         | linux-asahi           | linux-asahi                    | TBA                | TBA                               |
-| Speakers           | WIP                   | WIP                            | TBA                | TBA                               |
-| Microphones        | WIP                   | WIP                            | TBA                | TBA                               |
-| Webcam             | TBA                   | TBA                            | TBA                | TBA                               |
-| SD card slot       | -                     | -                              | -                  | 5.17                              |
-| 1Gbps Ethernet     | -                     | -                              | TBA                | -                                 |
-| 10Gbps Ethernet    | -                     | -                              | TBA                | -                                 |
-| Touch Bar          | -                     | TBA                            | -                  | -                                 |
-| TouchID            | TBA                   | TBA                            | TBA                | TBA                               |
+### M2 device-specific support
+|                    | MacBook Air<br>(2022) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) |
+|--------------------|:---------------------:|:------------------------------:|:------------------:|
+| Installer          | yes                   | yes                            | no                 |
+| Devicetree         | linux-asahi (6.4)     | linux-asahi (6.4)              | linux-asahi (6.4)  |
+| Main display       | linux-asahi           | linux-asahi                    | WIP                |
+| Keyboard           | linux-asahi           | linux-asahi                    | -                  |
+| KB backlight       | asahi-edge            | asahi-edge                     | -                  |
+| Touchpad           | linux-asahi           | linux-asahi                    | -                  |
+| Brightness         | asahi-edge            | asahi-edge                     | -                  |
+| Battery info       | linux-asahi           | linux-asahi                    | -                  |
+| WiFi               | 6.1                   | 6.1                            | TBA                |
+| Bluetooth          | 6.2                   | 6.2                            | TBA                |
+| HDMI Out           | -                     | -                              | WIP                |
+| 3.5mm jack         | linux-asahi           | linux-asahi                    | TBA                |
+| Speakers           | WIP                   | WIP                            | TBA                |
+| Microphones        | WIP                   | WIP                            | TBA                |
+| Webcam             | TBA                   | TBA                            | TBA                |
+| SD card slot       | -                     | -                              | -                  |
+| 1Gbps Ethernet     | -                     | -                              | TBA                |
+| 10Gbps Ethernet    | -                     | -                              | TBA                |
+| Touch Bar          | -                     | TBA                            | -                  |
+| TouchID            | TBA                   | TBA                            | TBA                |
+
+### M2 Pro/Max device-specific support
+|                    | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) |
+|--------------------|:------------------:|:---------------------------------:|
+| Installer          | no                 | no                                |
+| Devicetree         | WIP                | TBA                               |
+| Main display       | WIP                | TBA                               |
+| Keyboard           | -                  | linux-asahi                       |
+| KB backlight       | -                  | TBA                               |
+| Touchpad           | -                  | linux-asahi                       |
+| Brightness         | -                  | TBA                               |
+| Battery info       | -                  | linux-asahi                       |
+| WiFi               | TBA                | TBA                               |
+| Bluetooth          | TBA                | TBA                               |
+| HDMI Out           | WIP                | TBA                               |
+| 3.5mm jack         | TBA                | TBA                               |
+| Speakers           | TBA                | TBA                               |
+| Microphones        | TBA                | TBA                               |
+| Webcam             | TBA                | TBA                               |
+| SD card slot       | -                  | 5.17                              |
+| 1Gbps Ethernet     | TBA                | -                                 |
+| 10Gbps Ethernet    | TBA                | -                                 |
+| Touch Bar          | -                  | -                                 |
+| TouchID            | TBA                | TBA                               |
 
 Note: Many peripherals depend on T600x DART, T8112 DART, and PCIe support.
 
