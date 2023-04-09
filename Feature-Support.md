@@ -76,7 +76,7 @@ These are features/hardware blocks that are present on all devices with the give
 | SD card slot       | -                    | -                              | -                     | -                    |
 | 1Gbps Ethernet     | 5.16                 | -                              | -                     | -                    |
 | 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    |
-| Microphones        | WIP                  | WIP                            | WIP                   | WIP                  |
+| Microphones        |                      | WIP                            | WIP                   | WIP                  |
 | Webcam             | -                    | TBA                            | TBA                   | TBA                  |
 | Touch Bar          | -                    | TBA                            | -                     | -                    |
 | TouchID            | TBA                  | TBA                            | TBA                   | TBA                  |
