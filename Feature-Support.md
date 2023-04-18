@@ -32,7 +32,7 @@ These are features/hardware blocks that are present on all devices with the give
 | NVMe             | 5.19                 | 5.19                        | 5.19                 | 5.19                 |
 | PCIe             | 5.16                 | 5.16                        | linux-asahi          | linux-asahi          |
 | cpufreq          | 6.2                  | 6.2                         | linux-asahi          | linux-asahi          |
-| cpuidle          | see notes            | see notes                   | see notes            | see notes            |
+| cpuidle          | WIP (notes)          | WIP (notes)                 | WIP (notes)          | WIP (notes)          |
 | Suspend/sleep    | asahi-edge           | asahi-edge                  | asahi-edge           | TBA                  |
 | Video Encoder    | TBA                  | TBA                         | TBA                  | TBA                  |
 | ProRes Codec     | -                    | TBA                         | TBA                  | TBA                  |
@@ -159,10 +159,13 @@ Note: Many peripherals depend on T600x DART, T8112 DART, and PCIe support.
 
 ## Notes
 
-### Power
-Some power management functionality on these machines is tied to PSCI. These machines do not support the
-normal way the kernel handles PSCI calls. We could implement this functionality as a one-off ugly driver,
-but this would duplicate a lot of functionality that already exists in the kernel, and likely would not
-fly upstream. Instead, changes to the kernel's PSCI interface have been proposed which would provide a generic
-method for any future machines with similar designs. Until this discussion has resolved, these features
-cannot be implemented.
+### cpuidle situation
+Some power management functionality on ARM machines is controlled via the PSCI interface. The
+kernel has a specific way of talking to PSCI that is not compatible with Apple Silicon, and a
+discussion is required with upstream maintainers in order to figure out the best way forward. Given
+that this discussion has failed to materialise for two years, the decision has been
+made to hack together a driver that directly calls WFI/WFE instructions in order to bring
+this functionality to Asahi Linux. This greatly improves the UX on laptops when coupled with
+energy-aware scheduling, as it resolves the issue of the machines running warm to the touch
+and significantly improves battery life. This can never be upstreamed, however the hope is
+that this hacked together driver becomes unnecessary at some point in the near future.
