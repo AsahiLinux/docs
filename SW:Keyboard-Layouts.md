@@ -174,3 +174,32 @@ Apple MacBook Pro (16-inch, M1 Max, 2021)
 21
 00
 ```
+
+## ANSI US - with mainland Chinese punctuations - physically remapped to dvorak - M1 Pro MBP 2021
+
+* Best XKB keyboard layout/variant: zh-tw(Zhuyin/Chewing), en-us, ee, fi, dvorak variant for languages that using latin alphabets.
+
+System layout as English(Macintosh), when trying to select layout to English(Dvorak, Macinstoh), it automatically fallbacks to English(Macintosh), fcitx5
+
+English(US) - Englsh(Dvorak, Macintosh): behaves normally.
+
+Chewing(Chinese Taiwan): Select layout as dvorak, no problem, punctuation are also mapped to corresponding dvorak positions.
+
+Estonian(Dvorak): äõöü with right opt + aoeu, normal ANSI dvorak punctuation.
+
+Finnish(Dvorak): öÖ = ;: on ANSI, å = opt + o, can't type ä without using dead key. opt + ; = ¨ super weird.
+
+### System configuration
+```
+fnmode:3
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+xkeyboard-config-asahi 2.35.1_3-1
+6.2.0-asahi-11-1-edge-ARCH
+Apple MacBook Pro (14-inch, M1 Pro, 2021)
+00
+21
+00
+```
