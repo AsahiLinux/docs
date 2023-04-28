@@ -23,21 +23,21 @@ These are features/hardware blocks that are present on all devices with the give
 |                  | M1<br>(T8103)        | M1 Pro/Max/Ultra<br>(T600x) | M2<br>(T8112)        | M2 Pro/Max<br>(T602x) |
 |------------------|:--------------------:|:---------------------------:|:--------------------:|:--------------------:|
 | DCP              | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                  |
-| USB2 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | TBA                  |
-| USB3 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | TBA                  |
+| USB2 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | WIP                  |
+| USB3 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | WIP                  |
 | Thunderbolt      | WIP                  | WIP                         | TBA                  | TBA                  |
-| DP Alt Mode      | WIP                  | WIP                         | WIP                  | TBA                  |
-| GPU              | asahi-edge           | asahi-edge                  | asahi-edge           | TBA                  |
+| DP Alt Mode      | WIP                  | WIP                         | WIP                  | WIP                  |
+| GPU              | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                  |
 | Video Decoder    | TBA                  | TBA                         | TBA                  | TBA                  |
 | NVMe             | 5.19                 | 5.19                        | 5.19                 | 5.19                 |
 | PCIe             | 5.16                 | 5.16                        | linux-asahi          | linux-asahi          |
 | cpufreq          | 6.2                  | 6.2                         | linux-asahi          | linux-asahi          |
 | cpuidle          | WIP (notes)          | WIP (notes)                 | WIP (notes)          | WIP (notes)          |
-| Suspend/sleep    | asahi-edge           | asahi-edge                  | asahi-edge           | TBA                  |
+| Suspend/sleep    | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                  |
 | Video Encoder    | TBA                  | TBA                         | TBA                  | TBA                  |
 | ProRes Codec     | -                    | TBA                         | TBA                  | TBA                  |
 | AICv2            | -                    | 5.18                        | 5.18                 | 5.18                 |
-| DART             | 5.15                 | 6.1                         | linux-asahi          | linux-asahi          |
+| DART             | 5.15                 | 6.1                         | linux-asahi          | WIP                  |
 | PMU              | 5.18                 | 5.18                        | TBA                  | TBA                  |
 | UART             | 5.13                 | 5.13                        | 5.13                 | 5.13                 |
 | Watchdog         | 5.17                 | 5.17                        | 5.17                 | 5.17                 |
@@ -65,7 +65,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Brightness         | -                    | asahi-edge                     | asahi-edge            | asahi-edge           |
 | HDMI Out           | 5.13                 | -                              | -                     | -                    |
 | Keyboard           | -                    | linux-asahi                    | linux-asahi           | -                    |
-| KB backlight       | -                    | asahi-edge                     | asahi-edge            | -                    |
+| KB backlight       | -                    | asahi-edge (6.4)               | asahi-edge (6.4)      | -                    |
 | Touchpad           | -                    | linux-asahi                    | linux-asahi           | -                    |
 | Battery info       | -                    | linux-asahi                    | linux-asahi           | -                    |
 | USB-A ports        | 5.16                 | -                              | -                     | -                    |
@@ -78,7 +78,7 @@ These are features/hardware blocks that are present on all devices with the give
 | 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    |
 | Microphones        | -                    | WIP                            | WIP                   | WIP                  |
 | Webcam             | -                    | TBA                            | TBA                   | TBA                  |
-| Touch Bar          | -                    | TBA                            | -                     | -                    |
+| Touch Bar          | -                    | WIP                            | -                     | -                    |
 | TouchID            | TBA                  | TBA                            | TBA                   | TBA                  |
 
 ### M1 Pro/Max/Ultra device-specific support
@@ -90,7 +90,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Brightness         | asahi-edge                        | -                    |
 | HDMI Out           | WIP                               | 6.2                  |
 | Keyboard           | linux-asahi                       | -                    |
-| KB backlight       | asahi-edge                        | -                    |
+| KB backlight       | asahi-edge (6.4)                  | -                    |
 | Touchpad           | linux-asahi                       | -                    |
 | Battery info       | linux-asahi                       | -                    |
 | USB-A ports        | -                                 | linux-asahi          |
@@ -110,48 +110,48 @@ These are features/hardware blocks that are present on all devices with the give
 ### M2 device-specific support
 |                    | MacBook Air<br>(2022) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) |
 |--------------------|:---------------------:|:------------------------------:|:------------------:|
-| Installer          | yes                   | yes                            | no                 |
+| Installer          | yes                   | yes                            | WIP                |
 | Devicetree         | linux-asahi (6.4)     | linux-asahi (6.4)              | linux-asahi (6.4)  |
 | Main display       | linux-asahi           | linux-asahi                    | WIP                |
 | Keyboard           | linux-asahi           | linux-asahi                    | -                  |
-| KB backlight       | asahi-edge            | asahi-edge                     | -                  |
+| KB backlight       | asahi-edge (6.4)      | asahi-edge (6.4)               | -                  |
 | Touchpad           | linux-asahi           | linux-asahi                    | -                  |
 | Brightness         | asahi-edge            | asahi-edge                     | -                  |
 | Battery info       | linux-asahi           | linux-asahi                    | -                  |
 | WiFi               | 6.1                   | 6.1                            | TBA                |
 | Bluetooth          | 6.2                   | 6.2                            | TBA                |
 | HDMI Out           | -                     | -                              | WIP                |
-| 3.5mm jack         | linux-asahi           | linux-asahi                    | TBA                |
-| Speakers           | WIP                   | WIP                            | TBA                |
+| 3.5mm jack         | linux-asahi           | linux-asahi                    | WIP                |
+| Speakers           | WIP                   | WIP                            | WIP                |
 | Microphones        | WIP                   | WIP                            | TBA                |
-| Webcam             | TBA                   | TBA                            | TBA                |
+| Webcam             | TBA                   | TBA                            | -                  |
 | SD card slot       | -                     | -                              | -                  |
-| 1Gbps Ethernet     | -                     | -                              | TBA                |
-| 10Gbps Ethernet    | -                     | -                              | TBA                |
-| Touch Bar          | -                     | TBA                            | -                  |
+| 1Gbps Ethernet     | -                     | -                              | WIP                |
+| 10Gbps Ethernet    | -                     | -                              | WIP                |
+| Touch Bar          | -                     | WIP                            | -                  |
 | TouchID            | TBA                   | TBA                            | TBA                |
 
 ### M2 Pro/Max device-specific support
 |                    | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) |
 |--------------------|:------------------:|:---------------------------------:|
-| Installer          | no                 | no                                |
-| Devicetree         | WIP                | TBA                               |
-| Main display       | WIP                | TBA                               |
+| Installer          | WIP                | WIP                               |
+| Devicetree         | WIP                | WIP                               |
+| Main display       | WIP                | WIP                               |
 | Keyboard           | -                  | linux-asahi                       |
-| KB backlight       | -                  | TBA                               |
+| KB backlight       | -                  | WIP                               |
 | Touchpad           | -                  | linux-asahi                       |
-| Brightness         | -                  | TBA                               |
+| Brightness         | -                  | WIP                               |
 | Battery info       | -                  | linux-asahi                       |
 | WiFi               | TBA                | TBA                               |
 | Bluetooth          | TBA                | TBA                               |
 | HDMI Out           | WIP                | TBA                               |
-| 3.5mm jack         | TBA                | TBA                               |
-| Speakers           | TBA                | TBA                               |
+| 3.5mm jack         | WIP                | WIP                               |
+| Speakers           | WIP                | TBA                               |
 | Microphones        | TBA                | TBA                               |
-| Webcam             | TBA                | TBA                               |
+| Webcam             | -                  | TBA                               |
 | SD card slot       | -                  | 5.17                              |
-| 1Gbps Ethernet     | TBA                | -                                 |
-| 10Gbps Ethernet    | TBA                | -                                 |
+| 1Gbps Ethernet     | WIP                | -                                 |
+| 10Gbps Ethernet    | WIP                | -                                 |
 | Touch Bar          | -                  | -                                 |
 | TouchID            | TBA                | TBA                               |
 
