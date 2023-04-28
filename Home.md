@@ -16,7 +16,7 @@ check out the side bar for places to start.
 Asahi Linux is still in very early alpha stages. Lots of hardware components
 are not functional yet! Check out the [[Feature Support]] page first, and if
 you still want to give it a go, see the blog post for the alpha installer and
-folowing updates adding support for more devices and haardware:
+folowing updates adding support for more devices and hardware:
 
 * https://asahilinux.org/2022/03/asahi-linux-alpha-release/
 * https://asahilinux.org/2022/07/july-2022-release/
