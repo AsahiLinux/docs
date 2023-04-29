@@ -1,6 +1,4 @@
 
-# HW: ANE
-
 Links to my repos for now so I get version control.
 
 Feel free to contact me (@eiln).
