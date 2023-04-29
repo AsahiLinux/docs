@@ -7,7 +7,7 @@ Feel free to contact me (@eiln).
 ## Documentation
 
 - [WIP documentation aimed at general users](https://github.com/eiln/ane/tree/main/docs).
-- [Technical but outdated notes from Jan 2023](https://github.com/eiln/m1n1/tree/ane-2022-squash/proxyclient/m1n1/ane).
+- [Technical but outdated notes from Dec 2022](https://github.com/eiln/m1n1/tree/ane-2022-squash/proxyclient/m1n1/ane).
 
 
 ## Relevant Repos
