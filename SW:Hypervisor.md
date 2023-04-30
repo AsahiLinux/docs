@@ -37,6 +37,7 @@ kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -V development \
 -x $(kmutil inspect -V release --no-header | grep -v "SEPHiber" | awk '{print " -b "$1; }')
 ```
 `-B` designates the output file, our kernel cache is written to `dev.kc.macho` in the home directory
+
 `-k` must match a kernel in the kernels directory
 
 ## Preparing the macOS Volume by disabling security features
