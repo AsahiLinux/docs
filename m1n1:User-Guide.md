@@ -194,6 +194,13 @@ Note that we use the raw `m1n1.bin`, and pass `-r` to `run_guest.py`. Mach-O sup
 binaries has been deprecated. Please do not build Linux-based payloads with the Mach-O version of
 m1n1.
 
+Alternatively, use the `run_guest_kernel.sh` script to make this process significantly less
+cumbersome
+
+```sh
+$ ./proxyclient/tools/run_guest_kernel.sh [kernel build root] [boot args] [initramfs (optional)]
+```
+
 ### Running a macOS kernel as a m1n1 hypervisor guest
 
 See [SW:Hypervisor](https://github.com/AsahiLinux/docs/wiki/SW%3AHypervisor)
