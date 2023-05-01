@@ -181,16 +181,18 @@ Then boot your kernel:
 
 ```
 proxyclient/tools/chainload.py -r build/m1n1.bin
-cat build/m1n1.macho \
+cat build/m1n1.bin \
     <(echo 'chosen.bootargs=earlycon debug rw') \
     ../linux/arch/arm64/boot/dts/apple/*.dtb \
     <initramfs path>/initramfs-fw.cpio.gz \
     ../linux/arch/arm64/boot/Image.gz \
     > /tmp/m1n1-linux.macho
-python proxytools/tools/run_guest.py /tmp/m1n1-linux.macho
+python proxytools/tools/run_guest.py -r /tmp/m1n1-linux.macho
 ```
 
-Note the use of the `macho` version for run_guest.py (no bin support yet). Also note that we chainload m1n1 first; this is *mandatory* as the hypervisor ABI is extremely unstable.
+Note that we use the raw `m1n1.bin`, and pass `-r` to `run_guest.py`. Mach-O support for non-XNU
+binaries has been deprecated. Please do not build Linux-based payloads with the Mach-O version of
+m1n1.
 
 ### Running a macOS kernel as a m1n1 hypervisor guest
 
