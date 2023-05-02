@@ -151,6 +151,25 @@ Apple Macbook Pro (14-inch, M1 Max, 2021)
 00
 ```
 
+## ISO - Turkish Q - M2 MBP
+* Best XKB keyboard layout/variant: Turkish or tr
+
+The keyboard mostly works like it should on a non-Mac keyboard. Combinations that require Alt Gr (right Alt) only work with right Option, which is not how it works on macOS but it's the way it works normally. One caveat is that `Alt Gr + A` outputs â, when it normally should output æ.
+
+### System configuration
+```
+fnmode:3  
+iso_layout:-1  
+swap_ctrl_cmd:0  
+swap_fn_leftctrl:0  
+swap_opt_cmd:0  
+xkeyboard-config-asahi 2.35.1_3-1  
+6.2.0-asahi-11-1-edge-ARCH  
+Apple MacBook Pro (13-inch, M2, 2022)  
+00  
+00  
+0d
+```
 ## ANSI US - Polish - M1 Max MBP 2021
 
 * Best XKB keyboard layout/variant: pl
