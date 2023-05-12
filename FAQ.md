@@ -54,3 +54,11 @@ This is a property inherent to some apple keyboards. Please read https://wiki.ar
 ## My system keeps booting into macOS, not Asahi!
 
 macOS may be set as your default boot medium. Enter One True Recovery (1TR) by shutting down and powering on while holding the power button for 15 seconds. You can either select Asahi Linux while holding the Option key or enter the Settings page, unlock macOS, then set the bootloader to reboot into Asahi.
+
+## I am having performance/tearing/feature issues on Xorg
+
+Please stop using Xorg and switch to Wayland. Xorg as a primary display server is all but unmaintained, and its architecture is at odds with modern display hardware as is present on Apple Silicon devices. We do not have the development bandwidth to spend time on Xorg and its idiosyncrasies. Distributions and downstream desktop environments are already dropping Xorg support. You are free to keep using it if you wish, but we will not be supporting it beyond "it starts and displays a basic desktop correctly".
+
+## Screen recording is slow
+
+Make sure you have the GPU drivers installed. If screen recording is still slow, you are probably using a screen recording app or compositor that directly reads out or copies GPU display surfaces from the CPU. GPU display surfaces are optimized for GPU access, and direct CPU readout is unlikely to even work at all once we switch to compressed primary display framebuffers. In other words, approaches such as [kmsgrab](http://underpop.online.fr/f/ffmpeg/help/kmsgrab.htm.gz) are fundamentally flawed, will perform poorly, and will stop working entirely in the future. You should use a display compositor and recording app that correctly share GPU textures and then optimize the read-out for CPU encoding. KDE's KWin and OBS are known to work well together.
