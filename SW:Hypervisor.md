@@ -57,7 +57,7 @@ kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -V development \
 
 0. Set the macOS Volume as a default boot target
 1. Start into 1tr and start a terminal
-2. Disable most security feature in the boot policy: `bputil -nkcas`
+2. Disable most security feature in the boot policy: `bputil -nkcas`; use `diskutil info [disk name]` to get UUID
 3. Disable SIP (bputil resets it): `csrutil disable`
 4. install [m1n1](https://github.com/AsahiLinux/docs/wiki/m1n1%3AUser-Guide) as custom boot object
 ```
