@@ -22,6 +22,19 @@ But installing it via the command line appears to do the correct thing: `sudo in
 
 Check that `Install macOS Monterey.app` in the applications folder is ~12GB.
 
+### Using macadmin-scripts to fetch installer
+
+Both methods above seem to be outdated (as of 2023-05-28T22:19:04Z).
+
+https://github.com/munki/macadmin-scripts
+
+```
+git clone https://github.com/munki/macadmin-scripts.git
+cd macadmin-scripts
+python3 installinstallmacos.py
+```
+It will list available installers. 12.3 does not work. The earliest available installer is 12.6. Create a second volume as above, then double-click the fetched installer .dmg file.
+
 ## Getting the macOS development kernel and creating the kernelcache
 
 1. Create a macOS developer account (requires an icloud account.
