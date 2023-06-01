@@ -59,7 +59,7 @@ From there, run:
 csrutil disable && nvram boot-args=-v
 ```
 
-Select your Asahi Linux volume when prompted, and authenticate yourself when prompted. Once this is done, shut down the machine. This operation
+Select your Asahi Linux volume when prompted, and authenticate yourself when prompted. Once this is done, shut down the machine. If you get a pairing error, that means the default boot OS does not match the OS you are making the change for (you can only downgrade the security settings for the default boot OS, as that controls which recoveryOS boots).
 
 In this mode, m1n1 will wait for 5 seconds on boot. If a USB connection is detected and the corresponding TTY device (either of the two) is opened in the host machine, it will abort the regular boot process and go into proxy mode. This allows you to boot in tethered mode when needed, while letting the machine boot stand-alone otherwise.
 
