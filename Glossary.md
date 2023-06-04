@@ -16,6 +16,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **APFS Container**: a physical partition on a disk that can itself contain multiple filesystems (volumes), all dynamically sharing space.
 * **APFS Snapshot**: a read-only copy-on-write snapshot of an APFS volume.
 * **APFS Volume**: a logical filesystem within an APFS container, that can be mounted on a directory.
+* **APSC**: Automatic Power State Controller.
 * **ASC**: Possible generic name for Coprocessors? e.g. gfx-asc
 
 
@@ -30,6 +31,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **DCP**: Display Control Processor (probably). It enables support for displaying new frames without tearing, hardware sprites e.g. mouse cursor, switching resolutions, configuring multiple outputs, and more.
 * **DFR**: Dynamic Function Row. Apple's internal name for the Touch Bar.
 * **DFU**: Device Firmware Update. A USB mode that allows flashing a device's firmware over USB. Apple devices support this in the SecureROM, to allow the user to restore devices which have otherwise been bricked.
+* **DPE**: Digital Power Estimator.
 
 ### E
 * **EEPROM**: Electrically Erasable Programmable Read Only Memory. A type of re-writable memory, commonly available in sizes of a few kilobytes at most, more robust than NOR Flash. Often used for settings and very early boot code.
