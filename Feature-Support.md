@@ -20,38 +20,39 @@ be interpreted as follows:
 ## Common SoC Features
 These are features/hardware blocks that are present on all devices with the given SoC.
 
-|                  | M1<br>(T8103)        | M1 Pro/Max/Ultra<br>(T600x) | M2<br>(T8112)        | M2 Pro/Max<br>(T602x) |
-|------------------|:--------------------:|:---------------------------:|:--------------------:|:--------------------:|
-| DCP              | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                  |
-| USB2 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | WIP                  |
-| USB3 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | WIP                  |
-| Thunderbolt      | WIP                  | WIP                         | TBA                  | TBA                  |
-| DP Alt Mode      | WIP                  | WIP                         | WIP                  | WIP                  |
-| GPU              | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                  |
-| Video Decoder    | TBA                  | TBA                         | TBA                  | TBA                  |
-| NVMe             | 5.19                 | 5.19                        | 5.19                 | 5.19                 |
-| PCIe             | 5.16                 | 5.16                        | linux-asahi          | linux-asahi          |
-| cpufreq          | 6.2                  | 6.2                         | linux-asahi          | linux-asahi          |
-| cpuidle          | WIP (notes)          | WIP (notes)                 | WIP (notes)          | WIP (notes)          |
-| Suspend/sleep    | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                  |
-| Video Encoder    | TBA                  | TBA                         | TBA                  | TBA                  |
-| ProRes Codec     | -                    | TBA                         | TBA                  | TBA                  |
-| AICv2            | -                    | 5.18                        | 5.18                 | 5.18                 |
-| DART             | 5.15                 | 6.1                         | linux-asahi          | WIP                  |
-| PMU              | 5.18                 | 5.18                        | TBA                  | TBA                  |
-| UART             | 5.13                 | 5.13                        | 5.13                 | 5.13                 |
-| Watchdog         | 5.17                 | 5.17                        | 5.17                 | 5.17                 |
-| I<sup>2</sup>C   | 5.16                 | 5.16                        | 5.16                 | 5.16                 |
-| GPIO             | 5.16                 | 5.16                        | 5.16                 | 5.16                 |
-| USB-PD           | 5.16                 | 5.16                        | 5.16                 | 5.16                 |
-| MCA              | 6.1                  | 6.1                         | linux-asahi          | linux-asahi          |
-| SPI              | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi          |
-| SPI NOR          | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi          |
-| SMC              | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi          |
-| SPMI             | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi          |
-| RTC              | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi          |
-| SEP              | WIP                  | WIP                         | WIP                  | WIP                  |
-| Neural Engine    | WIP                  | WIP                         | WIP                  | WIP                  |
+|                  | M1<br>(T8103)        | M1 Pro/Max/Ultra<br>(T600x) | M2<br>(T8112)        | M2 Pro/Max/Ultra<br>(T602x) |
+|------------------|:--------------------:|:---------------------------:|:--------------------:|:---------------------------:|
+| DCP              | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                         |
+| USB2 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi                 |
+| USB3 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi                 |
+| Thunderbolt      | WIP                  | WIP                         | TBA                  | TBA                         |
+| DP Alt Mode      | WIP                  | WIP                         | WIP                  | WIP                         |
+| GPU              | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                         |
+| Video Decoder    | TBA                  | TBA                         | TBA                  | TBA                         |
+| NVMe             | 5.19                 | 5.19                        | 5.19                 | 5.19                        |
+| PCIe             | 5.16                 | 5.16                        | linux-asahi          | linux-asahi                 |
+| PCIe (GE)        | -                    | -                           | -                    | TBA                         |
+| cpufreq          | 6.2                  | 6.2                         | 6.2                  | 6.2                         |
+| cpuidle          | linux-asahi (notes)  | linux-asahi (notes)         | linux-asahi (notes)  | linux-asahi (notes)         |
+| Suspend/sleep    | asahi-edge           | asahi-edge                  | asahi-edge           | asahi-edge                  |
+| Video Encoder    | TBA                  | TBA                         | TBA                  | TBA                         |
+| ProRes Codec     | -                    | TBA                         | TBA                  | TBA                         |
+| AICv2            | -                    | 5.18                        | 5.18                 | 5.18                        |
+| DART             | 5.15                 | 6.1                         | linux-asahi          | linux-asahi                 |
+| PMU              | 5.18                 | 5.18                        | 6.4                  | 6.4                         |
+| UART             | 5.13                 | 5.13                        | 5.13                 | 5.13                        |
+| Watchdog         | 5.17                 | 5.17                        | 5.17                 | 5.17                        |
+| I<sup>2</sup>C   | 5.16                 | 5.16                        | 5.16                 | 5.16                        |
+| GPIO             | 5.16                 | 5.16                        | 5.16                 | 5.16                        |
+| USB-PD           | 5.16                 | 5.16                        | 5.16                 | 5.16                        |
+| MCA              | 6.1                  | 6.1                         | linux-asahi          | linux-asahi                 |
+| SPI              | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi                 |
+| SPI NOR          | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi                 |
+| SMC              | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi                 |
+| SPMI             | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi                 |
+| RTC              | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi                 |
+| SEP              | WIP                  | WIP                         | WIP                  | WIP                         |
+| Neural Engine    | WIP                  | WIP                         | WIP                  | WIP                         |
   
   
 ## M1 series (M1, M1 Pro, M1 Max, M1 Ultra)
