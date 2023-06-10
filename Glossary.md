@@ -12,6 +12,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **AIC**: Apple Interrupt Controller. Apple's custom ARM interrupt controller, because the standard GIC was too standard for Apple.
 * **ANS**: NVME / storage coprocessor?
 * **AP**: Application Processor. The main CPU running most of the OS. Contrast to SEP.
+* **AOP**: Always On Processor. Apple SoC co-processor/DSP that that enables “Hey Siri,” feature on macOS among other things. 
 * **APFS**: Apple File System. Apple's new container and volume oriented "modern" filesystem, think ZFS and btrfs.
 * **APFS Container**: a physical partition on a disk that can itself contain multiple filesystems (volumes), all dynamically sharing space.
 * **APFS Snapshot**: a read-only copy-on-write snapshot of an APFS volume.
