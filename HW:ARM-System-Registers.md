@@ -538,7 +538,11 @@ Writes to the control register need `isb` to take effect.
 
 #### SYS_APL_PMC0-9_EL1
 
-Performance counter. 48 bits, bit 47 triggers PMI.
+Performance counter.
+
+On M1: 48 bits, bit 47 triggers PMI. 
+On M2: 64 bits, bit 63 triggers PMI.
+
 * PMC #0: fixed cpu cycle count if enabled
 * PMC #1: fixed instruction count if enabled
 
