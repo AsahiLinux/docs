@@ -5,7 +5,7 @@ Several members of the community have contributed guides and pre-built artifacts
 | Alpine Linux | IRC: mps (https://arvanta.net/alpine) | https://arvanta.net/alpine/install-alpine-m1/ |
 | CentOS Stream | https://github.com/ericcurtin | https://github.com/ericcurtin/asahi-centosstream-builder |
 | Debian | https://thomas.glanzmann.de/ | https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/ |
-| Fedora | https://github.com/leifliddy| https://github.com/leifliddy/asahi-fedora-builder |
+| Fedora | Fedora Asahi SIG | https://fedoraproject.org/wiki/SIGs/Asahi |
 | Gentoo<br>(LiveCD method) | IRC: chadmed (https://github.com/chadmed) | [[Installing Gentoo with LiveCD]] |
 | NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-m1/blob/main/docs/uefi-standalone.md |
 | Pop!_OS | IRC: Lucy (https://github.com/Absolucy) | https://github.com/pop-os/asahi-pop |
