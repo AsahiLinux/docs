@@ -102,7 +102,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | btrfs | https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/ | Fixed since Linux 5.19 |
 | Chromium | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788| Includes Electron apps.<br>Fixed since 102. |
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
-| libunwind | https://github.com/libunwind/libunwind/pull/330 | Fix merged to master. Not yet released |
+| libunwind | https://github.com/libunwind/libunwind/pull/330 | Fix since 1.7.0 |
 | libglvnd | https://gitlab.freedesktop.org/glvnd/libglvnd/-/merge_requests/262 | Fixed since 1.5.0 |
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Fixed since 2.03.21 |
 | pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | Fixed and shipped with Chromium 108 |
