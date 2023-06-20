@@ -13,13 +13,14 @@ check out the side bar for places to start.
 
 ## End Users
 
-Asahi Linux is still in very early alpha stages. Lots of hardware components
-are not functional yet! Check out the [[Feature Support]] page first, and if
-you still want to give it a go, see the blog post for the alpha installer and
-folowing updates adding support for more devices and hardware:
+Asahi Linux is work in progress. Many hardware components
+are not yet supported! Check out the [[Feature Support]] page first, and if
+you still want to give it a go, see the blog post for the inital installer and
+following updates adding support for more devices and hardware:
 
 * https://asahilinux.org/2022/03/asahi-linux-alpha-release/
 * https://asahilinux.org/2022/07/july-2022-release/
 * https://asahilinux.org/2022/11/november-2022-report/
 * https://asahilinux.org/2022/12/gpu-drivers-now-in-asahi-linux/
-* https://asahilinux.org/2023/03/road-to-vulkan/ 
+* https://asahilinux.org/2023/03/road-to-vulkan/
+* https://asahilinux.org/2023/06/opengl-3-1-on-asahi-linux/
