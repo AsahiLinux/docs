@@ -90,6 +90,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
 | jemalloc | https://github.com/jemalloc/jemalloc/issues/467 | Upstream unwilling to fix, Needs build options if compiled on a 4k page size system. Addressed in [ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1914). |
 | [fd](https://github.com/sharkdp/fd/issues/1085) or any project using `jemallocator` crate    | https://github.com/sharkdp/fd/issues/1085 | Same reason as jemalloc (also almost always statically linked) |
+| Muse Hub | | Running under Box64. |
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
 | Wine | https://bugs.winehq.org/show_bug.cgi?id=52715 |
 | libvirt/QEMU/KVM | https://patchew.org/QEMU/20230109062259.79074-1-akihiko.odaki@daynix.com/ | libvirt thinks KVM is not available even if it is. |
