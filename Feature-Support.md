@@ -66,7 +66,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Brightness         | -                    | asahi-edge                     | asahi-edge            | asahi-edge           |
 | HDMI Out           | 5.13                 | -                              | -                     | -                    |
 | Keyboard           | -                    | linux-asahi                    | linux-asahi           | -                    |
-| KB backlight       | -                    | asahi-edge (6.4)               | asahi-edge (6.4)      | -                    |
+| KB backlight       | -                    | 6.4                            | 6.4                   | -                    |
 | Touchpad           | -                    | linux-asahi                    | linux-asahi           | -                    |
 | Battery info       | -                    | linux-asahi                    | linux-asahi           | -                    |
 | USB-A ports        | 5.16                 | -                              | -                     | -                    |
@@ -91,7 +91,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Brightness         | asahi-edge                        | -                    |
 | HDMI Out           | WIP                               | 6.2                  |
 | Keyboard           | linux-asahi                       | -                    |
-| KB backlight       | asahi-edge (6.4)                  | -                    |
+| KB backlight       | 6.4                               | -                    |
 | Touchpad           | linux-asahi                       | -                    |
 | Battery info       | linux-asahi                       | -                    |
 | USB-A ports        | -                                 | linux-asahi          |
@@ -112,10 +112,10 @@ These are features/hardware blocks that are present on all devices with the give
 |                    | MacBook Air<br>(2022) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) |
 |--------------------|:---------------------:|:------------------------------:|:------------------:|
 | Installer          | yes                   | yes                            | WIP                |
-| Devicetree         | linux-asahi (6.4)     | linux-asahi (6.4)              | linux-asahi (6.4)  |
+| Devicetree         | 6.4                   | 6.4                            | 6.4                |
 | Main display       | linux-asahi           | linux-asahi                    | WIP                |
 | Keyboard           | linux-asahi           | linux-asahi                    | -                  |
-| KB backlight       | asahi-edge (6.4)      | asahi-edge (6.4)               | -                  |
+| KB backlight       | 6.4                   | 6.4                            | -                  |
 | Touchpad           | linux-asahi           | linux-asahi                    | -                  |
 | Brightness         | asahi-edge            | asahi-edge                     | -                  |
 | Battery info       | linux-asahi           | linux-asahi                    | -                  |
