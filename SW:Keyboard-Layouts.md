@@ -34,7 +34,8 @@ Known issue: on M2 MacBook Air machines, currently the default behavior of the `
 
 ### System configuration
 ```
-Output of running: (cd /sys/module/hid_apple/parameters/; grep . *; pacman -Q xkeyboard-config-asahi; uname -r; cat /proc/device-tree/model; echo; find /sys/devices -name country | xargs cat; dmesg | grep "Keyboard type")
+# Output of running:
+cd /sys/module/hid_apple/parameters/; grep . *; pacman -Q xkeyboard-config-asahi; uname -r; cat /proc/device-tree/model; echo; find /sys/devices -name country | xargs cat; dmesg | grep "Keyboard type"
 ```
 
 ## JIS - Japanese
