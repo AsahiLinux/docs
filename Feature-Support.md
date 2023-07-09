@@ -38,7 +38,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Video Encoder    | TBA                  | TBA                         | TBA                  | TBA                         |
 | ProRes Codec     | -                    | TBA                         | TBA                  | TBA                         |
 | AICv2            | -                    | 5.18                        | 5.18                 | 5.18                        |
-| DART             | 5.15                 | 6.1                         | linux-asahi          | linux-asahi                 |
+| DART             | 5.15                 | 6.1                         | 6.3                  | 6.3                         |
 | PMU              | 5.18                 | 5.18                        | 6.4                  | 6.4                         |
 | UART             | 5.13                 | 5.13                        | 5.13                 | 5.13                        |
 | Watchdog         | 5.17                 | 5.17                        | 5.17                 | 5.17                        |
@@ -136,7 +136,7 @@ These are features/hardware blocks that are present on all devices with the give
 |                    | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) |
 |--------------------|:------------------:|:---------------------------------:|
 | Installer          | WIP                | WIP                               |
-| Devicetree         | WIP                | WIP                               |
+| Devicetree         | linux-asahi        | linux-asahi                       |
 | Main display       | WIP                | WIP                               |
 | Keyboard           | -                  | linux-asahi                       |
 | KB backlight       | -                  | WIP                               |
