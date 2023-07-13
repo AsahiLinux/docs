@@ -160,7 +160,7 @@ Note: Many peripherals depend on T600x DART, T8112 DART, and PCIe support.
 
 ## Latest Developments 
 If you are curious about the latest developments in Asahi Linux, which will soon be released, 
-do check out our [Frediverse Account](https://social.treehouse.systems/@AsahiLinux)
+do check out our [Fediverse Account](https://social.treehouse.systems/@AsahiLinux)
 
 ## Notes
 
