@@ -69,7 +69,9 @@ This is all rather rudimentary because it's a stop-gap for the proper solution, 
 
 ### Inflexible USB-PD Debug Interface (aka Central Scrutinizer)
 
-An alternative to the above DIY approach is the Central Scrutinizer project, which started exactly as the above, only using a custom PCB instead of a breadboard. It has since evolved to support additional features, but the core functionality is exactly the same.
+An alternative to the above DIY approach is the Central Scrutinizer project, which started exactly as the above, only using a custom PCB instead of a breadboard. It has since evolved to support additional features, but the core functionality is exactly the same:
+
+![PXL_20230721_101806861~2](https://github.com/AsahiLinux/docs/assets/19569618/bf545188-f8d8-4888-acd9-58985ac84099)
 
 Main features are:
 - RaspberryPi Pico as the micro-controller (yes, totally overkill, but cheaper than an Arduino!)
