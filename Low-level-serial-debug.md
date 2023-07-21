@@ -67,6 +67,24 @@ The default `vdmtool` code will put serial on the SBU1/SBU2 pins. At the device 
 
 This is all rather rudimentary because it's a stop-gap for the proper solution, which is...
 
+### Inflexible USB-PD Debug Interface (aka Central Scrutinizer)
+
+An alternative to the above DIY approach is the Central Scrutinizer project, which started exactly as the above, only using a custom PCB instead of a breadboard. It has since evolved to support additional features, but the core functionality is exactly the same.
+
+Main features are:
+- RaspberryPi Pico as the micro-controller (yes, totally overkill, but cheaper than an Arduino!)
+- level shifters for the serial lines
+- USB2.0 pass-through to feed m1n1
+- stackable (a single Pico is capable of driving **two** Central Scrutinizer boards)
+- USB-C orientation detection (v2+)
+- capable of using dumb USB2.0 cables for serial, at the expense of not being able to use the pass-through feature (v3+)
+
+The KiCad project is available [here](https://git.kernel.org/pub/scm/linux/kernel/git/maz/cs-hw.git), and the corresponding firmware for the Pico is [there](https://git.kernel.org/pub/scm/linux/kernel/git/maz/cs-sw.git).
+
+Note that **no guarantee** is provided that this is in any way reliable. It works for me (and a few others), but this is ultimately **your own responsibility**.
+
+If you want more information about this project, feel free to get in touch with [maz](mailto:maz@kernel.org).
+
 ### Flexible USB-PD Debug Interface (project name TBD)
 
 ~~In the coming weeks we'll be designing an open hardware interface for interfacing to M1 serial ports, and more (supporting other debug pinsets on Apple devices, as well as UARTs on other devices such as certain Android phones, etc). Stay tuned for more information. Established kernel developers who want to get an early prototype when they become available should contact [marcan](mailto:marcan@marcan.st).~~
