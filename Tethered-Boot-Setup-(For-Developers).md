@@ -1,7 +1,7 @@
 ## Introduction
 This guide will walk you through the steps required to set up your Apple Silicon Mac for booting a Linux kernel in a dual boot environment with macOS.
 
-This guide is intended specifically for kernel developers and advanced users who wish to assist in testing patches in the <a href="https://github.com/AsahiLinux/linux">`asahi`</a> branch. Building a kernel is outside the scope of this guide. If you are here, you should be capable of building an AArch64 kernel by yourself. A somewhat sane `.config` can be found at [[_DesktopKernel_]]. Keep in mind that m1n1 expects a gzipped kernel image, your target machine's Device Tree, and will also optionally take a gzipped _initramfs_.
+This guide is intended specifically for kernel developers and advanced users who wish to assist in testing patches in the <a href="https://github.com/AsahiLinux/linux">`asahi`</a> branch. Building a kernel is outside the scope of this guide. If you are here, you should be capable of building an AArch64 kernel by yourself. A somewhat sane `.config` can be found [here](https://github.com/AsahiLinux/PKGBUILDs/blob/main/linux-asahi/config). Keep in mind that m1n1 expects a gzipped kernel image, your target machine's Device Tree, and will also optionally take a gzipped _initramfs_.
 
 ## Hardware Requirements
 
