@@ -11,6 +11,5 @@ Several members of the community have contributed guides and pre-built artifacts
 | Fedora | Fedora Asahi SIG | https://fedoraproject.org/wiki/SIGs/Asahi |
 | Gentoo<br>(LiveCD method) | IRC: chadmed (https://github.com/chadmed) | [[Installing Gentoo with LiveCD]] |
 | NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-m1/blob/main/docs/uefi-standalone.md |
-| Pop!_OS | IRC: Lucy (https://github.com/Absolucy) | https://github.com/pop-os/asahi-pop |
 | Rocky Linux | https://github.com/leifliddy| https://github.com/leifliddy/asahi-rocky-builder |
 | Ubuntu | https://github.com/tobhe | https://github.com/tobhe/ubuntu-asahi |
