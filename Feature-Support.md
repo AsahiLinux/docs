@@ -22,7 +22,7 @@ These are features/hardware blocks that are present on all devices with the give
 
 |                  | M1<br>(T8103)        | M1 Pro/Max/Ultra<br>(T600x) | M2<br>(T8112)        | M2 Pro/Max/Ultra<br>(T602x) |
 |------------------|:--------------------:|:---------------------------:|:--------------------:|:---------------------------:|
-| DCP              | asahi-edge           | asahi-edge                  | asahi-edge           | WIP                         |
+| DCP              | asahi-edge           | asahi-edge                  | asahi-edge           | asahi-edge                  |
 | USB2 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi                 |
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 | linux-asahi          | linux-asahi                 |
 | Thunderbolt      | WIP                  | WIP                         | TBA                  | TBA                         |
