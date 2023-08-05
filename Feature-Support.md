@@ -133,28 +133,28 @@ These are features/hardware blocks that are present on all devices with the give
 | TouchID            | TBA                            | TBA                            | TBA                            | -                  |
 
 ### M2 Pro/Max device-specific support
-|                    | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) |
-|--------------------|:------------------:|:---------------------------------:|
-| Installer          | WIP                | WIP                               |
-| Devicetree         | linux-asahi        | linux-asahi                       |
-| Main display       | WIP                | linux-asahi                       |
-| Keyboard           | -                  | linux-asahi                       |
-| KB backlight       | -                  | linux-asahi                       |
-| Touchpad           | -                  | linux-asahi                       |
-| Brightness         | -                  | linux-asahi                       |
-| Battery info       | -                  | linux-asahi                       |
-| WiFi               | TBA                | TBA                               |
-| Bluetooth          | TBA                | TBA                               |
-| HDMI Out           | WIP                | WIP                               |
-| 3.5mm jack         | linux-asahi        | linux-asahi                       |
-| Speakers           | linux-asahi        | TBA                               |
-| Microphones        | TBA                | TBA                               |
-| Webcam             | -                  | WIP                               |
-| SD card slot       | -                  | 5.17                              |
-| 1Gbps Ethernet     | linux-asahi        | -                                 |
-| 10Gbps Ethernet    | linux-asahi        | -                                 |
-| Touch Bar          | -                  | -                                 |
-| TouchID            | TBA                | TBA                               |
+|                    | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) | Mac Studio<br>(2023) | Mac PRO<br>(2023)    |
+|--------------------|:------------------:|:---------------------------------:|:--------------------:|:--------------------:|
+| Installer          | WIP                | WIP                               | WIP                  | WIP                  |
+| Devicetree         | linux-asahi        | linux-asahi                       | TBA                  | TBA                  |
+| Main display       | WIP                | linux-asahi                       | WIP                  | WIP                  |
+| Keyboard           | -                  | linux-asahi                       | -                    | -                    |
+| KB backlight       | -                  | linux-asahi                       | -                    | -                    |
+| Touchpad           | -                  | linux-asahi                       | -                    | -                    |
+| Brightness         | -                  | linux-asahi                       | -                    | -                    |
+| Battery info       | -                  | linux-asahi                       | -                    | -                    |
+| WiFi               | TBA                | TBA                               | TBA                  | TBA                  |
+| Bluetooth          | TBA                | TBA                               | TBA                  | TBA                  |
+| HDMI Out           | WIP                | WIP                               | WIP                  | WIP                  |
+| 3.5mm jack         | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
+| Speakers           | linux-asahi        | TBA                               | TBA                  | TBA                  |
+| Microphones        | TBA                | TBA                               | TBA                  | TBA                  |
+| Webcam             | -                  | WIP                               | -                    | -                    |
+| SD card slot       | -                  | 5.17                              | 5.17                 | 5.17                 |
+| 1Gbps Ethernet     | linux-asahi        | -                                 | -                    | -                    |
+| 10Gbps Ethernet    | linux-asahi        | -                                 | linux-asahi          | linux-asahi          |
+| Touch Bar          | -                  | -                                 | -                    | -                    |
+| TouchID            | -                  | TBA                               | TBA                  | TBA                  |
 
 Note: Many peripherals depend on T600x DART, T8112 DART, and PCIe support.
 
