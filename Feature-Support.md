@@ -109,28 +109,28 @@ These are features/hardware blocks that are present on all devices with the give
 
 ## M2 Series (M2, M2 Pro, M2 Max)
 ### M2 device-specific support
-|                    | MacBook Air<br>(2022) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) |
-|--------------------|:---------------------:|:------------------------------:|:------------------:|
-| Installer          | yes                   | yes                            | WIP                |
-| Devicetree         | 6.4                   | 6.4                            | 6.4                |
-| Main display       | linux-asahi           | linux-asahi                    | WIP                |
-| Keyboard           | linux-asahi           | linux-asahi                    | -                  |
-| KB backlight       | 6.4                   | 6.4                            | -                  |
-| Touchpad           | linux-asahi           | linux-asahi                    | -                  |
-| Brightness         | asahi-edge            | asahi-edge                     | -                  |
-| Battery info       | linux-asahi           | linux-asahi                    | -                  |
-| WiFi               | 6.1                   | 6.1                            | TBA                |
-| Bluetooth          | 6.2                   | 6.2                            | TBA                |
-| HDMI Out           | -                     | -                              | WIP                |
-| 3.5mm jack         | linux-asahi           | linux-asahi                    | linux-asahi        |
-| Speakers           | WIP                   | WIP                            | linux-asahi        |
-| Microphones        | WIP                   | WIP                            | TBA                |
-| Webcam             | WIP                   | WIP                            | -                  |
-| SD card slot       | -                     | -                              | -                  |
-| 1Gbps Ethernet     | -                     | -                              | 6.4 (dts)          |
-| 10Gbps Ethernet    | -                     | -                              | 6.4 (dts)          |
-| Touch Bar          | -                     | ready to be merged             | -                  |
-| TouchID            | TBA                   | TBA                            | -                  |
+|                    | MacBook Air<br>(13-inch, 2022) | MacBook Air<br>(15-inch, 2023) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) |
+|--------------------|:------------------------------:|:------------------------------:|:------------------------------:|:------------------:|
+| Installer          | yes                            | WIP                            | yes                            | WIP                |
+| Devicetree         | 6.4                            | WIP                            | 6.4                            | 6.4                |
+| Main display       | linux-asahi                    | linux-asahi                    | linux-asahi                    | WIP                |
+| Keyboard           | linux-asahi                    | linux-asahi                    | linux-asahi                    | -                  |
+| KB backlight       | 6.4                            | 6.4                            | 6.4                            | -                  |
+| Touchpad           | linux-asahi                    | linux-asahi                    | linux-asahi                    | -                  |
+| Brightness         | asahi-edge                     | asahi-edge                     | asahi-edge                     | -                  |
+| Battery info       | linux-asahi                    | linux-asahi                    | linux-asahi                    | -                  |
+| WiFi               | 6.1                            | 6.1                            | 6.1                            | TBA                |
+| Bluetooth          | 6.2                            | 6.2                            | 6.2                            | TBA                |
+| HDMI Out           | -                              | -                              | -                              | WIP                |
+| 3.5mm jack         | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
+| Speakers           | WIP                            | WIP                            | WIP                            | linux-asahi        |
+| Microphones        | WIP                            | WIP                            | WIP                            | TBA                |
+| Webcam             | WIP                            | WIP                            | WIP                            | -                  |
+| SD card slot       | -                              | -                              | -                              | -                  |
+| 1Gbps Ethernet     | -                              | -                              | -                              | 6.4 (dts)          |
+| 10Gbps Ethernet    | -                              | -                              | -                              | 6.4 (dts)          |
+| Touch Bar          | -                              | -                              | ready to be merged             | -                  |
+| TouchID            | TBA                            | TBA                            | TBA                            | -                  |
 
 ### M2 Pro/Max device-specific support
 |                    | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) |
