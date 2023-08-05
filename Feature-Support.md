@@ -151,8 +151,8 @@ These are features/hardware blocks that are present on all devices with the give
 | Microphones        | TBA                | TBA                               |
 | Webcam             | -                  | WIP                               |
 | SD card slot       | -                  | 5.17                              |
-| 1Gbps Ethernet     | WIP                | -                                 |
-| 10Gbps Ethernet    | WIP                | -                                 |
+| 1Gbps Ethernet     | linux-asahi        | -                                 |
+| 10Gbps Ethernet    | linux-asahi        | -                                 |
 | Touch Bar          | -                  | -                                 |
 | TouchID            | TBA                | TBA                               |
 
