@@ -13,9 +13,9 @@ be interpreted as follows:
 - **M1 Series (M1, M1 Pro, M1 Max, M1 Ultra)**
   * [M1 device-specific support](#m1-device-specific-support)
   * [M1 Pro/Max/Ultra device-specific support](#m1-promaxultra-device-specific-support)
-- **M2 Series (M2, M2 Pro, M2 Max)**
+- **M2 Series (M2, M2 Pro, M2 Max, M2 Ultra)**
   * [M2 device-specific support](#m2-device-specific-support)
-  * [M2 Pro/Max device-specific support](#m2-promax-device-specific-support)
+  * [M2 Pro/Max/Ultra device-specific support](#m2-promaxultra-device-specific-support)
 
 ## Common SoC Features
 These are features/hardware blocks that are present on all devices with the given SoC.
@@ -107,7 +107,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Touch Bar          | -                                 | -                    |
 | TouchID            | TBA                               | TBA                  |
 
-## M2 Series (M2, M2 Pro, M2 Max)
+## M2 Series (M2, M2 Pro, M2 Max, M2 Ultra)
 ### M2 device-specific support
 |                    | MacBook Air<br>(13-inch, 2022) | MacBook Air<br>(15-inch, 2023) | MacBook Pro<br>(13-inch, 2022) | Mac Mini<br>(2023) |
 |--------------------|:------------------------------:|:------------------------------:|:------------------------------:|:------------------:|
@@ -132,7 +132,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Touch Bar          | -                              | -                              | ready to be merged             | -                  |
 | TouchID            | TBA                            | TBA                            | TBA                            | -                  |
 
-### M2 Pro/Max device-specific support
+### M2 Pro/Max/Ultra device-specific support
 |                    | Mac Mini<br>(2023) | MacBook Pro<br>(14/16-inch, 2023) | Mac Studio<br>(2023) | Mac PRO<br>(2023)    |
 |--------------------|:------------------:|:---------------------------------:|:--------------------:|:--------------------:|
 | Installer          | WIP                | WIP                               | WIP                  | WIP                  |
