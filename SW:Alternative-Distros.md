@@ -12,4 +12,4 @@ Several members of the community have contributed guides and pre-built artifacts
 | Gentoo<br>(LiveCD method) | IRC: chadmed (https://github.com/chadmed) | [[Installing Gentoo with LiveCD]] |
 | NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-m1/blob/main/docs/uefi-standalone.md |
 | Rocky Linux | https://github.com/leifliddy| https://github.com/leifliddy/asahi-rocky-builder |
-| Ubuntu | https://github.com/tobhe | https://github.com/UbuntuAsahi/ubuntu-asahi |
+| Ubuntu | https://github.com/UbuntuAsahi | https://github.com/UbuntuAsahi/ubuntu-asahi |
