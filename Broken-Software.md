@@ -91,7 +91,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | [fd](https://github.com/sharkdp/fd/issues/1085) or any project using `jemallocator` crate    | https://github.com/sharkdp/fd/issues/1085 | Same reason as jemalloc (also almost always statically linked) |
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
 | Wine | https://bugs.winehq.org/show_bug.cgi?id=52715 |
-| libvirt/QEMU/KVM | https://patchew.org/QEMU/20230109062259.79074-1-akihiko.odaki@daynix.com/ | libvirt thinks KVM is not available even if it is. |
+| libvirt/QEMU/KVM | https://patchew.org/QEMU/20230109062259.79074-1-akihiko.odaki@daynix.com/ | Fixed in QEMU 8.2, not yet released |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 
 ## Fixed packages
