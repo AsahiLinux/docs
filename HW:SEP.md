@@ -2,6 +2,16 @@ For now, just some random notes gathered from initial tracing of the SEP and pri
 
 fair warning: these are very messy at the moment, but it's to help me get some preliminary notes down on SEP stuff - a proper page will come later
 
+Coprocessor information:
+
+As with other coprocessors like DCP, this is an ASC coprocessor and thus communicates with the main AP through a similar mailbox interface and occasional shared buffers (in AppleSEPManager, they call these "OOL" buffers, supposedly out of line buffers). Unlike the other processors which run RTKit or a derivative of, SEP seems to run a custom OS Apple internally calls SEPOS. Additionally SEPOS itself seems to be broken up into many different applications that all run on the SEP itself.
+
+SEP seems to authenticate its own firmware (evidenced by kernel strings saying that SEP has "accepted" the IMG4), and seemingly will panic upon failure to authenticate the firmware. SEP firmware is encrypted by a separate GID from the normal AP GID, so a bootchain vuln in iBoot won't give you any ability to decrypt SEP firmware or load arbitrary SEP firmware unless you also manage to compromise SEP itself.
+
+Compared to the other ASC coprocessors, SEP is the only one that seems to have dedicated storage (at minimum for any sensitive information like wrapped keys and such) that no other processor on the device can talk to.
+
+T8112 ASC SEP mailbox base: 0x25E400000 (actual mailbox at +0x8000, like other ASC IOPs)
+
 Endpoint information:
 
 | Endpoint index | Endpoint name | Purpose |
@@ -19,8 +29,8 @@ Endpoint information:
 | 0x17 | skdl | unknown |
 | 0x18 | stac | linked to the AppleTrustedAccessory extension, probably "Secure/SEP Trusted Accessory Connection" | 
 | 0xFD | Debug | debug endpoint, signals some events to XNU? |
-| 0xFE | Boot254 | Used in sending the IMG4 SEP OS image into SEP memory |
-| 0xFF | Boot255 | Signals to SEP via the BootTZ0 message to proceed booting |
+| 0xFE | Boot254 | Signals SEP to actually boot into SEPOS |
+| 0xFF | Boot255 | Signals to SEP that the protected region of memory set up for it is ready for its own use |
 
 
 
