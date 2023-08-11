@@ -59,7 +59,7 @@ Assuming everything is done natively (no cross-compiling):
 ### m1n1
 
 ```shell
-git clone https://github.com/AsahiLinux/m1n1
+git clone --recursive https://github.com/AsahiLinux/m1n1
 cd m1n1
 make ARCH= RELEASE=1
 ```
