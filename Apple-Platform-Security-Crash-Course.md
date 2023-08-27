@@ -82,9 +82,9 @@ Other system integrity guarantees still apply to Permissive Mode containers. The
 to boot if the firmware or bootloader has been compromised, likewise if the user-provided kernelcache is
 tampered with after being enrolled in the SEP. The paired recoveryOS snapshot must also still be signed by Apple
 for reasons we will get into soon. If the user wishes to change the kernelcache again after enrolling it, they must
-enrol another. This ensures the platform that you trust the binary.
+enroll another. This ensures the platform that you trust the binary.
 
-But what if a bad actor gets into your Permissive Security container? Wouldn't they be able to enrol a
+But what if a bad actor gets into your Permissive Security container? Wouldn't they be able to enroll a
 new kernelcache and silently capture the container from under your nose? Unsurprisingly, Apple thought of this
 and have a very simple way to mitigate this attack vector.
 
