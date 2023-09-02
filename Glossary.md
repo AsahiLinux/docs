@@ -19,7 +19,8 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **APFS Volume**: a logical filesystem within an APFS container, that can be mounted on a directory.
 * **APSC**: Automatic Power State Controller.
 * **ASC**: Possible generic name for Coprocessors? e.g. gfx-asc
-
+* **AVD**: Apple Video Decoder.
+* **AVE**: Apple Video Encoder.
 
 ### B
 * **BootROM**: A read-only memory embedded in a chip such as the M1, which is the first code executed upon boot. See SecureROM.
@@ -84,6 +85,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### P
 * **PMGR**: Power manager.
+* **PMP**: Power Management Processor.
 
 ### R
 * **RecoveryOS:** The recovery environment, which can either be a recovery image paired to an OS install (located inside an APFS subvolume) or the global recovery image installed in the last APFS container on disk. macOS 11.x uses the global image by default, while macOS 12.0 and newer uses a paired recoveryOS.
