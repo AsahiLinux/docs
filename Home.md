@@ -23,4 +23,3 @@ following updates adding support for more devices and hardware:
 * [Paving the Road to Vulkan on Asahi Linux](https://asahilinux.org/2023/03/road-to-vulkan/)
 * [OpenGL 3.1 on Asahi Linux](https://asahilinux.org/2023/06/opengl-3-1-on-asahi-linux/)
 * [Our new flagship distro: Fedora Asahi Remix](https://asahilinux.org/2023/08/fedora-asahi-remix/)
-* :fr: [Comment installer Asahi Linux sur Mac M1 / M2 (Linux en mode natif)](https://www.macplanete.com/macos/49170/comment-installer-asahi-linux-sur-mac-m1-m2)
