@@ -37,7 +37,7 @@ These are features/hardware blocks that are present on all devices with the give
 | cpufreq          | 6.2                  | 6.2                         | 6.2                  | 6.2                         |
 | cpuidle          | linux-asahi (notes)  | linux-asahi (notes)         | linux-asahi (notes)  | linux-asahi (notes)         |
 | Suspend/sleep    | asahi-edge           | asahi-edge                  | asahi-edge           | asahi-edge                  |
-| Video Encoder    | TBA                  | TBA                         | TBA                  | TBA                         |
+| Video Encoder    | WIP                  | WIP                         | WIP                  | WIP                         |
 | ProRes Codec     | -                    | TBA                         | TBA                  | TBA                         |
 | AICv2            | -                    | 5.18                        | 5.18                 | 5.18                        |
 | DART             | 5.15                 | 6.1                         | 6.3                  | 6.3                         |
