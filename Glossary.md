@@ -18,7 +18,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **APFS Snapshot**: a read-only copy-on-write snapshot of an APFS volume.
 * **APFS Volume**: a logical filesystem within an APFS container, that can be mounted on a directory.
 * **APSC**: Automatic Power State Controller.
-* **ASC**: Possible generic name for Coprocessors? e.g. gfx-asc. Possibly Apple Sillicon Coprocessor.
+* **ASC**: Possible generic name for Coprocessors? e.g. gfx-asc. Possibly Apple Silicon Coprocessor.
 * **AVD**: Apple Video Decoder.
 * **AVE**: Apple Video Encoder. Supports AVC and HEVC.
 * **ANE**: Apple Neural Engine. FP16 multiply-add unit.
