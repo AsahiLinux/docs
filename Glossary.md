@@ -18,9 +18,10 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **APFS Snapshot**: a read-only copy-on-write snapshot of an APFS volume.
 * **APFS Volume**: a logical filesystem within an APFS container, that can be mounted on a directory.
 * **APSC**: Automatic Power State Controller.
-* **ASC**: Possible generic name for Coprocessors? e.g. gfx-asc
+* **ASC**: Possible generic name for Coprocessors? e.g. gfx-asc. Possibly Apple Sillicon Coprocessor.
 * **AVD**: Apple Video Decoder.
-* **AVE**: Apple Video Encoder.
+* **AVE**: Apple Video Encoder. Supports AVC and HEVC.
+* **ANE**: Apple Neural Engine. FP16 multiply-add unit.
 
 ### B
 * **BootROM**: A read-only memory embedded in a chip such as the M1, which is the first code executed upon boot. See SecureROM.
@@ -61,6 +62,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **IOKit**: I/O Kit is Apple's device driver framework for XNU (Apple's operating system kernel).
 * **IPI**: Inter-processor interupt. An interrupt used by one processor to interrupt another.
 * **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [[SW:Storage]])
+* **ISP**: Image Signal Processor. Webcam on M-series laptops. Denotes the entire camera unit, from sensors to strobe to the coprocessor.
 
 ### J
 * **JTAG**: Joint Test Action Group. Actually refers to a debugging interface released by that group, a 4/5-wire interface to debug chips and CPUs at the hardware level.
