@@ -15,7 +15,6 @@ Platform documentation:
 For users:
 * [[Broken Software]]
 * [[SW:Alternative Distros]]
-* [[Feature Support]]
 
 For developers:
 * [[Yaks in need of shaving]] (**HELP WANTED!**)
