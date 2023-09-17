@@ -93,6 +93,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Wine | https://bugs.winehq.org/show_bug.cgi?id=52715 |
 | libvirt/QEMU/KVM | https://patchew.org/QEMU/20230109062259.79074-1-akihiko.odaki@daynix.com/ | Fixed in QEMU 8.2, not yet released |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
+| Redis | https://github.com/redis/redis/issues/12586 | jemalloc dependency |
 
 ## Fixed packages
 | Package | Fixing commit | Notes |
