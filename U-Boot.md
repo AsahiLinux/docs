@@ -44,7 +44,7 @@ Installing your build of U-Boot involves creating a new stage 2 of m1n1, which i
 Make a backup of `/boot/efi/m1n1/boot.bin`, then concatenate m1n1, the DTBs and U-Boot. This must be run as root.
 
 ```sh
-cat build/m1n1.bin /path/to/dtbs/*.dtb /path/to/uboot/u-boot-nodtb.bin > /boot/efi/m1n1/boot.bin
+cat build/m1n1.bin /path/to/dtbs/*.dtb <(gzip -c /path/to/uboot/u-boot-nodtb.bin) > /boot/efi/m1n1/boot.bin
 ```
 
 ### Important note for package maintainers
