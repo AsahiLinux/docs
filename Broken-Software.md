@@ -93,7 +93,6 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Wine | https://bugs.winehq.org/show_bug.cgi?id=52715 |
 | libvirt/QEMU/KVM | https://patchew.org/QEMU/20230109062259.79074-1-akihiko.odaki@daynix.com/ | Fixed in QEMU 8.2, not yet released |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
-| Redis | https://github.com/redis/redis/issues/12586 https://bugzilla.redhat.com/show_bug.cgi?id=2240293 | jemalloc dependency |
 
 ## Fixed packages
 | Package | Fixing commit | Notes |
@@ -114,3 +113,4 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | WebKitGTK | https://github.com/WebKit/WebKit/commit/0a4a03da45f774 | Fixed since 2.34.6 |
 | Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/26103 | Fixed since 4.1.1 |
 | Visual Studio Code | https://aur.archlinux.org/packages/visual-studio-code-bin | Fixed since 1.71.0 (uses Electron 19) |
+| Redis | https://bugzilla.redhat.com/show_bug.cgi?id=2240293 https://bodhi.fedoraproject.org/updates/FEDORA-2023-bdb1515542 | Fixed in fedora since redis-7.0.13-2.fc38 and redis-7.2.1-2.fc39) |
