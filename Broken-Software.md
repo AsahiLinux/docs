@@ -91,7 +91,6 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | [fd](https://github.com/sharkdp/fd/issues/1085) or any project using `jemallocator` crate    | https://github.com/sharkdp/fd/issues/1085 | Same reason as jemalloc (also almost always statically linked) |
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
 | Wine | https://bugs.winehq.org/show_bug.cgi?id=52715 |
-| libvirt/QEMU/KVM | https://patchew.org/QEMU/20230109062259.79074-1-akihiko.odaki@daynix.com/ | Fixed in QEMU 8.2, not yet released |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 
 ## Fixed packages
@@ -114,3 +113,4 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/26103 | Fixed since 4.1.1 |
 | Visual Studio Code | https://aur.archlinux.org/packages/visual-studio-code-bin | Fixed since 1.71.0 (uses Electron 19) |
 | Redis | https://bugzilla.redhat.com/show_bug.cgi?id=2240293 https://bodhi.fedoraproject.org/updates/FEDORA-2023-bdb1515542 | Fixed in fedora since redis-7.0.13-2.fc38 and redis-7.2.1-2.fc39) |
+| libvirt/QEMU/KVM | https://patchew.org/QEMU/20230727073134.134102-1-akihiko.odaki@daynix.com/ | Fixed since 7.2.6 / 8.0.5 / 8.1.1 |
