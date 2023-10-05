@@ -80,8 +80,8 @@ These are features/hardware blocks that are present on all devices with the give
 | 1Gbps Ethernet     | 5.16                 | -                              | -                     | -                    |
 | 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    |
 | Microphones        | -                    | WIP                            | WIP                   | WIP                  |
-| Webcam             | -                    | WIP                            | WIP                   | WIP                  |
-| Touch Bar          | -                    | ready to be merged             | -                     | -                    |
+| Webcam             | -                    | merged                         | merged                | merged               |
+| Touch Bar          | -                    | fedora-asahi (6.5)             | -                     | -                    |
 | TouchID            | TBA                  | TBA                            | TBA                   | TBA                  |
 
 ### M1 Pro/Max/Ultra device-specific support
@@ -105,7 +105,7 @@ These are features/hardware blocks that are present on all devices with the give
 | 1Gbps Ethernet     | -                                 | -                    |
 | 10Gbps Ethernet    | -                                 | linux-asahi          |
 | Microphones        | WIP                               | -                    |
-| Webcam             | WIP                               | -                    |
+| Webcam             | merged                            | -                    |
 | Touch Bar          | -                                 | -                    |
 | TouchID            | TBA                               | TBA                  |
 
@@ -123,15 +123,15 @@ These are features/hardware blocks that are present on all devices with the give
 | Battery info       | linux-asahi                    | linux-asahi                    | linux-asahi                    | -                  |
 | WiFi               | 6.1                            | 6.1                            | 6.1                            | TBA                |
 | Bluetooth          | 6.2                            | 6.2                            | 6.2                            | TBA                |
-| HDMI Out           | -                              | -                              | -                              | WIP                |
+| HDMI Out           | -                              | -                              | -                              | WIP (m1n1 ok)      |
 | 3.5mm jack         | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
 | Speakers           | WIP                            | WIP                            | WIP                            | linux-asahi        |
 | Microphones        | WIP                            | WIP                            | WIP                            | TBA                |
-| Webcam             | WIP                            | WIP                            | WIP                            | -                  |
+| Webcam             | merged                         | merged                         | merged                         | -                  |
 | SD card slot       | -                              | -                              | -                              | -                  |
 | 1Gbps Ethernet     | -                              | -                              | -                              | 6.4 (dts)          |
 | 10Gbps Ethernet    | -                              | -                              | -                              | 6.4 (dts)          |
-| Touch Bar          | -                              | -                              | ready to be merged             | -                  |
+| Touch Bar          | -                              | -                              | fedora-asahi (6.5)             | -                  |
 | TouchID            | TBA                            | TBA                            | TBA                            | -                  |
 
 ### M2 Pro/Max/Ultra device-specific support
@@ -145,13 +145,13 @@ These are features/hardware blocks that are present on all devices with the give
 | Touchpad           | -                  | linux-asahi                       | -                    | -                    |
 | Brightness         | -                  | linux-asahi                       | -                    | -                    |
 | Battery info       | -                  | linux-asahi                       | -                    | -                    |
-| WiFi               | TBA                | TBA                               | TBA                  | TBA                  |
-| Bluetooth          | TBA                | TBA                               | TBA                  | TBA                  |
-| HDMI Out           | WIP                | WIP                               | WIP                  | WIP                  |
+| WiFi               | merged             | merged                            | merged               | merged               |
+| Bluetooth          | merged             | merged                            | merged               | merged               |
+| HDMI Out           | WIP (m1n1 ok)      | WIP                               | WIP (m1n1 ok)        | WIP (m1n1 ok?)       |
 | 3.5mm jack         | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | Speakers           | linux-asahi        | TBA                               | TBA                  | TBA                  |
 | Microphones        | TBA                | TBA                               | TBA                  | TBA                  |
-| Webcam             | -                  | WIP                               | -                    | -                    |
+| Webcam             | -                  | merged                            | -                    | -                    |
 | SD card slot       | -                  | 5.17                              | 5.17                 | 5.17                 |
 | 1Gbps Ethernet     | linux-asahi        | -                                 | -                    | -                    |
 | 10Gbps Ethernet    | linux-asahi        | -                                 | linux-asahi          | linux-asahi          |
