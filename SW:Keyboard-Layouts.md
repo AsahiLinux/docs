@@ -108,6 +108,25 @@ Apple MacBook Pro (14-inch, M1 Pro, 2021)
 00
 ```
 
+## ISO - German / Austrian - M1 Air 2020
+* Best XKB keyboard layout/variant: "German (Austria)"
+
+No issues found so far, everything works as expected.
+
+### System configuration
+```
+fnmode:2
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:1
+swap_opt_cmd:1
+xkeyboard-config-asahi 2.35.1_3-1
+6.5.0-asahi-15-1-edge-ARCH
+Apple MacBook Air (M1, 2020)
+00
+0d
+```
+
 ## ISO - Italian - MBP 16-inch M1 Pro
 * Best XKB keyboard layout/variant: **Italian**
 
