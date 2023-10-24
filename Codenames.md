@@ -43,3 +43,4 @@ Apple likes to use many different names for the same devices.
 | M2 Max | H14J | Rhodes 1C | T6021 | Avalanche | Blizzard
 | M2 Ultra | H14J | Rhodes 2C | T6022 | Avalanche | Blizzard
 | A16 | H15P | Crete | T8120 | Everest | Sawtooth
+| A17 Pro | | | | | |
