@@ -42,17 +42,15 @@ Feel free to stay on macOS version 13.5 or earlier for the time being. You can s
 
 ### I have already upgraded to macOS Sonoma and I want to install Asahi Linux
 
-The Asahi Linux installer has been updated to check the version of your System Recovery, and will refuse to install if there is a mismatch. Therefore, it is relatively safe to install at this time.
+The Asahi Linux installer has been updated to check the version of your System Recovery, and will refuse to install if there is a mismatch. Therefore, it is relatively safe to install at this time. It will also inform you if you are vulnerable to the ProMotion display issue.
 
-If you have a 14" or 16" ProMotion machine, first make sure the display refresh rate is set to ProMotion. You will not be able to install Asahi Linux if this setting is incorrect.
-
-Start the installation process normally. If the installer informs you that your System Recovery is damaged when you attempt the install, that means you will have to wait until a further system update that resolves the problem before you can install Asahi Linux.
+Start the installation process normally. If the installer informs you that your System Recovery is damaged when you attempt the install, that means you will have to wait until a further system update that resolves the problem before you can install Asahi Linux. Follow the prompts carefully and read all the text.
 
 ### I have already upgraded to macOS Sonoma and I have Asahi Linux
 
 If you are currently booted into macOS, ensure the display refresh rate is set to ProMotion (for 14" and 16" machines).
 
-We recommend running the Asahi Linux installer again to verify the integrity of your System RecoveryOS partition. If there is a problem, you should refrain from making any major changes to your system until the issue is fixed by Apple.
+We recommend running the Asahi Linux installer again to verify the integrity of your System RecoveryOS partition and ProMotion status. If there is a problem, you should refrain from making any major changes to your system until the issue is fixed by Apple.
 
 ### I am affected to the issue, what do I do?
 
@@ -87,6 +85,10 @@ After this, the machine will reboot into the Boot Picker.
 Select your macOS Sonoma install, then go into the Display settings page and set the display refresh rate to ProMotion. This will prevent the problem from reoccurring.
 
 Should you wind up with a "black screen boot" again after this point, follow the steps in the previous section to perform the "tap-and-hold" power gesture. This should now work properly, as your System RecoveryOS has been updated. You may then select macOS again and fix the display refresh rate.
+
+### I don't have another Mac to use DFU mode! What do I do?
+
+You can take your Mac to the Apple Store and ask them to do a **DFU Revive**. Make sure they do **not** do a Restore, which would wipe all your data. They should perform this service for free. Do not let them charge you any money for it. This is a problem Apple caused, and purely a software issue. If the technicians claim there is hardware damage, they are wrong.
 
 ### What if I have macOS 13.6 Ventura and not Sonoma?
 
