@@ -1,5 +1,3 @@
-# DRAFT
-
 ## What happened?
 
 macOS Sonoma and macOS Ventura 12.6 were released with multiple serious bugs in their upgrade and boot process. Combined, these bugs can create conditions where a machine always boots to a black screen, no matter what power button press combination is used. This leaves users stuck, and the only solution is to use DFU recovery.
