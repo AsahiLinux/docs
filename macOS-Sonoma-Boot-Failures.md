@@ -10,6 +10,8 @@ This situation can happen with certain settings on certain models, when multiple
 
 You can quit the installer once you reach the main menu, without making any changes to your system.
 
+Apple bug reports: FB13319681 and FB13319708
+
 ## What are the bugs exactly
 
 There are two bugs:
