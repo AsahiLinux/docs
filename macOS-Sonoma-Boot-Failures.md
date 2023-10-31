@@ -16,7 +16,7 @@ Apple bug reports: FB13319681 and FB13319708
 
 There are two bugs:
 
-* macOS Sonoma upgrades sometimes (often) fail to upgrade System Recovery. This leaves the system in a usable state, but with possibly no or a broken recovery fallback OS. This means that if the system cannot boot into the Paired recoveryOS for whatever reason, it can no longer be recovered. macOS 13.6 upgrades are also affected, as they actually install the macOS 14.0 Sonoma SFR.
+* macOS Sonoma upgrades use the previously installed version as System Recovery. This makes some sense, but does not consider backwards compatibility problems between older RecoveryOS and newer firmware. If this mismatch causes recoveryOS to fail to boot, this will leave System Recovery unusable.
 
 * For 14" and 16" models: Once System Firmware is updated to the macOS Sonoma version, if the display is configured to a refresh rate other than ProMotion, that system will no longer be able to boot into older macOS installs nor Asahi Linux correctly. This includes recovery mode when those systems are set as the default boot OS.
 
@@ -26,14 +26,12 @@ You will need another Mac to recover from the fault using DFU mode. However, you
 
 ## What machines are affected?
 
-All machines are affected by the first bug (failure to update System Recovery).
-
 MacBook Pro models with ProMotion displays (14" and 16") are affected by the black screen boot bug.
 
 ## What versions are affected?
 
-* macOS Sonoma 14.0 and 14.1 (not fixed as of 2023-10-31)
-* macOS Ventura 13.6 (uses 14.0 firmware)
+* macOS Sonoma 14.0+ (not fixed as of 2023-10-31)
+* macOS Ventura 13.6+ (uses 14.0 firmware)
 * Possibly: macOS Monterey 12.7 (unconfirmed)
 
 ## What should I do?
@@ -50,9 +48,9 @@ Feel free to stay on macOS version 13.5 or earlier for the time being. You can s
 
 ### I have already upgraded to macOS Sonoma and I want to install Asahi Linux
 
-The Asahi Linux installer has been updated to check the version of your System Recovery, and will refuse to install if there is a mismatch. Therefore, it is relatively safe to install at this time. It will also inform you if you are vulnerable to the ProMotion display issue.
+The Asahi Linux installer has been updated to check the version of your System Recovery, and will inform you of the risks if there is a mismatch. It will also check the ProMotion refresh rate, and refuse to install if it is set to anything other than ProMotion mode. Therefore, it is safe to install at this time.
 
-Start the installation process normally. If the installer informs you that your System Recovery is damaged when you attempt the install, that means you will have to wait until a further system update that resolves the problem before you can install Asahi Linux. Follow the prompts carefully and read all the text.
+Start the installation process normally. Follow the prompts carefully and read all the information printed. If your System Recovery version is mismatched, make sure you understand the risks. If your display refresh rate is incorrect, the installer will ask you to change it.
 
 ### I have already upgraded to macOS Sonoma and I have Asahi Linux
 
@@ -100,6 +98,6 @@ You can take your Mac to the Apple Store and ask them to do a **DFU Revive**. Ma
 
 ### What if I have macOS 13.6 Ventura and not Sonoma?
 
-macOS 13.6 Ventura uses the macOS Sonoma System Firmware, but suffers from the problem. Even users with just 13.6 installed single-boot are affected by this issue (no Asahi Linux needed). We do not understand how Apple managed to release an OS update that, when installed normally, leaves machines unbootable if their display refresh rate is not the default. This seems to have been a major QA oversight by Apple.
+macOS 13.6 Ventura uses the macOS Sonoma System Firmware, but suffers from the problem. Even users with just 13.6 installed single-boot are affected by this issue (no Asahi Linux needed). We do not understand how Apple managed to release an OS update that, when upgraded to normally, leaves machines unbootable if their display refresh rate is not the default. This seems to have been a major QA oversight by Apple.
 
 If your system has 13.6 Ventura and ended up in the black boot situation, unfortunately the only known solution is to upgrade to Sonoma. From the Boot Picker, select Settings. This will boot into recoveryOS. From there, select "Install macOS Sonoma". Follow the prompts and select your existing macOS volume. This will upgrade macOS without losing your data.
