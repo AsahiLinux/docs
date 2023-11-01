@@ -44,6 +44,6 @@ Apple likes to use many different names for the same devices.
 | M2 Ultra | H14J | Rhodes 2C | T6022 | Avalanche | Blizzard
 | A16 | H15P | Crete | T8120 | Everest | Sawtooth
 | A17 Pro | H16P | | T8130 | Everest | Sawtooth
-| M3     | | T8122 | | | |
-| M3 Pro | | T6030 | | | |
-| M3 Max | | T6031 / T6034 | | | |
+| M3     | H15G | Ibiza | T8122 | | |
+| M3 Pro | H15J | Lobos | T6030 | | |
+| M3 Max | H15J/H15S | Palma | T6031 / T6034 | | |
