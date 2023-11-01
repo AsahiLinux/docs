@@ -26,10 +26,12 @@ This is a list of devices Asahi Linux intends to support. The Product and SoC ar
 | Mac Studio (M2 Max, 2023) | Mac14,13 | J475cAP | T6021
 | Mac Studio (M2 Ultra, 2023) | Mac14,14 | J475dAP | T6022
 | Mac Pro (2023) | Mac14,8 | J180dAP | T6022
-| iMac (24-inch (2-port), M3, 2023) | Mac15,? | J433AP | [M3]
-| iMac (24-inch (4-port), M3, 2023) | Mac15,? | J434AP | [M3]
-| MacBook Pro (14-inch, M3, Nov 2023) | Mac15,? | J504AP | [M3]
-| MacBook Pro (14-inch, M3 Pro, Nov 2023) | Mac15,? | J514sAP | [M3 Pro]
-| MacBook Pro (16-inch, M3 Pro, Nov 2023) | Mac15,? | J516sAP | [M3 Pro]
-| MacBook Pro (14-inch, M3 Max, Nov 2023) | Mac15,? | J514cAP | [M3 Max]
-| MacBook Pro (16-inch, M3 Max, Nov 2023) | Mac15,? | J516cAP | [M3 Max]
+| iMac (24-inch (2-port), M3, 2023) | Mac15,4 | J433AP | [M3]
+| iMac (24-inch (4-port), M3, 2023) | Mac15,5 | J434AP | [M3]
+| MacBook Pro (14-inch, M3, Nov 2023) | Mac15,3 | J504AP | [M3]
+| MacBook Pro (14-inch, M3 Pro, Nov 2023) | Mac15,6 | J514sAP | [M3 Pro]
+| MacBook Pro (16-inch, M3 Pro, Nov 2023) | Mac15,7 | J516sAP | [M3 Pro]
+| MacBook Pro (14-inch, M3 Max, Nov 2023) | Mac15,8 | J514cAP | [M3 Max, T6031]
+| MacBook Pro (16-inch, M3 Max, Nov 2023) | Mac15,9 | J516cAP | [M3 Max, T6031]
+| MacBook Pro (14-inch, M3 Max, Nov 2023) | Mac15,10 | J514mAP | [M3 Max, T6034]
+| MacBook Pro (16-inch, M3 Max, Nov 2023) | Mac15,11 | J516mAP | [M3 Max, T6034]
