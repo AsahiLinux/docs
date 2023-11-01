@@ -2,6 +2,8 @@
 
 macOS Sonoma and macOS Ventura 13.6 were released with multiple serious bugs in their upgrade and boot process. Combined, these bugs can create conditions where a machine always boots to a black screen, no matter what power button press combination is used. This leaves users stuck, and the only solution is to use DFU recovery.
 
+**This bug can effect users both with and without Asahi Linux installed.**
+
 This situation can happen with certain settings on certain models, when multiple macOS versions are installed side by side (one Sonoma, one earlier). Since Asahi Linux behaves as if it were macOS 12.3/12.4/13.5 (depending on model and installation time), dual-boot installs of macOS Sonoma and Asahi Linux have the same effect. For macOS 13.6, this situation doesn't even require a dual-boot system, and can be triggered stand-alone as the only installed OS.
 
 **We have updated the Asahi Linux installer to automatically perform an integrity check and diagnose your system on startup**. To run it, paste this command into Terminal in macOS:
