@@ -1,5 +1,7 @@
 ## What happened?
 
+**Update: We have made changes to the Asahi Installer, to our bootloader m1n1, and to asahi-nvram. At this time, we believe installing or having installed Asahi should not introduce any additional danger over a plain vanilla Sonoma upgrade on a single-boot machine.**
+
 macOS Sonoma and macOS Ventura 13.6 were released with multiple serious bugs in their upgrade and boot process. Combined, these bugs can create conditions where a machine always boots to a black screen, no matter what power button press combination is used. This leaves users stuck, and the only solution is to use DFU recovery.
 
 **This bug can affect users both with and without Asahi Linux installed.**
@@ -68,7 +70,9 @@ If your machine boots to a black screen (brief Apple logo, then nothing), first 
 
 If that does not work, try booting into System RecoveryOS. To do this, fully power down the machine, and then perform a fast "tap-and-hold" power button gesture (press and release once, then press and hold).
 
-If that also leads to the same problem, unfortunately you will have to resort to DFU mode. See the following section for details.
+**Update: If you are stuck in Asahi Linux (the above steps don't work to get to a boot picker to switch to macOS, but your machine otherwise boots normally into Asahi), you should be able to use [asahi-nvram](https://github.com/WhatAmISupposedToPutHere/asahi-nvram) to switch back to Sonoma directly from Linux and resolve the problem.**. If you need help with this process, feel free to ask on [Ask Asahi](https://discussion.fedoraproject.org/c/neighbors/asahi/asahi-help/94).
+
+If that also does not work, unfortunately you will have to resort to DFU mode. See the following section for details.
 
 If you can successfully reach a boot menu, select your macOS Sonoma install and hold down Option while confirming your selection to make it the default boot OS. **If you have macOS 13.6 ventura instead, follow the special section below.**
 
