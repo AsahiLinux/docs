@@ -20,7 +20,9 @@ There are two bugs:
 
 * macOS Sonoma upgrades use the previously installed version as System Recovery. This makes some sense, but does not consider backwards compatibility problems between older RecoveryOS and newer firmware. If this mismatch causes recoveryOS to fail to boot, this will leave System Recovery unusable.
 
-* For 14" and 16" models: Once System Firmware is updated to the macOS Sonoma version, if the display is configured to a refresh rate other than ProMotion, that system will no longer be able to boot into older macOS installs nor Asahi Linux correctly. This includes recovery mode when those systems are set as the default boot OS, **and also System Recovery** at least until the next subsequent OS upgrade.
+* For 14" and 16" models: Once System Firmware is updated to the macOS Sonoma version, if the display is configured to a refresh rate other than ProMotion, that system will no longer be able to boot into older macOS installs nor Asahi Linux correctly. This includes recovery mode when those systems are set as the default boot OS, **and also System Recovery** at least until the next subsequent OS upgrade. \*
+
+\* Asahi Linux in particular will, somewhat amusingly, still boot to a login screen in this case, but the bootloader output (U-Boot / GRUB) will not be visible. This is because our Linux display driver can fortuitously recover from the misconfigured display scenario, while the macOS driver can't. Nonetheless, you'll still be in trouble, as you won't be able to use the Boot Picker (which is recoveryOS) to switch back to macOS.
 
 ## What happens if I get hit by the bug? Will I lose data?
 
