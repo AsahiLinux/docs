@@ -38,7 +38,7 @@ MacBook Pro models with ProMotion displays (14" and 16") are affected by the bla
 
 * macOS Sonoma 14.0+ (not fixed as of 2023-10-31)
 * macOS Ventura 13.6+ (uses 14.0 firmware)
-* ~~Possibly: macOS Monterey 12.7 (unconfirmed)~~ (confirmed unaffected, 12.7 uses 13.6 firmware apparently? weird.) 
+* macOS Monterey 12.7 (unclear, some reports of 13.6 and some of 14.0 firmware, assume it's affected just in case) 
 
 ## What should I do?
 
