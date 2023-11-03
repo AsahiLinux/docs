@@ -48,6 +48,8 @@ We recommend waiting until these issues are fixed by Apple before upgrading. If 
 
 Regardless of whether you plan to install Asahi Linux or not, we recommend running the Asahi Linux installer after a Sonoma upgrade to check the status of your System Recovery partition. It will inform you about any issues prior to the main menu, before any changes are made to your system.
 
+`If you just want to install Asahi Linux`: macOS 13.5 is safe to upgrade to. To download an installer for 13.5 specifically, run `softwareupdate --fetch-full-installer --full-installer-version 13.5`. Don't forget to delete the installer once you're done with the upgrade, to save disk space.
+
 ### I have not upgraded to macOS Sonoma (or macOS Ventura 13.6) yet and I'm in no rush
 
 Feel free to stay on macOS version 13.5 or earlier for the time being. You can safely install Asahi Linux if you wish.
