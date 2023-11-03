@@ -36,9 +36,11 @@ MacBook Pro models with ProMotion displays (14" and 16") are affected by the bla
 
 ## What versions are affected?
 
-* macOS Sonoma 14.0+ (not fixed as of 2023-10-31)
-* macOS Ventura 13.6+ (uses 14.0 firmware)
-* macOS Monterey 12.7 (unclear, some reports of 13.6 and some of 14.0 firmware, assume it's affected just in case) 
+* ~~macOS Sonoma 14.0+ (not fixed as of 2023-10-31)~~
+* ~~macOS Ventura 13.6+ (uses 14.0 firmware)~~
+* ~~macOS Monterey 12.7 (unclear, some reports of 13.6 and some of 14.0 firmware, assume it's affected just in case)~~
+
+**IMPORTANT UPDATE**: We have just learned that the standard software update process will always upgrade to the latest firmware version, even when you request a specific macOS version manually. For this reason, **ALL** macOS upgrades performed after the release of macOS Sonoma are affected, regardless of target version. Installing older versions will silently download Sonoma firmware.
 
 ## What should I do?
 
