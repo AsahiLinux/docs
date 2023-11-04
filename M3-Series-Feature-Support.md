@@ -13,7 +13,7 @@ If a feature is not ready, then there is no estimation on when it will be ready.
 ## Table of Contents
 - [SoC blocks](#soc-blocks)
 - [M3 devices](#m3-devices)
-- [M3 Pro/Max/Ultra devices](#m3-promaxultra-devices)
+- [M3 Pro/Max devices](#m3-promax-devices)
 - [Notes](#notes)
 
 Note that as these machines have not been released for general availability yet, supported and missing features are predictions based on what Apple has changed
@@ -81,7 +81,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Touch Bar          | -                  |
 | TouchID            | -                  |
 
-## M3 Pro/Max/Ultra devices
+## M3 Pro/Max devices
 |                    | MacBook Pro<br>(14/16-inch, 2023) |
 |--------------------|:---------------------------------:|
 | Installer          | no                                |
