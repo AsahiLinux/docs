@@ -81,7 +81,7 @@ These are features/hardware blocks that are present on all devices with the give
 | TouchID            | -                  | TBA                                 |
 
 ## M3 Pro/Max devices
-|                    | MacBook Pro<br>(14/16-inch, 2023) |
+|                    | MacBook Pro<br>(14/16-inch, late 2023) |
 |--------------------|:---------------------------------:|
 | Installer          | no                                |
 | Devicetree         | TBA                               |
