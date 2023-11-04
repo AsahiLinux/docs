@@ -58,39 +58,38 @@ These are features/hardware blocks that are present on all devices with the give
 
 
 ## M3 devices
-|                    | iMac<br>(2023) |
-|--------------------|:------------------:|
-| Installer          | no                 |
-| Devicetree         | TBA                |
-| Main display       | linux-asahi        |
-| Keyboard           | -                  |
-| KB backlight       | -                  |
-| Touchpad           | -                  |
-| Brightness         | linux-asahi        |
-| Battery info       | -                  |
-| WiFi               | TBA                |
-| Bluetooth          | TBA                |
-| HDMI Out           | -                  |
-| 3.5mm jack         | linux-asahi        |
-| Speakers           | linux-asahi        |
-| Microphones        | TBA                |
-| Webcam             | TBA                |
-| SD card slot       | -                  |
-| 1Gbps Ethernet     | -                  |
-| 10Gbps Ethernet    | -                  |
-| Touch Bar          | -                  |
-| TouchID            | -                  |
+|                    | iMac<br>(2023)     | MacBook Pro<br>(14-inch, late 2023) |
+|--------------------|:------------------:|:-----------------------------------:|
+| Installer          | no                 | no                                  |
+| Devicetree         | TBA                | TBA                                 |
+| Main display       | TBA                | TBA                                 |
+| Keyboard           | -                  | TBA                                 |
+| KB backlight       | -                  | TBA                                 |
+| Touchpad           | -                  | TBA                                 |
+| Brightness         | TBA                | TBA                                 |
+| Battery info       | -                  | TBA                                 |
+| WiFi               | TBA                | TBA                                 |
+| Bluetooth          | TBA                | TBA                                 |
+| HDMI Out           | -                  | TBA                                 |
+| 3.5mm jack         | TBA                | TBA                                 |
+| Speakers           | TBA                | TBA                                 |
+| Microphones        | TBA                | TBA                                 |
+| Webcam             | TBA                | TBA                                 |
+| SD card slot       | -                  | TBA                                 |
+| 1Gbps Ethernet     | TBA                | -                                   |
+| 10Gbps Ethernet    | -                  | -                                   |
+| TouchID            | -                  | TBA                                 |
 
 ## M3 Pro/Max devices
 |                    | MacBook Pro<br>(14/16-inch, 2023) |
 |--------------------|:---------------------------------:|
 | Installer          | no                                |
 | Devicetree         | TBA                               |
-| Main display       | linux-asahi                       |
+| Main display       | TBa                               |
 | Keyboard           | linux-asahi                       |
 | KB backlight       | linux-asahi                       |
 | Touchpad           | linux-asahi                       |
-| Brightness         | linux-asahi                       |
+| Brightness         | TBA                               |
 | Battery info       | linux-asahi                       |
 | WiFi               | TBA                               |
 | Bluetooth          | TBA                               |
@@ -102,7 +101,6 @@ These are features/hardware blocks that are present on all devices with the give
 | SD card slot       | 5.17                              |
 | 1Gbps Ethernet     | -                                 |
 | 10Gbps Ethernet    | -                                 |
-| Touch Bar          | -                                 |
 | TouchID            | TBA                               |
 
 Note: Many peripherals depend on DART and PCIe support.
