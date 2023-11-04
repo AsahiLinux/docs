@@ -22,6 +22,8 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **AVD**: Apple Video Decoder.
 * **AVE**: Apple Video Encoder. Supports AVC and HEVC.
 * **ANE**: Apple Neural Engine. FP16 multiply-add unit.
+* **AMX**: Apple Matrix eXtensions. A matrix coprocessor partially integrated into the ISA.
+* **APR**: APR ProRes. Handles ProRes video encoding + decoding.
 
 ### B
 * **BootROM**: A read-only memory embedded in a chip such as the M1, which is the first code executed upon boot. See SecureROM.
