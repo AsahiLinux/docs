@@ -27,7 +27,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Thunderbolt      | TBA                  | TBA                         |
 | DP Alt Mode      | WIP                  | WIP                         |
 | GPU              | asahi-edge           | asahi-edge                  |
-| Video Decoder    | TBA                  | TBA                         |
+| Video Decoder    | WIP                  | WIP                         |
 | NVMe             | 5.19                 | 5.19                        |
 | PCIe             | 5.16 / 6.4 (dts)     | linux-asahi                 |
 | PCIe (GE)        | -                    | TBA                         |
