@@ -16,7 +16,7 @@ If a feature is not ready, then there is no estimation on when it will be ready.
 - [M1 Pro/Max/Ultra devices](#m1-promaxultra-devices)
 - [Notes](#notes)
 
-## Common SoC Features
+## SoC Blocks
 These are features/hardware blocks that are present on all devices with the given SoC.
 
 |                  | M1<br>(T8103)        | M1 Pro/Max/Ultra<br>(T600x) |
