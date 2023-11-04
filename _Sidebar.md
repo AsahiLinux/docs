@@ -1,8 +1,12 @@
+Feature Support:
+* [[M1 Series Feature Support|M1-Series-Feature-Support]]
+* [[M2 Series Feature Support|M2-Series-Feature-Support]]
+* [[M3 Series Feature Support|M3-Series-Feature-Support]]
+
 Project related:
 * [[Glossary]]
 * [[FAQ]]
 * [["When will Asahi Linux be done?"]]
-* [[Feature Support]]
 * [[Project:References]]
 * [Recent Changes](https://github.com/AsahiLinux/docs/wiki/_history)
 
@@ -14,13 +18,13 @@ Platform documentation:
 
 For users:
 * [[Broken Software]]
-* [[SW:Alternative Distros]]
+* [[Alternative Distros|SW:Alternative Distros]]
 
 For developers:
 * [[Yaks in need of shaving]] (**HELP WANTED!**)
 * [[Tethered Boot Setup (For Developers)]]
 * [[m1n1:User Guide]] Boot loader
-* [[SW:Hypervisor]]
+* [[Hypervisor|SW:Hypervisor]]
 * [[U-Boot]]
-* [[SW:DT-bindings]]
+* [[Devicetree bindings|SW:DT-bindings]]
 * [[Open OS ecosystem on Apple Silicon Macs]]
