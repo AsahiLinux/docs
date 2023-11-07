@@ -85,7 +85,7 @@ These are features/hardware blocks that are present on all devices with the give
 |--------------------|:---------------------------------:|
 | Installer          | no                                |
 | Devicetree         | TBA                               |
-| Main display       | TBa                               |
+| Main display       | TBA                               |
 | Keyboard           | linux-asahi                       |
 | KB backlight       | linux-asahi                       |
 | Touchpad           | linux-asahi                       |
