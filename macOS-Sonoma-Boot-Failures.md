@@ -76,7 +76,7 @@ If your machine boots to a black screen (brief Apple logo, then nothing), first 
 
 If that does not work, try booting into System RecoveryOS. To do this, fully power down the machine, and then perform a fast "tap-and-hold" power button gesture (press and release once, then press and hold).
 
-**Update: If you are stuck in Asahi Linux (the above steps don't work to get to a boot picker to switch to macOS, but your machine otherwise boots normally into Asahi), you should be able to use [asahi-nvram](https://github.com/WhatAmISupposedToPutHere/asahi-nvram) to switch back to Sonoma directly from Linux and resolve the problem.**. If you need help with this process, feel free to ask on [Ask Asahi](https://discussion.fedoraproject.org/c/neighbors/asahi/asahi-help/94).
+**Update: If you are stuck in Asahi Linux (the above steps don't work to get to a boot picker to switch to macOS, but your machine otherwise boots normally into Asahi), you should be able to use `asahi-bless` (available in Fedora) to switch back to Sonoma directly from Linux and resolve the problem.**.
 
 If that also does not work, unfortunately you will have to resort to DFU mode. See the following section for details.
 
