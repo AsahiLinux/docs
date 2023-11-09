@@ -1,5 +1,7 @@
 ## What happened?
 
+**Update 2023-11-09: Apple have released Ventura 13.6.2 with a claimed fix for this bug. At this point, we believe this is an interim fix to work around the worst case situation affecting single-boot Ventura users (see the last section of this document), and NOT yet a complete fix yet. Multi-boot and Asahi Linux users are still affected. We expect a major/complete fix will likely arrive with the Sonoma 14.2 release (currently in beta, not yet fixed in beta 1). **
+
 **Update: We have made changes to the Asahi Installer, to our bootloader m1n1, and to asahi-nvram. At this time, we believe installing or having installed Asahi should not introduce any additional danger over a plain vanilla Sonoma upgrade on a single-boot machine.**
 
 macOS Sonoma and macOS Ventura 13.6 were released with multiple serious bugs in their upgrade and boot process. Combined, these bugs can create conditions where a machine always boots to a black screen, no matter what power button press combination is used. This leaves users stuck, and the only solution is to use DFU recovery.
