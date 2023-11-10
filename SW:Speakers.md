@@ -23,6 +23,7 @@ The DSP processing uses too much power, due to limitations of the default schedu
 ## Known bugs
 
 * In KDE Plasma, if you toggle mute using the keyboard hotkey while the master volume is set at anything other than 100%, on unmute the speaker volume will be too low. Touching the volume control (or pressing a volume hotkey) will restore the intended volume.
+* The DSP chain introduces excessive delay, and trailing audio is "buffered" (if you stop playing something and start something else, you get a bit of the end of the first when the second starts).
 
 ## Project goals
 
