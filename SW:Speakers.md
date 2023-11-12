@@ -1,5 +1,3 @@
-# THIS IS NOT RELEASED YET
-
 # Speaker support in Asahi Linux
 
 We are progressively enabling speaker support on Asahi Fedora Remix.
@@ -51,3 +49,17 @@ You can watch speakersafetyd in action by using `sudo journalctl -fu speakersafe
 
 **WARNING:** Speaker safety models have yet to be fully validated on all models. We are enabling audio only on models where we are confident things are ready and safe to use. If you use any undocumented overrides to force-enable speakers on any other machine models, **you are entirely on your own** and may very well blow up your speakers.
 
+## Distro integration notes
+
+You need:
+- The latest Asahi kernel (tag asahi-6.5-25 or later)
+- [alsa-ucm-conf-asahi](https://github.com/AsahiLinux/alsa-ucm-conf-asahi)
+- [asahi-audio](https://github.com/asahilinux/asahi-audio)
+- [speakersafetyd](https://github.com/asahilinux/speakersafetyd)
+- [bankstown](https://github.com/chadmed/bankstown/)
+- [LSP plug-ins](https://lsp-plug.in/) (LV2 version)
+- PipeWire 0.3.84. Depending on your packaging rules, you might need your package to create a few empty directories (see [here](https://src.fedoraproject.org/rpms/pipewire/commits/rawhide)) so `asahi-audio` can put files there.
+- PipeWire `module-filter-chain-lv2` (this may be a separate package or flags depending on distro)
+- WirePlumber 0.4.15 with an [unreleased patch](https://gitlab.freedesktop.org/pipewire/wireplumber/-/merge_requests/558). Please do not enable speakers without that patch, as it'll leave the raw speaker device visible which is confusing and could trigger bugs elsewhere. Either get your WirePlumber package to add the patch, or wait for the next release.
+
+The correct deployment order is asahi-audio/speakersafetyd > (whatever you use to get those installed for users, e.g. metapackage) > kernel. If you push the kernel first before asahi-audio, users will get either a nonfunctional (if no speakersafetyd) or functional but bad-sounding (if speakersafetyd is installed) raw speaker device with no DSP. 
