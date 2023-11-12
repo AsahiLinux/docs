@@ -119,7 +119,7 @@ and significantly improves battery life. This can never be upstreamed, however t
 that this hacked together driver becomes unnecessary at some point in the near future.
 
 ### MacBook Air (2020) speakers
-Only supported on the Asahi Fedora remix with kernels tag asahi-6.5-24 or later. More
+Only supported on the Asahi Fedora remix with kernels 6.5.11-404.asahi or later. More
 information [here](https://github.com/AsahiLinux/docs/wiki/SW:Speakers).
 
 ### ANE driver
