@@ -22,7 +22,8 @@ The DSP processing uses too much power, due to limitations of the default schedu
 
 * In KDE Plasma, if you toggle mute using the keyboard hotkey while the master volume is set at anything other than 100%, on unmute the speaker volume will be too low. Touching the volume control (or pressing a volume hotkey) will restore the intended volume.
 * The DSP chain introduces excessive delay, and trailing audio is "buffered" (if you stop playing something and start something else, you get a bit of the end of the first when the second starts).
-* There is no final limiter/compressor in the current DSP chains (although there is an input compressor), so inputs with content in high-gain regions of the EQ curve might cause distortion or clipping (and speakersafetyd limiting). This is most prominent in the 200Hz region right now. This should not cause damage, but we recommend lowering the volume if you notice the sound is noticeably distorted.
+* There is no final limiter/compressor in the current DSP chains (although there is an input compressor), so inputs with content in high-gain regions of the EQ curve might cause distortion or clipping (and speakersafetyd limiting). This is most prominent in the 200Hz region right now. This should not cause damage, but we recommed lowering the volume if you notice the sound is noticeably distorted.
+* The 13" MacBook Air EQ curve might be a bit harsh on the treble; pending re-calibration with an individually calibrated microphone to confirm/fix.
 
 ## Project goals
 
