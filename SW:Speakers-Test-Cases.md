@@ -1,0 +1,3 @@
+* [Laufey - From The Start](https://www.youtube.com/watch?v=lSD_L-xic9o) - good bankstown test case, bass/guitar really stress the behavior
+* [J.Geco - Chicken Song](https://www.youtube.com/watch?v=msSc7Mv0QHY) - Konrad said this damaged a ThinkPad X13s's speakers... we seem to do okay but it's definitely something
+* [I Won The Loudness War](https://www.youtube.com/watch?v=WSg_6Osx-eE) - Speaker torture. Do not crank stream volume too 100% unless you have AppleCare. This is not *supposed* to damage anything, but seriously, leave it to the developers to risk this one please.
