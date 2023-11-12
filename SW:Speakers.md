@@ -24,6 +24,7 @@ The DSP processing uses too much power, due to limitations of the default schedu
 * The DSP chain introduces excessive delay, and trailing audio is "buffered" (if you stop playing something and start something else, you get a bit of the end of the first when the second starts).
 * There is no final limiter/compressor in the current DSP chains (although there is an input compressor), so inputs with content in high-gain regions of the EQ curve might cause distortion or clipping (and speakersafetyd limiting). This is most prominent in the 200Hz region right now. This should not cause damage, but we recommed lowering the volume if you notice the sound is noticeably distorted.
 * The 13" MacBook Air EQ curve might be a bit harsh on the treble; pending re-calibration with an individually calibrated microphone to confirm/fix.
+* Bankstown (the "fake bass" plugin) uses a relatively naïve algorithm right now, which doesn't work well for all music.
 
 ## Project goals
 
