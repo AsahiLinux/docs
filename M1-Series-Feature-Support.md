@@ -70,7 +70,7 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | 6.1                  | 6.1                            | 6.1                   | 6.1                  |
 | Bluetooth          | 6.2                  | 6.2                            | 6.2                   | 6.2                  |
 | 3.5mm jack         | linux-asahi          | linux-asahi                    | linux-asahi           | linux-asahi          |
-| Speakers           | linux-asahi          | WIP                            | 6.5.11-404.asahi                   | WIP                  | 
+| Speakers           | linux-asahi          | WIP                            | linux-asahi*          | WIP                  | 
 | SD card slot       | -                    | -                              | -                     | -                    |
 | 1Gbps Ethernet     | 5.16                 | -                              | -                     | 5.17                 |
 | 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    |
@@ -117,6 +117,10 @@ this functionality to Asahi Linux. This greatly improves the UX on laptops when 
 energy-aware scheduling, as it resolves the issue of the machines running warm to the touch
 and significantly improves battery life. This can never be upstreamed, however the hope is
 that this hacked together driver becomes unnecessary at some point in the near future.
+
+### MacBook Air (2020) speakers
+Only supported on the Asahi Fedora remix with kernels tag asahi-6.5-25 or later. More
+information [here](https://github.com/AsahiLinux/docs/wiki/SW:Speakers).
 
 ### ANE driver
 An out of tree [kernel module](https://github.com/eiln/ane/tree/main) is available. It will be merged into linux-asahi.
