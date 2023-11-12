@@ -12,7 +12,7 @@ Proper speaker support has been a multi-year development effort involving many p
 
 We are ready to begin releasing preliminary speaker support to users. Keep in mind that as Asahi Linux is the first desktop Linux platform with integrated advanced speaker DSP, there will likely be bugs. In addition, the DSP profiles will be improved and adjusted over time, and do not represent the absolute best possible results.
 
-Speaker DSP is currently only supported on Asahi Fedora (things are moving fast), however alternative distros should be able to integrate this work relatively painlessly once things settle down.
+Speaker DSP is currently only supported on Fedora Asahi Remix (things are moving fast), however alternative distros should be able to integrate this work relatively painlessly once things settle down (see the section below).
 
 ## Known limitations
 
