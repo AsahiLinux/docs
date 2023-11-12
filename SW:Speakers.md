@@ -16,7 +16,7 @@ Speaker DSP is currently only supported on Asahi Fedora (things are moving fast)
 
 ## Known limitations
 
-The DSP processing uses too much power, due to limitations of the default scheduler. Uclamp support will be enabled in the coming days, and it should greatly reduce the power consumption of the DSP processing, even doubling battery life while playing audio in some cases.
+The DSP processing uses too much power, due to limitations of the default scheduler. Uclamp support will be enabled with an upcoming PipeWire release, and it should greatly reduce the power consumption of the DSP processing, even doubling battery life while playing audio in some cases.
 
 ## Known bugs
 
