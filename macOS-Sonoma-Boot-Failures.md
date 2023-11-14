@@ -1,3 +1,17 @@
+## CRITICAL UPDATE
+
+With macOS 14.1.1, 14.2 beta 2, and (likely) 13.6.2, Apple "fixed" the bug by making the ProMotion setting not change the boot-time screen mode.
+
+**Unfortunately, they forgot to actually reset the boot-time screen mode to the safe (ProMotion) setting, which means that affected users who upgrade with ProMotion disabled are now forever stuck in a broken state. To make things worse, we have no idea how to detect this condition preemptively in macOS.**
+
+To make matters even worse, Apple are still not forcing a System Recovery roll-forward to 14.x, which means the vast majority of users will be in the worst-case dangerous state where, if the bug occurs, no recovery is possible.
+
+We still expect Apple to fix this properly in a future version, but we don't have the slightest idea how they thought this interim "fix" was a good idea. It just makes things even more confusing and silently deadly for affected users.
+
+As a result of this update, we are now outright blocking Asahi Linux installs on the subset of affected systems with outdated System Recovery (likely the vast majority of users with 14" and 16" machines and up to date macOS), for safety reasons. Sorry. We tried, but we're giving up on trying to patch over the issue on our side or detect the problem cases ahead of time for our users. Apple broke this, only Apple can fix it, and they need to fix it the right way. There is nothing else we can do.
+
+The only workaround at this time is to do a preemptive DFU Revive using another Mac, which will force an upgrade of System Recovery and at least leave your system with a functional fail-safe. The problem might still occur while installing Asahi in this case, but at least you will be able to return to macOS (if this happens, you're still stuck without Asahi until Apple fixes this though). The installer will allow installation for users with an up to date System Recovery, with a warning.
+
 ## What happened?
 
 **Update 2023-11-09: Apple have released Ventura 13.6.2 with a claimed fix for this bug. At this point, we believe this is an interim fix to work around the worst case situation affecting single-boot Ventura users (see the last section of this document), and NOT yet a complete fix. Multi-boot and (to a lesser extent) Asahi Linux users are still affected in the same way. We expect a major/complete fix will likely arrive with the Sonoma 14.2 release (currently in beta, not yet fixed in beta 1).**
