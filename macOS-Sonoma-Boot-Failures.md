@@ -1,6 +1,6 @@
 ## CRITICAL UPDATE
 
-With macOS 14.1.1, 14.2 beta 2, and (likely) 13.6.2, Apple "fixed" the bug by making the ProMotion setting not change the boot-time screen mode.
+With macOS 14.1.1, 14.2 beta 2, ~~and (likely) 13.6.2~~, Apple "fixed" the bug by making the ProMotion setting not change the boot-time screen mode.
 
 **Unfortunately, they forgot to actually reset the boot-time screen mode to the safe (ProMotion) setting, which means that affected users who upgrade with ProMotion disabled are now forever stuck in a broken state. To make things worse, we have no idea how to detect this condition preemptively in macOS.**
 
