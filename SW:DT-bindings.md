@@ -16,7 +16,7 @@ Proposal submitted by marcan
 - 'apple,t8103-spmi'
 - 'apple,spmi'
 
-Used by OpenBSD; not submitted upstrean yet
+Used by OpenBSD; not submitted upstream yet
 
 ### SPMI PMU
 - 'apple,sera-pmu'
