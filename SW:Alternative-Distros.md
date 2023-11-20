@@ -3,6 +3,7 @@ Several members of the community have contributed guides and pre-built artifacts
 | Distro | Maintainer | Installation Guide |
 |--------|------------|--------------------|
 | Alpine Linux | IRC: mps (https://arvanta.net/alpine) | https://arvanta.net/alpine/install-alpine-m1/ |
+| AOSC OS | https://github.com/AOSC-Dev | https://releases.aosc.io/os-arm64/asahi/README.txt |
 | CentOS Stream | https://github.com/ericcurtin | https://github.com/ericcurtin/asahi-centosstream-builder |
 | Debian | https://thomas.glanzmann.de/ | https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/ |
 | deepin | https://github.com/deepin-community| https://github.com/deepin-community/deepin-m1 |
