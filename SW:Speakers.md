@@ -62,6 +62,6 @@ You need:
 - [LSP plug-ins](https://lsp-plug.in/) (LV2 version)
 - PipeWire 0.3.85. Depending on your packaging rules, you might need your package to create a few empty directories (see [here](https://src.fedoraproject.org/rpms/pipewire/commits/rawhide)) so `asahi-audio` can put files there.
 - PipeWire `module-filter-chain-lv2` (this may be a separate package or flags depending on distro)
-- WirePlumber 0.4.15 with an [unreleased patch](https://gitlab.freedesktop.org/pipewire/wireplumber/-/merge_requests/558). Please do not enable speakers without that patch, as it'll leave the raw speaker device visible which is confusing and could trigger bugs elsewhere. Either get your WirePlumber package to add the patch, or wait for the next release.
+- WirePlumber 0.4.16
 
 The correct deployment order is asahi-audio/speakersafetyd > (whatever you use to get those installed for users, e.g. metapackage) > kernel. If you push the kernel first before asahi-audio, users will get either a nonfunctional (if no speakersafetyd) or functional but bad-sounding (if speakersafetyd is installed) raw speaker device with no DSP. 
