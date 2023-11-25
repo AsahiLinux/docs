@@ -114,3 +114,20 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Visual Studio Code | https://aur.archlinux.org/packages/visual-studio-code-bin | Fixed since 1.71.0 (uses Electron 19) |
 | Redis | https://bugzilla.redhat.com/show_bug.cgi?id=2240293 https://bodhi.fedoraproject.org/updates/FEDORA-2023-bdb1515542 | Fixed in fedora since redis-7.0.13-2.fc38 and redis-7.2.1-2.fc39) |
 | libvirt/QEMU/KVM | https://patchew.org/QEMU/20230727073134.134102-1-akihiko.odaki@daynix.com/ | Fixed since QEMU 7.2.6 / 8.0.5 / 8.1.1 |
+
+## Bugs
+
+Open issues (other than page size issues) in third-party software, reported and/or tracked by Asahi core team members:
+
+| Package        | Issue |
+| -------------- | ----- |
+| abrt           | [ABRT can't submit crash report: processing failed](https://bugzilla.redhat.com/show_bug.cgi?id=2238248) |
+| blender        | [blender core dumps at execution instead of giving sane feedback about unsupported hardware](https://bugzilla.redhat.com/show_bug.cgi?id=2237821) |
+| firefox        | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
+| kpipewire      | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) |
+| kpipewire      | [Screen recording quality is terrible](https://bugs.kde.org/show_bug.cgi?id=476186) |
+| kpipewire      | [OpenH264 codec support](https://bugs.kde.org/show_bug.cgi?id=476187) |
+| kwin           | [Outputs freeze on multi-screen when hardware cursors are not supported](https://bugs.kde.org/show_bug.cgi?id=477451) |
+| kwin           | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
+| kwin           | [Software cursor repaints are glitchy with fractional scaling sometimes](https://bugs.kde.org/show_bug.cgi?id=477455) |
+| systemsettings | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
