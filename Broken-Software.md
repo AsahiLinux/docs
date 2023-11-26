@@ -124,6 +124,7 @@ Open issues (other than page size issues) in third-party software, reported and/
 | abrt           | [ABRT can't submit crash report: processing failed](https://bugzilla.redhat.com/show_bug.cgi?id=2238248) |
 | blender        | [blender core dumps at execution instead of giving sane feedback about unsupported hardware](https://bugzilla.redhat.com/show_bug.cgi?id=2237821) |
 | firefox        | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
+| glibc          | [TLS modid reuse breaks TLS accesses](https://bugzilla.redhat.com/show_bug.cgi?id=2251557) |
 | kpipewire      | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) |
 | kpipewire      | [Screen recording quality is terrible](https://bugs.kde.org/show_bug.cgi?id=476186) |
 | kpipewire      | [OpenH264 codec support](https://bugs.kde.org/show_bug.cgi?id=476187) |
