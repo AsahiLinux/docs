@@ -14,10 +14,6 @@ We are ready to begin releasing preliminary speaker support to users. Keep in mi
 
 Speaker DSP is currently only supported on Fedora Asahi Remix (things are moving fast), however alternative distros should be able to integrate this work relatively painlessly once things settle down (see the section below).
 
-## Known limitations
-
-The DSP processing uses too much power, due to limitations of the default scheduler. Uclamp support will be enabled with an upcoming PipeWire release, and it should greatly reduce the power consumption of the DSP processing, even doubling battery life while playing audio in some cases.
-
 ## Known bugs
 
 * In KDE Plasma, if you toggle mute using the keyboard hotkey while the master volume is set at anything other than 100%, on unmute the speaker volume will be too low. Touching the volume control (or pressing a volume hotkey) will restore the intended volume.
