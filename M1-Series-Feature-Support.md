@@ -86,7 +86,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Devicetree         | 6.2                               | 6.2                  |
 | Main display       | 5.17                              | 5.17                 |
 | Brightness         | asahi-edge                        | -                    |
-| HDMI Out           | WIP                               | 6.2                  |
+| HDMI Out           | linux-asahi (13.5 FW only)        | 6.2                  |
 | Keyboard           | linux-asahi                       | -                    |
 | KB backlight       | 6.4                               | -                    |
 | Touchpad           | linux-asahi                       | -                    |
