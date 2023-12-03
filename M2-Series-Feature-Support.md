@@ -67,7 +67,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Battery info       | linux-asahi                    | linux-asahi                    | linux-asahi                    | -                  |
 | WiFi               | 6.1                            | 6.1                            | 6.1                            | TBA                |
 | Bluetooth          | 6.2                            | 6.2                            | 6.2                            | TBA                |
-| HDMI Out           | -                              | -                              | -                              | WIP (m1n1 ok)      |
+| HDMI Out           | -                              | -                              | -                              | linux-asahi        |
 | 3.5mm jack         | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
 | Speakers           | WIP                            | WIP                            | WIP                            | linux-asahi        |
 | Microphones        | WIP                            | WIP                            | WIP                            | TBA                |
@@ -91,7 +91,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Battery info       | -                  | linux-asahi                       | -                    | -                    |
 | WiFi               | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | Bluetooth          | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
-| HDMI Out           | WIP (m1n1 ok)      | WIP                               | WIP (m1n1 ok)        | WIP (m1n1 ok?)       |
+| HDMI Out           | linux-asahi        | linux-asahi                       | linux-asahi (M2 Max) | WIP (m1n1 ok?)       |
 | 3.5mm jack         | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | Speakers           | linux-asahi        | TBA                               | TBA                  | TBA                  |
 | Microphones        | TBA                | TBA                               | TBA                  | TBA                  |
