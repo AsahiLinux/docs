@@ -16,7 +16,7 @@ These are just some references for people to build some background knowledge int
 [S3C2400 datasheet download link](https://www.digchip.com/datasheets/parts/datasheet/409/S3C2400-pdf.php) for samsung serial hardware 
 ### Social Media
 
-[Hector Martin](https://twitter.com/marcan42) (Asahi Linux Lead)
+[Hector Martin](https://social.treehouse.systems/@marcan) (Asahi Linux Lead)
 
 [Xeno Kovah](https://twitter.com/XenoKovah) ( (ex) Apple Silicon secure boot architect )
 
