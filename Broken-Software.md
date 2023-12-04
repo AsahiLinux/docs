@@ -132,3 +132,4 @@ Open issues (other than page size issues) in third-party software, reported and/
 | kwin           | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
 | kwin           | [Software cursor repaints are glitchy with fractional scaling sometimes](https://bugs.kde.org/show_bug.cgi?id=477455) |
 | systemsettings | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
+| wireplumber    | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538)
