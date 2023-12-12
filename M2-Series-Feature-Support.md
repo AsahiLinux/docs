@@ -65,8 +65,8 @@ These are features/hardware blocks that are present on all devices with the give
 | Touchpad           | linux-asahi                    | linux-asahi                    | linux-asahi                    | -                  |
 | Brightness         | asahi-edge                     | asahi-edge                     | asahi-edge                     | -                  |
 | Battery info       | linux-asahi                    | linux-asahi                    | linux-asahi                    | -                  |
-| WiFi               | 6.1                            | 6.1                            | 6.1                            | TBA                |
-| Bluetooth          | 6.2                            | 6.2                            | 6.2                            | TBA                |
+| WiFi               | 6.1                            | 6.1                            | 6.1                            | linux-asahi                |
+| Bluetooth          | 6.2                            | 6.2                            | 6.2                            | linux-asahi                |
 | HDMI Out           | -                              | -                              | -                              | linux-asahi        |
 | 3.5mm jack         | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
 | Speakers           | WIP                            | WIP                            | WIP                            | linux-asahi        |
