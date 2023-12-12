@@ -46,6 +46,7 @@ If you have a container runtime installed, like Podman or Docker, you can make u
 ```shell
 $ git clone --recursive https://github.com/AsahiLinux/m1n1.git
 $ cd m1n1
+$ podman-compose build m1n1
 $ podman-compose run m1n1 make
 $ # or
 $ docker-compose run m1n1 make
