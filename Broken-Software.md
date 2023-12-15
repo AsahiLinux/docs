@@ -123,6 +123,7 @@ Open issues (other than page size issues) in third-party software, reported and/
 | -------------- | ----- |
 | abrt           | [ABRT can't submit crash report: processing failed](https://bugzilla.redhat.com/show_bug.cgi?id=2238248) |
 | blender        | [blender core dumps at execution instead of giving sane feedback about unsupported hardware](https://bugzilla.redhat.com/show_bug.cgi?id=2237821) |
+| chromium       | [Skia shader compilation error](https://bugs.chromium.org/p/chromium/issues/detail?id=1442633)
 | firefox        | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | firefox        | [YouTube is capping resolutions to 1080 on Linux aarch64 user agents](https://bugzilla.mozilla.org/show_bug.cgi?id=1869521)
 | glibc          | [TLS modid reuse breaks TLS accesses](https://bugzilla.redhat.com/show_bug.cgi?id=2251557) |
