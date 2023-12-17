@@ -146,6 +146,18 @@ Apple MacBook Pro (16-inch, M1 Pro, 2021)
 00
 ```
 
+## ISO - Italian - MBP 14-inch M2 Pro
+* Best Hardware model: **Apple|Apple**
+* Best XKB keyboard layout/variant: **Italian**
+
+```
+fnmode:3
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+```
+
 ## ISO - French - M1 Pro MBP
 * Best XKB keyboard layout/variant: **Apple | Apple Aluminium (ISO)** with no variant
 
