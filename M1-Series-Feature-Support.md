@@ -25,7 +25,7 @@ These are features/hardware blocks that are present on all devices with the give
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 |
 | Thunderbolt      | WIP                  | WIP                         |
 | DP Alt Mode      | WIP                  | WIP                         |
-| GPU              | asahi-edge           | asahi-edge                  |
+| GPU              | linux-asahi          | linux-asahi                 |
 | Video Decoder    | WIP                  | WIP                         |
 | NVMe             | 5.19                 | 5.19                        |
 | PCIe             | 5.16                 | 5.16                        |
