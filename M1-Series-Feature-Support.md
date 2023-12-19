@@ -69,7 +69,7 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | 6.1                  | 6.1                            | 6.1                   | 6.1                  |
 | Bluetooth          | 6.2                  | 6.2                            | 6.2                   | 6.2                  |
 | 3.5mm jack         | linux-asahi          | linux-asahi                    | linux-asahi           | linux-asahi          |
-| Speakers           | linux-asahi          | linux-asahi                    | linux-asahi           | TBA                  | 
+| Speakers           | linux-asahi ([notes](#speakers)) | linux-asahi ([notes](#speakers)) | linux-asahi ([notes](#speakers)) | TBA                  | 
 | SD card slot       | -                    | -                              | -                     | -                    |
 | 1Gbps Ethernet     | 5.16                 | -                              | -                     | 5.17                 |
 | 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    |
@@ -94,7 +94,7 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | 6.1                               | 6.1                  |
 | Bluetooth          | 6.2                               | 6.2                  |
 | 3.5mm jack         | linux-asahi                       | linux-asahi          |
-| Speakers           | linux-asahi                       | linux-asahi          |
+| Speakers           | linux-asahi ([notes](#speakers))  | linux-asahi ([notes](#speakers)) |
 | SD card slot       | 5.17                              | 5.17                 |
 | 1Gbps Ethernet     | -                                 | -                    |
 | 10Gbps Ethernet    | -                                 | linux-asahi          |
@@ -119,3 +119,6 @@ that this hacked together driver becomes unnecessary at some point in the near f
 
 ### ANE driver
 An out of tree [kernel module](https://github.com/eiln/ane/tree/main) is available. It will be merged into linux-asahi.
+
+### Speakers
+The speakers are enabled with separate patches due to a [lsp-plugins bug](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20). The bug causes full-scale artifacts which could potentially damage the speakers. A release including the fix is planned for 2023-12-24.
