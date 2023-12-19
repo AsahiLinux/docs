@@ -2,9 +2,8 @@ This page details currently supported features on all M1 series (M1, M1 Pro, M1 
 their progress towards being upstreamed. The tables herein can be interpreted as follows:
 
 * **Kernel release, *e.g.* 6.0:** the feature was incorporated upstream as of this release
-* **linux-asahi (kernel release):** the feature is stable, available for use in `linux-asahi`, and should be upstream by the release indicated
-* **linux-asahi**: the feature is (mostly) stable and available for use in Fedora Asahi Remix and in `linux-asahi`
-* **asahi-edge**: the feature is (mostly) stable and available for use in Fedora Asahi Remix. For historical reason it is available in the `linux-asahi-edge` package in the linux-asahi Linux distribution
+* **linux-asahi (kernel release):** the feature is stable, available for use in Fedora Asahi Remix, and should be upstream by the release indicated
+* **linux-asahi**: the feature is (mostly) stable and available for use in Fedora Asahi Remix 
 * **WIP**: Development work on the feature is actively progressing, however is not yet ready for wider testing, use or distribution
 * **TBA**: Active work on this feature is not being undertaken at this time
 
@@ -21,7 +20,7 @@ These are features/hardware blocks that are present on all devices with the give
 
 |                  | M1<br>(T8103)        | M1 Pro/Max/Ultra<br>(T600x) |
 |------------------|:--------------------:|:---------------------------:|
-| DCP              | asahi-edge           | asahi-edge                  |
+| DCP              | linux-asahi          | linux-asahi                 |
 | USB2 (TB ports)  | linux-asahi          | linux-asahi                 |
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 |
 | Thunderbolt      | WIP                  | WIP                         |
@@ -33,7 +32,7 @@ These are features/hardware blocks that are present on all devices with the give
 | PCIe (GE)        | -                    | -                           |
 | cpufreq          | 6.2                  | 6.2                         |
 | cpuidle          | linux-asahi (notes)  | linux-asahi (notes)         |
-| Suspend/sleep    | asahi-edge           | asahi-edge                  |
+| Suspend/sleep    | linux-asahi          | linux-asahi                 |
 | Video Encoder    | WIP                  | WIP                         |
 | ProRes Codec     | -                    | TBA                         |
 | AICv2            | -                    | 5.18                        |
@@ -60,7 +59,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Installer          | yes                  | yes                            | yes                   | yes                  |
 | Devicetree         | 5.13                 | 5.17                           | 5.17                  | 5.17                 |
 | Main display       | 5.17                 | 5.17                           | 5.17                  | 5.17                 |
-| Brightness         | -                    | asahi-edge                     | asahi-edge            | asahi-edge           |
+| Brightness         | -                    | linux-asahi                    | linux-asahi           | linux-asahi          |
 | HDMI Out           | 5.13                 | -                              | -                     | -                    |
 | Keyboard           | -                    | linux-asahi                    | linux-asahi           | -                    |
 | KB backlight       | -                    | 6.4                            | 6.4                   | -                    |
@@ -70,13 +69,13 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | 6.1                  | 6.1                            | 6.1                   | 6.1                  |
 | Bluetooth          | 6.2                  | 6.2                            | 6.2                   | 6.2                  |
 | 3.5mm jack         | linux-asahi          | linux-asahi                    | linux-asahi           | linux-asahi          |
-| Speakers           | linux-asahi          | WIP                            | asahi-6.5-24 (notes)   | WIP                  | 
+| Speakers           | linux-asahi          | linux-asahi                    | linux-asahi           | TBA                  | 
 | SD card slot       | -                    | -                              | -                     | -                    |
 | 1Gbps Ethernet     | 5.16                 | -                              | -                     | 5.17                 |
 | 10Gbps Ethernet    | 5.17                 | -                              | -                     | -                    |
 | Microphones        | -                    | WIP                            | WIP                   | WIP                  |
 | Webcam             | -                    | linux-asahi                    | linux-asahi           | linux-asahi          |
-| Touch Bar          | -                    | fedora-asahi (6.5)             | -                     | -                    |
+| Touch Bar          | -                    | linux-asahi                    | -                     | -                    |
 | TouchID            | TBA                  | TBA                            | TBA                   | TBA                  |
 
 ## M1 Pro/Max/Ultra devices
@@ -85,7 +84,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Installer          | yes                               | yes                  |
 | Devicetree         | 6.2                               | 6.2                  |
 | Main display       | 5.17                              | 5.17                 |
-| Brightness         | asahi-edge                        | -                    |
+| Brightness         | linux-asahi                       | -                    |
 | HDMI Out           | linux-asahi (13.5 FW only)        | 6.2                  |
 | Keyboard           | linux-asahi                       | -                    |
 | KB backlight       | 6.4                               | -                    |
@@ -95,7 +94,7 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | 6.1                               | 6.1                  |
 | Bluetooth          | 6.2                               | 6.2                  |
 | 3.5mm jack         | linux-asahi                       | linux-asahi          |
-| Speakers           | WIP                               | WIP                  |
+| Speakers           | linux-asahi                       | linux-asahi          |
 | SD card slot       | 5.17                              | 5.17                 |
 | 1Gbps Ethernet     | -                                 | -                    |
 | 10Gbps Ethernet    | -                                 | linux-asahi          |
@@ -117,10 +116,6 @@ this functionality to Asahi Linux. This greatly improves the UX on laptops when 
 energy-aware scheduling, as it resolves the issue of the machines running warm to the touch
 and significantly improves battery life. This can never be upstreamed, however the hope is
 that this hacked together driver becomes unnecessary at some point in the near future.
-
-### MacBook Air (2020) speakers
-Only supported on the Asahi Fedora remix with kernels 6.5.11-404.asahi or later. More
-information [here](https://github.com/AsahiLinux/docs/wiki/SW:Speakers).
 
 ### ANE driver
 An out of tree [kernel module](https://github.com/eiln/ane/tree/main) is available. It will be merged into linux-asahi.
