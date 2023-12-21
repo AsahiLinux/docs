@@ -1,5 +1,11 @@
 # Speaker support in Asahi Linux
 
+**Th requirements and supported devices on this page are outdated!**
+
+Look at [asahi-audio](https://github.com/AsahiLinux/asahi-audio)'s [README.md](https://github.com/AsahiLinux/asahi-audio/blob/main/README.md) for requirements and supported devices.
+
+***
+
 We are progressively enabling speaker support on Asahi Fedora Remix.
 
 Currently supported models:
