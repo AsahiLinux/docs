@@ -7,11 +7,19 @@ Below are some fixes for common early adopter hacks. Please try _all_ of them be
 Your bug will be ignored if we find that you have failed to rectify any of the issues
 below.
 
-### The Pro Audio profile is/was enabled for the internal speakers
-This one can happen in one of two ways:
+### The Pro Audio profile is/was enabled for the internal speakers / headphones
+This one can happen in one of three ways:
+* You have changed the profile while headphones were plugged in
 * You have been using a very, very, _very_ old version of `asahi-audio`
 * You have circumvented Wireplumber node permissions to experiment with device profiles
-The fix is the same for both cases:
+
+In the first case change the profile back to `Default` (HiFi). In KDE's Audio settings
+change the profile back to `Default`. If no headphones are plugged in press
+`Show Inactive Devices`. The same should be possible with applications like `pavucontrol`.
+In doubt delete WirePlumber's sstate directory (`rm -rf ~/.local/state/wireplumber/`)
+and reboot.
+
+The fix in the two other cases is the the same:
 1. `rm -rf ~/.local/state/wireplumber/`
 2. Reinstall `asahi-audio`, Pipewire _and_ Wireplumber
 3. Reboot your machine
