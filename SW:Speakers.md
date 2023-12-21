@@ -1,16 +1,16 @@
 # Speaker support in Asahi Linux
 
-**Th requirements and supported devices on this page are outdated!**
-
-Look at [asahi-audio](https://github.com/AsahiLinux/asahi-audio)'s [README.md](https://github.com/AsahiLinux/asahi-audio/blob/main/README.md) for requirements and supported devices.
-
-***
-
-We are progressively enabling speaker support on Asahi Fedora Remix.
-
 Currently supported models:
 
 * M1 MacBook Air 13" (J313)
+* MacBook Air (13-inch, M1, 2020)
+* MacBook Air (13-inch, M2, 2022)
+* MacBook Air (15-inch, M2, 2023)
+* MacBook Pro (13-inch, M1/M2, 2020/2022)
+* MacBook Pro (14-inch, M1/M2 Pro/Max, 2021/2023)
+* MacBook Pro (16-inch, M1/M2 Pro/Max, 2021/2023)
+* Mac mini (M1/M2/M2 Pro, 2020/2023)
+* Mac Studio (M1/M2 Max/Ultra, 2022/2023)
 
 Proper speaker support has been a multi-year development effort involving many people across all parts of the Linux audio stack. We want to offer the best speaker support of any Linux laptop platform, and that has meant driving Linux desktop audio forward a couple decades so that we can do what is expected of a modern laptop audio subsystem!
 
@@ -55,15 +55,6 @@ You can watch speakersafetyd in action by using `sudo journalctl -fu speakersafe
 
 ## Distro integration notes
 
-You need:
-- The latest Asahi kernel (tag asahi-6.5-25 or later)
-- [alsa-ucm-conf-asahi](https://github.com/AsahiLinux/alsa-ucm-conf-asahi)
-- [asahi-audio](https://github.com/asahilinux/asahi-audio)
-- [speakersafetyd](https://github.com/asahilinux/speakersafetyd)
-- [bankstown](https://github.com/chadmed/bankstown/)
-- [LSP plug-ins](https://lsp-plug.in/) (LV2 version)
-- PipeWire 0.3.85. Depending on your packaging rules, you might need your package to create a few empty directories (see [here](https://src.fedoraproject.org/rpms/pipewire/commits/rawhide)) so `asahi-audio` can put files there.
-- PipeWire `module-filter-chain-lv2` (this may be a separate package or flags depending on distro)
-- WirePlumber 0.4.16
+Requirements according to asahi-audio](https://github.com/AsahiLinux/asahi-audio)'s [README.md](https://github.com/AsahiLinux/asahi-audio/blob/main/README.md).
 
-The correct deployment order is asahi-audio/speakersafetyd > (whatever you use to get those installed for users, e.g. metapackage) > kernel. If you push the kernel first before asahi-audio, users will get either a nonfunctional (if no speakersafetyd) or functional but bad-sounding (if speakersafetyd is installed) raw speaker device with no DSP. 
+The correct deployment order is asahi-audio/speakersafetyd > (whatever you use to get those installed for users, e.g. metapackage) > kernel. If you push the kernel first before asahi-audio, users will get either a nonfunctional (if no speakersafetyd) or functional but bad-sounding (if speakersafetyd is installed) raw speaker device with no DSP.
