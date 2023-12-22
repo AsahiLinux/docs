@@ -51,7 +51,7 @@ These are features/hardware blocks that are present on all devices with the give
 | SPMI             | linux-asahi          | linux-asahi                 |
 | RTC              | linux-asahi          | linux-asahi                 |
 | SEP              | WIP                  | WIP                         |
-| Neural Engine    | out of tree (notes)  | out of tree  (notes)        |
+| Neural Engine    | out of tree ([notes](#ane-driver)) | out of tree ([notes](#ane-driver)) |
 
 
 ## M2 devices
