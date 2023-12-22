@@ -32,7 +32,7 @@ These are features/hardware blocks that are present on all devices with the give
 | PCIe             | 5.16 / 6.4 (dts)     | linux-asahi                 |
 | PCIe (GE)        | -                    | TBA                         |
 | cpufreq          | 6.2                  | 6.2                         |
-| cpuidle          | linux-asahi (notes)  | linux-asahi (notes)         |
+| cpuidle          | linux-asahi ([notes](#cpuidle-situation)) | linux-asahi ([notes](#cpuidle-situation)) |
 | Suspend/sleep    | linux-asahi          | linux-asahi                 |
 | Video Encoder    | WIP                  | WIP                         |
 | ProRes Codec     | TBA                  | TBA                         |
