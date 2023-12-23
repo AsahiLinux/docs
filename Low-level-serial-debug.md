@@ -72,6 +72,7 @@ This is all rather rudimentary because it's a stop-gap for the proper solution, 
 An alternative to the above DIY approach is the Central Scrutinizer project, which started exactly as the above, only using a custom PCB instead of a breadboard. It has since evolved to support additional features, but the core functionality is exactly the same:
 
 ![PXL_20230721_101806861~2](https://github.com/AsahiLinux/docs/assets/19569618/bf545188-f8d8-4888-acd9-58985ac84099)
+![](https://cdn.tindiemedia.com/images/resize/7EHWxGEFPrA2RvpCMu6XwfxsC2c=/p/full-fit-in/1200x800/i/441372/products/2023-08-26T15%3A13%3A11.940Z-PXL_20230826_151035866~2.jpg)
 
 Main features are:
 - RaspberryPi Pico as the micro-controller (yes, totally overkill, but cheaper than an Arduino!)
@@ -81,11 +82,9 @@ Main features are:
 - USB-C orientation detection (v2+)
 - capable of using dumb USB2.0 cables for serial, at the expense of not being able to use the pass-through feature (v3+)
 
-The KiCad project is available [here](https://git.kernel.org/pub/scm/linux/kernel/git/maz/cs-hw.git), and the corresponding firmware for the Pico is [there](https://git.kernel.org/pub/scm/linux/kernel/git/maz/cs-sw.git).
+The KiCad project is available [here](https://git.kernel.org/pub/scm/linux/kernel/git/maz/cs-hw.git), and the corresponding firmware for the Pico is [there](https://git.kernel.org/pub/scm/linux/kernel/git/maz/cs-sw.git). The hardware side of the project is pre-configured to production at JLCPCB, so that producing it is only a few clicks away. Alternatively, you can find some pre-built boards on Tindie, but building your own should be the first port of call.
 
-Note that **no guarantee** is provided that this is in any way reliable. It works for me (and a few others), but this is ultimately **your own responsibility**.
-
-If you want more information about this project, feel free to get in touch with [maz](mailto:maz@kernel.org).
+If you want more information about this project, feel free to get in touch with [maz](mailto:maz@kernel.org). 
 
 ### Flexible USB-PD Debug Interface (project name TBD)
 
