@@ -8,7 +8,7 @@
 
 ## How do I install it?
 
-See the alpha release blog post: https://asahilinux.org/2022/03/asahi-linux-alpha-release/
+See the website for instructions: https://asahilinux.org/
 
 ## How do I uninstall / clean up a failed installation?
 
@@ -45,7 +45,7 @@ HDMI on the Mac Mini is internally connected to a DisplayPort port.
 
 ## Do I need to reinstall to get new features / updates?
 
-No! Just upgrade your system using `pacman -Syu`. Kernel updates will require a reboot. Consider a tool like `needrestart` to determine if there are any outdated services or an outdated kernel running.
+No! Just upgrade your system using `dnf upgrade`. Kernel updates will require a reboot. Consider a tool like `needrestart` to determine if there are any outdated services or an outdated kernel running.
 
 ## Two of the keys on my keyboard are swapped
 
@@ -58,6 +58,8 @@ macOS may be set as your default boot medium. Enter One True Recovery (1TR) by s
 ## I am having performance/tearing/feature issues on Xorg
 
 Please stop using Xorg and switch to Wayland. Xorg as a primary display server is all but unmaintained, and its architecture is at odds with modern display hardware as is present on Apple Silicon devices. We do not have the development bandwidth to spend time on Xorg and its idiosyncrasies. Distributions and downstream desktop environments are already dropping Xorg support. You are free to keep using it if you wish, but we will not be supporting it beyond "it starts and displays a basic desktop correctly".
+
+The Fedora Asahi Remix (the flagship reference distribution) is Wayland-only out of the box for this reason.
 
 ## Screen recording is slow
 
