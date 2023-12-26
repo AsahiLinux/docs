@@ -52,7 +52,7 @@ Some guesses as to what they might mean:
 * `PSTR`: entire system's power consumption in W
 * `SBA?`: system battery information
 * `SBA1`: battery cell 1 voltage in mV
-* `SBA2`: battery cell 3 voltage in mV
+* `SBA2`: battery cell 2 voltage in mV
 * `SBA3`: battery cell 3 voltage in mV
 * `SBAV`: battery voltage in mV (sum of `SBA1`, `SBA2` and `SBA3`, same as `B0AV` but as a `flt`)
 * `SBAR`: battery remaining capacity in mAh (same as `B0RM` but as a `flt`)
