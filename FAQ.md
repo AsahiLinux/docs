@@ -59,7 +59,7 @@ macOS may be set as your default boot medium. Enter One True Recovery (1TR) by s
 
 Please stop using Xorg and switch to Wayland. Xorg as a primary display server is all but unmaintained, and its architecture is at odds with modern display hardware as is present on Apple Silicon devices. We do not have the development bandwidth to spend time on Xorg and its idiosyncrasies. Distributions and downstream desktop environments are already dropping Xorg support. You are free to keep using it if you wish, but we will not be supporting it beyond "it starts and displays a basic desktop correctly".
 
-The Fedora Asahi Remix (the flagship reference distribution) is Wayland-only out of the box for this reason.
+The [Fedora Asahi Remix](https://asahilinux.org/fedora/) (the flagship reference distribution) is Wayland-only out of the box for this reason.
 
 ## Screen recording is slow
 
