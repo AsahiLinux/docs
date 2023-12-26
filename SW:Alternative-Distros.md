@@ -9,7 +9,7 @@ Several members of the community have contributed guides and pre-built artifacts
 | deepin | https://github.com/deepin-community| https://github.com/deepin-community/deepin-m1 |
 | deepin | deepin M1 SIG | https://www.deepin.org/index/docs/sig/sig/deepin-m1/README |
 | Fedora | https://github.com/leifliddy | https://github.com/leifliddy/asahi-fedora-builder |
-| Fedora | Fedora Asahi SIG | https://fedoraproject.org/wiki/SIGs/Asahi |
+| Fedora | [Fedora Asahi SIG](https://fedoraproject.org/wiki/SIGs/Asahi) | https://asahilinux.org/fedora/ |
 | Gentoo<br>(LiveCD method) | IRC: chadmed (https://github.com/chadmed) | [[Installing Gentoo with LiveCD]] |
 | NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-m1/blob/main/docs/uefi-standalone.md |
 | Rocky Linux | https://github.com/leifliddy| https://github.com/leifliddy/asahi-rocky-builder |
