@@ -1,0 +1,1 @@
+Wiki for the Asahi Linux project: https://asahilinux.org/
