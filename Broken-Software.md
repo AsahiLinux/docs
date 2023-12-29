@@ -119,20 +119,22 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 
 Open issues (other than page size issues) in third-party software, reported and/or tracked by Asahi core team members:
 
-| Package        | Issue |
-| -------------- | ----- |
-| abrt           | [ABRT can't submit crash report: processing failed](https://bugzilla.redhat.com/show_bug.cgi?id=2238248) |
-| blender        | [blender core dumps at execution instead of giving sane feedback about unsupported hardware](https://bugzilla.redhat.com/show_bug.cgi?id=2237821) |
-| chromium       | [Skia shader compilation error](https://bugs.chromium.org/p/chromium/issues/detail?id=1442633)
-| firefox        | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
-| firefox        | [YouTube is capping resolutions to 1080 on Linux aarch64 user agents](https://bugzilla.mozilla.org/show_bug.cgi?id=1869521)
-| glibc          | [TLS modid reuse breaks TLS accesses](https://bugzilla.redhat.com/show_bug.cgi?id=2251557) |
-| kpipewire      | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) |
-| kpipewire      | [Screen recording quality is terrible](https://bugs.kde.org/show_bug.cgi?id=476186) |
-| kpipewire      | [OpenH264 codec support](https://bugs.kde.org/show_bug.cgi?id=476187) |
-| kwin           | [Outputs freeze on multi-screen when hardware cursors are not supported](https://bugs.kde.org/show_bug.cgi?id=477451) |
-| kwin           | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
-| kwin           | [Software cursor repaints are glitchy with fractional scaling sometimes](https://bugs.kde.org/show_bug.cgi?id=477455) |
-| lib-dsp-lib    | [Fix aarch64 msmatrix code](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20) |
-| systemsettings | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
-| wireplumber    | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538)
+| Package          | Issue | Notes |
+| ---------------- | ----- | ----- |
+| abrt             | [ABRT can't submit crash report: processing failed](https://bugzilla.redhat.com/show_bug.cgi?id=2238248) |
+| blender          | [blender core dumps at execution instead of giving sane feedback about unsupported hardware](https://bugzilla.redhat.com/show_bug.cgi?id=2237821) |
+| chromium         | [Skia shader compilation error](https://bugs.chromium.org/p/chromium/issues/detail?id=1442633)
+| firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
+| firefox          | [YouTube is capping resolutions to 1080 on Linux aarch64 user agents](https://bugzilla.mozilla.org/show_bug.cgi?id=1869521)
+| gcc              | [ceph-common: std::_Rb_tree_rebalance_for_erase(): python3.12 killed by SIGSEGV](https://bugzilla.redhat.com/show_bug.cgi?id=2241339) |
+| glibc            | [TLS modid reuse breaks TLS accesses](https://bugzilla.redhat.com/show_bug.cgi?id=2251557) |
+| kpipewire        | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) |
+| kpipewire        | [Screen recording quality is terrible](https://bugs.kde.org/show_bug.cgi?id=476186) |
+| kpipewire        | [OpenH264 codec support](https://bugs.kde.org/show_bug.cgi?id=476187) |
+| kwin             | [Outputs freeze on multi-screen when hardware cursors are not supported](https://bugs.kde.org/show_bug.cgi?id=477451) |
+| kwin             | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
+| kwin             | [Software cursor repaints are glitchy with fractional scaling sometimes](https://bugs.kde.org/show_bug.cgi?id=477455) |
+| lib-dsp-lib      | [Fix aarch64 msmatrix code](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20) | Fixed in lsp-dsp-lib 1.0.20 |
+| systemsettings   | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
+| wireplumber      | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538)
+| xkeyboard-config | [Handling Mac Fn keys in xkeyboard](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379) |
