@@ -21,7 +21,7 @@ Desktop-class AArch64 machines are only going to become more common in the next 
 By having an upstream-first policy we can make sure these fixes are propagated to everyone
 via distro repositories, improving the AArch64 ecosystem for everyone! See [Fixed packages](#fixed-packages)
 for a list of software that has been fixed for everyone as a result of this. You wouldn't
-want us to keep Emacs all to ourselves, now would you?
+want us to keep Emacs all to ourselves now, would you?
 
 ### Why does "not work" sometimes mean "instantly segfault"?
 If an ELF executable or library has sections which are not aligned to 16K pages, the loader
