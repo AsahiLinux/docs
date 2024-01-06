@@ -38,11 +38,6 @@ As the message implies, this is caused by Time Machine snapshots taking up "free
 
 Don't use Disk Utility, it's broken and only works for really simple partition setups. See [[Partitioning cheatsheet]] to learn how to manage partitions with the command line instead.
 
-## How come HDMI works on Mac Mini but not MacBook?
-
-HDMI on the MacBook is internally connected to a Thunderbolt port.
-HDMI on the Mac Mini is internally connected to a DisplayPort port.
-
 ## Do I need to reinstall to get new features / updates?
 
 No! Just upgrade your system using `dnf upgrade`. Kernel updates will require a reboot. Consider a tool like `needrestart` to determine if there are any outdated services or an outdated kernel running.
