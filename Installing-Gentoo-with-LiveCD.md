@@ -30,13 +30,16 @@ If you've never used a Portage overlay before, take a few minutes to read the fi
 Failure to do so properly may result in you missing critical system updates or leaving your machine in an unbootable state.
 
 ## Important prerequisite information
-* When upgrading the kernel, you **must** pass `--all-ramdisk-modules` to `genkernel` for building the initramfs. Since we have
-  some required softdeps for booting, failing to put all modules in the initramfs will leave your system in an unbootable state.
-  Of course, this only applies if you actually use an initramfs.
+* Please do not use `genkernel` to build your initramfs. The only supported initramfs generator is `dracut`. The `asahi-configs`
+  package installed later will supply the necessary configuration files to make `dracut` work seamlessly.
 
 * If you are using the [`asahi-audio`](https://github.com/chadmed/asahi-audio) package, PipeWire _must_ be compiled with `extra` 
   and `gstreamer` USE flags. Failing to do so will stop PipeWire from being linked against `libsndfile`, which will stop the
   FIRs from loading.
+
+* Currently, this "pivot" method *only* works from the ALARM Minimal image, which is deprecated. A "proper" Gentoo installer
+  and bootable LiveCD are both in the works for when this method stops working. `asahi-gentoosupport` will not be updated
+  to support pivoting from Fedora, and no support will be given for issues related to attempting to do this yourself.
 
 ## Step 1: Set up Asahi Linux Minimal
 Install Asahi Linux Minimal (with more than the minimal disk space, 12GB worked) and set up networking.
