@@ -55,7 +55,7 @@ Install Git by running `pacman -S git`/`sudo pacman -S git`..
 This repo automates setting up the LiveCD for booting on Apple Silicon. Clone it somewhere and enter the directory.
 
 ## Step 3: Acquire the latest LiveCD
-Get the latest install-arm64-minimal image from the Gentoo site. It's probably easiest to do this by installing a text
+Get the latest install-arm64-minimal image from the [Gentoo downloads site](https://www.gentoo.org/downloads/). It's probably easiest to do this by installing a text
 based web browser such as `links`. Save this image to the directory you cloned `asahi-gentoosupport` to as `install.iso`.
 It must be called `install.iso`. 
 
