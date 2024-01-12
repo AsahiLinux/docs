@@ -23,3 +23,4 @@ following updates adding support for more devices and hardware:
 * [Paving the Road to Vulkan on Asahi Linux](https://asahilinux.org/2023/03/road-to-vulkan/)
 * [OpenGL 3.1 on Asahi Linux](https://asahilinux.org/2023/06/opengl-3-1-on-asahi-linux/)
 * [Our new flagship distro: Fedora Asahi Remix](https://asahilinux.org/2023/08/fedora-asahi-remix/)
+* [New in Fedora Asahi Remix](https://asahilinux.org/2024/01/fedora-asahi-new/)
