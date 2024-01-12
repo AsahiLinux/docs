@@ -41,7 +41,7 @@ You can use the public Asahi Linux installer to install it. Open up a macOS term
 curl https://alx.sh | sh
 ```
 
-Follow the prompts to choose your desired installation mode. You can opt to install the Desktop or Minimal images (which will get you an Arch Linux ARM based rootfs), or the UEFI only option to get just m1n1+u-boot, which will boot UEFI executables off of a USB drive (or off of the internal storage, once installed). Installation of your preferred rootf/kernel is left as an exercise for the reader in that case.
+Follow the prompts to choose your desired installation mode. You can opt to install one of the Fedora Asahi Remix images, or the UEFI only option to get just m1n1+u-boot, which will boot UEFI executables off of a USB drive (or off of the internal storage, once installed). Installation of your preferred rootf/kernel is left as an exercise for the reader in that case.
 
 Alternatively, if you enable expert mode in the installer, you can opt to install m1n1 in tethered-only proxy mode. In this case, you can skip the next section, as your m1n1 will already (unconditionally) boot in proxy mode.
 
