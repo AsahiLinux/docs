@@ -115,3 +115,5 @@ CONFIG_APPLE_MFI_FASTCHARGE=m
 ```
 
 Warning: if this is your first time modifying a kernel configuration, please do take the advice at the top of the file about not hand-editing the file seriously.  Do NOT just copy the fragments in this wiki into your config and try to build the kernel; this is likely to result in an inconsistent config and a failed build.   Instead, use the `make menuconfig` or `make xconfig` system to modify your kernel configuration.
+
+For a reference kernel configuration, see [here](https://github.com/AsahiLinux/docs/wiki/Reference-Asahi-kernel-config).
