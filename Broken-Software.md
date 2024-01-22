@@ -84,7 +84,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 ## Broken packages
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
-| f2fs | https://github.com/torvalds/linux/commit/5c9b469295fb | |
+| f2fs | https://github.com/torvalds/linux/commit/5c9b469295fb | fixed with https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287 ? |
 | box64 | https://github.com/ptitSeb/box64/issues/384 | Does not support 16K pages in generic builds, therefore is as good as broken as far as shipping in distros goes. Needs multi-pagesize support to work out of the box. |
 | FEX | https://github.com/FEX-Emu/FEX/issues/1921 | Not likely to be fixed in the near future. \* |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
