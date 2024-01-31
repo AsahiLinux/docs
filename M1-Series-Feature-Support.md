@@ -121,4 +121,4 @@ that this hacked together driver becomes unnecessary at some point in the near f
 An out of tree [kernel module](https://github.com/eiln/ane/tree/main) is available. It will be merged into linux-asahi.
 
 ### Speakers
-The speakers are enabled with separate patches due to a [lsp-plugins bug](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20). The bug causes full-scale artifacts which could potentially damage the speakers. A release including the fix is planned for 2023-12-24.
+The speakers are enabled with separate patches due to a [lsp-plugins bug](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20). The bug causes full-scale artifacts which could potentially damage the speakers. This fix was included in lsp-plugins release [1.0.20](https://github.com/lsp-plugins/lsp-dsp-lib/releases/tag/1.0.20).
