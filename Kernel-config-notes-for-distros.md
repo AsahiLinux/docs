@@ -58,6 +58,7 @@ You should also double-check that you have the following configuration options s
 
 ```
 CONFIG_RUST=y
+# CONFIG_GCC_PLUGINS is not set
 CONFIG_ARM64_16K_PAGES=y
 # CONFIG_RUST_DEBUG_ASSERTIONS is not set
 CONFIG_RUST_OVERFLOW_CHECKS=y
