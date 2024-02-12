@@ -85,7 +85,6 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
 | box64 | https://github.com/ptitSeb/box64/issues/384 | Does not support 16K pages in generic builds, therefore is as good as broken as far as shipping in distros goes. Needs multi-pagesize support to work out of the box. |
-| f2fs | https://github.com/torvalds/linux/commit/5c9b469295fb | fixed with https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287 ? |
 | [fd](https://github.com/sharkdp/fd/issues/1085) or any project using `jemallocator` crate    | https://github.com/sharkdp/fd/issues/1085 | Same reason as jemalloc (also almost always statically linked) |
 | FEX | https://github.com/FEX-Emu/FEX/issues/1921 | Not likely to be fixed in the near future. \* |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
@@ -102,9 +101,10 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | ------- | ------------- | ----- |
 | 1Password | _proprietary_ | Fixed as of 8.8.0-119 beta. |
 | Android Cuttlefish | https://android-review.googlesource.com/c/device/google/cuttlefish/+/2545951 | Fixed in AOSP main branch by switching to musl. |
-| btrfs | https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/ | Fixed since Linux 5.19 |
+| btrfs | https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/ | Fixed since Linux 5.19 ([caveats](https://social.treehouse.systems/@marcan/111493984306764821)) |
 | Chromium | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788| Includes Electron apps.<br>Fixed since 102. |
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
+| f2fs | https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287 | Fixed since Linux 6.7 |
 | KiCad | https://gitlab.com/kicad/code/kicad/-/issues/16008 | Fixed since 7.0.10 |
 | libunwind | https://github.com/libunwind/libunwind/pull/330 | Fixed since 1.7.0 |
 | libglvnd | https://gitlab.freedesktop.org/glvnd/libglvnd/-/merge_requests/262 | Fixed since 1.5.0 |
