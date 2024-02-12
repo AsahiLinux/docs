@@ -54,6 +54,8 @@ CONFIG_NVMEM_APPLE_EFUSES=y
 
 (Distros intending to support other platforms with their 16k arm64 kernel besides Apple Silicon will be inclined to build as many of these drivers as modules as they can.  This is fine, though from a reliability standpoint building NVME_APPLE and SPI_HID_APPLE_OF in-kernel has worked much better for me.)
 
+(Also note that the configuration options above do not match the standard dracut configuration provided by asahi-scripts.)
+
 You should also double-check that you have the following configuration options set:
 
 ```
