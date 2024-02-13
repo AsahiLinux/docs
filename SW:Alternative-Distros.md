@@ -10,6 +10,6 @@ The primary supported distribution is the [Fedora Asahi Remix](https://asahilinu
 | deepin | deepin M1 SIG | https://www.deepin.org/index/docs/sig/sig/deepin-m1/README |
 | Fedora | https://github.com/leifliddy | https://github.com/leifliddy/asahi-fedora-builder |
 | Gentoo<br>(LiveCD method) | IRC: chadmed (https://github.com/chadmed) | [[Installing Gentoo with LiveCD]] |
-| NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-m1/blob/main/docs/uefi-standalone.md |
+| NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-apple-silicon/blob/main/docs/uefi-standalone.md |
 | Rocky Linux | https://github.com/leifliddy| https://github.com/leifliddy/asahi-rocky-builder |
 | Ubuntu | https://github.com/UbuntuAsahi | https://github.com/UbuntuAsahi/ubuntu-asahi |
