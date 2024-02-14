@@ -106,15 +106,16 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
 | f2fs | https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287 | Fixed since Linux 6.7 |
 | KiCad | https://gitlab.com/kicad/code/kicad/-/issues/16008 | Fixed since 7.0.10 |
-| libunwind | https://github.com/libunwind/libunwind/pull/330 | Fixed since 1.7.0 |
 | libglvnd | https://gitlab.freedesktop.org/glvnd/libglvnd/-/merge_requests/262 | Fixed since 1.5.0 |
+| libunwind | https://github.com/libunwind/libunwind/pull/330 | Fixed since 1.7.0 |
 | libvirt/QEMU/KVM | https://patchew.org/QEMU/20230727073134.134102-1-akihiko.odaki@daynix.com/ | Fixed since QEMU 7.2.6 / 8.0.5 / 8.1.1 |
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Fixed since 2.03.21 |
 | pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | Fixed and shipped with Chromium 108 |
 | qt5-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 87, likely won’t be fixed upstream. [Fixed in downstream ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1928) |
 | qt6-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 94 for 6.3, partially fixed upstream in 6.4 for webview but not for QtPdf. [Fixed in downstream ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1928) |
 | Redis | https://bugzilla.redhat.com/show_bug.cgi?id=2240293 https://bodhi.fedoraproject.org/updates/FEDORA-2023-bdb1515542 | Fixed in fedora since redis-7.0.13-2.fc38 and redis-7.2.1-2.fc39) |
-| rr | https://github.com/rr-debugger/rr/pull/3146 | Fixed since 5.6.0. |
+| Ryujinx | https://github.com/Ryujinx/Ryujinx/pull/6291 | Fixed since 1.1.1192 | 
+| rr | https://github.com/rr-debugger/rr/pull/3146 | Fixed since 5.6.0 |
 | Rust | https://github.com/archlinuxarm/PKGBUILDs/commit/19a1393 | Fixed for `rust-1.62.1-1.1` in ALARM/extra |  
 | Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/26103 | Fixed since 4.1.1 |
 | Visual Studio Code | https://aur.archlinux.org/packages/visual-studio-code-bin | Fixed since 1.71.0 (uses Electron 19) |
