@@ -94,7 +94,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Bluetooth          | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | HDMI Out           | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | 3.5mm jack         | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
-| Speakers           | linux-asahi ([notes](#speakers)) | linux-asahi ([notes](#speakers))| linux-asahi ([notes](#speakers))| TBA                  |
+| Speakers           | linux-asahi        | linux-asahi                       | linux-asahi          | TBA                  |
 | Microphones        | -                  | TBA                               | -                    | -                    |
 | Webcam             | -                  | linux-asahi                       | -                    | -                    |
 | SD card slot       | -                  | 5.17                              | 5.17                 | 5.17                 |
