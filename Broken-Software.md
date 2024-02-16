@@ -105,7 +105,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Chromium | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788| Includes Electron apps.<br>Fixed since 102. |
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
 | f2fs | https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287 | Fixed since Linux 6.7 |
-| k3s | https://github.com/k3s-io/k3s/issues/7335 | Fixed since 1.26.5 |
+| k3s-io | https://github.com/k3s-io/k3s/issues/7335 | Fixed since 1.26.5 |
 | KiCad | https://gitlab.com/kicad/code/kicad/-/issues/16008 | Fixed since 7.0.10 |
 | libglvnd | https://gitlab.freedesktop.org/glvnd/libglvnd/-/merge_requests/262 | Fixed since 1.5.0 |
 | libunwind | https://github.com/libunwind/libunwind/pull/330 | Fixed since 1.7.0 |
