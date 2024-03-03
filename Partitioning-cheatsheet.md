@@ -6,7 +6,13 @@ Note: We'll add uninstall/cleanup options to the installer soon, but by definiti
 
 ## Just wipe it all, please
 
-We have a stupidly dangerous script lying around that will indiscriminately wipe anything with "Linux", "EFI" or "Asahi" in its name, as well as all 2.5GB APFS containers (which the installer creates), with no confirmation. It should work for the vast majority of users as long as they don't already have any weird partitions, but please don't use it indiscriminately. ([There's a report of the wipe going wrong when there are multiple macOS installs, requiring a DFU restore to repair.](https://github.com/AsahiLinux/docs/issues/73)) You're much better off deleting partitions manually if you can help it. We wrote it mostly for developers who do lots of reinstalls and needed a quick way to reset. If you must use it, `curl -L https://alx.sh/wipe-linux | sh` as root. Ignore "operation not permitted" errors at the end (or run it from recovery mode for that optional part to work properly). Don't blame us if it eats your data. Note that this *won't* expand macOS to fill all freed up space; see below for that.
+We have a stupidly dangerous script lying around that will indiscriminately wipe anything with "Linux", "EFI" or "Asahi" in its name, as well as all 2.5GB APFS containers (which the installer creates), with no confirmation. It should work for the vast majority of users as long as they don't already have any weird partitions, but please don't use it indiscriminately. ([There's a report of the wipe going wrong when there are multiple macOS installs, requiring a DFU restore to repair.](https://github.com/AsahiLinux/docs/issues/73)) You're much better off deleting partitions manually if you can help it. We wrote it mostly for developers who do lots of reinstalls and needed a quick way to reset.
+
+Due to [some users **wiping** their macOS installs](https://github.com/AsahiLinux/asahi-installer/issues/253), the https://alx.sh/wipe-linux link has been disabled. If you must use it, you can access the script from the [AsahiLinux/asahi-installer](https://github.com/AsahiLinux/asahi-installer) repo in the [tools](https://github.com/AsahiLinux/asahi-installer/tree/main/tools) directory. **DO NOT RUN THE SCRIPT UNLESS YOU ARE AWARE THAT YOU CAN LOSE ACCESS TO ALL OF YOUR DATA.**
+
+Run `curl -L https://github.com/AsahiLinux/asahi-installer/raw/main/tools/wipe-linux.sh | sh` as root. Ignore "operation not permitted" errors at the end (or run it from recovery mode for that optional part to work properly). Don't blame us if it eats your data. Note that this *won't* expand macOS to fill all freed up space; see below for that.
+
+
 
 ## Do not use the *Disk Utility* application
 
