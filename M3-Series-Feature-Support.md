@@ -58,27 +58,27 @@ These are features/hardware blocks that are present on all devices with the give
 
 
 ## M3 devices
-|                    | iMac<br>(2023)     | MacBook Pro<br>(14-inch, late 2023) |
-|--------------------|:------------------:|:-----------------------------------:|
-| Installer          | no                 | no                                  |
-| Devicetree         | TBA                | TBA                                 |
-| Main display       | TBA                | TBA                                 |
-| Keyboard           | -                  | TBA                                 |
-| KB backlight       | -                  | TBA                                 |
-| Touchpad           | -                  | TBA                                 |
-| Brightness         | TBA                | TBA                                 |
-| Battery info       | -                  | TBA                                 |
-| WiFi               | TBA                | TBA                                 |
-| Bluetooth          | TBA                | TBA                                 |
-| HDMI Out           | -                  | TBA                                 |
-| 3.5mm jack         | TBA                | TBA                                 |
-| Speakers           | TBA                | TBA                                 |
-| Microphones        | TBA                | TBA                                 |
-| Webcam             | TBA                | TBA                                 |
-| SD card slot       | -                  | TBA                                 |
-| 1Gbps Ethernet     | TBA                | -                                   |
-| 10Gbps Ethernet    | -                  | -                                   |
-| TouchID            | -                  | TBA                                 |
+|                    | iMac<br>(2023)     | MacBook Pro<br>(14-inch, late 2023) | MacBook Air<br>(15-inch, 2024) |
+|--------------------|:------------------:|:-----------------------------------:|:------------------------------:|
+| Installer          | no                 | no                                  |                                |
+| Devicetree         | TBA                | TBA                                 |                                |
+| Main display       | TBA                | TBA                                 |                                |
+| Keyboard           | -                  | TBA                                 |                                |
+| KB backlight       | -                  | TBA                                 |                                |
+| Touchpad           | -                  | TBA                                 |                                |
+| Brightness         | TBA                | TBA                                 |                                |
+| Battery info       | -                  | TBA                                 |                                |
+| WiFi               | TBA                | TBA                                 |                                |
+| Bluetooth          | TBA                | TBA                                 |                                |
+| HDMI Out           | -                  | TBA                                 |                                |
+| 3.5mm jack         | TBA                | TBA                                 |                                |
+| Speakers           | TBA                | TBA                                 |                                |
+| Microphones        | TBA                | TBA                                 |                                |
+| Webcam             | TBA                | TBA                                 |                                |
+| SD card slot       | -                  | TBA                                 |                                |
+| 1Gbps Ethernet     | TBA                | -                                   |                                |
+| 10Gbps Ethernet    | -                  | -                                   |                                |
+| TouchID            | -                  | TBA                                 |                                |
 
 ## M3 Pro/Max devices
 |                    | MacBook Pro<br>(14/16-inch, late 2023) |
