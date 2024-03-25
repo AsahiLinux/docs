@@ -70,14 +70,14 @@ These are features/hardware blocks that are present on all devices with the give
 | Battery info       | -                  | TBA                                 |                                |
 | WiFi               | TBA                | TBA                                 |                                |
 | Bluetooth          | TBA                | TBA                                 |                                |
-| HDMI Out           | -                  | TBA                                 |                                |
+| HDMI Out           | -                  | TBA                                 | -                              |
 | 3.5mm jack         | TBA                | TBA                                 |                                |
 | Speakers           | TBA                | TBA                                 |                                |
 | Microphones        | TBA                | TBA                                 |                                |
 | Webcam             | TBA                | TBA                                 |                                |
-| SD card slot       | -                  | TBA                                 |                                |
-| 1Gbps Ethernet     | TBA                | -                                   |                                |
-| 10Gbps Ethernet    | -                  | -                                   |                                |
+| SD card slot       | -                  | TBA                                 | -                              |
+| 1Gbps Ethernet     | TBA                | -                                   | -                              |
+| 10Gbps Ethernet    | -                  | -                                   | -                              |
 | TouchID            | -                  | TBA                                 |                                |
 
 ## M3 Pro/Max devices
