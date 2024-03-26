@@ -58,7 +58,7 @@ These are features/hardware blocks that are present on all devices with the give
 
 
 ## M3 devices
-|                    | iMac<br>(2023)     | MacBook Pro<br>(14-inch, late 2023) | MacBook Air<br>(15-inch, 2024) |
+|                    | iMac<br>(2023)     | MacBook Pro<br>(14-inch, late 2023) | MacBook Air<br>(13” and 15” 2024) |
 |--------------------|:------------------:|:-----------------------------------:|:------------------------------:|
 | Installer          | no                 | no                                  |                                |
 | Devicetree         | TBA                | TBA                                 |                                |
