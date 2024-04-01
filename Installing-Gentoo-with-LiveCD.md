@@ -2,7 +2,7 @@
 - [Introduction](#Introduction)
 - [Prerequisites](#Important-prerequisite-information)
 - [Installation](#Step-1-Set-up-Asahi-Linux-Minimal)
-  * [Step 1: Set up Asahi Linux Minimal](#Step-1-Set-up-Asahi-Linux-Minimal)
+  * [Step 1: Set up Fedora Asahi Remix](#Step-1-Set-up-Fedora-Asahi-Remix)
   * [Step 2: Clone asahi-gentoosupport](#Step-2-Clone-asahi-gentoosupport)
   * [Step 3: Acquire the latest LiveCD](#Step-3-Acquire-the-latest-LiveCD)
   * [Step 4: Prepare the system for booting the Gentoo LiveCD](#Step-4-Prepare-the-system-for-booting-the-Gentoo-LiveCD)
@@ -33,59 +33,45 @@ Failure to do so properly may result in you missing critical system updates or l
 * Please do not use `genkernel` to build your initramfs. The only supported initramfs generator is `dracut`. The `asahi-configs`
   package installed later will supply the necessary configuration files to make `dracut` work seamlessly.
 
-* If you are using the [`asahi-audio`](https://github.com/chadmed/asahi-audio) package, PipeWire _must_ be compiled with `extra` 
-  and `gstreamer` USE flags. Failing to do so will stop PipeWire from being linked against `libsndfile`, which will stop the
-  FIRs from loading.
+## Step 1: Set up Fedora Asahi Remix
+Install any flavour of Fedora Asahi Remix you wish. We will be turning this install into Gentoo, so make sure you give
+the install the amount of disk space you *actually* want.
 
-* Currently, this "pivot" method *only* works from the ALARM Minimal image, which is deprecated. A "proper" Gentoo installer
-  and bootable LiveCD are both in the works for when this method stops working. `asahi-gentoosupport` will not be updated
-  to support pivoting from Fedora, and no support will be given for issues related to attempting to do this yourself.
+Update the system by running `dnf upgrade --refresh` as root, then reboot.
 
-## Step 1: Set up Asahi Linux Minimal
-Install Asahi Linux Minimal (with more than the minimal disk space, 12GB worked) and set up networking.
-The environment comes with iwd and NetworkManager for setting up WiFi. Ethernet connections
-should be handled automatically at boot.
-
-Update the system by running `pacman -Syu` as root (or `sudo pacman -Syu` if you installed Asahi Linux Desktop).
-Reboot into Asahi Linux.
-
-Install Git by running `pacman -S git`/`sudo pacman -S git`..
+Install Git by running `dnf install git`
 
 ## Step 2: Clone [`asahi-gentoosupport`](https://github.com/chadmed/asahi-gentoosupport)
 This repo automates setting up the LiveCD for booting on Apple Silicon. Clone it somewhere and enter the directory.
 
 ## Step 3: Acquire the latest LiveCD
-Get the latest install-arm64-minimal image from the [Gentoo downloads site](https://www.gentoo.org/downloads/). It's probably easiest to do this by installing a text
-based web browser such as `links`. Save this image to the directory you cloned `asahi-gentoosupport` to as `install.iso`.
-It must be called `install.iso`. 
+Get the latest install-arm64-minimal image from the [Gentoo downloads site](https://www.gentoo.org/downloads/).
+Save this image to the directory you cloned `asahi-gentoosupport` to as `install.iso`. It must be called `install.iso`. 
 
 ## Step 4: Prepare the system for booting the Gentoo LiveCD
 Run `./genstrap.sh` inside the `asahi-gentoosupport` directory. This will automatically prepare the system and LiveCD image for booting by
 * Extracting the SquashFS from the LiveCD
-* Injecting the `linux-asahi` kernel modules and firmware into it
+* Injecting the correct kernel modules and firmware into it
 * Wrapping the SquashFS in an initramfs
 * Adding a GRUB menu entry for the installer
 
 ## Step 5: Reboot into the Live Image
 Reboot the machine. When the GRUB menu appears, select Gentoo Live Install Environment. This will boot you to the standard LiveCD.
-From here, install Gentoo as you normally would, stopping when it's time to install the kernel and bootloader.
+From here, install Gentoo as you normally would or by following the Gentoo Handbook, stopping when it's time to install the kernel and bootloader.
 
 **Note**: It is absolutely imperative that you **DO NOT** alter **any** other partition
-on the system, including the EFI System Partition set up by Asahi Linux. You
+on the system, including the EFI System Partition set up by Fedora Asahi Remix. You
 are free to do anything you wish to the partition that was previously your
-Asahi Linux **root** filesystem, such as shrinking it to add some swap space,
+Fedora **root** filesystem, such as shrinking it to add some swap space,
 but never, **ever** delete any APFS partition or the Asahi EFI System partition.
 You have been warned...
 
 ## Step 6: Install Asahi support files
 Merge Git by running `emerge -av dev-vcs/git`, then clone `asahi-gentoosupport` again. Run `./install.sh` and follow the prompts. This will
 * Install the Asahi Overlay, which provides the kernel, boot tooling and (possibly) patched packages
-* Install the boot tooling and firmware required for Apple Silicon machines to function correctly
-* Merge the Asahi Linux kernel sources as `asahi-sources`, replacing the standard `gentoo-sources` package
-* Copy the running kernel's config to `/usr/src/linux/.config`
-* Automate building the kernel
-
-Kbuild may ask you about certain Kconfig options. Just accept its defaults for now.
+* Install the `sys-apps/asahi-meta` package, which will pull in all the Asahi-specific goodies necessary for booting,
+  including a dist-kernel.
+* Install and update GRUB.
 
 This allows you to skip setting up GRUB, the kernel, and the boot tooling yourself which can be a bit of a hassle on these
 machines and may leave you with an unbootable Linux setup.
@@ -116,9 +102,13 @@ root# update-m1n1
 ```
 after *every* kernel upgrade. 
 
+**Note for developers and advanced users:** You may also wish to install multiple kernels, and make use of `eselect kernel`
+to swap the symlink to `/usr/src/linux`. This is supported, however you *must* run `eselect kernel set` and `update-m1n1`
+before *every* reboot into different kernel. This is to ensure that you are always booting with the correct DTBs.
+
 ### Syncing the Asahi overlay
-In order to receive Asahi-specific updates, you must ensure that the Asahi overlay remains synchronised. By default,
-Portage will not do this for you. In addition to `emerge --sync` or `emerge-webrsync`, you must also run
+In order to receive Asahi-specific updates, you must ensure that the Asahi overlay remains synchronised. Portage will
+do this for you if you use `emerge --sync`, but *not* if you use `emerge-webrsync`. To synchronise the overlay manually, run
 ```bash
 root# emaint -r asahi sync
 ```
