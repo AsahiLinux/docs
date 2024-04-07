@@ -88,6 +88,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | [fd](https://github.com/sharkdp/fd/issues/1085) or any project using `jemallocator` crate    | https://github.com/sharkdp/fd/issues/1085 | Same reason as jemalloc (also almost always statically linked) |
 | FEX | https://github.com/FEX-Emu/FEX/issues/1921 | Not likely to be fixed in the near future. \* |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
+| heaptrack/libunwind | https://github.com/libunwind/libunwind/issues/260 <br> https://github.com/libunwind/libunwind/issues/473 | Issue with pointer authentication, boot with `arm64.nopauth` as workaround, reported as fixed in libunwind 1.8.0 (Fedora 40) |
 | jemalloc | https://github.com/jemalloc/jemalloc/issues/467 | Upstream unwilling to fix, Needs build options if compiled on a 4k page size system. Addressed in [ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1914). |
 | MEGAsync | https://github.com/meganz/MEGAsync/pull/801 |
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
