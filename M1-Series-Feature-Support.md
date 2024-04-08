@@ -25,6 +25,7 @@ These are features/hardware blocks that are present on all devices with the give
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 |
 | Thunderbolt      | WIP                  | WIP                         |
 | DP Alt Mode      | WIP                  | WIP                         |
+| DP/HDMI Audio    | WIP                  | WIP                         |
 | GPU              | linux-asahi          | linux-asahi                 |
 | Video Decoder    | WIP                  | WIP                         |
 | NVMe             | 5.19                 | 5.19                        |
@@ -61,6 +62,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Main display       | 5.17                 | 5.17                           | 5.17                  | 5.17                 |
 | Brightness         | -                    | linux-asahi                    | linux-asahi           | linux-asahi          |
 | HDMI Out           | 5.13                 | -                              | -                     | -                    |
+| HDMI Audio         | linux-asahi-6.8-2    | -                              | -                     | -                    |
 | Keyboard           | -                    | linux-asahi                    | linux-asahi           | -                    |
 | KB backlight       | -                    | 6.4                            | 6.4                   | -                    |
 | Touchpad           | -                    | linux-asahi                    | linux-asahi           | -                    |
@@ -86,6 +88,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Main display       | 5.17                              | 5.17                 |
 | Brightness         | linux-asahi                       | -                    |
 | HDMI Out           | linux-asahi (13.5 FW only)        | 6.2                  |
+| HDMI Audio         | WIP                               | WIP                  |
 | Keyboard           | linux-asahi                       | -                    |
 | KB backlight       | 6.4                               | -                    |
 | Touchpad           | linux-asahi                       | -                    |
