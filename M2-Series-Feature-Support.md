@@ -27,6 +27,7 @@ These are features/hardware blocks that are present on all devices with the give
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 |
 | Thunderbolt      | TBA                  | TBA                         |
 | DP Alt Mode      | WIP                  | WIP                         |
+| DP/HDMI Audio    | WIP                  | WIP                         |
 | GPU              | linux-asahi          | linux-asahi                 |
 | Video Decoder    | WIP                  | WIP                         |
 | NVMe             | 5.19                 | 5.19                        |
@@ -69,8 +70,9 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | 6.1                            | 6.1                            | 6.1                            | linux-asahi        |
 | Bluetooth          | 6.2                            | 6.2                            | 6.2                            | linux-asahi        |
 | HDMI Out           | -                              | -                              | -                              | linux-asahi        |
+| HDMI audio         | -                              | -                              | -                              | linux-asahi-6.8-2  |
 | 3.5mm jack         | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
-| Speakers           | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi       |
+| Speakers           | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
 | Microphones        | WIP                            | WIP                            | WIP                            | -                  |
 | Webcam             | linux-asahi                    | linux-asahi                    | linux-asahi                    | -                  |
 | SD card slot       | -                              | -                              | -                              | -                  |
@@ -93,6 +95,7 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | Bluetooth          | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | HDMI Out           | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
+| HDMI Audio         | WIP                | WIP                               | WIP                  | WIP                  |
 | 3.5mm jack         | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | Speakers           | linux-asahi        | linux-asahi                       | linux-asahi          | TBA                  |
 | Microphones        | -                  | TBA                               | -                    | -                    |
