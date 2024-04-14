@@ -191,7 +191,7 @@ diskutil eraseVolume free free disk0s7
 
 This is called "eraseVolume free free" because diskutil's amazingly intuitive interface represents the concept of deleting partitions as "formatting them as free space" (except for APFS). Yes, really.
 
-### Resizing APFS containers
+## Resizing APFS containers
 
 After deleting Asahi Linux, you could re-install it again (no need to use the resize option in the installer). But if you want to grow macOS to use the full size of the disk again, use either of these:
 
@@ -201,7 +201,7 @@ After deleting Asahi Linux, you could re-install it again (no need to use the re
 
 Again, you can use the physical partition identifier or the logical disk number. They are equivalent. The `0` means resize to fill all available free space after the partition. If instead you want to expand/shrink to a given size, specify it there, e.g. `100GB`.
 
-### Mounting EFI partition
+## Mounting EFI partition
 There are two methods to mount the EFI partition. The first one is this:
 
 ```
