@@ -25,7 +25,6 @@ These are features/hardware blocks that are present on all devices with the give
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 |
 | Thunderbolt      | WIP                  | WIP                         |
 | DP Alt Mode      | WIP                  | WIP                         |
-| DP/HDMI Audio    | WIP                  | WIP                         |
 | GPU              | linux-asahi          | linux-asahi                 |
 | Video Decoder    | WIP                  | WIP                         |
 | NVMe             | 5.19                 | 5.19                        |
@@ -62,7 +61,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Main display       | 5.17                 | 5.17                           | 5.17                  | 5.17                 |
 | Brightness         | -                    | linux-asahi                    | linux-asahi           | linux-asahi          |
 | HDMI Out           | 5.13                 | -                              | -                     | -                    |
-| HDMI Audio         | linux-asahi-6.8-2    | -                              | -                     | -                    |
+| HDMI Audio         | linux-asahi ([notes](#hdmi-audio)) | -                | -                     | -                    |
 | Keyboard           | -                    | linux-asahi                    | linux-asahi           | -                    |
 | KB backlight       | -                    | 6.4                            | 6.4                   | -                    |
 | Touchpad           | -                    | linux-asahi                    | linux-asahi           | -                    |
@@ -88,7 +87,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Main display       | 5.17                              | 5.17                 |
 | Brightness         | linux-asahi                       | -                    |
 | HDMI Out           | linux-asahi (13.5 FW only)        | 6.2                  |
-| HDMI Audio         | WIP                               | WIP                  |
+| HDMI Audio         | linux-asahi ([notes](#hdmi-audio)) | linux-asahi ([notes](#hdmi-audio)) |
 | Keyboard           | linux-asahi                       | -                    |
 | KB backlight       | 6.4                               | -                    |
 | Touchpad           | linux-asahi                       | -                    |
@@ -125,3 +124,6 @@ An out of tree [kernel module](https://github.com/eiln/ane/tree/main) is availab
 
 ### Speakers
 The speakers are enabled with separate patches due to a [lsp-plugins bug](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20). The bug causes full-scale artifacts which could potentially damage the speakers. This fix was included in lsp-plugins release [1.0.20](https://github.com/lsp-plugins/lsp-dsp-lib/releases/tag/1.0.20).
+
+### HDMI Audio
+A preview of HDMI audio support is available since `asahi-6.8.6-3` for all devices with HDMI port except devices with M1/M2 Ultra. Due to missing user space integration it is displayed as `Analog Output (Built-in Audio Stereo)` or similar. There are still some glitches. The start of audio is sometimes cut off and noise might be heard. It might not not be available although the HDMI display part is working.
