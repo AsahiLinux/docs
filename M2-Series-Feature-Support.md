@@ -27,7 +27,6 @@ These are features/hardware blocks that are present on all devices with the give
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 |
 | Thunderbolt      | TBA                  | TBA                         |
 | DP Alt Mode      | WIP                  | WIP                         |
-| DP/HDMI Audio    | WIP                  | WIP                         |
 | GPU              | linux-asahi          | linux-asahi                 |
 | Video Decoder    | WIP                  | WIP                         |
 | NVMe             | 5.19                 | 5.19                        |
@@ -70,7 +69,7 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | 6.1                            | 6.1                            | 6.1                            | linux-asahi        |
 | Bluetooth          | 6.2                            | 6.2                            | 6.2                            | linux-asahi        |
 | HDMI Out           | -                              | -                              | -                              | linux-asahi        |
-| HDMI audio         | -                              | -                              | -                              | linux-asahi-6.8-2  |
+| HDMI audio         | -                              | -                              | -                              | linux-asahi ([notes](#hdmi-audio)) |
 | 3.5mm jack         | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
 | Speakers           | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
 | Microphones        | WIP                            | WIP                            | WIP                            | -                  |
@@ -95,7 +94,7 @@ These are features/hardware blocks that are present on all devices with the give
 | WiFi               | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | Bluetooth          | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | HDMI Out           | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
-| HDMI Audio         | WIP                | WIP                               | WIP                  | WIP                  |
+| HDMI Audio         | linux-asahi ([notes](#hdmi-audio))| linux-asahi ([notes](#hdmi-audio)) | linux-asahi ([notes](#hdmi-audio)) | WIP |
 | 3.5mm jack         | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | Speakers           | linux-asahi        | linux-asahi                       | linux-asahi          | TBA                  |
 | Microphones        | -                  | TBA                               | -                    | -                    |
@@ -124,3 +123,6 @@ that this hacked together driver becomes unnecessary at some point in the near f
 
 ### ANE driver
 An out of tree [kernel module](https://github.com/eiln/ane/tree/main) is available. It will be merged into linux-asahi.
+
+### HDMI Audio
+A preview of HDMI audio support is available since `asahi-6.8.6-3` for all devices with HDMI port except devices with M1/M2 Ultra. Due to missing user space integration it is displayed as `Analog Output (Built-in Audio Stereo)` or similar. There are still some glitches. The start of audio is sometimes cut off and noise might be heard. It might not not be available although the HDMI display part is working.
