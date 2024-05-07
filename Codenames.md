@@ -48,3 +48,4 @@ Apple likes to use many different names for the same devices.
 | M3     | H15G | Ibiza | T8122 | Everest | Sawtooth
 | M3 Pro | H15J | Lobos | T6030 | Everest | Sawtooth
 | M3 Max | H15J/H15S | Palma | T6031 / T6034 | | |
+| M4 | ? | ? | T8132 | | |
