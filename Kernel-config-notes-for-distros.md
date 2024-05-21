@@ -1,4 +1,4 @@
-Your kernel configuration will need to include the Asahi-specific drivers.  As of linux-asahi-6.6-14, this list is:
+Your kernel configuration will need to include the Asahi-specific drivers.  As of linux-asahi-6.8.9-6, this list is:
 
 ```
 CONFIG_ARCH_APPLE=y
