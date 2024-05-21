@@ -35,7 +35,7 @@ These are features/hardware blocks that are present on all devices with the give
 | PCIe             | TBA                  | TBA                         |
 | PCIe (GE)        | -                    | -                           |
 | cpufreq          | 6.2                  | 6.2                         |
-| cpuidle          | linux-asahi (notes)  | linux-asahi (notes)         |
+| cpuidle          | linux-asahi ([notes](#cpuidle-situation)) | linux-asahi ([notes](#cpuidle-situation)) |
 | Suspend/sleep    | asahi-edge           | asahi-edge                  |
 | Video Encoder    | TBA                  | TBA                         |
 | ProRes Codec     | TBA                  | TBA                         |
@@ -54,7 +54,7 @@ These are features/hardware blocks that are present on all devices with the give
 | SPMI             | linux-asahi          | linux-asahi                 |
 | RTC              | linux-asahi          | linux-asahi                 |
 | SEP              | WIP                  | WIP                         |
-| Neural Engine    | out of tree (notes)  | out of tree  (notes)        |
+| Neural Engine    | out of tree ([notes](#ane-driver)) | out of tree ([notes](#ane-driver)) |
 
 
 ## M3 devices
