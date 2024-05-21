@@ -134,7 +134,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | chromium         | [Skia shader compilation error](https://bugs.chromium.org/p/chromium/issues/detail?id=1442633) | Fixed in Chromium 121.0.6167.85 |
 | firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | firefox          | [YouTube is capping resolutions to 1080 on Linux aarch64 user agents](https://bugzilla.mozilla.org/show_bug.cgi?id=1869521) | Fixed in Firefox 123 |
-| gcc              | [LTO miscompilation of ceph on aarch64 and x86_64](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=113359) | Fixed in gcc 14.1 |
+| gcc              | [LTO miscompilation of ceph on aarch64 and x86_64](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=113359) | Fixed in gcc 13.3 / 14.1 |
 | glibc            | [TLS modid reuse breaks TLS accesses](https://bugzilla.redhat.com/show_bug.cgi?id=2251557) | Fixed in glibc 2.39 |
 | kpipewire        | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) | Issue Closed |
 | kpipewire        | [Screen recording quality is terrible](https://bugs.kde.org/show_bug.cgi?id=476186) |
