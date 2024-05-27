@@ -70,7 +70,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Bluetooth          | 6.2                            | 6.2                            | 6.2                            | linux-asahi        |
 | HDMI Out           | -                              | -                              | -                              | linux-asahi        |
 | HDMI audio         | -                              | -                              | -                              | linux-asahi ([notes](#hdmi-audio)) |
-| 3.5mm jack output  | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
+| 3.5mm jack         | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
 | Speakers           | linux-asahi                    | linux-asahi                    | linux-asahi                    | linux-asahi        |
 | Microphones        | WIP                            | WIP                            | WIP                            | -                  |
 | Webcam             | linux-asahi                    | linux-asahi                    | linux-asahi                    | -                  |
@@ -95,7 +95,7 @@ These are features/hardware blocks that are present on all devices with the give
 | Bluetooth          | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | HDMI Out           | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | HDMI Audio         | linux-asahi ([notes](#hdmi-audio))| linux-asahi ([notes](#hdmi-audio)) | linux-asahi ([notes](#hdmi-audio)) | WIP |
-| 3.5mm jack output  | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
+| 3.5mm jack         | linux-asahi        | linux-asahi                       | linux-asahi          | linux-asahi          |
 | Speakers           | linux-asahi        | linux-asahi                       | linux-asahi          | TBA                  |
 | Microphones        | -                  | TBA                               | -                    | -                    |
 | Webcam             | -                  | linux-asahi                       | -                    | -                    |
