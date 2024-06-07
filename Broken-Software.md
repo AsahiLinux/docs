@@ -129,7 +129,7 @@ Issues (other than page size and architectural support issues) in third-party so
 
 | Package          | Issue | Notes |
 | ---------------- | ----- | ----- |
-| abrt             | [ABRT can't submit crash report: processing failed](https://bugzilla.redhat.com/show_bug.cgi?id=2238248) |
+| abrt             | [ABRT can't submit crash report: processing failed](https://bugzilla.redhat.com/show_bug.cgi?id=2238248) | Issue Closed |
 | blender          | [blender core dumps at execution instead of giving sane feedback about unsupported hardware](https://bugzilla.redhat.com/show_bug.cgi?id=2237821) | Issue Closed |
 | chromium         | [Skia shader compilation error](https://bugs.chromium.org/p/chromium/issues/detail?id=1442633) | Fixed in Chromium 121.0.6167.85 |
 | firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
@@ -144,5 +144,6 @@ Issues (other than page size and architectural support issues) in third-party so
 | kwin             | [Software cursor repaints are glitchy with fractional scaling sometimes](https://bugs.kde.org/show_bug.cgi?id=477455) | Fixed in Plasma 6.0 |
 | lib-dsp-lib      | [Fix aarch64 msmatrix code](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20) | Fixed in lsp-dsp-lib 1.0.20 |
 | systemsettings   | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
-| wireplumber      | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538)
+| wireplumber      | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538) |
+| wireplumber      | [[Wireplumber ignores default playback volume](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#) | Fixed in wireplumber 0.5.3 |
 | xkeyboard-config | [Handling Mac Fn keys in xkeyboard](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379) |
