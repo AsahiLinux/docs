@@ -84,7 +84,6 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 ## Broken packages
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
-| [fd](https://github.com/sharkdp/fd/issues/1085) or any project using `jemallocator` crate    | https://github.com/sharkdp/fd/issues/1085 | Same reason as jemalloc (also almost always statically linked) |
 | FEX | https://github.com/FEX-Emu/FEX/issues/1921 | Not likely to be fixed in the near future. \* |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
 | heaptrack/libunwind | https://github.com/libunwind/libunwind/issues/260 <br> https://github.com/libunwind/libunwind/issues/473 | Issue with pointer authentication, boot with `arm64.nopauth` as workaround, reported as fixed in libunwind 1.8.0 (Fedora 40) |
@@ -106,6 +105,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Chromium | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788| Includes Electron apps.<br>Fixed since 102. |
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
 | f2fs | https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287 | Fixed since Linux 6.7 |
+| fd | https://github.com/sharkdp/fd/issues/1085 | Fixed since 10.1 |
 | k3s-io | https://github.com/k3s-io/k3s/issues/7335 | Fixed since 1.27.2 |
 | KiCad | https://gitlab.com/kicad/code/kicad/-/issues/16008 | Fixed since 7.0.10 |
 | libglvnd | https://gitlab.freedesktop.org/glvnd/libglvnd/-/merge_requests/262 | Fixed since 1.5.0 |
