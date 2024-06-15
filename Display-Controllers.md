@@ -1,7 +1,7 @@
 M series of chips have two kinds of display controllers: `dcp` and `dcpext`:
 - DP 1.4 (4 lanes) with DSC
 - HDMI via dp2hdmi converter. See below for routing restrictions.
-- DP altmode or USB4 tunneling, 2 controllers per port. See below for routing restrictions.
+- USB-C ports: DP altmode or USB4 tunneling, 2 controllers per port. See below for routing restrictions.
 
 | Type | Maximum resolution |
 | - | - |
@@ -11,7 +11,7 @@ M series of chips have two kinds of display controllers: `dcp` and `dcpext`:
 Family-specific information:
 | Family | Notes |
 | - | - |
-| M1 | `dcp` can only be routed to internal display and HDMI, `dcpext` can be routed to USB-C |
+| M1 | `dcp` can only be routed to internal display and HDMI, `dcpext` can only be routed to USB-C |
 | M2 and later | `dcp` can be routed everywhere (internal display, HDMI and USB-C), `dcpext` can be routed to HDMI and USB-C |
 
 SoC-specific information:
