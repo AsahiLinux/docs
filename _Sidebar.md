@@ -15,6 +15,7 @@ Platform documentation:
 * [[Apple Platform Security Crash Course]]
 * [[Devices]]
 * [[Codenames]]
+* [[Display Controllers]]
 
 For users:
 * [[Broken Software]]
