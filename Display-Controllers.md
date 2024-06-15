@@ -6,8 +6,8 @@ M series of chips have two kinds of display controllers, `dcp` and `dcpext`. Bot
 Controller-specific information:
 | Type | Maximum resolution |
 | - | - |
-| `dcp` | 5K |
-| `dcpext` | 6K |
+| `dcp` | 5K (Apple-provided information) |
+| `dcpext` | 6K (Apple-provided information) |
 
 Family-specific information:
 | Family | Notes |
