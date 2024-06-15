@@ -4,10 +4,10 @@ M series of chips have two kinds of display controllers, `dcp` and `dcpext`. Bot
 - USB-C ports: DP altmode, or USB4 tunneling with 2 controllers max per port. See below for routing restrictions.
 
 Controller-specific information:
-| Type | Maximum resolution |
+| Type | Mode limits |
 | - | - |
-| `dcp` | 5K (Apple-provided information) |
-| `dcpext` | 6K (Apple-provided information) |
+| `dcp` | 5K, 60Hz, 10bpp (Apple-provided information) |
+| `dcpext` | 6K, 60Hz, 10bpp (Apple-provided information) |
 
 Family-specific information:
 | Family | Notes |
