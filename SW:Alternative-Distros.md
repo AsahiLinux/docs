@@ -12,5 +12,5 @@ The primary supported distribution is the [Fedora Asahi Remix](https://asahilinu
 | Gentoo<br>(LiveCD method) | IRC: chadmed (https://github.com/chadmed) | [[Installing Gentoo with LiveCD]] |
 | NixOS | IRC: tpw_rules (https://github.com/tpwrules) | https://github.com/tpwrules/nixos-apple-silicon/blob/main/docs/uefi-standalone.md |
 | Rocky Linux | https://github.com/leifliddy| https://github.com/leifliddy/asahi-rocky-builder |
-| Ubuntu | https://github.com/UbuntuAsahi | https://ubuntuasahi.org/ |
+| Ubuntu | https://github.com/UbuntuAsahi | https://github.com/UbuntuAsahi/ubuntu-asahi |
 | Void Linux | https://gitlab.com/slimjimsoftware/vai | https://gitlab.com/slimjimsoftware/vai |
