@@ -2,7 +2,7 @@
 
 Apple uses custom USB-PD messages to control pin muxing on their Type-C ports for debug and other purposes. USB-PD communication takes place over the CCx line of the port (CC1 or CC2 depending on port orientation)
 
-Thanks to the t8012dev folks for providing info. See https://blog.t8012.dev/ace-part-1/ for reference. The controller on Apple M1 Macs (2020) is the CD3217 "Ace2".
+Thanks to the t8012dev folks for providing info. See https://web.archive.org/web/20211023034503/https://blog.t8012.dev/ace-part-1/ for reference. The controller on Apple M1 Macs (2020) is the CD3217 "Ace2".
 
 You should reference the [USB-PD spec](https://www.usb.org/document-library/usb-power-delivery) for background information.
 
