@@ -6,8 +6,8 @@ M series of chips have two kinds of display controllers, `dcp` and `dcpext`. Bot
 Controller-specific information:
 | Type | Mode limits |
 | - | - |
-| `dcp` | 5K, 60Hz, 10bpp (Apple-provided information) |
-| `dcpext` | 6K, 60Hz, 10bpp (Apple-provided information) |
+| `dcp` | 5K, 60Hz, 10bpp (Apple-provided information, not tested) |
+| `dcpext` | 6K, 60Hz, 10bpp (Apple-provided information, not tested) |
 
 Family-specific information:
 | Family | Notes |
