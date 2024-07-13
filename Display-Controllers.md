@@ -9,11 +9,17 @@ Controller-specific information:
 | `dcp` | 5K, 60Hz, 10bpp (Apple-provided information, not tested) |
 | `dcpext` | 6K, 60Hz, 10bpp (Apple-provided information, not tested) |
 
-Family-specific information:
-| Family | Notes |
-| - | - |
-| M1 | `dcp` can only be routed to internal display and HDMI, `dcpext` can only be routed to USB-C |
-| M2 and later | `dcp` can be routed everywhere (internal display, HDMI and USB-C), `dcpext` can be routed to HDMI and USB-C |
+M1 routing restrictions:
+| Controller | Internal display | HDMI | USB-C |
+| - | - | - | - |
+| `dcp` | + | + | |
+| `dcpext` | | | + |
+
+M2 and later routing restrictions:
+| Controller | Internal display | HDMI | USB-C |
+| - | - | - | - |
+| `dcp` | + | + | + |
+| `dcpext` |  | + | + |
 
 SoC-specific information:
 | SoC | Number of `dcp` | Number of `dcpext` | Notes |
