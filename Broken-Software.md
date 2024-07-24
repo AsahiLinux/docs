@@ -86,7 +86,6 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | ------- | --------------- | ----- |
 | FEX | https://github.com/FEX-Emu/FEX/issues/1921 | Not likely to be fixed in the near future. \* |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
-| heaptrack/libunwind | https://github.com/libunwind/libunwind/issues/260 <br> https://github.com/libunwind/libunwind/issues/473 | Issue with pointer authentication, boot with `arm64.nopauth` as workaround, reported as fixed in libunwind 1.8.0 (Fedora 40) |
 | jemalloc | https://github.com/jemalloc/jemalloc/issues/467 | Upstream unwilling to fix, Needs build options if compiled on a 4k page size system. Addressed in [ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1914). |
 | MEGAsync | https://github.com/meganz/MEGAsync/pull/801 |
 | notion-app(-enhancer) | https://github.com/notion-enhancer/notion-repackaged/issues/107 | electron + broken build flags |
@@ -110,6 +109,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | KiCad | https://gitlab.com/kicad/code/kicad/-/issues/16008 | Fixed since 7.0.10 |
 | libglvnd | https://gitlab.freedesktop.org/glvnd/libglvnd/-/merge_requests/262 | Fixed since 1.5.0 |
 | libunwind | https://github.com/libunwind/libunwind/pull/330 | Fixed since 1.7.0 |
+| libunwind | https://github.com/libunwind/libunwind/issues/260 | Fixed since 1.8.0 |
 | libvirt/QEMU/KVM | https://patchew.org/QEMU/20230727073134.134102-1-akihiko.odaki@daynix.com/ | Fixed since QEMU 7.2.6 / 8.0.5 / 8.1.1 |
 | lvm2 | https://bugzilla.redhat.com/show_bug.cgi?id=2059734 | Fixed since 2.03.21 |
 | pdfium | https://bugs.chromium.org/p/pdfium/issues/detail?id=1853 | Fixed and shipped with Chromium 108 |
