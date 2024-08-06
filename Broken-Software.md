@@ -140,7 +140,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
 | kpipewire        | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) | Issue Closed |
 | kpipewire        | [Screen recording quality is terrible](https://bugs.kde.org/show_bug.cgi?id=476186) |
-| kpipewire        | [OpenH264 codec support](htt (no bugs filledps://bugs.kde.org/show_bug.cgi?id=476187) |
+| kpipewire        | [OpenH264 codec support](https://bugs.kde.org/show_bug.cgi?id=476187) |
 | kwin             | [Outputs freeze on multi-screen when hardware cursors are not supported](https://bugs.kde.org/show_bug.cgi?id=477451) | Fixed in Plasma 6.0 |
 | kwin             | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
 | kwin             | [Software cursor repaints are glitchy with fractional scaling sometimes](https://bugs.kde.org/show_bug.cgi?id=477455) | Fixed in Plasma 6.0 |
