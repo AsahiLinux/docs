@@ -8,6 +8,7 @@ From the ADT:
         * 0xd4000 for A9(X)-A11
         * 0x54000 for M1 series
         * 0x34000 for M2 and M3
+        * 0x28000 for M2 Pro/Max
         * 0x88000 for M3 Pro/Max
     * For multi-die systems, each die has its own power manager registers.
       The power manager registers for each die is at offset 
