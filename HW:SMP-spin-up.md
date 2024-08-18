@@ -14,11 +14,12 @@ From the ADT:
       The power manager registers for each die is at offset 
       `die * 0x2000000000` from the registers of die 0.
 * `/cpus/cpu<n>[cpu-impl-reg]` CPU implementation registers
+* `/cpus/cpu<n>[reg]` CPU startup information
      * Bits [0:7] holds the core id
      * Bits [8:10] holds the cluster id
      * Bits [11:14] holds the die id
 
-The cluster id in the cpu-impl-reg is possibly only for CPU start purposes.
+The cluster id in the `/cpus/cpu<n>[reg]` is possibly only for CPU start purposes.
 On A11 the cluster id field is both 0 for P and E CPUs, which conflicted with
 the `/cpus/cpu<n>[cluster-id]` property in the ADT.
 
