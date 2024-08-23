@@ -673,10 +673,11 @@ The AArch64 FEAT_AFT feature implements equivalent support, but Apple implemente
 #### MIDR_EL1 (ARM standard)
 
 * [15:4] PartNum
+  * 1: Alcatraz (A7 / H6P)
   * 2: Fiji (A8 / H7P)
   * 3: Capri (A8X / H7G)
-  * 4: Maui (A9 / H8P)
-  * 5: Elba (A9X / H8G)
+  * 4: TSMC A9(X)
+  * 5: Sansung A9
   * 6: Cayman (A10 / H9P)
   * 7: Myst (A10X / H9G)
   * 8: Skye Monsoon (A11 / H10 p-core)
