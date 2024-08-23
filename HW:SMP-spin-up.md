@@ -4,7 +4,7 @@ From the ADT:
 
 * `/arm-io/pmgr[reg]` power manager registers
     * CPU start block is at a device-dependent offset to this register
-        * 0x30000 for A8(X)
+        * 0x30000 for A7-A8(X)
         * 0xd4000 for A9(X)-A11
         * 0x54000 for M1 series
         * 0x34000 for M2 and M3
@@ -22,6 +22,9 @@ From the ADT:
 The cluster id in the `/cpus/cpu<n>[reg]` is possibly only for CPU start purposes.
 On A11 the cluster id field is both 0 for P and E CPUs, which conflicted with
 the `/cpus/cpu<n>[cluster-id]` property in the ADT.
+
+For old firmwares, `/cpus/cpu<n>[cpu-impl-reg]` may not exist, in this case
+`/arm-io/reg[2*n+2]` can be used to find the location to write the start address.
 
 CPU start registers in PMGR:
 
