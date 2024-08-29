@@ -214,10 +214,10 @@ Brief overview of known firmware blobs (note: some details here are unverified):
 
 | Name     | Chip     | Description                         | Encrypted | Storage            | Loaded by    | Started by  | Size (approx.)            |
 | -------- | -------- | ----------------------------------- | --------- | ------------------ | ------------ | ----------- | ------------------------- | 
-| iBoot1   | SoC (AP) | First stage bootloader              | Yes       | NOR                | SecureROM    | SecureROM   | ~600-1000 KB (comp.)
-| iBoot2   | SoC (AP) | Second stage bootloader             | Yes       | Preboot            | iBoot1       | iBoot1      | ~450-800 KB (comp.)
-| SMC      | SoC\*1   | System Management Controller        | Yes \*2   | Embedded in iBoot1 | iBoot1       | iBoot1      | ~200 KB (comp.)
-| PMU      | PMU      | Power Management Unit               | Yes \*2   | Embedded in iBoot1 | iBoot1       | iBoot1      | ~10 KB
+| iBoot1   | SoC (AP) | First stage bootloader              | No \*2   | NOR                | SecureROM    | SecureROM   | ~600-1000 KB (comp.)
+| iBoot2   | SoC (AP) | Second stage bootloader             | No \*2   | Preboot            | iBoot1       | iBoot1      | ~450-800 KB (comp.)
+| SMC      | SoC\*1   | System Management Controller        | No \*2   | Embedded in iBoot1 | iBoot1       | iBoot1      | ~200 KB (comp.)
+| PMU      | PMU      | Power Management Unit               | No \*2   | Embedded in iBoot1 | iBoot1       | iBoot1      | ~10 KB
 | SEP      | SoC      | Secure Enclave Processor            | Yes       | iSC                | iBoot1+OS    | iBoot1+OS   | ~7.5 MB
 | ANS      | SoC      | NVMe controller                     | No        | NOR                | iBoot1       | iBoot1+2+OS | ~800 KB (comp.)
 | CIO      | SoC      | Type-C/Thunderbolt I/O              | No        | NOR                | iBoot1       | OS          | ~170 KB
@@ -246,7 +246,7 @@ Brief overview of known firmware blobs (note: some details here are unverified):
 Notes:
 
 1. "SoC" location means part of the main System-on-Chip; otherwise it is an external chip.
-2. These firmwares are implicitly encrypted because they are embedded in iBoot1, but there's no good reason for them to be otherwise.
+2. Plaintext since macOS Sequoia.
 3. Coprocessor is present but unused on machines without a camera.
 4. Terrible name, not actually always-on (not even on when the OS boots).
 5. Laptops only
