@@ -37,7 +37,7 @@ to make equivalencies between the PC and Apple Silicon.
 
 ## System data integrity
 The platform goes to great lengths to verify and maintain the integrity of system data. All system files are,
-at minimum, signed and hashed by Apple. Critical firmware components, such as sepOS and iBoot, are also encrypted.
+at minimum, signed and hashed by Apple. Critical firmware components, such as sepOS (and in older versions, iBoot) are also encrypted.
 The system verifies the integrity of all of these components before they are allowed to execute. If any of these
 components fail verification for any reason, the system will fail to boot and direct the user to restore
 their machine.
