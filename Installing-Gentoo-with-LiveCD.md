@@ -44,7 +44,7 @@ It is assumed going forward that you have fully "completed" the Asahi installati
 
 ## Step 2: Acquire the Gentoo Asahi LiveCD image
 We build lightly customised Gentoo LiveCDs which allow booting on Apple Silicon machines. Grab the latest one from
-https://chadmed.au/pub/gentoo/install-arm64-asahi-latest.iso.
+https://chadmed.au/pub/gentoo/.
 
 The LiveCDs are built using the standard Gentoo release engineering tooling. The Catalyst specfiles can be found at
 https://github.com/chadmed/gentoo-asahi-releng.
