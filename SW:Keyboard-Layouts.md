@@ -254,3 +254,32 @@ Apple MacBook Pro (14-inch, M1 Pro, 2021)
 21
 00
 ```
+
+## ISO - International English - M1 Air
+* Best Hardware model: **Apple|Apple Aluminum (ISO)**
+* Best XKB keyboard layout/variant: **English (US)**
+
+* The original keyboard is ISO German with stickers for International English. Working correctly in Mac OS.
+* Looks like https://www.apple.com/uk/shop/product/MK2A3Z/A/magic-keyboard-international-english
+* Preview works for "English (US)", not for any of the English international variants.
+* Difference 1: Key between Shift and Z is ~` on physical keyboard but types < > in Fedora.
+* Difference 2: Key in top left next to 1 is +- § on physical keyboard but types ~` in Fedora.
+
+Note: 
+
+### System configuration
+```
+fnmode:3
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+warning: database file for 'core' does not exist (use '-Sy' to download)
+warning: database file for 'community' does not exist (use '-Sy' to download)
+warning: database file for 'extra' does not exist (use '-Sy' to download)
+error: package 'xkeyboard-config-asahi' was not found
+6.10.6-401.asahi.fc40.aarch64+16k
+Apple MacBook Air (M1, 2020)
+00
+0d
+```
