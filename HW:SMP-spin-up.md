@@ -19,9 +19,8 @@ From the ADT:
      * Bits [8:10] holds the cluster id
      * Bits [11:14] holds the die id
 
-The cluster id in the `/cpus/cpu<n>[reg]` is possibly only for CPU start purposes.
-On A11 the cluster id field is both 0 for P and E CPUs, which conflicted with
-the `/cpus/cpu<n>[cluster-id]` property in the ADT.
+A11 does not handle clusters properly, so both P and E CPUs are considered cluster 0.
+ECPUs are 0-3 while PCPUs are 4-5.
 
 For old firmwares, `/cpus/cpu<n>[cpu-impl-reg]` may not exist, in this case
 `/arm-io/reg[2*n+2]` can be used to find the location to write the start address.
