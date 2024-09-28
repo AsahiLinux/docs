@@ -18,6 +18,18 @@ cd m1n1/proxyclient ; python -m m1n1.adt --retrieve dt.bin
 This will write a file called "dt.bin" containing the raw (binary) ADT and print the decoded ADT.
 
 ### Option 2: via macOS im4p files (Note: these are missing details filled in by iBoot during boot)
+### img4lib
+Get a copy of xerub's img4lib
+
+```
+git clone https://github.com/xerub/img4lib
+cd img4lib
+make -C lzfse
+make
+make install
+```
+
+### img4tool
 Get a copy of tihmstar's img4tool (you will also need his libgeneral as well as autoconf, automate, libtool, pkg-config, openssl and libelist-2.0).
 
 ```
@@ -30,6 +42,7 @@ then for each
 make
 make install
 ```
+### Obtaining device tree files
 copy the im4p file from the below directory. See [[Devices]] for Machine 'j' model details.
 
 `/System/Volumes/Preboot/[UUID]/restore/Firmware/all_flash/DeviceTree.{model}.im4p`
@@ -39,6 +52,10 @@ If the dir doesn't exist try disabling csrutil in recovery mode, going to settin
 then use img4tool to extract the im4p file into a .bin file e.g.
 ```
 img4tool -e DeviceTree.j274ap.im4p -o j274.bin
+```
+To do the same with img4lib, do
+```
+img4 -i DeviceTree.j274ap.im4p -o j274.bin
 ```
 
 ### Option 3: From macOS
