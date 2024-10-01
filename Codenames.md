@@ -53,6 +53,7 @@ Apple likes to use many different names for the same devices.
 | A18 Pro | H17A | Tupai | T8140 | |
 | |  | Brava | | |
 | |  | Brava Chop | | |
+| |  | Hidra | | |
 | |  | Sotra_C | | |
 | |  | Sotra_S | | |
 | |  | Sotra_D | | |
