@@ -56,5 +56,6 @@ Apple likes to use many different names for the same devices.
 | |  | Sotra_C | | |
 | |  | Sotra_S | | |
 | |  | Sotra_D | | |
-| |  | Sotra_D | | |
-| |  | Sotra_D | | |
+| |  | Thera | | |
+| |  | Komodo | | |
+| |  | Tilos | | |
