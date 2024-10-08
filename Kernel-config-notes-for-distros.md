@@ -1,4 +1,4 @@
-Your kernel configuration will need to include the Asahi-specific drivers.  As of linux-asahi-6.8.9-6, this list is:
+Your kernel configuration will need to include the Asahi-specific drivers.  As of linux-asahi-6.11.2-1, this list is:
 
 ```
 CONFIG_ARCH_APPLE=y
@@ -23,6 +23,7 @@ CONFIG_PWM_APPLE=y
 CONFIG_SPI_APPLE=y
 CONFIG_SPMI_APPLE=y
 CONFIG_GPIO_MACSMC=y
+CONFIG_SENSORS_MACSMC=m
 CONFIG_ARM_APPLE_SOC_CPUFREQ=y
 CONFIG_APPLE_ADMAC=y
 CONFIG_APPLE_M1_CPU_PMU=y
