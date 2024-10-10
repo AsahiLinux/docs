@@ -39,6 +39,7 @@ Using Linux format:
 #define SYS_APL_EHID11_EL1          sys_reg(3, 0, 15, 11, 1)
 
 /* Uh oh */
+#define SYS_APL_HID12_EL?           sys_reg(3, 0, 15, 12, 0)
 #define SYS_APL_HID13_EL?           sys_reg(3, 0, 15, 14, 0)
 #define SYS_APL_HID14_EL?           sys_reg(3, 0, 15, 15, 0)
 
