@@ -346,8 +346,8 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 #### SYS_APL_HID21_EL1
 
 * [19] Enable LDREX Fill Reply
-* [33] LDQ RTR Wait For Old ST Rel Cmpl
-* [34] Disable Cdp Reply Purged Trans
+* [34] LDQ RTR Wait For Old ST Rel Cmpl
+* [35] Disable Cdp Reply Purged Trans
 
 ### ACC/CYC Registers
 
