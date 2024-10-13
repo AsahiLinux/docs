@@ -24,3 +24,6 @@ following updates adding support for more devices and hardware:
 * [OpenGL 3.1 on Asahi Linux](https://asahilinux.org/2023/06/opengl-3-1-on-asahi-linux/)
 * [Our new flagship distro: Fedora Asahi Remix](https://asahilinux.org/2023/08/fedora-asahi-remix/)
 * [New in Fedora Asahi Remix](https://asahilinux.org/2024/01/fedora-asahi-new/)
+* [Conformant OpenGL 4.6 on the M1](https://asahilinux.org/2024/02/conformant-gl46-on-the-m1/)
+* [Vulkan 1.3 on the M1 in 1 month](https://asahilinux.org/2024/06/vk13-on-the-m1-in-1-month/)
+* [AAA gaming on Asahi Linux](https://asahilinux.org/2024/10/aaa-gaming-on-asahi-linux/)
