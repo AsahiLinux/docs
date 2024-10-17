@@ -348,6 +348,7 @@ These are mostly chicken bits to disable CPU features, and likely many only appl
 * [19] Enable LDREX Fill Reply
 * [34] LDQ RTR Wait For Old ST Rel Cmpl
 * [35] Disable Cdp Reply Purged Trans
+* [52] Purge MMU On Any SPR SYNC
 
 ### ACC/CYC Registers
 
