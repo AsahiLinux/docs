@@ -126,3 +126,4 @@ An out of tree [kernel module](https://github.com/eiln/ane/tree/main) is availab
 
 ### HDMI Audio
 A preview of HDMI audio support is available since `asahi-6.8.6-3` for all devices with HDMI port except devices with M1/M2 Ultra. Due to missing user space integration it is displayed as `Analog Output (Built-in Audio Stereo)` or similar. There are still some glitches. The start of audio is sometimes cut off and noise might be heard. It might not not be available although the HDMI display part is working.
+You can try it by enabling `hdmi_audio` parameter in `apple_dcp` kernel module.
