@@ -35,3 +35,5 @@ This is a list of devices Asahi Linux intends to support. The Product and SoC ar
 | MacBook Pro (16-inch, M3 Max, Nov 2023) | Mac15,9 | J516cAP | T6031
 | MacBook Pro (14-inch, M3 Max, Nov 2023) | Mac15,10 | J514mAP | T6034
 | MacBook Pro (16-inch, M3 Max, Nov 2023) | Mac15,11 | J516mAP | T6034
+| MacBook Air (13-inch, M3, 2024) | Mac15,12 | J613AP | T8122
+| MacBook Air (15-inch, M3, 2024) | Mac15,13 | J615AP | T8122
