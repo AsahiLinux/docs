@@ -7,7 +7,7 @@ This is a list of devices Asahi Linux intends to support. The Product and SoC ar
 | MacBook Pro (13-inch, M1, 2020) | MacBookPro17,1 | J293AP | T8103
 | MacBook Air (M1, 2020) | MacBookAir10,1 | J313AP | T8103
 | iMac (24-inch (4-port), M1, 2021) | iMac21,1 | J456AP | T8103
-| iMac (24-inch (2-port), M1, 2021) | iMac21,2  | J457AP | T8103
+| iMac (24-inch (2-port), M1, 2021) | iMac21,2 | J457AP | T8103
 | MacBook Pro (16-inch, M1 Pro, 2021) | MacBookPro18,1 | J316sAP | T6000
 | MacBook Pro (16-inch, M1 Max, 2021) | MacBookPro18,2 | J316cAP | T6001
 | MacBook Pro (14-inch, M1 Pro, 2021) | MacBookPro18,3 | J314sAP | T6000
@@ -37,3 +37,5 @@ This is a list of devices Asahi Linux intends to support. The Product and SoC ar
 | MacBook Pro (16-inch, M3 Max, Nov 2023) | Mac15,11 | J516mAP | T6034
 | MacBook Air (13-inch, M3, 2024) | Mac15,12 | J613AP | T8122
 | MacBook Air (15-inch, M3, 2024) | Mac15,13 | J615AP | T8122
+| iMac (24-inch (2-port), M4, 2024) | Mac16,2 | J623AP | T8132
+| iMac (24-inch (4-port), M4, 2024) | Mac16,3 | J624AP | T8132
