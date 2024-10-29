@@ -39,5 +39,5 @@ This is a list of devices Asahi Linux intends to support. The Product and SoC ar
 | MacBook Air (15-inch, M3, 2024) | Mac15,13 | J615AP | T8122
 | iMac (24-inch (2-port), M4, 2024) | Mac16,2 | J623AP | T8132
 | iMac (24-inch (4-port), M4, 2024) | Mac16,3 | J624AP | T8132
-| Mac mini (M4, 2024) | Mac16,10 | ? | T8132
-| Mac mini (M4 Pro, 2024) | Mac16,11 | ? | T6040
+| Mac mini (M4, 2024) | Mac16,10 | J773AP | T8132
+| Mac mini (M4 Pro, 2024) | Mac16,11 | J773sAP | T6040
