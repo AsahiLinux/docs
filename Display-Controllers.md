@@ -35,5 +35,6 @@ SoC-specific information:
 | M3 | 1 | 1 |
 | M3 Pro | 1 | 2 |
 | M3 Max | 1 | 4 |
-| M4 (tentative) | 1 | 2 |
-
+| M4 | ? | ? |
+| M4 Pro | ? | ? |
+| M4 Max | ? | ? |
