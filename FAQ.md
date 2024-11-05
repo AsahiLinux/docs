@@ -16,7 +16,7 @@ There is no automated uninstaller, but see [[Partitioning cheatsheet]] to learn 
 
 ## Can I dual boot Asahi Linux?
 
-Yes! The Installer already configures dual booting, you would need to go out of your way to erase macOS, and it's not recommended to do so.
+Yes! The Installer already configures dual booting. You would need to go out of your way to erase macOS, and it's *not recommended* to do so.
 
 ## I have ~40GB of free disk space but the installer says that's not enough!
 
