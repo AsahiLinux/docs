@@ -14,6 +14,10 @@ See the website for instructions: https://asahilinux.org/
 
 There is no automated uninstaller, but see [[Partitioning cheatsheet]] to learn how to delete the partitions manually.
 
+## Can I dual boot Asahi Linux?
+
+Yes! The Installer already configures dual booting, you would need to go out of your way to erase macOS, and it's not recommended to do so.
+
 ## I have ~40GB of free disk space but the installer says that's not enough!
 
 The installer always leaves 38GB of disk space *free* for macOS upgrades to work. That means you need enough disk space for the new OS *on top of* those 38GB.
