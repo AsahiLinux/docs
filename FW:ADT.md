@@ -62,14 +62,9 @@ img4 -i DeviceTree.j274ap.im4p -o j274.bin
 
 You can get a textual representation of the ADT directly from macOS by running:
 ```
-ioreg -p IODeviceTree -l
+ioreg -p IODeviceTree -l | cat
 ```
-While this does not require decoding, it outputs much less information than using m1n1 (see below). Also it cuts off long lines with a dollar sign e.g.
-
-```
-"ranges" = <000000000000000000000000020000000000000001000000000000800300000000000080030000000000008001000000000000000500000000000000050000000000008001000000000000000400000000000000$
-```
-
+While this does not require decoding, it outputs much less information than using m1n1 (see below).
 
 ## Decoding an ADT
 
