@@ -19,14 +19,14 @@ Endpoint information:
 | 0x00 | Control/CNTL | seems to control some endpoint properties |
 | 0x08 | Secure Biometrics (SBIO) | biometric authentication |
 | 0x0a | SCRD | likely "Secure/SEP credential manager" used for user credential auth? |
-| 0x0c | sse  | unknown |
+| 0x0c | sse  | Somehow related to NFC, may be related to apple pay. |
 | 0x0e | HDCP | likely HDCP content protection |
 | 0x10 | xars (according to tracer) | xART setup? involved in startup/shutdown |
 | 0x12 | Secure/SEP Key Store | SEP encrypt/decrypt operations and key management |
 | 0x13 | xART manager | manages xARTs, gigalockers and keybags (needed for SKS to start) |
 | 0x14 | hibe (according to tracer) | hibernation related? | 
 | 0x15 | pnon (tracer name) | unknown purpose |
-| 0x17 | skdl | unknown |
+| 0x17 | skdl | CoreKDL. KDL stands for kext deny list, relevant for FairPlay, maybe relevant for HDCP and apple pay. |
 | 0x18 | stac | linked to the AppleTrustedAccessory extension, probably "Secure/SEP Trusted Accessory Connection" | 
 | 0xFD | Debug | debug endpoint, signals some events to XNU? |
 | 0xFE | Boot254 | Signals SEP to actually boot into SEPOS |
