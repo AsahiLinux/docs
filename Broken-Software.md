@@ -151,4 +151,5 @@ Issues (other than page size and architectural support issues) in third-party so
 | systemsettings   | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
 | wireplumber      | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538) |
 | wireplumber      | [Wireplumber ignores default playback volume](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#) | Fixed in wireplumber 0.5.3 |
+| wlroots          | [Add support for DRM Color Transformation Matrix (Useful for e.g. redshift)](https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/1078) | [Related PR](https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4815) |
 | xkeyboard-config | [Handling Mac Fn keys in xkeyboard](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379) |
