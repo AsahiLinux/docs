@@ -1,3 +1,11 @@
+# WARNING: NEVER DELETE THE `Apple_APFS_Recovery` PARTITION
+
+The last partition on your disk, listed as type `Apple_APFS_Recovery` in diskutil, contains critical system recovery components. **If you delete this partition accidentally, macOS upgrades will cease to work, and any other problem with your system will leave it unbootable and require a factory restore and complete wipe**. Restoring this partition without a full machine wipe is [a major pain in the ass](https://www.reddit.com/r/AsahiLinux/comments/1fmnzm5/guide_how_to_fix_failed_to_find_sfr_recovery/). Do NOT, under any circumstances, mess with this partition.
+
+It is **not** possible for the Asahi Linux installer to cause this by itself, since it doesn't contain any partition deletion code at all and never has, nor does it access the raw partition table in any way. If you find yourself in this situation, then you either deleted the partition yourself unknowingly (from Linux or from macOS/recoveryOS), or some kind of Apple bug did.
+
+## Intro
+
 Partition management from macOS can be confusing. Hopefully this helps explain things.
 
 Note: We'll add uninstall/cleanup options to the installer soon, but by definition it will always be a simplified tool that is only guaranteed to work for the common case of vanilla Asahi Linux installs; if you do your own partition management or install another distro, you'll have to know how to do it manually like this in order to clean up properly.
