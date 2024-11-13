@@ -12,16 +12,6 @@ Note: We'll add uninstall/cleanup options to the installer soon, but by definiti
 
 **Note: If you are deleting Asahi Linux, you will have to set macOS as the default boot OS again if you have not already done so.** You can do this from System Settings in macOS itself, or by holding down the Option key while selecting it in Startup Options. Not doing this ahead of time won't break your computer, but you may not be able to boot automatically until you do so. If you find you cannot go into the Startup Options screen normally, try starting up with a double tap (tap, release, tap and hold the power button).
 
-## Just wipe it all, please
-
-We have a stupidly dangerous script lying around that will indiscriminately wipe anything with "Linux", "EFI" or "Asahi" in its name, as well as all 2.5GB APFS containers (which the installer creates), with no confirmation. It should work for the vast majority of users as long as they don't already have any weird partitions, but please don't use it indiscriminately. ([There's a report of the wipe going wrong when there are multiple macOS installs, requiring a DFU restore to repair.](https://github.com/AsahiLinux/docs/issues/73)) You're much better off deleting partitions manually if you can help it. We wrote it mostly for developers who do lots of reinstalls and needed a quick way to reset.
-
-Due to [some users **wiping** their macOS installs](https://github.com/AsahiLinux/asahi-installer/issues/253), the https://alx.sh/wipe-linux link has been disabled. If you must use it, you can access the script from the [AsahiLinux/asahi-installer](https://github.com/AsahiLinux/asahi-installer) repo in the [tools](https://github.com/AsahiLinux/asahi-installer/tree/main/tools) directory. **DO NOT RUN THE SCRIPT UNLESS YOU ARE AWARE THAT YOU CAN LOSE ACCESS TO ALL OF YOUR DATA.**
-
-Run `curl -L https://github.com/AsahiLinux/asahi-installer/raw/main/tools/wipe-linux.sh | sh` as root. Ignore "operation not permitted" errors at the end (or run it from recovery mode for that optional part to work properly). Don't blame us if it eats your data. Note that this *won't* expand macOS to fill all freed up space; see below for that.
-
-
-
 ## Do not use the *Disk Utility* application
 
 The graphical Disk Utility application shipped with macOS only barely works for trivial cases where you have one or more APFS containers, no unpartitioned space, all partitions in the right order, and no foreign partitions. Even for ostensibly "supported" things like creating FAT32/HFS partitions, it is buggy. Just don't use it. It will confuse you, it will show you impossible numbers, and it will do the wrong thing. It is not intended as a proper disk management tool; it is a flimsy user interface front-end that can only handle the simplest of tasks and situations and falls apart completely otherwise.
