@@ -1,10 +1,25 @@
-For now, just some random notes gathered from initial tracing of the SEP and prior knowledge from other community members, should be updated as i start digging deeper
+Some notes on the SEP based on past community research and digging into the SEP, along with some TODOs for anyone wanting to trace the SEP on Asahi Linux
 
-fair warning: these are very messy at the moment, but it's to help me get some preliminary notes down on SEP stuff - a proper page will come later
+fair warning: this page is messy and will likely remain so, until enough understanding is built up to build a clean page.
+
+Notes for anyone tracing for Asahi:
+
+Since you don't control the SEP firmware that gets loaded, the parts that matter for Linux itself is really just the communication protocol between AP and SEP, similarly to other ASCs. For understanding the xART/Gigalocker creation and provisioning flow, creating a new user should provision new encryption keys for them which very likely would involve adding entries to the Gigalockers. Also goes without saying but the tracing should be done on the same macOS version as will be the firmware for Asahi Linux installs. (13.5 as of 11/13/2024)
+
+TODOs for tracing:
+- Massively reduce the message spam from the tracer over the Python console, it *greatly* slows down the system, and has led to panics on occasion as the message spam leads to things timing out.
+- currently the tracer seems to assume Monterey or Big Sur SEP firmware, update it for Ventura and newer.
+- Perhaps only trace SEP messages from individual SEP applets based on endpoint indices, and use separate Python scripts to trace the SKS flow or the SSE flow?
+- build a table of message types and data sent in for all endpoints (in XNU logs, a lot of the messages seem to have parts of the true SEP message masked out)
+
+Miscellaneous questions:
+
+- when the debug endpoint is notifying the AP that an endpoint has come to life, the "DATA" field has a value of 0x2020202, 0x1010101, 0x0, or 0x2020404
+- one part of the SEP shared mem buffer at the very beginning during endpoint setup changes the lower byte of the first 32-bit word from 02 to 1f. why would that be? is that a configuration bit? is that done by macOS or the SEP OS?
 
 Coprocessor information:
 
-As with other coprocessors like DCP, this is an ASC coprocessor and thus communicates with the main AP through a similar mailbox interface and occasional shared buffers (in AppleSEPManager, they call these "OOL" buffers, supposedly out of line buffers). Unlike the other processors which run RTKit or a derivative of, SEP seems to run a custom OS Apple internally calls SEPOS. Additionally SEPOS itself seems to be broken up into many different applications that all run on the SEP itself.
+As with other ASC coprocessors like DCP, this is an ASC coprocessor and thus communicates with the main AP through a similar mailbox interface and occasional shared buffers (in AppleSEPManager, they call these "OOL" buffers, supposedly out of line buffers). Unlike the other processors which run RTKit or a derivative of, SEP seems to run a custom OS Apple internally calls SEPOS. Additionally SEPOS itself seems to be broken up into many different applications that all run on the SEP itself.
 
 SEP seems to authenticate its own firmware (evidenced by kernel strings saying that SEP has "accepted" the IMG4), and seemingly will panic upon failure to authenticate the firmware. SEP firmware is encrypted by a separate GID from the normal AP GID, so a bootchain vuln in iBoot won't give you any ability to decrypt SEP firmware or load arbitrary SEP firmware unless you also manage to compromise SEP itself.
 
@@ -19,17 +34,17 @@ Endpoint information:
 | 0x00 | Control/CNTL | seems to control some endpoint properties |
 | 0x08 | Secure Biometrics (SBIO) | biometric authentication |
 | 0x0a | SCRD | likely "Secure/SEP credential manager" used for user credential auth? |
-| 0x0c | sse  | Somehow related to NFC, may be related to apple pay. |
+| 0x0c | sse  | Somehow related to NFC, may be related to Apple Pay. |
 | 0x0e | HDCP | likely HDCP content protection |
 | 0x10 | xars (according to tracer) | xART setup? involved in startup/shutdown |
 | 0x12 | Secure/SEP Key Store | SEP encrypt/decrypt operations and key management |
 | 0x13 | xART manager | manages xARTs, gigalockers and keybags (needed for SKS to start) |
-| 0x14 | hibe (according to tracer) | hibernation related? | 
+| 0x14 | hibe (according to tracer) | hibernation related | 
 | 0x15 | pnon (tracer name) | unknown purpose |
-| 0x17 | skdl | CoreKDL. KDL stands for kext deny list, relevant for FairPlay, maybe relevant for HDCP and apple pay. |
+| 0x17 | skdl | CoreKDL. KDL stands for kext deny list, relevant for FairPlay, maybe relevant for HDCP and Apple Pay. |
 | 0x18 | stac | linked to the AppleTrustedAccessory extension, probably "Secure/SEP Trusted Accessory Connection" | 
 | 0xFD | Debug | debug endpoint, signals some events to XNU? |
-| 0xFE | Boot254 | Signals SEP to actually boot into SEPOS |
+| 0xFE | Boot254 | Signals SEP to boot into SEPOS with an IMG4 that will be set up in its protected memory region. |
 | 0xFF | Boot255 | Signals to SEP that the protected region of memory set up for it is ready for its own use |
 
 
@@ -50,24 +65,22 @@ SEP Message format:
 
 bits 0-7 - Endpoint number
 
+bits 8-15 - a "tag" value (for the control endpoint, an inbound and outbound message may sometimes share tags, not used much in the SEP bootrom)
 
-bits 8-15 - a "tag" value (for the control endpoint, an inbound and outbound message may sometimes share tags)
+bits 16-24 - message "type" (what you want the receiving end to act on, this field is how you communicate your desired action to the SEP)
 
+bits 25-31 - message parameters (debug endpoint, this is always the endpoint the debug endpoint is responding/receiving info about, SEP bootrom doesn't use this much)
 
-bits 16-24 - message "type" (for the debug endpoint, 0x1 is )
+bits 32-63 - some kind of data (can be either a pointer, or a configuration value, but this is almost always required to be set for actions that change system state)
 
+the mailbox is capable of sending stuff in bits 127-63 but currently those bits go unused, SEP bootrom totally ignores them, and AppleSEPManager doesn't do it either.
 
-
-bits 25-31 - message parameters (debug endpoint, this is always the endpoint the debug endpoint is responding/receiving info about)
-
-
-bits 32-63 - some kind of data (can be either a pointer, or a configuration value)
 
 SEP boot flow:
-- iBoot preloads SEP firmware
-- XNU sends a boottz0 message, bringing SEP into second stage boot
-- XNU sends img4, SEP verifies integrity, if accepted, boots into SEP/OS
-- Endpoint setup (haven't finished gathering data on this part yet, but longest/most complex part by far)
+- iBoot preloads SEP firmware into a memory region that's recorded in ADT.
+- XNU sends a boottz0 message, bringing SEP into second stage boot (a portion of RAM is reserved for this)
+- XNU sends img4, SEP verifies integrity, if accepted, boots into SEP/OS (sending a malformed or invalid IMG4 is a panic on SEP side, making it unusuable for the rest of that boot until the device resets)
+- Endpoint setup (including xART/Gigalocker configuration, SKS setup including FileVault keys, etc.)
 
 
 xART init flow (incomplete atm, may be wrong):
@@ -124,29 +137,8 @@ The control endpoint seems to reply to incoming requests with a message type of 
 
 SKS is *very* spammy in normal mode as mailbox messages to/from sep with it as the endpoint are constantly being sent (this is likely because of how Data Protection works according to the Apple security guide, a lot of these likely are retrieving/updating keys from/to gigalocker)
 
-Single-user mode is helpful when tracing, as SKS will not be nearly as spammy and we can capture the initialization sequence.
+Single-user mode is helpful when doing tracing, as SKS will not be nearly as spammy and we can capture the initialization sequence.
 
-
-
-Questions:
-
-- when the debug endpoint is notifying the AP that an endpoint has come to life, the "DATA" field has a value of 0x2020202, 0x1010101, 0x0, or 0x2020404
-
-
-- why is there both an xars endpoint and an xarm endpoint?
-
-
-- one part of the SEP shared mem buffer at the very beginning during endpoint setup changes the lower byte of the first 32-bit word from 02 to 1f. why would that be? is that a configuration bit? is that done by macOS or the SEP OS?
-
-
-
-TODOs:
-
-- build a table of message types and tags for all endpoints (in XNU logs, a lot of the messages seem to have parts of the true SEP message masked out)
-
-- capture how a gigalocker is created (this is a long term thing)
-
-- update the SEP tracer for Ventura
 
 xART fetch notes:
 
