@@ -201,6 +201,18 @@ Again, you can use the physical partition identifier or the logical disk number.
 
 Please note that running this command might momentarily freeze your macOS terminal. Do not panic and let it run for a few minutes.
 
+### `Storage system verify or repair failed`
+
+If you get this error during the APFS resize operation, it means you have latent APFS filesystem corruption. This problem is caused by bugs in Apple's APFS drivers, not Asahi Linux (which does not touch APFS partitions at all). To fix it, **boot into recoveryOS** (this will not work from macOS), then run the following command (substituting disk0s2 for your APFS container disk name, as above):
+
+`diskutil repairVolume disk0s2`
+
+If this complains about "encrypted and locked volumes", you will have to run `diskutil apfs unlockVolume <diskName>` on every FileVault-protected macOS volume in your system. Run `diskutil apfs list` and look for `FileVault: Yes (locked)` to identify them. You may safely skip System volumes (only Data volumes need to be unlocked). Then, retry the `diskutil repairVolume` operation.
+
+Finally, retry the resize operation after the repair successfully completes.
+
+If this does not repair your volume successfully and the resize operation still fails, unfortunately, there is no known solution other than a complete wipe and reformat of the macOS volume (losing all data). The Asahi Linux project cannot offer bugfixes or support for Apple's own system drivers and tools. If you find a reproducible way of causing APFS corruption, please report it directly to Apple.
+
 ## Addendum: Mounting EFI partition
 There are two methods to mount the EFI partition. The first one is this:
 
