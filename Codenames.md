@@ -51,8 +51,8 @@ Apple likes to use many different names for the same devices.
 | M4     | H16G | Donan | T8132 | | |
 | M4 Pro | H16S | Brava Chop | T6040 | |
 | M4 Max | H16C | Brava | T6041 | |
-| A18 | H17P | Tahiti | T8140 | |
-| A18 Pro | H17A | Tupai | T8140 | |
+| A18 | H17A | Tupai | T8140a | |
+| A18 Pro | H17P | Tahiti | T8140 | |
 | |  | Hidra | | |
 | |  | Sotra_C | | |
 | |  | Sotra_S | | |
