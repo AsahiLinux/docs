@@ -30,7 +30,7 @@ make install
 ```
 
 ### img4tool
-Get a copy of tihmstar's img4tool (you will also need his libgeneral as well as autoconf, automate, libtool, pkg-config, openssl and libelist-2.0).
+Get a copy of tihmstar's img4tool (you will also need his libgeneral as well as autoconf, automake, libtool, pkg-config, openssl and libplist-2.0).
 
 ```
 git clone https://github.com/tihmstar/libgeneral.git
