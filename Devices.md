@@ -46,3 +46,5 @@ This is a list of devices Asahi Linux intends to support. The Product and SoC ar
 | MacBook Pro (16-inch, M4 Pro, Nov 2024) | Mac16,7 | J616sAP | T6040 
 | MacBook Pro (14-inch, M4 Max, Nov 2024) | Mac16,6 | J614cAP | T6041 
 | MacBook Pro (16-inch, M4 Max, Nov 2024) | Mac16,5 | J616cAP | T6041 
+| MacBook Air (13-inch, M4, 2025) | Mac16,12 | J713AP | T8132
+| MacBook Air (15-inch, M4, 2025) | Mac16,13 | J715AP | T8132
