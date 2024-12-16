@@ -84,7 +84,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 ## Broken packages
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
-| FEX | https://github.com/FEX-Emu/FEX/issues/1921 | Not likely to be fixed in the near future. \* |
+| Chromium | https://issues.chromium.org/issues/378017037 | cppgc crashes on Linux w/ 16KiB pages because of hardcoded kGuardPageSize |
 | hardened_malloc | https://github.com/GrapheneOS/hardened_malloc/issues/183 | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
 | jemalloc | https://github.com/jemalloc/jemalloc/issues/467 | Upstream unwilling to fix, Needs build options if compiled on a 4k page size system. Addressed in [ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1914). |
 | MEGAsync | https://github.com/meganz/MEGAsync/pull/801 |
@@ -102,7 +102,6 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | box64 | https://github.com/ptitSeb/box64/issues/384 | Fixed since 0.2.8 |
 | btrfs | https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/ | Fixed since Linux 5.19 ([caveats](https://social.treehouse.systems/@marcan/111493984306764821)) |
 | Chromium | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788| Includes Electron apps.<br>Fixed since 102. |
-| Chromium | https://issues.chromium.org/issues/378017037 |
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
 | f2fs | https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287 | Fixed since Linux 6.7 |
 | fd | https://github.com/sharkdp/fd/issues/1085 | Fixed since 10.1 |
