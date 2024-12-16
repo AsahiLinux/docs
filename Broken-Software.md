@@ -102,6 +102,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | box64 | https://github.com/ptitSeb/box64/issues/384 | Fixed since 0.2.8 |
 | btrfs | https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/ | Fixed since Linux 5.19 ([caveats](https://social.treehouse.systems/@marcan/111493984306764821)) |
 | Chromium | https://bugs.chromium.org/p/chromium/issues/detail?id=1301788| Includes Electron apps.<br>Fixed since 102. |
+| Chromium | https://issues.chromium.org/issues/378017037 |
 | Emacs | https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html | Fixed since 28.0 |
 | f2fs | https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287 | Fixed since Linux 6.7 |
 | fd | https://github.com/sharkdp/fd/issues/1085 | Fixed since 10.1 |
@@ -139,7 +140,6 @@ Issues (other than page size and architectural support issues) in third-party so
 | glibc            | [TLS modid reuse breaks TLS accesses](https://bugzilla.redhat.com/show_bug.cgi?id=2251557) | Fixed in glibc 2.39 |
 | gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
 | hyprland         | [issue with OpenGL applications crashing when using Hyprland 0.42.0](https://github.com/hyprwm/Hyprland/issues/7364) | Fixed in hyprland 0.43.0 |
-| kde              | [Some text glyphs in QML software are vertically mis-aligned or squished when using a fractional scale factor](https://bugs.kde.org/show_bug.cgi?id=479891) |
 | kpipewire        | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) | Issue Closed |
 | kpipewire        | [Screen recording quality is terrible](https://bugs.kde.org/show_bug.cgi?id=476186) |
 | kpipewire        | [OpenH264 codec support](https://bugs.kde.org/show_bug.cgi?id=476187) | Fixed in Plasma 6.1.4 |
@@ -149,6 +149,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | lsp-common-lib   | [Fix atomic operations for AArch64](https://github.com/lsp-plugins/lsp-plugins/issues/463) |
 | lib-dsp-lib      | [Fix aarch64 msmatrix code](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20) | Fixed in lsp-dsp-lib 1.0.20 |
 | plasmashell      | [startplasma breaks variable merging between profile.d and environment.d](https://bugs.kde.org/show_bug.cgi?id=491579) |
+| qqc2-desktop-style | [Some text glyphs in QML software are vertically mis-aligned or squished when using a fractional scale factor](https://bugs.kde.org/show_bug.cgi?id=479891) | Fixed in KDE Frameworks 6.9.0 |
 | systemsettings   | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
 | wireplumber      | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538) |
 | wireplumber      | [Wireplumber ignores default playback volume](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#) | Fixed in wireplumber 0.5.3 |
