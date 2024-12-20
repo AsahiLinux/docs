@@ -27,3 +27,4 @@ following updates adding support for more devices and hardware:
 * [Conformant OpenGL 4.6 on the M1](https://asahilinux.org/2024/02/conformant-gl46-on-the-m1/)
 * [Vulkan 1.3 on the M1 in 1 month](https://asahilinux.org/2024/06/vk13-on-the-m1-in-1-month/)
 * [AAA gaming on Asahi Linux](https://asahilinux.org/2024/10/aaa-gaming-on-asahi-linux/)
+* [Beyond Gaming: X11 bridging in muvm](https://asahilinux.org/2024/12/muvm-x11-bridging/)
