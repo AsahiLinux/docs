@@ -1,4 +1,4 @@
-Your kernel configuration will need to include the Asahi-specific drivers.  As of linux-asahi-6.11.2-1, this list is:
+Your kernel configuration will need to include the Asahi-specific drivers.  As of linux-asahi-6.12.4-1, this list is:
 
 ```
 CONFIG_ARCH_APPLE=y
@@ -40,6 +40,9 @@ CONFIG_DRM_ADP=m
 CONFIG_DRM_APPLE=m
 CONFIG_DRM_APPLE_AUDIO=y
 CONFIG_APPLE_SIO=m
+CONFIG_APPLE_SEP=y
+CONFIG_APPLE_AOP=y
+CONFIG_SND_SOC_APPLE_AOP_AUDIO=m
 CONFIG_SND_SOC_APPLE_MACAUDIO=m
 CONFIG_SND_SOC_APPLE_MCA=m
 CONFIG_SND_SOC_CS42L84=m
@@ -53,6 +56,8 @@ CONFIG_PHY_APPLE_DPTX=m
 CONFIG_NVMEM_SPMI_MFD=y
 CONFIG_MUX_APPLE_DPXBAR=m
 CONFIG_NVMEM_APPLE_EFUSES=y
+CONFIG_IIO_AOP_SENSOR_LAS=m
+CONFIG_IIO_AOP_SENSOR_ALS=m
 ```
 
 (Distros intending to support other platforms with their 16k arm64 kernel besides Apple Silicon will be inclined to build as many of these drivers as modules as they can.  This is fine, though from a reliability standpoint building NVME_APPLE and SPI_HID_APPLE_OF in-kernel has worked much better for me.)
