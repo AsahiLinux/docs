@@ -4,6 +4,7 @@ The primary supported distribution is the [Fedora Asahi Remix](https://asahilinu
 |--------|------------|--------------------|
 | Alpine Linux | IRC: mps (https://arvanta.net/alpine) | https://arvanta.net/alpine/install-alpine-m1/ |
 | AOSC OS | https://github.com/AOSC-Dev | https://aosc.io/downloads/asahi |
+| Arch Linux ARM | https://github.com/asahi-alarm/ | https://github.com/asahi-alarm/asahi-alarm |
 | CentOS Stream | https://github.com/ericcurtin | https://github.com/ericcurtin/asahi-centosstream-builder |
 | Debian | https://thomas.glanzmann.de/ | https://git.zerfleddert.de/cgi-bin/gitweb.cgi/m1-debian/ |
 | deepin | https://github.com/deepin-community| https://github.com/deepin-community/deepin-m1 |
