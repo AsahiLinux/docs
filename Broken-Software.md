@@ -81,6 +81,12 @@ manipulated by old versions of `patchelf`) or customized compiler flags (such as
 many Google programs, including older versions of Chrome (and Electron) and most current
 Android programs) may result in a binary whose sections are only aligned to 4K.
 
+## Are there any available workarounds?
+
+Fedora Linux Asahi Remix's `muvm` package is, by default, configured to virtualize a 4K
+kernel (along with setting FEX as the x86_64 binfmt handler so x86_64 programs may be
+run). You may have varying levels of success by attempting to run your software in `muvm`.
+
 ## Broken packages
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
@@ -92,7 +98,7 @@ Android programs) may result in a binary whose sections are only aligned to 4K.
 | Wine | https://bugs.winehq.org/show_bug.cgi?id=52715 |
 | Zig | https://github.com/ziglang/zig/issues/11308 | 
 
-\* In the future, running x86-64 software will be supported via a 4k page size microVM running FEX.
+\* Running x86-64 software is supported via a 4k page size microVM running FEX.
 
 ## Fixed packages
 | Package | Fixing commit | Notes |
