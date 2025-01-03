@@ -22,4 +22,4 @@ These are just some references for people to build some background knowledge int
 
 [Nikolaj Schlej](https://twitter.com/NikolajSchlej) ( Apple Firmware Security Engineer)
 
-[Longhorn](https://twitter.com/never_released)
+[Longhorn (@never_released)](https://twitter.com/never_released)
