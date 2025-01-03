@@ -143,6 +143,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | gcc              | [LTO miscompilation of ceph on aarch64 and x86_64](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=113359) | Fixed in gcc 13.3 / 14.1 |
 | glibc            | [TLS modid reuse breaks TLS accesses](https://bugzilla.redhat.com/show_bug.cgi?id=2251557) | Fixed in glibc 2.39 |
 | gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
+| gtk              | [GSK issues illegal render ops with load=dont-care and blend=over with Wayland fractional scaling, causing graphical corruption](https://gitlab.gnome.org/GNOME/gtk/-/issues/7146) |
 | gtk              | [GSK/vulkan uses mipmaps without checking the formats/tiling `VkImageFormatProperties.maxMipLevels`](https://gitlab.gnome.org/GNOME/gtk/-/issues/7229) |
 | hyprland         | [issue with OpenGL applications crashing when using Hyprland 0.42.0](https://github.com/hyprwm/Hyprland/issues/7364) | Fixed in hyprland 0.43.0 |
 | hyprland         | [Explicit Sync timelines fail importing, killing the client](https://github.com/hyprwm/Hyprland/issues/8158) |
