@@ -122,7 +122,6 @@ run). You may have varying levels of success by attempting to run your software 
 | qt5-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 87, likely won’t be fixed upstream. [Fixed in downstream ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1928) |
 | qt6-webengine | https://bugreports.qt.io/browse/QTBUG-105145 | chromium 94 for 6.3, partially fixed upstream in 6.4 for webview but not for QtPdf. [Fixed in downstream ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1928) |
 | Redis | https://bugzilla.redhat.com/show_bug.cgi?id=2240293 https://bodhi.fedoraproject.org/updates/FEDORA-2023-bdb1515542 | Fixed in fedora since redis-7.0.13-2.fc38 and redis-7.2.1-2.fc39) |
-| Ryujinx | https://github.com/Ryujinx/Ryujinx/pull/6291 | Fixed since 1.1.1192 | 
 | rr | https://github.com/rr-debugger/rr/pull/3146 | Fixed since 5.6.0 |
 | Rust | https://github.com/archlinuxarm/PKGBUILDs/commit/19a1393 | Fixed for `rust-1.62.1-1.1` in ALARM/extra |  
 | Telegram Desktop | https://github.com/telegramdesktop/tdesktop/issues/26103 | Fixed since 4.1.1 |
@@ -144,6 +143,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | gcc              | [LTO miscompilation of ceph on aarch64 and x86_64](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=113359) | Fixed in gcc 13.3 / 14.1 |
 | glibc            | [TLS modid reuse breaks TLS accesses](https://bugzilla.redhat.com/show_bug.cgi?id=2251557) | Fixed in glibc 2.39 |
 | gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
+| gtk              | [GSK/vulkan uses mipmaps without checking the formats/tiling `VkImageFormatProperties.maxMipLevels`](https://gitlab.gnome.org/GNOME/gtk/-/issues/7229) |
 | hyprland         | [issue with OpenGL applications crashing when using Hyprland 0.42.0](https://github.com/hyprwm/Hyprland/issues/7364) | Fixed in hyprland 0.43.0 |
 | hyprland         | [Explicit Sync timelines fail importing, killing the client](https://github.com/hyprwm/Hyprland/issues/8158) |
 | kpipewire        | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) | Issue Closed |
