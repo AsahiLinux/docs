@@ -20,7 +20,7 @@ Yes! The Installer already configures dual booting. You would need to go out of 
 
 ## Can I boot Asahi Linux purely from an USB drive?
 
-No, unfortunately not. The macOS hardware does not support booting from USB storage, period. It is completely physically impossible to boot from USB while making no changes to internal storage. This is by design, for security reasons. 
+No, unfortunately not. Apple Silicon hardware does not support booting from USB storage, at all. It is completely physically impossible to boot from USB while making no changes to internal storage. This is by design, for security reasons. 
 
 ## I have ~40GB of free disk space but the installer says that's not enough!
 
