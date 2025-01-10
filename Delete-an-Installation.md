@@ -66,7 +66,38 @@ diskutil eraseVolume free free disk<num-here>s<-other-num-here>
 ```
 
 ## Resize MacOS to fill disk again
-Note: use the disk number corresponding to the MacOS partition (from the disk information in the Asahi installer script output).  
+1. Get the logical Disk number corresponding to MacOS installation
+```
+diskutil list
+```
+Example output:
+```
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *500.3 GB   disk0
+   1:             Apple_APFS_ISC Container disk1         524.3 MB   disk0s1
+   2:                 Apple_APFS Container disk4         362.6 GB   disk0s2
+                    (free space)                         2.5 GB     -
+   3:                        EFI EFI - FEDOR             524.3 MB   disk0s4
+   4:           Linux Filesystem                         1.1 GB     disk0s5
+   5:           Linux Filesystem                         127.7 GB   disk0s6
+   6:        Apple_APFS_Recovery Container disk3         5.4 GB     disk0s7
+
+/dev/disk4 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +362.6 GB   disk4
+                                 Physical Store disk0s2
+   1:                APFS Volume Macintosh HD            11.2 GB    disk4s1
+   2:              APFS Snapshot com.apple.os.update-... 11.2 GB    disk4s1s1
+   3:                APFS Volume Preboot                 6.9 GB     disk4s2
+   4:                APFS Volume Recovery                1.0 GB     disk4s3
+   5:                APFS Volume Data                    287.6 GB   disk4s5
+   6:                APFS Volume VM                      20.5 KB    disk4s6
+```
+In the above example the `/dev/disk# (synthesized)` line which has Macintosh HD listed under it  
+is the disk to note down. In this example you would expand logical disk4
+
+2. Resize - expand logical volume to fill the free space.
 ```
 diskutil apfs resizeContainer disk<num-here> 0
 ```
