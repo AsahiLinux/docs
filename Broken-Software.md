@@ -161,4 +161,5 @@ Issues (other than page size and architectural support issues) in third-party so
 | wireplumber      | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538) |
 | wireplumber      | [Wireplumber ignores default playback volume](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#) | Fixed in wireplumber 0.5.3 |
 | wlroots          | [Add support for DRM Color Transformation Matrix (Useful for e.g. redshift)](https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/1078) | [Related PR](https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4815) |
+| wlroots          | [cannot open render as master when using seatd](https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/3911) |
 | xkeyboard-config | [Handling Mac Fn keys in xkeyboard](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379) |
