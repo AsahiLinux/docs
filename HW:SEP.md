@@ -4,7 +4,7 @@ fair warning: this page is messy and will likely remain so, until enough underst
 
 Notes for anyone tracing for Asahi:
 
-Since you don't control the SEP firmware that gets loaded, the parts that matter for Linux itself is really just the communication protocol between AP and SEP, similarly to other ASCs. For understanding the xART/Gigalocker creation and provisioning flow, creating a new user should provision new encryption keys for them which very likely would involve adding entries to the Gigalockers. Also goes without saying but the tracing should be done on the same macOS version as will be the firmware for Asahi Linux installs. (13.5 as of 11/13/2024)
+Since you don't control the SEP firmware that gets loaded, the parts that matter for Linux itself is really just the communication protocol between AP and SEP, similarly to other ASCs. For understanding the xART/Gigalocker creation and provisioning flow, creating a new user should provision new encryption keys for them which very likely would involve adding entries to the Gigalockers. Also goes without saying but the tracing should be done on the same macOS version as will be the firmware for Asahi Linux installs. (13.5 as of 11/13/2024) - Not fully true, SEP firmware is determined by the highest version macos to be ever installed on the device, but the protocol is backwards compatible.
 
 TODOs for tracing:
 - Massively reduce the message spam from the tracer over the Python console, it *greatly* slows down the system, and has led to panics on occasion as the message spam leads to things timing out.
@@ -14,7 +14,7 @@ TODOs for tracing:
 
 Miscellaneous questions:
 
-- when the debug endpoint is notifying the AP that an endpoint has come to life, the "DATA" field has a value of 0x2020202, 0x1010101, 0x0, or 0x2020404
+- when the debug endpoint is notifying the AP that an endpoint has come to life, the "DATA" field has a value of 0x2020202, 0x1010101, 0x0, or 0x2020404 - this is ool buffer sizes in pages, input and output. Not sure why they are doubled though.
 - one part of the SEP shared mem buffer at the very beginning during endpoint setup changes the lower byte of the first 32-bit word from 02 to 1f. why would that be? is that a configuration bit? is that done by macOS or the SEP OS?
 
 Coprocessor information:
@@ -40,10 +40,10 @@ Endpoint information:
 | 0x12 | Secure/SEP Key Store | SEP encrypt/decrypt operations and key management |
 | 0x13 | xART manager | manages xARTs, gigalockers and keybags (needed for SKS to start) |
 | 0x14 | hibe (according to tracer) | hibernation related | 
-| 0x15 | pnon (tracer name) | unknown purpose |
+| 0x15 | pnon (tracer name) | Boot policy related. We will eventually need it for Machine owner credentials handoff, but can be ignored for now |
 | 0x17 | skdl | CoreKDL. KDL stands for kext deny list, relevant for FairPlay, maybe relevant for HDCP and Apple Pay. |
 | 0x18 | stac | linked to the AppleTrustedAccessory extension, probably "Secure/SEP Trusted Accessory Connection" | 
-| 0xFD | Debug | debug endpoint, signals some events to XNU? |
+| 0xFD | Debug(?) | More of a discovery endpoint, returns the endpoint list and OOL buffer sizes |
 | 0xFE | Boot254 | Signals SEP to boot into SEPOS with an IMG4 that will be set up in its protected memory region. |
 | 0xFF | Boot255 | Signals to SEP that the protected region of memory set up for it is ready for its own use |
 
