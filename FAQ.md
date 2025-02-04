@@ -64,6 +64,10 @@ Please stop using Xorg and switch to Wayland. Xorg as a primary display server i
 
 The [Fedora Asahi Remix](https://asahilinux.org/fedora/) (the flagship reference distribution) is Wayland-only out of the box for this reason.
 
+## Screen reader software or other accessibility features are not working by default
+
+As of February 2025, accessibility features were enabled by default, and should soon after be available on the lock screen after installation. This was implemented in the following [https://pagure.io/fedora-asahi/calamares-firstboot-config/pull-request/5](https://pagure.io/fedora-asahi/calamares-firstboot-config/pull-request/5).
+
 ## Screen recording is slow
 
 Make sure you have the GPU drivers installed. If screen recording is still slow, you are probably using a screen recording app or compositor that directly reads out or copies GPU display surfaces from the CPU. GPU display surfaces are optimized for GPU access, and direct CPU readout is unlikely to even work at all once we switch to compressed primary display framebuffers. In other words, approaches such as [kmsgrab](http://underpop.online.fr/f/ffmpeg/help/kmsgrab.htm.gz) are fundamentally flawed, will perform poorly, and will stop working entirely in the future. You should use a display compositor and recording app that correctly share GPU textures and then optimize the read-out for CPU encoding. KDE's KWin and OBS are known to work well together, as well as KDE's standalone Spectacle screenshot/recording app.
