@@ -5,7 +5,7 @@ From the ADT:
 * `/arm-io/pmgr[reg]` power manager registers
     * CPU start block is at a device-dependent offset to this register
         * 0x30000 for A7-A8(X)
-        * 0xd4000 for A9(X)-A11
+        * 0xd4000 for A9(X)-A11, T2
         * 0x54000 for M1 series
         * 0x34000 for M2 and M3
         * 0x28000 for M2 Pro/Max
