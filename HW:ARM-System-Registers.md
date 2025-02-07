@@ -680,7 +680,7 @@ The AArch64 FEAT_AFT feature implements equivalent support, but Apple implemente
   * 3: Capri (A8X / H7G)
   * 4: Malta / Elba (TSMC A9(X) / H8P / H8G)
   * 5: Maui (Samsung A9 / H8P)
-  * 6: Cayman (A10 / H9P)
+  * 6: Cayman (A10 / T2 / H9P / H9M)
   * 7: Myst (A10X / H9G)
   * 8: Skye Monsoon (A11 / H10 p-core)
   * 9: Skye Mistral (A11 / H10 e-core)
