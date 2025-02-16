@@ -1,0 +1,36 @@
+site_name: Asahi Linux Documentation
+site_url: https://docs.asahilinux.org
+
+repo_url: https://github.com/AsahiLinux/docs
+repo_name: AsahiLinux/docs
+
+nav:
+  - Feature Support:
+    - M1 Series Feature Support: M1-Series-Feature-Support.md
+    - M2 Series Feature Support: M2-Series-Feature-Support.md
+    - M3 Series Feature Support: M3-Series-Feature-Support.md
+  - Project related:
+    - Glossary: Glossary.md
+    - FAQ: FAQ.md
+    - When will Asahi Linux be done?: When-will-Asahi-Linux-be-done.md
+    - Project:References: Project:References.md
+  - Platform documentation:
+    - Apple Silicon Subsystems: Apple-Silicon-Subsystems.md
+    - Apple Platform Security Crash Course: Apple-Platform-Security-Crash-Course.md
+    - Devices: Devices.md
+    - Codenames: Codenames.md
+    - Display Controllers: Display-Controllers.md
+  - For users:
+    - Broken Software: Broken-Software.md
+    - Alternative Distros: SW:Alternative-Distros.md
+  - For developers:
+    - Yaks in need of shaving (HELP WANTED!): Yaks-in-need-of-shaving.md
+    - Tethered Boot Setup (For Developers): Tethered-Boot-Setup-(For-Developers).md
+    - m1n1:User Guide Boot loader: m1n1:User-Guide.md
+    - Hypervisor: SW:Hypervisor.md
+    - U-Boot: U-Boot.md
+    - Devicetree bindings: SW:DT-bindings.md
+    - Open OS ecosystem on Apple Silicon Macs: Open-OS-Ecosystem-on-Apple-Silicon-Macs.md
+
+theme:
+  name: material
