@@ -21,6 +21,7 @@ nav:
     - Codenames: Codenames.md
     - Display Controllers: Display-Controllers.md
   - For users:
+    - Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>: https://docs.fedoraproject.org/en-US/fedora-asahi-remix/
     - Broken Software: Broken-Software.md
     - Alternative Distros: SW-Alternative-Distros.md
   - For developers:
@@ -42,9 +43,11 @@ theme:
   features:
     - navigation.expand
     - navigation.instant
+    - navigation.sections
     - navigation.tracking
     - navigation.top
     - toc.integrate
+  custom_dir: overrides
 
 extra_css:
   - stylesheets/extra.css
