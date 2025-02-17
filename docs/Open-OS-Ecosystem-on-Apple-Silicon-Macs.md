@@ -33,7 +33,7 @@ Due to the presence of multiple ESPs, OSes will need a way to figure out which i
 
 ### Boot overview
 
-A typical boot of a reference Linux system will go as follows, continuing on from the [Boot Flow|Introduction to Apple Silicon#boot-flow](Boot-Flow|Introduction-to-Apple-Silicon#boot-flow.md) section:
+A typical boot of a reference Linux system will go as follows, continuing on from the [Boot Flow](Introduction-to-Apple-Silicon.md#boot-flow) section:
 
 * iBoot2 loads the custom kernel, which is a build of m1n1
 * m1n1 stage 1 runs and

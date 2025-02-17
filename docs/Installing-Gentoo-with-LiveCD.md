@@ -1,16 +1,16 @@
 ## Table of Contents
-- [Introduction](#Introduction)
-- [Prerequisites](#Important-prerequisite-information)
-- [Installation](#Step-1-Set-up-Asahi-Linux-Minimal)
-  * [Step 1: Set up the Asahi U-Boot Environment](#Step-1-Set-up-the-Asahi-U-Boot-environment)
-  * [Step 2: Acquire the Gentoo Asahi LiveCD image](#Step-2-Acquire-the-Gentoo-Asahi-LiveCD-image)
-  * [Step 3: Boot into the LiveCD](#Step-3-Boot-into-the-LiveCD)
-  * [Step 4: Install Asahi support files](#Step-4-Install-Asahi-support-files)
-  * [Step 5: Have fun!](#Step-5-Have-fun)
-- [Maintenance](#Maintenance)
-  * [Updating U-Boot and m1n1](#Updating-U-Boot-and-m1n1)
-  * [Upgrading the kernel](#Upgrading-the-kernel)
-  * [Syncing the Asahi overlay](#Syncing-the-Asahi-overlay)
+- [Introduction](#introduction)
+- [Prerequisites](#important-prerequisite-information)
+- [Installation](#step-1-set-up-the-asahi-u-boot-environment)
+  * [Step 1: Set up the Asahi U-Boot Environment](#step-1-set-up-the-asahi-u-boot-environment)
+  * [Step 2: Acquire the Gentoo Asahi LiveCD image](#step-2-acquire-the-gentoo-asahi-livecd-image)
+  * [Step 3: Boot into the LiveCD](#step-3-boot-into-the-livecd)
+  * [Step 4: Install Asahi support files](#step-4-install-asahi-support-files)
+  * [Step 5: Have fun!](#step-5-have-fun)
+- [Maintenance](#maintenance)
+  * [Updating U-Boot and m1n1](#updating-u-boot-and-m1n1)
+  * [Upgrading the kernel](#upgrading-the-kernel)
+  * [Syncing the Asahi overlay](#syncing-the-asahi-overlay)
 
 ## Introduction
 Installing Gentoo on Apple Silicon is not that different to doing so on a bog-standard amd64 machine.
@@ -97,7 +97,7 @@ When you update the U-Boot or m1n1 packages, Portage will only install the resul
 This is both a security and a reliability measure. m1n1 ships with a script, `update-m1n1`, which must be run as root
 every time you update the kernel, U-Boot, or m1n1 itself. This script is responsible for collecting the m1n1, U-Boot
 and Devicetree blobs, packaging them up into a single binary object, and installing it on the EFI System Partition.
-For more information on how this works and why it must work this way, consult [Open OS ecosystem on Apple Silicon Macs](Open-OS-ecosystem-on-Apple-Silicon-Macs.md)
+For more information on how this works and why it must work this way, consult [Open OS Ecosystem on Apple Silicon Macs](Open-OS-Ecosystem-on-Apple-Silicon-Macs.md)
 
 ### Upgrading the kernel
 When you are running through a kernel upgrade, it is extremely important that you update the Stage 2 m1n1 payload at the

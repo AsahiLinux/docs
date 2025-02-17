@@ -74,7 +74,7 @@ Cold-boot (from powered-off state) the tethered machine and wait for new devices
 
 The prefered way to install software on your macOS host is by using the `homebrew` package manager, this is the matter of running a simple chell command.
 
-Open a terminal window (press `[Cmd]`+`[Space]` keys, then type `iterm`, then press `[enter]`) then type the following command (refer to [Homebrew web site](brew.sh) if in doubt):
+Open a terminal window (press `[Cmd]`+`[Space]` keys, then type `iterm`, then press `[enter]`) then type the following command (refer to [Homebrew web site](https://brew.sh) if in doubt):
 
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

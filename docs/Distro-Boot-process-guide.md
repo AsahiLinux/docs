@@ -114,4 +114,4 @@ You might want to rename the old `m1n1.bin` after an update. If booting fails, y
 
 m1n1 stuffs the Apple keyboard code into `/proc/device-tree/chosen/asahi,kblang-code` (as a big-endian u32 cell, standard for DT). The mapping is [here](https://github.com/AsahiLinux/asahi-calamares-configs/blob/main/bin/first-time-setup.sh#L109). Feel free to start a discussion on how to standardize a proper binding for this.
 
-We have a whole story for how vendor firmware (i.e. firmware that is not redistributable as a distro package, but is prepared at install time) is handled. How that works is covered in detail [here|Open OS Ecosystem on Apple Silicon Macs#firmware-provisioning](here|Open-OS-Ecosystem-on-Apple-Silicon-Macs#firmware-provisioning.md).
+We have a whole story for how vendor firmware (i.e. firmware that is not redistributable as a distro package, but is prepared at install time) is handled. How that works is covered in detail [here](Open-OS-Ecosystem-on-Apple-Silicon-Macs.md#firmware-provisioning).
