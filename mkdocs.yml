@@ -34,3 +34,5 @@ nav:
 
 theme:
   name: material
+  logo: artwork/logos/png_256/AsahiLinux_logomark.png
+  favicon: artwork/logos/png_256/AsahiLinux_logomark.png
