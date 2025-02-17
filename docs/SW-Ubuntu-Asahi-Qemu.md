@@ -1,6 +1,6 @@
 Tested on Ubuntu 22.10 Asahi on M1 Air.
 
-Other Ubuntu Asahi install info at https://github.com/AsahiLinux/docs/wiki/SW%3AAlternative-Distros
+See [this page](SW-Alternative-Distros.md) for other Ubuntu Asahi install info.
 
 Also installs virt-manager.
 

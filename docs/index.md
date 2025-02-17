@@ -1,4 +1,4 @@
-# Welcome to the Asahi Linux documentation Wiki!
+# Welcome to the Asahi Linux documentation!
 
 We are just getting started.
 

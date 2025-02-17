@@ -103,4 +103,4 @@ diskutil apfs resizeContainer disk<num-here> 0
 ```
 
 ### Errors? Need More Background Information?
-[Partitioning cheatsheet](https://github.com/AsahiLinux/docs/wiki/Partitioning-cheatsheet)
+[Partitioning cheatsheet](Partitioning-cheatsheet.md)

@@ -116,7 +116,7 @@ At this time, the Asahi Linux installer is supported as a purely online installe
 
 Future installation options could include:
 
-* USB netinstall images/bundles, setting up the installer as "bootable install media". This can be set up by just unpacking some files to a FAT32 partition on a USB drive, so it is easy for users to use, and will allow them to select the installer from the boot picker ([more info](https://github.com/AsahiLinux/docs/wiki/Introduction-to-Apple-Silicon#boot-picker) on how this magic works). It would still fetch the OS to be installed from the internet.
+* USB netinstall images/bundles, setting up the installer as "bootable install media". This can be set up by just unpacking some files to a FAT32 partition on a USB drive, so it is easy for users to use, and will allow them to select the installer from the boot picker ([more info](Introduction-to-Apple-Silicon.md#boot-picker) on how this magic works). It would still fetch the OS to be installed from the internet.
 * USB local install images/bundles, which can also serve as UEFI install media for later or for other platforms. This will install the target OS from USB, but will still hit Apple's CDN for the Apple components, making the install not truly offline.
   * An option for end users to add the Apple components, e.g. by running a script from the USB drive, making it fully offline
   * An option for end users to add the Apple components when creating the USB installer, e.g. by running a script that downloads them and provisions the installer in one go, instead of a pre-baked image.

@@ -7,7 +7,7 @@ This guide is intended specifically for kernel developers and advanced users who
 
 * An Apple Silicon Mac with _at least_ **macOS 12.3** installed and configured
   * You must have a password-protected administrator account. Typically, this will be the first account you created when setting up the machine for the first time. 
-* A host machine of any architecture running a GNU/Linux distribution (macOS is also supported, but less well tested see [Tethered-Boot-Setup-on-macOS](Tethered-Boot-Setup-on-macOS.md))
+* A host machine of any architecture running a GNU/Linux distribution (macOS is also supported, but less well tested see [Tethered-Boot-Setup-on-macOS](Tethered-boot-setup-on-macOS.md))
   * Both `GCC` and `Clang/LLVM` AArch64 cross-toolchains are supported.
 
 If you are interested in low-level access to the SoC via its debug UART, you will also require a real, physical serial port solution. See [Low-level-serial-debug](Low-level-serial-debug.md) for more information on this. This is not necessary for general kernel development or reverse-engineering, and most developers will find the virtual serial port offered by the m1n1 hypervisor to be adequate for everything (unless you're debugging KVM and can't use it).
