@@ -35,8 +35,8 @@ nav:
 
 theme:
   name: material
-  logo: artwork/logos/png_256/AsahiLinux_logomark.png
-  favicon: artwork/logos/png_32/AsahiLinux_logomark.png
+  logo: assets/logo.png
+  favicon: assets/favicon.png
   palette:
     primary: custom
     accent: custom
