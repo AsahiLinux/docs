@@ -1,5 +1,5 @@
 site_name: Asahi Linux Documentation
-site_url: https://asahilinux.org/docs
+site_url: https://asahilinux.org/docs/
 
 repo_url: https://github.com/AsahiLinux/docs
 repo_name: AsahiLinux/docs
@@ -35,4 +35,4 @@ nav:
 theme:
   name: material
   logo: artwork/logos/png_256/AsahiLinux_logomark.png
-  favicon: artwork/logos/png_256/AsahiLinux_logomark.png
+  favicon: artwork/logos/png_32/AsahiLinux_logomark.png
