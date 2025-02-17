@@ -1,6 +1,6 @@
 ## When will Asahi Linux be "done"?
 
-→ ["When will Asahi Linux be done?"]("When-will-Asahi-Linux-be-done?".md)
+→ ["When will Asahi Linux be done?"](When-will-Asahi-Linux-be-done.md)
 
 ## Does $thing work yet?
 
