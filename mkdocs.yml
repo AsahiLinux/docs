@@ -63,3 +63,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - social:
+      cards_layout_options:
+        background_color: '#F4EAEA'
+        color: '#2C2C2C'
