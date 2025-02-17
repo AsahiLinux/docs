@@ -53,7 +53,7 @@ Communication between the M1's main CPU cores and the ASCs/IOPs (I/O processors)
 
 While protocols differ between processors, a common element appears to be that the low-order 8 bits of the second 64-bit half of the message encode the endpoint at the IOP side of the message. The first 64 bits appear to be passed through by the mailbox without further changes and very different encodings are used for them.
 
-The hardware side of the mailbox is located at offset +0x8000 in MMIO space, and uses four interrupts numbered consecutively at the [[AIC|HW:AIC]], two of which are useful to us.
+The hardware side of the mailbox is located at offset +0x8000 in MMIO space, and uses four interrupts numbered consecutively at the [AIC|HW:AIC](AIC|HW:AIC.md), two of which are useful to us.
 
 Data is sent from the main CPU to the IOP when two 64-bit writes target offsets +0x8800 and +0x8808. Once the IOP reads the data and removes it from the queue, the interrupt with the lowest number at the AIC will trigger until it is disabled or further data is written.
 

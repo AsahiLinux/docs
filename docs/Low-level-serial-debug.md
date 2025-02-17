@@ -8,7 +8,7 @@ M1 Macs expose their debug serial port over one of their Type C ports (the same 
 
 The target machine can also be hard-rebooted using USB-PD VDM commands, making for a quick test cycle (no holding down power buttons).
 
-See [[HW:USB-PD]] for details on the USB-PD VDM commands and what you can do with them.
+See [HW:USB-PD](HW:USB-PD.md) for details on the USB-PD VDM commands and what you can do with them.
 
 The serial port is a UART using 1.2V logic levels, and requires vendor-specific USB-PD VDM commands to enable. Thus, making a compatible cable is nontrivial. You have the following options.
 

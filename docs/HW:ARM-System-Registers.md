@@ -1,4 +1,4 @@
-See [[HW:ARM System Registers Dumps]] for exhaustive enumeration and research.
+See [HW:ARM System Registers Dumps](HW:ARM-System-Registers-Dumps.md) for exhaustive enumeration and research.
 
 ## Glossary
 

@@ -43,7 +43,7 @@ make
 make install
 ```
 ### Obtaining device tree files
-copy the im4p file from the below directory. See [[Devices]] for Machine 'j' model details.
+copy the im4p file from the below directory. See [Devices](Devices.md) for Machine 'j' model details.
 
 `/System/Volumes/Preboot/[UUID]/restore/Firmware/all_flash/DeviceTree.{model}.im4p`
 

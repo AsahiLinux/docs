@@ -48,7 +48,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### G
 * **GPT**: GUID Partition Table: A partition table format created for EFI/UEFI and now used on most modern systems.
-* **GXF**: probably Guarded Execution Function. Lateral exception levels used to create a low-overhead hypervisor to protect pagetables and equally important structures from XNU itself. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [[HW:-SPRR-and-GXF]]
+* **GXF**: probably Guarded Execution Function. Lateral exception levels used to create a low-overhead hypervisor to protect pagetables and equally important structures from XNU itself. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [HW:-SPRR-and-GXF](HW:-SPRR-and-GXF.md)
 
 ### H
 * **HFS+**: Hierarchical Filesystem+: Apple's previous filesystem, used for external storage. Not used for internal storage on M1 Macs.
@@ -63,7 +63,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **IOMMU**: I/O Memory Management Unit, a more general term for Apple's DART.
 * **IOKit**: I/O Kit is Apple's device driver framework for XNU (Apple's operating system kernel).
 * **IPI**: Inter-processor interupt. An interrupt used by one processor to interrupt another.
-* **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [[SW:Storage]])
+* **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [SW:Storage](SW:Storage.md))
 * **ISP**: Image Signal Processor. Webcam on M-series laptops. Denotes the entire camera unit, from sensors to strobe to the coprocessor.
 
 ### J
@@ -93,7 +93,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### R
 * **RecoveryOS:** The recovery environment, which can either be a recovery image paired to an OS install (located inside an APFS subvolume) or the global recovery image installed in the last APFS container on disk. macOS 11.x uses the global image by default, while macOS 12.0 and newer uses a paired recoveryOS.
-* **RestoreOS:** The restore environment, loaded onto the device when "reviving" it through DFU mode by Apple Configurator. [[more info]](https://www.theiphonewiki.com/wiki/Restore_Ramdisk)
+* **RestoreOS:** The restore environment, loaded onto the device when "reviving" it through DFU mode by Apple Configurator. [more info](more-info.md)(https://www.theiphonewiki.com/wiki/Restore_Ramdisk)
 * **ROM** is an acronym for Read-Only Memory. It refers to computer memory chips containing permanent or semi-permanent data.
 * **RTKit:** Apple's proprietary real-time operating system. Most of the accelerators (AGX, ANE, AOP, DCP, AVE, PMP) run RTKit on an internal processor. The string "RTKSTACKRTKSTACK" is characteristic of a firmware containing RTKit.
 * **RTOS:** Real-time operating system.
@@ -108,7 +108,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **SOP**: Start Of Packet. Used to differentiate packet types in USB-PD. SOP for normal comms, SOP' and SOP" to talk to built-in chips in a cable, SOP'DEBUG and SOP"DEBUG for custom vendor specific things like Apple VDMs.
 * **SPI**: Serial Peripheral Interface. A 4-wire standard for communicating at low speed between chips on a board.
 * **SPMI**: System Power Management Interface from MIPI Alliance: 2-wire bi-directional interface, Multi master(up to 4), Multi slave(up to 16), 32KHz to 26MHz. See [System Power Management Interface](https://en.wikipedia.org/wiki/System_Power_Management_Interface)
-* **SPRR**: probably Shadow Permission Remap Registers. Turns the normal page permission attributes (AP,PXN,UXN) into an index to a separate table. This new table then determines the real page permissions. Also disallows pages that writeable and executable at the same time. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [[HW:-SPRR-and-GXF]]
+* **SPRR**: probably Shadow Permission Remap Registers. Turns the normal page permission attributes (AP,PXN,UXN) into an index to a separate table. This new table then determines the real page permissions. Also disallows pages that writeable and executable at the same time. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [HW:-SPRR-and-GXF](HW:-SPRR-and-GXF.md)
 * **SWD**: Serial Wire Debug. A 2-pin interface used for debugging ARM cores, like JTAG over fewer pins. Used on Apple devices, but inaccessible (for the main CPU/SoC) in production devices due to security restrictions.
 
 ### T

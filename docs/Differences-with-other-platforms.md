@@ -1,4 +1,4 @@
-This page is basically a TL;DR of [[Open OS Ecosystem on Apple Silicon Macs]]. It is written for general Linux power users who are used to the boot process on other platforms. Read that page for the full details.
+This page is basically a TL;DR of [Open OS Ecosystem on Apple Silicon Macs](Open-OS-Ecosystem-on-Apple-Silicon-Macs.md). It is written for general Linux power users who are used to the boot process on other platforms. Read that page for the full details.
 
 ## This is not a typical UEFI platform
 
