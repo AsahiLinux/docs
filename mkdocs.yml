@@ -13,7 +13,7 @@ nav:
     - Glossary: Glossary.md
     - FAQ: FAQ.md
     - When will Asahi Linux be done?: When-will-Asahi-Linux-be-done.md
-    - Project:References: Project:References.md
+    - References: Project-References.md
   - Platform documentation:
     - Apple Silicon Subsystems: Apple-Silicon-Subsystems.md
     - Apple Platform Security Crash Course: Apple-Platform-Security-Crash-Course.md
@@ -25,11 +25,11 @@ nav:
     - Alternative Distros: SW:Alternative-Distros.md
   - For developers:
     - Yaks in need of shaving (HELP WANTED!): Yaks-in-need-of-shaving.md
-    - Tethered Boot Setup (For Developers): Tethered-Boot-Setup-(For-Developers).md
-    - m1n1:User Guide Boot loader: m1n1:User-Guide.md
-    - Hypervisor: SW:Hypervisor.md
+    - Tethered Boot Setup (For Developers): Tethered-Boot-Setup-For-Developers.md
+    - m1n1:User Guide Boot loader: m1n1-User-Guide.md
+    - Hypervisor: SW-Hypervisor.md
     - U-Boot: U-Boot.md
-    - Devicetree bindings: SW:DT-bindings.md
+    - Devicetree bindings: SW-DT-bindings.md
     - Open OS ecosystem on Apple Silicon Macs: Open-OS-Ecosystem-on-Apple-Silicon-Macs.md
 
 theme:

@@ -1,6 +1,6 @@
 ## General docs
 * [Alyssa's Driver Survival Guide](https://rosenzweig.io/AlyssasDriverSurvivalGuide.txt)
-* [HW:AGX](HW:AGX.md) (somewhat outdated)
+* [HW-AGX](HW-AGX.md) (somewhat outdated)
 
 ## Git links
 * [Upstream Mesa](https://gitlab.freedesktop.org/mesa/mesa) ([merge requests](https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests?label_name%5B%5D=asahi))
