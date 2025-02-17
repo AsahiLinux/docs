@@ -38,11 +38,11 @@ This is a lightweight remix of Arch Linux ARM.
 
 ### [linux-asahi](https://github.com/AsahiLinux/PKGBUILDs/tree/main/linux-asahi)
 
-Our main kernel package. Usually built from the `asahi` branch on [AsahiLinux/linux](https://github.com/AsahiLinux/linux). Frequently updated and often based on bleeding-edge kernels (linux-next). Reference kernel config is [here](https://github.com/AsahiLinux/docs/wiki/Reference-Asahi-kernel-config).
+Our main kernel package. Usually built from the `asahi` branch on [AsahiLinux/linux](https://github.com/AsahiLinux/linux). Frequently updated and often based on bleeding-edge kernels (linux-next). Reference kernel config is [here](Reference-Asahi-kernel-config.md).
 
 This kernel is built with a large assortment of USB device drivers to allow for external devices, but only the PCI/SPI/I²C/SPMI/etc drivers useful for Apple machines (PCI drivers will be enabled once Thunderbolt works). It is not intended to be bootable on non-Apple systems.
 
-[Notes on modifying your kernel configuration to include Asahi](https://github.com/AsahiLinux/docs/wiki/Kernel-config-notes-for-distros)
+[Notes on modifying your kernel configuration to include Asahi](Kernel-config-notes-for-distros.md)
 
 If you need .config options not yet enabled, feel free to request it on IRC or as an issue [here](https://github.com/AsahiLinux/PKGBUILDs).
 

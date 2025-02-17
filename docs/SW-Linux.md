@@ -26,13 +26,13 @@ cp ../linux/arch/arm64/boot/dts/apple/t8103-j274.dtb t8103-j274.dtb
 ### keyboard  + nvme working 
 * Snapshot of [rev a2281d64fdbc](https://github.com/amworsley/AsahiLinux/tree/asahi-kbd) with config such as [this one](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/config-keyboard+nvme)
 ## Boot with your USB cables plugged in
-  * Plug your USB cables/hubs/adapters **before** booting your Mac as m1n1/linux doesn't do the USB low level PHY setup yet. Let the iBoot do this when it boots to m1n1 you installed via your [setup of boot to m1n1](https://github.com/AsahiLinux/docs/wiki/Developer-Quickstart#setup)
+  * Plug your USB cables/hubs/adapters **before** booting your Mac as m1n1/linux doesn't do the USB low level PHY setup yet. Let the iBoot do this when it boots to m1n1 you installed via your [setup of boot to m1n1](Developer-Quickstart.md#setup)
   * If m1n1 C code has been updated since the set up you should chain load the new .macho image
 ```
 python3.9 proxyclient/tools/chainload.py build/m1n1.macho
 ```
 # Running Linux via USB cable
-  * Connecting [USB Type-C to Type A/C cable](https://github.com/AsahiLinux/docs/wiki/Developer-Quickstart#usb-gadget-mode-using-a-standard-usb-cable) to M1 Mac provides two USB serial interfaces on the other computer![USB Type-C  to Type A cable connecting M1 MacBookAir and 2012 MacBootAir Pro](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/usb-setup.png)
+  * Connecting [USB Type-C to Type A/C cable](Developer-Quickstart.md#usb-gadget-mode-using-a-standard-usb-cable) to M1 Mac provides two USB serial interfaces on the other computer![USB Type-C  to Type A cable connecting M1 MacBookAir and 2012 MacBootAir Pro](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/usb-setup.png)
   * This can be connected to via the python proxy tool to boot up Linux directly or load up a macho binary like an updated m1n1 version or combined with a Linux image
 * Get a 27Mb initrd from debian arm64 installer
 ```
@@ -385,12 +385,12 @@ Still running 21
 </details>
 
 # Root filesystem options
- * [initrd + USB keyboard](https://github.com/AsahiLinux/docs/wiki/SW:Linux:USBKeyboard#linux-usb-keyboard)
- * [USB drive boot](https://github.com/AsahiLinux/docs/wiki/SW:Linux:USB-drive)
- * [USB Drive to NVME partition](https://github.com/AsahiLinux/docs/wiki/SW:Linux:NVME)
+ * [initrd + USB keyboard](SW-Linux-USBKeyboard.md#linux-usb-keyboard)
+ * [USB drive boot](SW-Linux-USB-drive.md)
+ * [USB Drive to NVME partition](SW-Linux-NVME.md)
 # Other features
- * [WiFi Support](https://github.com/AsahiLinux/docs/wiki/SW:Linux:WiFi)
- * [X11 Support](https://github.com/AsahiLinux/docs/wiki/SW:Linux:X11)
+ * [WiFi Support](SW-Linux-WiFi.md)
+ * [X11 Support](SW-Linux-X11.md)
 # Missing
  * Sound
  * Power management - do **NOT** shut the lid

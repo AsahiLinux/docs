@@ -2,7 +2,7 @@
 
 This guide documents a manual installation process that is only required for kernel developers doing reverse engineering of macOS drivers using the m1n1 hypervisor.
 
-If you are a more typical developer and you want to help work on the kernel or just experiment with the platform, and are happy doing tethered boots via USB (uploading the kernel from another machine), have a look [[over here|Tethered Boot Setup (For Developers)]].
+If you are a more typical developer and you want to help work on the kernel or just experiment with the platform, and are happy doing tethered boots via USB (uploading the kernel from another machine), have a look [over here][Tethered-Boot-Setup-For-Developers.md].
 
 If you are an end user or you would otherwise like to set up a stand-alone install, stop now. It isn't ready yet. It will be soon. Just hang tight.
 
@@ -323,7 +323,7 @@ picocom /dev/ttyACM1
 
 Note that this method cannot (yet) be used as an earlycon for Linux, and USB gadget support is not yet in our main Linux tree either.
 
-* See [Running Linux via USB cable](https://github.com/AsahiLinux/docs/wiki/SW:Linux#running-linux-via-usb-cable) for some more details
+* See [Running Linux via USB cable](SW-Linux.md#running-linux-via-usb-cable) for some more details
 
 ## Using m1n1
 
@@ -465,7 +465,7 @@ Run `python shell.py` for an interactive debug shell.
 00000040  *
 00003320  00000000 00000000 00000000 00000001 00000000 00000000 00000000 00000000
 [...]
->>> u.msr(DAIF, u.mrs(DAIF) & ~0x3c0) # Enable IRQs             
+>>> u.msr(DAIF, u.mrs(DAIF) & ~0x3c0) # Enable IRQs
 >>> mon.add(AIC, 0x8000) # Monitor the AIC registers
 [...]
 >>> write32(AIC + 0x2008, 1) # Fire off an IPI to ourselves

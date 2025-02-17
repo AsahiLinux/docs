@@ -23,7 +23,7 @@ sudo cp /usr/bin/qemu-aarch64-static debinst/usr/bin
   * Install the rootfs you created above onto the drive `sudo cp -a debinst/. /mnt/img`
   * Unmount the drive `sudo umount /mnt/img`
 ### Boot with USB drive as root
-  * Back to [booting over USB cable](https://github.com/AsahiLinux/docs/wiki/SW%3ALinux#running-linux-via-usb-cable)
+  * Back to [booting over USB cable](SW-Linux.md#running-linux-via-usb-cable)
   * Make sure you have the latest m1n1.macho loaded `python3 proxyclient/tools/chainload.py build/m1n1.macho`
   * Build a kernel with builtin features (check for =m and change to =y in .config)
     * In particular need CONFIG_EXT4_FS=y is needed to boot!
