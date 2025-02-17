@@ -48,7 +48,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### G
 * **GPT**: GUID Partition Table: A partition table format created for EFI/UEFI and now used on most modern systems.
-* **GXF**: probably Guarded Execution Function. Lateral exception levels used to create a low-overhead hypervisor to protect pagetables and equally important structures from XNU itself. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [HW--SPRR-and-GXF](HW--SPRR-and-GXF.md)
+* **GXF**: probably Guarded Execution Function. Lateral exception levels used to create a low-overhead hypervisor to protect pagetables and equally important structures from XNU itself. See e.g. [Sven's write-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/) or [HW-SPRR-and-GXF](HW-SPRR-and-GXF.md)
 
 ### H
 * **HFS+**: Hierarchical Filesystem+: Apple's previous filesystem, used for external storage. Not used for internal storage on M1 Macs.
@@ -112,7 +112,6 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **SWD**: Serial Wire Debug. A 2-pin interface used for debugging ARM cores, like JTAG over fewer pins. Used on Apple devices, but inaccessible (for the main CPU/SoC) in production devices due to security restrictions.
 
 ### T
-
 * **TBT**: Thunderbolt Technology
 
 ### U

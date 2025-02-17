@@ -1,6 +1,6 @@
 This page explains the packages/components involved in a bootable Asahi Linux system, and how they interact with each other. It is aimed at distro packagers and people who want to roll/maintain their own builds instead of using packages. It is based on the setup used in the Arch Linux ARM-based reference distro, but should apply to most systems.
 
-This is a practical guide. For a more formal description/spec, including how we handle vendor firmware, see [Open OS Ecosystem on Apple Silicon Macs](Open-OS-Ecosystem-on-Apple-Silicon-Macs.md). For information about specifically how everything is plumbed into our Arch Linux-based reference distro, see [Distro:Differences from Arch Linux ARM](Distro:Differences-from-Arch-Linux-ARM.md).
+This is a practical guide. For a more formal description/spec, including how we handle vendor firmware, see [Open OS Ecosystem on Apple Silicon Macs](Open-OS-Ecosystem-on-Apple-Silicon-Macs.md). For information about specifically how everything is plumbed into our Arch Linux-based reference distro, see [Distro:Differences from Arch Linux ARM](Distro-Differences-from-Arch-Linux-ARM.md).
 
 ## Boot chain overview
 

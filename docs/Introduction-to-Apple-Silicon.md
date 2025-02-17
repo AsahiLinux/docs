@@ -132,11 +132,11 @@ recoveryOS is a macOS image that is used to provide an environment for users to 
 
 recoveryOS can be requested via NVRAM variables on reboot, or can automatically be invoked after a certain number of boot failures. It is a minimal macOS image that presents the user with a recovery menu that allows them to change system security settings, partition disks, launch a web browser, launch a root terminal, reinstall macOS, etc. Network access is supported.
 
-[https://github.com/AsahiLinux/docs/blob/main/assets/recoveryos.png|alt=recoveryOS](https://github.com/AsahiLinux/docs/blob/main/assets/recoveryos.png|alt=recoveryOS.md)
+![recoveryOS](assets/recoveryos.png)
 
 In addition, there is a "special" boot flow that grants additional capabilities. When the user powers up the machine by holding down the power button, this loads the recoveryOS paired with the currently active default boot OS volume (falling back to the system one), and first shows a boot picker to allow the user to choose an OS to boot (and optionally make the default):
 
-[https://github.com/AsahiLinux/docs/blob/main/assets/boot_picker.png|alt=Boot Picker](https://github.com/AsahiLinux/docs/blob/main/assets/boot_picker.png|alt=Boot-Picker.md)
+![Boot Picker](assets/boot_picker.png)
 
 If the user chooses "Options", they will be presented with the recoveryOS menu, as above. When booted this way, it is called "One True recoveryOS" (1TR), and it has additional powers granted to it by SEP (secure enclave) firmware. Additionally, this recoveryOS will be considered "paired" with the OS container it belongs to, and be able to perform specific operations on that OS. In particular, this mode is required in order to install a custom OS kernel.
 
