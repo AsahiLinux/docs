@@ -2,39 +2,39 @@ These pages detail the specifics of a particular platform subsystem. They are lo
 by function.
 
 ### Generalised overviews
-* [[Introduction to Apple Silicon]]
-* [[Accelerator Engines]]
+* [Introduction to Apple Silicon](Introduction-to-Apple-Silicon.md)
+* [Accelerator Engines](Accelerator-Engines.md)
 
 ### Coprocessors and accelerators
-* [[HW:AGX]] - Apple's PowerVR-derived tile-based deferred renderer
-* [[HW:SEP]] - The Secure Enclave, Apple's crypto/biometrics/security engine
+* [HW:AGX](HW:AGX.md) - Apple's PowerVR-derived tile-based deferred renderer
+* [HW:SEP](HW:SEP.md) - The Secure Enclave, Apple's crypto/biometrics/security engine
 
 ### Platform control logic
-* [[HW:AIC]] - Apple Interrupt Controller
-* [[HW:WDT]] - Watchdog Timer
-* [[HW:SMC]] - System Management Controller
-* [[HW:ASC]] - Apple's Mailbox-like firmware interface
+* [HW:AIC](HW:AIC.md) - Apple Interrupt Controller
+* [HW:WDT](HW:WDT.md) - Watchdog Timer
+* [HW:SMC](HW:SMC.md) - System Management Controller
+* [HW:ASC](HW:ASC.md) - Apple's Mailbox-like firmware interface
 
 ### Platform initialisation and boot
-* [[SW:Boot]]
-* [[SW:MachO Boot Protocol]]
-* [[HW:Memory map]]
-* [[HW:SMP spin up]]
-* [[FW:ADT]] (Apple Device Tree)
-* [[SW:NVRAM]] 
+* [SW:Boot](SW:Boot.md)
+* [SW:MachO Boot Protocol](SW:MachO-Boot-Protocol.md)
+* [HW:Memory map](HW:Memory-map.md)
+* [HW:SMP spin up](HW:SMP-spin-up.md)
+* [FW:ADT](FW:ADT.md) (Apple Device Tree)
+* [SW:NVRAM](SW:NVRAM.md) 
 
 ### Application processors
-* [[HW:ARM System Registers]]
-* [[HW: SPRR and GXF]]
-* [[HW:CPU debug registers]]
-* [[HW:Apple Instructions]]
+* [HW:ARM System Registers](HW:ARM-System-Registers.md)
+* [HW: SPRR and GXF](HW:-SPRR-and-GXF.md)
+* [HW:CPU debug registers](HW:CPU-debug-registers.md)
+* [HW:Apple Instructions](HW:Apple-Instructions.md)
 
 ### I/O
-* [[HW:APCIe]] (Apple PCIe controller)
-* [[HW:GPIO]]
-* [[HW:Debug USB]]
-* [[HW:USB PD]]
-* [[SW:Storage]]
+* [HW:APCIe](HW:APCIe.md) (Apple PCIe controller)
+* [HW:GPIO](HW:GPIO.md)
+* [HW:Debug USB](HW:Debug-USB.md)
+* [HW:USB PD](HW:USB-PD.md)
+* [SW:Storage](SW:Storage.md)
 
 ### Peripherals
-* [[HW:Camera]] - Broadcom camera and ISP
+* [HW:Camera](HW:Camera.md) - Broadcom camera and ISP

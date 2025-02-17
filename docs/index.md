@@ -2,7 +2,7 @@
 
 We are just getting started.
 
-Questions? Please check out the [[FAQ]] first!
+Questions? Please check out the [FAQ](FAQ.md) first!
 
 ## Developers
 
@@ -12,7 +12,7 @@ check out the sidebar for places to start.
 ## End Users
 
 Asahi Linux is work in progress. Many hardware components
-are not yet supported! Check out the [[Feature Support]] page first. 
+are not yet supported! Check out the [Feature Support](Feature-Support.md) page first. 
 If you still want to give it a go, see the blog post for the initial installer and
 following updates adding support for more devices and hardware:
 

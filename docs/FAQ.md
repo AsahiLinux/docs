@@ -1,10 +1,10 @@
 ## When will Asahi Linux be "done"?
 
-→ [["When will Asahi Linux be done?"]]
+→ ["When will Asahi Linux be done?"]("When-will-Asahi-Linux-be-done?".md)
 
 ## Does $thing work yet?
 
-→ [[Feature Support]]
+→ [Feature Support](Feature-Support.md)
 
 ## How do I install it?
 
@@ -12,7 +12,7 @@ See the website for instructions: https://asahilinux.org/
 
 ## How do I uninstall / clean up a failed installation?
 
-There is no automated uninstaller, but see [[Partitioning cheatsheet]] to learn how to delete the partitions manually.
+There is no automated uninstaller, but see [Partitioning cheatsheet](Partitioning-cheatsheet.md) to learn how to delete the partitions manually.
 
 ## Can I dual boot Asahi Linux?
 
@@ -44,7 +44,7 @@ As the message implies, this is caused by Time Machine snapshots taking up "free
 
 ### Disk Utility doesn't work for me after installing / for uninstalling / any other time!
 
-Don't use Disk Utility, it's broken and only works for really simple partition setups. See [[Partitioning cheatsheet]] to learn how to manage partitions with the command line instead.
+Don't use Disk Utility, it's broken and only works for really simple partition setups. See [Partitioning cheatsheet](Partitioning-cheatsheet.md) to learn how to manage partitions with the command line instead.
 
 ## Do I need to reinstall to get new features / updates?
 

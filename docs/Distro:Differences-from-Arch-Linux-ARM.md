@@ -6,7 +6,7 @@ Images are built using the scripts in the [asahi-alarm-builder](https://github.c
 
 ### Image format
 
-These images are intended for direct installation by the online Asahi Linux Installer and are packaged in a ZIP archive following a specific format. See [[Installer:OS Packages]] for more information.
+These images are intended for direct installation by the online Asahi Linux Installer and are packaged in a ZIP archive following a specific format. See [Installer:OS Packages](Installer:OS-Packages.md) for more information.
 
 ## Repo
 

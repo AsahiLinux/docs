@@ -1,1 +1,1 @@
-Obsolete, you want [[Developer Quickstart]]
+Obsolete, you want [Developer Quickstart](Developer-Quickstart.md)

@@ -1,6 +1,6 @@
 ## Foreword
 
-This document presents our vision for how open OSes should interoperate on Apple Silicon (i.e. M1 and later) Macs. We recommend first reading [[Introduction to Apple Silicon]] to first learn how the platform is designed from Apple's perspective.
+This document presents our vision for how open OSes should interoperate on Apple Silicon (i.e. M1 and later) Macs. We recommend first reading [Introduction to Apple Silicon](Introduction-to-Apple-Silicon.md) to first learn how the platform is designed from Apple's perspective.
 
 The ideas in this document are not intended to set hard requirements or rules; anyone is of course free (and encouraged) to go their own way if they so choose. Rather, we would like to agree on a set of standards that make it easier for different OSes to co-exist and be installed by end users, aiming to make the process as simple, seamless, and future-proof as possible.
 
@@ -33,7 +33,7 @@ Due to the presence of multiple ESPs, OSes will need a way to figure out which i
 
 ### Boot overview
 
-A typical boot of a reference Linux system will go as follows, continuing on from the [[Boot Flow|Introduction to Apple Silicon#boot-flow]] section:
+A typical boot of a reference Linux system will go as follows, continuing on from the [Boot Flow|Introduction to Apple Silicon#boot-flow](Boot-Flow|Introduction-to-Apple-Silicon#boot-flow.md) section:
 
 * iBoot2 loads the custom kernel, which is a build of m1n1
 * m1n1 stage 1 runs and
@@ -76,7 +76,7 @@ This boot chain is designed to progressively bring the system closer to a "typic
 
 ### m1n1
 
-m1n1 is our first-stage bootstrap for Apple Silicon systems. Its purpose is to bridge between the XNU boot protocol and the Device Tree / ARM64 Linux boot protocol, and do low-level bring-up so that subsequent boot stages do not have to be concerned with it. See [[m1n1:User Guide]] for more details on how it works.
+m1n1 is our first-stage bootstrap for Apple Silicon systems. Its purpose is to bridge between the XNU boot protocol and the Device Tree / ARM64 Linux boot protocol, and do low-level bring-up so that subsequent boot stages do not have to be concerned with it. See [m1n1:User Guide](m1n1:User-Guide.md) for more details on how it works.
 
 m1n1 can also be puppeteered via USB for development and reverse engineering purposes, including loading kernels to allow for a very fast build-test cycle. It also features a bare-metal hypervisor that can boot Linux or macOS and provide a virtualized UART over USB, and includes advanced Python-based event tracing framework. These features are not intended for end users, but we hope they make OS development and testing on these platforms as enjoyable as possible.
 

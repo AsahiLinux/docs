@@ -5,7 +5,7 @@ model is based on the Swiss Cheese Model - no single security mechanism can guar
 level of security on its own, so mechanisms are layered to cover each others' holes.
 
 Platform security features are orchestrated by the Secure Enclave Processor (SEP). An overview of the SEP's
-features, the different boot policies, and the boot picker itself is available at [[Introduction to Apple Silicon]].
+features, the different boot policies, and the boot picker itself is available at [Introduction to Apple Silicon](Introduction-to-Apple-Silicon.md).
 This page instead attempts to extrapolate upon and clarify the concepts which may be of interest to
 users and system maintainers.
 
@@ -175,4 +175,4 @@ macOS container.
 Asahi Linux creates a small APFS container and volume set with the correct file structure to be recognised as a valid OS,
 then uses Apple's tooling to set its security to Permissive and enroll m1n1 as its signed boot object. We do
 not - and never will - alter the security settings of _any other_ OS volume, nor will Apple's security
-policies for those containers affect the Asahi volume. More details can be found at [[Open OS Ecosystem on Apple Silicon Macs]].
+policies for those containers affect the Asahi volume. More details can be found at [Open OS Ecosystem on Apple Silicon Macs](Open-OS-Ecosystem-on-Apple-Silicon-Macs.md).

@@ -1,4 +1,4 @@
-If you're after the support status of a specific feature, [[Feature Support]] has a list of all major hardware included in the Apple Silicon Macs, as well as its level of support.
+If you're after the support status of a specific feature, [Feature Support](Feature-Support.md) has a list of all major hardware included in the Apple Silicon Macs, as well as its level of support.
 
 ## Why you shouldn't ask this question on IRC
 
@@ -25,7 +25,7 @@ Next, we consider the case of someone who is actively testing bleeding edge driv
 Finally, we consider the perspective of the developer. Development for an undocumented platform is a treadmill of work. Every new feature requires reverse engineering the relevant hardware, writing drivers, testing those drivers, then getting them upstreamed. Even after a driver is upstreamed, maintenance and optimisation is sometimes required, for example if Apple introduce a breaking change to any firmware we are required to interface with. For developers the work is never really done, however a sort of colloquial "doneness" we use around here to decide what work gets priority is when a driver is completed to a quality level where it is accepted for merging upstream.
 
 ## What this means for you
-No one can really decide when Asahi Linux is "done" except for you. Your use case, technical skill, ambition and risk tolerance are your own. As development work is ongoing, we will likely never have an official "done" date for you to live by, so your best bet is to use your own judgement and the list of features at [[Feature Support]] to decide if the time is right for you to try out Linux on Apple Silicon.
+No one can really decide when Asahi Linux is "done" except for you. Your use case, technical skill, ambition and risk tolerance are your own. As development work is ongoing, we will likely never have an official "done" date for you to live by, so your best bet is to use your own judgement and the list of features at [Feature Support](Feature-Support.md) to decide if the time is right for you to try out Linux on Apple Silicon.
 
 
 ## A note on new hardware

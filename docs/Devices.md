@@ -1,4 +1,4 @@
-This is a list of devices Asahi Linux intends to support. The Product and SoC are used for matching against device trees. Please check [[Feature-Support]] for the state of support for specific models.
+This is a list of devices Asahi Linux intends to support. The Product and SoC are used for matching against device trees. Please check [Feature-Support](Feature-Support.md) for the state of support for specific models.
 
 ## Devices
 | Marketing name | Device | Product | SoC |

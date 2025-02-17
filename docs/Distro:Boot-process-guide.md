@@ -1,6 +1,6 @@
 This page explains the packages/components involved in a bootable Asahi Linux system, and how they interact with each other. It is aimed at distro packagers and people who want to roll/maintain their own builds instead of using packages. It is based on the setup used in the Arch Linux ARM-based reference distro, but should apply to most systems.
 
-This is a practical guide. For a more formal description/spec, including how we handle vendor firmware, see [[Open OS Ecosystem on Apple Silicon Macs]]. For information about specifically how everything is plumbed into our Arch Linux-based reference distro, see [[Distro:Differences from Arch Linux ARM]].
+This is a practical guide. For a more formal description/spec, including how we handle vendor firmware, see [Open OS Ecosystem on Apple Silicon Macs](Open-OS-Ecosystem-on-Apple-Silicon-Macs.md). For information about specifically how everything is plumbed into our Arch Linux-based reference distro, see [Distro:Differences from Arch Linux ARM](Distro:Differences-from-Arch-Linux-ARM.md).
 
 ## Boot chain overview
 
@@ -114,4 +114,4 @@ You might want to rename the old `m1n1.bin` after an update. If booting fails, y
 
 m1n1 stuffs the Apple keyboard code into `/proc/device-tree/chosen/asahi,kblang-code` (as a big-endian u32 cell, standard for DT). The mapping is [here](https://github.com/AsahiLinux/asahi-calamares-configs/blob/main/bin/first-time-setup.sh#L109). Feel free to start a discussion on how to standardize a proper binding for this.
 
-We have a whole story for how vendor firmware (i.e. firmware that is not redistributable as a distro package, but is prepared at install time) is handled. How that works is covered in detail [[here|Open OS Ecosystem on Apple Silicon Macs#firmware-provisioning]].
+We have a whole story for how vendor firmware (i.e. firmware that is not redistributable as a distro package, but is prepared at install time) is handled. How that works is covered in detail [here|Open OS Ecosystem on Apple Silicon Macs#firmware-provisioning](here|Open-OS-Ecosystem-on-Apple-Silicon-Macs#firmware-provisioning.md).
