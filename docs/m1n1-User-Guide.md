@@ -13,7 +13,7 @@ GitHub: [AsahiLinux/m1n1](https://github.com/AsahiLinux/m1n1)
   * Configuration statements
 * Chainloads another version of itself from a FAT32 partition (if configured to do so)
 
-Proxy mode enables a huge toolset of developer features, from reducing your Linux kernel test cycle to 7 seconds, to live hardware probing and experimentation, to a hypervisor capable of running macOS or Linux and tracing hardware accesses in real time while providing a virtual UART over USB. See [m1n1:Developer Guide](m1n1:Developer-Guide.md) for that. This guide only describes trivial proxy use cases.
+Proxy mode enables a huge toolset of developer features, from reducing your Linux kernel test cycle to 7 seconds, to live hardware probing and experimentation, to a hypervisor capable of running macOS or Linux and tracing hardware accesses in real time while providing a virtual UART over USB. See the [m1n1 Developer Guide](m1n1-Developer-Guide.md) for that. This guide only describes trivial proxy use cases.
 
 ## Building
 
@@ -152,7 +152,7 @@ If given no payloads, or if booting the payloads fails, m1n1 will fall back to p
 
 ## Proxy mode
 
-Proxy mode provides a USB device interface (available on all Thunderbolt ports) for debugging. To use it, connect your target device to your host device with a USB cable (e.g. a USB-C to USB-A cable, with the C side on the m1n1 target). See [m1n1:Developer Guide](m1n1:Developer-Guide.md) for all the crazy details. These are just some simple examples of what you can do.
+Proxy mode provides a USB device interface (available on all Thunderbolt ports) for debugging. To use it, connect your target device to your host device with a USB cable (e.g. a USB-C to USB-A cable, with the C side on the m1n1 target). See the [m1n1 Developer Guide](m1n1-Developer-Guide.md) for all the crazy details. These are just some simple examples of what you can do.
 
 When in proxy mode, a Linux host will see two USB TTY ACM devices, typically /dev/ttyACM0 & /dev/ttyACM1. (In macOS this will be /dev/cu.usbmodemP_01 and /dev/cu.usbmodemP_03). The first one is the proper proxy interface, while the second one is reserved for use by the hypervisor's virtual UART feature. You should set the `M1N1DEVICE` environment variable to the path to the right device.
 
@@ -204,7 +204,7 @@ $ ./proxyclient/tools/run_guest_kernel.sh [kernel build root] [boot args] [initr
 
 ### Running a macOS kernel as a m1n1 hypervisor guest
 
-See [SW:Hypervisor](https://github.com/AsahiLinux/docs/wiki/SW%3AHypervisor)
+See [SW-Hypervisor](SW-Hypervisor.md)
 
 ### Backdoor proxy mode in stage 1 release builds
 

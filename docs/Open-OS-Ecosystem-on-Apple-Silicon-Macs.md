@@ -76,7 +76,7 @@ This boot chain is designed to progressively bring the system closer to a "typic
 
 ### m1n1
 
-m1n1 is our first-stage bootstrap for Apple Silicon systems. Its purpose is to bridge between the XNU boot protocol and the Device Tree / ARM64 Linux boot protocol, and do low-level bring-up so that subsequent boot stages do not have to be concerned with it. See [m1n1:User Guide](m1n1:User-Guide.md) for more details on how it works.
+m1n1 is our first-stage bootstrap for Apple Silicon systems. Its purpose is to bridge between the XNU boot protocol and the Device Tree / ARM64 Linux boot protocol, and do low-level bring-up so that subsequent boot stages do not have to be concerned with it. See the [m1n1 User Guide](m1n1-User-Guide.md) for more details on how it works.
 
 m1n1 can also be puppeteered via USB for development and reverse engineering purposes, including loading kernels to allow for a very fast build-test cycle. It also features a bare-metal hypervisor that can boot Linux or macOS and provide a virtualized UART over USB, and includes advanced Python-based event tracing framework. These features are not intended for end users, but we hope they make OS development and testing on these platforms as enjoyable as possible.
 
