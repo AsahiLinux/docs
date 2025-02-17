@@ -36,3 +36,18 @@ theme:
   name: material
   logo: artwork/logos/png_256/AsahiLinux_logomark.png
   favicon: artwork/logos/png_32/AsahiLinux_logomark.png
+  features:
+    - navigation.expand
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - toc.integrate
+
+markdown_extensions:
+  - toc:
+      baselevel: 4
+      permalink: true
+  - admonition
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
