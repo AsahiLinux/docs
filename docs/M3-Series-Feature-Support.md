@@ -8,7 +8,7 @@ their progress towards being upstreamed. The tables herein can be interpreted as
 * **WIP**: Development work on the feature is actively progressing, however is not yet ready for wider testing, use or distribution
 * **TBA**: Active work on this feature is not being undertaken at this time
 
-If a feature is not ready, then there is no estimation on when it will be ready. [Please do not ask for estimations in support channels (e.g. IRC)|"When-will-Asahi-Linux-be-done?"](When-will-Asahi-Linux-be-done.md). 
+If a feature is not ready, then there is no estimation on when it will be ready. [Please do not ask for estimations in support channels (e.g. IRC)](When-will-Asahi-Linux-be-done.md).
 
 ## Table of Contents
 - [SoC blocks](#soc-blocks)

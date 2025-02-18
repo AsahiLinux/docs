@@ -9,7 +9,7 @@ their progress towards being upstreamed. The tables herein can be interpreted as
 * **dts**: Feature is included as part of the Linux Device Tree system
 * **-**: Feature not supported by hardware on this platform
 
-If a feature is not ready, then there is no estimation on when it will be ready. [Please do not ask for estimations in support channels (e.g. IRC)|"When-will-Asahi-Linux-be-done?"](When-will-Asahi-Linux-be-done.md). 
+If a feature is not ready, then there is no estimation on when it will be ready. [Please do not ask for estimations in support channels (e.g. IRC)](When-will-Asahi-Linux-be-done.md).
 
 ## Table of Contents
 - [SoC blocks](#soc-blocks)
