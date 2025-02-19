@@ -62,6 +62,9 @@ markdown_extensions:
       clickable_checkbox: true
 
 plugins:
+  - redirects:
+      redirect_maps:
+        Software-known-to-have-issues-with-16k-page-size.md: Broken-Software.md
   - search
   - social:
       cards_layout_options:
