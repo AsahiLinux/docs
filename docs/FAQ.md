@@ -28,6 +28,10 @@ The installer always leaves 38GB of disk space *free* for macOS upgrades to work
 
 If you want to skip this check, enable expert mode at the beginning. Keep in mind that you might be unable to update macOS if you do not have enough free disk space left over!
 
+## Can I install Asahi Linux on an iPad?
+
+No, iPads (and iPhones and other devices) do not support running custom OS kernels. Due to the system design, even if one were to achieve arbitrary code execution in userspace (say, via a jailbreak), that would not help with running a Linux kernel. A boot ROM exploit _might_ help, should one exist, but supporting these devices is not a project goal for Asahi Linux.
+
 ## Common problems
 
 ### I get an error during the macOS resize step of the installer
