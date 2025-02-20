@@ -145,12 +145,12 @@ https://blogs.oracle.com/virtualization/post/install-microsoft-windows-11-on-vir
 
 b) Figure out UEFI and TPM and how to activate it, not tested:
 
-- https://getlabsdone.com/how-to-install-windows-11-on-kvm/
-- https://getlabsdone.com/how-to-enable-tpm-and-secure-boot-on-kvm/
-- https://github.com/stefanberger/swtpm/wiki
-- https://www.reddit.com/r/AsahiLinux/comments/y7hplo/virtual_machines_on_asahi_linux/
-- https://that.guru/blog/uefi-secure-boot-in-libvirt/
-- https://www.reddit.com/r/AsahiLinux/comments/107m4nb/windows_vm_on_asahi_qemukvm_virtmanager/
+- <https://getlabsdone.com/how-to-install-windows-11-on-kvm/>
+- <https://getlabsdone.com/how-to-enable-tpm-and-secure-boot-on-kvm/>
+- <https://github.com/stefanberger/swtpm/wiki>
+- <https://www.reddit.com/r/AsahiLinux/comments/y7hplo/virtual_machines_on_asahi_linux/>
+- <https://that.guru/blog/uefi-secure-boot-in-libvirt/>
+- <https://www.reddit.com/r/AsahiLinux/comments/107m4nb/windows_vm_on_asahi_qemukvm_virtmanager/>
 
 ```
 sudo apt-get install dh-autoreconf libssl-dev \

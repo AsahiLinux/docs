@@ -143,7 +143,7 @@ And these blobs aren't yet packaged:
 
 * AVD (Apple Video Decoder) Cortex-M3 firmware
 
-Details on Broadcom FullMAC WiFi firmware naming: https://lore.kernel.org/all/20220104072658.69756-10-marcan@marcan.st/
+Details on Broadcom FullMAC WiFi firmware naming: <https://lore.kernel.org/all/20220104072658.69756-10-marcan@marcan.st/>
 
 ### VendorFW package
 

@@ -138,7 +138,7 @@ Currently, Broadcom FullMAC WiFi firmware is packaged. These blobs have also bee
 * AVD (Apple Video Decoder) Cortex-M3 firmware
 * USB xHCI firmware (only needed for iMac models with 4 USB-C ports).
 
-Details on Broadcom FullMAC WiFi firmware naming: https://lore.kernel.org/all/20220104072658.69756-10-marcan@marcan.st/
+Details on Broadcom FullMAC WiFi firmware naming: <https://lore.kernel.org/all/20220104072658.69756-10-marcan@marcan.st/>
 
 ### VendorFW package
 

@@ -62,7 +62,7 @@ CONFIG_IIO_AOP_SENSOR_ALS=m
 
 (Distros intending to support other platforms with their 16k arm64 kernel besides Apple Silicon will be inclined to build as many of these drivers as modules as they can.  This is fine, though from a reliability standpoint building NVME_APPLE and SPI_HID_APPLE_OF in-kernel has worked much better for me.)
 
-~~(Also note that the configuration options above do not match the standard dracut configuration provided by asahi-scripts.)~~ It looks like a recent change to asahi-scripts makes your choices of modules much less important: https://github.com/AsahiLinux/asahi-scripts/commit/4acd310cd8c394f9ec2e7e7506d89b7bb3c3ca39
+~~(Also note that the configuration options above do not match the standard dracut configuration provided by asahi-scripts.)~~ It looks like a recent change to asahi-scripts makes your choices of modules much less important: <https://github.com/AsahiLinux/asahi-scripts/commit/4acd310cd8c394f9ec2e7e7506d89b7bb3c3ca39>
 
 You should also double-check that you have the following configuration options set:
 
