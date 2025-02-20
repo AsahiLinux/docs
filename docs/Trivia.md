@@ -7,7 +7,7 @@ When an M1 Mac Mini is booted without a display connected, or unconditionally as
 
 Then this happens:
 
-![](https://hub.marcan.st/t/m1_iphone_5_fb.png)
+![Framebuffer](assets/m1_iphone_5_fb.png)
 
 ## Just can't let go of Samsung
 
