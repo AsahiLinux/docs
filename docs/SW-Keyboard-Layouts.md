@@ -17,7 +17,7 @@ Next, make sure you have your keyboard model correctly selected. In your keyboar
 
 Finally, choose the layout that looks right for your language. This *should* be just the plain language type, since Mac-specific customizations should be applied based on the keyboard model. However, please do try multiple options (e.g. some languages may have a *Macintosh* variant, though this may make things worse).
 
-Then add a report using the template below (edit the wiki page and copy the template section). If your layout is already listed but you have a different experience (e.g. on another machine), add a new *System configuration* subsection and note any differences you see in it.
+Then add a report using the template below ([send a PR](https://github.com/AsahiLinux/docs) following the template section). If your layout is already listed but you have a different experience (e.g. on another machine), add a new *System configuration* subsection and note any differences you see in it.
 
 Please add as much detail as you can about what works, what is different from what's printed on the keycaps, any language- or region-specific quirks or issues we need to be aware of, anything special that macOS does, hidden combinations that are *not* printed on the keycaps that should work, how this might differ from your experience on Windows and generic Linux desktops on non-Apple keyboards, etc. We need as much information as possible in order to do the right thing in the future.
 

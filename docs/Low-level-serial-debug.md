@@ -71,8 +71,8 @@ This is all rather rudimentary because it's a stop-gap for the proper solution, 
 
 An alternative to the above DIY approach is the Central Scrutinizer project, which started exactly as the above, only using a custom PCB instead of a breadboard. It has since evolved to support additional features, but the core functionality is exactly the same:
 
-![PXL_20230721_101806861~2](https://github.com/AsahiLinux/docs/assets/19569618/bf545188-f8d8-4888-acd9-58985ac84099)
-![](https://cdn.tindiemedia.com/images/resize/7EHWxGEFPrA2RvpCMu6XwfxsC2c=/p/full-fit-in/1200x800/i/441372/products/2023-08-26T15%3A13%3A11.940Z-PXL_20230826_151035866~2.jpg)
+![Central Scrutinizer](assets/central-scrutinizer.jpg)
+![Central Scrutinizer (side)](assets/central-scrutinizer-2.jpg)
 
 Main features are:
 - RaspberryPi Pico as the micro-controller (yes, totally overkill, but cheaper than an Arduino!)

@@ -32,7 +32,7 @@ cp ../linux/arch/arm64/boot/dts/apple/t8103-j274.dtb t8103-j274.dtb
 python3.9 proxyclient/tools/chainload.py build/m1n1.macho
 ```
 # Running Linux via USB cable
-  * Connecting [USB Type-C to Type A/C cable](Developer-Quickstart.md#usb-gadget-mode-using-a-standard-usb-cable) to M1 Mac provides two USB serial interfaces on the other computer![USB Type-C  to Type A cable connecting M1 MacBookAir and 2012 MacBootAir Pro](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/usb-setup.png)
+  * Connecting [USB Type-C to Type A/C cable](Developer-Quickstart.md#usb-gadget-mode-using-a-standard-usb-cable) to M1 Mac provides two USB serial interfaces on the other computer![USB Type-C  to Type A cable connecting M1 MacBookAir and 2012 MacBootAir Pro](assets/usb-setup.png)
   * This can be connected to via the python proxy tool to boot up Linux directly or load up a macho binary like an updated m1n1 version or combined with a Linux image
 * Get a 27Mb initrd from debian arm64 installer
 ```

@@ -17,4 +17,4 @@
  * For a web browser install firefox as Chrome requires special kernel paging support (not available at this time)
 `sudo apt install firefox-esr`
 
-(![X11 running on Macbook Air 2020](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/mba-xorg-fbdev.png))
+(![X11 running on Macbook Air 2020](assets/mba-xorg-fbdev.png))

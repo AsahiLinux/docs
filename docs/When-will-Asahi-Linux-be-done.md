@@ -3,6 +3,7 @@ If you're after the support status of a specific feature, [Feature Support](Feat
 ## Why you shouldn't ask this question on IRC
 
 If you ask on any of our IRC channels when Asahi Linux will be done, you will likely get one of these responses, or a variant thereof:
+
 * "Soon"
 * "It already works"
 * "Never"
@@ -33,4 +34,4 @@ The time it takes us to bring new hardware online is entirely dependent on the c
 
 Apple make things somewhat easier for us by only introducing changes to hardware when it is absolutely necessary to do so. The original iteration of the AIC (Apple Interrupt Controller) was unchanged from the early iPhones all the way to the M1. We expect AIC2, first found in the M1 Pro and Max, to have a similar, if not longer lifespan. Generally, changes to any piece of hardware will be supported in less time than it took to bring up the hardware initially. 
 
-Large architectural changes to things like the GPU and Neural Engine may take slightly longer to figure out. As such, we cannot guarantee dates or turnaround times for any new silicon Apple release. The answer to the question "When will [_feature_] on [_machine_] be supported?" is always "When it is listed as supported on the Wiki."
+Large architectural changes to things like the GPU and Neural Engine may take slightly longer to figure out. As such, we cannot guarantee dates or turnaround times for any new silicon Apple release. The answer to the question "When will [_feature_] on [_machine_] be supported?" is always "When it is listed as supported in the documentation."
