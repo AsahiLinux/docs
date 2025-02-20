@@ -5,7 +5,9 @@ repo_url: https://github.com/AsahiLinux/docs
 repo_name: AsahiLinux/docs
 
 nav:
+  - Overview: index.md
   - Feature Support:
+    - Overview: Feature-Support.md
     - M1 Series Feature Support: M1-Series-Feature-Support.md
     - M2 Series Feature Support: M2-Series-Feature-Support.md
     - M3 Series Feature Support: M3-Series-Feature-Support.md
