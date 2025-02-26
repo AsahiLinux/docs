@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.licenses=MIT
 LABEL org.opencontainers.image.source=https://github.com/AsahiLinux/docs
 LABEL org.opencontainers.image.vendor="Asahi Linux"
 
-RUN dnf -y install mkdocs-material mkdocs-material+imaging python3-mkdocs-redirects && dnf -y clean all
+RUN dnf -y install git-core mkdocs-material mkdocs-material+imaging python3-mkdocs-redirects && dnf -y clean all
 
 RUN mkdir /docs
 
