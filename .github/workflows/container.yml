@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           platforms: linux/amd64,linux/arm64
-          tags: AsahiLinux/mkdocs-asahi:latest
+          tags: ghcr.io/AsahiLinux/mkdocs-asahi:latest
           push: ${{ github.event_name != 'pull_request' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
