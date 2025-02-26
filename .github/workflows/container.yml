@@ -3,9 +3,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - .github/workflows/container.yml
+      - Dockerfile
   pull_request:
     branches:
       - main
+    paths:
+      - .github/workflows/container.yml
+      - Dockerfile
 
 env:
   REGISTRY: ghcr.io
