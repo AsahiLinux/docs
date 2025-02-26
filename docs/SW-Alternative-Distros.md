@@ -12,6 +12,7 @@ The primary supported distribution is the [Fedora Asahi Remix](https://asahilinu
 | Fedora | <https://github.com/leifliddy> | <https://github.com/leifliddy/asahi-fedora-builder> |
 | Gentoo<br>(LiveCD method) | IRC: chadmed (<https://github.com/chadmed>) | [Installing Gentoo with LiveCD](Installing-Gentoo-with-LiveCD.md) |
 | NixOS | IRC: tpw_rules (<https://github.com/tpwrules>) | <https://github.com/tpwrules/nixos-apple-silicon/blob/main/docs/uefi-standalone.md> |
+| NixOS (Asahi-Installer package) | <https://github.com/quinneden> | <https://github.com/quinneden/nixos-asahi-package> |
 | Rocky Linux | <https://github.com/leifliddy> | <https://github.com/leifliddy/asahi-rocky-builder> |
 | Ubuntu | <https://github.com/UbuntuAsahi> | <https://ubuntuasahi.org/> |
 | Void Linux | <https://voidlinux.org/news/2025/02/new-images.html> | <https://docs.voidlinux.org/installation/guides/arm-devices/apple-silicon.html> |
