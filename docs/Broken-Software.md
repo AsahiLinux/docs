@@ -96,7 +96,6 @@ run). You may have varying levels of success by attempting to run your software 
 | MEGAsync | <https://github.com/meganz/MEGAsync/pull/801> |
 | notion-app(-enhancer) | <https://github.com/notion-enhancer/notion-repackaged/issues/107> | electron + broken build flags |
 | Wine | <https://bugs.winehq.org/show_bug.cgi?id=52715> |
-| Zig | <https://github.com/ziglang/zig/issues/11308> | 
 
 \* Running x86-64 software is supported via a 4k page size microVM running FEX.
 
@@ -127,6 +126,7 @@ run). You may have varying levels of success by attempting to run your software 
 | Telegram Desktop | <https://github.com/telegramdesktop/tdesktop/issues/26103> | Fixed since 4.1.1 |
 | Visual Studio Code | <https://aur.archlinux.org/packages/visual-studio-code-bin> | Fixed since 1.71.0 (uses Electron 19) |
 | WebKitGTK | <https://github.com/WebKit/WebKit/commit/0a4a03da45f774> | Fixed since 2.34.6 |
+| Zig | <https://github.com/ziglang/zig/issues/11308> | Fixed since [0.14.0](https://ziglang.org/download/0.14.0/release-notes.html#Runtime-Page-Size) |
 
 ## Bugs
 
