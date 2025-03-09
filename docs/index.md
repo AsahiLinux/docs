@@ -1,22 +1,33 @@
-# Welcome to the Asahi Linux documentation!
+Welcome to the Asahi Linux documentation! Here, you will find documentation on the
+Apple Silicon platform as implemented on Mac computers with M-series SoCs. We aim
+to document the platform in a way that is useful for everyone, however our focus is
+supporting third-party operating systems, particularly Linux.
 
-We are just getting started.
+We also have documentation on the various pieces of software required to properly
+support this platform, such as m1n1 and U-Boot. Documentation for software that we
+have created (such as m1n1) aims to be as complete as possible. Documentation for
+external projects (such as U-Boot) is limited to how that software is used on the
+Apple Silicon platform.
+
+## Who this documentation is for
+- Operating system and kernel developers looking to implement support for Apple Silicon
+- Folks interested in hacking on and reverse engineering the Apple Silicon platform
+- End users looking for guides and information on supported features
+- Anyone interested in the Asahi Linux project looking for more information
 
 Questions? Please check out the [FAQ](project/faq.md) first!
 
 ## Developers
-
-If you are a developer or interested in hardware/software documentation,
-check out the sidebar for places to start.
+We have extensive documentation on the platform itself, and the tooling we use to
+reverse engineer and develop Linux drivers for it. Check out the sidebar for places
+to start!
 
 ## End Users
+Check out [Feature Support](platform/feature-support/overview.md) for supported devices
+and features. If you're after documentation on something specific, use the search feature
+at the top of the page or check out the sidebar for places to start!
 
-Asahi Linux is work in progress. Many hardware components
-are not yet supported! Check out the [Feature Support](platform/feature-support/overview.md) page first. 
-If you still want to give it a go, see the blog post for the initial installer and
-following updates adding support for more devices and hardware:
-
-## Latest blog posts
+## Latest Asahi Linux blog posts
 * [Beyond Gaming: X11 bridging in muvm](https://asahilinux.org/2024/12/muvm-x11-bridging/)
 * [AAA gaming on Asahi Linux](https://asahilinux.org/2024/10/aaa-gaming-on-asahi-linux/)
 * [Vulkan 1.3 on the M1 in 1 month](https://asahilinux.org/2024/06/vk13-on-the-m1-in-1-month/)
