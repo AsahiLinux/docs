@@ -7,34 +7,34 @@ repo_name: AsahiLinux/docs
 nav:
   - Overview: index.md
   - Feature Support:
-    - Overview: Feature-Support.md
-    - M1 Series Feature Support: M1-Series-Feature-Support.md
-    - M2 Series Feature Support: M2-Series-Feature-Support.md
-    - M3 Series Feature Support: M3-Series-Feature-Support.md
-    - M4 Series Feature Support: M4-Series-Feature-Support.md
+    - Overview: platform/feature-support/overview.md
+    - M1 Series Feature Support: platform/feature-support/m1.md
+    - M2 Series Feature Support: platform/feature-support/m2.md
+    - M3 Series Feature Support: platform/feature-support/m3.md
+    - M4 Series Feature Support: platform/feature-support/m4.md
   - Project related:
-    - Glossary: Glossary.md
-    - FAQ: FAQ.md
-    - When will Asahi Linux be done?: When-will-Asahi-Linux-be-done.md
-    - References: Project-References.md
+    - Glossary: project/glossary.md
+    - FAQ: project/faq.md
+    - When will Asahi Linux be done?: project/when-will-asahi-be-done.md
+    - References: project/references.md
   - Platform documentation:
-    - Apple Silicon Subsystems: Apple-Silicon-Subsystems.md
-    - Apple Platform Security Crash Course: Apple-Platform-Security-Crash-Course.md
-    - Devices: Devices.md
-    - Codenames: Codenames.md
-    - Display Controllers: Display-Controllers.md
+    - Apple Silicon Subsystems: platform/subsystems.md
+    - Apple Platform Security Crash Course: platform/security.md
+    - Devices: hw/devices/device-list.md
+    - Codenames: hw/soc/soc-codenames.md
+    - Display Controllers: hw/soc/display-controllers.md
   - For users:
     - Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>: https://docs.fedoraproject.org/en-US/fedora-asahi-remix/
-    - Broken Software: Broken-Software.md
-    - Alternative Distros: SW-Alternative-Distros.md
+    - Broken Software: sw/broken-software.md
+    - Alternative Distros: alt/alt-distros.md
   - For developers:
-    - Yaks in need of shaving (HELP WANTED!): Yaks-in-need-of-shaving.md
-    - Tethered Boot Setup (For Developers): Tethered-Boot-Setup-For-Developers.md
-    - m1n1:User Guide Boot loader: m1n1-User-Guide.md
-    - Hypervisor: SW-Hypervisor.md
-    - U-Boot: U-Boot.md
-    - Devicetree bindings: SW-DT-bindings.md
-    - Open OS ecosystem on Apple Silicon Macs: Open-OS-Ecosystem-on-Apple-Silicon-Macs.md
+    - Yaks in need of shaving (HELP WANTED!): project/help-wanted.md
+    - Tethered Boot Setup (For Developers): sw/tethered-boot.md
+    - m1n1:User Guide Boot loader: sw/m1n1-user-guide.md
+    - Hypervisor: sw/m1n1-hypervisor.md
+    - U-Boot: sw/u-boot.md
+    - Devicetree bindings: sw/devicetree-bindings.md
+    - Open OS ecosystem on Apple Silicon Macs: platform/open-os-interop.md
 
 theme:
   name: material
@@ -87,9 +87,6 @@ markdown_extensions:
   - pymdownx.tilde
 
 plugins:
-  - redirects:
-      redirect_maps:
-        Software-known-to-have-issues-with-16k-page-size.md: Broken-Software.md
   - search
   - social:
       cards_layout_options:
