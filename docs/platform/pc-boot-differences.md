@@ -1,3 +1,7 @@
+---
+title: Boot flow deviations from the AMD64 PC platform
+---
+
 The M1 machines use a boot process that on the surface looks very different from how a regular PC or older Intel Mac boots. However, there is logic to the madness. This document gives you a way of thinking that you can use to better visualize how things work on Apple Silicon machines.
 
 # SSD

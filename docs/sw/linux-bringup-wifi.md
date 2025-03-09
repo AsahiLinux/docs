@@ -1,3 +1,7 @@
+---
+title: Linux Bringup: WiFi
+---
+
 # WiFi Support
 ## Under MacOS grab the WiFi firmware as per [Glanzmann's notes](https://tg.st/u/asahi.txt)
  * Clone the installer  

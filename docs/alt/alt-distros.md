@@ -1,3 +1,10 @@
+---
+title: Alternative Distributions
+summary:
+  Linux distros and other OSes that have added support for
+  the Apple Silicon platform
+---
+
 The primary supported distribution is the [Fedora Asahi Remix](https://asahilinux.org/fedora/), but several members of the community have contributed guides and pre-built artifacts in order to use other distros on Apple Silicon Macs. These efforts are listed here. Please remember that these are user-contributed, and the Asahi Linux project cannot provide support or any guarantee of compatibility, functionality, or safety.
 
 | Distro | Maintainer | Installation Guide |

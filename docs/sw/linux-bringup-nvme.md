@@ -1,3 +1,7 @@
+---
+title: Linux Bringup: NVME
+---
+
 # USB drive boot
 ## The easy way
 * As per [Glanzmann's notes](https://tg.st/u/asahi.txt) fetch a debian bullseye rootfs under MacOS and dd it directly into a newly created nvme partition. 

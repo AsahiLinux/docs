@@ -1,3 +1,7 @@
+---
+title: System Register Dumps
+---
+
 All implemented (readable) vendor-specific registers. Dumped while running m1n1 (after chicken bits):
 
 | Name | Register | Access | Icestorm | Firestorm |

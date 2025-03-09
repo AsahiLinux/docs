@@ -1,3 +1,10 @@
+---
+title: Apple Device Tree (ADT)
+summary:
+  Apple Device Tree, the hardware discovery and initialisation
+  system used on Apple Silicon devices.
+---
+
 When Apple firmware boots a kernel, it passes a device tree in a binary format. This format is very similar to, but different from, the Open Firmware standard expected by Linux.
 
 Like Linux devicetrees, the Apple device tree (ADT) encodes a number of untyped byte arrays (properties) in a hierarchy of nodes. These describe the available hardware, or provide other information that Apple thinks the firmware might need to tell the kernel about. This includes identifying and secret information like serial numbers and WiFi keys.

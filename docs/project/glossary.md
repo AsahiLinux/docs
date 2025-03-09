@@ -1,3 +1,7 @@
+---
+title: Glossary
+---
+
 Useful terms to know.
 
 Add terms specific to the hardware, reverse engineering, and Apple ecosystems that are relevant. Don't add things that everyone is expected to know (CPU, GPU, HDD, SSD, OSX, USB, HDMI, RAM, etc.) or which are not likely to be relevant to the project. Think of the target audience as "random Linux developer".

@@ -1,3 +1,7 @@
+---
+title: Linux Bringup
+---
+
 # Building Linux
 * See github linux [Asahi Kernel](https://github.com/AsahiLinux/linux) for the latest Asahi kernel patched for M1 support
  * In particular according to [Dec 2021 progress report](https://asahilinux.org/2021/12/progress-report-oct-nov-2021/) you can try the [asahi branch](https://github.com/AsahiLinux/linux/tree/asahi) which "...is a bleeding edge kernel ... in a usable enough state that we would like people to test..."

@@ -1,3 +1,9 @@
+---
+title: NVRAM
+summary:
+  NVRAM variables used by Apple Silicon Macs
+---
+
 # Types
 
 * `string`: A standard string.

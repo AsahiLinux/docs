@@ -1,3 +1,10 @@
+---
+title: Symmetric Multiprocessing (SMP)
+summary:
+  Secondary application processor initialisation routine for Apple Silicon
+  SoCs
+---
+
 ## SMP spin-up
 
 From the ADT:

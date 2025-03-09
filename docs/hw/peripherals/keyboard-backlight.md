@@ -1,3 +1,7 @@
+---
+title: Keyboard Backlight Controller
+---
+
 On the MacBook Pro, the keyboard backlight shows up in the ADT as:
 
 ```

@@ -1,3 +1,6 @@
+---
+title: Clocks
+---
 
 There are (at least) two different kinds of clocks defined in the ADT:
 

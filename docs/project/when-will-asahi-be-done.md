@@ -1,3 +1,7 @@
+---
+title: When Will Asahi Be Done?
+---
+
 If you're after the support status of a specific feature, [Feature Support](../platform/feature-support/overview.md) has a list of all major hardware included in the Apple Silicon Macs, as well as its level of support.
 
 ## Why you shouldn't ask this question on IRC

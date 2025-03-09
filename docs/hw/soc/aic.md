@@ -1,3 +1,7 @@
+---
+title: Apple Interrupt Controller (AIC)
+---
+
 AIC is the Apple Interrupt Controller. These are some scattered RE notes.
 
 Apple likes to use a particular SET/CLR register pair style:

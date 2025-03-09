@@ -1,3 +1,7 @@
+---
+title: Display Controllers
+---
+
 M series of chips have two kinds of display controllers, `dcp` and `dcpext`. Both kinds support
 - DP 1.4 (4 lanes) with DSC. No MST!
 - HDMI via dp2hdmi converter. See below for routing restrictions.

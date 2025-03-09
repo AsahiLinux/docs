@@ -1,3 +1,7 @@
+---
+title: Undoing Early Speaker Hacks
+---
+
 ### Introduction
 You are probably here because you tried to enable your speakers early, and a change in config
 between when you did this and the public release of speaker support broke something. You were

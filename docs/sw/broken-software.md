@@ -1,3 +1,7 @@
+---
+title: Broken Software
+---
+
 This page lists software that is known not to work correctly on Apple Silicon machines.
 We publish it in the hope that it incentivizes inclined members of the community to contribute
 fixes for the affected packages upstream, bettering the AArch64 software ecosystem for everyone.

@@ -1,3 +1,7 @@
+---
+title: Stock SSD Partition Layout
+---
+
 # Summary
 
 * **disk0**: main SSD

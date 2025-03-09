@@ -1,3 +1,7 @@
+---
+title: USB-PD
+---
+
 ## Introduction
 
 Apple uses custom USB-PD messages to control pin muxing on their Type-C ports for debug and other purposes. USB-PD communication takes place over the CCx line of the port (CC1 or CC2 depending on port orientation)

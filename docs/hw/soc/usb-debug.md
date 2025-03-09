@@ -1,3 +1,7 @@
+---
+title: USB-PD Debugging Interface
+---
+
 This seems to be a built-in debugging USB interface.
 
 Commands via EP 0x01, replies via 0x81, 0x82 unknown

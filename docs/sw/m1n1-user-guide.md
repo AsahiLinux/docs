@@ -1,3 +1,7 @@
+---
+title: m1n1 User Guide
+---
+
 m1n1 is the bootloader developed by the Asahi Linux project to bridge the Apple (XNU) boot ecosystem to the Linux boot ecosystem.
 
 GitHub: [AsahiLinux/m1n1](https://github.com/AsahiLinux/m1n1)

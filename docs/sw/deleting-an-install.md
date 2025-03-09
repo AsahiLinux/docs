@@ -1,3 +1,7 @@
+---
+title: Deleting an installation
+---
+
 # This is for default vanilla Asahi installs. These steps do not apply for custom partitioning setups.
 ## Do not use Diskutil GUI
 

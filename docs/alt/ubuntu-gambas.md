@@ -1,3 +1,7 @@
+---
+title: Ubuntu Gambas
+---
+
 **This page contains distro-specific information. This documentation**
 **repo is not for distro-specific documentation. The proper place for**
 **this is the distro's own documentation system. This page will be removed**

@@ -1,3 +1,9 @@
+---
+title: Apple Silicon Boot Flow
+summary:
+  Boot flow used by Apple Silicon devices, from SoC-integrated ROM to user code
+---
+
 Apple Silicon devices seem to follow a boot flow very similar to modern iOS devices.
 
 # Stage 0 (SecureROM)

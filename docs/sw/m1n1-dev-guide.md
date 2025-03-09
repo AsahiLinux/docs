@@ -1,3 +1,7 @@
+---
+title: m1n1 Developer Guide
+---
+
 (Not written yet, just throwing some stuff in)
 
 ## Boot protocol

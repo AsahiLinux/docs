@@ -1,3 +1,7 @@
+---
+title: Das U-Boot
+---
+
 U-Boot is the default payload for m1n1 stage 2, and is used to provide a standard preboot environment familiar to
 AArch64 developers. External boot is not supported with the native Apple Silicon boot tooling, making U-Boot a hard
 necessity for providing a PC-like boot environment. This page explains how we use U-Boot and how to manually build and

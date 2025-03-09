@@ -1,3 +1,9 @@
+---
+title: SPRR and GXF
+summary:
+  SPRR and GXF are in-silicon security features used to harden macOS/Darwin
+---
+
 
 # Guarded execution
 

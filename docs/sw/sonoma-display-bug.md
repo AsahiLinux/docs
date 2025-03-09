@@ -1,3 +1,7 @@
+---
+title: macOS Sonoma Display Bug
+---
+
 ## CRITICAL UPDATE
 
 With macOS 14.1.1, 14.2 beta 2, ~~and (likely) 13.6.2~~, Apple "fixed" the bug by making the ProMotion setting not change the boot-time screen mode.

@@ -1,3 +1,7 @@
+---
+title: Apple Silicon Platform Quirks
+---
+
 This page is basically a TL;DR of [Open OS Ecosystem on Apple Silicon Macs](open-os-interop.md). It is written for general Linux power users who are used to the boot process on other platforms. Read that page for the full details.
 
 ## This is not a typical UEFI platform

@@ -1,3 +1,7 @@
+---
+title: Userspace Audio Stack
+---
+
 # Speaker support in Asahi Linux
 
 Currently supported models:

@@ -1,3 +1,7 @@
+---
+title: ACE3
+---
+
 ACE3 is the new USB-C / USB-PD controller in M3 products. It has a sn201202x compatible value in the ADT.
 
 ## SPMI transport

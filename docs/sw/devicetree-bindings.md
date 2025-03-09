@@ -1,3 +1,7 @@
+---
+title: Devicetree Bindings
+---
+
 ### PMGR
 - 'apple,t6000-pmgr'
 - 'apple,t8103-pmgr'

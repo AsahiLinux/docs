@@ -1,3 +1,7 @@
+---
+title: Developer Quickstart Guide
+---
+
 # THIS GUIDE IS LARGELY OBSOLETE
 
 This guide documents a manual installation process that is only required for kernel developers doing reverse engineering of macOS drivers using the m1n1 hypervisor.
