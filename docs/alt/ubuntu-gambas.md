@@ -1,3 +1,8 @@
+**This page contains distro-specific information. This documentation**
+**repo is not for distro-specific documentation. The proper place for**
+**this is the distro's own documentation system. This page will be removed**
+**soon.**
+
 Tested on Ubuntu 22.10 Asahi on M1 Air.
 
 https://gambas.sourceforge.net
