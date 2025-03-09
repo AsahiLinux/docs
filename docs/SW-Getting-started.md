@@ -1,1 +1,0 @@
-Obsolete, you want [Developer Quickstart](Developer-Quickstart.md)
