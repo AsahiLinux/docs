@@ -1,3 +1,7 @@
+---
+title: Help Wanted!
+---
+
 This page is a list of miscellaneous tasks that need to be done, but may have been de-prioritised in order to focus on frying bigger fish.
 Most of these tasks will be low stakes and low effort, making them good places to start for newcomers to kernel development or Free Software
 in general.

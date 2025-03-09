@@ -1,3 +1,7 @@
+---
+title: Open OS Platform Interoperability (Old Version)
+---
+
 ## Foreword
 
 This document presents our vision for how open OSes should interoperate on Apple Silicon (i.e. M1 and later) Macs. We recommend first reading [Introduction to Apple Silicon](introduction.md) to first learn how the platform is designed from Apple's perspective.

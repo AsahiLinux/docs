@@ -1,3 +1,7 @@
+---
+title: Tethered Boot
+---
+
 ## Introduction
 This guide will walk you through the steps required to set up your Apple Silicon Mac for booting a Linux kernel in a dual boot environment with macOS.
 

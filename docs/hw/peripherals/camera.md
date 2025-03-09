@@ -1,3 +1,8 @@
+---
+title: Camera and Image Signal Processor
+---
+
+
 # ISP 
 This information is based on Macbook Pro M1 2020 ISP. It may differ for other devices.
 

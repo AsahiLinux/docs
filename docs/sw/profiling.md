@@ -1,3 +1,7 @@
+---
+title: Profiling Linux Software
+---
+
 `perf stat` works on Asahi Linux on bare metal, using Apple's proprietary performance counters (which are supported in the kernel).
 
 Since this is a big.LITTLE system, there are some caveats. Profiling across core types is confusing, so you should pin your task to one core type. And since performance counters can differ per core type, you have to explicitly qualify counters with the core type when you specify them.

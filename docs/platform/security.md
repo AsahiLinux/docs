@@ -1,3 +1,7 @@
+---
+title: Apple Silicon Platform Security
+---
+
 ## Introduction
 The Apple Silicon platform has been designed from the ground up to offer properly configured systems
 an extremely secure operating environment that is resilient to multiple forms of attack. The security

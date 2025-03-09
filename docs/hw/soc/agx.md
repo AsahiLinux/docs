@@ -1,3 +1,9 @@
+---
+title: Apple GPU (AGX)
+summary:
+  Lina's reverse engineering notes about AGX, Apple's PowerVR-derived GPU
+---
+
 # Lina's AGX notes
 
 Reader beware, here be dragons. Pointer-shaped dragons. Lots of them.

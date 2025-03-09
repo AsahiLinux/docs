@@ -1,3 +1,7 @@
+---
+title: Watchdog Timer (WDT)
+---
+
 The M1 includes a watchdog timer which can reboot the system automatically in case the kernel fails to boot or run properly. It can also be (ab)used to trigger an immediate or delayed reboot in other circumstances.
 
 The initial macho (usually m1n1) is booted with the watchdog timer enabled, so if it does nothing to it, the system will automatically reboot after a while.

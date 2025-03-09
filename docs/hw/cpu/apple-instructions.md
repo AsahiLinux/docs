@@ -1,3 +1,9 @@
+---
+title: Apple Proprietary Instructions
+summary:
+  Apple's proprietary extensions to the A64 Instruction Set
+---
+
 Apple proprietary instructions seem to be in the 0x0020xxxx range.
 
 ```

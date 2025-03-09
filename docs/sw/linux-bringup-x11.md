@@ -1,3 +1,7 @@
+---
+title: Linux Bringup: X11
+---
+
 # Running X11
  * You can run a non-accelerated X11 if you build the kernel with
 `CONFIG_DRM_FBDEV_EMULATION=y`

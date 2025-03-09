@@ -1,3 +1,7 @@
+---
+title: Feature Support Overview
+---
+
 This page has been broken up into a separate page for each generation of available devices, as there are now too many to list on a single
 page. Each page below follows the same format as the old unified page.
 

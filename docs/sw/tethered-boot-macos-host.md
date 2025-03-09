@@ -1,3 +1,7 @@
+---
+title: Tethered Boot: macOS host machine
+---
+
 # macOS-hosted tethered boot setup
 
 This guide will give more details about tethered boot prerequisites setup for a macOS host.

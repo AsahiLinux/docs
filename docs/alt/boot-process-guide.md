@@ -1,3 +1,10 @@
+---
+title: Asahi Boot Process
+summary:
+  How Asahi Linux boots on Apple Silicon Macs, intended for
+  distro/OS integrators
+---
+
 This page explains the packages/components involved in a bootable Asahi Linux system, and how they interact with each other. It is aimed at distro packagers and people who want to roll/maintain their own builds instead of using packages. It is based on the setup used in the Arch Linux ARM-based reference distro, but should apply to most systems.
 
 This is a practical guide. For a more formal description/spec, including how we handle vendor firmware, see [Open OS Ecosystem on Apple Silicon Macs](../platform/open-os-interop.md). For information about specifically how everything is plumbed in Fedora Asahi Remix, see its [How it's made](https://docs.fedoraproject.org/en-US/fedora-asahi-remix/how-its-made/) page.

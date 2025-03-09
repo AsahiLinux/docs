@@ -1,3 +1,7 @@
+---
+title: Partitioning Cheatsheet
+---
+
 # WARNING: NEVER DELETE THE `Apple_APFS_Recovery` PARTITION
 
 The last partition on your disk, listed as type `Apple_APFS_Recovery` in diskutil, contains critical system recovery components. **If you delete this partition accidentally, macOS upgrades will cease to work, and any other problem with your system will leave it unbootable and require a factory restore and complete wipe**. Restoring this partition without a full machine wipe is [a major pain in the ass](https://www.reddit.com/r/AsahiLinux/comments/1fmnzm5/guide_how_to_fix_failed_to_find_sfr_recovery/). Do NOT, under any circumstances, mess with this partition.

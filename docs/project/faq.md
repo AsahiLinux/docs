@@ -1,3 +1,7 @@
+---
+title: FAQ
+---
+
 ## When will Asahi Linux be "done"?
 
 → ["When will Asahi Linux be done?"](when-will-asahi-be-done.md)

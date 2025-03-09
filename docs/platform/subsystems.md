@@ -1,3 +1,7 @@
+---
+title: Apple Silicon Platform Subsystems
+---
+
 These pages detail the specifics of a particular platform subsystem. They are loosely categorised
 by function.
 

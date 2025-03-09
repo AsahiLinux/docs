@@ -1,3 +1,7 @@
+---
+title: System Registers
+---
+
 See [System Register Dumps](system-register-dumps.md) for exhaustive enumeration and research.
 
 ## Glossary

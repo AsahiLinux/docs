@@ -1,3 +1,8 @@
+---
+title: Miscellaneous References
+---
+
+
 ### Web References
 These are just some references for people to build some background knowledge into getting Linux working on Apple Silicon.
 

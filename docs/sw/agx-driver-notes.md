@@ -1,3 +1,7 @@
+---
+title: AGX Driver Notes
+---
+
 ## General docs
 * [Alyssa's Driver Survival Guide](https://rosenzweig.io/AlyssasDriverSurvivalGuide.txt)
 * [AGX](../hw/soc/agx.md) (somewhat outdated)

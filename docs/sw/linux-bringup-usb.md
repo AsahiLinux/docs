@@ -1,3 +1,7 @@
+---
+title: Linux Bringup: USB
+---
+
 ## root as USB drive
 * Inspired by [Alyssa's tomshardware article](https://www.tomshardware.com/news/apple-m1-debian-linux) 
 * Make an **arm64** root filesystem as per [debian rootfs](https://www.debian.org/releases/stretch/arm64/apds03.html.en)

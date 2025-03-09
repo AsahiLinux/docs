@@ -1,3 +1,7 @@
+---
+title: macOS Kernelcache
+---
+
 # READ THIS BEFORE PROCEEDING FURTHER
 
 **Asahi Linux has a very strict [reverse engineering policy](https://asahilinux.org/copyright/). Do not start disassembling macOS code, including the Darwin kernel, unless you have fully read and understood the policy.**

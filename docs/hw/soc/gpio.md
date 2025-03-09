@@ -1,3 +1,7 @@
+---
+title: GPIO Controllre
+---
+
 ## DT binding
 
 The "gpio,t8101" nodes in the ADT represent a GPIO controller with pinmux facilities.

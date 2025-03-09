@@ -1,3 +1,7 @@
+---
+title: Apple Silicon Kernel Config Options
+---
+
 Your kernel configuration will need to include the Asahi-specific drivers.  As of linux-asahi-6.12.4-1, this list is:
 
 ```

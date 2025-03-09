@@ -1,3 +1,7 @@
+---
+title: Linux Bringup: USB Keyboard
+---
+
 # Linux USB keyboard
 * Got a USB keyboard working with an ramdisk root filesystem.
 * By booting the [Asahi dart/dev kernel](https://github.com/AsahiLinux/linux/tree/dart/dev) with USB3 XHCD, DWC3 and DART et cetera 

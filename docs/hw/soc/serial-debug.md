@@ -1,3 +1,7 @@
+---
+title: Debugging via Serial Console
+---
+
 Taken from the original Developer Quickstart guide
 
 ## Getting a serial console

@@ -1,3 +1,7 @@
+---
+title: Platform Trivia
+---
+
 A list of random fun trivia about this platform and its legacy.
 
 # iPhone legacy

@@ -1,3 +1,7 @@
+---
+title: Apple Video Decoder
+---
+
 Apple Video Decoder.
 
 Supports AVC, HEVC, AV1, VP9.

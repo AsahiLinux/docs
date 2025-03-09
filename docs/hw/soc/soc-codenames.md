@@ -1,3 +1,7 @@
+---
+title: SoC Codenames
+---
+
 Apple likes to use many different names for the same devices.
 
 ## SoCs

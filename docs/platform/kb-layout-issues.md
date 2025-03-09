@@ -1,3 +1,7 @@
+---
+title: Mac keyboard layout issues
+---
+
 Long story short, Mac keyboard layouts on Linux are a complete mess. We want to fix it. Please help us figure out what is wrong for *your* layout!
 
 Note: This is only for MacBook internal keyboards and also possibly external Apple keyboards. Please do not report issues with third-party keyboards.

@@ -1,3 +1,7 @@
+---
+title: Secure Enclave Processor (SEP)
+---
+
 Some notes on the SEP based on past community research and digging into the SEP, along with some TODOs for anyone wanting to trace the SEP on Asahi Linux
 
 fair warning: this page is messy and will likely remain so, until enough understanding is built up to build a clean page.

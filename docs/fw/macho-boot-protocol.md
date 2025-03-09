@@ -1,3 +1,10 @@
+---
+title: MachO Boot Protocol
+summary:
+  Boot protocol used by Apple Silicon devices when booting m1n1 as a
+  MachO binary
+---
+
 ## Boot protocol
 
 ### Memory

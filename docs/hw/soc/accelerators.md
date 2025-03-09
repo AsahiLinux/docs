@@ -1,3 +1,7 @@
+---
+title: Apple Silicon Accelerators
+---
+
 The SoC has several onboard accelerator units, this is a useful list of the names and what they refer to. Most of the accelerators run firmware that can be found in the pre-boot partition `/System/Volumes/Preboot/[UUID]/restore/Firmware`, packaged as im4p files which may be extracted with <https://github.com/19h/ftab-dump/blob/master/rkos.py> and some dd. 
 
 *Update none of the ANE, AVE, ADT im4p's extract with that. I'm not sure which ones do. You are better off following the im4p extraction steps in [ADT](../../fw/adt.md). Can we make a progress matrix regarding firmware?
