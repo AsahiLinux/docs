@@ -94,7 +94,6 @@ run). You may have varying levels of success by attempting to run your software 
 ## Broken packages
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
-| Chromium | <https://issues.chromium.org/issues/378017037> | cppgc crashes on Linux w/ 16KiB pages because of hardcoded kGuardPageSize |
 | hardened_malloc | <https://github.com/GrapheneOS/hardened_malloc/issues/183> | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
 | jemalloc | <https://github.com/jemalloc/jemalloc/issues/467> | Upstream unwilling to fix, Needs build options if compiled on a 4k page size system. Addressed in [ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1914). |
 | MEGAsync | <https://github.com/meganz/MEGAsync/pull/801> |
@@ -141,6 +140,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | abrt             | [ABRT can't submit crash report: processing failed](https://bugzilla.redhat.com/show_bug.cgi?id=2238248) | Issue Closed |
 | blender          | [blender core dumps at execution instead of giving sane feedback about unsupported hardware](https://bugzilla.redhat.com/show_bug.cgi?id=2237821) | Issue Closed |
 | chromium         | [Skia shader compilation error](https://bugs.chromium.org/p/chromium/issues/detail?id=1442633) | Fixed in Chromium 121.0.6167.85 |
+| chromium         | [cppgc crashes on Linux w/ 16KiB pages because of hardcoded kGuardPageSize](https://issues.chromium.org/issues/378017037) | Fixed in Chromium 133.0.6943.141 |
 | dracut           | [Memoize find_kmod_module_from_sysfs_node](https://github.com/dracut-ng/dracut-ng/pull/408) | Fixed in dracut 103 |
 | firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | firefox          | [YouTube is capping resolutions to 1080 on Linux aarch64 user agents](https://bugzilla.mozilla.org/show_bug.cgi?id=1869521) | Fixed in Firefox 123 |
