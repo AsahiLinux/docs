@@ -16,3 +16,6 @@ The board meets once a month.
 - Sven Peter
 - chaos_princess
 - James Calligeros
+
+## Meeting Minutes (times in US/Eastern)
+- [7 March 2025 16:00](minutes/20250307.md)
