@@ -135,6 +135,25 @@ run). You may have varying levels of success by attempting to run your software 
 
 Issues (other than page size and architectural support issues) in third-party software, reported and/or tracked by Asahi core team members:
 
+### Open Bugs
+
+| Package          | Issue | Notes |
+| ---------------- | ----- | ----- |
+| firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
+| gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
+| hyprland         | [Explicit Sync timelines fail importing, killing the client](https://github.com/hyprwm/Hyprland/issues/8158) |
+| kwin             | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
+| plasmashell      | [startplasma breaks variable merging between profile.d and environment.d](https://bugs.kde.org/show_bug.cgi?id=491579) |
+| systemsettings   | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
+| wireplumber      | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538) |
+| wlroots          | [Add support for DRM Color Transformation Matrix (Useful for e.g. redshift)](https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/1078) | [Related PR](https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4815) |
+| wlroots          | [cannot open render as master when using seatd](https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/3911) |
+| xkeyboard-config | [Handling Mac Fn keys in xkeyboard](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379) |
+
+
+
+### Closed Bugs
+
 | Package          | Issue | Notes |
 | ---------------- | ----- | ----- |
 | abrt             | [ABRT can't submit crash report: processing failed](https://bugzilla.redhat.com/show_bug.cgi?id=2238248) | Issue Closed |
@@ -142,28 +161,18 @@ Issues (other than page size and architectural support issues) in third-party so
 | chromium         | [Skia shader compilation error](https://bugs.chromium.org/p/chromium/issues/detail?id=1442633) | Fixed in Chromium 121.0.6167.85 |
 | chromium         | [cppgc crashes on Linux w/ 16KiB pages because of hardcoded kGuardPageSize](https://issues.chromium.org/issues/378017037) | Fixed in Chromium 133.0.6943.141 |
 | dracut           | [Memoize find_kmod_module_from_sysfs_node](https://github.com/dracut-ng/dracut-ng/pull/408) | Fixed in dracut 103 |
-| firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | firefox          | [YouTube is capping resolutions to 1080 on Linux aarch64 user agents](https://bugzilla.mozilla.org/show_bug.cgi?id=1869521) | Fixed in Firefox 123 |
 | gcc              | [LTO miscompilation of ceph on aarch64 and x86_64](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=113359) | Fixed in gcc 13.3 / 14.1 |
 | glibc            | [TLS modid reuse breaks TLS accesses](https://bugzilla.redhat.com/show_bug.cgi?id=2251557) | Fixed in glibc 2.39 |
-| gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
 | gtk              | [GSK issues illegal render ops with load=dont-care and blend=over with Wayland fractional scaling, causing graphical corruption](https://gitlab.gnome.org/GNOME/gtk/-/issues/7146) | Fixed in gtk 4.17.6 |
 | gtk              | [GSK/vulkan uses mipmaps without checking the formats/tiling `VkImageFormatProperties.maxMipLevels`](https://gitlab.gnome.org/GNOME/gtk/-/issues/7229) | Fixed in gtk 4.17.5 |
 | hyprland         | [issue with OpenGL applications crashing when using Hyprland 0.42.0](https://github.com/hyprwm/Hyprland/issues/7364) | Fixed in hyprland 0.43.0 |
-| hyprland         | [Explicit Sync timelines fail importing, killing the client](https://github.com/hyprwm/Hyprland/issues/8158) |
 | kpipewire        | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) | Issue Closed |
-| kpipewire        | [Screen recording quality is terrible](https://bugs.kde.org/show_bug.cgi?id=476186) |
 | kpipewire        | [OpenH264 codec support](https://bugs.kde.org/show_bug.cgi?id=476187) | Fixed in Plasma 6.1.4 |
 | kwin             | [Outputs freeze on multi-screen when hardware cursors are not supported](https://bugs.kde.org/show_bug.cgi?id=477451) | Fixed in Plasma 6.0 |
-| kwin             | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
 | kwin             | [Software cursor repaints are glitchy with fractional scaling sometimes](https://bugs.kde.org/show_bug.cgi?id=477455) | Fixed in Plasma 6.0 |
 | lsp-common-lib   | [Fix atomic operations for AArch64](https://github.com/lsp-plugins/lsp-plugins/issues/463) | Fixed in lsp-common-lib 1.0.40 |
 | lib-dsp-lib      | [Fix aarch64 msmatrix code](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20) | Fixed in lsp-dsp-lib 1.0.20 |
 | plasmashell      | [startplasma breaks variable merging between profile.d and environment.d](https://bugs.kde.org/show_bug.cgi?id=491579) |
 | qqc2-desktop-style | [Some text glyphs in QML software are vertically mis-aligned or squished when using a fractional scale factor](https://bugs.kde.org/show_bug.cgi?id=479891) | Fixed in KDE Frameworks 6.9.0 |
-| systemsettings   | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
-| wireplumber      | [Cannot pass args to PW modules from lua](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538) |
 | wireplumber      | [Wireplumber ignores default playback volume](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#) | Fixed in wireplumber 0.5.3 |
-| wlroots          | [Add support for DRM Color Transformation Matrix (Useful for e.g. redshift)](https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/1078) | [Related PR](https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4815) |
-| wlroots          | [cannot open render as master when using seatd](https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/3911) |
-| xkeyboard-config | [Handling Mac Fn keys in xkeyboard](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379) |
