@@ -14,20 +14,20 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### A
 * **AGX**: The internal name for Apple's GPU series.
 * **AIC**: Apple Interrupt Controller. Apple's custom ARM interrupt controller, because the standard GIC was too standard for Apple.
+* **AMX**: Apple Matrix eXtensions. A matrix coprocessor partially integrated into the ISA.
+* **ANE**: Apple Neural Engine. FP16 multiply-add unit.
 * **ANS**: NVME / storage coprocessor?
-* **AP**: Application Processor. The main CPU running most of the OS. Contrast to SEP.
 * **AOP**: Always On Processor. Apple SoC co-processor/DSP that that enables “Hey Siri,” feature on macOS among other things. 
+* **AP**: Application Processor. The main CPU running most of the OS. Contrast to SEP.
 * **APFS**: Apple File System. Apple's new container and volume oriented "modern" filesystem, think ZFS and btrfs.
 * **APFS Container**: a physical partition on a disk that can itself contain multiple filesystems (volumes), all dynamically sharing space.
 * **APFS Snapshot**: a read-only copy-on-write snapshot of an APFS volume.
 * **APFS Volume**: a logical filesystem within an APFS container, that can be mounted on a directory.
+* **APR**: APR ProRes. Handles ProRes video encoding + decoding.
 * **APSC**: Automatic Power State Controller.
 * **ASC**: Possible generic name for Coprocessors? e.g. gfx-asc. Possibly Apple Silicon Coprocessor.
 * **AVD**: Apple Video Decoder.
 * **AVE**: Apple Video Encoder. Supports AVC and HEVC.
-* **ANE**: Apple Neural Engine. FP16 multiply-add unit.
-* **AMX**: Apple Matrix eXtensions. A matrix coprocessor partially integrated into the ISA.
-* **APR**: APR ProRes. Handles ProRes video encoding + decoding.
 
 ### B
 * **BootROM**: A read-only memory embedded in a chip such as the M1, which is the first code executed upon boot. See SecureROM.
@@ -47,8 +47,8 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **EEPROM**: Electrically Erasable Programmable Read Only Memory. A type of re-writable memory, commonly available in sizes of a few kilobytes at most, more robust than NOR Flash. Often used for settings and very early boot code.
 
 ### F
-* **fuOS**: Custom OS, speculated to mean "fully untrusted OS".
 * **Fallback Recovery OS**: 2nd copy of recovery OS accessed by double clicking and holding power button to boot. Unlike 1TR is unable to change security state(settings). Can be distinguished from Recovery OS 1TR by Utilities missing "Start Security Utility" option under Utilities
+* **fuOS**: Custom OS, speculated to mean "fully untrusted OS".
 
 ### G
 * **GPT**: GUID Partition Table: A partition table format created for EFI/UEFI and now used on most modern systems.
@@ -59,13 +59,13 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### I
 * **I²C**: Inter-Integrated Circuit. A 2-wire standard for communicating at low speed between chips on a board.
+* **iBEC**: iBoot Epoch Change. Replacement for the second-stage iBoot, loaded in the DFU boot flow.
 * **iBoot**: Apple's bootloader. Can refer to iBoot1, iBoot1, or any of iBSS, iBEC, or even the SecureROM itself (which are all different builds of iBoot with different capabilities).
 * **iBoot1**: The first-stage iBoot located in NOR, loaded by the SecureROM. It chainloads the second-stage iBoot (iBoot2) on the OS Preboot partition, after doing early initialization and loading OS-independent firmwares. LLB is an older name for iBoot1.
 * **iBoot2**: The second-stage iBoot located in the OS Preboot partition. This version of iBoot is specific to each installed OS, and is packaged with the bundle of runtime firmwares the OS needs to run.
 * **iBSS**: iBoot Single Stage. Replacement for the first-stage iBoot (iBoot1/LLB), loaded in the DFU boot flow when the NOR is corrupted.
-* **iBEC**: iBoot Epoch Change. Replacement for the second-stage iBoot, loaded in the DFU boot flow.
-* **IOMMU**: I/O Memory Management Unit, a more general term for Apple's DART.
 * **IOKit**: I/O Kit is Apple's device driver framework for XNU (Apple's operating system kernel).
+* **IOMMU**: I/O Memory Management Unit, a more general term for Apple's DART.
 * **IPI**: Inter-processor interupt. An interrupt used by one processor to interrupt another.
 * **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [Stock Partition Layout](../platform/stock-partition-layout.md))
 * **ISP**: Image Signal Processor. Webcam on M-series laptops. Denotes the entire camera unit, from sensors to strobe to the coprocessor.
@@ -83,8 +83,8 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **LLB**: Low Level Bootloader, an older name for iBoot1 inherited from iOS platforms.
 
 ### M
-* **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such as switching one set of pins between USB, UART, and SWD modes.
 * **Mini** - Custom bootloader for internal investigation. May or may not support booting from SSD. This project uses a fork that's referred to as M1N1.
+* **Mux**: Multiplexer, a device that can connect one of several things to a single connection, such as switching one set of pins between USB, UART, and SWD modes.
 
 ### N
 * **NAND**: Not-AND. A type of logic gate, but normally refers to a type of Flash memory, which is the one used on all modern high-capacity Flash-based storage such as SD cards and SSDs, but also comes in bare chips.
@@ -120,8 +120,8 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 
 ### U
 * **UART**: Universal Asynchronous Receiver Transmitter. The hardware behind a serial port.
-* **USC**: Unified shader core. A shader core supporting all shader types (vertex, fragment, compute). AGX is a unified architecture, so this just refers to a shader core.
 * **USB-PD**: USB Power Delivery. A standard for side-band communications over USB Type C (we won't talk about the older standard for our own sanity). This is used for things like detecting what kind of cable is used, connector orientation, configuring the supply voltage, and switching to non-USB modes.
+* **USC**: Unified shader core. A shader core supporting all shader types (vertex, fragment, compute). AGX is a unified architecture, so this just refers to a shader core.
 
 ### V
 * **VBUS**: USB pin delivering power. Defaults to 5V, can go as high as 20V with USB-PD.
