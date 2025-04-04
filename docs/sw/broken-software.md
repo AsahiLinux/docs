@@ -108,7 +108,7 @@ run). You may have varying levels of success by attempting to run your software 
 | 1Password | _proprietary_ | Fixed as of 8.8.0-119 beta. |
 | Android Cuttlefish | <https://android-review.googlesource.com/c/device/google/cuttlefish/+/2545951> | Fixed in AOSP main branch by switching to musl. |
 | box64 | <https://github.com/ptitSeb/box64/issues/384> | Fixed since 0.2.8 |
-| btrfs | <https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/> | Fixed since Linux 5.19 ([caveats](https://social.treehouse.systems/@marcan/111493984306764821)) |
+| btrfs | <https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/> | Fixed since Linux 5.19 ([caveats](https://web.archive.org/web/20241204022740/https://social.treehouse.systems/@marcan/111493984306764821)) |
 | Chromium | <https://bugs.chromium.org/p/chromium/issues/detail?id=1301788> | Includes Electron apps.<br>Fixed since 102. |
 | Emacs | <https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html> | Fixed since 28.0 |
 | f2fs | <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287> | Fixed since Linux 6.7 |
