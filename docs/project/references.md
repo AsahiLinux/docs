@@ -10,7 +10,7 @@ These are just some references for people to build some background knowledge int
 
 [Apple Platform Security Documentation](https://support.apple.com/en-au/guide/security/welcome/web)
 
-[The T2 Development Blog](https://blog.t8012.dev/ace-part-1/)
+[The T2 Development Blog](https://web.archive.org/web/20211023034503/https://blog.t8012.dev/ace-part-1/)
 
 [Apple Silicon DFU Restore guide](https://support.apple.com/guide/apple-configurator-mac/apdd5f3c75ad/mac)
 
