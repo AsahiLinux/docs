@@ -186,7 +186,7 @@ Distros should then ship an initramfs with a `/lib/firmware/vendor -> /vendorfw`
 
 The initramfs must then forward this firmware into the final root filesystem. The recommended mechanism for this is to mount a tmpfs on `/lib/firmware/vendor` under the target root filesystem tree, and the copy the firmware there.
 
-An example implementation for Linux can be found in the [asahi-scripts](https://github.com/AsahiLinux/asahi-scripts/blob/main/initcpio/hooks/asahi) repository.
+An example implementation for Linux can be found in the [asahi-scripts](https://github.com/AsahiLinux/asahi-scripts/tree/main/dracut/modules.d/99asahi-firmware) repository.
 
 Direct CPIO load can be accomplished with stock GRUB if `/boot` is the ESP mountpoint (i.e. GRUB and the kernels are directly installed in the ESP), using `GRUB_EARLY_INITRD_LINUX_STOCK=vendorfw/firmware.cpio` in `/etc/default/grub`.
 
