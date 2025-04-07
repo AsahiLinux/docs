@@ -19,3 +19,4 @@ The board meets once a month.
 
 ## Meeting Minutes (times in US/Eastern)
 - [7 March 2025 16:00](minutes/20250307.md)
+- [4 April 2025 16:00](minutes/20250404.md)
