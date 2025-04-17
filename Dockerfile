@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora:41
+FROM registry.fedoraproject.org/fedora:42
 
 LABEL org.opencontainers.image.description="Build the Asahi Linux documentation website using mkdocs"
 LABEL org.opencontainers.image.licenses=MIT
