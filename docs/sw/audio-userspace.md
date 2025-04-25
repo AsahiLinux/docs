@@ -62,3 +62,55 @@ You can watch speakersafetyd in action by using `sudo journalctl -fu speakersafe
 Requirements according to [asahi-audio](https://github.com/AsahiLinux/asahi-audio)'s [README.md](https://github.com/AsahiLinux/asahi-audio/blob/main/README.md).
 
 The correct deployment order is asahi-audio/speakersafetyd > (whatever you use to get those installed for users, e.g. metapackage) > kernel. If you push the kernel first before asahi-audio, users will get either a nonfunctional (if no speakersafetyd) or functional but bad-sounding (if speakersafetyd is installed) raw speaker device with no DSP.
+
+# Microphone support
+
+Currently supported models:
+
+ * MacBook Pro 13" (M1/M2)
+ * MacBook Air 13" (M1/M2)
+ * MacBook Pro 14" (M1 Pro/Max, M2 Pro/Max)
+ * MacBook Pro 16" (M1 Pro/Max, M2 Pro/Max)
+ * MacBook Air 15" (M2)
+
+
+MacBooks have three Pulse Density Modulation (PDM) mics wired up to an ADC
+and decimator in the AOP. All three mics are plumbed directly to userspace on
+separate channels, with no preamplification.
+
+They are very sensitive and omnidirectional, so to be able to use them, some
+kind of beamforming needs to be applied.
+
+For this, [Triforce](https://github.com/chadmed/triforce) was built,
+implementing a Minimum Variance Distortionless Response adaptive beamformer.
+
+`asahi-audio` includes the necessary wireplumber config to set this up.
+
+## Known Bugs
+
+### Requires `os-fw-version` > 13.5
+Microphone support currently only works if your `asahi,os-fw-version` is >= 13.5.
+This is due to `BOOTARGS_OFFSET` and `BOOTARGS_SIZE` being different on `12.4`.
+
+If your `/proc/device-tree/chosen/asahi,os-fw-version` shows an older version, and you see a
+
+```
+apple_aop 24ac00000.aop: probe with driver apple_aop failed with error -22
+```
+
+in dmesg, an update of the APFS container is needed (or adding support for the
+older version to the kernel driver).
+
+### Macbook Pro 14" M2 (J414) probing issues
+There's been reports about the Macbook Pro 14" M2, where the AOP does not probe
+properly and microphone support doesn't work.
+
+### Microphone indicator on constantly
+With microphone support set up, `gnome-shell` and `plasma` permanently report
+the microphone being used.
+
+This is due to wireplumber reporting it has a handle open on a "microphone
+device".
+
+Fixing this probably requires rearchitecturing a lot of concepts like nodes and
+handles in Pipewire / Wireplumber.
