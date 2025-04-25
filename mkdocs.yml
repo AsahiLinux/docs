@@ -36,6 +36,7 @@ nav:
     - U-Boot: sw/u-boot.md
     - Devicetree bindings: sw/devicetree-bindings.md
     - Open OS ecosystem on Apple Silicon Macs: platform/open-os-interop.md
+    - Userspace Audio Stack: sw/audio-userspace.md
 
 theme:
   name: material
