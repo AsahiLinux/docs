@@ -7,6 +7,8 @@ These steps allow you to upgrade the firmware in the macOS stub partition. These
     Please attempt this only if you’re comfortable with the steps mentioned here and be prepared to do a fresh install.
 ```
 
+Make sure to read and understand how macOS partitions work in the [partitioning cheatsheet](https://github.com/AsahiLinux/docs/wiki/Partitioning-cheatsheet).
+
 - boot into Linux
 - edit /etc/fstab and comment out the line with /boot/efi
 - reboot into macOS
