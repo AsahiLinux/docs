@@ -1,5 +1,12 @@
 # Firmware update
 
+These steps allow you to upgrade the firmware in the macOS stub partition. These are manual steps, and the risk of messing up is high.
+
+```
+    Please ensure you have a restorable backup of your Fedora installation.
+    Please attempt this only if you’re comfortable with the steps mentioned here and be prepared to do a fresh install.
+```
+
 - boot into Linux
 - edit /etc/fstab and comment out the line with /boot/efi
 - reboot into macOS
