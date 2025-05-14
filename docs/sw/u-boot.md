@@ -5,12 +5,11 @@ title: Das U-Boot
 U-Boot is the default payload for m1n1 stage 2, and is used to provide a standard preboot environment familiar to
 AArch64 developers. External boot is not supported with the native Apple Silicon boot tooling, making U-Boot a hard
 necessity for providing a PC-like boot environment. This page explains how we use U-Boot and how to manually build and
-install it. It is assumed that you are working on an Apple Silicon machine using a well-supported distro, meaning either
-Asahi itself or one listed at [Alternative Distros](../alt/alt-distros.md).
+install it. It is assumed that you are working on an Apple Silicon machine using a well-supported distro.
 
 Do note that the process for building and installing U-Boot listed here is for documentation and development purposes
 only. If you are an Asahi user and not interested in hacking on U-Boot or m1n1, they are managed automatically
-via `pacman`. The same should be true for all (most) distros listed at [Alternative Distros](../alt/alt-distros.md).
+via `pacman`.
 
 ## Standard boot flow
 We make use of U-Boot's UEFI implementation to load and execute a UEFI binary located at `/EFI/BOOT/BOOTAA64.EFI` 
@@ -28,7 +27,7 @@ do things like boot off external media, execute arbitrary UEFI code, load and ju
 * USB hubs with integrated SD card readers will cause your machine to hard reset if the slot is empty. The fix for this is queued.
 
 ## Prerequisites
-* An Apple Silicon machine running Asahi or a distro listed at [Alternative Distros](../alt/alt-distros.md)
+* An Apple Silicon machine running Asahi
 * A clean build of m1n1, see the [m1n1 User Guide](m1n1-user-guide.md)
 * The Apple DTBs from `AsahiLinux/linux`. Compiling these is out of scope for this document.
 * The Asahi EFI System Partition mounted at `/boot/efi/`.
