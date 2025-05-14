@@ -36,6 +36,8 @@ nav:
     - Devicetree bindings: sw/devicetree-bindings.md
     - Open OS ecosystem on Apple Silicon Macs: platform/open-os-interop.md
     - Userspace Audio Stack: sw/audio-userspace.md
+  - For distributions/OSes:
+    - Distro guidelines: alt/policy.md
 
 theme:
   name: material
