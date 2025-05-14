@@ -1,0 +1,96 @@
+site_name: Documentación de Asahi Linux
+site_url: https://asahilinux.org/docs/es/
+
+repo_url: https://github.com/AsahiLinux/docs
+repo_name: AsahiLinux/docs
+
+nav:
+  - Inicio: index.md
+  - Soporte de Características:
+    - Resumen: platform/feature-support/overview.md
+    - Soporte de Características M1: platform/feature-support/m1.md
+    - Soporte de Características M2: platform/feature-support/m2.md
+    - Soporte de Características M3: platform/feature-support/m3.md
+    - Soporte de Características M4: platform/feature-support/m4.md
+  - Documentación del Proyecto:
+    - Glosario: project/glossary.md
+    - Preguntas Frecuentes: project/faq.md
+    - ¿Cuándo estará listo Asahi Linux?: project/when-will-asahi-be-done.md
+    - Referencias: project/references.md
+    - Junta Directiva de Asahi Linux: project/board/asahi-board.md
+  - Documentación de la Plataforma:
+    - Subsistemas de Apple Silicon: platform/subsystems.md
+    - Curso Rápido de Seguridad de Plataforma Apple: platform/security.md
+    - Dispositivos: hw/devices/device-list.md
+    - Nombres en Código: hw/soc/soc-codenames.md
+    - Controladores de Pantalla: hw/soc/display-controllers.md
+  - Para Usuarios:
+    - Documentación de Fedora Asahi Remix <i class="fa-solid fa-arrow-up-right-from-square"></i>: https://docs.fedoraproject.org/en-US/fedora-asahi-remix/
+    - Software con Problemas: sw/broken-software.md
+    - Distribuciones Alternativas: alt/alt-distros.md
+  - Para Desarrolladores:
+    - Tareas Pendientes (¡SE NECESITA AYUDA!): project/help-wanted.md
+    - Configuración de Arranque con Cable (Para Desarrolladores): sw/tethered-boot.md
+    - m1n1: Guía de Usuario del Cargador de Arranque: sw/m1n1-user-guide.md
+    - Hipervisor: sw/m1n1-hypervisor.md
+    - U-Boot: sw/u-boot.md
+    - Enlaces del Árbol de Dispositivos: sw/devicetree-bindings.md
+    - Ecosistema de Sistemas Operativos Abiertos en Macs con Apple Silicon: platform/open-os-interop.md
+    - Stack de Audio en Espacio de Usuario: sw/audio-userspace.md
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-auto
+        name: Cambiar a modo claro
+
+    - media: "(prefers-color-scheme: light)"
+      primary: custom
+      accent: custom
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+
+    - media: "(prefers-color-scheme: dark)"
+      primary: custom
+      accent: custom
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a preferencia del sistema
+
+  features:
+    - navigation.expand
+    - navigation.instant
+    - navigation.sections
+    - navigation.tracking
+    - navigation.top
+    - toc.integrate
+  custom_dir: overrides
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - toc:
+      baselevel: 4
+      permalink: true
+  - admonition
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search
+  - social:
+      cards_layout_options:
+        background_color: '#F4EAEA'
+        color: '#2C2C2C' 

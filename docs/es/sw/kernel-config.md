@@ -1,0 +1,134 @@
+---
+title: Opciones de Configuración del Kernel para Apple Silicon
+---
+
+Tu configuración de kernel debe incluir los drivers específicos de Asahi. A partir de linux-asahi-6.12.4-1, esta lista es:
+
+```
+CONFIG_ARCH_APPLE=y
+CONFIG_ARM64_MEMORY_MODEL_CONTROL=y
+CONFIG_APPLE_AIC=y
+CONFIG_APPLE_WATCHDOG=y
+CONFIG_APPLE_DART=y
+CONFIG_APPLE_SART=y
+CONFIG_APPLE_PLATFORMS=y
+CONFIG_APPLE_MAILBOX=y
+CONFIG_APPLE_RTKIT=y
+CONFIG_APPLE_RTKIT_HELPER=y
+CONFIG_APPLE_SMC=y
+CONFIG_APPLE_SMC_RTKIT=y
+CONFIG_APPLE_PMGR_PWRSTATE=y
+CONFIG_APPLE_PMGR_MISC=y
+CONFIG_I2C_APPLE=y
+CONFIG_NVME_APPLE=y
+CONFIG_PCIE_APPLE=y
+CONFIG_PINCTRL_APPLE_GPIO=y
+CONFIG_PWM_APPLE=y
+CONFIG_SPI_APPLE=y
+CONFIG_SPMI_APPLE=y
+CONFIG_GPIO_MACSMC=y
+CONFIG_SENSORS_MACSMC=m
+CONFIG_ARM_APPLE_SOC_CPUFREQ=y
+CONFIG_APPLE_ADMAC=y
+CONFIG_APPLE_M1_CPU_PMU=y
+CONFIG_COMMON_CLK_APPLE_NCO=y
+CONFIG_ARM_APPLE_CPUIDLE=y
+CONFIG_TOUCHSCREEN_APPLE_Z2=m
+CONFIG_INPUT_MACSMC_HID=y
+CONFIG_POWER_RESET_MACSMC=y
+CONFIG_CHARGER_MACSMC=y
+CONFIG_MFD_APPLE_SPMI_PMU=y
+CONFIG_VIDEO_APPLE_ISP=m
+CONFIG_DRM_ASAHI=y
+CONFIG_DRM_ADP=m
+CONFIG_DRM_APPLE=m
+CONFIG_DRM_APPLE_AUDIO=y
+CONFIG_APPLE_SIO=m
+CONFIG_APPLE_SEP=y
+CONFIG_APPLE_AOP=y
+CONFIG_SND_SOC_APPLE_AOP_AUDIO=m
+CONFIG_SND_SOC_APPLE_MACAUDIO=m
+CONFIG_SND_SOC_APPLE_MCA=m
+CONFIG_SND_SOC_CS42L84=m
+CONFIG_SPI_HID_APPLE_OF=y
+CONFIG_HID_DOCKCHANNEL=m
+CONFIG_BT_HCIBCM4377=m
+CONFIG_RTC_DRV_MACSMC=y
+CONFIG_APPLE_DOCKCHANNEL=y
+CONFIG_PHY_APPLE_ATC=m
+CONFIG_PHY_APPLE_DPTX=m
+CONFIG_NVMEM_SPMI_MFD=y
+CONFIG_MUX_APPLE_DPXBAR=m
+CONFIG_NVMEM_APPLE_EFUSES=y
+CONFIG_IIO_AOP_SENSOR_LAS=m
+CONFIG_IIO_AOP_SENSOR_ALS=m
+```
+
+(Las distros que pretendan soportar otras plataformas con su kernel arm64 de 16k además de Apple Silicon estarán inclinadas a compilar tantos de estos drivers como módulos como sea posible. Esto está bien, aunque desde el punto de vista de la confiabilidad, compilar NVME_APPLE y SPI_HID_APPLE_OF en el kernel ha funcionado mucho mejor para mí.)
+
+~~(También ten en cuenta que las opciones de configuración anteriores no coinciden con la configuración estándar de dracut proporcionada por asahi-scripts.)~~ Parece que un cambio reciente en asahi-scripts hace que tus elecciones de módulos sean mucho menos importantes: <https://github.com/AsahiLinux/asahi-scripts/commit/4acd310cd8c394f9ec2e7e7506d89b7bb3c3ca39>
+
+También deberías verificar que tienes las siguientes opciones de configuración activadas:
+
+```
+CONFIG_RUST=y
+# CONFIG_GCC_PLUGINS is not set
+CONFIG_ARM64_16K_PAGES=y
+# CONFIG_RUST_DEBUG_ASSERTIONS is not set
+CONFIG_RUST_OVERFLOW_CHECKS=y
+# CONFIG_RUST_BUILD_ASSERT_ALLOW is not set
+CONFIG_UCLAMP_TASK=y
+CONFIG_UCLAMP_TASK_GROUP=y
+CONFIG_SUSPEND=y
+# CONFIG_HIBERNATION is not set
+CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL=y
+CONFIG_ENERGY_MODEL=y
+CONFIG_SERIAL_SAMSUNG=y
+CONFIG_SERIAL_SAMSUNG_CONSOLE=y
+CONFIG_REGULATOR_FIXED_VOLTAGE=y
+CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED=y
+# CONFIG_DRM_ASAHI_DEBUG_ALLOCATOR is not set
+CONFIG_DRM_FBDEV_EMULATION=y
+CONFIG_DRM_SCHED=y
+# CONFIG_DRM_VGEM is not set
+CONFIG_DRM_GEM_SHMEM_HELPER=y
+CONFIG_SND_SOC_CS42L83=m
+CONFIG_SND_SOC_TAS2764=m
+CONFIG_SND_SOC_TAS2770=m
+CONFIG_HID_BATTERY_STRENGTH=y
+CONFIG_HID_APPLE=m
+CONFIG_HID_MAGICMOUSE=m
+CONFIG_MOUSE_APPLETOUCH=m
+CONFIG_INPUT_LEDS=y
+CONFIG_LEDS_PWM=y
+CONFIG_USB_XHCI_HCD=m
+CONFIG_USB_XHCI_PCI_RENESAS=y
+CONFIG_USB_XHCI_PCI_ASMEDIA=y
+CONFIG_USB_DWC3=m
+CONFIG_USB_DWC3_DUAL_ROLE=y
+CONFIG_TYPEC_TPS6598X=m
+CONFIG_MMC_SDHCI=m
+CONFIG_MMC_SDHCI_PCI=m
+CONFIG_MMC_CQHCI=m
+CONFIG_NET_VENDOR_AQUANTIA=y
+CONFIG_AQTION=m
+CONFIG_NET_VENDOR_BROADCOM=y
+CONFIG_TIGON3=m
+CONFIG_BT=m
+CONFIG_BT_BREDR=y
+CONFIG_BT_RFCOMM=m
+CONFIG_BT_BNEP=m
+CONFIG_BT_HIDP=m
+CONFIG_BT_LE=y
+CONFIG_BT_HCIUART_BCM=y
+CONFIG_CFG80211=m
+CONFIG_WLAN_VENDOR_BROADCOM=y
+CONFIG_BRCMFMAC=m
+CONFIG_BRCMFMAC_PROTO_BCDC=y
+CONFIG_BRCMFMAC_PROTO_MSGBUF=y
+CONFIG_BRCMFMAC_USB=y
+CONFIG_BRCMFMAC_PCIE=y
+CONFIG_APPLE_MFI_FASTCHARGE=m
+```
+
+Advertencia: si es la primera vez que modificas una configuración de kernel, por favor toma en serio el consejo al principio del archivo sobre no editar el archivo a mano. NO copies simplemente los fragmentos de esta página en tu config e intentes compilar el kernel; esto probablemente resultará en una configuración inconsistente y una compilación fallida. En su lugar, usa el sistema `make menuconfig` o `make xconfig` para modificar tu configuración de kernel. 
