@@ -142,7 +142,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | ---------------- | ----- | ----- |
 | firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
-| hyprland         | [Explicit Sync timelines fail importing, killing the client](https://github.com/hyprwm/Hyprland/issues/8158) |
+| hyprland         | [Explicit sync doesn't work on split-node gpu drivers](https://github.com/hyprwm/Hyprland/issues/10401) |
 | kwin             | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
 | plasmashell      | [startplasma breaks variable merging between profile.d and environment.d](https://bugs.kde.org/show_bug.cgi?id=491579) |
 | systemsettings   | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
