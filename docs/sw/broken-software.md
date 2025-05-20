@@ -98,6 +98,7 @@ run). You may have varying levels of success by attempting to run your software 
 | jemalloc | <https://github.com/jemalloc/jemalloc/issues/467> | Upstream unwilling to fix, Needs build options if compiled on a 4k page size system. Addressed in [ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1914). |
 | MEGAsync | <https://github.com/meganz/MEGAsync/pull/801> |
 | notion-app(-enhancer) | <https://github.com/notion-enhancer/notion-repackaged/issues/107> | electron + broken build flags |
+| Waydroid | <https://github.com/waydroid/waydroid/issues/373> | Upstream AOSP is working on 16k page support: <https://developer.android.com/guide/practices/page-sizes> |
 
 \* Running x86-64 software is supported via a 4k page size microVM running FEX.
 
