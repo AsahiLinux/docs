@@ -1,5 +1,5 @@
 ---
-title: GPIO Controllre
+title: GPIO Controller
 ---
 
 ## DT binding
