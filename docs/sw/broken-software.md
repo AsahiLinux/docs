@@ -96,7 +96,6 @@ run). You may have varying levels of success by attempting to run your software 
 | ------- | --------------- | ----- |
 | hardened_malloc | <https://github.com/GrapheneOS/hardened_malloc/issues/183> | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
 | jemalloc | <https://github.com/jemalloc/jemalloc/issues/467> | Upstream unwilling to fix, Needs build options if compiled on a 4k page size system. Addressed in [ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1914). |
-| MEGAsync | <https://github.com/meganz/MEGAsync/pull/801> |
 | notion-app(-enhancer) | <https://github.com/notion-enhancer/notion-repackaged/issues/107> | electron + broken build flags |
 | Waydroid | <https://github.com/waydroid/waydroid/issues/373> | Upstream AOSP is working on 16k page support: <https://developer.android.com/guide/practices/page-sizes> |
 
@@ -120,6 +119,7 @@ run). You may have varying levels of success by attempting to run your software 
 | libunwind | <https://github.com/libunwind/libunwind/issues/260> | Fixed since 1.8.0 |
 | libvirt/QEMU/KVM | <https://patchew.org/QEMU/20230727073134.134102-1-akihiko.odaki@daynix.com/> | Fixed since QEMU 7.2.6 / 8.0.5 / 8.1.1 |
 | lvm2 | <https://bugzilla.redhat.com/show_bug.cgi?id=2059734> | Fixed since 2.03.21 |
+| MEGAsync | <https://github.com/meganz/MEGAsync/issues/303> <https://github.com/meganz/MEGAsync/issues/310> | Fixed since 5.12.0 |
 | pdfium | <https://bugs.chromium.org/p/pdfium/issues/detail?id=1853> | Fixed and shipped with Chromium 108 |
 | qt5-webengine | <https://bugreports.qt.io/browse/QTBUG-105145> | chromium 87, likely won’t be fixed upstream. [Fixed in downstream ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1928) |
 | qt6-webengine | <https://bugreports.qt.io/browse/QTBUG-105145> | chromium 94 for 6.3, partially fixed upstream in 6.4 for webview but not for QtPdf. [Fixed in downstream ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1928) |
