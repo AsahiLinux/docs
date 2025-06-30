@@ -17,12 +17,12 @@ An OS on an Apple Silicon machine, as seen by Apple's tooling, means a portion o
 For third-party OSes, we propose the following GPT partition structure per OS:
 
 1. APFS container partition ("stub macOS") (~2.5GB) with:
-  * iBoot2, firmware, XNU kernel, RecoveryOS (all required by the platform)
-  * m1n1 as fuOS kernel, with chainloading config pointing to the EFI partition
-  * ~empty root/data filesystem subvolumes
+    * iBoot2, firmware, XNU kernel, RecoveryOS (all required by the platform)
+    * m1n1 as fuOS kernel, with chainloading config pointing to the EFI partition
+    * ~empty root/data filesystem subvolumes
 2. EFI system partition (FAT32) (~512MB) with:
-  * m1n1 stage 2 + device trees + U-Boot
-  * GRUB or another UEFI OS loader boot the target kernel
+    * m1n1 stage 2 + device trees + U-Boot
+    * GRUB or another UEFI OS loader boot the target kernel
 3. root/boot/etc. partitions (OS-specific)
 
 Rationale: this arrangement pairs together a third-party OS with an APFS-resident OS as seen by Apple's tooling, and allows users to use the native boot picker (with a11y support). It avoids potential trouble down the road which could come from having multiple OSes attempt to manage the SEP under a shared OS context. It also lets us have independent secure-boot chains for OSes (once that is implemented), with the fuOS image containing the root of trust for subsequent boot stages, bridged to the machine chain of trust by the user with their machine owner credentials during installation.
@@ -41,39 +41,39 @@ A typical boot of a reference Linux system will go as follows, continuing on fro
 
 * iBoot2 loads the custom kernel, which is a build of m1n1
 * m1n1 stage 1 runs and
-  * Parses the Apple Device Tree (ADT) to obtain machine-specific information
-  * Performs additional hardware initialization (machine-specific)
+    * Parses the Apple Device Tree (ADT) to obtain machine-specific information
+    * Performs additional hardware initialization (machine-specific)
     * E.g. memory controller details, USB-C charging, HDMI display (on Mac Mini)
-  * Displays its logo on the screen (replacing the Apple logo)
-  * Loads its embedded configuration, which directs it to chainload from a FAT32 partition
-  * Initializes the NVMe controller
-  * Searches the GPT for the partition configured for chainloading, by PARTUUID.
-  * Mounts the partition as FAT32
-  * Searches for the filename configured for chainloading and loads it
-  * Shuts down the NVMe controller
-  * Chainloads to the loaded instance of m1n1 (as a raw binary blob), including forwarding any /chosen property configurations found in its embedded config.
+    * Displays its logo on the screen (replacing the Apple logo)
+    * Loads its embedded configuration, which directs it to chainload from a FAT32 partition
+    * Initializes the NVMe controller
+    * Searches the GPT for the partition configured for chainloading, by PARTUUID.
+    * Mounts the partition as FAT32
+    * Searches for the filename configured for chainloading and loads it
+    * Shuts down the NVMe controller
+    * Chainloads to the loaded instance of m1n1 (as a raw binary blob), including forwarding any /chosen property configurations found in its embedded config.
 * m1n1 stage 2 runs and
-  * Parses the Apple Device Tree (ADT) to obtain machine-specific information
-  * Re-initializes hardware, including anything stage 1 did not do (e.g. due to it being older)
-  * Searches its embedded payloads to find Device Trees and an embedded U-Boot image
-  * Selects an embedded Device Tree (FDT) appropriate for the current platform
-  * Personalizes the FDT with dynamic information transplanted from the ADT
-  * Performs any other hardware initialization to prepare the machine environment for Linux
-  * Loads the embedded U-Boot image and jumps to it
+    * Parses the Apple Device Tree (ADT) to obtain machine-specific information
+    * Re-initializes hardware, including anything stage 1 did not do (e.g. due to it being older)
+    * Searches its embedded payloads to find Device Trees and an embedded U-Boot image
+    * Selects an embedded Device Tree (FDT) appropriate for the current platform
+    * Personalizes the FDT with dynamic information transplanted from the ADT
+    * Performs any other hardware initialization to prepare the machine environment for Linux
+    * Loads the embedded U-Boot image and jumps to it
 * U-Boot runs and
-  * Parses the FDT
-  * Initializes the keyboard for input
-  * Initializes NVMe
-  * Prompts the user to break into a shell if requested
-  * Mounts the appropriate EFI System Partition
-  * Brings up basic EFI services
-  * Locates the default EFI bootloader in the ESP, e.g. GRUB, and boots it
+    * Parses the FDT
+    * Initializes the keyboard for input
+    * Initializes NVMe
+    * Prompts the user to break into a shell if requested
+    * Mounts the appropriate EFI System Partition
+    * Brings up basic EFI services
+    * Locates the default EFI bootloader in the ESP, e.g. GRUB, and boots it
 * GRUB runs and
-  * Uses EFI disk access services to mount the /boot filesystem (could be the ESP itself, could be something else)
-  * Locates its configuration file and additional components
-  * Presents the user with a boot menu, using EFI console/input services
-  * Loads the kernel and initramfs from /boot
-  * Jumps to the kernel
+    * Uses EFI disk access services to mount the /boot filesystem (could be the ESP itself, could be something else)
+    * Locates its configuration file and additional components
+    * Presents the user with a boot menu, using EFI console/input services
+    * Loads the kernel and initramfs from /boot
+    * Jumps to the kernel
 * The Linux kernel boots as it would on any other UEFI+FDT platform
 
 This boot chain is designed to progressively bring the system closer to a "typical" ARM64 machine, so that subsequent layers have to worry less about the particulars of Apple Silicon machines.
@@ -122,11 +122,11 @@ Future installation options could include:
 
 * USB netinstall images/bundles, setting up the installer as "bootable install media". This can be set up by just unpacking some files to a FAT32 partition on a USB drive, so it is easy for users to use, and will allow them to select the installer from the boot picker ([more info](introduction.md#boot-picker) on how this magic works). It would still fetch the OS to be installed from the internet.
 * USB local install images/bundles, which can also serve as UEFI install media for later or for other platforms. This will install the target OS from USB, but will still hit Apple's CDN for the Apple components, making the install not truly offline.
-  * An option for end users to add the Apple components, e.g. by running a script from the USB drive, making it fully offline
-  * An option for end users to add the Apple components when creating the USB installer, e.g. by running a script that downloads them and provisions the installer in one go, instead of a pre-baked image.
+    * An option for end users to add the Apple components, e.g. by running a script from the USB drive, making it fully offline
+    * An option for end users to add the Apple components when creating the USB installer, e.g. by running a script that downloads them and provisions the installer in one go, instead of a pre-baked image.
     * We want to add this as a feature to the online installer, e.g. "create a bootable USB installer" instead of actually doing the install.
 * Packaging as a macOS app (this would already be part of USB install modes anyway)
-  * Though this runs into GateKeeper issues with unsigned downloads if downloaded "normally" by users from a browser...
+    * Though this runs into GateKeeper issues with unsigned downloads if downloaded "normally" by users from a browser...
   
 ## Firmware provisioning
 
@@ -150,8 +150,8 @@ The stub OS installer collects available platform firmware from the IPSW, and pa
 
 * firmware.tar: Tarball containing the firmware, in a structure compatible with the `/lib/firmware` hierarchy (e.g. `brcm/foo.bin`).
 * manifest.txt: A text file containing lines of the following two forms:
-  * `LINK <src> <tgt>` : hard link
-  * `FILE <name> SHA256 <hash>`: file
+    * `LINK <src> <tgt>` : hard link
+    * `FILE <name> SHA256 <hash>`: file
 
 These files are then placed in the EFI system partition under the `vendorfw` directory.
 
