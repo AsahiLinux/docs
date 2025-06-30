@@ -30,6 +30,7 @@ nav:
     - Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>: https://docs.fedoraproject.org/en-US/fedora-asahi-remix/
     - Broken Software: sw/broken-software.md
     - Partitioning Cheatsheet: sw/partitioning-cheatsheet.md
+    - Windows 11 VM setup guide: sw/windows-11-vm.md
   - For developers:
     - Yaks in need of shaving (HELP WANTED!): project/help-wanted.md
     - Tethered Boot Setup (For Developers): sw/tethered-boot.md
