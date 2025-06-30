@@ -30,14 +30,14 @@ cp ../linux/arch/arm64/boot/dts/apple/t8103-j274.dtb t8103-j274.dtb
 ### keyboard  + nvme working 
 * Snapshot of [rev a2281d64fdbc](https://github.com/amworsley/AsahiLinux/tree/asahi-kbd) with config such as [this one](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/config-keyboard+nvme)
 ## Boot with your USB cables plugged in
-  * Plug your USB cables/hubs/adapters **before** booting your Mac as m1n1/linux doesn't do the USB low level PHY setup yet. Let the iBoot do this when it boots to m1n1 you installed via your [setup of boot to m1n1](../platform/dev-quickstart.md#setup)
-  * If m1n1 C code has been updated since the set up you should chain load the new .macho image
+* Plug your USB cables/hubs/adapters **before** booting your Mac as m1n1/linux doesn't do the USB low level PHY setup yet. Let the iBoot do this when it boots to m1n1 you installed via your [setup of boot to m1n1](../platform/dev-quickstart.md#setup)
+* If m1n1 C code has been updated since the set up you should chain load the new .macho image
 ```
 python3.9 proxyclient/tools/chainload.py build/m1n1.macho
 ```
 # Running Linux via USB cable
-  * Connecting [USB Type-C to Type A/C cable](../platform/dev-quickstart.md#usb-gadget-mode-using-a-standard-usb-cable) to M1 Mac provides two USB serial interfaces on the other computer![USB Type-C  to Type A cable connecting M1 MacBookAir and 2012 MacBootAir Pro](../assets/usb-setup.png)
-  * This can be connected to via the python proxy tool to boot up Linux directly or load up a macho binary like an updated m1n1 version or combined with a Linux image
+* Connecting [USB Type-C to Type A/C cable](../platform/dev-quickstart.md#usb-gadget-mode-using-a-standard-usb-cable) to M1 Mac provides two USB serial interfaces on the other computer![USB Type-C  to Type A cable connecting M1 MacBookAir and 2012 MacBootAir Pro](../assets/usb-setup.png)
+* This can be connected to via the python proxy tool to boot up Linux directly or load up a macho binary like an updated m1n1 version or combined with a Linux image
 * Get a 27Mb initrd from debian arm64 installer
 ```
 wget https://deb.debian.org/debian/dists/buster/main/installer-arm64/current/images/netboot/debian-installer/arm64/initrd.gz
@@ -66,13 +66,13 @@ find . | cpio -o -H newc | gzip -c -9 >| /pathto/initrd-new.gz
 ```
 
 ## Under Hypervisor
-  * Running Linux under m1n1 hypervisor lets you inspect the memory/stop/start and even do a stack trace
-  * Create a .macho combined image (run_guest.py only accepts .macho) 
+* Running Linux under m1n1 hypervisor lets you inspect the memory/stop/start and even do a stack trace
+* Create a .macho combined image (run_guest.py only accepts .macho)
 ```
 cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz > m1n1-payload.macho
 ```
 
- * Load it with run_guest 
+* Load it with run_guest
 ```
 python3.9 proxyclient/tools/run_guest.py -S m1n1-payload.macho
 ```
@@ -187,7 +187,7 @@ Skip: msr ACC_CFG_EL1, x1 = d
 ```
 </details>
 
-  * Once it is running use **^C** to get a debug shell 
+* Once it is running use **^C** to get a debug shell
 ```
 ...
 Skip: msr CYC_OVRD_EL1, x1 = 2000000
@@ -197,7 +197,7 @@ Skip: msr ACC_CFG_EL1, x1 = d
 Entering debug shell
 >>> 
 ```
-  * Then get a stack trace (with symbols) after loading System.map file of the kernel and setting the PAC_MASK (pointer protection mask)
+* Then get a stack trace (with symbols) after loading the `System.map` file of the kernel and setting the `PAC_MASK` (pointer protection mask)
 ```
 >>> load_system_map('../linux/System.map')
 >>> hv.pac_mask = 0xfffff00000000000
@@ -212,7 +212,7 @@ Stack trace:
  - 0xffff8000103d0c7c (arch_call_rest_init+0xc)
  - 0xffff8000103d11f0 (start_kernel+0x528)
 ```
-  * Disassemble addresses before the program counter
+* Disassemble addresses before the program counter
 ```
 >>> disassemble_at(p.hv_translate(hv.ctx.elr, True) - 32, 64)
     81f6fdc04:  d53cd042        mrs     x2, tpidr_el2
@@ -232,7 +232,7 @@ Stack trace:
     81f6fdc3c:  97fffff7        bl      81f6fdc18 <_start+0x14>
     81f6fdc40:  a8c17bfd        ldp     x29, x30, [sp], #16
 ```
-  * Dump out register %0 from the last exception to the hypervisor
+* Dump out register %0 from the last exception to the hypervisor
 ```
 >>> hv.ctx.regs[0]
 0xffff0003ccaf21e0
@@ -389,12 +389,12 @@ Still running 21
 </details>
 
 # Root filesystem options
- * [initrd + USB keyboard](linux-bringup-usb-keyboard.md#linux-usb-keyboard)
- * [USB drive boot](linux-bringup-usb.md)
- * [USB Drive to NVME partition](linux-bringup-nvme.md)
+* [initrd + USB keyboard](linux-bringup-usb-keyboard.md#linux-usb-keyboard)
+* [USB drive boot](linux-bringup-usb.md)
+* [USB Drive to NVME partition](linux-bringup-nvme.md)
 # Other features
- * [WiFi Support](linux-bringup-wifi.md)
- * [X11 Support](linux-bringup-x11.md)
+* [WiFi Support](linux-bringup-wifi.md)
+* [X11 Support](linux-bringup-x11.md)
 # Missing
- * Sound
- * Power management - do **NOT** shut the lid
+* Sound
+* Power management - do **NOT** shut the lid

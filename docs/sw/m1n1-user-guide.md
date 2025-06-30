@@ -11,10 +11,10 @@ GitHub: [AsahiLinux/m1n1](https://github.com/AsahiLinux/m1n1)
 * Initializes hardware
 * Puts up a pretty logo
 * Loads embedded (appended) payloads, which can be:
-  * Device Trees (FDTs), with automatic selection based on the platform
-  * Initramfs images (compressed CPIO archives)
-  * Kernel images in Linux ARM64 boot format (optionally compressed)
-  * Configuration statements
+    * Device Trees (FDTs), with automatic selection based on the platform
+    * Initramfs images (compressed CPIO archives)
+    * Kernel images in Linux ARM64 boot format (optionally compressed)
+    * Configuration statements
 * Chainloads another version of itself from a FAT32 partition (if configured to do so)
 
 Proxy mode enables a huge toolset of developer features, from reducing your Linux kernel test cycle to 7 seconds, to live hardware probing and experimentation, to a hypervisor capable of running macOS or Linux and tracing hardware accesses in real time while providing a virtual UART over USB. See the [m1n1 Developer Guide](m1n1-dev-guide.md) for that. This guide only describes trivial proxy use cases.

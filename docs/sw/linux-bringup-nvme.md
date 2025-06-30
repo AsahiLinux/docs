@@ -14,32 +14,32 @@ mkdir debinst
 sudo debootstrap --arch arm64 --foreign bullseye debinst http://ftp.au.debian.org/debian/
 sudo cp /usr/bin/qemu-aarch64-static debinst/usr/bin
 ```
-  * Login via a chroot to a bash prompt:`sudo LANG=C.UTF-8 chroot debinst qemu-aarch64-static /bin/bash`
-  * Then complete the 2nd stage `/debootstrap/debootstrap --second-stage`
-  * While your there install any other packages you want: `apt install file screenfetch procps`
-  * For ssh install an ssh server `apt install openssh-server`
-  * Allow root login via ssh by setting `PermitRootLogin yes` via `vi /etc/ssh/sshd_config`
-  * Most important set the root password `passwd`
+    * Login via a chroot to a bash prompt:`sudo LANG=C.UTF-8 chroot debinst qemu-aarch64-static /bin/bash`
+    * Then complete the 2nd stage `/debootstrap/debootstrap --second-stage`
+    * While your there install any other packages you want: `apt install file screenfetch procps`
+    * For ssh install an ssh server `apt install openssh-server`
+    * Allow root login via ssh by setting `PermitRootLogin yes` via `vi /etc/ssh/sshd_config`
+    * Most important set the root password `passwd`
 ### Install rootfs onto USB drive
-  * Plug in your USB drive and create a partition with fdisk (assumes drive is /dev/sdb) `sudo fdisk /dev/sdb`
-  * Format partition (assumes it's the first one) `sudo mkfs.ext4 /dev/sdb1`
-  * Mount the drive some where like /mnt/img `sudo mount /dev/sdb1 /mnt/img`
-  * Install the rootfs you created above onto the drive `sudo cp -a debinst/. /mnt/img`
-  * Unmount the drive `sudo umount /mnt/img`
+    * Plug in your USB drive and create a partition with fdisk (assumes drive is /dev/sdb) `sudo fdisk /dev/sdb`
+    * Format partition (assumes it's the first one) `sudo mkfs.ext4 /dev/sdb1`
+    * Mount the drive some where like /mnt/img `sudo mount /dev/sdb1 /mnt/img`
+    * Install the rootfs you created above onto the drive `sudo cp -a debinst/. /mnt/img`
+    * Unmount the drive `sudo umount /mnt/img`
 ### Boot with USB drive as root
-  * Back to [booting over USB cable](linux-bringup.md#running-linux-via-usb-cable)
-  * Make sure you have the latest m1n1.macho loaded `python3 proxyclient/tools/chainload.py build/m1n1.macho`
-  * Build a kernel with builtin features (check for =m and change to =y in .config)
+    * Back to [booting over USB cable](linux-bringup.md#running-linux-via-usb-cable)
+    * Make sure you have the latest m1n1.macho loaded `python3 proxyclient/tools/chainload.py build/m1n1.macho`
+    * Build a kernel with builtin features (check for =m and change to =y in .config)
     * In particular need CONFIG_EXT4_FS=y is needed to boot!
-  * Try this [Asahi linux snapshot](https://github.com/amworsley/AsahiLinux/tree/asahi-kbd) and this [config](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/config-keyboard+nvme)
-  * Then boot the gzipp'ed image with the USB drive. I had to plug the drive in the 2nd USB type-C port on the MBA (MacBook Air) through a Type-C to USB-Type A HUB. 
-  * Be-aware when I plugged in a lower speed USB device (keyboard) it reset the HUB and corrupted my USB drive. So don't use a keyboard, a Type-A to Type-C dongle worked fine
-  * Over the USB cable load the new kernel and boot with the USB drive as the root filesystem:
+    * Try this [Asahi linux snapshot](https://github.com/amworsley/AsahiLinux/tree/asahi-kbd) and this [config](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/config-keyboard+nvme)
+    * Then boot the gzipp'ed image with the USB drive. I had to plug the drive in the 2nd USB type-C port on the MBA (MacBook Air) through a Type-C to USB-Type A HUB.
+    * Be-aware when I plugged in a lower speed USB device (keyboard) it reset the HUB and corrupted my USB drive. So don't use a keyboard, a Type-A to Type-C dongle worked fine
+    * Over the USB cable load the new kernel and boot with the USB drive as the root filesystem:
 ```
 python3 proxyclient/tools/linux.py -b 'earlycon console=tty0  console=tty0 debug net.ifnames=0 rw root=/dev/sda1 rootdelay=5 rootfstype=ext4'  Image.gz t8103-j313.dtb
 ```
-  * The root filesystem is in first partition of the drive (/dev/sda1) and it's a MBA (t8103-j313.dtb)
-  * If your booting something different check the .dts file in **arch/arm64/boot/dts/apple/** by looking at the value of the **model** field
+    * The root filesystem is in first partition of the drive (/dev/sda1) and it's a MBA (t8103-j313.dtb)
+    * If your booting something different check the .dts file in **arch/arm64/boot/dts/apple/** by looking at the value of the **model** field
 ### Install rootfs in the nvme
  * Under MacOS you need to create some free space as per [Glanzmann's notes](https://tg.st/u/asahi.txt) 
  * Be very careful you know exactly what partition you specify this is just an  **example** your numbers may vary

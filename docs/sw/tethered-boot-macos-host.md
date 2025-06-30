@@ -11,10 +11,10 @@ This guide will give more details about tethered boot prerequisites setup for a 
 Host's requirements:
 
 * Any Apple computer running a decently recent MacOs version
-  * Enough disk space on the host for installing and commpiling software
-  * a freee USB port on the host
-  * a USB-A/USB-C or USB-C/USB-C cable
-  * [prerequisites installed](#installing-prerequisite-software)
+    * Enough disk space on the host for installing and commpiling software
+    * a free USB port on the host
+    * a USB-A/USB-C or USB-C/USB-C cable
+    * [prerequisites installed](#installing-prerequisite-software)
 
 Tested with:
 
