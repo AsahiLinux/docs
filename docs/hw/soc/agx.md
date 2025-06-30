@@ -68,9 +68,9 @@ Data structures: see [channels.py](https://github.com/AsahiLinux/m1n1/blob/main/
 #### CPU->GPU channels
 
 * Work Channels: four groups (0-3), each with three channels, one per GPU work type
-  * TA (Tile Accelerator; vertex processing)
-  * 3D (3D; pixel processing)
-  * CP (Compute)
+    * TA (Tile Accelerator; vertex processing)
+    * 3D (3D; pixel processing)
+    * CP (Compute)
    
   TODO: there is probably some priority scheme for work submitted to different channels.
 
@@ -79,14 +79,14 @@ Data structures: see [channels.py](https://github.com/AsahiLinux/m1n1/blob/main/
 #### GPU->CPU channels
 
 * Event: work-related event notifications
-  * Work completion flag events
+    * Work completion flag events
     * These have a 128-bit array indicating which event indices are firing
-  * Fault notifications
+    * Fault notifications
     * GPU faults seem to be quite poorly handled as a stop-the-world process; macOS actually goes off dumping GPU MMIO registers directly, and the firmware seems to be quite clueless as to what to do.
 * Statistics messages
-  * We ignore these. The firmware will complain once if the buffer overflows, but it's harmless.
+    * We ignore these. The firmware will complain once if the buffer overflows, but it's harmless.
 * Firmware syslogs
-  * This one is weird in that there are multiple sub-channels for some reason, with control structures laid out contiguously.
+    * This one is weird in that there are multiple sub-channels for some reason, with control structures laid out contiguously.
 * An unknown channel (tracing?)
 
 ### GPU contexts
@@ -181,14 +181,14 @@ Note: this is all summarized and glosses over tons of unknown/fixed/magic number
 * Timestamp 3 ptr
 * Unknown buffer 2 (empty)
 * Embedded structures:
-  * Tiler parameters (tile counts/etc)
-  * TA work struct 2
+    * Tiler parameters (tile counts/etc)
+    * TA work struct 2
     * TVB tilemap ptr
     * TVB list ptr
     * Three small buffers passed from userspace (alyssa calls these "deflake")
     * Command encoder ptr (i.e. actual gfx pipeline to run, from userspace)
     * Pipeline window base (4GiB window into VAs used for 32-bit shader pointers)
-  * TA work struct 3
+    * TA work struct 3
     * One of the deflake ptrs
     * Encoder ID (unique ID, GPU likely does not care)
     * "Unknown buffer" (the one with incrementing numbers, from userspace)
@@ -270,7 +270,7 @@ This blocks 3D until TA is done. Unclear what black magic makes partial renders 
 * Timestamp 2 ptr
 * Timestamp 3 ptr
 * Embedded structures:
-  * 3D work struct 1
+    * 3D work struct 1
     * Some floats?
     * Depth clear value
     * Stencil clear value

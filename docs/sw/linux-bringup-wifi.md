@@ -24,7 +24,7 @@ title: Linux Bringup: WiFi
  * Now after the linux kernel has booted you should be able to see a WiFi device (wlan0) via the usual tools 
 `ip a l`
  * You can start networking the usual Linux tools e.g.
-  * Edit the configuration file:
+    * Edit the configuration file:
 ```
 auto wlan0
 iface wlan0 inet dhcp

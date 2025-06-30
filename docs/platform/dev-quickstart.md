@@ -319,7 +319,7 @@ $ M1N1DEVICE=/dev/ttyACM0
 $ export M1N1DEVICE
 $ python3 proxyclient/tools/shell.py
 ``` 
-  * Can start up a terminal program on the 2nd tty which linux console output can be made to go to 
+    * Can start up a terminal program on the 2nd tty which linux console output can be made to go to
 ```
 picocom /dev/ttyACM1
 ```

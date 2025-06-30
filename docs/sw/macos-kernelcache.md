@@ -26,8 +26,8 @@ Again, **only proceed if you have talked to us first about this**.
 
 * From suggestion by **davidrysk** there are some MacOS kernel images already available at **/System/Library/Kernels/kernel.release.t8020**
 * Below shows dumping the macho header with Marcan's script [machodump.py](https://gist.github.com/marcan/e1808a2f4a5e1fc562357550a770afb1) in order to get the offsets to disassemble the code:
-  * Note: This requires the **construct** python package but the debian buster packages didn't work (python 3 or 2) or even a github version
-  * I had to use the pypi install via pip3:
+    * Note: This requires the **construct** python package but the debian buster packages didn't work (python 3 or 2) or even a github version
+    * I had to use the pypi install via pip3:
 ```
  apt install python3-pip
  pip3 install construct

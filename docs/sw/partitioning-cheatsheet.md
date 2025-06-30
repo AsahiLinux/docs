@@ -31,7 +31,7 @@ If you broke your OS recovery, you might find yourself in a boot loop, even as y
 ## Physical disk layout on Apple Silicon
 
 * The NVMe drive has namespaces. You only care about the primary one, that's `disk0` on macOS or `nvme0n1` on Linux.
-  * The others are used for kernel panic logs and stuff like that. That's pretty low level stuff you don't have to care about. This is an NVMe thing, like "low-level partitions". Just don't think too much about it.
+    * The others are used for kernel panic logs and stuff like that. That's pretty low level stuff you don't have to care about. This is an NVMe thing, like "low-level partitions". Just don't think too much about it.
 * The primary namespace is formatted as a GPT partition table, same as on most Linux/Windows/Intel Mac systems these days
 * The GPT contains partitions, which can be traditional ones (FAT32, HFS+, Linux...) or APFS containers
 * An APFS container contains multiple logical volumes sharing disk space
@@ -56,11 +56,11 @@ For Asahi Linux, we do not install alongside macOS in the same container, becaus
 So the installer will (for a normal Asahi Linux = Arch Linux ARM install) create three partitions:
 
 * A 2.5GB APFS container, containing the bits of iBoot/macOS we need to boot the machine including a copy of recoveryOS
-  * m1n1 stage 1 is installed here
+    * m1n1 stage 1 is installed here
 * A 500MB EFI System Partition
-  * m1n1 stage 2, U-Boot, and the GRUB core image live here
+    * m1n1 stage 2, U-Boot, and the GRUB core image live here
 * A Linux ext4 partition filling up the rest of the space
-  * GRUB modules and the Linux kernel/initramfs live here
+    * GRUB modules and the Linux kernel/initramfs live here
 
 To uninstall, you need to delete all three.
 
@@ -91,18 +91,18 @@ Partitions in system disk (disk0):
 This shows:
 
 * One APFS container (380GB) containing 6 volumes (not listed) which comprise one macOS 12.3 install ("Macintosh HD"). Note: "Macintosh HD" is actually the name of the System subvolume, and this is how macOS itself displays volumes.
-  * If you had another macOS install sharing space in the same container, it would be listed as another `OS:` line under the same partition.
-  * disk3s1 is the *volume* for this macOS system, which means `disk3` is the virtual disk that represents this APFS container partition
-  * The UUID is the Volume Group ID of this OS, which is the primary identifier for it (e.g. how the machine finds it to boot it, how you select it in `bputil` prompts, the associated subdirectory name within the Preboot and Recovery subvolumes, and more)
+    * If you had another macOS install sharing space in the same container, it would be listed as another `OS:` line under the same partition.
+    * disk3s1 is the *volume* for this macOS system, which means `disk3` is the virtual disk that represents this APFS container partition
+    * The UUID is the Volume Group ID of this OS, which is the primary identifier for it (e.g. how the machine finds it to boot it, how you select it in `bputil` prompts, the associated subdirectory name within the Preboot and Recovery subvolumes, and more)
 * One APFS container (2.5GB) containing 4 volumes which is actually an Asahi Linux bootloader stub, using macOS 12.3 as its base version, named "Asahi Linux"
-  * If the install were complete, this would show your m1n1 stage 1 version. However, because it is not, it is listed as `incomplete install` until you reboot into it holding down the power button and complete the second step of installation.
-  * disk4s2 is the *volume* for this stub's system, which means `disk4` is the virtual disk that represents this APFS container partition
+    * If the install were complete, this would show your m1n1 stage 1 version. However, because it is not, it is listed as `incomplete install` until you reboot into it holding down the power button and complete the second step of installation.
+    * disk4s2 is the *volume* for this stub's system, which means `disk4` is the virtual disk that represents this APFS container partition
 * One EFI system partition (FAT32)
 * One Linux Filesystem partition (ext4 in this case, but the specific FS isn't identified/shown)
 * Some free space (unpartitioned) - note that the installer represents this as its own "partition"
-  * `diskutil` instead likes to refer to free space by the partition identifier of the partition right before it in physical disk order, which is needless to say quite confusing and error-prone. We figure giving it its own number makes more sense.
+    * `diskutil` instead likes to refer to free space by the partition identifier of the partition right before it in physical disk order, which is needless to say quite confusing and error-prone. We figure giving it its own number makes more sense.
 * The System Recovery partition (always exists last), which contains 2 APFS volumes and has one instance of recoveryOS installed (version 12.3).
-  * You don't want to touch this, but we show it since knowing what version of recoveryOS is present is useful. There could be a fallback version too.
+    * You don't want to touch this, but we show it since knowing what version of recoveryOS is present is useful. There could be a fallback version too.
 
 Note how it tells you that you are currently booted into the *Macintosh HD* OS (`[B ]`), but that the default boot OS is set to Asahi Linux (`[ *]`). If you were to run this from recoveryOS, it'd be shown as a `[R*]` (running the recoveryOS that is part of your default boot OS), unless you ended up falling back to System Recovery, in which case the boot mark would be in the last line, starting `[R ] recoveryOS...`.
 
@@ -149,18 +149,18 @@ This shows the physical partitions in the order they are present on disk0 first:
 
 * `disk0` (shown as type "GUID_partition_scheme") actually represents the whole disk (500GB)
 * `disk0s1` is the iBoot System Container (type `Apple_APFS_ISC`), not shown in the Installer output
-  * This is actually an APFS container with more subvolumes, but `diskutil` itself hides those details from you too!
-  * This stores a bunch of system-critical information, you don't want to mess with it
+    * This is actually an APFS container with more subvolumes, but `diskutil` itself hides those details from you too!
+    * This stores a bunch of system-critical information, you don't want to mess with it
 * `disk0s2` is the first APFS container, which holds the "Macintosh HD" macOS volume
-  * Note how it says "Container disk3" to indicate this is shown as the virtual/synthesized `disk3` disk.
+    * Note how it says "Container disk3" to indicate this is shown as the virtual/synthesized `disk3` disk.
 * `disk0s5` is the Asahi Linux bootloader stub
-  * The partition index is out of order! This is logically after `disk0s2` and also in that position in the GPT. These partition numbers don't mean anything, it's whatever macOS feels like assigning that day.
-  * This is virtual disk `disk4`.
+    * The partition index is out of order! This is logically after `disk0s2` and also in that position in the GPT. These partition numbers don't mean anything, it's whatever macOS feels like assigning that day.
+    * This is virtual disk `disk4`.
 * `disk0s4` is the FAT32 EFI System Partition (displayed as type `EFI`, and with name `EFI - ASAHI` because it gets truncated for these)
 * `disk0s7` is the Linux root partition (displayed as type `Linux filesystem`)
 * Then there's some free space
 * `disk0s3` is the System Recovery partition (type `Apple_APFS_Recovery`)
-  * Really, don't mess with this. It is the only way to recover locally if your OS is broken.
+    * Really, don't mess with this. It is the only way to recover locally if your OS is broken.
 
 After this, you can see the two APFS containers broken out into volumes, each as their own virtual disk: `disk3` and `disk4`. In fact, there are two more: `disk1` is the iBoot System Container (backed by `disk0s1`) and `disk2` is the System Recovery (backed by `disk0s3`), but these are hidden from diskutil output. Remember, the numbering may/will be different for you!
 
