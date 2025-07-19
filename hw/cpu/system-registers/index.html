@@ -1,0 +1,2018 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/hw/cpu/system-registers/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>System Registers - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="System Registers - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/hw/cpu/system-registers.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/hw/cpu/system-registers/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="System Registers - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/hw/cpu/system-registers.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#glossary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Registers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soc/soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soc/display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/partitioning-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>System Registers</h1>
+
+<p>See <a href="../system-register-dumps/">System Register Dumps</a> for exhaustive enumeration and research.</p>
+<h5 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h5>
+<p>Some of these are guesses</p>
+<ul>
+<li>ACC: Apple Core Cluster</li>
+<li>HID: Hardware Implementation Defined Register</li>
+<li>EHID: Hardware Implementation Defined Register (e-core)</li>
+<li>IPI: Inter-processor Interrupt</li>
+</ul>
+<h5 id="register-definitions">Register definitions<a class="headerlink" href="#register-definitions" title="Permanent link">&para;</a></h5>
+<p>Using Linux format:</p>
+<pre><code class="language-c">
+/* These make sense... */
+#define SYS_APL_HID0_EL1            sys_reg(3, 0, 15, 0, 0)
+#define SYS_APL_EHID0_EL1           sys_reg(3, 0, 15, 0, 1)
+#define SYS_APL_HID1_EL1            sys_reg(3, 0, 15, 1, 0)
+#define SYS_APL_EHID1_EL1           sys_reg(3, 0, 15, 1, 1)
+#define SYS_APL_HID2_EL1            sys_reg(3, 0, 15, 2, 0)
+#define SYS_APL_EHID2_EL1           sys_reg(3, 0, 15, 2, 1)
+#define SYS_APL_HID3_EL1            sys_reg(3, 0, 15, 3, 0)
+#define SYS_APL_EHID3_EL1           sys_reg(3, 0, 15, 3, 1)
+#define SYS_APL_HID4_EL1            sys_reg(3, 0, 15, 4, 0)
+#define SYS_APL_EHID4_EL1           sys_reg(3, 0, 15, 4, 1)
+#define SYS_APL_HID5_EL1            sys_reg(3, 0, 15, 5, 0)
+#define SYS_APL_EHID5_EL1           sys_reg(3, 0, 15, 5, 1)
+#define SYS_APL_HID6_EL1            sys_reg(3, 0, 15, 6, 0)
+#define SYS_APL_HID7_EL1            sys_reg(3, 0, 15, 7, 0)
+#define SYS_APL_EHID7_EL1           sys_reg(3, 0, 15, 7, 1)
+#define SYS_APL_HID8_EL1            sys_reg(3, 0, 15, 8, 0)
+#define SYS_APL_HID9_EL1            sys_reg(3, 0, 15, 9, 0)
+#define SYS_APL_EHID9_EL1           sys_reg(3, 0, 15, 9, 1)
+#define SYS_APL_HID10_EL1           sys_reg(3, 0, 15, 10, 0)
+#define SYS_APL_EHID10_EL1          sys_reg(3, 0, 15, 10, 1)
+#define SYS_APL_HID11_EL1           sys_reg(3, 0, 15, 11, 0)
+#define SYS_APL_EHID11_EL1          sys_reg(3, 0, 15, 11, 1)
+
+/* Uh oh */
+#define SYS_APL_HID12_EL?           sys_reg(3, 0, 15, 12, 0)
+#define SYS_APL_HID13_EL?           sys_reg(3, 0, 15, 14, 0)
+#define SYS_APL_HID14_EL?           sys_reg(3, 0, 15, 15, 0)
+
+/* All sanity went out the window here */
+#define SYS_APL_HID16_EL?           sys_reg(3, 0, 15, 15, 2)
+#define SYS_APL_HID17_EL1           sys_reg(3, 0, 15, 15, 5)
+#define SYS_APL_HID18_EL?           sys_reg(3, 0, 15, 11, 2)
+#define SYS_APL_EHID20_EL1          sys_reg(3, 0, 15, 1, 2)
+#define SYS_APL_HID21_EL?           sys_reg(3, 0, 15, 1, 3)
+
+#define SYS_APL_PMCR0_EL1           sys_reg(3, 1, 15, 0, 0)
+#define SYS_APL_PMCR1_EL1           sys_reg(3, 1, 15, 1, 0)
+#define SYS_APL_PMCR2_EL1           sys_reg(3, 1, 15, 2, 0)
+#define SYS_APL_PMCR3_EL1           sys_reg(3, 1, 15, 3, 0)
+#define SYS_APL_PMCR4_EL1           sys_reg(3, 1, 15, 4, 0)
+#define SYS_APL_PMESR0_EL1          sys_reg(3, 1, 15, 5, 0)
+#define SYS_APL_PMESR1_EL1          sys_reg(3, 1, 15, 6, 0)
+#define SYS_APL_PMSR_EL1            sys_reg(3, 1, 15, 13, 0)
+
+#define SYS_APL_PMC0_EL1            sys_reg(3, 2, 15, 0, 0)
+#define SYS_APL_PMC1_EL1            sys_reg(3, 2, 15, 1, 0)
+#define SYS_APL_PMC2_EL1            sys_reg(3, 2, 15, 2, 0)
+#define SYS_APL_PMC3_EL1            sys_reg(3, 2, 15, 3, 0)
+#define SYS_APL_PMC4_EL1            sys_reg(3, 2, 15, 4, 0)
+#define SYS_APL_PMC5_EL1            sys_reg(3, 2, 15, 5, 0)
+#define SYS_APL_PMC6_EL1            sys_reg(3, 2, 15, 6, 0)
+#define SYS_APL_PMC7_EL1            sys_reg(3, 2, 15, 7, 0)
+#define SYS_APL_PMC8_EL1            sys_reg(3, 2, 15, 9, 0)
+#define SYS_APL_PMC9_EL1            sys_reg(3, 2, 15, 10, 0)
+
+#define SYS_APL_LSU_ERR_STS_EL1     sys_reg(3, 3, 15, 0, 0)
+#define SYS_APL_E_LSU_ERR_STS_EL1   sys_reg(3, 3, 15, 2, 0)
+#define SYS_APL_LSU_ERR_CTL_EL1     sys_reg(3, 3, 15, 1, 0)
+
+#define SYS_APL_L2C_ERR_STS_EL1     sys_reg(3, 3, 15, 8, 0)
+#define SYS_APL_L2C_ERR_ADR_EL1     sys_reg(3, 3, 15, 9, 0)
+#define SYS_APL_L2C_ERR_INF_EL1     sys_reg(3, 3, 15, 10, 0)
+
+#define SYS_APL_FED_ERR_STS_EL1     sys_reg(3, 4, 15, 0, 0)
+#define SYS_APL_E_FED_ERR_STS_EL1   sys_reg(3, 4, 15, 0, 2)
+
+#define SYS_APL_APCTL_EL1           sys_reg(3, 4, 15, 0, 4)
+#define SYS_APL_KERNELKEYLO_EL1     sys_reg(3, 4, 15, 1, 0)
+#define SYS_APL_KERNELKEYHI_EL1     sys_reg(3, 4, 15, 1, 1)
+
+#define SYS_APL_VMSA_LOCK_EL1       sys_reg(3, 4, 15, 1, 2)
+
+#define SYS_APL_APRR_EL0            sys_reg(3, 4, 15, 2, 0)
+#define SYS_APL_APRR_EL1            sys_reg(3, 4, 15, 2, 1)
+
+#define SYS_APL_CTRR_LOCK_EL1       sys_reg(3, 4, 15, 2, 2)
+#define SYS_APL_CTRR_A_LWR_EL1      sys_reg(3, 4, 15, 2, 3)
+#define SYS_APL_CTRR_A_UPR_EL1      sys_reg(3, 4, 15, 2, 4)
+#define SYS_APL_CTRR_CTL_EL1        sys_reg(3, 4, 15, 2, 5)
+
+#define SYS_APL_APRR_JIT_ENABLE_EL2 sys_reg(3, 4, 15, 2, 6)
+#define SYS_APL_APRR_JIT_MASK_EL2   sys_reg(3, 4, 15, 2, 7)
+
+#define SYS_APL_s3_4_c15_c5_0_EL1   sys_reg(3, 4, 15, 5, 0)
+
+#define SYS_APL_CTRR_LOCK_EL2       sys_reg(3, 4, 15, 11, 5)
+#define SYS_APL_CTRR_A_LWR_EL2      sys_reg(3, 4, 15, 11, 0)
+#define SYS_APL_CTRR_A_UPR_EL2      sys_reg(3, 4, 15, 11, 1)
+#define SYS_APL_CTRR_CTL_EL2        sys_reg(3, 4, 15, 11, 4)
+
+#define SYS_APL_IPI_RR_LOCAL_EL1    sys_reg(3, 5, 15, 0, 0)
+#define SYS_APL_IPI_RR_GLOBAL_EL1   sys_reg(3, 5, 15, 0, 1)
+
+#define SYS_APL_DPC_ERR_STS_EL1     sys_reg(3, 5, 15, 0, 5)
+
+#define SYS_APL_IPI_SR_EL1          sys_reg(3, 5, 15, 1, 1)
+
+#define SYS_APL_VM_TMR_LR_EL2       sys_reg(3, 5, 15, 1, 2)
+#define SYS_APL_VM_TMR_FIQ_ENA_EL2  sys_reg(3, 5, 15, 1, 3)
+
+#define SYS_APL_IPI_CR_EL1          sys_reg(3, 5, 15, 3, 1)
+
+#define SYS_APL_ACC_CFG_EL1         sys_reg(3, 5, 15, 4, 0)
+#define SYS_APL_CYC_OVRD_EL1        sys_reg(3, 5, 15, 5, 0)
+#define SYS_APL_ACC_OVRD_EL1        sys_reg(3, 5, 15, 6, 0)
+#define SYS_APL_ACC_EBLK_OVRD_EL?   sys_reg(3, 5, 15, 6, 1)
+
+#define SYS_APL_MMU_ERR_STS_EL1     sys_reg(3, 6, 15, 0, 0)
+
+#define SYS_APL_E_MMU_ERR_STS_EL1   sys_reg(3, 6, 15, 2, 0)
+
+#define SYS_APL_AFPCR_EL0           sys_reg(3, 6, 15, 2, 5)
+
+#define SYS_APL_APSTS_EL1           sys_reg(3, 6, 15, 12, 4)
+
+#define SYS_APL_UPMCR0_EL1          sys_reg(3, 7, 15, 0, 4)
+#define SYS_APL_UPMESR0_EL1         sys_reg(3, 7, 15, 1, 4)
+#define SYS_APL_UPMECM0_EL1         sys_reg(3, 7, 15, 3, 4)
+#define SYS_APL_UPMECM1_EL1         sys_reg(3, 7, 15, 4, 4)
+#define SYS_APL_UPMPCM_EL1          sys_reg(3, 7, 15, 5, 4)
+#define SYS_APL_UPMSR_EL1           sys_reg(3, 7, 15, 6, 4)
+#define SYS_APL_UPMECM2_EL1         sys_reg(3, 7, 15, 8, 5)
+#define SYS_APL_UPMECM3_EL1         sys_reg(3, 7, 15, 9, 5)
+#define SYS_APL_UPMESR1_EL1         sys_reg(3, 7, 15, 11, 5)
+
+/* Note: out of order wrt above */
+#define SYS_APL_UPMC0_EL1           sys_reg(3, 7, 15, 7, 4)
+#define SYS_APL_UPMC1_EL1           sys_reg(3, 7, 15, 8, 4)
+#define SYS_APL_UPMC2_EL1           sys_reg(3, 7, 15, 9, 4)
+#define SYS_APL_UPMC3_EL1           sys_reg(3, 7, 15, 10, 4)
+#define SYS_APL_UPMC4_EL1           sys_reg(3, 7, 15, 11, 4)
+#define SYS_APL_UPMC5_EL1           sys_reg(3, 7, 15, 12, 4)
+#define SYS_APL_UPMC6_EL1           sys_reg(3, 7, 15, 13, 4)
+#define SYS_APL_UPMC7_EL1           sys_reg(3, 7, 15, 14, 4)
+#define SYS_APL_UPMC8_EL1           sys_reg(3, 7, 15, 0, 5)
+#define SYS_APL_UPMC9_EL1           sys_reg(3, 7, 15, 1, 5)
+#define SYS_APL_UPMC10_EL1          sys_reg(3, 7, 15, 2, 5)
+#define SYS_APL_UPMC11_EL1          sys_reg(3, 7, 15, 3, 5)
+#define SYS_APL_UPMC12_EL1          sys_reg(3, 7, 15, 4, 5)
+#define SYS_APL_UPMC13_EL1          sys_reg(3, 7, 15, 5, 5)
+#define SYS_APL_UPMC14_EL1          sys_reg(3, 7, 15, 6, 5)
+#define SYS_APL_UPMC15_EL1          sys_reg(3, 7, 15, 7, 5)
+</code></pre>
+<h6 id="hid-registers">HID registers<a class="headerlink" href="#hid-registers" title="Permanent link">&para;</a></h6>
+<p>This naming convention most likely comes from PowerPC. A lot of chicken bits
+seem to be located here.</p>
+<p>These are mostly chicken bits to disable CPU features, and likely many only apply only to certain CPU generations. However, their definitions are global.</p>
+<h6 id="sys_apl_hid0_el1">SYS_APL_HID0_EL1<a class="headerlink" href="#sys_apl_hid0_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[20] Loop Buffer Disable</li>
+<li>[21] AMX Cache Fusion Disable</li>
+<li>[25] IC Prefetch Limit One "Brn"</li>
+<li>[28] Fetch Width Disable</li>
+<li>[33] PMULL Fuse Disable</li>
+<li>[36] Cache Fusion Disable</li>
+<li>[45] Same Pg (page?) Power Optimization</li>
+<li>[62:60] Instruction Cache Prefetch Depth</li>
+</ul>
+<h6 id="sys_apl_ehid0_el1">SYS_APL_EHID0_EL1<a class="headerlink" href="#sys_apl_ehid0_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[45] nfpRetFwdDisb</li>
+</ul>
+<h6 id="sys_apl_hid1_el1">SYS_APL_HID1_EL1<a class="headerlink" href="#sys_apl_hid1_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[14] Disable CMP-Branch Fusion</li>
+<li>[15] ForceMextL3ClkOn</li>
+<li>[23] rccForceAllIexL3ClksOn</li>
+<li>[24] rccDisStallInactiveIexCtl</li>
+<li>[25] disLspFlushWithContextSwitch</li>
+<li>[44] Disable AES Fusion across groups</li>
+<li>[49] Disable MSR Speculation DAIF</li>
+<li>[54] Trap SMC</li>
+<li>[58] enMDSBStallPipeLineECO</li>
+<li>[60] Enable Branch Kill Limit / SpareBit6</li>
+</ul>
+<h6 id="sys_apl_ehid1_el1">SYS_APL_EHID1_EL1<a class="headerlink" href="#sys_apl_ehid1_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[30] Disable MSR Speculation DAIF</li>
+</ul>
+<h6 id="sys_apl_hid2_el1">SYS_APL_HID2_EL1<a class="headerlink" href="#sys_apl_hid2_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[13] Disable MMU MTLB Prefetch</li>
+<li>[17] Force Purge MTB</li>
+</ul>
+<h6 id="sys_apl_ehid2_el1">SYS_APL_EHID2_EL1<a class="headerlink" href="#sys_apl_ehid2_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[17] Force Purge MTB</li>
+</ul>
+<h6 id="sys_apl_hid3_el1">SYS_APL_HID3_EL1<a class="headerlink" href="#sys_apl_hid3_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[2] Disable Color Optimization</li>
+<li>[25] Disable DC ZVA Command Only</li>
+<li>[44] Disable Arbiter Fix BIF CRD</li>
+<li>[54] Disable Xmon Snp Evict Trigger L2 Starvation Mode</li>
+<li>[63] Dev Pcie Throttle Enable</li>
+</ul>
+<h6 id="sys_apl_ehid3_el1">SYS_APL_EHID3_EL1<a class="headerlink" href="#sys_apl_ehid3_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[2] Disable Color Optimization</li>
+<li>[25] Disable DC ZVA Command Only</li>
+</ul>
+<h6 id="sys_apl_hid4_el1">SYS_APL_HID4_EL1<a class="headerlink" href="#sys_apl_hid4_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[1] Disable STNT Widget</li>
+<li>[9] Disable Speculative LS Redirect</li>
+<li>[11] Disable DC MVA Ops</li>
+<li>[33] Disable Speculative Lnch Read</li>
+<li>[39] Force Ns Ord Ld Req No Older Ld (Non-speculative Ordered Load Requires No Older Load?)</li>
+<li>[41:40] Cnf Counter Threshold</li>
+<li>[44] Disable DC SW L2 Ops</li>
+<li>[49] Enable Lfsr Stall Load Pipe 2 Issue</li>
+<li>[53] Enable Lfsr Stall Stq Replay</li>
+</ul>
+<h6 id="sys_apl_hid5_el1">SYS_APL_HID5_EL1<a class="headerlink" href="#sys_apl_hid5_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[15:14] Crd Edb Snp Rsvd</li>
+<li>[44] Disable HWP Load</li>
+<li>[45] Disable HWP Store</li>
+<li>[54] Enable Dn FIFO Read Stall</li>
+<li>[57] Disable Full Line Write</li>
+<li>[61] Disable Fill 2C Merge</li>
+</ul>
+<h6 id="sys_apl_ehid5_el1">SYS_APL_EHID5_EL1<a class="headerlink" href="#sys_apl_ehid5_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[35] Disable Fill Bypass</li>
+</ul>
+<h6 id="sys_apl_hid6_el1">SYS_APL_HID6_EL1<a class="headerlink" href="#sys_apl_hid6_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[9:5] Up Crd Tkn Init C2</li>
+<li>[55] Disable ClkDiv Gating</li>
+</ul>
+<h6 id="sys_apl_hid7_el1">SYS_APL_HID7_EL1<a class="headerlink" href="#sys_apl_hid7_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[7] Disable Cross Pick 2</li>
+<li>[10] Disable Nex Fast FMUL</li>
+<li>[16] Force Non Speculative If Spec Flush Ptr Invalid And MP Valid</li>
+<li>[20] Force Non Speculative If Stepping</li>
+<li>[25:24] Force Non Speculative Target Timer Sel</li>
+</ul>
+<h6 id="sys_apl_hid8_el1">SYS_APL_HID8_EL1<a class="headerlink" href="#sys_apl_hid8_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[7:4] DataSetID0</li>
+<li>[11:8] DataSetID1</li>
+<li>[35] Wke Force Strict Order</li>
+<li>[59:56] DataSetID2</li>
+<li>[63:60] DataSetID3</li>
+</ul>
+<h6 id="sys_apl_hid9_el1">SYS_APL_HID9_EL1<a class="headerlink" href="#sys_apl_hid9_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[16] TSO Enable</li>
+<li>[26] TSO Allow DC ZVA WC</li>
+<li>[29] TSO Serialize VLD Microops</li>
+<li>[48] EnableFixBug51667805</li>
+<li>[49] EnableFixBug51667717</li>
+<li>[50] EnableFixBug57817908</li>
+<li>[52] Disable STNT (Store Non-Temporal?) Widget For Unaligned</li>
+<li>[53] EnableFixBug58566122</li>
+<li>[54] EnableFixBug47221499</li>
+<li>[55] HidEnFix55719865</li>
+</ul>
+<h6 id="sys_apl_ehid9_el1">SYS_APL_EHID9_EL1<a class="headerlink" href="#sys_apl_ehid9_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[5] Dev Throttle 2 Enable</li>
+</ul>
+<h6 id="sys_apl_hid10_el1">SYS_APL_HID10_EL1<a class="headerlink" href="#sys_apl_hid10_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[0] Disable Hwp Gups</li>
+</ul>
+<h6 id="sys_apl_ehid10_el1">SYS_APL_EHID10_EL1<a class="headerlink" href="#sys_apl_ehid10_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[19] RCC Disable Power Save Prf (performance?) Clock Off</li>
+<li>[32] Force Wait State Drain UC</li>
+<li>[49] Disable ZVA Temporal TSO</li>
+</ul>
+<h6 id="sys_apl_hid11_el1">SYS_APL_HID11_EL1<a class="headerlink" href="#sys_apl_hid11_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[1] Disable X64 NT Lnch Optimization</li>
+<li>[7] Disable Fill C1 Bub(ble?) Optimization</li>
+<li>[15] HID Enable Fix UC 55719865</li>
+<li>[23] Disable Fast Drain Optimization</li>
+<li>[59] Disable LDNT (Load Non-Temporal?) Widget</li>
+</ul>
+<h6 id="sys_apl_ehid11_el1">SYS_APL_EHID11_EL1<a class="headerlink" href="#sys_apl_ehid11_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[41:40] SMB Drain Threshold</li>
+</ul>
+<h6 id="sys_apl_hid13_el1">SYS_APL_HID13_EL1<a class="headerlink" href="#sys_apl_hid13_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[17:14] PreCyc</li>
+<li>[63:60] Reset Cycle count</li>
+</ul>
+<h6 id="sys_apl_hid14_el1">SYS_APL_HID14_EL1<a class="headerlink" href="#sys_apl_hid14_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[?:0] Nex Sleep Timeout Cyclone</li>
+<li>[32] Nex Power Gating Enable</li>
+</ul>
+<h6 id="sys_apl_hid16_el1">SYS_APL_HID16_EL1<a class="headerlink" href="#sys_apl_hid16_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[18] LEQ Throttle Aggr</li>
+<li>[56] SpareBit0</li>
+<li>[57] Enable RS4 Sec</li>
+<li>[59] SpareBit3</li>
+<li>[60] Disable xPick RS 45</li>
+<li>[61] Enable MPx Pick 45</li>
+<li>[62] Enable MP Cyclone 7</li>
+<li>[63] SpareBit7</li>
+</ul>
+<h6 id="sys_apl_hid17_el1">SYS_APL_HID17_EL1<a class="headerlink" href="#sys_apl_hid17_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[2:0] Crd Edb Snp Rsvd</li>
+</ul>
+<h6 id="sys_apl_hid18_el1">SYS_APL_HID18_EL1<a class="headerlink" href="#sys_apl_hid18_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[14] HVC Speculation Disable</li>
+<li>[49] SpareBit17</li>
+</ul>
+<h6 id="sys_apl_ehid20_el1">SYS_APL_EHID20_EL1<a class="headerlink" href="#sys_apl_ehid20_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[8] Trap SMC</li>
+<li>[15] Force Nonspeculation If Oldest Redir Valid And Older</li>
+<li>[16] Force Nonspeculation If Spec Flush Pointer != Blk Rtr Pointer</li>
+<li>[22:21] Force Nonspeculation Targeted Timer</li>
+</ul>
+<h6 id="sys_apl_hid21_el1">SYS_APL_HID21_EL1<a class="headerlink" href="#sys_apl_hid21_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[19] Enable LDREX Fill Reply</li>
+<li>[34] LDQ RTR Wait For Old ST Rel Cmpl</li>
+<li>[35] Disable Cdp Reply Purged Trans</li>
+<li>[52] Purge MMU On Any SPR SYNC</li>
+</ul>
+<h6 id="acccyc-registers">ACC/CYC Registers<a class="headerlink" href="#acccyc-registers" title="Permanent link">&para;</a></h6>
+<p>These seem to relate to the core complex and power management configuration</p>
+<h6 id="sys_apl_acc_ovrd_el1">SYS_APL_ACC_OVRD_EL1<a class="headerlink" href="#sys_apl_acc_ovrd_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[14:13] OK To Power Down SRM (3=deepsleep)</li>
+<li>[16:15] Disable L2 Flush For ACC Sleep (2=deepsleep)</li>
+<li>[18:17] OK To Train Down Link (3=deepsleep)</li>
+<li>[26:25] OK To Power Down CPM (2=deny 3=deepsleep)</li>
+<li>[28:27] CPM Wakeup (3=force)</li>
+<li>[29] Disable Clock Dtr</li>
+<li>[32] Disable PIO On WFI CPU</li>
+<li>[34] Enable Deep Sleep</li>
+</ul>
+<h6 id="sys_apl_acc_cfg_el1">SYS_APL_ACC_CFG_EL1<a class="headerlink" href="#sys_apl_acc_cfg_el1" title="Permanent link">&para;</a></h6>
+<p>Branch predictor state retention across ACC sleep</p>
+<ul>
+<li>[3:2] BP Sleep (2=BDP, 3=BTP)</li>
+</ul>
+<h6 id="sys_apl_cyc_ovrd_el1">SYS_APL_CYC_OVRD_EL1<a class="headerlink" href="#sys_apl_cyc_ovrd_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[0] Disable WFI Return</li>
+<li>[25:24] OK To Power Down (2=force up, 3=force down)</li>
+<li>[21:20] FIQ mode (2=disable)</li>
+<li>[23:22] IRQ mode (2=disable)</li>
+</ul>
+<h6 id="memory-subsystem-registers">Memory subsystem registers<a class="headerlink" href="#memory-subsystem-registers" title="Permanent link">&para;</a></h6>
+<p>Mainly error control?</p>
+<h6 id="sys_apl_lsu_err_sts_el1">SYS_APL_LSU_ERR_STS_EL1<a class="headerlink" href="#sys_apl_lsu_err_sts_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[54] L1 DTLB Multi Hit Enable</li>
+</ul>
+<h6 id="sys_apl_lsu_err_ctl_el1">SYS_APL_LSU_ERR_CTL_EL1<a class="headerlink" href="#sys_apl_lsu_err_ctl_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[3] L1 DTLB Multi Hit Enable</li>
+</ul>
+<h6 id="sys_apl_l2c_err_sts_el1">SYS_APL_L2C_ERR_STS_EL1<a class="headerlink" href="#sys_apl_l2c_err_sts_el1" title="Permanent link">&para;</a></h6>
+<p>L2 subsystem fault control and info. This register is cluster-level and shared among all cores within a cluster.</p>
+<ul>
+<li>[1] Recursive fault (fault occurred while another fault was pending?)</li>
+<li>[7] Access fault (unmapped physical address, etc)</li>
+<li>[38..34] Enable flags? (all 1 on entry from iBoot)</li>
+<li>[39] Enable SError interrupts (asynchronous errors)</li>
+<li>[43..40] Enable flags? (all 1 on entry from iBoot)</li>
+<li>[56] Enable write-1-to-clear behavior for fault flags</li>
+<li>[60] Some enable? (1 on entry)</li>
+</ul>
+<h6 id="sys_apl_l2c_err_adr_el1">SYS_APL_L2C_ERR_ADR_EL1<a class="headerlink" href="#sys_apl_l2c_err_adr_el1" title="Permanent link">&para;</a></h6>
+<p>Fault address for L2 subsystem fault.</p>
+<ul>
+<li>[?:0] Physical address of the fault</li>
+<li>[42] ? sometimes 1 after a recursive instruction fetch fault</li>
+<li>[57:55] 5=data write 6=data read 7=instruction fetch?</li>
+<li>[62..61] Core within cluster that caused fault</li>
+</ul>
+<h6 id="sys_apl_l2c_err_inf_el1">SYS_APL_L2C_ERR_INF_EL1<a class="headerlink" href="#sys_apl_l2c_err_inf_el1" title="Permanent link">&para;</a></h6>
+<p>L2 subsystem error information.</p>
+<p>Low bits values seen:</p>
+<p>Writes:</p>
+<ul>
+<li>1: Write to unmapped or protected space, or nGnRnE write to PCIe BAR space</li>
+<li>2: 8-bit or 16-bit write to 32-bit only peripheral</li>
+<li>3: nGnRE write to SoC I/O space</li>
+</ul>
+<p>Reads:</p>
+<ul>
+<li>1: Read from unmapped or protected space</li>
+</ul>
+<p>Higher bits:</p>
+<ul>
+<li>[26] Something to do with address alignment (seen on 16-bit and 32-bit reads/writes to addr 4 mod 8)</li>
+</ul>
+<h6 id="ctrr-registers">CTRR Registers<a class="headerlink" href="#ctrr-registers" title="Permanent link">&para;</a></h6>
+<p>Configurable Text Read-only Region</p>
+<h6 id="sys_apl_ctrr_ctl_el1">SYS_APL_CTRR_CTL_EL1<a class="headerlink" href="#sys_apl_ctrr_ctl_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[0] A MMU off write protect</li>
+<li>[1] A MMU on write protect</li>
+<li>[2] B MMU off write protect</li>
+<li>[3] B MMU on write protect</li>
+<li>[4] A PXN</li>
+<li>[5] B PXN</li>
+<li>[6] A UXN</li>
+<li>[7] B UXN</li>
+</ul>
+<h6 id="aprr-registers">APRR Registers<a class="headerlink" href="#aprr-registers" title="Permanent link">&para;</a></h6>
+<h6 id="sys_apl_aprr_el0-sys_apl_aprr_el1">SYS_APL_APRR_EL0 / SYS_APL_APRR_EL1<a class="headerlink" href="#sys_apl_aprr_el0-sys_apl_aprr_el1" title="Permanent link">&para;</a></h6>
+<p>This is a table. The value is a 4-bit field:</p>
+<ul>
+<li>[0] X</li>
+<li>[1] W</li>
+<li>[2] R</li>
+</ul>
+<p>The index is the access protection and execution protection settings for a PTE.</p>
+<ul>
+<li>[0] XN</li>
+<li>[1] PXN</li>
+<li>[2] AP[0]</li>
+<li>[3] AP[1]</li>
+</ul>
+<p>The register value is 16 4-bit fields, in natural order ((_rwx) &lt;&lt; (4*prot)).</p>
+<h6 id="ipi-registers">IPI registers<a class="headerlink" href="#ipi-registers" title="Permanent link">&para;</a></h6>
+<p>These are used for "fast" IPIs not using AIC</p>
+<h6 id="sys_apl_ipi_rr_local_el1">SYS_APL_IPI_RR_LOCAL_EL1<a class="headerlink" href="#sys_apl_ipi_rr_local_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[3:0] Target CPU</li>
+<li>[29:28] RR Type (0=immediate, 1=retract, 2=deferred, 3=nowake)</li>
+</ul>
+<h6 id="sys_apl_ipi_rr_global_el1">SYS_APL_IPI_RR_GLOBAL_EL1<a class="headerlink" href="#sys_apl_ipi_rr_global_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[3:0] Target CPU</li>
+<li>[20:16] Target cluster</li>
+<li>[29:28] RR Type (0=immediate, 1=retract, 2=deferred, 3=nowake)</li>
+</ul>
+<h6 id="sys_apl_ipi_cr_el1">SYS_APL_IPI_CR_EL1<a class="headerlink" href="#sys_apl_ipi_cr_el1" title="Permanent link">&para;</a></h6>
+<p>Global register.</p>
+<ul>
+<li>[15:0] Deferred IPI countdown value (in REFCLK ticks)</li>
+</ul>
+<h6 id="sys_apl_vm_tmr_lr_el2">SYS_APL_VM_TMR_LR_EL2<a class="headerlink" href="#sys_apl_vm_tmr_lr_el2" title="Permanent link">&para;</a></h6>
+<p>(Name unofficial)</p>
+<p>Seems to be similar to ICH_LR<n>_EL2 in GIC; state gets set to pending (63:62 == 1) when guest CNTV fires, is not masked in SYS_APL_HV_TMR_MASK, and is masked in HACR_EL2.</p>
+<h6 id="sys_apl_vm_tmr_fiq_ena_el2">SYS_APL_VM_TMR_FIQ_ENA_EL2<a class="headerlink" href="#sys_apl_vm_tmr_fiq_ena_el2" title="Permanent link">&para;</a></h6>
+<p>(Name unofficial)</p>
+<ul>
+<li>[0] CNTV guest timer mask bit (1=enable FIQ, 0=disable FIQ)</li>
+<li>[1] CNTP guest timer mask bit (1=enable FIQ, 0=disable FIQ)</li>
+</ul>
+<h6 id="sys_apl_ipi_sr_el1">SYS_APL_IPI_SR_EL1<a class="headerlink" href="#sys_apl_ipi_sr_el1" title="Permanent link">&para;</a></h6>
+<p>Status register</p>
+<ul>
+<li>[0] IPI pending (write 1 to clear)</li>
+</ul>
+<p>Needs a barrier (ISB SY) after clearing to avoid races with IPI handling.</p>
+<h6 id="virtual-memory-system-architecture-lock">Virtual Memory System Architecture Lock<a class="headerlink" href="#virtual-memory-system-architecture-lock" title="Permanent link">&para;</a></h6>
+<h6 id="sys_apl_vmsa_lock_el1">SYS_APL_VMSA_LOCK_EL1<a class="headerlink" href="#sys_apl_vmsa_lock_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[0] Lock VBAR</li>
+<li>[1] Lock SCTLR</li>
+<li>[2] Lock TCR</li>
+<li>[3] Lock TTBR0</li>
+<li>[4] Lock TTBR1</li>
+<li>[63] Lock SCTLR M bit</li>
+</ul>
+<p>This is used to lock down writes to some Arm registers for security reasons at boot time.</p>
+<h6 id="pointer-authentication-related-registers">Pointer Authentication related registers<a class="headerlink" href="#pointer-authentication-related-registers" title="Permanent link">&para;</a></h6>
+<h6 id="sys_apl_apctl_el1">SYS_APL_APCTL_EL1<a class="headerlink" href="#sys_apl_apctl_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[0] Apple Mode</li>
+<li>[1] Kernel Key enable</li>
+<li>[2] AP Key 0 Enable</li>
+<li>[3] AP Key 1 Enable</li>
+<li>[4] User Key Enable</li>
+</ul>
+<h6 id="sys_apl_apsts_el1">SYS_APL_APSTS_EL1<a class="headerlink" href="#sys_apl_apsts_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[0] M Key Valid</li>
+</ul>
+<h6 id="performance-counter-registers">Performance Counter registers<a class="headerlink" href="#performance-counter-registers" title="Permanent link">&para;</a></h6>
+<p>Writes to the control register need <code>isb</code> to take effect.</p>
+<h6 id="sys_apl_pmc0-9_el1">SYS_APL_PMC0-9_EL1<a class="headerlink" href="#sys_apl_pmc0-9_el1" title="Permanent link">&para;</a></h6>
+<p>Performance counter.</p>
+<p>On M1: 48 bits, bit 47 triggers PMI. 
+On M2: 64 bits, bit 63 triggers PMI.</p>
+<ul>
+<li>PMC #0: fixed cpu cycle count if enabled</li>
+<li>PMC #1: fixed instruction count if enabled</li>
+</ul>
+<h6 id="sys_apl_pmcr0_el1">SYS_APL_PMCR0_EL1<a class="headerlink" href="#sys_apl_pmcr0_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[7:0] Counter enable for PMC #7-0</li>
+<li>[10:8] Interrupt mode (0=off 1=PMI 2=AIC 3=HALT 4=FIQ)</li>
+<li>[11] PMI interrupt is active (write 0 to clear)</li>
+<li>[19:12] Enable PMI for PMC #7-0</li>
+<li>[20] Disable counting on a PMI</li>
+<li>[22] Block PMIs until after eret</li>
+<li>[23] Count global (not just core) L2C events</li>
+<li>[30] User-mode access to registers enable</li>
+<li>[33:32] Counter enable for PMC #9-8</li>
+<li>[45:44] Enable PMI for PMC #9-8</li>
+</ul>
+<h6 id="sys_apl_pmcr1_el1">SYS_APL_PMCR1_EL1<a class="headerlink" href="#sys_apl_pmcr1_el1" title="Permanent link">&para;</a></h6>
+<p>Controls which ELx modes count events</p>
+<ul>
+<li>[7:0] EL0 A32 enable PMC #0-7 (not implemented on modern chips)</li>
+<li>[15:8] EL0 A64 enable PMC #0-7</li>
+<li>[23:16] EL1 A64 enable PMC #0-7</li>
+<li>[31:24] EL3 A64 enable PMC #0-7 (not implemented except on old chips with EL3)</li>
+<li>[33:32] EL0 A32 enable PMC #9-8 (not implemented on modern chips)</li>
+<li>[41:40] EL0 A64 enable PMC #9-8</li>
+<li>[49:48] EL1 A64 enable PMC #9-8</li>
+<li>[57:56] EL3 A64 enable PMC #9-8 (not implemented on modern chips)</li>
+</ul>
+<h6 id="sys_apl_pmcr2_el1">SYS_APL_PMCR2_EL1<a class="headerlink" href="#sys_apl_pmcr2_el1" title="Permanent link">&para;</a></h6>
+<p>Controls watchpoint registers.</p>
+<h6 id="sys_apl_pmcr3_el1">SYS_APL_PMCR3_EL1<a class="headerlink" href="#sys_apl_pmcr3_el1" title="Permanent link">&para;</a></h6>
+<p>Controls breakpoints and address matching.</p>
+<h6 id="sys_apl_pmcr4_el1">SYS_APL_PMCR4_EL1<a class="headerlink" href="#sys_apl_pmcr4_el1" title="Permanent link">&para;</a></h6>
+<p>Controls opcode matching.</p>
+<h6 id="sys_apl_pmsr_el1">SYS_APL_PMSR_EL1<a class="headerlink" href="#sys_apl_pmsr_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[9:0] Overflow detected on PMC #9-0</li>
+</ul>
+<h6 id="sys_apl_pmesr0_el1">SYS_APL_PMESR0_EL1<a class="headerlink" href="#sys_apl_pmesr0_el1" title="Permanent link">&para;</a></h6>
+<p>Event selection register for PMC #2-5</p>
+<ul>
+<li>[7:0] event for PMC #2</li>
+<li>[15:8] event for PMC #3</li>
+<li>[23:16] event for PMC #4</li>
+<li>[31:24] event for PMC #5</li>
+</ul>
+<h6 id="sys_apl_pmesr1_el1">SYS_APL_PMESR1_EL1<a class="headerlink" href="#sys_apl_pmesr1_el1" title="Permanent link">&para;</a></h6>
+<p>Event selection register for PMC #6-9</p>
+<ul>
+<li>[7:0] event for PMC #6</li>
+<li>[15:8] event for PMC #7</li>
+<li>[23:16] event for PMC #8</li>
+<li>[31:24] event for PMC #9</li>
+</ul>
+<h6 id="sys_apl_upmcx_el1">SYS_APL_UPMCx_EL1<a class="headerlink" href="#sys_apl_upmcx_el1" title="Permanent link">&para;</a></h6>
+<p>Uncore PMCs. 48 bits wide, bit 47 is an overflow bit and triggers a PMI.</p>
+<h6 id="sys_apl_upmcr0_el1">SYS_APL_UPMCR0_EL1<a class="headerlink" href="#sys_apl_upmcr0_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[15:0] Counter enable for counter #15-0</li>
+<li>[18:16] Interrupt mode (0=off 2=AIC 3=HALT 4=FIQ)</li>
+<li>[35:20] Enable PMI for counter #15-0</li>
+</ul>
+<h6 id="sys_apl_upmsr_el1">SYS_APL_UPMSR_EL1<a class="headerlink" href="#sys_apl_upmsr_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[0] Uncore PMI</li>
+<li>[1] CTI</li>
+<li>[17:2] Overflow on uncore counter #15-0</li>
+</ul>
+<h6 id="sys_apl_upmpcm_el1">SYS_APL_UPMPCM_EL1<a class="headerlink" href="#sys_apl_upmpcm_el1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[7:0] PMI core mask for uncore PMIs - which cores have PMIs delivered to them</li>
+</ul>
+<h6 id="sys_apl_upmesr0_el1">SYS_APL_UPMESR0_EL1<a class="headerlink" href="#sys_apl_upmesr0_el1" title="Permanent link">&para;</a></h6>
+<p>Event selection register</p>
+<h6 id="sys_apl_upmesr1_el1">SYS_APL_UPMESR1_EL1<a class="headerlink" href="#sys_apl_upmesr1_el1" title="Permanent link">&para;</a></h6>
+<p>Event selection register</p>
+<h6 id="sys_apl_upmecm0-3_el1">SYS_APL_UPMECM[0-3]_EL1<a class="headerlink" href="#sys_apl_upmecm0-3_el1" title="Permanent link">&para;</a></h6>
+<p>Sets core masks for each event in the cluster, i.e. only events from those cores will be counted in uncore PMCs.</p>
+<h6 id="general-config-registers">General config registers<a class="headerlink" href="#general-config-registers" title="Permanent link">&para;</a></h6>
+<h6 id="actlr_el1-arm-standard-not-standard">ACTLR_EL1 (ARM standard-not-standard)<a class="headerlink" href="#actlr_el1-arm-standard-not-standard" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[1] Enable TSO</li>
+<li>[3] Disable HWP</li>
+<li>[4] Enable APFLG</li>
+<li>[5] Enable Apple FP extensions. This makes FPCR.FZ a don't care, and replaces it with AFPCR.DAZ and AFPCR.FTZ.</li>
+<li>[6] Enable PRSV</li>
+<li>[12] IC IVAU Enable ASID</li>
+</ul>
+<h6 id="hacr_el2-arm-standard-not-standard">HACR_EL2 (ARM standard-not-standard)<a class="headerlink" href="#hacr_el2-arm-standard-not-standard" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[20] Mask guest CNTV timer (1=masked)</li>
+</ul>
+<p>This works differently from SYS_APL_GTIMER_MASK; that one masks the timers earlier, this one leaves the FIQ "pending" in SYS_APL_HV_TMR_LR.</p>
+<h6 id="floating-point-and-amx-registers">Floating-point and AMX registers<a class="headerlink" href="#floating-point-and-amx-registers" title="Permanent link">&para;</a></h6>
+<h6 id="sys_apl_afpcr_el0">SYS_APL_AFPCR_EL0<a class="headerlink" href="#sys_apl_afpcr_el0" title="Permanent link">&para;</a></h6>
+<p>Apple-specific floating point related bits.</p>
+<ul>
+<li>[0] DAZ (Denormals as Zero)</li>
+<li>[1] FTZ (Flush to Zero)</li>
+</ul>
+<p>These implement the SSE equivalent mode bits. This must be enabled to be useful, with ACTLR_EL1.AFP.</p>
+<p>The AArch64 FEAT_AFT feature implements equivalent support, but Apple implemented it before it was standardized. The standard version is that you need to set FPSCR[1] (AH) to 1, and then FPCR[0] (FIZ) is like DAZ, and FPCR[24] (FZ) is like FTZ.</p>
+<h6 id="id-registers">ID registers<a class="headerlink" href="#id-registers" title="Permanent link">&para;</a></h6>
+<h6 id="midr_el1-arm-standard">MIDR_EL1 (ARM standard)<a class="headerlink" href="#midr_el1-arm-standard" title="Permanent link">&para;</a></h6>
+<ul>
+<li>
+<p>[15:4] PartNum</p>
+<ul>
+<li>1: Alcatraz Cyclone (A7 / H6P)</li>
+<li>2: Fiji Typhoon (A8 / H7P)</li>
+<li>3: Capri Typhoon (A8X / H7G)</li>
+<li>4: Malta / Elba Twister (TSMC A9 / A9X / H8P / H8G)</li>
+<li>5: Maui Twister (Samsung A9 / H8P)</li>
+<li>6: Cayman / Gibraltar Hurricane-Zephyr (A10 / T2 / H9P / H9M Fusion core)</li>
+<li>7: Myst Hurricane-Zephyr (A10X / H9G Fusion core)</li>
+<li>8: Skye Monsoon (A11 / H10 p-core)</li>
+<li>9: Skye Mistral (A11 / H10 e-core)</li>
+<li>11: Cyprus Vortex (A12 / H11P p-core)</li>
+<li>12: Cyprus Tempest (A12 / H11P e-core)</li>
+<li>15: M9 (S4/S5)</li>
+<li>16: Aruba Vortex (A12X/Z / H11G p-core)</li>
+<li>17: Aruba Tempest (A12X/Z / H11G e-core)</li>
+<li>18: Cebu Lightning (A13 / H12 p-core)</li>
+<li>19: Cebu Thunder (A13 / H12 e-core)</li>
+<li>34: M1 Icestorm (H13G e-core)</li>
+<li>35: M1 Firestorm (H13G p-core)</li>
+<li>38: Turks (S6 / M10)</li>
+</ul>
+</li>
+<li>
+<p>[31:24] Implementer (0x61 = 'a' = Apple)</p>
+</li>
+</ul>
+<h6 id="mpidr_el1-arm-standard">MPIDR_EL1 (ARM standard)<a class="headerlink" href="#mpidr_el1-arm-standard" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[23:16] Aff2: 0: e-core, 1:p-core</li>
+<li>[15:8] Aff1: Cluster ID</li>
+<li>[7:0] Aff0: CPU ID</li>
+</ul>
+<h6 id="aidr_el1-arm-standard-not-standard">AIDR_EL1 (ARM standard-not-standard)<a class="headerlink" href="#aidr_el1-arm-standard-not-standard" title="Permanent link">&para;</a></h6>
+<ul>
+<li>[0] MUL53</li>
+<li>[1] WKDM</li>
+<li>[2] ARCHRETENTION</li>
+<li>[4] AMX</li>
+<li>[9] TSO</li>
+<li>[19] APFLG</li>
+<li>[20] PSRV</li>
+</ul>
+<h6 id="unknown-registers">Unknown registers<a class="headerlink" href="#unknown-registers" title="Permanent link">&para;</a></h6>
+<h6 id="s3_6_c15_c1_0_el1-s3_6_c15_c1_5_el1-s3_6_c15_c1_6_el1">s3_6_c15_c1_0_EL1 / s3_6_c15_c1_5_EL1 / s3_6_c15_c1_6_EL1<a class="headerlink" href="#s3_6_c15_c1_0_el1-s3_6_c15_c1_5_el1-s3_6_c15_c1_6_el1" title="Permanent link">&para;</a></h6>
+<p>These look like a newer version of APRR</p>
+<h6 id="s3_4_c15_c5_0_el1">s3_4_c15_c5_0_EL1<a class="headerlink" href="#s3_4_c15_c5_0_el1" title="Permanent link">&para;</a></h6>
+<p>This gets written with the core ID (within the cluster) during init.</p>
+<h6 id="ahcr_el2">AHCR_EL2<a class="headerlink" href="#ahcr_el2" title="Permanent link">&para;</a></h6>
+<p>Encoding unknown. Related to ACTLR_EL1[12].</p>
+<h6 id="s3_4_c15_c10_4-labeled-siq_cfg_el1-in-m1n1">s3_4_c15_c10_4 (labeled SIQ_CFG_EL1 in m1n1)<a class="headerlink" href="#s3_4_c15_c10_4-labeled-siq_cfg_el1-in-m1n1" title="Permanent link">&para;</a></h6>
+<p>If a core writes 0x3 to it's copy of the register, AICv2 will not send IRQs to that core. FIQs unaffected, as those are part of the core complexes themselves. (0x0 and 0x2 are known values that will enable IRQs on a core, but 0x0 seems to cause weird EL1 problems)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

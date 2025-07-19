@@ -1,0 +1,1751 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/sw/partitioning-cheatsheet/">
+      
+      
+        <link rel="prev" href="../broken-software/">
+      
+      
+        <link rel="next" href="../../project/help-wanted/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>Partitioning Cheatsheet - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Partitioning Cheatsheet - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/sw/partitioning-cheatsheet.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/sw/partitioning-cheatsheet/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Partitioning Cheatsheet - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/sw/partitioning-cheatsheet.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#warning-never-delete-the-apple_apfs_recovery-partition" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Partitioning Cheatsheet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#warning-never-delete-the-apple_apfs_recovery-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      WARNING: NEVER DELETE THE Apple_APFS_Recovery PARTITION
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WARNING: NEVER DELETE THE Apple_APFS_Recovery PARTITION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-not-use-the-disk-utility-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do not use the Disk Utility application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-everything-goes-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      If everything goes wrong
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-disk-layout-on-apple-silicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical disk layout on Apple Silicon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos-disk-management-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      macOS disk management basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asahi-linux-installs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asahi Linux installs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-partitions-with-the-asahi-linux-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing partitions with the Asahi Linux installer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-partitions-with-diskutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing partitions with diskutil
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-not-blindly-copy-and-paste-these-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do not blindly copy and paste these commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Do not blindly copy and paste these commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deleting-partitions-with-diskutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting partitions with diskutil
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deleting partitions with diskutil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deleting-apfs-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting APFS containers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-other-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting other partitions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resizing-apfs-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resizing APFS containers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resizing APFS containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-system-verify-or-repair-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage system verify or repair failed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addendum-mounting-efi-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addendum: Mounting EFI partition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Partitioning Cheatsheet</h1>
+
+<h4 id="warning-never-delete-the-apple_apfs_recovery-partition">WARNING: NEVER DELETE THE <code>Apple_APFS_Recovery</code> PARTITION<a class="headerlink" href="#warning-never-delete-the-apple_apfs_recovery-partition" title="Permanent link">&para;</a></h4>
+<p>The last partition on your disk, listed as type <code>Apple_APFS_Recovery</code> in diskutil, contains critical system recovery components. <strong>If you delete this partition accidentally, macOS upgrades will cease to work, and any other problem with your system will leave it unbootable and require a factory restore and complete wipe</strong>. Restoring this partition without a full machine wipe is <a href="https://www.reddit.com/r/AsahiLinux/comments/1fmnzm5/guide_how_to_fix_failed_to_find_sfr_recovery/">a major pain in the ass</a>. Do NOT, under any circumstances, mess with this partition.</p>
+<p>It is <strong>not</strong> possible for the Asahi Linux installer to cause this by itself, since it doesn't contain any partition deletion code at all and never has, nor does it access the raw partition table in any way. If you find yourself in this situation, then you either deleted the partition yourself unknowingly (from Linux or from macOS/recoveryOS), or some kind of Apple bug did.</p>
+<h5 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h5>
+<p>Partition management from macOS can be confusing. Hopefully this helps explain things.</p>
+<p>Note: We'll add uninstall/cleanup options to the installer soon, but by definition it will always be a simplified tool that is only guaranteed to work for the common case of vanilla Asahi Linux installs; if you do your own partition management or install another distro, you'll have to know how to do it manually like this in order to clean up properly.</p>
+<p><strong>Note: If you are deleting Asahi Linux, you will have to set macOS as the default boot OS again if you have not already done so.</strong> You can do this from System Settings in macOS itself, or by holding down the Option key while selecting it in Startup Options. Not doing this ahead of time won't break your computer, but you may not be able to boot automatically until you do so. If you find you cannot go into the Startup Options screen normally, try starting up with a double tap (tap, release, tap and hold the power button).</p>
+<h5 id="do-not-use-the-disk-utility-application">Do not use the <em>Disk Utility</em> application<a class="headerlink" href="#do-not-use-the-disk-utility-application" title="Permanent link">&para;</a></h5>
+<p>The graphical Disk Utility application shipped with macOS only barely works for trivial cases where you have one or more APFS containers, no unpartitioned space, all partitions in the right order, and no foreign partitions. Even for ostensibly "supported" things like creating FAT32/HFS partitions, it is buggy. Just don't use it. It will confuse you, it will show you impossible numbers, and it will do the wrong thing. It is not intended as a proper disk management tool; it is a flimsy user interface front-end that can only handle the simplest of tasks and situations and falls apart completely otherwise.</p>
+<p>The commandline <code>diskutil</code> has a strange interface and is harder to understand, but at least it usually works properly.</p>
+<h5 id="if-everything-goes-wrong">If everything goes wrong<a class="headerlink" href="#if-everything-goes-wrong" title="Permanent link">&para;</a></h5>
+<p>Apple Silicon machines cannot be bricked, but they can be rendered unbootable if you break your System Recovery. To fix this, you will need to connect another machine to it and use a special DFU recovery procedure to restore it via USB. If you have another Mac handy (Intel works), follow Apple's <a href="https://support.apple.com/guide/apple-configurator-mac/revive-or-restore-a-mac-with-apple-silicon-apdd5f3c75ad/mac">official documentation</a>. If you don't, you can use <a href="https://github.com/libimobiledevice/idevicerestore">idevicerestore</a> instead. Here's a quick <a href="https://tg.st/u/idevicerestore_quickstart.txt">guide</a> for that.</p>
+<p>If you broke your OS recovery, you might find yourself in a boot loop, even as you hold down the power button. If this happens, shut down the machine, then boot with a quick <em>double-tap-hold</em> of the power button (tap, release, press and hold). If you're on a laptop, you might find you can't actually force a shutdown from the boot loop. If this happens, count three seconds from the point where the Apple logo disappears during a loop cycle, then do the double tap. This should get you into System Recovery and you can fix things from there without a full DFU flash.</p>
+<h5 id="physical-disk-layout-on-apple-silicon">Physical disk layout on Apple Silicon<a class="headerlink" href="#physical-disk-layout-on-apple-silicon" title="Permanent link">&para;</a></h5>
+<ul>
+<li>The NVMe drive has namespaces. You only care about the primary one, that's <code>disk0</code> on macOS or <code>nvme0n1</code> on Linux.<ul>
+<li>The others are used for kernel panic logs and stuff like that. That's pretty low level stuff you don't have to care about. This is an NVMe thing, like "low-level partitions". Just don't think too much about it.</li>
+</ul>
+</li>
+<li>The primary namespace is formatted as a GPT partition table, same as on most Linux/Windows/Intel Mac systems these days</li>
+<li>The GPT contains partitions, which can be traditional ones (FAT32, HFS+, Linux...) or APFS containers</li>
+<li>An APFS container contains multiple logical volumes sharing disk space</li>
+<li>Each Apple Silicon machine has two special system APFS containers, the first one on the disk (iBoot System Container) and the last one on the disk (System Recovery). These should never be touched. Only create/remove partitions between them.</li>
+</ul>
+<p>Warning: Some of Apple's tools do not like unsorted partitions in the GPT partition table. Since you need to keep the first and last partition in place, that means most disk management operations from Linux will append partitions to the GPT, and put it out of order. Make sure you fix this. With the <code>fdisk</code> Linux command this can be done with <code>x</code> (go into expert mode) → <code>f</code> (fix partitions order) → <code>r</code> (return to main menu) → <code>w</code> (write changes and exit).</p>
+<h5 id="macos-disk-management-basics">macOS disk management basics<a class="headerlink" href="#macos-disk-management-basics" title="Permanent link">&para;</a></h5>
+<p><code>disk0</code> is your NVMe drive. <code>disk0sN</code> is a GPT partition within it. <code>N</code> is <em>not</em> stable and is allocated dynamically by the macOS kernel. It does <em>not</em> correspond to the physical slot index in the GPT, nor does it correspond to the physical order of the partition data in the drive. Any time you create a partition, N can be allocated to a different number, and they can all be renumbered on reboot.</p>
+<p><code>diskN</code> (<code>N</code> &gt;= 1) could be a disk image or an external disk, but more likely is an <em>APFS container</em>. This is a hack that Apple came up with to represent subvolumes. The "partitions" within such a disk aren't real partitions, they just represent volumes within one APFS container. The container itself exists within a physical partition in <code>disk0</code>. That means that for APFS operations, for example, <code>disk0s2</code> and <code>disk1</code> could mean the same thing, the former referencing the container by its physical partition, and the latter by the virtual (<em>synthesized</em>) disk number.</p>
+<p>Multiple macOS installs can share one APFS container. Each OS has a <em>volume group</em> consisting of two paired subvolumes, a <em>System</em> volume and a <em>Data</em> volume. There are extra volumes: <code>Preboot</code>, <code>Recovery</code>, <code>VM</code>, <code>Update</code>. These are shared between all OSes in that container. Not all of them necessarily exist.</p>
+<p>Each macOS install has within it <em>its own copy of recoveryOS</em>. Then there is a global System recoveryOS, and (rarely) an additional System Fallback recoveryOS.</p>
+<h5 id="asahi-linux-installs">Asahi Linux installs<a class="headerlink" href="#asahi-linux-installs" title="Permanent link">&para;</a></h5>
+<p>For Asahi Linux, we do not install alongside macOS in the same container, because that would require using APFS for Linux (which isn't stable yet nor mainlined). We just create normal GPT partitions for Linux. Asahi Linux also needs to install itself the same way macOS would, into an APFS container as a volume group, to be actually bootable. This is what we call the "stub macOS" and is what links the Apple world to the Linux world. Think of it as a bootloader partition. We <em>could</em> share a container with macOS for this, but we <em>choose</em> not to because it makes it less error-prone and easier to delete, and we're already partitioning the disk anyway.</p>
+<p>So the installer will (for a normal Asahi Linux = Arch Linux ARM install) create three partitions:</p>
+<ul>
+<li>A 2.5GB APFS container, containing the bits of iBoot/macOS we need to boot the machine including a copy of recoveryOS<ul>
+<li>m1n1 stage 1 is installed here</li>
+</ul>
+</li>
+<li>A 500MB EFI System Partition<ul>
+<li>m1n1 stage 2, U-Boot, and the GRUB core image live here</li>
+</ul>
+</li>
+<li>A Linux ext4 partition filling up the rest of the space<ul>
+<li>GRUB modules and the Linux kernel/initramfs live here</li>
+</ul>
+</li>
+</ul>
+<p>To uninstall, you need to delete all three.</p>
+<p>Asahi Linux is unusual in that, unlike on traditional UEFI systems, we create an EFI System Partition <em>for each instance you install</em>. We have a bespoke mechanism for OSes to find the right ESP to install into/boot from to handle this. This is because each ESP is logically tied to the 2.5G stub, and it makes OS management easier if we treat it all as one unit, and use the native boot picker to choose among different OSes (and thus ESPs). You should think of the 2.5GB APFS stub container, the EFI System Partition, and whatever root/... partitions are created after that as one logical "container" for an open source OS within an Apple Silicon system. In a way, m1n1+U-Boot turn your machine into a UEFI system, and each time you install you are creating a new "virtual UEFI environment" within your Apple Silicon Mac (note: this isn't a VM).</p>
+<h5 id="listing-partitions-with-the-asahi-linux-installer">Listing partitions with the Asahi Linux installer<a class="headerlink" href="#listing-partitions-with-the-asahi-linux-installer" title="Permanent link">&para;</a></h5>
+<p><code>diskutil</code> can be very baroque and enumerating installed OSes can be painful, so the Asahi Linux installer itself tries to condense the most important disk information into an easily understandable format. You can run it as usual (<code>curl https://alx.sh | sh</code>) and simply quit without doing anything if you just want to see this information.</p>
+<p>Here's an example from right after installing Asahi Linux, before completing the second step of the installation:</p>
+<pre><code>Partitions in system disk (disk0):
+  1: APFS [Macintosh HD] (380.00 GB, 6 volumes)
+    OS: [B ] [Macintosh HD] macOS v12.3 [disk3s1, D44D4ED9-B162-4542-BF50-9470C7AFDA43]
+  2: APFS [Asahi Linux] (2.50 GB, 4 volumes)
+    OS: [ *] [Asahi Linux] incomplete install (macOS 12.3 stub) [disk4s2, 53F853CF-4851-4E82-933C-2AAEB247B372]
+  3: EFI (500.17 MB)
+  4: Linux Filesystem (54.19 GB)
+  5: (free space: 57.19 GB)
+  6: APFS (System Recovery) (5.37 GB, 2 volumes)
+    OS: [  ] recoveryOS v12.3 [Primary recoveryOS]
+
+  [B ] = Booted OS, [R ] = Booted recovery, [? ] = Unknown
+  [ *] = Default boot volume
+</code></pre>
+<p>This shows:</p>
+<ul>
+<li>One APFS container (380GB) containing 6 volumes (not listed) which comprise one macOS 12.3 install ("Macintosh HD"). Note: "Macintosh HD" is actually the name of the System subvolume, and this is how macOS itself displays volumes.<ul>
+<li>If you had another macOS install sharing space in the same container, it would be listed as another <code>OS:</code> line under the same partition.</li>
+<li>disk3s1 is the <em>volume</em> for this macOS system, which means <code>disk3</code> is the virtual disk that represents this APFS container partition</li>
+<li>The UUID is the Volume Group ID of this OS, which is the primary identifier for it (e.g. how the machine finds it to boot it, how you select it in <code>bputil</code> prompts, the associated subdirectory name within the Preboot and Recovery subvolumes, and more)</li>
+</ul>
+</li>
+<li>One APFS container (2.5GB) containing 4 volumes which is actually an Asahi Linux bootloader stub, using macOS 12.3 as its base version, named "Asahi Linux"<ul>
+<li>If the install were complete, this would show your m1n1 stage 1 version. However, because it is not, it is listed as <code>incomplete install</code> until you reboot into it holding down the power button and complete the second step of installation.</li>
+<li>disk4s2 is the <em>volume</em> for this stub's system, which means <code>disk4</code> is the virtual disk that represents this APFS container partition</li>
+</ul>
+</li>
+<li>One EFI system partition (FAT32)</li>
+<li>One Linux Filesystem partition (ext4 in this case, but the specific FS isn't identified/shown)</li>
+<li>Some free space (unpartitioned) - note that the installer represents this as its own "partition"<ul>
+<li><code>diskutil</code> instead likes to refer to free space by the partition identifier of the partition right before it in physical disk order, which is needless to say quite confusing and error-prone. We figure giving it its own number makes more sense.</li>
+</ul>
+</li>
+<li>The System Recovery partition (always exists last), which contains 2 APFS volumes and has one instance of recoveryOS installed (version 12.3).<ul>
+<li>You don't want to touch this, but we show it since knowing what version of recoveryOS is present is useful. There could be a fallback version too.</li>
+</ul>
+</li>
+</ul>
+<p>Note how it tells you that you are currently booted into the <em>Macintosh HD</em> OS (<code>[B ]</code>), but that the default boot OS is set to Asahi Linux (<code>[ *]</code>). If you were to run this from recoveryOS, it'd be shown as a <code>[R*]</code> (running the recoveryOS that is part of your default boot OS), unless you ended up falling back to System Recovery, in which case the boot mark would be in the last line, starting <code>[R ] recoveryOS...</code>.</p>
+<p>Note that the Asahi Linux installer will <em>not</em> show you the iBoot System Container partition (to not confuse users too much) but <em>will</em> show you your System Recovery partition, so you can see what System Recovery versions(s) you have (but won't let you do anything with it). It also doesn't show physical disk partition numbers.</p>
+<h5 id="listing-partitions-with-diskutil">Listing partitions with <code>diskutil</code><a class="headerlink" href="#listing-partitions-with-diskutil" title="Permanent link">&para;</a></h5>
+<p>Use <code>diskutil list</code>. The same set-up above looks like this:</p>
+<pre><code>/dev/disk0 (internal):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                         500.3 GB   disk0
+   1:             Apple_APFS_ISC ⁨⁩                        524.3 MB   disk0s1
+   2:                 Apple_APFS ⁨Container disk3⁩         380.0 GB   disk0s2
+   3:                 Apple_APFS ⁨Container disk4⁩         2.5 GB     disk0s5
+   4:                        EFI ⁨EFI - ASAHI⁩             500.2 MB   disk0s4
+   5:           Linux Filesystem ⁨⁩                        54.2 GB    disk0s7
+                    (free space)                         57.2 GB    -
+   6:        Apple_APFS_Recovery ⁨⁩                        5.4 GB     disk0s3
+
+/dev/disk3 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +380.0 GB   disk3
+                                 Physical Store disk0s2
+   1:                APFS Volume ⁨Macintosh HD⁩            15.2 GB    disk3s1
+   2:              APFS Snapshot ⁨com.apple.os.update-...⁩ 15.2 GB    disk3s1s1
+   3:                APFS Volume ⁨Preboot⁩                 887.6 MB   disk3s2
+   4:                APFS Volume ⁨Recovery⁩                798.7 MB   disk3s3
+   5:                APFS Volume ⁨Data⁩                    157.1 GB   disk3s5
+   6:                APFS Volume ⁨VM⁩                      20.5 KB    disk3s6
+
+/dev/disk4 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +2.5 GB     disk4
+                                 Physical Store disk0s5
+   1:                APFS Volume ⁨Asahi Linux - Data⁩      884.7 KB   disk4s1
+   2:                APFS Volume ⁨Asahi Linux⁩             1.1 MB     disk4s2
+   3:                APFS Volume ⁨Preboot⁩                 63.6 MB    disk4s3
+   4:                APFS Volume ⁨Recovery⁩                1.8 GB     disk4s4
+</code></pre>
+<p>This shows the physical partitions in the order they are present on disk0 first:</p>
+<ul>
+<li><code>disk0</code> (shown as type "GUID_partition_scheme") actually represents the whole disk (500GB)</li>
+<li><code>disk0s1</code> is the iBoot System Container (type <code>Apple_APFS_ISC</code>), not shown in the Installer output<ul>
+<li>This is actually an APFS container with more subvolumes, but <code>diskutil</code> itself hides those details from you too!</li>
+<li>This stores a bunch of system-critical information, you don't want to mess with it</li>
+</ul>
+</li>
+<li><code>disk0s2</code> is the first APFS container, which holds the "Macintosh HD" macOS volume<ul>
+<li>Note how it says "Container disk3" to indicate this is shown as the virtual/synthesized <code>disk3</code> disk.</li>
+</ul>
+</li>
+<li><code>disk0s5</code> is the Asahi Linux bootloader stub<ul>
+<li>The partition index is out of order! This is logically after <code>disk0s2</code> and also in that position in the GPT. These partition numbers don't mean anything, it's whatever macOS feels like assigning that day.</li>
+<li>This is virtual disk <code>disk4</code>.</li>
+</ul>
+</li>
+<li><code>disk0s4</code> is the FAT32 EFI System Partition (displayed as type <code>EFI</code>, and with name <code>EFI - ASAHI</code> because it gets truncated for these)</li>
+<li><code>disk0s7</code> is the Linux root partition (displayed as type <code>Linux filesystem</code>)</li>
+<li>Then there's some free space</li>
+<li><code>disk0s3</code> is the System Recovery partition (type <code>Apple_APFS_Recovery</code>)<ul>
+<li>Really, don't mess with this. It is the only way to recover locally if your OS is broken.</li>
+</ul>
+</li>
+</ul>
+<p>After this, you can see the two APFS containers broken out into volumes, each as their own virtual disk: <code>disk3</code> and <code>disk4</code>. In fact, there are two more: <code>disk1</code> is the iBoot System Container (backed by <code>disk0s1</code>) and <code>disk2</code> is the System Recovery (backed by <code>disk0s3</code>), but these are hidden from diskutil output. Remember, the numbering may/will be different for you!</p>
+<h4 id="do-not-blindly-copy-and-paste-these-commands"><strong>Do not blindly copy and paste these commands</strong><a class="headerlink" href="#do-not-blindly-copy-and-paste-these-commands" title="Permanent link">&para;</a></h4>
+<p>All the following examples <em>use disk/partition numbers from the above output</em>. You need to substitute the right numbers for your system. These <em>will be different for you</em>. You have been warned.</p>
+<h5 id="deleting-partitions-with-diskutil">Deleting partitions with <code>diskutil</code><a class="headerlink" href="#deleting-partitions-with-diskutil" title="Permanent link">&para;</a></h5>
+<p>Deleting partitions works <em>differently</em> for APFS and non-APFS partitions.</p>
+<h6 id="deleting-apfs-containers">Deleting APFS containers<a class="headerlink" href="#deleting-apfs-containers" title="Permanent link">&para;</a></h6>
+<p>To delete the <em>Asahi Linux</em> APFS container, use one of these forms:</p>
+<p><code>diskutil apfs deleteContainer disk4</code></p>
+<p><code>diskutil apfs deleteContainer disk0s5</code></p>
+<p>The first one identifies it by <em>virtual disk</em>, the second one by <em>physical partition</em>. They are exactly equivalent and have the same result, as long as you are using the right numbers.</p>
+<h6 id="deleting-other-partitions">Deleting other partitions<a class="headerlink" href="#deleting-other-partitions" title="Permanent link">&para;</a></h6>
+<p>To delete the EFI and Linux partitions, do this:</p>
+<pre><code>diskutil eraseVolume free free disk0s4
+diskutil eraseVolume free free disk0s7
+</code></pre>
+<p>This is called "eraseVolume free free" because diskutil's amazingly intuitive interface represents the concept of deleting partitions as "formatting them as free space" (except for APFS). Yes, really.</p>
+<h5 id="resizing-apfs-containers">Resizing APFS containers<a class="headerlink" href="#resizing-apfs-containers" title="Permanent link">&para;</a></h5>
+<p>After deleting Asahi Linux, you could re-install it again (no need to use the resize option in the installer). But if you want to grow macOS to use the full size of the disk again, use either of these:</p>
+<p><code>diskutil apfs resizeContainer disk0s2 0</code></p>
+<p><code>diskutil apfs resizeContainer disk3 0</code></p>
+<p>Again, you can use the physical partition identifier or the logical disk number. They are equivalent. The <code>0</code> means resize to fill all available free space after the partition. If instead you want to expand/shrink to a given size, specify it there, e.g. <code>100GB</code>.</p>
+<p>Please note that running this command might momentarily freeze your macOS terminal. Do not panic and let it run for a few minutes.</p>
+<h6 id="storage-system-verify-or-repair-failed"><code>Storage system verify or repair failed</code><a class="headerlink" href="#storage-system-verify-or-repair-failed" title="Permanent link">&para;</a></h6>
+<p>If you get this error during the APFS resize operation, it means you have latent APFS filesystem corruption. This problem is caused by bugs in Apple's APFS drivers, not Asahi Linux (which does not touch APFS partitions at all). To fix it, <strong>boot into recoveryOS</strong> (this will not work from macOS), then run the following command (substituting disk0s2 for your APFS container disk name, as above):</p>
+<p><code>diskutil repairVolume disk0s2</code></p>
+<p>If this complains about "encrypted and locked volumes", you will have to run <code>diskutil apfs unlockVolume &lt;diskName&gt;</code> on every FileVault-protected macOS volume in your system. Run <code>diskutil apfs list</code> and look for <code>FileVault: Yes (locked)</code> to identify them. You may safely skip System volumes (only Data volumes need to be unlocked). Then, retry the <code>diskutil repairVolume</code> operation.</p>
+<p>Finally, retry the resize operation after the repair successfully completes.</p>
+<p>If this does not repair your volume successfully and the resize operation still fails, unfortunately, there is no known solution other than a complete wipe and reformat of the macOS volume (losing all data). The Asahi Linux project cannot offer bugfixes or support for Apple's own system drivers and tools. If you find a reproducible way of causing APFS corruption, please report it directly to Apple.</p>
+<h5 id="addendum-mounting-efi-partition">Addendum: Mounting EFI partition<a class="headerlink" href="#addendum-mounting-efi-partition" title="Permanent link">&para;</a></h5>
+<p>There are two methods to mount the EFI partition. The first one is this:</p>
+<pre><code>diskutil list
+diskutil mount disk0s4
+mount
+cd /Volumes/...
+</code></pre>
+<p>The second one is this:</p>
+<pre><code>mkdir /Volumes/efi
+mount -t msdos /dev/disk0s4 /Volumes/efi
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

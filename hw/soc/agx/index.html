@@ -1,0 +1,1818 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/hw/soc/agx/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>Apple GPU (AGX) - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Apple GPU (AGX) - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/hw/soc/agx.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/hw/soc/agx/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Apple GPU (AGX) - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/hw/soc/agx.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linas-agx-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Apple GPU (AGX)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/partitioning-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Apple GPU (AGX)</h1>
+
+<h4 id="linas-agx-notes">Lina's AGX notes<a class="headerlink" href="#linas-agx-notes" title="Permanent link">&para;</a></h4>
+<p>Reader beware, here be dragons. Pointer-shaped dragons. Lots of them.</p>
+<p>This document focuses on the AGX architecture from the point of view of a kernel driver. It will not discuss aspects that are purely of userspace concern, like shaders, texture sampling, pipeline command encoders, etc.</p>
+<h5 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h5>
+<p>AGX is a <em>heavily</em> PowerVR-inspired (but largely bespoke) GPU design. The OS interface is brokered almost exclusively via an ASC (ARM64) coprocessor, which runs Apple firmware. All communication occurs via shared memory and a few mailbox doorbell messages. All memory is coherent as far as we can tell (we haven't used a single cache management instruction yet and everything still works).</p>
+<p>The layers involved in getting a triangle on the screen are roughly:</p>
+<ul>
+<li>UAT (MMU)</li>
+<li>Firmware init</li>
+<li>GPU Channels</li>
+<li>GPU Contexts</li>
+<li>Work Queues</li>
+<li>Work Items</li>
+<li>Micro Sequences</li>
+<li>Tiler buffer management</li>
+<li>Event management</li>
+<li>(All the userspace stuff goes here)</li>
+</ul>
+<h6 id="uat-unified-address-translator">UAT (Unified Address Translator)<a class="headerlink" href="#uat-unified-address-translator" title="Permanent link">&para;</a></h6>
+<p>The UAT is the AGX's MMU. It is essentially the ARM64 MMU, and uses identical page tables. In fact, the AGX ASC literally configures UAT page table bases as its TTBR0/1 registers. There <em>may</em> be some nuance to how the GPU proper interprets page permissions and other attributes compared to how a CPU would; this is still largely unexplored.</p>
+<p>GPU VAs are 40 bits, with the top bit sign-extended to 64 bits. As with ARM64, there is a kernel/user address space split. Pages are always 16K.</p>
+<p>There is a global, fixed page of memory that contains GPU context page table base addresses. There are up to 16 contexts (TODO: double check this limit is real and not driver-controlled), each with two base registers for the kernel/user page tables. </p>
+<p>macOS always uses context 0 for the kernel only (no user pages for that one) and shares the kernel half of the page tables for all contexts. User VA space is unique per context.</p>
+<p>The kernel address space literally maps ASC firmware too, as it <em>is</em> the ASC's CPU page table. This is in a VA range that the firmware controls by itself, and sets up during initialization. The host OS is responsible for the rest of the page tables in this half of the address space, which is where all the GPU control structures go.</p>
+<p>Note: firmware is loaded by the bootloader and write-protected. While hijacking the page tables to completely take over AGX firmware is plausible with the current design, clearly Apple's intent and direction is for ASC firmwares to be hardened against takeover, so we will not consider using our own firmware at this point. Talking to Apple's firmware to make this GPU work is considered non-negotiable.</p>
+<p>TODO: UAT TLB invalidation. There's some shared memory involved and poking the firmware.</p>
+<h6 id="firmware-init">Firmware init<a class="headerlink" href="#firmware-init" title="Permanent link">&para;</a></h6>
+<p>Firmware communication uses the RTKit framework common to other ASCs, which will not be covered here. Only the memory/buffer management is different (other ASCs use either DART IOMMUs, SART address filters, or can only access dedicated SRAM).</p>
+<p>To initialize the GPU, a single message is sent containing a pointer to an inititalization data structure. This is a complex nested data structure with more pointers, containing things such as:</p>
+<ul>
+<li>Channel ring buffer control area and ring buffer area pointers</li>
+<li>Power management data including DVFS states</li>
+<li>Shared memory regions containing various (largely unknown) data</li>
+<li>Colorspace conversion coefficients</li>
+<li>MMIO mapping list (OS is responsible for mapping MMIO regions the ASC needs to access)</li>
+<li>UAT layout information</li>
+<li>Various unknown buffers</li>
+</ul>
+<p>Data structures: see <a href="https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/initdata.py">initdata.py</a></p>
+<h6 id="channels">Channels<a class="headerlink" href="#channels" title="Permanent link">&para;</a></h6>
+<p>Communication with the firmware happens via channel ring buffers. Channels hold small, fixed-size messages delivered in-line in the ring buffers. A control structure has the read/write buffer pointers and size, cacheline-aligned so the GPU/CPU do not bounce things all the time. There are channels in both directions.</p>
+<p>Data structures: see <a href="https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/channels.py">channels.py</a></p>
+<h6 id="cpu-gpu-channels">CPU-&gt;GPU channels<a class="headerlink" href="#cpu-gpu-channels" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Work Channels: four groups (0-3), each with three channels, one per GPU work type<ul>
+<li>TA (Tile Accelerator; vertex processing)</li>
+<li>3D (3D; pixel processing)</li>
+<li>CP (Compute)</li>
+</ul>
+</li>
+</ul>
+<p>TODO: there is probably some priority scheme for work submitted to different channels.</p>
+<ul>
+<li>DeviceControl channel, for device-wide messages (e.g. GPU init and presumably power management related stuff)</li>
+</ul>
+<h6 id="gpu-cpu-channels">GPU-&gt;CPU channels<a class="headerlink" href="#gpu-cpu-channels" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Event: work-related event notifications<ul>
+<li>Work completion flag events</li>
+<li>These have a 128-bit array indicating which event indices are firing</li>
+<li>Fault notifications</li>
+<li>GPU faults seem to be quite poorly handled as a stop-the-world process; macOS actually goes off dumping GPU MMIO registers directly, and the firmware seems to be quite clueless as to what to do.</li>
+</ul>
+</li>
+<li>Statistics messages<ul>
+<li>We ignore these. The firmware will complain once if the buffer overflows, but it's harmless.</li>
+</ul>
+</li>
+<li>Firmware syslogs<ul>
+<li>This one is weird in that there are multiple sub-channels for some reason, with control structures laid out contiguously.</li>
+</ul>
+</li>
+<li>An unknown channel (tracing?)</li>
+</ul>
+<h6 id="gpu-contexts">GPU contexts<a class="headerlink" href="#gpu-contexts" title="Permanent link">&para;</a></h6>
+<p>GPU contexts map to a few small shared structures, some populated by the ASC. This is mostly still TBD.</p>
+<h6 id="work-queues">Work Queues<a class="headerlink" href="#work-queues" title="Permanent link">&para;</a></h6>
+<p>A work queue holds work items of a specific type. There are usually multiple work queues per context (e.g. at least 3D and TA for 3D rendering). Work queues are represented by a few structures, mostly a main structure initialized by the CPU and managed by the GPU, with pointers to context structures, a ring buffer, a ring buffer pointer block, and others. The ring buffer is an array of pointers to individual items (not in-line).</p>
+<p>To process a work queue, the OS submits a message on a work channel with a pointer to the work queue management structure and the most recent ring buffer write pointer, plus an event index to signal work completion, and a flag indicating whether this is the first submission from a new work queue.</p>
+<p>Data structures: see <a href="https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/cmdqueue.py">cmdqueue.py</a></p>
+<h6 id="work-items">Work items<a class="headerlink" href="#work-items" title="Permanent link">&para;</a></h6>
+<p>Work items represent GPU work or related operations. These are fairly large buffers containing embedded sub-structures in a particular layout (pointers to some of these sub-structures exist, but the firmware assumes the embedding in a particular way, so the layout must be respected).</p>
+<p>Data structures: see <a href="https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/cmdqueue.py">cmdqueue.py</a></p>
+<h6 id="micro-sequences">Micro Sequences<a class="headerlink" href="#micro-sequences" title="Permanent link">&para;</a></h6>
+<p>The ASC firmware contains a command sequencer that can run fairly complext "scripts" as part of work commands, but it is usually used in a fairly basic manner. These sequences are packed buffers of commands that are executed as part of a work item. The typical sequence is:</p>
+<ul>
+<li>Start (3D/TA/CP)</li>
+<li>Write Timestamp</li>
+<li>Wait For Idle</li>
+<li>Write Timestamp</li>
+<li>Finish (3D/TA/CP)</li>
+</ul>
+<p>Data structures: see <a href="https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/microsequence.py">microsequence.py</a></p>
+<h6 id="tiler-buffer-management">Tiler buffer management<a class="headerlink" href="#tiler-buffer-management" title="Permanent link">&para;</a></h6>
+<p>The GPU tiler needs a buffer to store vertex attribute and primitive data. This is done through a few fixed-size buffers provided by the driver, and a heap that the GPU firmware allocates stuff out of at its discretion. The heap is managed via a buffer manager object and a few buffers it points to, where the CPU provides a list of blocks (4 pages) and pages (32K each, aligned in VA space (!)).</p>
+<p>The tiler buffer overflow / partial store / reload process is entirely managed by ASC firmware.</p>
+<p>Data structures: see BufferManager* in <a href="https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/microsequence.py">microsequence.py</a></p>
+<h6 id="event-management">Event Management<a class="headerlink" href="#event-management" title="Permanent link">&para;</a></h6>
+<p>Work completion is signaled by writing values to stamp objects, which are 32-bit words in RAM. Typically initialized at 0 and increment by 0x100 for each work item processed. Each work item is also associated with an event ID (0-127), and an event management structure. The structure is shared between 3D/TA for a single user, and contains the base barrier value and (?) a number of events threshold. When the threshold is reached, the corresponding event ID(s) are asserted in an Event message to the CPU. How this works/counts is still unclear, since the same structure is shared between different queues using different barrier objects which increment in lockstep, but each only increments by one while the threshold needs to be 2 to get both events... TBD</p>
+<h5 id="drawing-a-3d-frame">Drawing a 3D frame<a class="headerlink" href="#drawing-a-3d-frame" title="Permanent link">&para;</a></h5>
+<p>To draw a frame first you need these things:</p>
+<ul>
+<li>A pair of 3D/TA channels to use</li>
+<li>A pair of event indexes for completion notification</li>
+<li>A pair of WorkQueues</li>
+<li>A context ID for the UAT</li>
+<li>A shared context structure</li>
+<li>Tiler static buffers</li>
+<li>Tiler heap manager &amp; associated buffers/lists</li>
+<li>Four stamp objects</li>
+</ul>
+<h6 id="tiler-buffers">Tiler buffers<a class="headerlink" href="#tiler-buffers" title="Permanent link">&para;</a></h6>
+<ul>
+<li>(U) TVB tile array (depends on tile count)</li>
+<li>(U) TVB list array (depends on tile count?)</li>
+<li>(U) TVB heap metadata block (fixed size?)</li>
+<li>(K) TVB heap manager &amp; (U) heap (arbitrary size &gt;= 3 128K blocks, CPU can dynamically adjust in response to overflows for future frames)</li>
+</ul>
+<p>macOS allocates these in the kernel. Do we want to do it in the kernel or userspace? Userspace should probably be in control of sizing at least? Could let the kernel decide, or have userspace donate pages to the buffer manager. Kernel needs to handle the heap manager structure at least.</p>
+<h6 id="stamp-objects-event-management">Stamp objects &amp; event management<a class="headerlink" href="#stamp-objects-event-management" title="Permanent link">&para;</a></h6>
+<p>There are 128 event indices. A render needs 4 stamp objects, 2 each for TA/3D. Current theory is one stamp indicates completion of the work, the other indicates the completion event was delivered to the CPU (work was reaped?)</p>
+<h6 id="ta-work">TA work<a class="headerlink" href="#ta-work" title="Permanent link">&para;</a></h6>
+<p>The TA work usually looks like this:</p>
+<h6 id="initialize-heap-manager">Initialize Heap Manager<a class="headerlink" href="#initialize-heap-manager" title="Permanent link">&para;</a></h6>
+<p>Needed the first time or when the heap size changes. Tells the GPU that the CPU re-initialized the management struture.</p>
+<p>There is an unknown context-related ID involved. This might be a heap manager ID? The (new) TA stamp value is also passed.</p>
+<h6 id="execute-ta">Execute TA<a class="headerlink" href="#execute-ta" title="Permanent link">&para;</a></h6>
+<p>Note: this is all summarized and glosses over tons of unknown/fixed/magic numbers</p>
+<ul>
+<li>UAT context ID for this job</li>
+<li>Event management structure pointer</li>
+<li>Heap manager structure pointer</li>
+<li>Pointer to some kind of related buffer descriptor (?)</li>
+<li>Pointer to unknown buffer (empty)</li>
+<li>Timestamp 1 ptr</li>
+<li>Timestamp 2 ptr</li>
+<li>Timestamp 3 ptr</li>
+<li>Unknown buffer 2 (empty)</li>
+<li>Embedded structures:<ul>
+<li>Tiler parameters (tile counts/etc)</li>
+<li>TA work struct 2</li>
+<li>TVB tilemap ptr</li>
+<li>TVB list ptr</li>
+<li>Three small buffers passed from userspace (alyssa calls these "deflake")</li>
+<li>Command encoder ptr (i.e. actual gfx pipeline to run, from userspace)</li>
+<li>Pipeline window base (4GiB window into VAs used for 32-bit shader pointers)</li>
+<li>TA work struct 3</li>
+<li>One of the deflake ptrs</li>
+<li>Encoder ID (unique ID, GPU likely does not care)</li>
+<li>"Unknown buffer" (the one with incrementing numbers, from userspace)</li>
+<li>Pointer to TA barrier 1 and 2</li>
+<li>Stamp value to write on completion</li>
+<li>Some UUID</li>
+</ul>
+</li>
+<li>Micro sequence pointers</li>
+<li>Completion stamp value again</li>
+<li>Event number assigned to 3D (for TA/3D coordination on TVB overflows?)</li>
+<li>TVB tile array again &amp; size</li>
+</ul>
+<h6 id="ta-micro-sequence">TA Micro Sequence<a class="headerlink" href="#ta-micro-sequence" title="Permanent link">&para;</a></h6>
+<p>The micro sequence is pointed to by the TA work and has these commands:</p>
+<h6 id="start-ta">Start TA<a class="headerlink" href="#start-ta" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Tiling params ptr</li>
+<li>TA work struct 2 ptr</li>
+<li>Heap manager ptr</li>
+<li>Buffer descriptor thing pointer</li>
+<li>Some pointer into an array in the shared GPU initdata (?)</li>
+<li>Pointer back to the work queue control structure involved</li>
+<li>UAT context ID</li>
+<li>That other context-related ID (heap mgr id?)</li>
+<li>TA work struct 3 ptr</li>
+<li>Pointer to one of the unknown buffers in Execute TA</li>
+<li>UUID</li>
+</ul>
+<h6 id="timestamp">Timestamp<a class="headerlink" href="#timestamp" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Flag=1</li>
+<li>Points to three timestamp pointers in Execute TA: #1, #2, #2</li>
+<li>UUID</li>
+</ul>
+<h6 id="wait-for-idle">Wait For Idle<a class="headerlink" href="#wait-for-idle" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Args: 1, 0, 0</li>
+</ul>
+<h6 id="timestamp_1">Timestamp<a class="headerlink" href="#timestamp_1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Flag=0</li>
+<li>Points to three timestamp pointers in Execute TA: #1, #2, #3 (note difference)</li>
+<li>UUID</li>
+</ul>
+<h6 id="finish-ta">Finish TA<a class="headerlink" href="#finish-ta" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Pointer to that buffer thing</li>
+<li>Pointer to heap manager</li>
+<li>Same initdata pointer as in Start TA</li>
+<li>Pointer back to work queue</li>
+<li>UAT context ID</li>
+<li>Pointer to TA Struct 3</li>
+<li>UUID</li>
+<li>Pointer to TA stamp 2</li>
+<li>Stamp value to write</li>
+<li>Offset back to Start TA micro command (presumably to restart for partial renders?)</li>
+</ul>
+<h6 id="3d-work">3D work<a class="headerlink" href="#3d-work" title="Permanent link">&para;</a></h6>
+<h6 id="barrier-wait-for-stamp">Barrier (Wait for Stamp)<a class="headerlink" href="#barrier-wait-for-stamp" title="Permanent link">&para;</a></h6>
+<p>This blocks 3D until TA is done. Unclear what black magic makes partial renders work.</p>
+<ul>
+<li>Pointer to TA stamp #2</li>
+<li>Value to wait for</li>
+<li>Value to wait for again (? range?)</li>
+<li>TA event index (presumably this signals the actual poll)</li>
+<li>UUID</li>
+</ul>
+<h6 id="execute-3d">Execute 3D<a class="headerlink" href="#execute-3d" title="Permanent link">&para;</a></h6>
+<ul>
+<li>UAT Context ID</li>
+<li>Event management structure pointer</li>
+<li>Tiler heap manager pointer</li>
+<li>Pointer to that buffer descriptor thing</li>
+<li>Unknown empty buffer</li>
+<li>TVB tile array pointer</li>
+<li>More unknown empty buffers</li>
+<li>Timestamp 1 ptr</li>
+<li>Timestamp 2 ptr</li>
+<li>Timestamp 3 ptr</li>
+<li>Embedded structures:<ul>
+<li>3D work struct 1</li>
+<li>Some floats?</li>
+<li>Depth clear value</li>
+<li>Stencil clear value</li>
+<li>Depth bias array ptr</li>
+<li>Scissor array ptr</li>
+</ul>
+</li>
+</ul>
+<p>(unfinished)</p>
+<h4 id="phires-m1x-gpu-infodump">phire's M1x GPU infodump<a class="headerlink" href="#phires-m1x-gpu-infodump" title="Permanent link">&para;</a></h4>
+<p>(Moved here from <code>phire-gpu-infodump.md</code>)</p>
+<p>All my work was done on my T6000 14" M1 Max with MacOS 12.2</p>
+<p>So far, this is mostly an adventure to find how work is submitted to the GPU.</p>
+<h5 id="uat-iommu-aka-unified-address-translator">UAT iommu (aka Unified Address Translator)<a class="headerlink" href="#uat-iommu-aka-unified-address-translator" title="Permanent link">&para;</a></h5>
+<p>There is a reasonably complete implementation of UAT in m1n1/hw/uat.py</p>
+<p>It is a 4 level pagetable:</p>
+<ul>
+<li>L0: 2 entries</li>
+<li>L1: 8 entries</li>
+<li>L2: 2048 entries</li>
+<li>L3: 2048 entries</li>
+</ul>
+<p>Pages are fixed-sized at 16KB</p>
+<p>The (slightly weird) layout allows for shared VM regions (above <code>0xf80_00000000</code>) to be in L0[1] and
+all per-context allocations to be in L0[0], making for easy constriction of L0 tables for new contexts </p>
+<p>I have not found a TTBR register, or any registers. It seems gfx-asc is in full control of this iommu.
+It does set up it's own pagetables for the private IO region</p>
+<p>This has security implications, gfx-asc has access to every single physical page, and some (if not all)
+MMIO registers. Panic messages from the MacOS kernel suggest there might be a "microPPL" running on
+the gfx-asc coprocessor, similar to the PPL in MacOS, and that's hopefully the only part that can
+modify page tables.</p>
+<p>The MacOS kernel has a useful kernel option, <code>iouat_debug=1</code> that logs out all allocations and 
+de-allocations in this address space.</p>
+<p>See m1n1.hw.PTE for details on the PTE format</p>
+<h5 id="gpu-virtual-address-space">GPU Virtual Address Space<a class="headerlink" href="#gpu-virtual-address-space" title="Permanent link">&para;</a></h5>
+<p>MacOS (at least on my machine) uses GPU VAs in the following ranges:</p>
+<p><code>0x015_00000000</code>: Most userspace allocations<br />
+<code>0x011_00000000</code>: Some additional userspace allocations<br />
+<code>0x06f_ffff8000</code>: No idea. Only a single page
+<code>0xf80_00000000</code>: ASC's private VM region, that it allocates itself. Mostly contains the ASC firmware<br />
+This region lines up with <code>/arm-io/sgx/rtkit-private-vm-region-base</code></p>
+<p><code>0xf80_10000000</code>: IO region mapped by ASC firmware. Only contains the ASC mailbox registers.<br />
+<code>0xfa0_00000000</code>: Region where macos kernel allocates things<br />
+<code>0xfa0_10000000</code>: IO region mapped by MacOS.<br />
+Points to ASC regions, PMRG registers, MCC registers (and more?)</p>
+<p>Pointers are sometimes sign extended, so you will sometimes see pointers in the range
+<code>0xffffff80_00000000</code> or <code>0xffffffa0_00000000</code>, but there are only actually
+40 bits of address space. Logs from the kernel usually report 44 bits, hence <code>0xfa_00000000</code> address</p>
+<p>UAT is in control of this address space.</p>
+<h5 id="gfx-asc">gfx-asc<a class="headerlink" href="#gfx-asc" title="Permanent link">&para;</a></h5>
+<p>The ASC interface seems like it would be natural interface for submitting work.</p>
+<p>However there is shocking little traffic on this interface, especially when
+compared to what I've seen of DCP.</p>
+<h6 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h6>
+<p>0x0: Standard Management, I didn't see anything weird here.<br />
+ 0x1: Standard Crashlog endpoint
+0x20: I called this Pong. Receives regular "pongs"<br />
+0x21: I called this Kick.  </p>
+<h6 id="crashlog-endpoint">Crashlog Endpoint<a class="headerlink" href="#crashlog-endpoint" title="Permanent link">&para;</a></h6>
+<p>The entire traffic is:</p>
+<pre><code>RX 0x0012000000000000
+TX 0x00104fa00c388000
+</code></pre>
+<p>And happens right around initialization</p>
+<p>0xfa00c388000 is a GPU VA, and points at a single page allocation. the gfx firmware fills this with
+a repeating pattern during initialization (16KB of repeating 0xef byte), and then never
+touches it again.</p>
+<h6 id="pong-endpoint">Pong Endpoint<a class="headerlink" href="#pong-endpoint" title="Permanent link">&para;</a></h6>
+<p><em>Crashlogs call this endpoint "User01"</em></p>
+<p>I probably misnamed this, the number of Pong messages don't line up with kicks. Might be more of
+a heartbeat, or might be the gfx firmware telling the cpu that it touched the pagetables.</p>
+<p>There is also some more initialization that happens on this endpoint after the Init endpoint.</p>
+<p>Messages:
+<code>RX 0x0042000000000000</code>: The pong. Never sets the lower bits to anything other than zero.<br />
+<code>TX 0x00810fa0000b0000</code>: Initialization, sent once  </p>
+<p>If you send a null pointer as the Initialization data, you get the following crash over Crashlog:</p>
+<pre><code>GFX PANIC - Unable to grab init data from host - agx_background(2)
+</code></pre>
+<p>The painclog shows the following active tasks:</p>
+<ul>
+<li>rtk_ep_work</li>
+<li>power</li>
+<li>agx_background</li>
+</ul>
+<p>And the panic happens in agx_background. <em>Does this mean this endpoint belongs to agx_background?</em></p>
+<p>Once the initialization data has been supplied, I didn't managed to crash this endpoint by sending
+it messages</p>
+<h6 id="pong-initialization">Pong Initialization<a class="headerlink" href="#pong-initialization" title="Permanent link">&para;</a></h6>
+<p>This also contains a GPU VA, pointing at a data structure that is prefilled by the cpu:</p>
+<pre><code>&gt;&gt;&gt; chexdump32(gfx.uat.ioread(0, 0xfa0000b0000, 0x4000))
+00000000  000b8000 ffffffa0 00000000 00000000 0c338000 ffffffa0 00020000 ffffffa0
+00000020  000c0000 ffffffa0 030e4000 240e0e08 40000008 00000001 00000000 ffffc000
+00000040  000003ff 00000000 00000070 190e0e08 40000800 00000001 00000000 ffffc000
+00000060  000003ff fe000000 0000000f 0e0e0e08 40000800 00000001 00000000 ffffc000
+00000080  000003ff 01ffc000 00000000 00000000 00000000 00000000 00000000 00000000
+000000a0  00000001 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+000000c0  00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+</code></pre>
+<p>I called this ControlStruct in my m1n1/trace/agx.py code.</p>
+<p>After initialization, the CPU never touches this.</p>
+<p>unkptr_18 appears to be a heap or stack used by the asc-firmware?</p>
+<h6 id="kick">Kick<a class="headerlink" href="#kick" title="Permanent link">&para;</a></h6>
+<p><em>Crashlogs call this endpoint "User02"</em></p>
+<p><strong>Messages:</strong>  </p>
+<p><code>0x83000000000000</code>: Submit TA channel
+<code>0x83000000000001</code>: Submit 3D channel
+<code>0x83000000000002</code>: Submit CL channel
+<code>0x83000000000010</code>: Kick Firmware
+<code>0x83000000000011</code>: Device Control</p>
+<p>These Kicks might be triggering work submission, but with only 5 bits of entropy, the actual
+information must be somewhere in shared memory. But at this point I have not found shared memory that
+is altered between kicks. It's also possible I mislabeled this, and the kicks are actually TLB invalidation</p>
+<p>Sending <code>0x0083000000000000</code> messages with out-of-range kicks doesn't cause a crash
+message types 0x84 and 0x85 </p>
+<h6 id="channels_1">Channels<a class="headerlink" href="#channels_1" title="Permanent link">&para;</a></h6>
+<h6 id="channel-0">Channel 0<a class="headerlink" href="#channel-0" title="Permanent link">&para;</a></h6>
+<p>Used by <code>0x83000000000000</code>: Submit TA channel</p>
+<p>00000000 0c000000 ffffffa0 00000002 00000000 00000001
+00000000 0c3a8000 ffffffa0 00000002 00000002 00000001
+00000000 0c000000 ffffffa0 00000003 00000000 00000000
+00000000 0c3a8000 ffffffa0 00000003 00000002 00000000
+00000000 0c3a8000 ffffffa0 00000004 00000002 00000000
+00000000 0c3a8000 ffffffa0 00000005 00000002 00000000</p>
+<h6 id="channel-1">Channel 1<a class="headerlink" href="#channel-1" title="Permanent link">&para;</a></h6>
+<p>Used by <code>0x83000000000001</code>: Submit 3D channel</p>
+<p>00000001 0c002cc0 ffffffa0 00000002 00000001 00000001
+00000001 0c3aacc0 ffffffa0 00000002 00000003 00000001
+00000001 0c002cc0 ffffffa0 00000004 00000001 00000000
+00000001 0c3aacc0 ffffffa0 00000004 00000003 00000000
+00000001 0c3aacc0 ffffffa0 00000006 00000003 00000000
+00000001 0c3aacc0 ffffffa0 00000008 00000003 00000000
+00000001 0c002cc0 ffffffa0 00000006 00000001 00000000
+00000001 0c3aacc0 ffffffa0 0000000a 00000003 00000000</p>
+<h6 id="channel-12">Channel 12<a class="headerlink" href="#channel-12" title="Permanent link">&para;</a></h6>
+<p>Used by Device Control - <code>0x83000000000011</code></p>
+<p>The kernel puts a message in channel 12 before even initializing gfx-asc.</p>
+<p>Message Type 0x19</p>
+<p>then</p>
+<p>Message Type 0x23</p>
+<p>Message 0x17:</p>
+<pre><code>Seen when launching my metal test
+</code></pre>
+<h6 id="channel-13">Channel 13<a class="headerlink" href="#channel-13" title="Permanent link">&para;</a></h6>
+<p>From GPU firmware?</p>
+<p>Transfers are actually 0x38 bytes long, instead of the regular 0x30</p>
+<pre><code># chan[13]-&gt;ptrB (0xffffffa000031f00..0xffffffa0000350af)
+ffffffa000031f00 00000001 00000001 00000000 00000000 00000000 4b430000 534b5452 4b434154 | ......................CKRTKSTACK
+ffffffa000031f20 534b5452 4b434154 534b5452 4b434154 534b5452 4b434154 00000001 00000002 | RTKSTACKRTKSTACKRTKSTACK........
+ffffffa000031f40 00000000 00000000 00000000 ffff0000 00000080 00000000 000040e8 00000000 | .........................@......
+ffffffa000031f60 00001180 00021300 000040e0 00000000 00000000 00000000 00000000 00000000 | .........@......................
+</code></pre>
+<h6 id="channel-14">Channel 14<a class="headerlink" href="#channel-14" title="Permanent link">&para;</a></h6>
+<p>A reply to channel 12?</p>
+<p>Message Type 0x4</p>
+<h6 id="channel-16">Channel 16<a class="headerlink" href="#channel-16" title="Permanent link">&para;</a></h6>
+<p>The timestamp channel.</p>
+<p>This might show the timestamps of every function or mode the gpu firmware (or gpu itself) was in</p>
+<p>Type 0xc - Nothing has happened</p>
+<h6 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h6>
+<p>According to crashlogs, gfx-asc is running the following tasks:</p>
+<ul>
+<li>rtk_ep_work</li>
+<li>power</li>
+<li>agx_background</li>
+<li>agx_recovery</li>
+<li>agx_interrupt</li>
+<li>agx_power</li>
+<li>agx_sample</li>
+</ul>
+<h5 id="arm-iosgxs-various-shared-memory-ranges">/arm-io/sgx's various shared memory ranges<a class="headerlink" href="#arm-iosgxs-various-shared-memory-ranges" title="Permanent link">&para;</a></h5>
+<p>Talking about shared memory, these are the obvious ones. Allocated by iboot and listed in ADT</p>
+<p><strong>gpu-region-base:</strong></p>
+<p>Single page containing the L0 tables for UAT. Controlled by CPU.</p>
+<p>The L0 for a given context can be found at <code>gpu-region-base + context * 0x10</code></p>
+<p><strong>gfx-shared-region-base:</strong></p>
+<p>Contains all the private pagetables that gfx-asc allocates itself during initialization.</p>
+<p>Mostly controlled by gfx-asc, though the cpu controls the PPE <code>L0[1][2]</code> and points it to an L2 table
+in it's own memory.</p>
+<p>There seems to be a convention that the <code>L0[1]</code> PTE will point to the start of this region. </p>
+<p><strong>gfx-handoff-base:</strong></p>
+<p><code>0x10ffffb4000</code> : u64 - microPPL magic value of <code>0x4b1d000000000002</code><br />
+<code>0x10ffffb4008</code> : u64 - microPPL magic value of <code>0x4b1d000000000002</code>  </p>
+<p>Corrupting this value results in the following panic:</p>
+<pre><code>panic(cpu 4 caller 0xfffffe0013c5d848): UAT PPL 0xfffffdf030af4160 (IOUAT): 
+Invalid microPPL magic value found in the handoff region. 
+Expected: 0x4b1d000000000002, Actual: 0x0
+</code></pre>
+<p><code>0x10ffffb4018</code> : u32 - Commonly read as u8 - initialized to 0xffffffff<br />
+<code>0x10ffffb4038</code> : u32 - Flush state (commonly set to 0 or 2)  </p>
+<p>The CPU has a pattern of setting this to 2, changing some of the following values, and then
+setting it back to 0. I suspect this might be a mutex?</p>
+<p>Changing this to 2 when the cpu doesn't expect it will cause it to panic with:</p>
+<pre><code>panic(cpu 0 caller 0xfffffe0013b6d8c4): UAT PPL 0xfffffdf0429d0160 (IOUAT): 
+    Attempted to call prepareFWUnmap() before completing previous cache flush. 
+    flush_state: 2 | start_addr: 0x150e540000 | size: 0x730000 | context_id: 1
+</code></pre>
+<p><code>0x10ffffb4040</code> : u64 - CPU sometimes writes GPU VAs here<br />
+<code>0x10ffffb4048</code> : u64 - Size? set to nice round numbers like 0x28000 and 0x8000<br />
+<code>0x10ffffb4050</code> : u64 - CPU sometimes writes GPU VAs here<br />
+<code>0x10ffffb4058</code> : u64 - another size  </p>
+<p><code>0x10ffffb4098</code> : u64 - Treated the same way as 4038, but when touching 40a0<br />
+<code>0x10ffffb40a0</code> : u64 - CPU sometimes writes GPU VAs here, I've only seen this when running a metal app<br />
+<code>0x10ffffb40a8</code> : u64 - size?  </p>
+<p><code>0x10ffffb4620</code> : u32 - ?<br />
+<code>0x10ffffb4638</code> : u8 - Always checked before 0x4038 is changed.  </p>
+<p>The CPU writes interesting GPU VA pointers to this range. I spent a long time thinking this must be
+how work is submitted to the GPU. But it doesn't seem to be related to the Kicks or Pongs. Sometimes
+the kernel will overwrite pointers multiple times with zero Kicks or Pongs in-between.
+Other times it will do hundreds of kicks without ever changing anything in this region.</p>
+<p>My current theory is that this region is exclusive used to track the status of page table updates,
+and is accessible to both MacOS and gfx-asc so they can syncronise access for pagetable updates</p>
+<p>The following panic message <code>GFX PANIC - Host-mapped FW allocations are disabled, but FW only supports enabled</code>
+(seen when setting byte 0xa0 of initdata to 0) suggests that this "firmware control of pagetable" 
+functionally isn't actually enabled in this version of the firmware. <br />
+With any luck We might be able to get away with not writing anything to this handoff region at all.</p>
+<h5 id="sgx-registers">sgx registers<a class="headerlink" href="#sgx-registers" title="Permanent link">&para;</a></h5>
+<p>the CPU never writes to these registers, only reads. </p>
+<p>These registers are read once, during initialization:</p>
+<pre><code>0x4000 : u32 - version number? 0x4042000
+0x4010 : u32 - version number? 0x30808
+0x4014 : u32 - version number? 0x40404
+0x4018 : u32 - unknown 0x1320200
+0x401c : u32 - 0x204311
+0x4008 : u32 - 0x40a06
+0x1500 : u32 - 0xffffffff
+0x1514 : u32 - 0x0
+0x8024 : u32 = 0x43ffffe - (this matches sgx/ttbat-phys-addr-base from the ADT)
+</code></pre>
+<p>These status registers are continually checked by <em>something</em> on the CPU</p>
+<pre><code>0x11008 : u32 - Always counts up whenever work is done
+0x1100c : u32 - Useally 0
+0x11010 : u32 - Another work counter? counts up slower
+0x11014 : u32 - Useally 0
+</code></pre>
+<p>There doesn't seem to be a good relationship of when these status registers are read, relative to
+the ASC Pong and Kicks. </p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

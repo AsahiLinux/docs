@@ -1,0 +1,1489 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/platform/open-os-interop-old/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>Open OS Platform Interoperability (Old Version) - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Open OS Platform Interoperability (Old Version) - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/platform/open-os-interop-old.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/platform/open-os-interop-old/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Open OS Platform Interoperability (Old Version) - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/platform/open-os-interop-old.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#foreword" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Open OS Platform Interoperability (Old Version)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/partitioning-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Open OS Platform Interoperability (Old Version)</h1>
+
+<h5 id="foreword">Foreword<a class="headerlink" href="#foreword" title="Permanent link">&para;</a></h5>
+<p>This document presents our vision for how open OSes should interoperate on Apple Silicon (i.e. M1 and later) Macs. We recommend first reading <a href="../introduction/">Introduction to Apple Silicon</a> to first learn how the platform is designed from Apple's perspective.</p>
+<p>The ideas in this document are not intended to set hard requirements or rules; anyone is of course free (and encouraged) to go their own way if they so choose. Rather, we would like to agree on a set of standards that make it easier for different OSes to co-exist and be installed by end users, aiming to make the process as simple, seamless, and future-proof as possible.</p>
+<p>This document is a draft, and we welcome all commentary and discussion in order to help shape the future of how to build an open OS ecosystem on these platforms. Please drop by #asahi on OFTC if you have general questions or feedback, or ping us on #asahi-dev if you are a developer and would like to discuss technical aspects (<a href="https://asahilinux.org/community/">further info</a>).</p>
+<h5 id="os-layout-boot">OS layout &amp; boot<a class="headerlink" href="#os-layout-boot" title="Permanent link">&para;</a></h5>
+<p>An OS on an Apple Silicon machine, as seen by Apple's tooling, means a portion of an APFS container partition. As the machines natively support multi-boot, and in order to fit within the security design of the platform (e.g. the SEP should know what OS was booted), we recommend a 1:1 mapping between an installed OS and an OS as seen by the platform.</p>
+<p>For third-party OSes, we propose the following GPT partition structure per OS:</p>
+<ol>
+<li>APFS container partition ("stub macOS") (~2.5GB) with:<ul>
+<li>iBoot2, firmware, XNU kernel, RecoveryOS (all required by the platform)</li>
+<li>m1n1 as fuOS kernel, with chainloading config pointing to the EFI partition</li>
+<li>~empty root/data filesystem subvolumes</li>
+</ul>
+</li>
+<li>EFI system partition (FAT32) (~512MB) with:<ul>
+<li>m1n1 stage 2 + device trees + U-Boot</li>
+<li>GRUB or another UEFI OS loader boot the target kernel</li>
+</ul>
+</li>
+<li>root/boot/etc. partitions (OS-specific)</li>
+</ol>
+<p>Rationale: this arrangement pairs together a third-party OS with an APFS-resident OS as seen by Apple's tooling, and allows users to use the native boot picker (with a11y support). It avoids potential trouble down the road which could come from having multiple OSes attempt to manage the SEP under a shared OS context. It also lets us have independent secure-boot chains for OSes (once that is implemented), with the fuOS image containing the root of trust for subsequent boot stages, bridged to the machine chain of trust by the user with their machine owner credentials during installation.</p>
+<p>While it would be possible to share one APFS container between multiple OSes (and even macOS), there isn't much point to this other than saving a small amount of disk space per OS. Using a separate container partition for each installed OS makes it easier to wipe and start over, which would otherwise require a more complicated cleanup process where certain APFS subvolumes are deleted and certain directory trees in others are wiped.</p>
+<p>This design, unconventionally, provides an EFI system partition for each installed OS. There are two reasons for this: first, each OS is logically a "container" and includes the EFI implementation itself, so it makes sense to isolate the ESP from that of other OSes. Second, due to the absence of EFI variable runtime services (see below), it would be difficult for multiple co-existing OSes to share an ESP and configure their respective EFI boot entries. Having separate ESPs allows us to just use the default boot path (<code>\EFI\BOOT\BOOTAA64.EFI</code>) and avoid having to persist boot configurations. It also allows the ESP to be directly used as the <code>/boot</code> partition for an OS, without having multiple OSes colliding with each other (if desired).</p>
+<p>In the future, once open APFS drivers are deemed stable enough to use as a root filesystem, we would like to support full space-sharing coexistence with macOS; at that point only the EFI system partition would be required on top of an existing APFS macOS container.</p>
+<p>Due to the presence of multiple ESPs, OSes will need a way to figure out which is theirs. For typical mounts and boot purposes, that can be done with partition/FS IDs; this should mostly be a concern for OS installers which need to determine what ESP to install their bootloader into at installation time. For this purpose, m1n1 stage 1 is normally configured at installation time to provide (and forward) a Device Tree <code>/chosen</code> property named <code>asahi,efi-system-partition</code>, which contains the EFI system partition PARTUUID value.</p>
+<h6 id="boot-overview">Boot overview<a class="headerlink" href="#boot-overview" title="Permanent link">&para;</a></h6>
+<p>A typical boot of a reference Linux system will go as follows, continuing on from the Boot Flow section above:</p>
+<ul>
+<li>iBoot2 loads the custom kernel, which is a build of m1n1</li>
+<li>m1n1 stage 1 runs and<ul>
+<li>Parses the Apple Device Tree (ADT) to obtain machine-specific information</li>
+<li>Performs additional hardware initialization (machine-specific)</li>
+<li>E.g. memory controller details, USB-C charging, HDMI display (on Mac Mini)</li>
+<li>Displays its logo on the screen (replacing the Apple logo)</li>
+<li>Loads its embedded configuration, which directs it to chainload from a FAT32 partition</li>
+<li>Initializes the NVMe controller</li>
+<li>Searches the GPT for the partition configured for chainloading, by PARTUUID.</li>
+<li>Mounts the partition as FAT32</li>
+<li>Searches for the filename configured for chainloading and loads it</li>
+<li>Shuts down the NVMe controller</li>
+<li>Chainloads to the loaded instance of m1n1 (as a raw binary blob), including forwarding any /chosen property configurations found in its embedded config.</li>
+</ul>
+</li>
+<li>m1n1 stage 2 runs and<ul>
+<li>Parses the Apple Device Tree (ADT) to obtain machine-specific information</li>
+<li>Re-initializes hardware, including anything stage 1 did not do (e.g. due to it being older)</li>
+<li>Searches its embedded payloads to find Device Trees and an embedded U-Boot image</li>
+<li>Selects an embedded Device Tree (FDT) appropriate for the current platform</li>
+<li>Personalizes the FDT with dynamic information transplanted from the ADT</li>
+<li>Performs any other hardware initialization to prepare the machine environment for Linux</li>
+<li>Loads the embedded U-Boot image and jumps to it</li>
+</ul>
+</li>
+<li>U-Boot runs and<ul>
+<li>Parses the FDT</li>
+<li>Initializes the keyboard for input</li>
+<li>Initializes NVMe</li>
+<li>Prompts the user to break into a shell if requested</li>
+<li>Mounts the appropriate EFI System Partition</li>
+<li>Brings up basic EFI services</li>
+<li>Locates the default EFI bootloader in the ESP, e.g. GRUB, and boots it</li>
+</ul>
+</li>
+<li>GRUB runs and<ul>
+<li>Uses EFI disk access services to mount the /boot filesystem (could be the ESP itself, could be something else)</li>
+<li>Locates its configuration file and additional components</li>
+<li>Presents the user with a boot menu, using EFI console/input services</li>
+<li>Loads the kernel and initramfs from /boot</li>
+<li>Jumps to the kernel</li>
+</ul>
+</li>
+<li>The Linux kernel boots as it would on any other UEFI+FDT platform</li>
+</ul>
+<p>This boot chain is designed to progressively bring the system closer to a "typical" ARM64 machine, so that subsequent layers have to worry less about the particulars of Apple Silicon machines.</p>
+<h6 id="m1n1">m1n1<a class="headerlink" href="#m1n1" title="Permanent link">&para;</a></h6>
+<p>m1n1 is our first-stage bootstrap for Apple Silicon systems. Its purpose is to bridge between the XNU boot protocol and the Device Tree / ARM64 Linux boot protocol, and do low-level bring-up so that subsequent boot stages do not have to be concerned with it. See the <a href="../../sw/m1n1-user-guide/">m1n1 User Guide</a> for more details on how it works.</p>
+<p>m1n1 can also be puppeteered via USB for development and reverse engineering purposes, including loading kernels to allow for a very fast build-test cycle. It also features a bare-metal hypervisor that can boot Linux or macOS and provide a virtualized UART over USB, and includes advanced Python-based event tracing framework. These features are not intended for end users, but we hope they make OS development and testing on these platforms as enjoyable as possible.</p>
+<p>m1n1 can be installed as a single stage, but on production systems it should be split into two versions, with the stage 1 build chainloading a second stage from the EFI system partition. This is important because stage 1 can only be modified by the user via booting in 1TR, which precludes it from being updated by another OS directly. By loading a second stage from NVMe, we can have it be updatable, along with its payloads.</p>
+<p>In the future, we intend to allow for the stage 2 chainload to maintain a secureboot chain, via signed m1n1 images. For this reason, the current chainloading code to load stage 2 from FAT32 is written in Rust, as it is part of the secureboot attack surface. This essentially eliminates the possibility of exploitable memory-safety bugs in that part of the code. The signature verification will also be implemented in Rust for this reason. The public key for verification will be configured at stage 1 installation time, and will be that of the entity expected to provide stage 2 builds for that particular OS container.</p>
+<h6 id="u-boot">U-Boot<a class="headerlink" href="#u-boot" title="Permanent link">&para;</a></h6>
+<p>U-Boot provides the first point of local (keyboard) user interaction, and support for booting from USB or other external devices. It also implements EFI services that hide the specifics of the platform, making it look like a typical UEFI machine.</p>
+<p>Notably, U-Boot cannot provide particularly useful EFI runtime services. As the platform does not have an EFI variable store, and it is not practical to e.g. share NVMe access with a running OS, it won't be possible to make modifications to EFI boot configs from a running OS. Instead, those modifications would have to be made by changing configuration files directly. This shouldn't be an issue if different OSes use different ESPs.</p>
+<h6 id="grub">GRUB<a class="headerlink" href="#grub" title="Permanent link">&para;</a></h6>
+<p>GRUB does the final Linux loading and provides users with the familiar kernel selection and option editing menu. GRUB does not need any patches to work on Apple Silicon machines, as it relies entirely on EFI services to do its job. It is up to the OS distribution to decide what to use here; GRUB is merely an example.</p>
+<h6 id="boot-schemes">Boot schemes<a class="headerlink" href="#boot-schemes" title="Permanent link">&para;</a></h6>
+<p>Installed OSes are in control of the boot chain starting from m1n1 stage 2, and thus are free to manage it however they wish. For example, a Linux distro could append Linux kernels directly to m1n1 stage 2, or use U-Boot directly to boot kernels, or use the Linux EFI stub, or GRUB.</p>
+<p>OS installers booted via USB must use the standard UEFI boot protocol from a FAT32 EFI System Partition if they want to work with the UEFI-only setup mode of the Asahi Linux Installer (which installs m1n1 stage 2 + U-Boot set up like that). The installer may overwrite this with another mechanism as part of the installation, if desired, although this is not recommended without a good reason: keeping the second stage blob installed by the Asahi Linux Installer may allow for booting on machines not yet supported by a given OS release, by providing new device trees, if those platforms are sufficiently backwards compatible.</p>
+<p>For OSes that use the typical m1n1+U-Boot approach, it is recommended that they check the existing version in the ESP and refuse to downgrade automatically it if the package provided by the OS is older. This, again, allows for future hardware to be partially supported with only an installer update. TODO: specify how this version check should work (we need to start tagging m1n1 builds properly).</p>
+<h5 id="initial-installation">Initial installation<a class="headerlink" href="#initial-installation" title="Permanent link">&para;</a></h5>
+<p>On these machines, there is a mismatch between the point where a third-party kernel boots (after iBoot2), and the required per-OS boot components (including iBoot2 itself, firmware, and other files, as well as the recoveryOS image and XNU kernel for it). In addition, Apple's tooling requires these files to be laid out in a certain way in the Preboot partition in order to work properly in the OS selection menus, beyond the requirements imposed by iBoot1/2 themselves. In effect, creating a new OS container requires, essentially, installing macOS minus the root filesystem.</p>
+<p>Thankfully, all the required components can be fetched from the restore images (IPSW files) which are publicly available at <a href="https://ipsw.me/">well-known</a>, stable URLs. We have implemented this process in <a href="https://github.com/AsahiLinux/asahi-installer">asahi-installer</a>, a Python-based installation framework that is intended to run from 1TR. It streams the required bits of the IPSW file, avoiding a complete download, and sets up the partitions and contents as required to boot recoveryOS and subsequently a custom kernel.</p>
+<p>We don't expect OSes to want to reinvent this particular wheel (trust us, you don't want to), so we'd like to make the installer flexible enough to support bootstrapping different installation flows.</p>
+<h6 id="launching-the-installer">Launching the installer<a class="headerlink" href="#launching-the-installer" title="Permanent link">&para;</a></h6>
+<p>At this time, the Asahi Linux installer is supported as a purely online installer (<code>curl | sh</code> style), which can be launched from macOS or from recoveryOS. OSes to be installed are downloaded on demand (streamed directly to the target disk without any intermediate storage). Alternatively, users may choose to install only a UEFI boot environment, which can then boot any OS from USB using the standard mechanisms, leaving unpartitioned space for e.g. an OS installer to use.</p>
+<p>Future installation options could include:</p>
+<ul>
+<li>USB netinstall images/bundles, setting up the installer as "bootable install media". This can be set up by just unpacking some files to a FAT32 partition on a USB drive, so it is easy for users to use, and will allow them to select the installer from the boot picker (<a href="../introduction/#boot-picker">more info</a> on how this magic works). It would still fetch the OS to be installed from the internet.</li>
+<li>USB local install images/bundles, which can also serve as UEFI install media for later or for other platforms. This will install the target OS from USB, but will still hit Apple's CDN for the Apple components, making the install not truly offline.<ul>
+<li>An option for end users to add the Apple components, e.g. by running a script from the USB drive, making it fully offline</li>
+<li>An option for end users to add the Apple components when creating the USB installer, e.g. by running a script that downloads them and provisions the installer in one go, instead of a pre-baked image.</li>
+<li>We want to add this as a feature to the online installer, e.g. "create a bootable USB installer" instead of actually doing the install.</li>
+</ul>
+</li>
+<li>Packaging as a macOS app (this would already be part of USB install modes anyway)<ul>
+<li>Though this runs into GateKeeper issues with unsigned downloads if downloaded "normally" by users from a browser...</li>
+</ul>
+</li>
+</ul>
+<h5 id="firmware-provisioning">Firmware provisioning<a class="headerlink" href="#firmware-provisioning" title="Permanent link">&para;</a></h5>
+<p>Apple Silicon machines rely on a large number of firmware blobs to work. While the majority of these are already loaded by the time a third-party OS boots, there is a small subset that isn't. Since these blobs do not have a redistributable license, this presents an issue for those OSes that need to have access to the blobs. Thankfully, the blobs are available in the IPSW files created by the initial installer. We propose a "vendor-firmware" mechanism to pass those blobs onto the booted/installed OS.</p>
+<p>Note: There is currently a hack in the installer to dump out all firmware raw to another place in the ESP, so we can provide a script for users to extract the rest of it into a form compliant with this specification. This will go away once all the extractors are done, and is intended as a temporary ad-hoc thing.</p>
+<h6 id="packaged-blobs">Packaged blobs<a class="headerlink" href="#packaged-blobs" title="Permanent link">&para;</a></h6>
+<p>Currently, Broadcom FullMAC WiFi firmware is packaged. These blobs have also been identified as necessary, but are not yet packaged:</p>
+<ul>
+<li>Broadcom Bluetooth firmware</li>
+<li>AVD (Apple Video Decoder) Cortex-M3 firmware</li>
+<li>USB xHCI firmware (only needed for iMac models with 4 USB-C ports).</li>
+</ul>
+<p>Details on Broadcom FullMAC WiFi firmware naming: <a href="https://lore.kernel.org/all/20220104072658.69756-10-marcan@marcan.st/">https://lore.kernel.org/all/20220104072658.69756-10-marcan@marcan.st/</a></p>
+<h6 id="vendorfw-package">VendorFW package<a class="headerlink" href="#vendorfw-package" title="Permanent link">&para;</a></h6>
+<p>The stub OS installer collects available platform firmware from the IPSW, and packages it as two files:</p>
+<ul>
+<li>firmware.tar: Tarball containing the firmware, in a structure compatible with the <code>/lib/firmware</code> hierarchy (e.g. <code>brcm/foo.bin</code>).</li>
+<li>manifest.txt: A text file containing lines of the following two forms:<ul>
+<li><code>LINK &lt;src&gt; &lt;tgt&gt;</code> : hard link</li>
+<li><code>FILE &lt;name&gt; SHA256 &lt;hash&gt;</code>: file</li>
+</ul>
+</li>
+</ul>
+<p>These files are then placed in the EFI system partition under the <code>vendorfw</code> directory.</p>
+<h6 id="os-handling">OS handling<a class="headerlink" href="#os-handling" title="Permanent link">&para;</a></h6>
+<p>A booted OS shall mount the ESP and inspect the <code>manifest.txt</code> file. If it is found to be different from the existing vendor firmware installed in the OS partition (if any), it shall update it by extracting <code>firmware.tar</code> into <code>/lib/firmware</code>, and then comparing both manifest files and removing any files that are no longer present in the ESP manifest. This should be done before any drivers requiring firmware are loaded.</p>
+<p>Alternatively, an OS that supports a more complex dynamic firmware loading mechanism could read the <code>firmware.tar</code> file directly as firmware is requested.</p>
+<p>An example implementation of this process is available in the asahi-scripts repo <a href="https://github.com/AsahiLinux/asahi-scripts/blob/main/update-vendor-firmware">here</a>.</p>
+<p>The firmware package should be checked on every boot, to pick up changes from users who upgrade their stub OS by re-running the installer. This will be rare, but it's worth supporting properly.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

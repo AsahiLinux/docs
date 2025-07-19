@@ -1,0 +1,1924 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/sw/broken-software/">
+      
+      
+        <link rel="prev" href="../../hw/soc/display-controllers/">
+      
+      
+        <link rel="next" href="../partitioning-cheatsheet/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>Broken Software - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Broken Software - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/sw/broken-software.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/sw/broken-software/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Broken Software - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/sw/broken-software.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#if-package-supports-aarch64-why-doesnt-it-work" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Broken Software
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#if-package-supports-aarch64-why-doesnt-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      If ${PACKAGE} supports AArch64, why doesn't it work?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-just-use-4k-pages-then" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why not just use 4K pages then?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-just-host-a-fixed-version-of-package-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why not just host a fixed version of ${PACKAGE} yourself?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-not-work-sometimes-mean-instantly-segfault" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why does "not work" sometimes mean "instantly segfault"?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#are-there-any-available-workarounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Are there any available workarounds?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broken-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broken packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bugs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bugs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Bugs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closed Bugs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partitioning-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Broken Software</h1>
+
+<p>This page lists software that is known not to work correctly on Apple Silicon machines.
+We publish it in the hope that it incentivizes inclined members of the community to contribute
+fixes for the affected packages upstream, bettering the AArch64 software ecosystem for everyone.</p>
+<h6 id="if-package-supports-aarch64-why-doesnt-it-work">If ${PACKAGE} supports AArch64, why doesn't it work?<a class="headerlink" href="#if-package-supports-aarch64-why-doesnt-it-work" title="Permanent link">&para;</a></h6>
+<p>This is almost always due to incorrect/incomplete support for 16K pages.
+Packages are sometimes built assuming a 4K page size, or are otherwise incompatible
+with large pages. This has not been a serious issue for desktop Linux software, as
+x86/amd64 supports only 4K pages and PowerPC supports only 4K <em>or</em> 64K pages.
+AArch64 is unique in that an AArch64 machine can use 4K, 16K <em>or</em> 64K pages.</p>
+<h6 id="why-not-just-use-4k-pages-then">Why not just use 4K pages then?<a class="headerlink" href="#why-not-just-use-4k-pages-then" title="Permanent link">&para;</a></h6>
+<p>While these machines can boot 4K kernels, doing so requires some very hacky patches,
+as the IOMMUs only support 16K-aligned pages. Not only does this cause severe performance
+penalties, but it does not address the actual problem which is userspace software with
+incomplete support for AArch64. XNU (macOS) gets around this by supporting independent
+page sizes in userspace, however we have no such mechanism in Linux and likely never will.</p>
+<h6 id="why-not-just-host-a-fixed-version-of-package-yourself">Why not just host a fixed version of ${PACKAGE} yourself?<a class="headerlink" href="#why-not-just-host-a-fixed-version-of-package-yourself" title="Permanent link">&para;</a></h6>
+<p>Desktop-class AArch64 machines are only going to become more common in the next few years.
+By having an upstream-first policy we can make sure these fixes are propagated to everyone
+via distro repositories, improving the AArch64 ecosystem for everyone! See <a href="#fixed-packages">Fixed packages</a>
+for a list of software that has been fixed for everyone as a result of this. You wouldn't
+want us to keep Emacs all to ourselves now, would you?</p>
+<h6 id="why-does-not-work-sometimes-mean-instantly-segfault">Why does "not work" sometimes mean "instantly segfault"?<a class="headerlink" href="#why-does-not-work-sometimes-mean-instantly-segfault" title="Permanent link">&para;</a></h6>
+<p>If an ELF executable or library has sections which are not aligned to 16K pages, the loader
+will be unable to map the binary into memory and will signal this failure by causing
+a segmentation fault before the program even technically starts execution.</p>
+<p>You can confirm that this is the case using <code>readelf -l /path/to/binary</code>. All program
+header sections of type <code>LOAD</code> must have an <code>ALIGN</code> value of at least <code>0x4000</code> to
+successfully load on a 16K machine like Apple Silicon. The library illustrated here
+is only aligned for 4K pages (<code>0x1000</code>) so it cannot load.</p>
+<pre><code>$ readelf -l lib64/ld-android.so
+
+Elf file type is DYN (Shared object file)
+Entry point 0x0
+There are 9 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040
+                 0x00000000000001f8 0x00000000000001f8  R      0x8
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000874 0x0000000000000874  R      0x1000
+  LOAD           0x0000000000001000 0x0000000000001000 0x0000000000001000
+                 0x0000000000000004 0x0000000000000004  R E    0x1000
+  LOAD           0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x00000000000000a0 0x00000000000000a0  RW     0x1000
+  DYNAMIC        0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x00000000000000a0 0x00000000000000a0  RW     0x8
+  GNU_RELRO      0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x00000000000000a0 0x0000000000001000  R      0x1
+  GNU_EH_FRAME   0x000000000000082c 0x000000000000082c 0x000000000000082c
+                 0x0000000000000014 0x0000000000000014  R      0x4
+  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000  RW     0x0
+  NOTE           0x0000000000000238 0x0000000000000238 0x0000000000000238
+                 0x0000000000000020 0x0000000000000020  R      0x4
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     
+   01     .note.gnu.build-id .dynsym .gnu.hash .dynstr .eh_frame_hdr .eh_frame 
+   02     .text 
+   03     .dynamic 
+   04     .dynamic 
+   05     .dynamic 
+   06     .eh_frame_hdr 
+   07     
+   08     .note.gnu.build-id 
+</code></pre>
+<p>Though the default for AArch64 compilers is to produce ELF files with sections aligned
+to 64K for compatibility with all AArch64 machines, tooling bugs (such as binaries
+manipulated by old versions of <code>patchelf</code>) or customized compiler flags (such as
+many Google programs, including older versions of Chrome (and Electron) and most current
+Android programs) may result in a binary whose sections are only aligned to 4K.</p>
+<h5 id="are-there-any-available-workarounds">Are there any available workarounds?<a class="headerlink" href="#are-there-any-available-workarounds" title="Permanent link">&para;</a></h5>
+<p>Fedora Linux Asahi Remix's <code>muvm</code> package is, by default, configured to virtualize a 4K
+kernel (along with setting FEX as the x86_64 binfmt handler so x86_64 programs may be
+run). You may have varying levels of success by attempting to run your software in <code>muvm</code>.</p>
+<h5 id="broken-packages">Broken packages<a class="headerlink" href="#broken-packages" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Upstream report</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hardened_malloc</td>
+<td><a href="https://github.com/GrapheneOS/hardened_malloc/issues/183">https://github.com/GrapheneOS/hardened_malloc/issues/183</a></td>
+<td>There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE</td>
+</tr>
+<tr>
+<td>jemalloc</td>
+<td><a href="https://github.com/jemalloc/jemalloc/issues/467">https://github.com/jemalloc/jemalloc/issues/467</a></td>
+<td>Upstream unwilling to fix, Needs build options if compiled on a 4k page size system. Addressed in <a href="https://github.com/archlinuxarm/PKGBUILDs/pull/1914">ArchLinuxARM</a>.</td>
+</tr>
+<tr>
+<td>notion-app(-enhancer)</td>
+<td><a href="https://github.com/notion-enhancer/notion-repackaged/issues/107">https://github.com/notion-enhancer/notion-repackaged/issues/107</a></td>
+<td>electron + broken build flags</td>
+</tr>
+<tr>
+<td>Waydroid</td>
+<td><a href="https://github.com/waydroid/waydroid/issues/373">https://github.com/waydroid/waydroid/issues/373</a></td>
+<td>Upstream AOSP is working on 16k page support: <a href="https://developer.android.com/guide/practices/page-sizes">https://developer.android.com/guide/practices/page-sizes</a></td>
+</tr>
+</tbody>
+</table>
+<p>* Running x86-64 software is supported via a 4k page size microVM running FEX.</p>
+<h5 id="fixed-packages">Fixed packages<a class="headerlink" href="#fixed-packages" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Fixing commit</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1Password</td>
+<td><em>proprietary</em></td>
+<td>Fixed as of 8.8.0-119 beta.</td>
+</tr>
+<tr>
+<td>Android Cuttlefish</td>
+<td><a href="https://android-review.googlesource.com/c/device/google/cuttlefish/+/2545951">https://android-review.googlesource.com/c/device/google/cuttlefish/+/2545951</a></td>
+<td>Fixed in AOSP main branch by switching to musl.</td>
+</tr>
+<tr>
+<td>box64</td>
+<td><a href="https://github.com/ptitSeb/box64/issues/384">https://github.com/ptitSeb/box64/issues/384</a></td>
+<td>Fixed since 0.2.8</td>
+</tr>
+<tr>
+<td>btrfs</td>
+<td><a href="https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/">https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/</a></td>
+<td>Fixed since Linux 5.19 (<a href="https://web.archive.org/web/20241204022740/https://social.treehouse.systems/@marcan/111493984306764821">caveats</a>)</td>
+</tr>
+<tr>
+<td>Chromium</td>
+<td><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1301788">https://bugs.chromium.org/p/chromium/issues/detail?id=1301788</a></td>
+<td>Includes Electron apps.<br>Fixed since 102.</td>
+</tr>
+<tr>
+<td>Emacs</td>
+<td><a href="https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html">https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html</a></td>
+<td>Fixed since 28.0</td>
+</tr>
+<tr>
+<td>f2fs</td>
+<td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287</a></td>
+<td>Fixed since Linux 6.7</td>
+</tr>
+<tr>
+<td>fd</td>
+<td><a href="https://github.com/sharkdp/fd/issues/1085">https://github.com/sharkdp/fd/issues/1085</a></td>
+<td>Fixed since 10.1</td>
+</tr>
+<tr>
+<td>k3s-io</td>
+<td><a href="https://github.com/k3s-io/k3s/issues/7335">https://github.com/k3s-io/k3s/issues/7335</a></td>
+<td>Fixed since 1.27.2</td>
+</tr>
+<tr>
+<td>KiCad</td>
+<td><a href="https://gitlab.com/kicad/code/kicad/-/issues/16008">https://gitlab.com/kicad/code/kicad/-/issues/16008</a></td>
+<td>Fixed since 7.0.10</td>
+</tr>
+<tr>
+<td>libglvnd</td>
+<td><a href="https://gitlab.freedesktop.org/glvnd/libglvnd/-/merge_requests/262">https://gitlab.freedesktop.org/glvnd/libglvnd/-/merge_requests/262</a></td>
+<td>Fixed since 1.5.0</td>
+</tr>
+<tr>
+<td>libunwind</td>
+<td><a href="https://github.com/libunwind/libunwind/pull/330">https://github.com/libunwind/libunwind/pull/330</a></td>
+<td>Fixed since 1.7.0</td>
+</tr>
+<tr>
+<td>libunwind</td>
+<td><a href="https://github.com/libunwind/libunwind/issues/260">https://github.com/libunwind/libunwind/issues/260</a></td>
+<td>Fixed since 1.8.0</td>
+</tr>
+<tr>
+<td>libvirt/QEMU/KVM</td>
+<td><a href="https://patchew.org/QEMU/20230727073134.134102-1-akihiko.odaki@daynix.com/">https://patchew.org/QEMU/20230727073134.134102-1-akihiko.odaki@daynix.com/</a></td>
+<td>Fixed since QEMU 7.2.6 / 8.0.5 / 8.1.1</td>
+</tr>
+<tr>
+<td>lvm2</td>
+<td><a href="https://bugzilla.redhat.com/show_bug.cgi?id=2059734">https://bugzilla.redhat.com/show_bug.cgi?id=2059734</a></td>
+<td>Fixed since 2.03.21</td>
+</tr>
+<tr>
+<td>MEGAsync</td>
+<td><a href="https://github.com/meganz/MEGAsync/issues/303">https://github.com/meganz/MEGAsync/issues/303</a> <a href="https://github.com/meganz/MEGAsync/issues/310">https://github.com/meganz/MEGAsync/issues/310</a></td>
+<td>Fixed since 5.12.0</td>
+</tr>
+<tr>
+<td>pdfium</td>
+<td><a href="https://bugs.chromium.org/p/pdfium/issues/detail?id=1853">https://bugs.chromium.org/p/pdfium/issues/detail?id=1853</a></td>
+<td>Fixed and shipped with Chromium 108</td>
+</tr>
+<tr>
+<td>qt5-webengine</td>
+<td><a href="https://bugreports.qt.io/browse/QTBUG-105145">https://bugreports.qt.io/browse/QTBUG-105145</a></td>
+<td>chromium 87, likely won’t be fixed upstream. <a href="https://github.com/archlinuxarm/PKGBUILDs/pull/1928">Fixed in downstream ArchLinuxARM</a></td>
+</tr>
+<tr>
+<td>qt6-webengine</td>
+<td><a href="https://bugreports.qt.io/browse/QTBUG-105145">https://bugreports.qt.io/browse/QTBUG-105145</a></td>
+<td>chromium 94 for 6.3, partially fixed upstream in 6.4 for webview but not for QtPdf. <a href="https://github.com/archlinuxarm/PKGBUILDs/pull/1928">Fixed in downstream ArchLinuxARM</a></td>
+</tr>
+<tr>
+<td>Redis</td>
+<td><a href="https://bugzilla.redhat.com/show_bug.cgi?id=2240293">https://bugzilla.redhat.com/show_bug.cgi?id=2240293</a> <a href="https://bodhi.fedoraproject.org/updates/FEDORA-2023-bdb1515542">https://bodhi.fedoraproject.org/updates/FEDORA-2023-bdb1515542</a></td>
+<td>Fixed in fedora since redis-7.0.13-2.fc38 and redis-7.2.1-2.fc39)</td>
+</tr>
+<tr>
+<td>rr</td>
+<td><a href="https://github.com/rr-debugger/rr/pull/3146">https://github.com/rr-debugger/rr/pull/3146</a></td>
+<td>Fixed since 5.6.0</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td><a href="https://github.com/archlinuxarm/PKGBUILDs/commit/19a1393">https://github.com/archlinuxarm/PKGBUILDs/commit/19a1393</a></td>
+<td>Fixed for <code>rust-1.62.1-1.1</code> in ALARM/extra</td>
+</tr>
+<tr>
+<td>Telegram Desktop</td>
+<td><a href="https://github.com/telegramdesktop/tdesktop/issues/26103">https://github.com/telegramdesktop/tdesktop/issues/26103</a></td>
+<td>Fixed since 4.1.1</td>
+</tr>
+<tr>
+<td>Visual Studio Code</td>
+<td><a href="https://aur.archlinux.org/packages/visual-studio-code-bin">https://aur.archlinux.org/packages/visual-studio-code-bin</a></td>
+<td>Fixed since 1.71.0 (uses Electron 19)</td>
+</tr>
+<tr>
+<td>WebKitGTK</td>
+<td><a href="https://github.com/WebKit/WebKit/commit/0a4a03da45f774">https://github.com/WebKit/WebKit/commit/0a4a03da45f774</a></td>
+<td>Fixed since 2.34.6</td>
+</tr>
+<tr>
+<td>Wine</td>
+<td><a href="https://bugs.winehq.org/show_bug.cgi?id=52715">https://bugs.winehq.org/show_bug.cgi?id=52715</a></td>
+<td>Fixed since 10.5</td>
+</tr>
+<tr>
+<td>Zig</td>
+<td><a href="https://github.com/ziglang/zig/issues/11308">https://github.com/ziglang/zig/issues/11308</a></td>
+<td>Fixed since <a href="https://ziglang.org/download/0.14.0/release-notes.html#Runtime-Page-Size">0.14.0</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="bugs">Bugs<a class="headerlink" href="#bugs" title="Permanent link">&para;</a></h5>
+<p>Issues (other than page size and architectural support issues) in third-party software, reported and/or tracked by Asahi core team members:</p>
+<h6 id="open-bugs">Open Bugs<a class="headerlink" href="#open-bugs" title="Permanent link">&para;</a></h6>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Issue</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firefox</td>
+<td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1831051">wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>gnome-bluetooth/bluez</td>
+<td>Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman)</td>
+<td>No bugs filled yet</td>
+</tr>
+<tr>
+<td>hyprland</td>
+<td><a href="https://github.com/hyprwm/Hyprland/issues/10401">Explicit sync doesn't work on split-node gpu drivers</a></td>
+<td></td>
+</tr>
+<tr>
+<td>kwin</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=477454">Root background damage regions are calculated incorrectly with multiscreen</a></td>
+<td></td>
+</tr>
+<tr>
+<td>plasmashell</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=491579">startplasma breaks variable merging between profile.d and environment.d</a></td>
+<td></td>
+</tr>
+<tr>
+<td>systemsettings</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=475435">default system keyboard model is not correctly set on Wayland</a></td>
+<td></td>
+</tr>
+<tr>
+<td>wireplumber</td>
+<td><a href="https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538">Cannot pass args to PW modules from lua</a></td>
+<td></td>
+</tr>
+<tr>
+<td>wlroots</td>
+<td><a href="https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/1078">Add support for DRM Color Transformation Matrix (Useful for e.g. redshift)</a></td>
+<td><a href="https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4815">Related PR</a></td>
+</tr>
+<tr>
+<td>wlroots</td>
+<td><a href="https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/3911">cannot open render as master when using seatd</a></td>
+<td></td>
+</tr>
+<tr>
+<td>xkeyboard-config</td>
+<td><a href="https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379">Handling Mac Fn keys in xkeyboard</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h6 id="closed-bugs">Closed Bugs<a class="headerlink" href="#closed-bugs" title="Permanent link">&para;</a></h6>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Issue</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abrt</td>
+<td><a href="https://bugzilla.redhat.com/show_bug.cgi?id=2238248">ABRT can't submit crash report: processing failed</a></td>
+<td>Issue Closed</td>
+</tr>
+<tr>
+<td>blender</td>
+<td><a href="https://bugzilla.redhat.com/show_bug.cgi?id=2237821">blender core dumps at execution instead of giving sane feedback about unsupported hardware</a></td>
+<td>Issue Closed</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1442633">Skia shader compilation error</a></td>
+<td>Fixed in Chromium 121.0.6167.85</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td><a href="https://issues.chromium.org/issues/378017037">cppgc crashes on Linux w/ 16KiB pages because of hardcoded kGuardPageSize</a></td>
+<td>Fixed in Chromium 133.0.6943.141</td>
+</tr>
+<tr>
+<td>dracut</td>
+<td><a href="https://github.com/dracut-ng/dracut-ng/pull/408">Memoize find_kmod_module_from_sysfs_node</a></td>
+<td>Fixed in dracut 103</td>
+</tr>
+<tr>
+<td>firefox</td>
+<td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1869521">YouTube is capping resolutions to 1080 on Linux aarch64 user agents</a></td>
+<td>Fixed in Firefox 123</td>
+</tr>
+<tr>
+<td>gcc</td>
+<td><a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=113359">LTO miscompilation of ceph on aarch64 and x86_64</a></td>
+<td>Fixed in gcc 13.3 / 14.1</td>
+</tr>
+<tr>
+<td>glibc</td>
+<td><a href="https://bugzilla.redhat.com/show_bug.cgi?id=2251557">TLS modid reuse breaks TLS accesses</a></td>
+<td>Fixed in glibc 2.39</td>
+</tr>
+<tr>
+<td>gtk</td>
+<td><a href="https://gitlab.gnome.org/GNOME/gtk/-/issues/7146">GSK issues illegal render ops with load=dont-care and blend=over with Wayland fractional scaling, causing graphical corruption</a></td>
+<td>Fixed in gtk 4.17.6</td>
+</tr>
+<tr>
+<td>gtk</td>
+<td><a href="https://gitlab.gnome.org/GNOME/gtk/-/issues/7229">GSK/vulkan uses mipmaps without checking the formats/tiling <code>VkImageFormatProperties.maxMipLevels</code></a></td>
+<td>Fixed in gtk 4.17.5</td>
+</tr>
+<tr>
+<td>hyprland</td>
+<td><a href="https://github.com/hyprwm/Hyprland/issues/7364">issue with OpenGL applications crashing when using Hyprland 0.42.0</a></td>
+<td>Fixed in hyprland 0.43.0</td>
+</tr>
+<tr>
+<td>kpipewire</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=475472">Spectacle fails to record a window with h264 in specific dimensions</a></td>
+<td>Issue Closed</td>
+</tr>
+<tr>
+<td>kpipewire</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=476187">OpenH264 codec support</a></td>
+<td>Fixed in Plasma 6.1.4</td>
+</tr>
+<tr>
+<td>kwin</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=477451">Outputs freeze on multi-screen when hardware cursors are not supported</a></td>
+<td>Fixed in Plasma 6.0</td>
+</tr>
+<tr>
+<td>kwin</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=477455">Software cursor repaints are glitchy with fractional scaling sometimes</a></td>
+<td>Fixed in Plasma 6.0</td>
+</tr>
+<tr>
+<td>lsp-common-lib</td>
+<td><a href="https://github.com/lsp-plugins/lsp-plugins/issues/463">Fix atomic operations for AArch64</a></td>
+<td>Fixed in lsp-common-lib 1.0.40</td>
+</tr>
+<tr>
+<td>lib-dsp-lib</td>
+<td><a href="https://github.com/lsp-plugins/lsp-dsp-lib/pull/20">Fix aarch64 msmatrix code</a></td>
+<td>Fixed in lsp-dsp-lib 1.0.20</td>
+</tr>
+<tr>
+<td>plasmashell</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=491579">startplasma breaks variable merging between profile.d and environment.d</a></td>
+<td></td>
+</tr>
+<tr>
+<td>qqc2-desktop-style</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=479891">Some text glyphs in QML software are vertically mis-aligned or squished when using a fractional scale factor</a></td>
+<td>Fixed in KDE Frameworks 6.9.0</td>
+</tr>
+<tr>
+<td>wireplumber</td>
+<td><a href="https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#">Wireplumber ignores default playback volume</a></td>
+<td>Fixed in wireplumber 0.5.3</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
