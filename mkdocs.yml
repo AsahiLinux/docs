@@ -18,6 +18,8 @@ nav:
     - When will Asahi Linux be done?: project/when-will-asahi-be-done.md
     - References: project/references.md
     - Asahi Linux Board: project/board/asahi-board.md
+    - Policies:
+        - Generative AI: project/policies/slop.md
   - Platform documentation:
     - Apple Silicon Subsystems: platform/subsystems.md
     - Apple Platform Security Crash Course: platform/security.md
