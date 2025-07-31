@@ -1,0 +1,1913 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/platform/dev-quickstart/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>Developer Quickstart Guide - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Developer Quickstart Guide - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/platform/dev-quickstart.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/platform/dev-quickstart/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Developer Quickstart Guide - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/platform/dev-quickstart.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#this-guide-is-largely-obsolete" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Developer Quickstart Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/partitioning-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Developer Quickstart Guide</h1>
+
+<h4 id="this-guide-is-largely-obsolete">THIS GUIDE IS LARGELY OBSOLETE<a class="headerlink" href="#this-guide-is-largely-obsolete" title="Permanent link">&para;</a></h4>
+<p>This guide documents a manual installation process that is only required for kernel developers doing reverse engineering of macOS drivers using the m1n1 hypervisor.</p>
+<p>If you are a more typical developer and you want to help work on the kernel or just experiment with the platform, and are happy doing tethered boots via USB (uploading the kernel from another machine), have a look [over here][../sw/tethered-boot.md].</p>
+<p>If you are an end user or you would otherwise like to set up a stand-alone install, stop now. It isn't ready yet. It will be soon. Just hang tight.</p>
+<h4 id="developer-quick-start-guide">Developer Quick Start Guide<a class="headerlink" href="#developer-quick-start-guide" title="Permanent link">&para;</a></h4>
+<p>So you want to help us bring Linux to M1 Macs? Read on! This guide describes the recommended set-up for developing for Linux on an M1.</p>
+<p>This guide is meant for developers who want to hack on Asahi Linux. It is not representative of what the install process for end-users will look like. It is meant for experienced Linux developers who may not know anything about Macs or M1 machines.</p>
+<p>It is extremely unlikely that you will damage your computer by following these steps, but we can make no guarantees at this time. Please proceed at your own risk.</p>
+<p>For a quick idea of the steps that might be involved see this very <a href="https://tg.st/u/asahi.txt">succinct summary</a> of steps. Obviously things are moving quickly so details will have changed in practise</p>
+<h5 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h5>
+<h6 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h6>
+<p>We will be setting up a dual-boot M1 computer with two OSes: a vanilla macOS install (optionally with reduced/permissive security), and a "stub" macOS install with permissive security that will serve as a boot wrapper for Linux (or anything else we want to run through m1n1). You will also learn about what options are available to get a hardware serial console.</p>
+<h6 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h6>
+<ul>
+<li>
+<p>An Apple M1 machine 
+    We recommend the Mac Mini as a baseline target. </p>
+<ul>
+<li>Mac Mini: Does not require Type C power, has additional on-board PCIe hardware (Ethernet &amp; xHCI for type A ports). Requires an HDMI monitor.</li>
+<li>MacBook Air: USB via DWC3/Type-C only. Built-in screen. SPI keyboard. Requires Type C power for charging.</li>
+<li>MacBook Pro: Like the Air, but with a Touch Bar replacing the F keys, which means your keyboard will be crippled until the drivers for that are written.</li>
+</ul>
+</li>
+<li>
+<p>macOS installed on the machine (we assume you will start from a stock configuration with a single macOS partition)</p>
+<ul>
+<li>No FileVault (encryption). This will complicate things and is not tested.</li>
+</ul>
+</li>
+<li>
+<p>A Linux development machine (any architecture)</p>
+<ul>
+<li>If not arm64: an <code>aarch64-linux-gnu</code> gcc crosscompiler/toolchain (clang is also supported to build m1n1 but less tested).</li>
+</ul>
+</li>
+</ul>
+<p>Highly recommended:</p>
+<ul>
+<li>A serial port solution. Read on for that.</li>
+</ul>
+<h6 id="tldr-on-m1-mac-boot">TL;DR on M1 Mac Boot<a class="headerlink" href="#tldr-on-m1-mac-boot" title="Permanent link">&para;</a></h6>
+<p>Storage: the internal SSD is a GPT partitioned disk containing (initially) APFS containers, each of which contains multiple APFS volumes.</p>
+<p>The boot process:</p>
+<ol>
+<li>SecureROM (Boot ROM) in M1 silicon starts<ul>
+<li>Either enters DFU mode (USB recovery) or</li>
+<li>Boots iBoot1 from NOR (SPI) flash</li>
+</ul>
+</li>
+<li>iBoot1 (global) looks for boot policies in iSC Preboot and tries to boot the active one from its OS APFS Preboot volume (as defined in NVRAM)<ul>
+<li>If the power button is held down, boots 1TR instead</li>
+<li>This is what initializes the screen and shows the Apple logo</li>
+</ul>
+</li>
+<li>iBoot2 (per-OS copy; ~= OS loader) boots the OS<ul>
+<li>Loads auxiliary CPU engine firmwares from OS APFS Preboot partition</li>
+<li>Then loads a mach-o kernel wrapped in an img4 container from the Preboot partition</li>
+<li>This is in charge of adjusting and passing in the ADT (Apple Device Tree)</li>
+</ul>
+</li>
+<li>The OS kernel (XNU/Darwin) boots<ul>
+<li>Mounts the root filesystem, etc</li>
+</ul>
+</li>
+</ol>
+<p>Read <a href="../open-os-interop/">Boot</a> and <a href="../pc-boot-differences/">PC Boot Process Differences</a> for more info.</p>
+<p>Mini glossary:</p>
+<ul>
+<li>1TR: One True Recovery: trusted system-level recovery, includes all boot user interaction too (boot picker). Lives in its own APFS container (last partition).</li>
+<li>APFS: Apple's fancypants filesystem<ul>
+<li>APFS Container: ~= ZFS pool (usually backed by a GPT partition)</li>
+<li>APFS Volume: ~= ZFS dataset</li>
+<li>APFS Snapshot: ~= ZFS snapshot</li>
+</ul>
+</li>
+<li>AP Ticket: signed blob from Apple that allows you to run a given macOS version on a specific machine. "macOS version" ~= iBoot2 &amp; firmware bundles. "Generic" ones available for use with reduced-security modes (i.e. no phone home requirement in that case).</li>
+<li>Boot Policy: declares an OS bootable on a given machine. Signed and validated by SEP (locally). Stored in iSC.</li>
+<li>iBoot1: First stage bootloader, finds an OS to boot</li>
+<li>iBoot2: Second stage bootloader, spins up on-die auxiliary core firmwares and boots the XNU kernel (or m1n1)</li>
+<li>iSC: iBoot System Container, APFS container with boot configs/stuff</li>
+<li>kernelcache: kernel + kexts blob (~=linux + initramfs containing modules)</li>
+<li>kext: kernel module</li>
+<li>NOR: SPI NOR Flash on board containing iBoot1, product customization data, nvram</li>
+<li>SecureROM: Boot ROM on the M1 silicon die</li>
+<li>SEP: Secure Enclave Processor ~= TPM or Secure Monitor in other platforms (it's a separate core here).</li>
+<li>SFR: System Firmware and Recovery (iBoot1 + iSC partition + 1TR partition). Downgrade protected.</li>
+<li>Startup Security modes<ul>
+<li>Full Security: Full secureboot, no non-Apple software can run except for signed &amp; ad-hoc userspace binaries under macOS if allowed by the user, enforces AP tickets (no macOS downgrades).</li>
+<li>Reduced Security: Allows third-party kexts, management, etc.</li>
+<li>Permissive Security: Allows unsigned kernels (this is what we want).</li>
+</ul>
+</li>
+<li>XNU: the base of Darwin, the macOS kernel</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>M1 machines do not support <em>any</em> bootloader-level user interaction or keyboard shortcuts or anything.<ul>
+<li>The only thing iBoot1 can see is whether you're holding down the power button or not.</li>
+<li>The "boot picker" is a macOS application running under 1TR. Yes, really.</li>
+</ul>
+</li>
+<li>M1 machines <em>cannot</em> boot from external storage.<ul>
+<li>Picking an external disk in the boot picker will <em>copy its entire Preboot partition to the iSC</em> and generate a boot policy. This is morally equivalent to having the entire /boot on Linux on internal storage. <strong>These machines cannot boot macOS kernels from external storage, ever</strong>, at least using current firmware.</li>
+</ul>
+</li>
+</ul>
+<h6 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h6>
+<ul>
+<li><a href="../../project/glossary/">Glossary</a></li>
+<li><a href="../open-os-interop/">Boot</a></li>
+<li><a href="../pc-boot-differences/">PC Boot Process Differences</a></li>
+<li><a href="../../fw/nvram/">NVRAM</a></li>
+<li><a href="../stock-partition-layout/">Stock Partition Layout</a></li>
+</ul>
+<h6 id="if-things-go-wrong">If things go wrong<a class="headerlink" href="#if-things-go-wrong" title="Permanent link">&para;</a></h6>
+<p>M1 Macs are effectively unbrickable as long as you do not write to SPI Flash (we highly discourage declaring the NOR Flash in the Linux devicetree: we are not aware of any reason to touch it at this point, so all it does is massively increase the risk of catastrophe; we will proceed with caution and safeguards if it ever becomes necessary to access directly). However, they do rely on software installed on the internal SSD storage to boot normally and into 1TR.</p>
+<p>If you end up with your Mac in an unbootable state, follow <a href="https://support.apple.com/en-in/guide/apple-configurator-2/apdd5f3c75ad/mac">apple's DFU recovery instructions</a>. You will need another Mac running macOS to perform this process (Intel ones are fine). This should not happen if you follow the steps on this guide normally, but may happen if you end up accidentally writing to internal storage incorrectly (e.g. wiping the entire block device or screwing up the GPT partition table).</p>
+<p>Eventually, it should be possible to use <a href="https://github.com/libimobiledevice/idevicerestore">idevicerestore</a> to perform this same process from a Linux machine, but this isn't ready yet.</p>
+<p>While DFU boot works with a totally corrupted NOR flash, vital product identification and calibration data is stored there and you cannot restore this without Apple's help; you will have to send the machine in for repairs so they can re-provision its identity and run manufacturing testing and calibration. So, stay away from touching NOR flash.</p>
+<h5 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h5>
+<h6 id="step-0-upgrade-macos">Step 0: Upgrade macOS<a class="headerlink" href="#step-0-upgrade-macos" title="Permanent link">&para;</a></h6>
+<p>You need at least macOS 11.2. Don't bother with older versions, they won't work.</p>
+<p>You will need to have gone through the macOS first-setup, including having created an administrator user with a password.</p>
+<h6 id="step-1-partitioning">Step 1: Partitioning<a class="headerlink" href="#step-1-partitioning" title="Permanent link">&para;</a></h6>
+<p>You are starting here:</p>
+<ul>
+<li>disk0s1: iBoot System Container</li>
+<li>disk0s2: Macintosh HD (OS #1 APFS container)</li>
+<li>disk0s3: 1TR (One True Recovery OS)</li>
+</ul>
+<p>We want to get here:</p>
+<ul>
+<li>disk0s1: iBoot System Container</li>
+<li>disk0s2: Macintosh HD (OS #1 macOS APFS container)</li>
+<li>disk0s3: Linux (OS #2 "fake macOS" APFS container)</li>
+<li>disk0s4: Linux /boot (FAT32)</li>
+<li>disk0s5: Linux / (ext4)</li>
+<li>disk0s6: 1TR (One True Recovery OS)</li>
+</ul>
+<p>Note that storage is not yet supported in our tree or bootloader, but we are targeting this partition layout <em>a priori</em>. disk0s3 will be our "stub" macOS, which at this time will be used to hold a full macOS install (eventually we will provide tooling to allow this to be a minimal partition containing only boot files, to avoid wasted space, but this is not ready yet).</p>
+<p>Assuming you have a 500GB model, follow these commands (note that your machine may freeze for several minutes while these commands are running):</p>
+<pre><code class="language-shell"># diskutil apfs resizeContainer disk0s2 200GB
+# diskutil addPartition disk0s2 APFS Linux 80GB
+# diskutil addPartition disk0s5 FAT32 LB 1GB
+# diskutil addPartition disk0s4 FAT32 LR 0
+</code></pre>
+<p>You need at least 80GB for the stub partition, because the macOS install/update process is very inefficient. This will not be necessary in the future, once we have our own setup process.</p>
+<p>Shrinking the OS APFS partition can be done on-line.</p>
+<p>Each invocation of <code>diskutil addPartition</code> needs to be passed the partition node
+of the partition <em>prior</em> to the new partition to be created. This can vary, so
+run <code>diskutil list</code> prior to every instance and pick the device name of the last
+created partition. In the example above, <code>Linux</code> ended up as disk0s5 and <code>LB</code>
+ended up as disk0s4. Go figure. This gets reset after a reboot.</p>
+<p>The volume name of the stub partition will determine the OS name in the boot picker, so call it "Linux".</p>
+<p>We can change the FS and GPT type of the true Linux root and boot partitions later.</p>
+<h6 id="step-2-install-macos-in-the-stub-partition">Step 2: Install macOS in the stub partition<a class="headerlink" href="#step-2-install-macos-in-the-stub-partition" title="Permanent link">&para;</a></h6>
+<p>Shut down the machine. Boot with the power button held down, until "Loading startup options..." appears. This enters 1TR, the OS recovery environment.</p>
+<p>Select "Options" in the boot picker. You may be prompted to enter your credentials.
+These are the login credential for the main macOS installation.</p>
+<p>In the main recovery menu, select "Reinstall macOS Big Sur".</p>
+<p>Follow the prompts, and select "Linux" as the target volume.</p>
+<p>Wait a while. This will reboot the machine into the new OS automatically.</p>
+<h6 id="step-3-go-through-initial-setup">Step 3: Go through initial setup<a class="headerlink" href="#step-3-go-through-initial-setup" title="Permanent link">&para;</a></h6>
+<p>Go through OS first-time setup. Create an administrator user and password.</p>
+<p>Check the OS version. If it is not 11.2, you should update to at least this version.</p>
+<p>Shut down the machine again.</p>
+<h6 id="step-4-downgrade-security">Step 4: Downgrade security<a class="headerlink" href="#step-4-downgrade-security" title="Permanent link">&para;</a></h6>
+<p>Boot into 1TR again ("Options" entry in the boot picker).</p>
+<p>In the top menu bar, go to Utilities → Terminal. This brings up a root shell.</p>
+<p>Find the volume group ID of your stub partition:</p>
+<pre><code class="language-shell"># diskutil apfs listVolumeGroups | grep -B3 Linux | grep Group
+</code></pre>
+<p>Then downgrade security:</p>
+<pre><code class="language-shell"># bputil -nkcas
+</code></pre>
+<p>Select the matching OS install ID, and follow the prompts. You will need to enter the credentials that you created in step 3.</p>
+<p>Further disable SIP for good measure. This one is nice enough to ask you to pick the OS by name:</p>
+<pre><code class="language-shell"># csrutil disable
+</code></pre>
+<p>Note: If you get strange permission errors such as <code>Failed to create local policy</code> you may have to reset the system security policy first via</p>
+<pre><code class="language-shell"># csrutil clear
+</code></pre>
+<p>At this point you are ready to use custom kernels. Congrats!</p>
+<h5 id="getting-a-serial-console">Getting a serial console<a class="headerlink" href="#getting-a-serial-console" title="Permanent link">&para;</a></h5>
+<p>Having a serial console is indispensable for a fast development cycle and to debug low-level issues.</p>
+<p>M1 Macs expose their debug serial port over one of their Type C ports (the same one used for DFU). On MacBooks, this is the rear left port. On the Mac Mini, this is the port closest to the power plug.</p>
+<p>The target machine can also be hard-rebooted using USB-PD VDM commands, making for a quick test cycle (no holding down power buttons).</p>
+<p>See <a href="../../hw/soc/usb-pd/">USB-PD</a> for details on the USB-PD VDM commands and what you can do with them.</p>
+<p>The serial port is a UART using 1.2V logic levels, and requires vendor-specific USB-PD VDM commands to enable. Thus, making a compatible cable is nontrivial. You have the following options.</p>
+<h6 id="using-an-m1-machine">Using an M1 machine<a class="headerlink" href="#using-an-m1-machine" title="Permanent link">&para;</a></h6>
+<p>If you have two M1 boxes, this is the simplest solution. Just grab <a href="https://github.com/AsahiLinux/macvdmtool/">macvdmtool</a>, connect both machines with a standard Type C SuperSpeed cable using the DFU port on <em>both</em> machines, and that's it!</p>
+<p><strong>IMPORTANT NOTE:</strong> The cable needs to be the USB 3 / SuperSpeed type. USB 2 only cables won't work, <strong>the charging cable that comes with the MacBook/MacBook Air will not work</strong> and neither will most other cheap cables or cables marketed for their charging capacity. If it doesn't say "SuperSpeed" or "USB3.0" in the package it almost certainly won't work. If it's thin and bendy it is almost certainly <em>not</em> a SuperSpeed cable. Cables that work need to have upwards of <strong>15</strong> wires inside them; if it doesn't feel like it could possibly have that many wires inside, it is not the cable you need. If you are sure your cable is SuperSpeed capable (i.e. devices do enumerate as SuperSpeed through it) and it still doesn't work, then it is non-compliant and the manufacturer deserves to be shamed on their Amazon reviews page, because it means they didn't connect the SBU1/2 pins.</p>
+<pre><code class="language-shell">$ xcode-select --install
+$ git clone https://github.com/AsahiLinux/macvdmtool
+$ cd macvdmtool
+$ make
+$ sudo ./macvdmtool reboot serial
+</code></pre>
+<p>You should see something like this:</p>
+<pre><code>Mac type: J313AP
+Looking for HPM devices...
+Found: IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/i2c0@35010000/AppleS5L8940XI2CController/hpmBusManager@6B/AppleHPMBusController/hpm0/AppleHPMARM
+Connection: Sink
+Status: APP 
+Unlocking... OK
+Entering DBMa mode... Status: DBMa
+Rebooting target into normal mode... OK
+Waiting for connection........ Connected
+Putting target into serial mode... OK
+Putting local end into serial mode... OK
+Exiting DBMa mode... OK
+</code></pre>
+<p>See the macvdmtool page or just run it without arguments for a list of supported commands. Your serial port device is <code>/dev/cu.debug-console</code>. You can try picocom with: <code>sudo picocom -q --omap crlf --imap lfcrlf -b 115200 /dev/tty.debug-console</code>.</p>
+<p>NOTE: if you have enabled serial debug output on your host machine (via nvram settings), the serial port device will be in use by the kernel. You need to turn that off to use it as a generic serial port.</p>
+<h6 id="diy-arduino-based-usb-pd-interface">DIY Arduino-based USB-PD interface<a class="headerlink" href="#diy-arduino-based-usb-pd-interface" title="Permanent link">&para;</a></h6>
+<p>You can build a DIY USB-PD interface with the following parts:</p>
+<ul>
+<li>An Arduino or clone</li>
+<li>An FUSB302 chip, either stand-alone or on a breakout board</li>
+<li>A USB Type C breakout board (get a male one, plugging in directly into the target, for the most flexibility)</li>
+<li>A 1.2V compatible UART interface</li>
+</ul>
+<p>Note that most FUSB302 breakout boards will not usefully break out the Type C pins you need, so it's best to use a separate full breakout board.</p>
+<p>Go to the <a href="https://github.com/AsahiLinux/vdmtool">vdmtool</a> repository for more information and a wiring list. Documentation is a bit sparse at the moment. You can ask us on IRC (OFTC/#asahi) if you need help.</p>
+<p>1.2V compatible UART interfaces are relatively rare. 1.8V ones will usually work for input (RX); you can use a resistor divider to step down the TX voltage (<code>TX -- 470Ω -+- 220Ω -- GND</code> will step down 1.8V TX to 1.22V at the <code>+</code> point).</p>
+<p>The default <code>vdmtool</code> code will put serial on the SBU1/SBU2 pins. At the device side connector (no cable), TX (output from the Mac) will be on the SBU1 pin on the connector side that has the active CC line (you should only connect one), and RX (input to the Mac) will be directly opposite the CC line.</p>
+<p>This is all rather rudimentary because it's a stop-gap for the proper solution, which is...</p>
+<h6 id="flexible-usb-pd-debug-interface-project-name-tbd">Flexible USB-PD Debug Interface (project name TBD)<a class="headerlink" href="#flexible-usb-pd-debug-interface-project-name-tbd" title="Permanent link">&para;</a></h6>
+<p>In the coming weeks we'll be designing an open hardware interface for interfacing to M1 serial ports, and more (supporting other debug pinsets on Apple devices, as well as UARTs on other devices such as certain Android phones, etc). Stay tuned for more information. Established kernel developers who want to get an early prototype when they become available should contact <a href="mailto:marcan@marcan.st">marcan</a>.</p>
+<h6 id="usb-gadget-mode-using-a-standard-usb-cable">USB gadget mode using a standard USB cable<a class="headerlink" href="#usb-gadget-mode-using-a-standard-usb-cable" title="Permanent link">&para;</a></h6>
+<p>m1n1 now supports exposing its debug console and proxy interface via a standard USB <a href="https://en.wikipedia.org/wiki/USB_communications_device_class">CDC-ACM</a> device. All you need is a standard USB cable (C to C or A to C, as appropriate for your host machine). <img alt="USB Type-C  to Type A cable" src="../../assets/USB-TypeC-A-cable.png" /></p>
+<p>This interface is much faster than a serial port, and is the preferred way of using m1n1 remotely. However, a serial console is still recommended in addition to this for low-level debugging and development.</p>
+<p>After booting m1n1, you will now see two CDC-ACM device appear (e.g. as <code>/dev/ttyACM0</code> and <code>/dev/ttyACM1</code> on Linux or <code>/dev/tty.usbmodemP_01</code> and <code>/dev/tty.usbmodemP_03</code> on macOS):</p>
+<pre><code>[977820.091168] usb 2-2: USB disconnect, device number 95
+[977820.832569] usb 2-2: new high-speed USB device number 96 using xhci_hcd
+[977821.069287] usb 2-2: New USB device found, idVendor=1209, idProduct=316d, bcdDevice= 1.00
+[977821.069296] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[977821.069300] usb 2-2: Product: m1n1 uartproxy da44067
+[977821.069303] usb 2-2: Manufacturer: Asahi Linux
+[977821.069305] usb 2-2: SerialNumber: P-0
+[977821.070574] cdc_acm 2-2:1.0: ttyACM0: USB ACM device
+[977821.070825] probe of 2-2:1.0 returned 1 after 323 usecs
+[977821.071036] cdc_acm 2-2:1.2: ttyACM1: USB ACM device
+[977821.071099] probe of 0000:00:02.0 returned 0 after 19 usecs
+[977821.071262] probe of 2-2:1.2 returned 1 after 284 usecs
+[977821.071375] probe of 2-2 returned 1 after 1838 usecs
+[977821.071428] probe of 0000:00:02.0 returned 0 after 9 usecs
+</code></pre>
+<p>When running the python proxyclient commands <code>proxyclient/tools/{shell,chainload,linux}.py</code> as described below (N.B.: see below for python version and installation requirements) you must specify the USB ACM serial device. e.g. for <code>shell.py</code>:</p>
+<pre><code class="language-shell">$ M1N1DEVICE=/dev/ttyACM0
+$ export M1N1DEVICE
+$ python3 proxyclient/tools/shell.py
+</code></pre>
+<pre><code>* Can start up a terminal program on the 2nd tty which linux console output can be made to go to
+</code></pre>
+<pre><code>picocom /dev/ttyACM1
+</code></pre>
+<p>Note that this method cannot (yet) be used as an earlycon for Linux, and USB gadget support is not yet in our main Linux tree either.</p>
+<ul>
+<li>See <a href="../../sw/linux-bringup/#running-linux-via-usb-cable">Running Linux via USB cable</a> for some more details</li>
+</ul>
+<h5 id="using-m1n1">Using m1n1<a class="headerlink" href="#using-m1n1" title="Permanent link">&para;</a></h5>
+<p>m1n1 is our initial bootloader, which is in charge of pretending to be a XNU kernel and performing Apple-specific initialization.</p>
+<p>Currently, m1n1 works as a serial "proxy" server, controlled via Python scripts from a host. In this way, you can load kernels via serial or USB and also explore the hardware interactively, with a Python console.</p>
+<h6 id="debian-build-dependencies">Debian build dependencies<a class="headerlink" href="#debian-build-dependencies" title="Permanent link">&para;</a></h6>
+<pre><code class="language-shell">$ sudo apt install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross device-tree-compiler imagemagick
+</code></pre>
+<p>To run the python proxy clients you need a newer version of python3 than default - 3.9 works
+* Download latest stable (3.9.5) [16-May-2021] and build <a href="https://linuxize.com/post/how-to-install-python-3-9-on-debian-10/">Building latest python on Debian 10</a>
+* Install the various packages required as user a normal user</p>
+<pre><code class="language-shell">python3.9 -m pip install pyserial construct serial.tool
+</code></pre>
+<h6 id="building">Building<a class="headerlink" href="#building" title="Permanent link">&para;</a></h6>
+<p>You need an <code>aarch64-linux-gnu-gcc</code> cross-compiler toolchain (or a native one, if running on ARM64). You also need <code>dtc</code> (the devicetree compiler) and <code>convert</code> (from ImageMagick) for the boot logos.</p>
+<pre><code class="language-shell">$ git clone --recursive https://github.com/AsahiLinux/m1n1.git
+$ cd m1n1
+$ make
+</code></pre>
+<p>The output will be in <code>build/m1n1.macho</code>.</p>
+<h6 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h6>
+<p>Boot your Mac into 1TR, then pull up the terminal. You can use the network to copy files over - either SSH from the Mac or just use curl.</p>
+<p>For example, on your build machine:</p>
+<pre><code class="language-shell">$ cd m1n1/build
+$ python3 -m http.server
+</code></pre>
+<p>And on your target machine:</p>
+<pre><code class="language-shell"># curl buildmachine.lan:8000/m1n1.macho &gt; m1n1.macho
+</code></pre>
+<p>To install m1n1 into the stub partition as a custom kernelcache:</p>
+<pre><code class="language-shell"># kmutil configure-boot -c m1n1.macho -C -v /Volumes/Linux
+</code></pre>
+<p>Type in your credentials. If everything went well, you can restart and boot into m1n1!</p>
+<p>If you ever need to boot the stub partition back into macOS afterwards, enter 1TR again, open the Terminal, get the partition ID, and run:</p>
+<pre><code># bputil -n
+</code></pre>
+<h6 id="direct-payload-booting">Direct payload booting<a class="headerlink" href="#direct-payload-booting" title="Permanent link">&para;</a></h6>
+<p>m1n1 supports running payloads embedded directly in the binary. This allows you to boot Linux (or a subsequent bootloader stage) without the need for serial interaction. Currently, debug output is over serial only; framebuffer debug console support is coming soon.</p>
+<p>To merge m1n1 with payloads, just concatenate them:</p>
+<pre><code class="language-shell">$ cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz &gt; m1n1-payload.macho
+</code></pre>
+<p><strong>Note:</strong> M1N1 is now checking the model read from the Hw versus the one in the device tree(dtb file) and will not execute the payload if they are not matching. See payload_run in src/payload.c. j274 stands for MacMini Hw model.</p>
+<p>The maximum cumulative payload size is currently 64 MiB. You can change this at the top of <code>m1n1.ld</code> if you need more. Bear in mind this incurs a fixed runtime memory cost when using m1n1 interactively, even with no payload (though this memory can be reclaimed by the next stage), and chainloading m1n1 will currently "waste" this memory (the next iteration is loaded above this region and cannot use memory "under" it).</p>
+<p>Supported payload file formats:</p>
+<ul>
+<li>Linux ARM64 kernel images (or compatible). Must be compressed or last payload.</li>
+<li>Devicetree blobs (FDT). May be uncompressed or compressed.</li>
+<li>Initramfs cpio images. Must be compressed.</li>
+</ul>
+<p>Supported compression formats:</p>
+<ul>
+<li>gzip</li>
+<li>xz</li>
+</ul>
+<h6 id="host-setup">Host setup<a class="headerlink" href="#host-setup" title="Permanent link">&para;</a></h6>
+<p>m1n1 currently requires a serial console for interactive usage or to get debug info. Go to the <a href="#getting-a-serial-console">getting a serial console</a> section to learn more about available options.</p>
+<p><strong>NOTE(2021-02-06)</strong>: we will add a framebuffer console to make debugging easier without serial soon. USB OTG support is also planned in the future, so you will be able to interact with m1n1 with a standard USB C cable and load kernels faster.</p>
+<p>To use the m1n1 proxyclient, you need the Python packages <code>pyserial</code> and <code>construct</code>. If your distribution does not provide them for you, you can use:</p>
+<pre><code class="language-shell">$ pip install --user pyserial construct
+</code></pre>
+<p>If you are on macOS, install python3.9 using Homebrew. The OS version of Python has problems with readline history files (?):</p>
+<pre><code class="language-shell">$ arch -x86_64 brew install python
+$ pip3.9 install --user pyserial construct
+</code></pre>
+<p>You can also use macports to install python and pip and then install the dependencies using pip as root. Macports has a native build for M1.</p>
+<pre><code class="language-shell">$ sudo su -
+$ port install python39 py39-pip
+$ pip install pyserial construct
+</code></pre>
+<h6 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h6>
+<p>To use the proxyclient scripts, you need to set the envar <code>M1N1DEVICE</code> to your serial port device. When using another M1 mac as the host, use <code>export M1N1DEVICE=/dev/cu.debug-console</code>. For a Linux host connecting via USB, use something like <code>export M1N1DEVICE=/dev/ttyACM0</code>.</p>
+<p>Things to do:</p>
+<h6 id="playground-shell">Playground shell<a class="headerlink" href="#playground-shell" title="Permanent link">&para;</a></h6>
+<p>Run <code>python shell.py</code> for an interactive debug shell.</p>
+<pre><code class="language-python">&gt;&gt;&gt; read32(0x800000000) # Read the first word of RAM
+0x484f6666
+&gt;&gt;&gt; memset32(fb, 0x000003ff, 1920 * 1080 * 4) # turn the framebuffer blue
+&gt;&gt;&gt; mrs(HCR_EL2) # only some registers supported, feel free to add more in utils.py
+0x30488000000
+&gt;&gt;&gt; d = readmem(base, 0x10) # read and hexdump the first 16 bytes of m1n1 (mach-o header)
+&gt;&gt;&gt; chexdump(d)
+00000000  cf fa ed fe 0c 00 00 01  02 00 00 00 0c 00 00 00  |................|
+# allocate a buffer, read the AIC registers, and dump them
+# using a buffer is recommended for registers because `readmem` will read
+# byte-by-byte twice and complain if the data changes (checksum).
+&gt;&gt;&gt; AIC = 0x23b100000
+&gt;&gt;&gt; data = malloc(0x8000) # this is python-side malloc, allocs vanish when the script exits
+&gt;&gt;&gt; memcpy32(data, AIC, 0x8000)
+&gt;&gt;&gt; chexdump32(d)
+00000000  00000007 000a0380 00180018 00000000 e0477971 00000000 000000f0 00000000
+00000020  00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+00000040  *
+00003320  00000000 00000000 00000000 00000001 00000000 00000000 00000000 00000000
+[...]
+&gt;&gt;&gt; u.msr(DAIF, u.mrs(DAIF) &amp; ~0x3c0) # Enable IRQs
+&gt;&gt;&gt; mon.add(AIC, 0x8000) # Monitor the AIC registers
+[...]
+&gt;&gt;&gt; write32(AIC + 0x2008, 1) # Fire off an IPI to ourselves
+TTY&gt; Exception: IRQ          # These debug messages are from m1n1's IRQ handler
+TTY&gt;  type: 4 num: 1
+# Then the register monitor prints changed registers automatically,
+# with color coding we can't show here 
+000000023b100020 00000000 00000000 00000000 00000000 00000001 00000000 00000000 00000000 
+000000023b102000 00000000 00000000 00000001 00000001 00000000 00000000 00000000 00000000 
+000000023b102020 00000000 00000001 00000001 00000000 00000000 00000000 00000000 00000000 
+000000023b105000 00000000 00000000 00000001 00000001 00000000 00000000 00000000 00000000 
+[...]
+# There is support for recovering from simple faults
+&gt;&gt;&gt; read64(0)
+TTY&gt; Exception: SYNC
+TTY&gt; Running in EL2
+TTY&gt; MPIDR: 0x80000000
+TTY&gt; Registers: (@0x81368bde0)
+TTY&gt;   x0-x3: 0000000000000000 000000081360c004 0000000000000002 000000081360c004
+TTY&gt;   x4-x7: 000000081368bfa8 0000000000007a69 000000081360c004 0000000000000000
+TTY&gt;  x8-x11: 0000000000000000 0000000000000000 0000000000000000 00000000aaaaaaab
+TTY&gt; x12-x15: 000000000000002c 00000008135b5488 000000081368bb80 0000000000000000
+TTY&gt; x16-x19: 00000008135aaabc 0000000000000000 0000000000000000 000000081368bf88
+TTY&gt; x20-x23: 000000081368bfb0 0000000813608000 0000000000000000 0000000002aa55ff
+TTY&gt; x24-x27: 0000000003aa55ff 000000081360c000 0000000001aa55ff 000000081368bfb0
+TTY&gt; x28-x30: 0000000000000000 000000081368bee0 00000008135abb98
+TTY&gt; PC:       0x8135aaa9c (rel: 0xaa9c)
+TTY&gt; SPSEL:    0x1
+TTY&gt; SP:       0x81368bee0
+TTY&gt; SPSR_EL2: 0x80000009
+TTY&gt; FAR_EL2:  0x0
+TTY&gt; ESR_EL2:  0x96000018 (data abort (current))
+TTY&gt; L2C_ERR_STS: 0x11000ffc00000080
+TTY&gt; L2C_ERR_ADR: 0x300000000000000
+TTY&gt; L2C_ERR_INF: 0x1
+TTY&gt; SYS_E_LSU_ERR_STS: 0x0
+TTY&gt; SYS_E_FED_ERR_STS: 0x0
+TTY&gt; SYS_E_MMU_ERR_STS: 0x0
+TTY&gt; Recovering from exception (ELR=0x8135aaaa0)
+0xacce5515abad1dea
+</code></pre>
+<p>Note: If you get an error that says <code>proxy.ProxyCommandError: Reply error: Bad Command</code> you most
+likely need to upgrade the m1n1 on the M1. A quick way around this is to just upload the newest m1n1.macho via the chainload.py as described below:</p>
+<h6 id="loading-another-m1n1">Loading another m1n1<a class="headerlink" href="#loading-another-m1n1" title="Permanent link">&para;</a></h6>
+<p>Useful to test changes without using <code>kmutil</code> again.</p>
+<pre><code class="language-shell">$ python chainload.py ../build/m1n1.macho 
+Base at: 0x803c5c000
+FB at: 0x9e0df8000
+Loading 442368 bytes to 0x812ce0000
+....................................................
+Jumping to 0x812ce4800
+TTY&gt; m1n1
+TTY&gt; sc: Initializing
+TTY&gt; CPU init... CPU: M1 Icestorm
+[...]
+TTY&gt; m1n1 vf14489f
+TTY&gt; Copyright (C) 2021 The Asahi Linux Contributors
+TTY&gt; Licensed under the MIT license
+[...]
+Proxy is alive again
+</code></pre>
+<h6 id="boot-a-linux-kernel">Boot a Linux kernel<a class="headerlink" href="#boot-a-linux-kernel" title="Permanent link">&para;</a></h6>
+<p>This is what you're here for, right? :-). See <a href="../../sw/linux-bringup/">Linux Bringup</a> for full instructions.</p>
+<pre><code class="language-shell">$ python linux.py -b 'earlycon console=ttySAC0,1500000 console=tty0 debug' Image.gz apple-j274.dtb initramfs.cpio.gz
+</code></pre>
+<p>If you are using USB to talk to m1n1 but would like to get a serial console to Linux, use the <code>--tty</code> argument. For example, to use <code>/dev/ttyACM0</code> for m1n1 and <code>/dev/ttyUSB0</code> for Linux, use:</p>
+<pre><code class="language-shell">$ export M1N1DEVICE=/dev/ttyACM0
+$ python linux.py --tty /dev/ttyUSB0 -b 'earlycon console=ttySAC0,1500000 console=tty0 debug' Image.gz apple-j274.dtb initramfs.cpio.gz
+</code></pre>
+<details>
+ <summary>sample boot log</summary>
+
+
+<pre><code>Base at: 0x815300000
+FB at: 0x9e0df8000
+Loading 2046483 bytes to 0x8214fc000..0x8216efa13...
+..........................................................................................................................................................................................................................................................
+Loading DTB to 0x8216efa40...
+Kernel_base: 0x821800000
+Loading 953623 initramfs bytes to 0x821700000...
+.....................................................................................................................
+TTY&gt; Starting secondary CPUs...
+TTY&gt; Starting CPU 1 (0:1)... OK
+TTY&gt;   Stack base: 0x8153ac040
+TTY&gt;   MPIDR: 0x80000001
+TTY&gt;   CPU: M1 Icestorm
+TTY&gt;   Index: 1 (table: 0x8153c4080)
+TTY&gt; 
+TTY&gt; Starting CPU 2 (0:2)... OK
+TTY&gt;   Stack base: 0x8153b0040
+TTY&gt;   MPIDR: 0x80000002
+TTY&gt;   CPU: M1 Icestorm
+TTY&gt;   Index: 2 (table: 0x8153c40c0)
+TTY&gt; 
+TTY&gt; Starting CPU 3 (0:3)... OK
+TTY&gt;   Stack base: 0x8153b4040
+TTY&gt;   MPIDR: 0x80000003
+TTY&gt;   CPU: M1 Icestorm
+TTY&gt;   Index: 3 (table: 0x8153c4100)
+TTY&gt; 
+TTY&gt; Starting CPU 4 (1:0)... OK
+TTY&gt;   Stack base: 0x8153b8040
+TTY&gt;   MPIDR: 0x80010100
+TTY&gt;   CPU: M1 Firestorm
+TTY&gt;   Index: 4 (table: 0x8153c4140)
+TTY&gt; 
+TTY&gt; Starting CPU 5 (1:1)... OK
+TTY&gt;   Stack base: 0x8153bc040
+TTY&gt;   MPIDR: 0x80010101
+TTY&gt;   CPU: M1 Firestorm
+TTY&gt;   Index: 5 (table: 0x8153c4180)
+TTY&gt; 
+TTY&gt; Starting CPU 6 (1:2)... OK
+TTY&gt;   Stack base: 0x8153c0040
+TTY&gt;   MPIDR: 0x80010102
+TTY&gt;   CPU: M1 Firestorm
+TTY&gt;   Index: 6 (table: 0x8153c41c0)
+TTY&gt; 
+TTY&gt; Starting CPU 7 (1:3)... OK
+TTY&gt;   Stack base: 0x8153c4040
+TTY&gt;   MPIDR: 0x80010103
+TTY&gt;   CPU: M1 Firestorm
+TTY&gt;   Index: 7 (table: 0x8153c4200)
+TTY&gt; 
+TTY&gt; FDT: initrd at 0x821700000 size 0xe8d17
+TTY&gt; FDT: framebuffer@9e0df8000 base 0x9e0df8000 size 0x7e9000
+TTY&gt; FDT: DRAM at 0x800000000 size 0x200000000
+TTY&gt; FDT: Usable memory is 0x80134c000..0x9db5e0000 (0x1da294000)
+TTY&gt; FDT: CPU 0 MPIDR=0x0 release-addr=0x8153c4050
+TTY&gt; FDT: CPU 1 MPIDR=0x1 release-addr=0x8153c4090
+TTY&gt; FDT: CPU 2 MPIDR=0x2 release-addr=0x8153c40d0
+TTY&gt; FDT: CPU 3 MPIDR=0x3 release-addr=0x8153c4110
+TTY&gt; FDT: CPU 4 MPIDR=0x10100 release-addr=0x8153c4150
+TTY&gt; FDT: CPU 5 MPIDR=0x10101 release-addr=0x8153c4190
+TTY&gt; FDT: CPU 6 MPIDR=0x10102 release-addr=0x8153c41d0
+TTY&gt; FDT: CPU 7 MPIDR=0x10103 release-addr=0x8153c4210
+TTY&gt; FDT prepared at 0x8193f0000
+Uncompressing...
+5758984
+Decompress OK...
+Ready to boot
+DAIF: 3c0
+MMU: shutting down...
+MMU: shutdown successful, clearing caches
+Booting kernel at 0x821800000 with fdt at 0x8193f0000
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x611f0221]
+[    0.000000] Linux version 5.11.0-rc6-00015-gdc1ce163506d (marcan@raider) (aarch64-linux-gnu-gcc (Gentoo 10.2.0-r5 p6) 10.2.0, GNU ld (Gentoo 2.35.1 p2) 2.35.1) #201 SMP PREEMPT Fri Feb 5 03:15:40 JST 2021
+[    0.000000] Machine model: Apple Mac Mini M1 2020
+[    0.000000] earlycon: s5l0 at MMIO32 0x0000000235200000 (options '1500000')
+[    0.000000] printk: bootconsole [s5l0] enabled
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x000000080134c000-0x00000009db5dffff]
+[    0.000000]   DMA32    empty
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x000000080134c000-0x00000009db5dffff]
+[    0.000000] Zeroed struct page in unavailable ranges: 648 pages
+[    0.000000] Initmem setup node 0 [mem 0x000000080134c000-0x00000009db5dffff]
+[    0.000000] On node 0 totalpages: 485541
+[    0.000000]   DMA zone: 1897 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 485541 pages, LIFO batch:15
+[    0.000000] percpu: Embedded 6 pages/cpu s57888 r0 d40416 u98304
+[    0.000000] pcpu-alloc: s57888 r0 d40416 u98304 alloc=6*16384
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7 
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: Virtualization Host Extensions
+[    0.000000] CPU features: kernel page table isolation disabled by kernel configuration
+[    0.000000] CPU features: detected: Spectre-v4
+[    0.000000] CPU features: detected: Address authentication (IMP DEF algorithm)
+[    0.000000] CPU features: detected: FIQs
+[    0.000000] alternatives: patching kernel code
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 483644
+[    0.000000] Kernel command line: earlycon debug
+[    0.000000] Dentry cache hash table entries: 1048576 (order: 9, 8388608 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 524288 (order: 8, 4194304 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 7715584K/7768656K available (3136K kernel code, 1144K rwdata, 640K rodata, 512K init, 455K bss, 53072K reserved, 0K cma-reserved)
+[    0.000000] random: get_random_u64 called from __kmem_cache_create+0x30/0x4b4 with crng_init=0
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=16 to nr_cpu_ids=8.
+[    0.000000]  Trampoline variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=8
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] aic_of_ic_init: AIC: initialized with 896 IRQs, 2 FIQs, 2 IPIs, 32 vIPIs
+[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000000] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000650] Console: colour dummy device 80x25
+[    0.000958] printk: console [tty0] enabled
+[    0.001273] printk: bootconsole [s5l0] disabled
+
+BusyBox v1.30.1 (Debian 1:1.30.1-6+b1) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+/bin/sh: can't access tty; job control turned off
+/ #
+</code></pre>
+
+
+</details>
+
+<p>The script currently supports input and output for the TTY passthrough.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
