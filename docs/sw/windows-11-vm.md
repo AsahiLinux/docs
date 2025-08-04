@@ -9,7 +9,7 @@ Credits to: aykevl and Davide Calvaca
 
 ### Steps
 1. Install QEMU, via the command `dnf install qemu` or if you want a more generalized install, do `dnf install @virtualization` which installs all the necessary requirements to have a virtual machine setup but that is out of scope for this guide. 
-2. Create a new directory on your desktop or wherever, naming it to whatever you want, i.e. let's say, `windows11` using `mkdir windows11 via an appropriate terminal application or right clicking and making a directory on your desktop. 
+2. Create a new directory on your desktop or wherever, naming it to whatever you want, i.e. let's say, `windows11` using `mkdir windows11` via an appropriate terminal application or right clicking and making a directory on your desktop. 
 3. Go into that directory with `cd windows11` 
 4. Download a Windows 11 ISO, appropriately the Windows 11 IoT build for ARM64 [here](https://www.microsoft.com/en-us/evalcenter/download-windows-11-iot-enterprise-ltsc-eval). Feel free to rename it to a good name like `windows-11.iso` using `mv` in your appropriate terminal application of choice.
 5. Along with that ISO, it would be good to use the virtio-drivers to better improve performance of the machine. Feel free to download it [here](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-installation) and renaming it appropriately to `win11-virtio.iso`.
