@@ -68,6 +68,7 @@ The following set of tunables operate on config space of the per-port PCIe bridg
 
 ### pcie-rc-tunables
 On the 2020 M1 mini, this set of register writes modifies some bits on standardized capability structures as well as some other registers.
+
 | register | capability | effect |
 |----------|------------|--------|
 | 0x194    | L1 PM Substates | clear Port Common_Mode_Restore_Time |
