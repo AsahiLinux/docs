@@ -109,7 +109,7 @@ Data structures: see [cmdqueue.py](https://github.com/AsahiLinux/m1n1/blob/main/
 
 ### Micro Sequences
 
-The ASC firmware contains a command sequencer that can run fairly complext "scripts" as part of work commands, but it is usually used in a fairly basic manner. These sequences are packed buffers of commands that are executed as part of a work item. The typical sequence is:
+The ASC firmware contains a command sequencer that can run fairly complex "scripts" as part of work commands, but it is usually used in a fairly basic manner. These sequences are packed buffers of commands that are executed as part of a work item. The typical sequence is:
 
 * Start (3D/TA/CP)
 * Write Timestamp
@@ -163,7 +163,7 @@ The TA work usually looks like this:
 
 #### Initialize Heap Manager
 
-Needed the first time or when the heap size changes. Tells the GPU that the CPU re-initialized the management struture.
+Needed the first time or when the heap size changes. Tells the GPU that the CPU re-initialized the management structure.
 
 There is an unknown context-related ID involved. This might be a heap manager ID? The (new) TA stamp value is also passed.
 
