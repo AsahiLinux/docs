@@ -11,7 +11,7 @@ This guide will give more details about tethered boot prerequisites setup for a 
 Host's requirements:
 
 * Any Apple computer running a decently recent MacOs version
-    * Enough disk space on the host for installing and commpiling software
+    * Enough disk space on the host for installing and compiling software
     * a free USB port on the host
     * a USB-A/USB-C or USB-C/USB-C cable
     * [prerequisites installed](#installing-prerequisite-software)
@@ -126,7 +126,7 @@ pyserial-ports is /usr/local/bin/pyserial-ports
 
 ### Installing picocom
 
-A serial port communication software is required to establish communication with m1n1 proxy. We recommend installing `picocom` for use as a serial terminal, which is vailable with homebrew:
+A serial port communication software is required to establish communication with m1n1 proxy. We recommend installing `picocom` for use as a serial terminal, which is available with homebrew:
 
 ```shell
 brew install picocom
@@ -149,7 +149,7 @@ brew install img4tool
 
 If you intend to boot a stock macOS kernel, you'll need these tools to extract the actual kernel file from the kernlecache of a macOS install on the target machine. In the absence of precompiled version for macOS you'll have to compile it.
 
-For this step, setup a `asahi` folder in your home directory and clone everything there, additionaly install everything in an `~/asahi/deps` folder so as to not mess up with the rest of the system.
+For this step, setup a `asahi` folder in your home directory and clone everything there, additionally install everything in an `~/asahi/deps` folder so as to not mess up with the rest of the system.
 
 First clone, build and install `libgeneral`
 
