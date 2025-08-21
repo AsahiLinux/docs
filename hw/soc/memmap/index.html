@@ -1,0 +1,1848 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/hw/soc/memmap/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>T8103 Memory Map - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="T8103 Memory Map - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/hw/soc/memmap.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/hw/soc/memmap/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="T8103 Memory Map - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/hw/soc/memmap.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#m1-t8103-memory-map" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              T8103 Memory Map
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/partitioning-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sw/audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>T8103 Memory Map</h1>
+
+<h4 id="m1-t8103-memory-map">M1 (T8103) memory map<a class="headerlink" href="#m1-t8103-memory-map" title="Permanent link">&para;</a></h4>
+<p>(Incomplete)</p>
+<pre><code>0 00000000      unmapped (L2C faults)
+
+== Apple Core Cluster (E) ==
+
+2 10x10000 :    40000    cpu&lt;x&gt; coresight (size probably wrong in adt)
+2 10x40000 :    10000    cpu&lt;x&gt; uttdbg
+2 10x50000 :    10000    cpu&lt;x&gt; impl reg
+
+2 10e40000 :    10000    cpm impl reg
+2 10f00000 :    50000    ACC impl registers
+
+== Apple Core Cluster (P) ==
+
+2 11x10000 :    40000    cpu&lt;x&gt; coresight (size probably wrong in adt)
+2 11x40000 :    10000    cpu&lt;x&gt; uttdbg
+2 11x50000 :    10000    cpu&lt;x&gt; impl reg
+
+2 11e40000 :    10000    cpm impl reg
+2 11f00000 :    50000    ACC impl registers
+
+== I2C ==
+
+2 35010000 :     4000    I2C0 (Type C controllers)
+2 35014000 :     4000    I2C1 (Speaker amp)
+2 35018000 :     4000    I2C2 (Audio codec)
+
+== UARTs ==
+
+2 35200000 :     4000    UART0 (debug console)
+2 35204000 :     4000    UART1? (not in adt?)
+2 35208000 :     4000    UART2 (wlan debug)
+
+== AIC ==
+
+2 3b100000 :     c000    AIC
+
+== PMGR ==
+
+2 3b700000 :   100000    PMGR
+
+== GPIO ==
+
+2 3c100000 :   100000    GPIO
+
+== WDT ==
+
+2 3d2b0000 :     4000    WDT
+
+== DRAM ==
+
+8 00000000 :  (8/16G)    Main DRAM (beware of carveouts!)
+
+</code></pre>
+<h5 id="mmio-ranges-that-respond-to-probe-reads-t8103">MMIO ranges that respond to probe reads (t8103)<a class="headerlink" href="#mmio-ranges-that-respond-to-probe-reads-t8103" title="Permanent link">&para;</a></h5>
+<p>The list below was generated by attempting a read on the first 32-bit word of every page in range 0x2_2000_0000 to 0x3_0000_0000. Sometimes an associated power domain was found (which had to be enabled for the reads to go through).</p>
+<pre><code>224000000 - 22402c000 |                  | 
+224030000 - 224034000 |                  | 
+224048000 - 22404c000 |                  | 
+225000000 - 225004000 |                  | pmgr[47]
+225004000 - 225008000 |                  | pmgr[48]
+225008000 - 22500c000 |                  | pmgr[49]
+225010000 - 225014000 |                  | 
+225020000 - 225024000 |                  | 
+226000000 - 226004000 |                  | pmgr[50]
+226004000 - 226008000 |                  | pmgr[51]
+226008000 - 22600c000 |                  | pmgr[52]
+226010000 - 226014000 |                  | 
+226020000 - 226024000 |                  | 
+227000000 - 22700c000 |                  | 
+227010000 - 227014000 |                  | 
+227020000 - 227024000 |                  | 
+228180000 - 228184000 | DISPDFR_FE       | 
+228200000 - 228210000 | DISPDFR_FE       | 
+228300000 - 228308000 | DISPDFR_FE       | 
+228400000 - 228404000 | DISPDFR_BE       | 
+2284c0000 - 2284c4000 | DISPDFR_BE       | 
+228500000 - 228504000 | DISPDFR_BE       | 
+228540000 - 228544000 | DISPDFR_BE       | 
+228580000 - 228584000 | DISPDFR_BE       | 
+2285c0000 - 2285c4000 | DISPDFR_BE       | 
+228600000 - 228604000 | MIPI_DSI         | 
+228640000 - 228644000 | MIPI_DSI         | 
+228680000 - 228684000 | MIPI_DSI         | 
+2287c0000 - 2287c4000 | DISPDFR_BE       | 
+229000000 - 229004000 | DISPDFR_FE       | pmgr[44]
+229008000 - 22900c000 | DISPDFR_FE       | pmgr[44]
+22a000000 - 22a004000 | ISP_SYS          | pmgr[37]
+22a008000 - 22a00c000 | ISP_SYS          | pmgr[37]
+22c0c0000 - 22c0c4000 | ISP_SYS          | 
+22c0c8000 - 22c0cc000 | ISP_SYS          | 
+22c0d0000 - 22c0d4000 | ISP_SYS          | 
+22c0e0000 - 22c100000 | ISP_SYS          | 
+22c104000 - 22c108000 | ISP_SYS          | 
+22c110000 - 22c11c000 | ISP_SYS          | 
+22c500000 - 22c514000 | ISP_SYS          | 
+230000000 - 23001c000 |                  | disp0[0]
+230040000 - 23004c000 |                  | disp0[0]
+230050000 - 230074000 |                  | disp0[0]
+230080000 - 230088000 |                  | disp0[0]
+230094000 - 230098000 |                  | disp0[0]
+2300a8000 - 2300b8000 |                  | disp0[0]
+2300f0000 - 2300f4000 |                  | disp0[0]
+2300fc000 - 230118000 |                  | disp0[0]
+230170000 - 23019c000 |                  | disp0[0]
+2301a0000 - 2301d4000 |                  | disp0[0]
+230230000 - 23025c000 |                  | disp0[0]
+23038c000 - 2303e8000 |                  | disp0[0]
+230800000 - 23081c000 |                  | 
+230840000 - 23084c000 |                  | 
+230850000 - 230874000 |                  | 
+230880000 - 230888000 |                  | 
+230894000 - 230898000 |                  | 
+2308a8000 - 2308b8000 |                  | 
+2308f0000 - 2308f4000 |                  | 
+2308fc000 - 230918000 |                  | 
+230970000 - 23099c000 |                  | 
+2309a0000 - 2309d4000 |                  | 
+230a30000 - 230a5c000 |                  | 
+230b8c000 - 230be8000 |                  | 
+2310c0000 - 2310c4000 |                  | 
+231100000 - 231108000 |                  | 
+231180000 - 231184000 |                  | 
+2311bc000 - 23120c000 |                  | 
+231300000 - 231304000 |                  | dart-disp0[1]
+231304000 - 231308000 |                  | dart-disp0[0]
+23130c000 - 231310000 |                  | dart-dcp[0]
+231310000 - 231318000 |                  | 
+231324000 - 23132c000 |                  | 
+231340000 - 231344000 |                  | 
+231344000 - 231348000 |                  | disp0[2]
+231800000 - 231850000 |                  | disp0[3]
+231850000 - 231854000 |                  | dcp[1] disp0[3]
+231854000 - 231a00000 |                  | disp0[3]
+231c00000 - 231c6c000 |                  | dcp[0] disp0[3]
+232000000 - 232004000 |                  | pmgr[38]
+232008000 - 23200c000 |                  | pmgr[38]
+234000000 - 234004000 |                  | pmgr[45]
+234008000 - 23400c000 |                  | pmgr[45]
+235000000 - 235004000 |                  | 
+235004000 - 235008000 |                  | dart-sio[0]
+235008000 - 23500c000 |                  | 
+23500c000 - 235010000 | AES              | aes[0]
+235010000 - 235014000 | I2C0             | i2c0[0]
+235014000 - 235018000 | I2C1             | i2c1[0]
+235018000 - 23501c000 | I2C2             | i2c2[0]
+23501c000 - 235020000 | I2C3             | 
+235020000 - 235024000 | I2C4             | 
+235030000 - 235034000 |                  | 
+235040000 - 235044000 | FPWM0            | pwm[0]
+235044000 - 235048000 | FPWM1            | 
+235048000 - 23504c000 | FPWM2            | 
+235050000 - 235054000 | AES              | 
+235100000 - 235104000 | SPI0             | 
+235104000 - 235108000 | SPI1             | spi1[0]
+235108000 - 23510c000 | SPI2             | 
+23510c000 - 235110000 | SPI3             | 
+235110000 - 235114000 | SPI4             | 
+235114000 - 235200000 | SPI_P            | 
+235200000 - 235204000 |                  | uart0[0]
+235204000 - 235208000 | UART1            | 
+235208000 - 23520c000 | UART2            | uart2[0]
+23520c000 - 235210000 | UART3            | 
+235210000 - 235214000 | UART4            | 
+235214000 - 235218000 | UART5            | 
+235218000 - 23521c000 | UART6            | 
+23521c000 - 235220000 | UART7            | 
+235220000 - 235224000 | UART8            | 
+235224000 - 235300000 |                  | 
+236000000 - 236050000 |                  | 
+236050000 - 236054000 |                  | sio[1]
+236054000 - 236200000 |                  | 
+236400000 - 23646c000 |                  | sio[0]
+238200000 - 238234000 | SIO_ADMA         | admac-sio[0]
+238234000 - 238300000 | SIO_ADMA         | 
+238300000 - 238304000 | AUDIO_P          | mca-switch[1] mca0[1]
+238304000 - 238308000 | AUDIO_P          | mca-switch[1] mca0[2]
+238308000 - 23830c000 | AUDIO_P          | mca-switch[1] mca1[1]
+23830c000 - 238310000 | AUDIO_P          | mca-switch[1] mca1[2]
+238310000 - 238318000 | AUDIO_P          | mca-switch[1]
+238318000 - 23831c000 | AUDIO_P          | mca-switch[1] mca3[1]
+23831c000 - 238320000 | AUDIO_P          | mca-switch[1] mca3[2]
+238320000 - 238330000 | AUDIO_P          | mca-switch[1]
+238330000 - 238334000 | DPA0             | 
+238334000 - 238338000 | DPA1             | 
+238338000 - 238400000 | AUDIO_P          | 
+238400000 - 238404000 | AUDIO_P          | mca0[0] mca-switch[0]
+238404000 - 238408000 | AUDIO_P          | mca-switch[0] mca1[0]
+238408000 - 23840c000 | AUDIO_P          | mca-switch[0]
+23840c000 - 238410000 | AUDIO_P          | mca-switch[0] mca3[0]
+238410000 - 238418000 | AUDIO_P          | mca-switch[0]
+238500000 - 238504000 | AUDIO_P          | mca-switch[3]
+238504000 - 238600000 | AUDIO_P          | 
+23b000000 - 23b02c000 |                  | pmgr[2] error-handler[15]
+23b038000 - 23b0400d4 |                  | pmgr[2] error-handler[15]
+23b044000 - 23b058000 |                  | pmgr[2] error-handler[15] nco[0]
+23b058000 - 23b064000 |                  | pmgr[2] error-handler[15]
+23b06c000 - 23b070000 |                  | pmgr[2] error-handler[15]
+23b070000 - 23b078000 |                  | 
+23b100000 - 23b108000 |                  | aic[0]
+23b108000 - 23b109000 |                  | aic[1] aic-timebase[0] aic[0]
+23b110000 - 23b11c000 |                  | 
+23b200000 - 23b204000 |                  | dwi[0]
+23b204000 - 23b208000 |                  | pmgr[31]
+23b218000 - 23b220000 |                  | 
+23b230000 - 23b234000 | PMS_FPWM0        | 
+23b234000 - 23b238000 | PMS_FPWM1        | 
+23b238000 - 23b23c000 | PMS_FPWM2        | 
+23b23c000 - 23b240000 | PMS_FPWM3        | 
+23b240000 - 23b244000 | PMS_FPWM4        | 
+23b280000 - 23b288000 |                  | mtrtempsensor3[0] pmgr[21] mtrtempsensor4[0] mtrtempsensor5[0]
+23b288000 - 23b298000 |                  | 
+23b298000 - 23b2a0000 |                  | mtrtempsensor6[0]
+23b2a0000 - 23b2a8000 |                  | mtrtempsensor7[0]
+23b2a8000 - 23b2b8000 |                  | 
+23b2c0000 - 23b2c4000 |                  | 
+23b2c4000 - 23b2d0000 |                  | tempsensor0[0] tempsensor1[0] tempsensor2[0]
+23b2d8000 - 23b2dc000 |                  | tempsensor0[0] tempsensor1[0] tempsensor2[0]
+23b2dc000 - 23b2e0000 | DEVC0_IVDMC      | tempsensor0[0] tempsensor1[0] tempsensor2[0]
+23b2e0000 - 23b2e8000 |                  | mtrtempsensor18[0] tempsensor0[0] tempsensor1[0] mtrtempsensor17[0] tempsensor2[0]
+23b2e8000 - 23b2f0000 |                  | tempsensor0[0] tempsensor1[0] tempsensor2[0]
+23b2f8000 - 23b2fc000 |                  | 
+23b300000 - 23b304000 |                  | dart-pmp[0]
+23b304000 - 23b308000 |                  | 
+23b310000 - 23b31c000 |                  | 
+23b37c000 - 23b380000 |                  | 
+23b3c0000 - 23b3c4000 |                  | 
+23b3d0000 - 23b3d4000 |                  | dispext0[4] disp0[4]
+23b3d8000 - 23b3dc000 |                  | 
+23b440000 - 23b444000 |                  | 
+23b448000 - 23b44c000 |                  | 
+23b460000 - 23b47c000 |                  | 
+23b480000 - 23b488000 |                  | 
+23b500000 - 23b580000 | PMS_SRAM         | pmp[2]
+23b700000 - 23b708000 |                  | ane[1] pmgr[0] error-handler[16]
+23b708000 - 23b70c000 |                  | ane[1] pmgr[0] ave[3] error-handler[16]
+23b70c000 - 23b738000 |                  | ane[1] pmgr[0] error-handler[16]
+23b738000 - 23b739000 |                  | ane[1] pmgr[0] dispext0[5] disp0[5] error-handler[16]
+23b739000 - 23b750000 |                  | ane[1] pmgr[0] error-handler[16]
+23b754000 - 23b758000 |                  | ane[1] pmgr[0] error-handler[16]
+23b75c000 - 23b774000 |                  | ane[1] pmgr[0] error-handler[16]
+23b778000 - 23b78c000 |                  | ane[1] pmgr[0] error-handler[16]
+23b800000 - 23b850000 | PMP              | 
+23b850000 - 23ba00000 | PMP              | pmp[1]
+23bc00000 - 23bc2c000 | PMP              | pmp[0]
+23bc2c000 - 23bc3c000 | PMP              | pmgr[22] pmp[0]
+23bc3c000 - 23bc3d000 | PMP              | pmgr[22] pmp[0] dispext0[6] disp0[6]
+23bc3d000 - 23bc60000 | PMP              | pmgr[22] pmp[0]
+23bc60000 - 23bc6c000 | PMP              | pmgr[22]
+23c100000 - 23c104000 | GPIO             | pmp[37] gpio[0]
+23c140000 - 23c144000 |                  | gpio[0]
+23c1c0000 - 23c1c4000 |                  | gpio[0]
+23c220000 - 23c224000 | GPIO             | 
+23c260000 - 23c264000 |                  | 
+23c280000 - 23c284000 | SOC_SPMI0        | 
+23c290000 - 23c294000 | SOC_SPMI1        | 
+23c2a0000 - 23c2a4000 | SOC_SPMI2        | 
+23d000000 - 23d004000 |                  | 
+23d004000 - 23d005000 |                  | pmgr[4]
+23d005000 - 23d00c000 |                  | 
+23d010000 - 23d020000 |                  | 
+23d030000 - 23d034000 |                  | 
+23d080000 - 23d084000 |                  | 
+23d090000 - 23d094000 |                  | 
+23d098000 - 23d0a0000 |                  | 
+23d0d8000 - 23d0d8400 |                  | pmp[32]
+23d0e0000 - 23d0e0400 |                  | 
+23d100000 - 23d104000 |                  | pmgr[23] pmp[30]
+23d108000 - 23d10c000 |                  | pmgr[23] pmp[30]
+23d10c000 - 23d10c018 |                  | pmgr[23] dockchannel-uart[1] pmp[30]
+23d10c018 - 23d114000 |                  | pmgr[23] pmp[30]
+23d114000 - 23d11c000 |                  | pmgr[23]
+23d128000 - 23d138000 |                  | pmgr[23] dockchannel-uart[0] pmp[31]
+23d138000 - 23d158000 |                  | pmgr[23] pmp[31]
+23d158000 - 23d188000 |                  | pmgr[23]
+23d1a0000 - 23d1a4000 |                  | 
+23d1bc000 - 23d1c0000 |                  | 
+23d1f0000 - 23d1f4000 |                  | nub-gpio[0]
+23d200000 - 23d204000 |                  | pmgr[3]
+23d240000 - 23d244000 |                  | pmgr[3]
+23d27c000 - 23d280000 |                  | pmgr[3]
+23d280000 - 23d28c000 |                  | pmgr[1]
+23d298000 - 23d2a0000 |                  | pmgr[1]
+23d2a8000 - 23d2a8008 |                  | admac-aop-audio[1] pmgr[1] aop[3] admac-sio[1]
+23d2a8008 - 23d2b0000 |                  | pmgr[1]
+23d2b0000 - 23d2b4000 |                  | pmgr[1] wdt[0]
+23d2b4000 - 23d2b8008 |                  | pmgr[1]
+23d2bc000 - 23d2bd000 |                  | pmgr[1] apciec1[2] atc-phy0[23] apcie[5] atc-phy1[23] apciec0[2]
+23d2be000 - 23d2c8000 |                  | pmgr[1]
+23d2d0000 - 23d2d4000 |                  | aes[1] pmgr[1]
+23d2d4000 - 23d2f4000 |                  | pmgr[1]
+23d310000 - 23d32c000 |                  | 
+23d338000 - 23d384000 |                  | 
+23d390000 - 23d3b0000 |                  | 
+23d430000 - 23d434000 |                  | 
+23d800000 - 23d854000 | MSG              | 
+23df00000 - 23df20000 |                  | 
+23e000000 - 23e050000 | SMC_CPU          | 
+23e050000 - 23e054000 | SMC_CPU          | smc[1]
+23e054000 - 23e200000 | SMC_CPU          | 
+23e400000 - 23e46c000 | SMC_CPU          | smc[0]
+23e800000 - 23e810000 | SMC_AON          | 
+23e820000 - 23e824000 | SMC_GPIO         | smc-gpio[0]
+23ed04000 - 23ed08000 | SMC_I2CM0        | 
+23ed08000 - 23ed0c000 | SMC_I2CM1        | 
+23ed0c000 - 23ed10000 | SMC_I2CM2        | 
+23ed10000 - 23ed14000 | SMC_I2CM3        | 
+23ed14000 - 23ed18000 | SMC_I2CM4        | 
+23fe44000 - 23fe4c000 | SMC_FABRIC       | 
+240000000 - 2412c0000 |                  | 
+2412c0000 - 2412c4000 |                  | dart-sep[0]
+241300000 - 241400000 |                  | 
+241400000 - 241440000 |                  | error-handler[14]
+241440000 - 241480000 |                  | error-handler[13]
+241480000 - 242050000 |                  | 
+242050000 - 2420b0000 |                  | sep[1]
+2420b0000 - 242400000 |                  | 
+242400000 - 24246c000 |                  | sep[0]
+24246c000 - 244000000 |                  | 
+24a800000 - 24a808000 | AOP_BASE         | 
+24a808000 - 24a80c000 | AOP_FILTER       | dart-aop[0]
+24a80c000 - 24a810000 | AOP_FILTER       | dart-aop[1]
+24a810000 - 24a818000 | AOP_FR           | 
+24a820000 - 24a824000 | AOP_GPIO         | aop-gpio[0]
+24a824000 - 24a828000 | AOP_SPMI0        | 
+24a828000 - 24a828400 | AOP_SPMI1        | 
+24a838000 - 24a84c000 | AOP_FR           | 
+24a850000 - 24a854000 | AOP_SPI0         | 
+24a854000 - 24a858000 | AOP_I2CM0        | 
+24a858000 - 24a85c000 | AOP_I2CM1        | 
+24a85c000 - 24a870000 | AOP_PDMC_LPD     | 
+24a870000 - 24a874000 | AOP_MCA0         | 
+24a874000 - 24a878000 | AOP_MCA1         | 
+24a878000 - 24a87c000 | AOP_MCA2         | 
+24a87c000 - 24a880000 | AOP_MCA3         | 
+24a880000 - 24a884000 | AOP_MCA4         | 
+24a884000 - 24a888000 | AOP_MCA5         | 
+24a900000 - 24a980000 | AOP_ADMA0        | 
+24a980000 - 24a9b4000 | AOP_AUDIO_ADMA0  | admac-aop-audio[0]
+24a9b4000 - 24aa00000 | AOP_AUDIO_ADMA0  | 
+24aa00000 - 24aa04000 | AOP_UART0        | 
+24aa04000 - 24aa08000 | AOP_UART1        | 
+24aa08000 - 24aa0c000 | AOP_UART2        | 
+24aa0c000 - 24aa14000 | AOP_MCA0         | 
+24aa14000 - 24aa1c000 | AOP_MCA1         | 
+24aa1c000 - 24aa24000 | AOP_MCA2         | 
+24aa24000 - 24aa2c000 | AOP_MCA3         | 
+24aa2c000 - 24aa34000 | AOP_MCA4         | 
+24aa34000 - 24aa3c000 | AOP_MCA5         | 
+24aa3c000 - 24aa40000 | AOP_PDMC_LPD     | 
+24aa40000 - 24ab00000 | AOP_SHIM         | 
+24ab00000 - 24ab40000 | AOP_LEAP         | 
+24ab40000 - 24ac00000 | AOP_AUDIO_SHIM   | 
+24b000000 - 24b400000 | AOP_LEAP         | 
+24be00000 - 24be04000 | AOP_LEAP         | 
+24bf00000 - 24bf08000 | AOP_LEAP         | 
+24c000000 - 24c004000 | AOP_LEAP         | 
+24c100000 - 24c120000 | AOP_LEAP         | 
+262000000 - 262004000 | MSR              | pmgr[32]
+262008000 - 26200c000 | MSR              | pmgr[32]
+263000000 - 263028000 | MSR              | scaler0[0]
+263200000 - 263204000 | MSR              | dart-scaler[0]
+263204000 - 263208000 | MSR              | 
+263210000 - 263214000 | MSR              | scaler0[1]
+263214000 - 263218000 | MSR              | 
+263220000 - 263224000 | MSR              | 
+263230000 - 263240000 | MSR              | 
+264000000 - 264004000 | JPG              | pmgr[33]
+264008000 - 26400c000 | JPG              | pmgr[33]
+265000000 - 265004000 | JPG              | jpeg0[0]
+265004000 - 265008000 | JPG              | dart-jpeg0[0]
+265008000 - 26500c000 | JPG              | jpeg1[0]
+26500c000 - 265010000 | JPG              | dart-jpeg1[0]
+265010000 - 26501c000 | JPG              | 
+266000000 - 266004000 | VENC_SYS         | pmgr[34]
+266008000 - 26600c000 | VENC_SYS         | pmgr[34]
+267010000 - 267014000 | VENC_SYS         | 
+267020000 - 267024000 | VENC_SYS         | dart-ave[2]
+267030000 - 267034000 | VENC_SYS         | dart-ave[1]
+267040000 - 267044000 | VENC_SYS         | dart-ave[0]
+267044000 - 267048000 | VENC_SYS         | dart-ave[3]
+267050000 - 267058000 | VENC_SYS         | ave[2]
+267058000 - 26705c000 | VENC_SYS         | 
+267060000 - 267064000 | VENC_SYS         | 
+267110000 - 267114000 | VENC_DMA         | ave[0]
+267120000 - 267124000 | VENC_DMA         | ave[0]
+267130000 - 267134000 | VENC_DMA         | ave[0]
+267150000 - 267154000 | VENC_DMA         | ave[0]
+267160000 - 26719c000 | VENC_DMA         | ave[0]
+2671dc000 - 2671e0000 | VENC_SYS         | ave[0]
+2671e0000 - 2671ec000 | VENC_ME0         | ave[0]
+2671f0000 - 2671fc000 | VENC_ME1         | ave[0]
+267240000 - 267250000 | VENC_PIPE4       | ave[0]
+267260000 - 267274000 | VENC_PIPE4       | ave[0]
+267278000 - 26727c000 | VENC_PIPE4       | ave[0]
+267280000 - 267294000 | VENC_PIPE4       | ave[0]
+267298000 - 26729c000 | VENC_PIPE4       | ave[0]
+2672a0000 - 2672b4000 | VENC_PIPE4       | ave[0]
+2672b8000 - 2672bc000 | VENC_PIPE4       | ave[0]
+2672c0000 - 2672e0000 | VENC_PIPE4       | ave[0]
+2672e0000 - 2672e4000 | VENC_DMA         | ave[0]
+2672e8000 - 2672ec000 | VENC_DMA         | ave[0]
+267310000 - 267314000 | VENC_PIPE5       | ave[0]
+267320000 - 267340000 | VENC_PIPE5       | ave[0]
+267350000 - 267358000 | VENC_PIPE5       | ave[0]
+267360000 - 2673a0000 | VENC_PIPE5       | ave[0]
+2673b0000 - 2673b4000 | VENC_PIPE5       | ave[0]
+2673c0000 - 2673e0000 | VENC_PIPE5       | ave[0]
+267400000 - 267404000 | VENC_DMA         | ave[0]
+267408000 - 26740c000 | VENC_DMA         | ave[0]
+267410000 - 267414000 | VENC_DMA         | ave[0]
+267420000 - 267424000 | VENC_DMA         | ave[0]
+267428000 - 26742c000 | VENC_DMA         | ave[0]
+267430000 - 267434000 | VENC_DMA         | ave[0]
+267440000 - 267444000 | VENC_PIPE4       | ave[0]
+267448000 - 26744c000 | VENC_PIPE4       | ave[0]
+267450000 - 267454000 | VENC_PIPE4       | ave[0]
+267460000 - 267464000 | VENC_PIPE4       | ave[0]
+267468000 - 26746c000 | VENC_PIPE4       | ave[0]
+267470000 - 267474000 | VENC_PIPE4       | ave[0]
+267480000 - 267484000 | VENC_PIPE4       | ave[0]
+267488000 - 26748c000 | VENC_PIPE4       | ave[0]
+267490000 - 267494000 | VENC_PIPE4       | ave[0]
+2674a0000 - 2674a4000 | VENC_PIPE4       | ave[0]
+2674a8000 - 2674ac000 | VENC_PIPE4       | ave[0]
+2674b0000 - 2674b4000 | VENC_PIPE4       | ave[0]
+2674c0000 - 2674c4000 | VENC_PIPE4       | ave[0]
+2674c8000 - 2674cc000 | VENC_PIPE4       | ave[0]
+2674d0000 - 2674d4000 | VENC_PIPE4       | ave[0]
+2674e0000 - 2674e4000 | VENC_PIPE5       | ave[0]
+2674e8000 - 2674ec000 | VENC_PIPE5       | ave[0]
+2674f0000 - 2674f4000 | VENC_PIPE5       | ave[0]
+267500000 - 267504000 | VENC_PIPE5       | ave[0]
+267508000 - 26750c000 | VENC_PIPE5       | ave[0]
+267510000 - 267514000 | VENC_PIPE5       | ave[0]
+267520000 - 267524000 | VENC_PIPE5       | ave[0]
+267528000 - 26752c000 | VENC_PIPE5       | ave[0]
+267530000 - 267534000 | VENC_PIPE5       | ave[0]
+267540000 - 267544000 | VENC_PIPE5       | ave[0]
+267548000 - 26754c000 | VENC_PIPE5       | ave[0]
+267550000 - 267554000 | VENC_PIPE5       | ave[0]
+267800000 - 267a00000 | VENC_SYS         | ave[1]
+267c00000 - 267c6c000 | VENC_SYS         | ave[1]
+268000000 - 268004000 | AVD_SYS          | pmgr[35] avd[0]
+268008000 - 26800c000 | AVD_SYS          | pmgr[35] avd[0]
+269000000 - 269004000 | AVD_SYS          | avd[0]
+269010000 - 269014000 | AVD_SYS          | dart-avd[0] avd[0]
+269020000 - 269024000 | AVD_SYS          | avd[0]
+269070000 - 269074000 | AVD_SYS          | avd[0]
+269080000 - 26909c000 | AVD_SYS          | avd[0]
+269100000 - 269110000 | AVD_SYS          | avd[0]
+269400000 - 269404000 | AVD_SYS          | avd[0]
+270000000 - 27001c000 |                  | dispext0[0]
+270040000 - 270074000 |                  | dispext0[0]
+270080000 - 270084000 |                  | dispext0[0]
+2700a8000 - 2700ac000 |                  | dispext0[0]
+2700f0000 - 2700f4000 |                  | dispext0[0]
+2700fc000 - 270118000 |                  | dispext0[0]
+270800000 - 27081c000 |                  | 
+270840000 - 270874000 |                  | 
+270880000 - 270884000 |                  | 
+2708a8000 - 2708ac000 |                  | 
+2708f0000 - 2708f4000 |                  | 
+2708fc000 - 270918000 |                  | 
+2710c0000 - 2710c4000 |                  | 
+271200000 - 271204000 |                  | 
+271300000 - 271304000 |                  | dart-dispext0[1]
+271304000 - 271308000 |                  | dart-dispext0[0]
+27130c000 - 271310000 |                  | dart-dcpext[0]
+271310000 - 271318000 |                  | 
+271324000 - 27132c000 |                  | 
+271340000 - 271344000 |                  | 
+271344000 - 271348000 |                  | dispext0[2]
+271800000 - 271850000 |                  | dispext0[3]
+271850000 - 271854000 |                  | dispext0[3] dcpext[1]
+271854000 - 271a00000 |                  | dispext0[3]
+271c00000 - 271c6c000 |                  | dispext0[3] dcpext[0]
+272000000 - 272004000 |                  | pmgr[43]
+272008000 - 27200c000 |                  | pmgr[43]
+277000000 - 277050000 | ANS2             | 
+277050000 - 277054000 | ANS2             | ans[1]
+277054000 - 277200000 | ANS2             | 
+277400000 - 27746c000 | ANS2             | ans[0]
+279000000 - 279004000 | ANS2             | ans[4] pmgr[46]
+279008000 - 27900c000 | ANS2             | ans[4] pmgr[46]
+27bb90000 - 27bb98000 | ANS2             | ans[5]
+27bc50000 - 27bc60000 | ANS2             | sart-ans[0]
+27bcc0000 - 27bcc8000 | ANS2             | ans[3]
+27bccc000 - 27bcd0000 | ANS2             | ans[3]
+27bce4000 - 27bcec000 | ANS2             | ans[3]
+27bd60000 - 27bd68000 | ANS2             | 
+27bd70000 - 27bd78000 | ANS2             | 
+27bdd0000 - 27bdd4000 | ANS2             |
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
