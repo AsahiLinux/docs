@@ -131,7 +131,7 @@ Here are some numbers from some experiment with macOS `11.5.2` and m1n1 version 
 
 ## Updating your m1n1 hypervisor tree
 
-The hypervisor/m1n1 ABI is *not* stable. If you have installed a fresh m1n1 build as above, you can use `run_guest.py` directy to save some time. However, as soon as you update your m1n1 git tree, you *must* build the updated m1n1 and run  
+The hypervisor/m1n1 ABI is *not* stable. If you have installed a fresh m1n1 build as above, you can use `run_guest.py` directly to save some time. However, as soon as you update your m1n1 git tree, you *must* build the updated m1n1 and run  
 ```
 python tools/chainload.py -r ../build/m1n1.bin
 ```

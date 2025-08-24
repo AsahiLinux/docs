@@ -66,7 +66,7 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 * **iBSS**: iBoot Single Stage. Replacement for the first-stage iBoot (iBoot1/LLB), loaded in the DFU boot flow when the NOR is corrupted.
 * **IOKit**: I/O Kit is Apple's device driver framework for XNU (Apple's operating system kernel).
 * **IOMMU**: I/O Memory Management Unit, a more general term for Apple's DART.
-* **IPI**: Inter-processor interupt. An interrupt used by one processor to interrupt another.
+* **IPI**: Inter-processor interrupt. An interrupt used by one processor to interrupt another.
 * **iSC**: iBoot System Container. A disk partition (usually first on the internal SSD) containing the system wide boot data. (See [Stock Partition Layout](../platform/stock-partition-layout.md))
 * **ISP**: Image Signal Processor. Webcam on M-series laptops. Denotes the entire camera unit, from sensors to strobe to the coprocessor.
 

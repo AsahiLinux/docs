@@ -19,7 +19,7 @@ title: ASC
     0 - CPU_IDLE
     
 0x400
-    10 - set when the CPU is started (probaby by firmware)
+    10 - set when the CPU is started (probably by firmware)
     
 0x80c - IRQ_CONFIG
     0 - IRQ_CONTROLLER_ENABLE
