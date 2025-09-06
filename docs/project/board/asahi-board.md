@@ -23,3 +23,4 @@ The board meets once a month.
 - [2 May 2025 17:00](minutes/20250502.md)
 - [6 June 2025 17:00](minutes/20250606.md)
 - [18 July 2025 17:00](minutes/20250718.md)
+- [8 August 2025 17:00](minutes/20250808.md)
