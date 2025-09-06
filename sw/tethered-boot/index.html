@@ -1,0 +1,1535 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/sw/tethered-boot/">
+      
+      
+        <link rel="prev" href="../../project/help-wanted/">
+      
+      
+        <link rel="next" href="../m1n1-user-guide/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>Tethered Boot - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Tethered Boot - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/sw/tethered-boot.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/sw/tethered-boot/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Tethered Boot - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/sw/tethered-boot.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tethered Boot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partitioning-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparation steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-m1n1-on-your-apple-silicon-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing m1n1 on your Apple Silicon Mac
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-backdoor-proxy-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabling the backdoor proxy mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#establishing-the-usb-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Establishing the USB connection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#booting-a-kernel-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booting a kernel directly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#booting-a-kernel-under-the-hypervisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booting a kernel under the hypervisor
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Tethered Boot Setup (For Developers)</h1>
+
+<h5 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h5>
+<p>This guide will walk you through the steps required to set up your Apple Silicon Mac for booting a Linux kernel in a dual boot environment with macOS.</p>
+<p>This guide is intended specifically for kernel developers and advanced users who wish to assist in testing patches in the <a href="https://github.com/AsahiLinux/linux"><code>asahi</code></a> branch. Building a kernel is outside the scope of this guide. If you are here, you should be capable of building an AArch64 kernel by yourself. A somewhat sane <code>.config</code> can be found <a href="https://github.com/AsahiLinux/PKGBUILDs/blob/main/linux-asahi/config">here</a>. Keep in mind that m1n1 expects a gzipped kernel image, your target machine's Device Tree, and will also optionally take a gzipped <em>initramfs</em>.</p>
+<h5 id="hardware-requirements">Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">&para;</a></h5>
+<ul>
+<li>An Apple Silicon Mac with <em>at least</em> <strong>macOS 12.3</strong> installed and configured<ul>
+<li>You must have a password-protected administrator account. Typically, this will be the first account you created when setting up the machine for the first time.</li>
+</ul>
+</li>
+<li>A host machine of any architecture running a GNU/Linux distribution (macOS is also supported, but less well tested see <a href="../tethered-boot-macos-host/">Tethered Boot Setup on macOS</a>)<ul>
+<li>Both <code>GCC</code> and <code>Clang/LLVM</code> AArch64 cross-toolchains are supported.</li>
+</ul>
+</li>
+</ul>
+<p>If you are interested in low-level access to the SoC via its debug UART, you will also require a real, physical serial port solution. See <a href="../../hw/soc/serial-debug/">Serial Debug</a> for more information on this. This is not necessary for general kernel development or reverse-engineering, and most developers will find the virtual serial port offered by the m1n1 hypervisor to be adequate for everything (unless you're debugging KVM and can't use it).</p>
+<h5 id="preparation-steps">Preparation steps<a class="headerlink" href="#preparation-steps" title="Permanent link">&para;</a></h5>
+<p><code>m1n1</code> is our Apple Silicon playground/hypervisor/bootloader and is required to boot a Linux kernel or U-Boot. In order to work with <code>m1n1</code> tooling, ensure that your machine has Python 3.9 or later installed, as well as <code>pip</code>. To get the <em>Python</em> modules required for interacting with <code>m1n1</code>, run</p>
+<pre><code class="language-shell">pip3 install --user pyserial construct serial.tool
+</code></pre>
+<p>Then, clone the <code>m1n1</code> git repo and build it.</p>
+<pre><code class="language-shell">git clone --recursive https://github.com/AsahiLinux/m1n1.git
+cd m1n1
+make
+</code></pre>
+<p>If you are on a native aarch64 machine, use <code>make ARCH=</code> instead.</p>
+<p>Install the <a href="https://github.com/AsahiLinux/m1n1/blob/main/udev/80-m1n1.rules">udev rules</a> into <code>/etc/udev/rules.d</code> to get pretty device names for m1n1. You may have to add your user to a specific group (e.g. <code>uucp</code>) to get non-root access to the devices, or otherwise modify the udev rules to change the device permissions.</p>
+<p>We also recommend installing <code>picocom</code> for use as a serial terminal, which should be available in your distro's package repository.</p>
+<h5 id="installing-m1n1-on-your-apple-silicon-mac">Installing m1n1 on your Apple Silicon Mac<a class="headerlink" href="#installing-m1n1-on-your-apple-silicon-mac" title="Permanent link">&para;</a></h5>
+<p>You can use the public Asahi Linux installer to install it. Open up a macOS terminal and run:</p>
+<pre><code class="language-shell">curl https://alx.sh | sh
+</code></pre>
+<p>Follow the prompts to choose your desired installation mode. You can opt to install one of the Fedora Asahi Remix images, or the UEFI only option to get just m1n1+u-boot, which will boot UEFI executables off of a USB drive (or off of the internal storage, once installed). Installation of your preferred rootf/kernel is left as an exercise for the reader in that case.</p>
+<p>Alternatively, if you enable expert mode in the installer, you can opt to install m1n1 in tethered-only proxy mode. In this case, you can skip the next section, as your m1n1 will already (unconditionally) boot in proxy mode.</p>
+<h5 id="enabling-the-backdoor-proxy-mode">Enabling the backdoor proxy mode<a class="headerlink" href="#enabling-the-backdoor-proxy-mode" title="Permanent link">&para;</a></h5>
+<p>m1n1 consists of two stages. Stage 1 is installed during the 1TR step of the installation (after the first reboot into macOS recovery) and cannot be modified without a trip through recovery. Stage 2 is loaded from the EFI system partition at <code>m1n1/boot.bin</code>, and can be updated by distributions to add new features and hardware support. Release builds of stage 1 have a backdoor proxy mode, which allows for optional tethered boot. This has to be enabled from 1TR, and requires machine authentication for security.</p>
+<p>We use the SIP (System Integrity Protection) disable flag applied to the Asahi Linux volume to control this mode. On macOS volumes this normally disables certain kernel security features, while m1n1 uses it to signal that it should enable the backdoor proxy mode if the system is booting in verbose mode. This change is per-OS, so doing it for the Asahi/m1n1 volume will not affect any macOS installs.</p>
+<p>To enable this mode, first ensure that m1n1 / Asahi Linux is the default boot volume (this will be the case after a fresh install), then boot the machine by holding down the power button from a fully shut down state until "Loading startup options..." appears. Select "Options", enter your macOS machine owner credentials if prompted, then click on the Utilities menu and open a Terminal window.</p>
+<p>From there, run:</p>
+<pre><code class="language-shell">csrutil disable &amp;&amp; nvram boot-args=-v
+</code></pre>
+<p>Select your Asahi Linux volume when prompted, and authenticate yourself when prompted. Once this is done, shut down the machine. If you get a pairing error, that means the default boot OS does not match the OS you are making the change for (you can only downgrade the security settings for the default boot OS, as that controls which recoveryOS boots).</p>
+<p>In this mode, m1n1 will wait for 5 seconds on boot. If a USB connection is detected and the corresponding TTY device (either of the two) is opened in the host machine, it will abort the regular boot process and go into proxy mode. This allows you to boot in tethered mode when needed, while letting the machine boot stand-alone otherwise.</p>
+<h5 id="establishing-the-usb-connection">Establishing the USB connection<a class="headerlink" href="#establishing-the-usb-connection" title="Permanent link">&para;</a></h5>
+<p>Connect your host and target with a USB Type C cable (any reasonable cable should work). Make sure you use a Thunderbolt port on the target, for machines with non-TB ports (e.g. some iMac and some Mac Studio variants). You can also use a C to A cable, with the A side on your host. We recommend also connecting a charge cable to another port on your target.</p>
+<p>On your host machine, pull up a terminal window and run <code>proxyclient/tools/picocom-sec.sh</code>. This will wait until a m1n1 device connects, then open its secondary USB device as a serial terminal. This serves two purposes: to break into proxy mode (see the previous section), and also will be your virtual serial console when you run kernels under the hypervisor.</p>
+<p>Once that script is running and the machines are connected, boot your target device. m1n1 will break into proxy mode. Confirm that this works by running <code>proxyclient/tools/shell.py</code>, which will drop you into an interactive Python shell (exit with ^D).</p>
+<h5 id="booting-a-kernel-directly">Booting a kernel directly<a class="headerlink" href="#booting-a-kernel-directly" title="Permanent link">&para;</a></h5>
+<p>To boot a Linux kernel, use this command:</p>
+<pre><code class="language-shell">python3 proxyclient/tools/linux.py -b 'earlycon debug rootwait root=/dev/nvme0n1p5 &lt;other args&gt;' /path/to/Image.gz /path/to/t6000-j314s.dtb [optional initramfs]
+</code></pre>
+<p>In this example, we pass <code>m1n1</code> a gzipped kernel, and the Device Tree for the 14" MacBook Pro with M1 Pro SoC, telling it to mount /dev/nvme0n1p5 as the root filesystem. Keep in mind that the order of arguments you pass to <code>linux.py</code> matters -- you must pass it the kernel first, Device Tree second, and optionally an initramfs last. If all goes well, you should see penguins in the framebuffer.</p>
+<p>If you are using the Asahi Linux (Arch Linux ARM) rootfs, for tethered boot we recommend a kernel with modules disabled (all built-in). You can ignore the Arch Linux initramfs, but you should instead provide an initramfs with <code>/lib/firmware/{brcm/apple}</code> to make sure the built-in modules can find their firmware early. Then, just pass <code>root=/dev/nvme0n1p5</code> (substitute whatever your rootfs partition number is; 5 is the typical number for vanilla installs) to boot directly into the system.</p>
+<h5 id="booting-a-kernel-under-the-hypervisor">Booting a kernel under the hypervisor<a class="headerlink" href="#booting-a-kernel-under-the-hypervisor" title="Permanent link">&para;</a></h5>
+<p>Use this utility script to properly boot a Linux kernel under the m1n1 hypervisor:</p>
+<pre><code class="language-shell">tools/run_guest_kernel.sh /path/to/linux/build/dir 'earlycon rootwait root=/dev/nvme0n1p5' [optional initramfs]
+</code></pre>
+<p>Note that the script expects the path to the Linux build tree (i.e. the directory where <code>.config</code> and <code>Makefile</code> are). It will pick out the kernel and corresponding device trees from within.</p>
+<p>This will:</p>
+<ul>
+<li>Build a guest image with m1n1, the desired kernel, the command line, initramfs if any, and all available device trees from the kernel tree (m1n1 will autoselect the correct one)</li>
+<li>Chainload a plain m1n1 binary first, to ensure the target machine is running a version that matches the m1n1 tree/tools in the host (since the proxy ABI is not stable)</li>
+<li>Boot the guest image under the hypervisor</li>
+</ul>
+<p>m1n1 will first load as a guest inside m1n1 (inception!), and the inner guest will then load the embedded kernel and initramfs. You should see the guest m1n1 debug output and the kernel console in the secondary terminal you started earlier (with <code>picocom-sec.sh</code>).</p>
+<p>Note that if you use an initramfs with this script, <em>it must be gzipped</em> (and be a single gzipped image - concatenate then gzip, don't gzip then concatenate). This is due to limitations of how m1n1 handles embedded payloads.</p>
+<p>You can use ^C in the hypervisor console to break into the guest. The script automatically loads <code>System.map</code>, so you can use the <code>bt</code> command to get a stack trace with symbols. Try <code>cpu(1)</code> (etc.) to switch between guest CPUs, <code>ctx</code> to print execution context, <code>reboot</code> to force a hard system reboot, or <code>cont</code> (or just ^D) to resume execution.</p>
+<p>Debugging with GDB or LLDB to get source line location, to investigate structs, etc, is also possible. Run <code>gdbserver</code> command in the hypervisor console, and connect GDB/LLDB to <code>/tmp/.m1n1-unix</code> UNIX domain socket. There are some caveats with gdbserver:
+- GDB lacks with in-kernel pointer-authentication support. Disable <code>CONFIG_ARM64_PTR_AUTH_KERNEL</code> or use LLDB to avoid problems with pointers.
+- Do not run hypervisor console commands interfering with GDB/LLDB, or they will be out-of-sync. For example, do not edit breakpoints from both of hypervisor console and GDB/LLDB at the same time.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

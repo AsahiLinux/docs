@@ -1,0 +1,1831 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/platform/introduction/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>Introduction to Apple Silicon - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Introduction to Apple Silicon - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/platform/introduction.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/platform/introduction/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Introduction to Apple Silicon - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/platform/introduction.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#foreword" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Apple Silicon
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/partitioning-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Introduction to Apple Silicon</h1>
+
+<h5 id="foreword">Foreword<a class="headerlink" href="#foreword" title="Permanent link">&para;</a></h5>
+<p>This document attempts to explain the Apple Silicon (i.e. M1 and later) Mac boot ecosystem (henceforth "AS Macs"), as it pertains for how open OSes interoperate with the platform.</p>
+<p>It is intended for developers and maintainers of Linux, BSD and other OS distributions and boot-related components, as well as users interested in the platform, and its goal is to cover the overall picture without delving into excessive technical detail. Specifics should be left to other pages. It also omits details that only pertain to macOS (such as how kernel extensions work and how they are loaded).</p>
+<p>The information here is based on how things work in system firmware and macOS versions 12.0 (Monterey) and later. A number of rapid design changes took place in the first year after the initial M1 Mac announcement; although older 11.x firmwares are usable, they are obsolete and buggy in various ways, and attempting to cover these changes would make things too confusing. We expect users wishing to run open OSes to run system firmware corresponding to macOS 12.1 or later, for practical reasons (though they may have older versions of macOS itself installed).</p>
+<p>Please drop by #asahi on OFTC if you have general questions or feedback, or ping us on #asahi-dev if you are a developer and would like to discuss technical aspects (<a href="https://asahilinux.org/community/">further info</a>).</p>
+<h5 id="design-goals">Design goals<a class="headerlink" href="#design-goals" title="Permanent link">&para;</a></h5>
+<p>AS Macs have the following design goals:</p>
+<ul>
+<li>Made for macOS</li>
+<li>Open to other OSes</li>
+<li>Mandatory secure boot (with user control)</li>
+<li>Secure even against attackers with physical access</li>
+<li>Resistant to supply-chain attacks</li>
+<li>Defense in depth (no blind trust in coprocessors/firmware)</li>
+<li>Native dual/multiboot with backwards compatibility</li>
+<li>Brick-proof</li>
+<li>Recoverable security (can be restored to known-good state by users)</li>
+</ul>
+<p>Keep these design goals in mind as you read through this document, as they explain a lot of the decisions that went into the system architecture. Apple's approach to third-party OSes is essentially "have fun". We do not have any expectations of direct support, documentation, or additional development effort from them, nor do we expect them to attempt to hinder third-party OSes in any deliberate way. They have explicitly developed the ability to securely run third-party OSes and bootloaders on these machines, and left the rest to us.</p>
+<p>Apple documents much of their security design in their <a href="https://support.apple.com/guide/security/welcome/web">platform security guide</a>, which should be considered the authoritative reference for these platforms. Nonetheless, the guide does not go into the fine technical points of the system, and we have learned about many further details through experimentation and reverse engineering.</p>
+<p>These systems are engineered to run macOS, and make no explicit concessions for supporting other OSes; the ability to boot custom kernels can be viewed as official support for self-compiled builds of the <a href="https://github.com/apple-oss-distributions/xnu.git">macOS kernel</a>, and non-macOS OSes need to behave like macOS does as far as their interactions with the rest of the platform. In other words, the ABI specification for every aspect of boot and firmware interaction is "whatever macOS does". There is no attempt to enforce actual usage of macOS (no evil checks or anything of that sort), so the system is open to any OS as long as it follows the macOS boot ABI.</p>
+<h6 id="on-secure-boot-user-control-and-licensing">On secure boot, user control, and licensing<a class="headerlink" href="#on-secure-boot-user-control-and-licensing" title="Permanent link">&para;</a></h6>
+<p>It would be remiss not to briefly cover where these machines stand in terms of user control and trustability. Apple Silicon machines are designed first and foremost to provide a secure environment for typical end-users running macOS as signed by Apple; they prioritize user security against third-party attackers, but also attempt to limit Apple's own control over the machines in order to reduce their responsibility when faced with government requests, to some extent. In addition, the design preserves security even when a third-party OS is installed. The entire architecture is complicated and the details subtle, but to summarize a few key points:</p>
+<ul>
+<li>Boot components are signed and opaque (encrypted)</li>
+<li>Runtime components (e.g. firmware and macOS itself) are signed and transparent (plaintext)<ul>
+<li>With the exception of the SEP (Secure Enclave Processor, a TPM equivalent), which is optional and disabled by default</li>
+<li>And two small blobs (SMC and PMU) which are merely incidentally encrypted; it would be nice to get Apple to disclose these, but they have a rather small I/O surface.</li>
+</ul>
+</li>
+<li>Brick recovery / total system flash (DFU) requires phoning home</li>
+<li>Normal operation, including OS installs, can be performed off-line with physical user presence. It is possible to take an out-of-the-box Mac and install Linux on it without ever connecting it to a network.</li>
+<li>Owner control is asserted on first boot (you become machine owner by going through the macOS setup flow and creating the first admin user).</li>
+<li>The normal bootloader flow is minimal and has a small attack surface (no USB, network, etc.)</li>
+<li>No runtime blobs are designed to have total system access (no ME, no PSP, no TrustZone, nothing of that sort). Almost all blobs are running behind IOMMUs or similar firewalls, with the sole exception of the GPU firmware*. All code running on the main CPUs is under the control of the OS.</li>
+</ul>
+<p>This puts them somewhere between x86 PCs and a libre-first system like the <a href="https://www.raptorcs.com/TALOSII/">Talos II</a> in terms of freedom to replace firmware and boot components; while a number of blobs are required in order to boot the system, none of those have the ability to take over the OS or compromise it post-boot (unlike, say, Intel ME and AMD PSP on recent systems, or the DMA-capable chips on the LPC bus running opaque blobs that exist on even <a href="https://ryf.fsf.org/products/TET-X200">old ThinkPads</a>).</p>
+<p>AS machines use a large number of auxiliary firmware blobs, each dedicated to a specific purpose and running on a separate CPU core. This is better than having a smaller number of kitchen sink blobs (like Intel ME), since each blob can only affect a particular subsystem (e.g. display, storage, camera), which makes it harder for multiple blobs to collude in order to compromise the user in a meaningful way. For example, the blob running inside the keyboard controller has no mechanism to communicate with the blob running on the WiFi card, and thus cannot implement a keylogger surreptitiously; the blob running on the display controller similarly has no way to communicate with the network, and thus can't implement a secret screen scraper.</p>
+<p>From a security perspective, these machines may possibly qualify as the most secure general purpose computers available to the public which support third-party OSes, in terms of resistance to attack by non-owners. This is, of course, predicated on some level of trust in Apple, but some level of trust in the manufacturer is required for any system (there is no way to prove the non-existence of hardware backdoors on any machine, so this is not as much of a sticking point as it might initially seem).</p>
+<p>This design does make it somewhat more awkward for users to install a third-party OS than we're used to on other platforms (this is standard fare in order to protect against malware and users being misled into compromising their machines), and this is covered in the rest of this guide.</p>
+<p>On the licensing front:</p>
+<ul>
+<li>You <em>do</em> have to click through Apple's EULA in order to use the machines at all.</li>
+<li>Apple gives users explicit permission to run their own OS in their EULA.</li>
+<li>Apple does not give users permission to redistribute system firmware, but</li>
+<li>Apple provides all current and past versions of complete system images (firmware and macOS) on a well-known, unauthenticated HTTPS CDN, and</li>
+<li>Apple's EULA grants all Mac owners a license to use these images.</li>
+</ul>
+<p>As with all EULAs, there are some nonsensical points in Apple's (lawyers always seem to be out of sync with actual product direction and design), but reading between the lines we believe everything we're doing is kosher for practical purposes.</p>
+<p>* There is one exceptional blob that does have privileged access to the system (although it does not explicitly do anything questionable): the GPU firmware. This is because it is in charge of managing parts of the GPU page tables (which are also its own), and there is no separate upstream IOMMU in front of the GPU coprocessor like there is with other coprocessors. While this does extend the surface of system compromise to it, it's worth pointing out that this firmware is not particularly large, is shipped in plain text and even with some symbols, does not have any functionality to talk via questionable interfaces (network, etc.), and is optional and not running when the OS boots (the OS must explicitly start it). Therefore, users willing to forgo GPU functionality can choose not to use it. The firmware also implements a mitigation similar to the <a href="http://newosxbook.com/articles/CasaDePPL.html">PPL</a> in order to protect the GPU page tables even if it is compromised via exploitation (e.g. through GPU commands), <del>although we do not believe this mechanism is currently hardened enough to be an effective mitigation; we look forward to further auditing the GPU firmware and hope Apple will work with us on issues found, so that we can reach a point where we can confidently say that it would be difficult or impossible to use a runtime vulnerability in it to escalate to full system memory access</del>. Update: As of macOS 13.0, the GPU firmware is significantly hardened (in part thanks to Lina's discovery and report of CVE-2022-32947). <del>We are not yet shipping 13.0+ firmware for Asahi, but we will soon</del> Asahi now ships with firmware 13.5, which significantly increases our confidence in this part of the system. Nonetheless, at this time, we have no reason to believe that there are any backdoors in the existing 12.3/12.4 firmwares we use, or that exploiting them is possible from Linux.</p>
+<h5 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h5>
+<p>AS platforms have two main kinds of storage: NOR Flash and NVMe.</p>
+<p>NOR is formatted as raw regions and contains:</p>
+<ul>
+<li>1st stage bootloader (iBoot1/LLB)</li>
+<li>System-global firmware</li>
+<li>Platform configuration data (syscfg, read-only)</li>
+<li>Factory test logs</li>
+<li>NVRAM (config variables, read-write)</li>
+</ul>
+<p>NVMe is a GPT volume and contains:</p>
+<ul>
+<li>System-global storage (iBoot System Container; iSC) including:<ul>
+<li>Boot policies (think boot configs, but secure) (Preboot)</li>
+<li>SEP secure storage (xARTS)</li>
+<li>Misc system config data</li>
+</ul>
+</li>
+<li>One or more APFS container partitions<ul>
+<li>Each containing one or more bootable OSes sharing a container, each comprising<ul>
+<li>Preboot volume subfolder<ul>
+<li>2nd stage bootloader (iBoot2)</li>
+<li>Apple Device Tree</li>
+<li>OS-paired firmware</li>
+<li>OS kernel (XNU)</li>
+</ul>
+</li>
+<li>OS-paired recoveryOS image (in Recovery volume)</li>
+<li>Per-OS root &amp; data filesystem volumes (may be empty)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>System-global recoveryOS image (+ optional fallback)</li>
+</ul>
+<p>There are no restrictions on additional partitions and types; they are ignored by Apple's tooling.</p>
+<p>Note that the system does not use an EFI system partition (and does not run EFI). OS selection is designed around APFS containers and subvolumes containing files in a specific layout.</p>
+<p>AS Macs are designed to be brick-proof. They can be recovered from another machine by using a USB cable and booting from ROM, even if all NOR and NVMe contents are destroyed (* NOR destruction untested). This is <a href="https://support.apple.com/guide/apple-configurator-mac/revive-or-restore-a-mac-with-apple-silicon-apdd5f3c75ad/mac">officially documented</a> using another Mac. We have alternative <a href="https://github.com/libimobiledevice/idevicerestore">open source tooling</a> for this that works on Linux/etc.</p>
+<p>One notable point of this design is that each installed OS also brings along with it a large subset of system firmware running on coprocessors, as well as the OS loader. This makes it easier to maintain backwards compatibility with older OSes; conversely, it also means the firmware ABI for these coprocessors has no stability guarantees whatsoever.</p>
+<p>Terminology note: "OS kernel" here refers to a XNU kernel image, or an equivalent analog. In this section, we use this term to describe anything loaded by iBoot2. When booting third-party OSes, this would normally be a subsequent bootloader stage, such as <a href="https://github.com/AsahiLinux/m1n1">m1n1</a>.</p>
+<h5 id="boot-flow">Boot flow<a class="headerlink" href="#boot-flow" title="Permanent link">&para;</a></h5>
+<p>The platform-mandated boot flow can be summarized as follows:</p>
+<ul>
+<li>SecureROM:<ul>
+<li>Reads/validates iBoot1 from NOR</li>
+<li>Enters USB DFU mode on failure</li>
+</ul>
+</li>
+<li>iBoot1:<ul>
+<li>Reads/validates system-global firmware from NOR</li>
+<li>Bootstraps some coprocessors</li>
+<li>Shows the Apple logo and plays the boot chime</li>
+<li>Picks and validates a boot policy</li>
+<li>Reads/validates iBoot2 from the chosen OS container on NVMe</li>
+</ul>
+</li>
+<li>iBoot2:<ul>
+<li>Reads/validates OS-paired firmware from NVMe</li>
+<li>Loads and locks some of that firmware, re-bootstraps display coprocessor</li>
+<li>Reads/validates the Apple Device Tree from NVMe</li>
+<li>Reads/validates the OS kernel from NVMe</li>
+<li>Puts some coprocessors to sleep</li>
+<li>Jumps to OS kernel</li>
+</ul>
+</li>
+</ul>
+<p>The OS kernel is the first point in the boot flow where we can run non-Apple-signed code.</p>
+<p>Notably, at no point in this process is any I/O initialized other than the screen, the speakers, and checking for power button presses or (on laptops) specific keys. There is <em>no</em> external storage boot support in the bootloader flow on these machines. Behind the scenes, booting macOS from an external drive involves the moral equivalent of copying <code>/boot</code> to internal storage, and only the root/data filesystems truly live on external storage. There is also no boot menu (but keep reading).</p>
+<h5 id="recoveryos-and-1tr">recoveryOS and 1TR<a class="headerlink" href="#recoveryos-and-1tr" title="Permanent link">&para;</a></h5>
+<p>recoveryOS is a macOS image that is used to provide an environment for users to perform recovery and installation tasks on these machines. In addition, it also serves as the boot picker menu on these machines.</p>
+<p>recoveryOS can be requested via NVRAM variables on reboot, or can automatically be invoked after a certain number of boot failures. It is a minimal macOS image that presents the user with a recovery menu that allows them to change system security settings, partition disks, launch a web browser, launch a root terminal, reinstall macOS, etc. Network access is supported.</p>
+<p><img alt="recoveryOS" src="../../assets/recoveryos.png" /></p>
+<p>In addition, there is a "special" boot flow that grants additional capabilities. When the user powers up the machine by holding down the power button, this loads the recoveryOS paired with the currently active default boot OS volume (falling back to the system one), and first shows a boot picker to allow the user to choose an OS to boot (and optionally make the default):</p>
+<p><img alt="Boot Picker" src="../../assets/boot_picker.png" /></p>
+<p>If the user chooses "Options", they will be presented with the recoveryOS menu, as above. When booted this way, it is called "One True recoveryOS" (1TR), and it has additional powers granted to it by SEP (secure enclave) firmware. Additionally, this recoveryOS will be considered "paired" with the OS container it belongs to, and be able to perform specific operations on that OS. In particular, this mode is required in order to install a custom OS kernel.</p>
+<h5 id="sep-secure-enclave-processor">SEP (Secure Enclave Processor)<a class="headerlink" href="#sep-secure-enclave-processor" title="Permanent link">&para;</a></h5>
+<p>The SEP is the Mac's equivalent of a TPM, and is in charge of all security-critical operations such as validating the creation and modification of Boot Policies. It has knowledge of the security state of the system, including whether it is in 1TR, plain recoveryOS, or regular OS boot.</p>
+<p>The SEP is used during the boot process, but is put to sleep before the OS kernel is booted. The OS must re-load the SEP firmware and re-bootstrap it to be able to use it (the encrypted firmware blob is provided in a memory region to the OS by iBoot). This means that the SEP is completely optional for a third-party OS, and can be ignored if not needed nor desired.</p>
+<p>Useful features provided by the SEP include user authentication, Touch ID, secure key storage / usage, U2F support, etc. For example, it can be used to provide bruteforce-resistant password/touch login and full disk encryption, or to hold SSH keys and require a password or touch to use them.</p>
+<p>The SEP is designed to be mutually isolated from the main CPU (AP); neither can compromise the other. It is supposedly also hardened against physical attacks (e.g. glitching and other environmental attacks).</p>
+<h5 id="security-modes-boot-policies-and-machine-ownership">Security modes, Boot Policies, and machine ownership<a class="headerlink" href="#security-modes-boot-policies-and-machine-ownership" title="Permanent link">&para;</a></h5>
+<p>Each installed OS on an AS Mac has an associated Boot Policy. The Boot Policy describes the security state of the OS. These Boot Policies are created via the SEP and signed by an internal machine key, so they cannot be modified externally.</p>
+<p>The top-level security mode can be in one of three states per OS:</p>
+<ul>
+<li>Full Security</li>
+<li>Reduced Security</li>
+<li>Permissive security</li>
+</ul>
+<p>Full Security is the default, and implies that the OS is fully Apple-signed and all security features are enabled. In order to install an OS in Full Security mode, the system must phone home to Apple to validate that the OS is trustworthy (this prevents attackers from installing a known vulnerable, old OS and using it to compromise the system).</p>
+<p>Reduced Security allows for certain security features to be disabled, and any Apple-signed OS version to be installed. No phoning home is required to install an OS in this mode, but downgrading or creating a Boot Policy to this mode requires being in recoveryOS and authenticating using machine owner credentials.</p>
+<p>Permissive Security allows for ~all security features to be disabled, and third-party kernels to be installed. No phoning home is required. Downgrading to Permissive Security requires booting in 1TR paired to the specific OS involved, and authenticating using machine owner credentials.</p>
+<p>The SEP maintains a database of machine owner users. The first such user is created when the user goes through the macOS boot flow on first startup from a factory-fresh state (or after a full DFU wipe). Subsequent machine owners can only be created by authenticating with an existing owner's credentials.</p>
+<p>The ability to have a security state per OS is unique to these machines, and allows for things like dual-booting a full-secure macOS (including DRM support, i.e. Netflix in 4K and running iOS apps) and Linux (contrast this to unlocking the bootloader on an Android device or disabling secure boot or changing the signing keys on a UEFI system, which are global operations).</p>
+<p>Lower security levels unlock the ability to specify finer-grained security settings in the Boot Policy, such as whether OS boot-args filtering will take place and whether the kernel code will be locked read-only in RAM.</p>
+<p>Boot policies can be managed using the <code>bputil</code> command from macOS/recoveryOS/1TR (subject to the restrictions of each mode).</p>
+<h5 id="fully-untrusted-os-fuos">Fully Untrusted OS (fuOS)<a class="headerlink" href="#fully-untrusted-os-fuos" title="Permanent link">&para;</a></h5>
+<p>fuOS is Apple's term for a third-party OS kernel. In order to configure fuOS boot, an existing OS has to first be downgraded to Permissive Security, and then a custom kernel image can be installed. The image is installed using the <code>kmutil</code> command and it will modify the Boot Policy to insert its hash into it, thereby preserving the secure boot chain. iBoot2 will only load this specific fuOS image; replacing or upgrading it requires booting into 1TR and running <code>kmutil</code> again. This operation requires machine owner credentials.</p>
+<p>Custom kernel images can be flat ARM64 executable images; the entrypoint and (virtual; mostly meaningless) load address are specified when the image is configured. Previously Mach-O binaries were required, but it seems Apple added this feature in 12.1 in order to make life easier for us (as the Mach-O file format requirements changed in that version, breaking our existing tooling).</p>
+<h5 id="boot-picker">Boot Picker<a class="headerlink" href="#boot-picker" title="Permanent link">&para;</a></h5>
+<p>The built-in boot picker is a macOS application running under recoveryOS, and it scans internal and external volumes for bootable OSes. There are two things that can show up on the list: OS installs, and OS installers. OS installs exist in APFS containers following the expected OS layout (multiple OSes can be present in one APFS container).</p>
+<p>Since iBoot has no mechanism for booting from external devices, upon selecting an external OS to boot, the boot picker will copy that OS's Preboot structure into NVMe, create a Boot Policy for it, and then configure iBoot1 to boot from that instead. The copied parts include everything up to the XNU kernel itself, including iBoot2 and firmware. This means that external storage is only initialized once XNU is already running, and it will merely mount its root filesystem from there, having been booted from NVMe. Note that, since this process requires the creation of a new Boot Policy (that will not be in the appropriate security state, nor can it be put into it at that point due to pairing requirements), it cannot be used to boot fuOS kernels installed on external drives in this manner (at least not without further manual action, but it's unclear whether this would be possible at all).</p>
+<p>OS installers are identified by a magic <code>.IAPhysicalMedia</code> plist at the root of the volume, and may exist on volumes of any supported filesystem (APFS and FAT32 both work). That plist specifies a macOS application bundle present in the volume to launch. When the volume is selected, boot proceeds into the main recoveryOS environment (including authentication mandated by FileVault, if enabled), and then automatically launches the application bundle. This happens in 1TR mode if the boot picker was invoked via the appropriate power button hold gesture. This feature is currently used in the Asahi Linux installer to launch its second stage in a more user-friendly manner, and could be used to ship third-party installers as USB install images (but not ones usable as-is completely offline, as they would still require non-redistributable Apple components).</p>
+<p>One consequence of the boot picker being implemented as a macOS application behind the scenes is that is has full accessibility support (including VoiceOver), which is rather unique.</p>
+<h5 id="arm64-xnu-boot-protocol">ARM64 XNU boot protocol<a class="headerlink" href="#arm64-xnu-boot-protocol" title="Permanent link">&para;</a></h5>
+<p>The boot protocol is fairly simple; there are no bootloader services (e.g. EFI services) or anything of that sort. The OS image is loaded and jumped to by iBoot. The kernel image receives the following information, via various pointer chains:</p>
+<ul>
+<li>Boot-time framebuffer information (incl. verbose boot flag)</li>
+<li>Command line arguments (<code>boot-args</code> from NVRAM), filtered by Boot Policy flag</li>
+<li>RAM base/size info</li>
+<li>Apple Device Tree</li>
+<li>SEP firmware blob</li>
+</ul>
+<p>Images are always loaded at a randomized offset in low RAM (KASLR), so they must be relocatable. Image text is optionally locked as read-only in the memory controller, for security reasons. In addition, the CPU0 reset vector is locked at a computed offset within the image, so resuming from sleep mode requires code to be present at that address.</p>
+<h5 id="apple-device-tree">Apple Device Tree<a class="headerlink" href="#apple-device-tree" title="Permanent link">&para;</a></h5>
+<p>Apple uses a bespoke Device Tree format (simpler than FDT), with a similar data model to the Open Firmware device trees that are standard in embedded Linux/BSD systems. The device tree is built by iBoot2 from a template, system configuration information, and dynamic data. The schema for the device tree is not strictly stable from OS version to OS version, but major changes are rare.</p>
+<p>OSes must parse the ADT to extract vital machine- and boot-specific information.</p>
+<h5 id="firmware-overview">Firmware overview<a class="headerlink" href="#firmware-overview" title="Permanent link">&para;</a></h5>
+<p>Brief overview of known firmware blobs (note: some details here are unverified):</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Chip</th>
+<th>Description</th>
+<th>Encrypted</th>
+<th>Storage</th>
+<th>Loaded by</th>
+<th>Started by</th>
+<th>Size (approx.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iBoot1</td>
+<td>SoC (AP)</td>
+<td>First stage bootloader</td>
+<td>No *2</td>
+<td>NOR</td>
+<td>SecureROM</td>
+<td>SecureROM</td>
+<td>~600-1000 KB (comp.)</td>
+</tr>
+<tr>
+<td>iBoot2</td>
+<td>SoC (AP)</td>
+<td>Second stage bootloader</td>
+<td>No *2</td>
+<td>Preboot</td>
+<td>iBoot1</td>
+<td>iBoot1</td>
+<td>~450-800 KB (comp.)</td>
+</tr>
+<tr>
+<td>SMC</td>
+<td>SoC*1</td>
+<td>System Management Controller</td>
+<td>No *2</td>
+<td>Embedded in iBoot1</td>
+<td>iBoot1</td>
+<td>iBoot1</td>
+<td>~200 KB (comp.)</td>
+</tr>
+<tr>
+<td>PMU</td>
+<td>PMU</td>
+<td>Power Management Unit</td>
+<td>No *2</td>
+<td>Embedded in iBoot1</td>
+<td>iBoot1</td>
+<td>iBoot1</td>
+<td>~10 KB</td>
+</tr>
+<tr>
+<td>SEP</td>
+<td>SoC</td>
+<td>Secure Enclave Processor</td>
+<td>Yes</td>
+<td>iSC</td>
+<td>iBoot1+OS</td>
+<td>iBoot1+OS</td>
+<td>~7.5 MB</td>
+</tr>
+<tr>
+<td>ANS</td>
+<td>SoC</td>
+<td>NVMe controller</td>
+<td>No</td>
+<td>NOR</td>
+<td>iBoot1</td>
+<td>iBoot1+2+OS</td>
+<td>~800 KB (comp.)</td>
+</tr>
+<tr>
+<td>CIO</td>
+<td>SoC</td>
+<td>Type-C/Thunderbolt I/O</td>
+<td>No</td>
+<td>NOR</td>
+<td>iBoot1</td>
+<td>OS</td>
+<td>~170 KB</td>
+</tr>
+<tr>
+<td>TMU</td>
+<td>SoC</td>
+<td>Thunderbolt related</td>
+<td>No</td>
+<td>NOR</td>
+<td>iBoot1</td>
+<td>OS</td>
+<td>~10 KB</td>
+</tr>
+<tr>
+<td>DCP</td>
+<td>SoC</td>
+<td>Display Controller Processor</td>
+<td>No</td>
+<td>NOR &amp; Preboot</td>
+<td>iBoot1+2</td>
+<td>iBoot1+2+OS</td>
+<td>~9.5 MB (~2.5 MB comp.)</td>
+</tr>
+<tr>
+<td>ANE</td>
+<td>SoC</td>
+<td>Apple Neural Engine</td>
+<td>No</td>
+<td>Preboot</td>
+<td>iBoot2</td>
+<td>OS</td>
+<td>~5 MB (~180 KB comp.)</td>
+</tr>
+<tr>
+<td>AGX</td>
+<td>SoC</td>
+<td>Apple Graphics (GPU)</td>
+<td>No</td>
+<td>Preboot</td>
+<td>iBoot2</td>
+<td>OS</td>
+<td>~2.5 MB (~150 KB comp.)</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td>SoC</td>
+<td>Image Signal Processor (Camera) *3</td>
+<td>No</td>
+<td>Preboot</td>
+<td>iBoot2</td>
+<td>OS</td>
+<td>~12 MB (~2.5 MB comp.)</td>
+</tr>
+<tr>
+<td>SIO</td>
+<td>SoC</td>
+<td>Smart I/O (UART/I2C/SPI DMA)</td>
+<td>No</td>
+<td>Preboot</td>
+<td>iBoot2</td>
+<td>OS</td>
+<td>~1 MB (~50 KB comp.)</td>
+</tr>
+<tr>
+<td>AOP</td>
+<td>SoC</td>
+<td>Always-On Processor *4</td>
+<td>No</td>
+<td>Preboot</td>
+<td>iBoot2</td>
+<td>OS</td>
+<td>~1.2 MB (~300 KB comp.)</td>
+</tr>
+<tr>
+<td>PMP</td>
+<td>SoC</td>
+<td>Power Measurement Processor</td>
+<td>No</td>
+<td>Preboot</td>
+<td>iBoot2</td>
+<td>OS</td>
+<td>~400-920 KB (~100 KB comp.)</td>
+</tr>
+<tr>
+<td>AVE</td>
+<td>SoC</td>
+<td>Apple Video Encoder</td>
+<td>No</td>
+<td>Preboot</td>
+<td>iBoot2</td>
+<td>OS</td>
+<td>~1.2 MB (~300 KB comp.)</td>
+</tr>
+<tr>
+<td>AVD</td>
+<td>SoC</td>
+<td>Apple Video Decoder</td>
+<td>No</td>
+<td>Embedded in XNU</td>
+<td>OS</td>
+<td>OS</td>
+<td>~40 KB</td>
+</tr>
+<tr>
+<td>SECDIS</td>
+<td>SECDIS</td>
+<td>Secure Mic/Cam Disable FPGA *5</td>
+<td>No</td>
+<td>On-chip flash</td>
+<td>Self</td>
+<td>Self</td>
+<td>Not upgradable by design</td>
+</tr>
+<tr>
+<td>IPD</td>
+<td>IPD</td>
+<td>InputDevice (Touchpad/Keyboard) *5</td>
+<td>No</td>
+<td>Preboot/Flash *6</td>
+<td>Self</td>
+<td>Self</td>
+<td>~900 KB (~384 KB comp.)</td>
+</tr>
+<tr>
+<td>MT</td>
+<td>DFR</td>
+<td>Touch Bar (DFR) Multitouch *7</td>
+<td>No</td>
+<td>Preboot</td>
+<td>OS</td>
+<td>OS</td>
+<td>~60 KB</td>
+</tr>
+<tr>
+<td>XHCI</td>
+<td>ASM3142</td>
+<td>PCI xHCI USB controller *8</td>
+<td>No</td>
+<td>Embedded in XNU</td>
+<td>OS</td>
+<td>OS</td>
+<td>~128 KB</td>
+</tr>
+<tr>
+<td>WLAN</td>
+<td>WLBT</td>
+<td>Wi-Fi (Broadcom FullMAC)</td>
+<td>No</td>
+<td>OS filesystem</td>
+<td>OS</td>
+<td>OS</td>
+<td>~1.4 MB (~700 KB comp.)</td>
+</tr>
+<tr>
+<td>BT</td>
+<td>WLBT</td>
+<td>Bluetooth (Broadcom)</td>
+<td>No</td>
+<td>OS filesystem</td>
+<td>OS</td>
+<td>OS</td>
+<td>~470 KB (~280 KB comp.)</td>
+</tr>
+<tr>
+<td>SE</td>
+<td>SE</td>
+<td>Secure Element</td>
+<td>Yes</td>
+<td>On-chip flash</td>
+<td>Self</td>
+<td>Self / SEP?</td>
+<td>~4.5 MB</td>
+</tr>
+<tr>
+<td>S5E</td>
+<td>S5E</td>
+<td>NAND (SSD) Controller</td>
+<td>No</td>
+<td>On-chip flash</td>
+<td>On-chip ROM?</td>
+<td>ANS</td>
+<td>~700 KB (~300 KB comp.)</td>
+</tr>
+<tr>
+<td>ACE2</td>
+<td>ACE2</td>
+<td>USB-PD Controller</td>
+<td>No</td>
+<td>Dedicated flash</td>
+<td>On-chip ROM</td>
+<td>OS?</td>
+<td>~500 KB (~170 KB comp.)</td>
+</tr>
+<tr>
+<td>TCON</td>
+<td>TCON</td>
+<td>Display Timing Controller *9</td>
+<td>No</td>
+<td>On-chip flash</td>
+<td>Self</td>
+<td>DCP</td>
+<td>~1.3 MB (~20 KB comp.)</td>
+</tr>
+<tr>
+<td>DP2HDMI</td>
+<td>MCDP29XX</td>
+<td>DisplayPort to HDMI bridge *10</td>
+<td>No</td>
+<td>Dedicated flash</td>
+<td>Self</td>
+<td>DCP</td>
+<td>~500 KB (~280 KB comp.)</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ol>
+<li>"SoC" location means part of the main System-on-Chip; otherwise it is an external chip.</li>
+<li>Plaintext since macOS Sequoia.</li>
+<li>Coprocessor is present but unused on machines without a camera.</li>
+<li>Terrible name, not actually always-on (not even on when the OS boots).</li>
+<li>Laptops only</li>
+<li>Boots from Flash, but firmware lives in Preboot and is upgraded by OS FUD daemon if necessary</li>
+<li>J293 only (MBP 13" M1)</li>
+<li>J456 (4-port iMac) only</li>
+<li>Machines with embedded display only</li>
+<li>Machines with HDMI port only</li>
+</ol>
+<p>Many firmware sizes are compressed (many firmwares have large amounts of padding, making uncompressed sizes not very useful to gauge how much code there is). Where large firmwares are stored uncompressed, compressed sizes are also given for better comparison. The sizes should be taken as a rough guide only.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
