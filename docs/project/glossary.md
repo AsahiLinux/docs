@@ -11,6 +11,9 @@ If you want to collect a large set of terms specific to a sub-field (such as GPU
 ### 1
 * **1TR**: One True RecoveryOS. This is what RecoveryOS is called when you boot it by holding down the power button. This means you have asserted physical presence and you are running a fully Apple-trusted recovery environment, which gives you special powers, like the ability to install a custom OS. You get root access, but you can only run software signed by Apple, and if FileVault is enabled you first need to authenticate.
 
+### 4
+* **4CC**: Four-character code. A sequence of four bytes, traditionally ASCII characters within the printable range, used as human-readable identifiers for data.
+
 ### A
 * **AGX**: The internal name for Apple's GPU series.
 * **AIC**: Apple Interrupt Controller. Apple's custom ARM interrupt controller, because the standard GIC was too standard for Apple.
