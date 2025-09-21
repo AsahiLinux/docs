@@ -1,0 +1,1774 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asahilinux.org/docs/sw/linux-bringup/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>Linux Bringup - Asahi Linux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Linux Bringup - Asahi Linux Documentation" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asahilinux.org/docs/assets/images/social/sw/linux-bringup.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asahilinux.org/docs/sw/linux-bringup/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Linux Bringup - Asahi Linux Documentation" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asahilinux.org/docs/assets/images/social/sw/linux-bringup.png" >
+      
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#building-linux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Asahi Linux Documentation" class="md-header__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux Bringup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Asahi Linux Documentation" class="md-nav__button md-logo" aria-label="Asahi Linux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Asahi Linux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AsahiLinux/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AsahiLinux/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Feature Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4 Series Feature Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project related
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project related
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When will Asahi Linux be done?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/policies/slop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Platform documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon Subsystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Platform Security Crash Course
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codenames
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Controllers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For users
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Broken Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partitioning-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Cheatsheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yaks in need of shaving (HELP WANTED!)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tethered Boot Setup (For Developers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:User Guide Boot loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OS ecosystem on Apple Silicon Macs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-userspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Userspace Audio Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For distributions/OSes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            For distributions/OSes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alt/policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distro guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Linux Bringup</h1>
+
+<h4 id="building-linux">Building Linux<a class="headerlink" href="#building-linux" title="Permanent link">&para;</a></h4>
+<ul>
+<li>See github linux <a href="https://github.com/AsahiLinux/linux">Asahi Kernel</a> for the latest Asahi kernel patched for M1 support</li>
+<li>In particular according to <a href="https://asahilinux.org/2021/12/progress-report-oct-nov-2021/">Dec 2021 progress report</a> you can try the <a href="https://github.com/AsahiLinux/linux/tree/asahi">asahi branch</a> which "...is a bleeding edge kernel ... in a usable enough state that we would like people to test..."</li>
+<li>Even though development happens on the AsahiLinux repo, some changes for supporting M1 were mainlined in the linux kernel (see table in <a href="https://asahilinux.org/2021/12/progress-report-oct-nov-2021/">progress report</a> for details) , so you can clone the official Linux kernel mirror</li>
+</ul>
+<pre><code>git clone https://github.com/torvalds/linux.git
+cd ./linux
+</code></pre>
+<ul>
+<li>Generate the default arm64 configuration and add the simple framebuffer support. </li>
+</ul>
+<pre><code>make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- defconfig
+./scripts/config --set-val CONFIG_FB_SIMPLE y
+</code></pre>
+<ul>
+<li>Build linux for arm64</li>
+</ul>
+<pre><code>make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j8 Image dtbs
+</code></pre>
+<ul>
+<li>m1n1's proxyclient linux.py script wants a gzip'ed image</li>
+</ul>
+<pre><code>gzip &lt; ./arch/arm64/boot/Image &gt; Image.gz
+</code></pre>
+<ul>
+<li><strong>Beware</strong> NOT to use m1n1's dtb: <code>build/dtb/t8103-j274.dtb</code> with different Linux kernel such as <a href="https://github.com/AsahiLinux/linux/tree/dart/dev">Asahi dart/dev kernel</a> which better supports USB. In this case use the one that is generated by <em>that</em> kernel at <strong>linux/arch/arm64/boot/dts/apple</strong> otherwise your USB ports might not be working.</li>
+</ul>
+<pre><code>cp ../linux/arch/arm64/boot/dts/apple/t8103-j274.dtb t8103-j274.dtb
+</code></pre>
+<h6 id="keyboard-nvme-working">keyboard  + nvme working<a class="headerlink" href="#keyboard-nvme-working" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Snapshot of <a href="https://github.com/amworsley/AsahiLinux/tree/asahi-kbd">rev a2281d64fdbc</a> with config such as <a href="https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/config-keyboard+nvme">this one</a></li>
+</ul>
+<h5 id="boot-with-your-usb-cables-plugged-in">Boot with your USB cables plugged in<a class="headerlink" href="#boot-with-your-usb-cables-plugged-in" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Plug your USB cables/hubs/adapters <strong>before</strong> booting your Mac as m1n1/linux doesn't do the USB low level PHY setup yet. Let the iBoot do this when it boots to m1n1 you installed via your <a href="../../platform/dev-quickstart/#setup">setup of boot to m1n1</a></li>
+<li>If m1n1 C code has been updated since the set up you should chain load the new .macho image</li>
+</ul>
+<pre><code>python3.9 proxyclient/tools/chainload.py build/m1n1.macho
+</code></pre>
+<h4 id="running-linux-via-usb-cable">Running Linux via USB cable<a class="headerlink" href="#running-linux-via-usb-cable" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Connecting <a href="../../platform/dev-quickstart/#usb-gadget-mode-using-a-standard-usb-cable">USB Type-C to Type A/C cable</a> to M1 Mac provides two USB serial interfaces on the other computer<img alt="USB Type-C  to Type A cable connecting M1 MacBookAir and 2012 MacBootAir Pro" src="../../assets/usb-setup.png" /></li>
+<li>This can be connected to via the python proxy tool to boot up Linux directly or load up a macho binary like an updated m1n1 version or combined with a Linux image</li>
+<li>Get a 27Mb initrd from debian arm64 installer</li>
+</ul>
+<pre><code>wget https://deb.debian.org/debian/dists/buster/main/installer-arm64/current/images/netboot/debian-installer/arm64/initrd.gz
+</code></pre>
+<h5 id="directly">Directly<a class="headerlink" href="#directly" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Set up your M1N1DEVICE</li>
+</ul>
+<pre><code>M1N1DEVICE=/dev/ttyACM0
+export M1N1DEVICE
+</code></pre>
+<ul>
+<li>Boot linux via the linux.py tool:</li>
+</ul>
+<pre><code>python3.9 proxyclient/tools/linux.py -b 'earlycon console=ttySAC0,1500000 console=tty0 debug' \
+  Image.gz t8103-j274.dtb initrd.gz
+</code></pre>
+<p>The debian arm64 installer(initrd.gz) will boot the installer. If you want to have a shell that you can use with an USB keyboard, you can modify the init script of this installer initrd.gz(ramdisk) to launch a shell.
+Extract the ramdisk: </p>
+<pre><code>gzip -cd &lt; /pathto/initrd.gz | cpio --extract
+</code></pre>
+<p>=&gt; you will get the content of the ramdisk in the current directory
+Modify the init script by replacing the last "exec $init" line by "exec /bin/busybox sh" for instance.
+Recreate the new ramdisk: (from the ramdisk directory) </p>
+<pre><code>find . | cpio -o -H newc | gzip -c -9 &gt;| /pathto/initrd-new.gz
+</code></pre>
+<h5 id="under-hypervisor">Under Hypervisor<a class="headerlink" href="#under-hypervisor" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Running Linux under m1n1 hypervisor lets you inspect the memory/stop/start and even do a stack trace</li>
+<li>Create a .macho combined image (run_guest.py only accepts .macho)</li>
+</ul>
+<pre><code>cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz &gt; m1n1-payload.macho
+</code></pre>
+<ul>
+<li>Load it with run_guest</li>
+</ul>
+<pre><code>python3.9 proxyclient/tools/run_guest.py -S m1n1-payload.macho
+</code></pre>
+<details>
+<summary>See full log</summary>
+
+
+<pre><code>% python3.9 proxyclient/tools/run_guest.py -S m1n1-payload.macho
+Fetching ADT (0x00058000 bytes)...
+Disable iodev IODEV.USB1
+Initializing hypervisor over iodev IODEV.USB0
+TTY&gt; Starting secondary CPUs...
+TTY&gt; Starting CPU 1 (0:1)...   Started.
+TTY&gt; Starting CPU 2 (0:2)...   Started.
+TTY&gt; Starting CPU 3 (0:3)...   Started.
+TTY&gt; Starting CPU 4 (1:0)...   Started.
+TTY&gt; Starting CPU 5 (1:1)...   Started.
+TTY&gt; Starting CPU 6 (1:2)...   Started.
+TTY&gt; Starting CPU 7 (1:3)...   Started.
+Removing ADT node /arm-io/dart-usb0
+Removing ADT node /arm-io/atc-phy0
+Removing ADT node /arm-io/usb-drd0
+Removing ADT node /arm-io/acio0
+Removing ADT node /arm-io/acio-cpu0
+Removing ADT node /arm-io/dart-acio0
+Removing ADT node /arm-io/apciec0
+Removing ADT node /arm-io/dart-apciec0
+Removing ADT node /arm-io/apciec0-piodma
+Removing ADT node /arm-io/i2c0/hpmBusManager/hpm0
+Removing ADT node /arm-io/atc0-dpxbar
+Removing ADT node /arm-io/atc0-dpphy
+Removing ADT node /arm-io/atc0-dpin0
+Removing ADT node /arm-io/atc0-dpin1
+Removing ADT node /arm-io/atc-phy0
+Removing ADT node /cpus/cpu1
+Removing ADT node /cpus/cpu2
+Removing ADT node /cpus/cpu3
+Removing ADT node /cpus/cpu4
+Removing ADT node /cpus/cpu5
+Removing ADT node /cpus/cpu6
+Removing ADT node /cpus/cpu7
+LOAD: _HDR 16384 bytes from 0 to 0
+LOAD: TEXT 131072 bytes from 4000 to 4000
+LOAD: RODA 32768 bytes from 24000 to 24000
+LOAD: DATA 393216 bytes from 2c000 to 2c000
+ZERO: 442368 bytes from 0x8c000 to 0xf8000
+LOAD: PYLD 9851973 bytes from 8c000 to f8000
+SKIP: 57256891 bytes from 0xa5d445 to 0x40f8000
+Total region size: 0x11b4000 bytes
+Physical memory: 0x819d30000 .. 0xbccbe8000
+Guest region start: 0x81ade8000
+Mapping guest physical memory...
+Loading kernel image (0xa5d449 bytes)...
+.........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Copying SEPFW (0x750000 bytes)...
+Copying TrustCache (0x60000 bytes)...
+Adjusting addresses in ADT...
+Uploading ADT (0x4f088 bytes)...
+Setting up bootargs at 0x81bf98000...
+Entering hypervisor shell. Type `start` to start the guest.
+&gt;&gt;&gt;
+</code></pre>
+
+
+</details>
+
+<ul>
+<li>It prompts with debug shell and you begin execution from the load point with the start command:</li>
+</ul>
+<details>
+<summary>See bootup log</summary>
+
+
+<pre><code>Entering hypervisor shell. Type `start` to start the guest.
+&gt;&gt;&gt; start
+Disabling other iodevs...
+ - IODEV.UART
+ - IODEV.FB
+ - IODEV.USB1
+ - IODEV.USB0_SEC
+ - IODEV.USB1_SEC
+Doing essential MMIO remaps...
+Updating page tables...
+PT[200000000:235200000] -&gt; HW
+PT[235200000:235204000] -&gt; RESERVED VUART
+PT[235204000:23b700420] -&gt; HW
+PT[23b700420:23b700424] -&gt; RESERVED PMU HACK
+PT[23b700424:23d280088] -&gt; HW
+PT[23d280088:23d28008c] -&gt; RESERVED PMU HACK
+PT[23d28008c:23d280098] -&gt; HW
+PT[23d280098:23d28009c] -&gt; RESERVED PMU HACK
+PT[23d28009c:700000000] -&gt; HW
+Improving logo...
+Shutting down framebuffer...
+Enabling SPRR...
+Enabling GXF...
+Jumping to entrypoint at 0x81b118800
+Pass: mrs x0, HID5_EL1 = 2082df50e700df14 (HID5_EL1)
+Pass: msr HID5_EL1, x0 = 2082df50e700df14 (OK) (HID5_EL1)
+Pass: mrs x0, EHID9_EL1 = 600000811 (EHID9_EL1)
+Pass: msr EHID9_EL1, x0 = 600000811 (OK) (EHID9_EL1)
+Pass: mrs x0, EHID10_EL1 = 3000528002788 (EHID10_EL1)
+Pass: msr EHID10_EL1, x0 = 3000528002788 (OK) (EHID10_EL1)
+Pass: mrs x0, EHID20_EL1 = 618100 (EHID20_EL1)
+Pass: msr EHID20_EL1, x0 = 618100 (OK) (EHID20_EL1)
+Pass: mrs x0, EHID20_EL1 = 618100 (EHID20_EL1)
+Pass: msr EHID20_EL1, x0 = 618100 (OK) (EHID20_EL1)
+Pass: mrs x0, EHID20_EL1 = 618100 (EHID20_EL1)
+Pass: msr EHID20_EL1, x0 = 618100 (OK) (EHID20_EL1)
+Pass: mrs x1, CYC_OVRD_EL1 = 2000000 (CYC_OVRD_EL1)
+Skip: msr CYC_OVRD_EL1, x1 = 2000000
+Pass: mrs x1, ACC_CFG_EL1 = d (ACC_CFG_EL1)
+Skip: msr ACC_CFG_EL1, x1 = d
+</code></pre>
+
+</details>
+
+<ul>
+<li>Once it is running use <strong>^C</strong> to get a debug shell</li>
+</ul>
+<pre><code>...
+Skip: msr CYC_OVRD_EL1, x1 = 2000000
+Pass: mrs x1, ACC_CFG_EL1 = d (ACC_CFG_EL1)
+Skip: msr ACC_CFG_EL1, x1 = d
+^CUser interrupt
+Entering debug shell
+&gt;&gt;&gt; 
+</code></pre>
+<ul>
+<li>Then get a stack trace (with symbols) after loading the <code>System.map</code> file of the kernel and setting the <code>PAC_MASK</code> (pointer protection mask)</li>
+</ul>
+<pre><code>&gt;&gt;&gt; load_system_map('../linux/System.map')
+&gt;&gt;&gt; hv.pac_mask = 0xfffff00000000000
+&gt;&gt;&gt; bt
+Stack trace:
+ - 0xffff8000102fdc3c (cpu_do_idle+0xc)
+ - 0xffff8000102fdc5c (arch_cpu_idle+0xc)
+ - 0xffff800010305420 (default_idle_call+0x20)
+ - 0xffff80001005fcf0 (do_idle+0x210)
+ - 0xffff80001005fec4 (cpu_startup_entry+0x24)
+ - 0xffff8000102fe278 (rest_init+0xd0)
+ - 0xffff8000103d0c7c (arch_call_rest_init+0xc)
+ - 0xffff8000103d11f0 (start_kernel+0x528)
+</code></pre>
+<ul>
+<li>Disassemble addresses before the program counter</li>
+</ul>
+<pre><code>&gt;&gt;&gt; disassemble_at(p.hv_translate(hv.ctx.elr, True) - 32, 64)
+    81f6fdc04:  d53cd042        mrs     x2, tpidr_el2
+    81f6fdc08:  d53cd041        mrs     x1, tpidr_el2
+    81f6fdc0c:  d53cd041        mrs     x1, tpidr_el2
+    81f6fdc10:  d53cd040        mrs     x0, tpidr_el2
+    81f6fdc14:  d53cd040        mrs     x0, tpidr_el2
+    81f6fdc18:  d503233f        paciasp
+    81f6fdc1c:  d5033f9f        dsb     sy
+    81f6fdc20:  d503207f        wfi
+    81f6fdc24:  d50323bf        autiasp
+    81f6fdc28:  d65f03c0        ret
+    81f6fdc2c:  d503201f        nop
+    81f6fdc30:  d503233f        paciasp
+    81f6fdc34:  a9bf7bfd        stp     x29, x30, [sp, #-16]!
+    81f6fdc38:  910003fd        mov     x29, sp
+    81f6fdc3c:  97fffff7        bl      81f6fdc18 &lt;_start+0x14&gt;
+    81f6fdc40:  a8c17bfd        ldp     x29, x30, [sp], #16
+</code></pre>
+<ul>
+<li>Dump out register %0 from the last exception to the hypervisor</li>
+</ul>
+<pre><code>&gt;&gt;&gt; hv.ctx.regs[0]
+0xffff0003ccaf21e0
+</code></pre>
+<h6 id="linux-console-output">Linux console output<a class="headerlink" href="#linux-console-output" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Under the hypervisor you can get the console output from linux via the 2nd ttyACM1 device generated by the m1n1 HV</li>
+<li><strong>NOTE</strong> The output was padded with lots of leading blanks I had to strip with <code>sed '/^ */s///'</code> to get this pretty display below:</li>
+</ul>
+<details>
+<summary>See console output</summary>
+
+
+<pre><code>% picocom /dev/ttyACM1
+
+picocom v3.1
+
+port is        : /dev/ttyACM1
+flowcontrol    : none
+baudrate is    : 9600
+parity is      : none
+databits are   : 8
+stopbits are   : 1
+escape is      : C-a
+local echo is  : no
+noinit is      : no
+noreset is     : no
+hangup is      : no
+nolock is      : no
+send_cmd is    : sz -vv
+receive_cmd is : rz -vv -E
+imap is        : 
+omap is        : 
+emap is        : crcrlf,delbs,
+logfile is     : none
+initstring     : none
+exit_after is  : not set
+exit is        : no
+
+Type [C-a] [C-h] to see available commands
+Terminal ready
+m1n1
+sc: Initializing
+CPU init... CPU: M1 Icestorm
+
+boot_args at 0x81bd9c000
+revision:     2
+version:      2
+virt_base:    0xfffffe0011b34000
+phys_base:    0x819b34000
+mem_size:     0x3b30b0000
+top_of_kdata: 0x81bda0000
+video:
+base:       0xbd2ce4000
+display:    0x0
+stride:     0x2800
+width:      2560
+height:     1600
+depth:      0x1001e
+machine_type: 0
+devtree:      0xfffffe0012b34000
+devtree_size: 0x58000
+cmdline:      -v
+boot_flags:   0x0
+mem_size_act: 0x400000000
+
+
+
+m1n1 vda44067
+Copyright (C) 2021 The Asahi Linux Contributors
+Licensed under the MIT license
+
+Running in EL1
+
+Heap base: 0x81ece4000
+MMU: Initializing...
+MMU: SCTLR_EL1: 100030d50980 -&gt; 30901085
+MMU: running with MMU and caches enabled!
+fb init: 2560x1600 (30) [s=2560] @0xbd2ce4000
+fb console: max rows 46, max cols 64
+fb: display logo
+Device info:
+Model: MacBookAir10,1
+Target: J313
+Board-ID: 0x26
+Chip-ID: 0x8103
+
+WDT registers @ 0x23d2b0000
+WDT disabled
+pmgr: initialized, 272 devices found.
+Initialization complete.
+Checking for payloads...
+Found a gzip compressed payload at 0x81ace4000
+Uncompressing... 2029114 bytes uncompressed to 5693448 bytes
+Found a kernel at 0x81ee00000
+Found a devicetree at 0x81aed363a
+Found a gzip compressed payload at 0x81aed446f
+Uncompressing... 7819222 bytes uncompressed to 16741888 bytes
+Found a cpio initramfs at 0x81f400000
+No more payloads at 0x81b649445
+Starting secondary CPUs...
+FDT: initrd at 0x81f400000 size 0xff7600
+FDT: framebuffer@bd2ce4000 base 0xbd2ce4000 size 0xfa0000
+ADT: 64 bytes of random seed available
+FDT: KASLR seed initialized
+FDT: Passing 64 bytes of random seed
+FDT: DRAM at 0x800000000 size 0x400000000
+FDT: Usable memory is 0x819b34000..0xbccbe4000 (0x3b30b0000)
+FDT: CPU 1 is not alive, disabling...
+FDT: CPU 2 is not alive, disabling...
+FDT: CPU 3 is not alive, disabling...
+FDT: CPU 4 is not alive, disabling...
+FDT: CPU 5 is not alive, disabling...
+FDT: CPU 6 is not alive, disabling...
+FDT: CPU 7 is not alive, disabling...
+FDT prepared at 0x8203f8000
+tps6598x: Error getting /arm-io/i2c0/hpmBusManager/hpm0 node
+usb: tps6598x_init failed for /arm-io/i2c0/hpmBusManager/hpm0.
+usb: failed to init hpm0
+pmgr: Error getting node /arm-io/atc-phy0
+usb: unable to bringup the phy with index 0
+tunable: unable to find ADT node /arm-io/apcie/pci-bridge1.
+pcie: Error applying apcie-config-tunables for /arm-io/apcie/pci-bridge1
+Preparing to boot kernel at 0x81ee00000 with fdt at 0x8203f8000
+Valid payload found
+Preparing to run next stage at 0x81ee00000...
+MMU: shutting down...
+MMU: shutdown successful, clearing caches
+Vectoring to next stage...
+M1 Linux
+Starting Shell
+Still running 1
+Still running 2
+Still running 3
+Still running 4
+Still running 5
+Still running 6
+Still running 7
+Still running 8
+Still running 9
+Still running 10
+Still running 11
+Still running 12
+Still running 13
+Still running 14
+Still running 15
+Still running 16
+Still running 17
+Still running 18
+Still running 19
+Still running 20
+Still running 21
+....
+</code></pre>
+
+
+</details>
+
+<h4 id="root-filesystem-options">Root filesystem options<a class="headerlink" href="#root-filesystem-options" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../linux-bringup-usb-keyboard/#linux-usb-keyboard">initrd + USB keyboard</a></li>
+<li><a href="../linux-bringup-usb/">USB drive boot</a></li>
+<li><a href="../linux-bringup-nvme/">USB Drive to NVME partition</a></li>
+</ul>
+<h4 id="other-features">Other features<a class="headerlink" href="#other-features" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../linux-bringup-wifi/">WiFi Support</a></li>
+<li><a href="../linux-bringup-x11/">X11 Support</a></li>
+</ul>
+<h4 id="missing">Missing<a class="headerlink" href="#missing" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Sound</li>
+<li>Power management - do <strong>NOT</strong> shut the lid</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
