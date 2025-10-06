@@ -11,6 +11,7 @@ This guide is intended specifically for kernel developers and advanced users who
 
 * An Apple Silicon Mac with _at least_ **macOS 12.3** installed and configured
     * You must have a password-protected administrator account. Typically, this will be the first account you created when setting up the machine for the first time.
+    * These days it is somewhat complex to install a specific version of macos, as you can't start an installer for old version from a new one, and performing a recovery install from usb transparently updates you to the latest minor version of that major macos version instead. If you want a specific version, install any release of a previous major version via usb recovery, then update it to the target version.
 * A host machine of any architecture running a GNU/Linux distribution (macOS is also supported, but less well tested see [Tethered Boot Setup on macOS](tethered-boot-macos-host.md))
     * Both `GCC` and `Clang/LLVM` AArch64 cross-toolchains are supported.
 

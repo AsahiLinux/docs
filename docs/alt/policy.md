@@ -72,7 +72,7 @@ unstable package stream) within 2 weeks of becoming available upstream.
 ## Installation procedure
 Asahi Linux uses Das U-Boot's UEFI environment to chainload standard UEFI
 bootloaders, such as GRUB and systemd-boot. The Asahi Installer is capable
-of setting up a minial UEFI-only environment capable of booting UEFI
+of setting up a minimal UEFI-only environment capable of booting UEFI
 executables on removable media. This provides users an installation
 experience that is almost identical to a standard amd64-based workstation.
 Building Apple Silicon support into your distro's existing AArch64 bootable
@@ -170,7 +170,7 @@ installation tooling sufficiently foolproof on Apple Silicon devices, we _may_ r
 the need to support the image-based installation flow going forward.
 
 ## Disendorsement
-Through dilligent QA and attention to detail, Asahi Linux has
+Through diligent QA and attention to detail, Asahi Linux has
 become well-regarded as one of the best desktop Linux experiences available.
 This is a great source of pride for us, and we are determined to meet the high
 user expectations that come with such a reputation. We expect officially

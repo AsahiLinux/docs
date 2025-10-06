@@ -8,7 +8,7 @@ Apple Silicon devices seem to follow a boot flow very similar to modern iOS devi
 
 # Stage 0 (SecureROM)
 
-This stage is located in the boot [ROM](../project/glossary.md#r). Among others, it verifies, loads and executes normal stage 1 from [NOR](../project/glossary.md#n). If this fails, it falls back to [DFU](../project/glossary.md#d) and wait for an [iBSS](../project/glossary.md#i) loader to be sent, before continuing with the [DFU](../project/glossary.md#d) flow at stage 1.
+This stage is located in the boot [ROM](../project/glossary.md#r). Among others, it verifies, loads and executes normal stage 1 from [NOR](../project/glossary.md#n). If this fails, it falls back to [DFU](../project/glossary.md#d) and waits for an [iBSS](../project/glossary.md#i) loader to be sent, before continuing with the [DFU](../project/glossary.md#d) flow at stage 1.
 
 # Normal flow
 
@@ -20,26 +20,29 @@ This stage is the primary early loader, located in the on-board [NOR](../project
 * Get the local policy hash:
   - First try the local proposed hash ([SEP](../project/glossary.md#s) command 11);
   - If that is not available, get the local blessed hash ([SEP](../project/glossary.md#s) command 14)
-* Read the local boot policy, located on the iSCPreboot partition at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.img4`. This boot policy has the following specific metadata keys:
+* Read the local boot policy, located on the iSCPreboot partition at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.img4`. This boot policy has the following specific metadata keys ([4CCs](../project/glossary.md#4)):
   - `vuid`: UUID: Volume group UUID - same as above
   - `kuid`: UUID: KEK group UUID
   - `lpnh`: SHA384: Local policy nonce hash
   - `rpnh`: SHA384: Remote policy nonce hash
+  - `ronh`: SHA384: Recovery OS policy nonce hash
   - `nsih`: SHA384: Next-stage IMG4 hash
   - `coih`: SHA384: fuOS (custom kernelcache) IMG4 hash
   - `auxp`: SHA384: Auxiliary user-authorized kernel extensions hash
   - `auxi`: SHA384: Auxiliary kernel cache IMG4 hash
   - `auxr`: SHA384: Auxiliary kernel extension recept hash
   - `prot`: SHA384: Paired Recovery manifest hash
+  - `hrlp`: bool: Recovery OS local policy is Secure Enclave–signed
   - `lobo`: bool: Local boot policy
+  - `love`: bool: Local OS version
   - `smb0`: bool: Reduced security enabled
   - `smb1`: bool: Permissive security enabled
   - `smb2`: bool: Third-party kernel extensions enabled
   - `smb3`: bool: Manual mobile device management (MDM) enrollment
   - `smb4`: bool?: MDM device enrollment program disabled
   - `sip0`: u16: SIP customized
-  - `sip1`: bool: Signed system volume (`csrutil authenticated-boot`) disabled
-  - `sip2`: bool: CTRR ([configurable text region read-only](https://keith.github.io/xcode-man-pages/bputil.1.html)) disabled
+  - `sip1`: bool: Signed system volume (`csrutil authenticated-root`) disabled
+  - `sip2`: bool: CTRR ([Configurable Text Read-only Region](https://keith.github.io/xcode-man-pages/bputil.1.html)) disabled
   - `sip3`: bool: `boot-args` filtering disabled
 
   And optionally the following linked manifests, each located at `/<volume-group-uuid>/LocalPolicy/<policy-hash>.<id>.im4m`

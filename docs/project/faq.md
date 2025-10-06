@@ -14,6 +14,10 @@ title: FAQ
 
 See the website for instructions: https://asahilinux.org/
 
+## Can I install Asahi Linux from an external macOS installation?
+
+[No](https://github.com/AsahiLinux/asahi-installer/issues/250). It is necessary to keep an *internal* macOS installation to install Asahi Linux, update/repair m1n1 and resize active Asahi Linux installations.
+
 ## How do I uninstall / clean up a failed installation?
 
 There is no automated uninstaller, but see [Partitioning cheatsheet](../sw/partitioning-cheatsheet.md) to learn how to delete the partitions manually.
