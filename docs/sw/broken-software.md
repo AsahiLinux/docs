@@ -143,7 +143,6 @@ Issues (other than page size and architectural support issues) in third-party so
 | ---------------- | ----- | ----- |
 | firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
-| hyprland         | [Explicit sync doesn't work on split-node gpu drivers](https://github.com/hyprwm/Hyprland/issues/10401) |
 | kwin             | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
 | plasmashell      | [startplasma breaks variable merging between profile.d and environment.d](https://bugs.kde.org/show_bug.cgi?id=491579) |
 | systemsettings   | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
@@ -169,6 +168,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | gtk              | [GSK issues illegal render ops with load=dont-care and blend=over with Wayland fractional scaling, causing graphical corruption](https://gitlab.gnome.org/GNOME/gtk/-/issues/7146) | Fixed in gtk 4.17.6 |
 | gtk              | [GSK/vulkan uses mipmaps without checking the formats/tiling `VkImageFormatProperties.maxMipLevels`](https://gitlab.gnome.org/GNOME/gtk/-/issues/7229) | Fixed in gtk 4.17.5 |
 | hyprland         | [issue with OpenGL applications crashing when using Hyprland 0.42.0](https://github.com/hyprwm/Hyprland/issues/7364) | Fixed in hyprland 0.43.0 |
+| hyprland         | [Explicit sync doesn't work on split-node gpu drivers](https://github.com/hyprwm/Hyprland/issues/10401) | Fixed in hyprland 0.51.0 |
 | kpipewire        | [Spectacle fails to record a window with h264 in specific dimensions](https://bugs.kde.org/show_bug.cgi?id=475472) | Issue Closed |
 | kpipewire        | [OpenH264 codec support](https://bugs.kde.org/show_bug.cgi?id=476187) | Fixed in Plasma 6.1.4 |
 | kwin             | [Outputs freeze on multi-screen when hardware cursors are not supported](https://bugs.kde.org/show_bug.cgi?id=477451) | Fixed in Plasma 6.0 |
