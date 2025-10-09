@@ -99,7 +99,7 @@ There are no restrictions on additional partitions and types; they are ignored b
 
 Note that the system does not use an EFI system partition (and does not run EFI). OS selection is designed around APFS containers and subvolumes containing files in a specific layout.
 
-AS Macs are designed to be brick-proof. They can be recovered from another machine by using a USB cable and booting from ROM, even if all NOR and NVMe contents are destroyed (\* NOR destruction untested). This is [officially documented](https://support.apple.com/guide/apple-configurator-mac/revive-or-restore-a-mac-with-apple-silicon-apdd5f3c75ad/mac) using another Mac. We have alternative [open source tooling](https://github.com/libimobiledevice/idevicerestore) for this that works on Linux/etc.
+AS Macs are designed to be brick-proof. They can be recovered from another machine by using a USB cable and booting from ROM, even if all NOR and NVMe contents are destroyed (\* NOR destruction untested). This is [officially documented](https://support.apple.com/en-us/108900) using another Mac. We have alternative [open source tooling](https://github.com/libimobiledevice/idevicerestore) for this that works on Linux/etc.
 
 One notable point of this design is that each installed OS also brings along with it a large subset of system firmware running on coprocessors, as well as the OS loader. This makes it easier to maintain backwards compatibility with older OSes; conversely, it also means the firmware ABI for these coprocessors has no stability guarantees whatsoever.
 
