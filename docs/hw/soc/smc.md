@@ -4,12 +4,10 @@ title: System Management Controller (SMC)
 
 The SMC is a piece of hardware handling access to such things as temperature sensors, voltage/power meters, battery status, fan status, and the LCD backlight and lid switch.
 
-It is "documented", to the extent that it is, in https://github.com/corellium/linux-m1/blob/master/drivers/hwmon/apple-m1-smc.c, but that's just the protocol, which essentially allows you to do three things:
+It is "documented", to the extent that it is, in [https://github.com/corellium/linux-m1/blob/master/drivers/hwmon/apple-m1-smc.c](https://github.com/corellium/linux-m1/blob/master/drivers/hwmon/apple-m1-smc.c), but that's just the protocol, which essentially allows you to do three things:
 
 1. read data for each of many, many four-ASCII-character "keys". There are about 1,400 such keys on the MacBook Pro.
-
 2. read data for a key, supplying a payload.
-
 3. write data for a key.
 
 In addition to receiving the bytes of data, the SMC provides a type for that data, encoded as four ASCII characters, and a flags byte.
@@ -34,9 +32,10 @@ Almost totally unknown. Keys with `0xf0` flags don't appear to return non-zero v
 
 ### SMC keys
 
-Many. https://github.com/torvalds/linux/blob/master/drivers/hwmon/applesmc.c documents some, but mostly you have to guess based on the four-character name. There are more than 1,400 such keys on the MacBook Pro, with many apparently unused.
+Many. [https://github.com/torvalds/linux/blob/master/drivers/hwmon/applesmc.c](https://github.com/torvalds/linux/blob/master/drivers/hwmon/applesmc.c) documents some, but mostly you have to guess based on the four-character name. There are more than 1,400 such keys on the MacBook Pro, with many apparently unused.
 
 Some guesses as to what they might mean:
+
 * `T???`: temperature values, in Celsius, as float. There are many of those. The question marks specify, presumably, the location (and possibly whether or not the value is averaged to provide a more meaningful reading?)
 * `TB0T`: battery temperature
 * `TCHP`: charger temperature (increases sligtly when charging)
@@ -84,7 +83,6 @@ Some guesses as to what they might mean:
 * `VD0R`: input voltage in V
 * `PDTR`: input power in W
 
-
 ### Quirks
 
 Or possibly quirks?
@@ -98,6 +96,7 @@ Or possibly quirks?
 
 Setting the "NTAP" (notify application processor, maybe?) flag to 1 makes the SMC send notifications when certain system events happen, such as power being connected and disconnected, the power button being pressed, or the lid being opened or
 closed. Notifications are mailbox messages apparently limited to the 64-bit payload.
+
 ### ADC
 
 In addition to the keys accessible "directly" through the SMC, there is what appears to be a muxed single-channel ADC providing access to 111 further values.  It is accessed through "aDC#" (giving the number of keys), "aDC?" (query key name using a numeric payload), and "aDCR", the actual result value.
