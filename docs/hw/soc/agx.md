@@ -615,9 +615,9 @@ These registers are read once, during initialization:
 These status registers are continually checked by *something* on the CPU
 
     0x11008 : u32 - Always counts up whenever work is done
-    0x1100c : u32 - Useally 0
+    0x1100c : u32 - Usually 0
     0x11010 : u32 - Another work counter? counts up slower
-    0x11014 : u32 - Useally 0
+    0x11014 : u32 - Usually 0
 
 There doesn't seem to be a good relationship of when these status registers are read, relative to
 the ASC Pong and Kicks. 

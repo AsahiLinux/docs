@@ -141,7 +141,7 @@ has powered on and the SEP is satisfied with the state of iBoot and the system f
 When FileVault is enabled for an APFS volume, the VEK and xART are wrapped with a Key Encryption Key (KEK), which is backed
 by user credentials from the macOS container in question. The machine will be unable to read the user data volume of the
 protected container until these credentials are provided at startup. Enabling this is instantaneous on Apple Silicon machines, since
-the only required operation is generating the KEK and and a recovery key. The system snapshot, Preboot, and
+the only required operation is generating the KEK and a recovery key. The system snapshot, Preboot, and
 recovery volumes are not protected by FileVault. These partitions are immutable, backed by the SEP, and contain no user data
 and therefore do not particularly benefit from FileVault. All encryption keys are destroyed by the SEP
 when the Machine Owner requests the machine to be wiped, guaranteeing that any residual data is indecipherable even to data recovery
