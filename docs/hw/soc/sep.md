@@ -54,6 +54,7 @@ Endpoint information:
 
 
 Gigalocker/xART format (thanks sven for this info!):
+
 | Section start-section end | Description |
 | ------------------------- | ----------- |
 | 0x00-0x01 | Always 0 (perhaps some kind of version identifier?) |
@@ -93,7 +94,7 @@ xART init flow (incomplete atm, may be wrong):
 (message type 0 is some sort of fetch request, message type 0x5 is a fetch response it seems for individual lockers)
 (tags seem to be increasing in the order of the lockers within the gigalocker)
 
-```c:
+```c
 //Gigalocker initialization (TODO: verify if later OS versions use the same format)
 
 
@@ -116,8 +117,7 @@ xART init flow (incomplete atm, may be wrong):
 
 SEP Trusted Accessory notes:
 
-```c:
-
+```c
 //ping
 [cpu0] [SEPTracer@/arm-io/sep] [stac] >0xf(None) 00000000000ffc18 (EP=0x18, TAG=0xfc, TYPE=0xf, PARAM=0x0, DATA=0x0)
 

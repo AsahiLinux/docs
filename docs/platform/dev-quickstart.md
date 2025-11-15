@@ -6,7 +6,7 @@ title: Developer Quickstart Guide
 
 This guide documents a manual installation process that is only required for kernel developers doing reverse engineering of macOS drivers using the m1n1 hypervisor.
 
-If you are a more typical developer and you want to help work on the kernel or just experiment with the platform, and are happy doing tethered boots via USB (uploading the kernel from another machine), have a look [over here][../sw/tethered-boot.md].
+If you are a more typical developer and you want to help work on the kernel or just experiment with the platform, and are happy doing tethered boots via USB (uploading the kernel from another machine), have a look [over here](../sw/tethered-boot.md).
 
 If you are an end user or you would otherwise like to set up a stand-alone install, stop now. It isn't ready yet. It will be soon. Just hang tight.
 
