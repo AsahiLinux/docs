@@ -175,6 +175,5 @@ Issues (other than page size and architectural support issues) in third-party so
 | lsp-common-lib   | [Fix atomic operations for AArch64](https://github.com/lsp-plugins/lsp-plugins/issues/463) | Fixed in lsp-common-lib 1.0.40 |
 | lib-dsp-lib      | [Fix aarch64 msmatrix code](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20) | Fixed in lsp-dsp-lib 1.0.20 |
 | pipewire         | [pipewiresrc: Hangs on Asahi](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/4957) | Fixed in pipewire 1.4.10 |
-| plasmashell      | [startplasma breaks variable merging between profile.d and environment.d](https://bugs.kde.org/show_bug.cgi?id=491579) |
 | qqc2-desktop-style | [Some text glyphs in QML software are vertically mis-aligned or squished when using a fractional scale factor](https://bugs.kde.org/show_bug.cgi?id=479891) | Fixed in KDE Frameworks 6.9.0 |
 | wireplumber      | [Wireplumber ignores default playback volume](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#) | Fixed in wireplumber 0.5.3 |
