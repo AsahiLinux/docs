@@ -143,6 +143,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | ---------------- | ----- | ----- |
 | firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
+| kdeconnect       | [KDE Connect Bluetooth backend causes audio crackling/stuttering in Bluetooth headset (A2DP) under PipeWire](https://bugs.kde.org/show_bug.cgi?id=513536) |
 | kwin             | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
 | plasmashell      | [startplasma breaks variable merging between profile.d and environment.d](https://bugs.kde.org/show_bug.cgi?id=491579) |
 | systemsettings   | [default system keyboard model is not correctly set on Wayland](https://bugs.kde.org/show_bug.cgi?id=475435) |
@@ -150,8 +151,6 @@ Issues (other than page size and architectural support issues) in third-party so
 | wlroots          | [Add support for DRM Color Transformation Matrix (Useful for e.g. redshift)](https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/1078) | [Related PR](https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4815) |
 | wlroots          | [cannot open render as master when using seatd](https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/3911) |
 | xkeyboard-config | [Handling Mac Fn keys in xkeyboard](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379) |
-
-
 
 ### Closed Bugs
 
@@ -175,6 +174,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | kwin             | [Software cursor repaints are glitchy with fractional scaling sometimes](https://bugs.kde.org/show_bug.cgi?id=477455) | Fixed in Plasma 6.0 |
 | lsp-common-lib   | [Fix atomic operations for AArch64](https://github.com/lsp-plugins/lsp-plugins/issues/463) | Fixed in lsp-common-lib 1.0.40 |
 | lib-dsp-lib      | [Fix aarch64 msmatrix code](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20) | Fixed in lsp-dsp-lib 1.0.20 |
+| pipewire         | [pipewiresrc: Hangs on Asahi](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/4957) | Fixed in pipewire 1.4.10 |
 | plasmashell      | [startplasma breaks variable merging between profile.d and environment.d](https://bugs.kde.org/show_bug.cgi?id=491579) |
 | qqc2-desktop-style | [Some text glyphs in QML software are vertically mis-aligned or squished when using a fractional scale factor](https://bugs.kde.org/show_bug.cgi?id=479891) | Fixed in KDE Frameworks 6.9.0 |
 | wireplumber      | [Wireplumber ignores default playback volume](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#) | Fixed in wireplumber 0.5.3 |
