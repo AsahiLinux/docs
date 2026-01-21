@@ -1,5 +1,6 @@
 site_name: Asahi Linux Documentation
 site_url: https://asahilinux.org/docs/
+site_description: Porting Linux to Apple Silicon
 
 repo_url: https://github.com/AsahiLinux/docs
 repo_name: AsahiLinux/docs
