@@ -87,10 +87,6 @@ Make sure you have the GPU drivers installed. If screen recording is still slow,
 ## Chromium / VS Code / Slack / Discord / some other Electron app or Chrome-based browser stopped rendering after an update.
 This is an [upstream Chromium bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1442633) affecting all Chromium-based frameworks such as [Electron](https://github.com/electron/electron/issues/40366). You have to manually delete your shader cache (e.g. `~/.config/Slack/GPUCache`). We can't do anything about it until the fix is backported/released to users.
 
-## Start up automatically after a power failure
-
-This configuration is available at `/sys/bus/platform/devices/macsmc-reboot/ac_power_mode`. Valid options are `off` and `restore`, which is equivalent to the toggle in System Settings on macOS. It is not possible to set the machine to power on unconditionally when power is connected.
-
 ## Wake for network access (WoL/WoWLAN)
 
 - Wake on LAN does not work. The BCM57762 gigabit Ethernet controller supports WoL via magic packets, it can be enabled with `ethtool -s REPLACE_WITH_YOUR_INTERFACE wol g`, but the machine does not wake up when it receives magic packets.
