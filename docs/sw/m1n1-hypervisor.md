@@ -65,7 +65,8 @@ Check that `Install macOS Monterey.app` in the `applications` folder is ~12GB.
 1. Start into 1tr and start a terminal.
 2. Disable most security feature in the boot policy: `bputil -nkcas`; use `diskutil info [disk name]` to get UUID.
 3. Disable SIP (bputil resets it): `csrutil disable`.
-4. Install [m1n1](m1n1-user-guide.md) as custom boot object:  
+4. Enable verbose output: `nvram boot-args=-v`.
+5. Install [m1n1](m1n1-user-guide.md) as custom boot object:
 
         kmutil configure-boot \
           -c build/m1n1.bin \
