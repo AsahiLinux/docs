@@ -5,7 +5,7 @@ title: How to create a Windows 11 VM
 ### Introduction
 Here's a simple guide to install Windows 11 on Fedora Asahi Remix!
 This is going over how to install, configure, and manage your own instance of Windows 11 if you ever need anything from windows besides having to switch hardware or use bare metal windows machines. 
-Credits to: aykevl and Davide Calvaca
+Credits to: aykevl and Davide Cavalca
 
 !!! note
     `dnf install @virtualization` is out of scope for this guide and not supported. It is, as of the writing of this unsupported and broken, as that includes virt-manager, libvirtd, and others. Please refer to https://github.com/AsahiLinux/docs/pull/206#issuecomment-3274648383 for more information. Please proceed with caution if you are experimenting with this. 
