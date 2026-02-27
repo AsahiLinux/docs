@@ -2,6 +2,9 @@
 title: m1n1 Hypervisor
 ---
 
+!!! warning
+    The m1n1 hypervisor targets macOS Ventura 13.5. Running later versions of macOS under the m1n1 hypervisor is not supported.
+
 # Running macOS under the m1n1 hypervisor
 
 You can run either a development kernel obtained from Apple, in which case you will have debug symbols, or use the stock kernel found in a macOS install.
