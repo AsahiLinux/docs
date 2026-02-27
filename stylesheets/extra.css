@@ -1,0 +1,22 @@
+:root  > * {
+  --md-primary-fg-color:         #A61200;
+  --md-primary-fg-color--light:  #A61200;
+  --md-primary-fg-color--dark:   #A61200;
+  --md-accent-fg-color:          #D3506F;
+  --md-footer-bg-color:          #2C2C2C;
+  --md-footer-bg-color--dark:    #2C2C2C;
+}
+
+/* Heading overrides as the default ones are very small */
+.md-typeset {
+  h4 {
+    font-size: 0.95rem;
+  }
+  h5 {
+    font-size: 0.8rem;
+  }
+  h6 {
+    font-size: 0.7rem;
+  }
+}
+
