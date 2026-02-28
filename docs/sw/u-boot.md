@@ -78,7 +78,8 @@ If you are using a USB to load a recovery / "Live CD", ensure you also have `usb
 ```sh
 bootd # Continue the default U-Boot script
 reset # Reboot the machine
-poweroff # Shutdown the machine completely
 nvme scan # Discover NVMe disks (required for next command to succeed)
 ls nvme 0:4 / # List the contents of the paired EFI System Partition
 ```
+
+Note: The `poweroff` command is not available in U-Boot on Apple Silicon. To power off the machine, boot into an operating system (Linux or macOS) and use its shutdown command.
