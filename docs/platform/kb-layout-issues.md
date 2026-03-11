@@ -42,6 +42,31 @@ Known issue: on M2 MacBook Air machines, currently the default behavior of the `
 cd /sys/module/hid_apple/parameters/; grep . *; pacman -Q xkeyboard-config-asahi; uname -r; cat /proc/device-tree/model; echo; find /sys/devices -name country | xargs cat; dmesg | grep "Keyboard type"
 ```
 
+## ISO - International English - M1 Macbook Air 2020
+* UK, Macintosh, intl.
+
+In the first row: All symbols are correct except 3, it only has a hashtag on my layout, not the currency symbol
+In the second row:  All symbols are correct, except e does not have a currency symbol.
+In the third row: All good
+In the fourth row: The only symbols that are wrong is that my ~key only has ~and `, not the other pipe and broken pipe character.
+
+### System configuration
+```
+# Output of running:
+fnmode:3
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+error: failed to initialize alpm library:
+(root: /, dbpath: /var/lib/pacman/)
+could not create database
+6.14.2-401.asahi.fc42.aarch64+16k
+Apple MacBook Air (M1, 2020)
+00
+0d
+```
+
 ## JIS - Japanese
 * Best XKB keyboard layout/variant: `Japanese/Japanese`
 
