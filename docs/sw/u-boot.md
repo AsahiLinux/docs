@@ -9,7 +9,7 @@ install it. It is assumed that you are working on an Apple Silicon machine using
 
 Do note that the process for building and installing U-Boot listed here is for documentation and development purposes
 only. If you are an Asahi user and not interested in hacking on U-Boot or m1n1, they are managed automatically
-via `pacman`.
+by the distribution.
 
 ## Standard boot flow
 We make use of U-Boot's UEFI implementation to load and execute a UEFI binary located at `/EFI/BOOT/BOOTAA64.EFI` 
@@ -54,8 +54,7 @@ cat build/m1n1.bin /path/to/dtbs/*.dtb <(gzip -c /path/to/uboot/u-boot-nodtb.bin
 We recommend that you install the bare m1n1/U-Boot images and DTBs to a specific location on the
 root filesystem, and ship a script that backs up the existing image and creates a new one. This prevents regressions from making bricking
 the OS install. Users can simply mount the ESP in macOS, delete the new `boot.bin` and rename the backup to recover their machine to a
-known good state. For an example of how we do this in Asahi, see `uboot-asahi` and `asahi-scripts/update-m1n1` in the 
-`AsahiLinux/PKGBUILDs` repo.
+known good state. For an example of how we do this in Fedora Asahi Remix, see our [`uboot`](https://pagure.io/fedora-asahi/uboot-tools) and [`asahi-scripts`](https://src.fedoraproject.org/rpms/asahi-scripts/) packaging.
 
 ## Helpful U-Boot tricks
 
@@ -72,7 +71,7 @@ usb start
 usb reset
 ```
 
-If you are using a USB to load a recovery / "Live CD", ensure you also have `usbhid xhci_hcd` under MODULES in `/etc/mkinitcpio.conf`. Also have a read of [Install_Arch_Linux_on_a_removable_medium](https://wiki.archlinux.org/title/Install_Arch_Linux_on_a_removable_medium) for tips and tricks.
+If you are using a USB to load a recovery / "Live CD", ensure you also have `usbhid xhci_hcd` under `force_drivers` in `/etc/dracut.conf`.
 
 ### Other useful U-Boot commands
 ```sh

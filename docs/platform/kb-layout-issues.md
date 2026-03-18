@@ -39,7 +39,7 @@ Known issue: on M2 MacBook Air machines, currently the default behavior of the `
 ### System configuration
 ```
 # Output of running:
-cd /sys/module/hid_apple/parameters/; grep . *; pacman -Q xkeyboard-config-asahi; uname -r; cat /proc/device-tree/model; echo; find /sys/devices -name country | xargs cat; dmesg | grep "Keyboard type"
+cd /sys/module/hid_apple/parameters/; grep . *; rpm -q xkeyboard-config; uname -r; cat /proc/device-tree/model; echo; find /sys/devices -name country | xargs cat; dmesg | grep "Keyboard type"
 ```
 
 ## ISO - International English - M1 Macbook Air 2020
@@ -58,9 +58,6 @@ iso_layout:-1
 swap_ctrl_cmd:0
 swap_fn_leftctrl:0
 swap_opt_cmd:0
-error: failed to initialize alpm library:
-(root: /, dbpath: /var/lib/pacman/)
-could not create database
 6.14.2-401.asahi.fc42.aarch64+16k
 Apple MacBook Air (M1, 2020)
 00
@@ -219,16 +216,16 @@ The keyboard mostly works like it should on a non-Mac keyboard. Combinations tha
 
 ### System configuration
 ```
-fnmode:3  
-iso_layout:-1  
-swap_ctrl_cmd:0  
-swap_fn_leftctrl:0  
-swap_opt_cmd:0  
-xkeyboard-config-asahi 2.35.1_3-1  
-6.2.0-asahi-11-1-edge-ARCH  
-Apple MacBook Pro (13-inch, M2, 2022)  
-00  
-00  
+fnmode:3
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+xkeyboard-config-asahi 2.35.1_3-1
+6.2.0-asahi-11-1-edge-ARCH
+Apple MacBook Pro (13-inch, M2, 2022)
+00
+00
 0d
 ```
 ## ANSI US - Polish - M1 Max MBP 2021
@@ -237,10 +234,10 @@ Apple MacBook Pro (13-inch, M2, 2022)
 
 Keyboard model on startup defaulted to Generic.
 
-Letters with diacritics (ąćęłóćżź) work with the right option key: correct  
-Special characters (digits + shift): correct  
-Special characters right to letters: correct  
-backtick / tilde left to digits: correct  
+Letters with diacritics (ąćęłóćżź) work with the right option key: correct
+Special characters (digits + shift): correct
+Special characters right to letters: correct
+backtick / tilde left to digits: correct
 
 ### System configuration
 ```
@@ -301,10 +298,6 @@ iso_layout:-1
 swap_ctrl_cmd:0
 swap_fn_leftctrl:0
 swap_opt_cmd:0
-warning: database file for 'core' does not exist (use '-Sy' to download)
-warning: database file for 'community' does not exist (use '-Sy' to download)
-warning: database file for 'extra' does not exist (use '-Sy' to download)
-error: package 'xkeyboard-config-asahi' was not found
 6.10.6-401.asahi.fc40.aarch64+16k
 Apple MacBook Air (M1, 2020)
 00
