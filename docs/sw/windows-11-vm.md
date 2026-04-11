@@ -14,7 +14,7 @@ Credits to: aykevl and Davide Cavalca
 2. Create a new directory on your desktop or wherever, naming it to whatever you want, i.e. let's say, `windows11` using `mkdir windows11` via an appropriate terminal application or right clicking and making a directory on your desktop. 
 3. Go into that directory with `cd windows11` 
 4. Download a Windows 11 ISO, appropriately the Windows 11 Professional build for ARM64 [here](https://www.microsoft.com/en-us/software-download/windows11arm64). Feel free to rename it to a good name like `windows-11.iso` using `mv` in your appropriate terminal application of choice.
-5. Along with that ISO, it would be good to use the virtio-drivers to better improve performance of the machine. Feel free to download it [here](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-installation) and renaming it appropriately to `win11-virtio.iso`.
+5. Along with that ISO, it would be good to use the virtio-drivers to better improve performance of the machine. Feel free to download it [here](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-installation) and renaming it appropriately to `virtio-win.iso`.
 6. Create a virtual disk for your Windows 11 VM by using the command: `qemu-img create -f qcow2 win11.qcow2 25G` and adjusting it to how much disk space you would want, 25GB is a placeholder. 
 7. Here we are going to create a startup script for our Windows 11 VM. Create a file named `win11.sh` and make sure it is executable with `chmod +x win11.sh`. The contents should be:
 ``` {.md .copy}
@@ -41,7 +41,7 @@ taskset -c "$performance_cores" \
     -device qemu-xhci \
     -device ramfb \
     -device usb-storage,drive=install \
-    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11-iot.iso \
+    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11.iso \
     -device usb-storage,drive=virtio-drivers \
     -drive if=none,id=virtio-drivers,format=raw,media=cdrom,file=virtio-win.iso \
     -object rng-random,filename=/dev/urandom,id=rng0 \
@@ -68,7 +68,7 @@ Shut down the VM as usual to not make Windows scared (don’t just exit the win1
 After installation, you can remove the two ISOs and remove the following 4 lines from the win11.sh script:
 ``` md
 -device usb-storage,drive=install \
-    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11-iot.iso \
+    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11.iso \
     -device usb-storage,drive=virtio-drivers \
     -drive if=none,id=virtio-drivers,format=raw,media=cdrom,file=virtio-win.iso \
 ```
