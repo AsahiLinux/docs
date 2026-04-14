@@ -95,7 +95,6 @@ run). You may have varying levels of success by attempting to run your software 
 | Package | Upstream report | Notes |
 | ------- | --------------- | ----- |
 | hardened_malloc | <https://github.com/GrapheneOS/hardened_malloc/issues/183> | There are more changes necessary to hardened_malloc before 16k page support is done. It is also not a high priority at the moment as we need MTE |
-| jemalloc | <https://github.com/jemalloc/jemalloc/issues/467> | Upstream unwilling to fix, Needs build options if compiled on a 4k page size system. Addressed in [ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1914). |
 | notion-app(-enhancer) | <https://github.com/notion-enhancer/notion-repackaged/issues/107> | electron + broken build flags |
 | Waydroid | <https://github.com/waydroid/waydroid/issues/373> | Upstream AOSP is working on 16k page support: <https://developer.android.com/guide/practices/page-sizes> |
 | trezord | <https://github.com/trezor/trezord-go/issues/306> | Crashes if daemon is started before wallet is plugged in; workaround is to plug in the wallet and then restart daemon. |
@@ -113,6 +112,7 @@ run). You may have varying levels of success by attempting to run your software 
 | Emacs | <https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html> | Fixed since 28.0 |
 | f2fs | <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7e9a9037de27b642d5a3edef7c69e2a2b460287> | Fixed since Linux 6.7 |
 | fd | <https://github.com/sharkdp/fd/issues/1085> | Fixed since 10.1 |
+| jemalloc | <https://github.com/jemalloc/jemalloc/pull/2864> | Fixed since 5.3.1. |
 | k3s-io | <https://github.com/k3s-io/k3s/issues/7335> | Fixed since 1.27.2 |
 | KiCad | <https://gitlab.com/kicad/code/kicad/-/issues/16008> | Fixed since 7.0.10 |
 | libglvnd | <https://gitlab.freedesktop.org/glvnd/libglvnd/-/merge_requests/262> | Fixed since 1.5.0 |
