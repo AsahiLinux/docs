@@ -7,6 +7,25 @@
   --md-footer-bg-color--dark:    #2C2C2C;
 }
 
+.md-header {
+  background: #a61200;
+  color: #ffffff;
+}
+
+.md-search__button {
+  color: #ffffff;
+}
+
+.md-search__button::before {
+  color: #ffffff;
+  background: #ffffff;
+}
+
+.md-search__button::after {
+  color: #ffffff;
+  background: var(--md-footer-bg-color);
+}
+
 /* Heading overrides as the default ones are very small */
 .md-typeset {
   h4 {
