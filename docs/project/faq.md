@@ -58,6 +58,10 @@ As the message implies, this is caused by Time Machine snapshots taking up "free
 
 Don't use Disk Utility, it's broken and only works for really simple partition setups. See [Partitioning cheatsheet](../sw/partitioning-cheatsheet.md) to learn how to manage partitions with the command line instead.
 
+## I can't install any system using the installer: device enters a boot loop and drops in Recovery OS
+
+This is most likely an Apple bug that happens when you've installed an OS too many times. See [this issue](https://github.com/AsahiLinux/asahi-installer/issues/255#issuecomment-1987050522)
+
 ## Do I need to reinstall to get new features / updates?
 
 No! Just upgrade your system using `dnf upgrade`. Kernel updates will require a reboot. Consider a tool like `needrestart` to determine if there are any outdated services or an outdated kernel running.
