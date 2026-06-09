@@ -64,6 +64,16 @@ $ docker-compose run m1n1 make
 
 m1n1 stage 1 release builds packaged with the Asahi Linux Installer have both of those options set. m1n1 stage 2 release builds packaged by distros should just have `RELEASE=1` (since they do not need to chainload further) and thus do not need Rust to build.
 
+### kmutil target
+
+There's also a `build/kmutil` make target, which includes a single script that can be fetched and executed from 1TR.
+To build that, and expose it via a webserver, run:
+
+```shell
+ip -br a s
+make build/kmutil && python3 -m http.server --directory build
+```
+
 ## Installation
 
 ### Stage 1 (as fuOS)
@@ -73,6 +83,17 @@ m1n1 (with your choice of payloads) can be installed from 1TR (macOS 12.1 OS/stu
 ```
 kmutil configure-boot -c m1n1-stage1.bin --raw --entry-point 2048 --lowest-virtual-address 0 -v <path to your OS volume>
 ```
+
+This assumes you manually fetched the m1n1-stage1.bin from somewhere.
+If you used the `build/kmutil` target above, you can also:
+
+```
+sh <(curl HOST:8000/kmutil)
+```
+
+This script contains the m1n1 binary and runs `kmutil configure-boot` with it.
+
+Make sure to trust the network you're running this from.
 
 On older versions (not recommended), you need the `macho` instead:
 
