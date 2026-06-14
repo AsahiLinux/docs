@@ -57,10 +57,10 @@ Apple likes to use many different names for the same devices.
 | M4 Max | H16C | Brava | T6041 | |
 | A18 | H17A | Tupai | T8140a | |
 | A18 Pro | H17P | Tahiti | T8140 | |
-| |  | Hidra | | |
-| |  | Sotra_C | | |
-| |  | Sotra_S | | |
+| M5 | H17G | Hidra | T6042 | |
+| M5 Pro | H17S | Sotra_S | T6050 | |
+| M5 Max | H17C | Sotra_C | T6050 | |
 | |  | Sotra_D | | |
-| |  | Thera | | |
+| A19 Pro | H18P | Thera | T8150 | |
+| A19 | H18A | Tilos | T8150 | |
 | |  | Komodo | | |
-| |  | Tilos | | |
