@@ -133,6 +133,16 @@ Here are some numbers from some experiment with macOS `11.5.2` and m1n1 version 
           <PATH_TO_EXTRACTED_MACHO> \
           -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
 
+## Using hypervisor modules
+
+In addition to the builtin shell, the m1n1 hypervisor can preload and execute full Python scripts. These scripts are primarily used to preconfigure the
+hypervisor for tracing a particular piece of hardware. Examples can be found in `proxyclient/hv/` in the m1n1 source tree. These scripts are passed
+in to `run_guest.py`, like so:
+
+        python3 proxyclient/tools/run_guest.py -m proxyclient/hv/trace_dcp.py \
+          <PATH_TO_EXTRACTED_MACHO> \
+          -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
+
 ## Updating your m1n1 hypervisor tree
 
 The hypervisor/m1n1 ABI is *not* stable. If you have installed a fresh m1n1 build as above, you can use `run_guest.py` directly to save some time. However, as soon as you update your m1n1 git tree, you *must* build the updated m1n1 and run  
