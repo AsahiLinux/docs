@@ -74,6 +74,31 @@ m1n1 (with your choice of payloads) can be installed from 1TR (macOS 12.1 OS/stu
 kmutil configure-boot -c m1n1-stage1.bin --raw --entry-point 2048 --lowest-virtual-address 0 -v <path to your OS volume>
 ```
 
+This assumes you manually fetched the m1n1-stage1.bin from somewhere.
+
+#### `scripts/kmutil.py`
+
+There's also a `tools/kmutil.py` script, which will spin up a webserver, serving
+a script which contains the m1n1 binary and runs `kmutil configure-boot` with
+it.
+
+Run the webserver on the host:
+
+```shell
+./scripts/kmutil.py
+```
+
+On the target, in 1TR, fetch and execute the script:
+```shell
+sh <(curl HOST:8000)
+```
+
+This script can not be piped into the shell since it uses stdin.
+
+Make sure to trust the network you're running this from.
+
+#### Mach-O (not recommended)
+
 On older versions (not recommended), you need the `macho` instead:
 
 ```
