@@ -19,7 +19,8 @@ nav = [
         "platform/feature-support/m2.md",
         "platform/feature-support/m3.md",
         "platform/feature-support/m4.md",
-        "platform/feature-support/m5.md"
+        "platform/feature-support/m5.md",
+        "platform/feature-support/m6.md"
     ] },
     { "Project" = [
         "project/glossary.md",
