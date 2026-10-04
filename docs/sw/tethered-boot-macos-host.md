@@ -1,5 +1,5 @@
 ---
-title: Tethered Boot: macOS host machine
+title: Tethered Boot (macOS host machine)
 ---
 
 # macOS-hosted tethered boot setup
