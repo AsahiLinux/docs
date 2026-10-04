@@ -326,7 +326,6 @@ picocom /dev/ttyACM1
 
 Note that this method cannot (yet) be used as an earlycon for Linux, and USB gadget support is not yet in our main Linux tree either.
 
-* See [Running Linux via USB cable](../sw/linux-bringup.md#running-linux-via-usb-cable) for some more details
 
 ## Using m1n1
 
@@ -536,7 +535,7 @@ Proxy is alive again
 
 #### Boot a Linux kernel
 
-This is what you're here for, right? :-). See [Linux Bringup](../sw/linux-bringup.md) for full instructions.
+This is what you're here for, right? :-).
 
 ```shell
 $ python linux.py -b 'earlycon console=ttySAC0,1500000 console=tty0 debug' Image.gz apple-j274.dtb initramfs.cpio.gz
