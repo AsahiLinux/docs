@@ -143,6 +143,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | ---------------- | ----- | ----- |
 | firefox          | [wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11)](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | gnome-bluetooth/bluez | Frequent audio stutters and deconnections of audio A2DP output (no issues using blueman) | No bugs filled yet |
+| grub             | [Grub 2.16 appears to be broken on Apple silicon systems](https://gitlab.freedesktop.org/gnu-grub/grub/-/work_items/90) | Fixed, not yet released |
 | kdeconnect       | [KDE Connect Bluetooth backend causes audio crackling/stuttering in Bluetooth headset (A2DP) under PipeWire](https://bugs.kde.org/show_bug.cgi?id=513536) |
 | kwin             | [Root background damage regions are calculated incorrectly with multiscreen](https://bugs.kde.org/show_bug.cgi?id=477454) |
 | plasmashell      | [startplasma breaks variable merging between profile.d and environment.d](https://bugs.kde.org/show_bug.cgi?id=491579) |
@@ -174,6 +175,7 @@ Issues (other than page size and architectural support issues) in third-party so
 | kwin             | [Software cursor repaints are glitchy with fractional scaling sometimes](https://bugs.kde.org/show_bug.cgi?id=477455) | Fixed in Plasma 6.0 |
 | lsp-common-lib   | [Fix atomic operations for AArch64](https://github.com/lsp-plugins/lsp-plugins/issues/463) | Fixed in lsp-common-lib 1.0.40 |
 | lib-dsp-lib      | [Fix aarch64 msmatrix code](https://github.com/lsp-plugins/lsp-dsp-lib/pull/20) | Fixed in lsp-dsp-lib 1.0.20 |
+| mutter           | [https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/5205](color: Support Night Light on hardware with CTM but no GAMMA_LUT) | Fixed in Mutter 51 |
 | pipewire         | [pipewiresrc: Hangs on Asahi](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/4957) | Fixed in pipewire 1.4.10 |
 | qqc2-desktop-style | [Some text glyphs in QML software are vertically mis-aligned or squished when using a fractional scale factor](https://bugs.kde.org/show_bug.cgi?id=479891) | Fixed in KDE Frameworks 6.9.0 |
 | wireplumber      | [Wireplumber ignores default playback volume](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#) | Fixed in wireplumber 0.5.3 |
