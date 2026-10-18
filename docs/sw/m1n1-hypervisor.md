@@ -181,5 +181,25 @@ Do not attempt to use both the hypervisor shell's builtin debugging features and
 debugger at the same time. For example, do not attempt to add or edit breakpoints from the hypervisor
 shell while using LLDB.
 
+## Running the Hypervisor with SPTM/TXM on M4
+
+1. Copy and extract the kernel cache as mentioned above and then also find `sptm.tXXXX.release.im4p` and `txm.macosx.release.im4p` in `/System/Volumes/Preboot` and use ipsw to extract the images:
+   ```
+   ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/txm.macosx.release.im4p -o path/to/extract/txm.macho
+   ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/sptm.tXXXX.release.im4p -o path/to/extract/sptm.macho
+   ```
+   Alternatively, you can also get the images from an ipsw itself and extract them. Make sure to use the exact version you have installed on your Mac because the kernel will otherwise panic or hang during boot.
+
+2. Boot the kernel, SPTM and TXM under the hypervisor:
+   ```sh
+   python3 proxyclient/tools/run_guest.py \
+     --sptm-mode=emulation \
+     --sptm path/to/sptm.macho --txm path/to/txm.macho \
+     path/to/kernelcache.macho \
+      -- "debug=0x14e serial=3 wdt=-1"
+   ```
+   Note that because some hardware features (GXF/SPRR) have to be emulated macOS will run slower than usual.
+
+
 # Sources
 Source for the kernelcache creation: [https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html](https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html)
