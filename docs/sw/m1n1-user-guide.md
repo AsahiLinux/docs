@@ -76,7 +76,7 @@ kmutil configure-boot -c m1n1-stage1.bin --raw --entry-point 2048 --lowest-virtu
 
 This assumes you manually fetched the m1n1-stage1.bin from somewhere.
 
-#### `scripts/kmutil.py`
+#### `tools/kmutil.py`
 
 There's also a `tools/kmutil.py` script, which will spin up a webserver, serving
 a script which contains the m1n1 binary and runs `kmutil configure-boot` with
@@ -85,7 +85,7 @@ it.
 Run the webserver on the host:
 
 ```shell
-./scripts/kmutil.py
+./tools/kmutil.py
 ```
 
 On the target, in 1TR, fetch and execute the script:
