@@ -200,6 +200,35 @@ shell while using LLDB.
    ```
    Note that because some hardware features (GXF/SPRR) have to be emulated macOS will run slower than usual.
 
+## Running the Hypervisor with SPTM/TXM/cL4 on M5
+
+1. Copy and extract the kernel cache as mentioned above and then also find `sptm.tXXXX.release.im4p`, `txm.macosx.release.im4p`, and `exclavecore_bundle.t8142.RELEASE.im4p` in `/System/Volumes/Preboot` and use ipsw to extract the images:
+
+   ```
+   ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/txm.macosx.release.im4p -o path/to/extract/txm.macho
+   ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/sptm.tXXXX.release.im4p -o path/to/extract/sptm.macho
+   ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/image4/exclavecore_bundle.t8142.RELEASE.im4p -o path/to/extract/exclavecorebundle.b
+   ```
+
+2. Look inside `/System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/` for `YYY-YYYYY-YYY.dmg.aea.integrity_catalog` and `YYY-YYYYY-YYY.dmg.aea.trustcache`. There are multiple groups of files with the same YYY-... prefix but there should be only one group that contains both a `trustcache` and a `integrity_catalog` file. Extract these as well:
+
+   ```
+   ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/YYY-YYYYY-YYY.dmg.aea.integrity_catalog -o path/to/extract/exclave_integrity_catalog.b
+   ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/YYY-YYYYY-YYY.dmg.aea.trustcache -o path/to/extract/exclave_trustcache.b
+   ```
+
+3. Run the hypervisor:
+
+   ```sh
+   python3 proxyclient/tools/run_guest.py \
+     --sptm-mode=emulation \
+     --sptm path/to/sptm.macho --txm path/to/txm.macho \
+     --exclave-bundle path/to/exclavecorebundle.b \
+     --exclave-trustcache path/to/exclave_trustcache.b \
+     --exclave-integrity-catalog path/to/exclave_integrity_catalog.b \
+     path/to/kernelcache.macho \
+      -- "debug=0x14e serial=3 wdt=-1"
+   ```
 
 # Sources
 Source for the kernelcache creation: [https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html](https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html)
