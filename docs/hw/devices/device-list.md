@@ -63,8 +63,13 @@ This is a list of devices Asahi Linux intends to support. The Product and SoC ar
 | MacBook Pro (16-inch, M5 Pro, 2026) | Mac17,8 | J716sAP | T6050
 | MacBook Pro (14-inch, M5 Max, 2026) | Mac17,7 | J714cAP | T6051
 | MacBook Pro (16-inch, M5 Max, 2026) | Mac17,6 | J716cAP | T6051
+| MacBook Pro (14-inch PROLED XDR, M5 Pro, 2026) | Mac17,13 | K114sAP | T6050
+| MacBook Pro (16-inch PROLED XDR, M5 Pro, 2026) | Mac17,12 | K116sAP | T6050
+| MacBook Pro (14-inch PROLED XDR, M5 Max, 2026) | Mac17,11 | K114cAP | T6050
+| MacBook Pro (16-inch PROLED XDR, M5 Max, 2026) | Mac17,10 | K116cAP | T6050
 | MacBook Air (13-inch, M5, 2026) | Mac17,3 | J813AP | T8142
 | MacBook Air (15-inch, M5, 2026) | Mac16,4 | J815AP | T8142
 | Mac Studio (M5 Max, 2026) | Mac17,14 | J775cAP | T6051
 | Mac Studio (M5 Ultra, 2026) | Mac17,15 | J775dAP | T6052
 | Mac mini (M6, 2026) | Mac18,5 | J873gAP | T8152
+| MacBook Pro (14-inch, M6, 2026) | Mac18,1 | J804AP | T8152
