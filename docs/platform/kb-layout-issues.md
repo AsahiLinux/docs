@@ -303,3 +303,42 @@ Apple MacBook Air (M1, 2020)
 00
 0d
 ```
+
+## ISO - Russian - M1 MBP 2020
+* Best XKB keyboard layout/variant: **Russian (RU)**
+  
+I start counting the rows from the row of numbers. Difference (Asahi to macOS).  
+  
+*(Without shift):*  
+  
+* In the row 1, key 1:   ё to >  
+* In the row 3, last key:   \ to ё  
+* In the row 4, key 1:   / to ]  
+* In the row 4, last key:   . to /  
+  
+*(With shift):*  
+  
+* In the row 1, key 1:   Ё to <  
+* In the row 1, key 5:   ; to %  
+* In the row 1, key 6:   % to :  
+* In the row 1, key 7:   : to ,  
+* In the row 1, key 8:   ? to .  
+* In the row 1, key 9:   * to ;  
+* In the row 3, last key:   / to Ё  
+* In the row 4, key 1:   | to [  
+* In the row 4, lasy key:   , to ?  
+
+### System configuration
+```
+fnmode:3
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+xkeyboard-config-2.48-4.fc45.noarch
+7.3.4-401.asahi.fc45.aarch64+16k
+Apple MacBook Pro (13-inch, M1, 2020)
+00
+0d
+```
+
